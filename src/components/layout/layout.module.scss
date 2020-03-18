@@ -1,0 +1,36 @@
+#container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 10vw 30vw 10vw;
+  grid-gap: 1em;
+}
+
+main {
+  grid-column: 1 / span 3;
+}
+
+@media (max-width: 700px) {
+  main {
+    grid-column: 1 / span 5;
+  }
+}
+
+/* Demo Specific Styles */
+#container {
+  margin: 0 auto;
+  max-width: 56em;
+  padding: 1em 0;
+}
+
+main {
+  background: #eaeaea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div[role="group"] {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
