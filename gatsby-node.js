@@ -73,7 +73,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
             allMarkdownRemark {
                 edges {
                     node {
-                        fields {
+                       fields {
                             slug
                             type
                         }
