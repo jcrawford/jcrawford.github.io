@@ -1,0 +1,172 @@
+/**** Options ****/
+.color_change {
+  padding: 0 0 10px 0;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.color_change .label {
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.color_change .colors {
+}
+
+.colors ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.colors ul li {
+  display: block;
+  float: left;
+  width: 32px;
+  height: 32px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  background: #ccc;
+  cursor: pointer;
+  opacity: 0.9;
+}
+.colors ul li:hover {
+  opacity: 1;
+}
+
+.colors ul li.selected {
+  opacity: 1;
+  box-shadow: inset 0 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.colors ul li.red {
+  background: #ff4141;
+}
+.colors ul li.blue {
+  background: #009cdf;
+}
+.colors ul li.green {
+  background: #7c901a;
+}
+.colors ul li.orange {
+  background: #ff7a46;
+}
+.colors ul li.pink {
+  background: #e782bc;
+}
+.colors ul li.violet {
+  background: #7f62bd;
+}
+.colors ul li.yellow {
+  background: #eec244;
+}
+.colors ul li.gray {
+  background: #9ba9b3;
+}
+
+.options {
+  position: fixed;
+  left: 0px;
+  top: 100px;
+  width: 200px;
+  clear: both;
+  background: #fff;
+  padding: 15px 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.options label {
+  float: left;
+  margin-right: 15px;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 32px;
+}
+
+.options label input {
+  float: left;
+  margin-top: 9px;
+  margin-right: 5px;
+}
+
+.options .toggler {
+  position: absolute;
+  right: -40px;
+  top: 0px;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  padding: 10px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px -1px rgba(0, 0, 0, 0.3);
+}
+
+.options .toggler i {
+  font-size: 20px;
+}
+
+.block {
+  clear: both;
+  padding-top: 20px;
+  display: none;
+}
+
+.block.opened {
+  display: block;
+}
+
+.tabnav a {
+  display: inline-block;
+  padding: 6px 15px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "PT Sans Narrow";
+  color: #555;
+  text-decoration: none;
+}
+
+.tabnav a.active {
+  color: #fff;
+  background: #ff4141;
+  box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.3);
+}
+
+.column-left {
+  float: left;
+  width: 23%;
+}
+
+.column-right {
+  float: left;
+  width: 77%;
+}
+
+.column-content {
+  padding: 10px;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+#footer .inner {
+  padding: 10px 20px;
+  font-size: 11px;
+  color: #333;
+}
+
+div.article {
+  padding: 20px;
+  margin-top: 100px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}

@@ -86,10 +86,7 @@ const Header = () => {
   return (
     <React.Fragment>
       <header>
-        <div>Logo Here</div>
-        <div>
-          <NavBar />
-        </div>
+        <NavBar />
       </header>
     </React.Fragment>
   )
