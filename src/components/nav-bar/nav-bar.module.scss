@@ -1,24 +1,4 @@
 .menu_container {
-  width: 100%;
-}
-.menu_container.blue .menu-ul > li {
-  border-bottom: 4px solid #009cdf;
-}
-.menu_container.blue .menu-ul > li:hover,
-.menu_container.blue .menu-ul > li.active {
-  background: #009cdf;
-  /*top: 2px;*/
-}
-
-.menu_container.blue.vertical .menu-ul > li {
-  border-right: 4px solid #009cdf;
-}
-
-.menu_container.blue .field-submit:hover {
-  background: #009cdf;
-}
-
-.menu_container {
   background: none;
   margin-bottom: 11px;
   height: auto;
@@ -63,9 +43,6 @@
   transition: all 150ms linear;
   /*box-shadow: inset 0 -4px 0 #ff4141;*/
   border-bottom: 4px solid #ff4141;
-}
-.menu-ul > li svg {
-  padding-right: 5px;
 }
 .menu-ul > li:hover,
 .menu-ul > li.active {
@@ -290,7 +267,7 @@
   text-align: left;
 }
 
-.menu-dropdown .columns [class^="span"] {
+.menu-dropdown .columns [class*="span"] {
   float: left;
 }
 
@@ -498,4 +475,23 @@
 
 .text-right {
   text-align: right;
+}
+
+/* Blue Theme */
+
+.menu_container.blue .menu-ul > li {
+  border-bottom: 4px solid #009cdf;
+}
+.menu_container.blue .menu-ul > li:hover,
+.menu_container.blue .menu-ul > li.active {
+  background: #009cdf;
+  /*top: 2px;*/
+}
+
+.menu_container.blue.vertical .menu-ul > li {
+  border-right: 4px solid #009cdf;
+}
+
+.menu_container.blue .field-submit:hover {
+  background: #009cdf;
 }
