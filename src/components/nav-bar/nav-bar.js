@@ -79,45 +79,6 @@ class NavBar extends React.Component {
         >
           <NavBarMenuNestedMenuPanel>
             <NavBarMenuNestedMenuItem articles={this.props.articles} />
-
-            <li>
-              <a href="#">Submenu level 1</a>
-            </li>
-            <li className={navBarStyles.hasDropdown}>
-              <a href="#">PHP</a>
-              <ul className={navBarStyles.menuDropdown}>
-                <li>
-                  <a href="#">Article #1</a>
-                </li>
-                <li>
-                  <a href="#">Article #2</a>
-                </li>
-                <li className={navBarStyles.hasDropdown}>
-                  <a href="#">Laravel</a>
-                  <ul className={navBarStyles.menuDropdown}>
-                    <li>
-                      <a href="#">Submenu level 3</a>
-                    </li>
-                    <li>
-                      <a href="#">Submenu level 3</a>
-                    </li>
-                    <li className={navBarStyles.hasDropdown}>
-                      <a href="#">Submenu level 3</a>
-                      <ul
-                        className={`${navBarStyles.menuDropdown} ${navBarStyles.rightAlign}`}
-                      >
-                        <li>
-                          <a href="#">Submenu level 4</a>
-                        </li>
-                        <li>
-                          <a href="#">Submenu level 4</a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
           </NavBarMenuNestedMenuPanel>
         </NavBarMenuItem>
         <NavBarMenuItem
