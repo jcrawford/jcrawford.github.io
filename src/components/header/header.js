@@ -16,29 +16,35 @@ function findInNavigation(articles, title) {
 }
 
 function parseArticles(data) {
-  let articles = {}
-  data.allMarkdownRemark.group.forEach(data => {
-    data.edges.forEach(edge => {
+  data = data.allMarkdownRemark.group
+  let articles = { entries: [], subtopics: {} }
+
+  data.map(({ edges }) => {
+    edges.map(({ node }) => {
       let article = {
-        title: edge.node.fields.series
-          ? `[S] ${edge.node.fields.series}`
-          : edge.node.frontmatter.title,
-        path: edge.node.fields.slug,
+        title: node.fields.series
+          ? `[S] ${node.fields.series}`
+          : node.frontmatter.title,
+        path: node.fields.slug,
       }
 
-      let current = articles
-      let entries
-      for (const topic of edge.node.fields.navpath.split(",")) {
-        if (!current[topic]) {
-          current[topic] = {
-            entries: [],
-            subtopics: {},
+      let current = articles.subtopics
+      let entries = articles.entries
+      if (
+        "undefined" !== typeof node.fields.navpath &&
+        node.fields.navpath !== ""
+      ) {
+        for (const topic of node.fields.navpath.split(",")) {
+          if ("undefined" == typeof current[topic]) {
+            current[topic] = {
+              entries: [],
+              subtopics: {},
+            }
           }
+          entries = current[topic].entries
+          current = current[topic].subtopics
         }
-        entries = current[topic].entries
-        current = current[topic].subtopics
       }
-
       if (!findInNavigation(entries, article.title)) {
         entries.push(article)
       }
@@ -98,72 +104,3 @@ const Header = () => {
 }
 
 export default Header
-
-let arts = {
-  PHP: {
-    entries: [
-      {
-        title: "Getting Started with PHP 7",
-        path: "/articles/php/getting-started-with-php-7",
-      },
-      {
-        title: "PHP Sessions in Depth",
-        path: "/articles/php/php-sessions-in-depth",
-      },
-    ],
-    subtopics: {
-      Laravel: {
-        entries: [
-          {
-            title: "A First Look at Notifications",
-            path: "/articles/php/laravel/a-first-look-at-notifications",
-          },
-        ],
-        subtopics: {
-          Eloquent: {
-            entries: [
-              {
-                title: "What is Eloquent",
-                path: "/articles/php/laravel/eloquent/what-is-eloquent",
-              },
-            ],
-          },
-        },
-      },
-      PHPUnit: {
-        entries: [
-          {
-            title: "Where to begin",
-            path: "/articles/php/phpunit/where-to-begin",
-          },
-        ],
-      },
-    },
-  },
-  JavaScript: {
-    entries: [
-      {
-        title: "What is JavaScript?",
-        path: "/articles/javascript/what-is-javascript",
-      },
-    ],
-    subtopics: {
-      Gatsby: {
-        entries: [
-          {
-            title: "What is Gatsby?",
-            path: "/articles/javascript/gatsby/what-is-gatsby",
-          },
-        ],
-      },
-      React: {
-        entries: [
-          {
-            title: "What is React?",
-            path: "/articles/javascript/react/what-is-react",
-          },
-        ],
-      },
-    },
-  },
-}

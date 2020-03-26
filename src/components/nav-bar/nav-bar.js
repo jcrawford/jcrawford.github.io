@@ -13,6 +13,7 @@ import navBarStyles from "./nav-bar.module.scss"
 import NavBarMenu from "./nav-bar-menu"
 import NavBarMenuItem from "./nav-bar-menu-item"
 import NavBarMenuNestedMenuPanel from "./nav-bar-menu-nested-menu-panel"
+import NavBarMenuNestedMenuItem from "./nav-bar-menu-nested-menu-item"
 import NavBarMenuColumnPanel from "./nav-bar-menu-column-panel"
 import NavBarMenuColumn from "./nav-bar-menu-column"
 
@@ -77,39 +78,8 @@ class NavBar extends React.Component {
           icon={faNewspaper}
         >
           <NavBarMenuNestedMenuPanel>
-            {Object.keys(this.props.articles).map(topicName => {
-              {
-                return (
-                  <li className={navBarStyles.hasDropdown}>
-                    <a href="#">{topicName}</a>
-                    <ul className={navBarStyles.menuDropdown}>
-                      {Object.keys(this.props.articles[topicName].subtopics)
-                        .length &&
-                        Object.keys(
-                          this.props.articles[topicName].subtopics
-                        ).map(subtopic => {
-                          return (
-                            <li className={navBarStyles.hasDropdown}>
-                              <a href="#">{subtopic}</a>
-                              <ul className={navBarStyles.menuDropdown}>
-                                {this.props.articles[
-                                  topicName
-                                ].subtopics.entries.map((entry, i) => {
-                                  return (
-                                    <li>
-                                      <Link to={entry.path}>{entry.title}</Link>
-                                    </li>
-                                  )
-                                })}
-                              </ul>
-                            </li>
-                          )
-                        })}
-                    </ul>
-                  </li>
-                )
-              }
-            })}
+            <NavBarMenuNestedMenuItem articles={this.props.articles} />
+
             <li>
               <a href="#">Submenu level 1</a>
             </li>
