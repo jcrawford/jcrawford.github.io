@@ -1,0 +1,136 @@
+/* Sidebar Styles - Extracted from design */
+
+#secondary .widget-title,
+#secondary .wp-block-heading {
+  color: var(--hybridmag-color-text-headings);
+}
+
+.hm-cl-sep #secondary .widget {
+  padding: var(--hybridmag-global-inner-spacing);
+  background: var(--hybridmag-color-bg-cl-sep-content);
+  box-shadow: var(--hybridmag-global-box-shadow);
+  border-radius: var(--hybridmag-global-border-radius);
+}
+
+.widget-title,
+.widget_block h2.wp-block-heading,
+.widget_block h3.wp-block-heading,
+.widget_block h4.wp-block-heading {
+  margin: 0 0 20px;
+  font-size: var(--hybridmag-font-size-lg);
+}
+
+.widget {
+  margin-bottom: 35px;
+}
+
+/* Sidebar Posts Widget */
+.hm-sidebar-posts .widget-title {
+  margin-bottom: 20px;
+}
+
+.hm-sidebar-posts .hms-post:last-child {
+  margin-bottom: 0;
+}
+
+.hms-thumb {
+  float: left;
+  margin-right: 15px;
+  position: relative;
+}
+
+.hms-thumb img {
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+  vertical-align: top;
+  border-radius: var(--hybridmag-global-border-radius);
+}
+
+.hms-details {
+  overflow: hidden;
+}
+
+.hms-title {
+  font-size: var(--hybridmag-font-size-base);
+  margin: 0 0 8px;
+  word-wrap: break-word;
+  line-height: 1.27;
+}
+
+.hms-title a {
+  color: var(--hybridmag-color-text-headings);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.hms-title a:hover {
+  color: var(--hybridmag-color-primary);
+}
+
+.hms-date,
+.hms-details .entry-meta {
+  font-size: var(--hybridmag-font-size-xxs);
+  color: var(--hybridmag-color-text-light);
+}
+
+.hms-details .entry-meta a {
+  color: var(--hybridmag-color-text-light);
+  text-decoration: none;
+}
+
+.hms-details .entry-meta a:hover {
+  color: var(--hybridmag-color-primary);
+}
+
+.hms-post {
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+/* Categories Widget */
+.widget_categories ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.widget_categories li {
+  margin-bottom: 10px;
+  padding: 0;
+}
+
+.widget_categories li:last-child {
+  margin-bottom: 0;
+}
+
+.widget_categories a {
+  color: var(--hybridmag-color-text-main);
+  text-decoration: none;
+  display: block;
+  padding: 8px 0;
+  transition: color 0.2s ease;
+}
+
+.widget_categories a:hover {
+  color: var(--hybridmag-color-primary);
+}
+
+/* Dark Mode - Sidebar */
+html.hm-dark .hms-title a {
+  color: var(--hybridmag-color-text-headings);
+}
+
+html.hm-dark .hms-date,
+html.hm-dark .hms-details .entry-meta,
+html.hm-dark .hms-details .entry-meta a {
+  color: var(--hybridmag-color-text-light);
+}
+
+html.hm-dark .hms-details .entry-meta a:hover {
+  color: var(--hybridmag-color-primary);
+}
+
+html.hm-dark .widget_categories a {
+  color: var(--hybridmag-color-text-main);
+}

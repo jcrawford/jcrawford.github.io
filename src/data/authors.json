@@ -1,0 +1,15 @@
+[
+  {
+    "id": "1",
+    "slug": "admin",
+    "name": "Alex Thompson",
+    "bio": "Magazine editor and lifestyle writer passionate about fashion, food, and travel. Sharing stories that inspire and inform through thoughtful journalism and creative storytelling.",
+    "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=faces",
+    "socialLinks": {
+      "facebook": "https://www.facebook.com/wordpress",
+      "twitter": "https://twitter.com/wordpress",
+      "instagram": "https://instagram.com"
+    }
+  }
+]
+

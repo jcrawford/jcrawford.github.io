@@ -1,0 +1,167 @@
+/**
+ * Global CSS Variables - Extracted from HybridMag Design
+ * Source: design/wp-content/themes/hybridmag/style.css
+ */
+
+:root {
+  /* === Colors === */
+  
+  /* Brand Colors */
+  --hybridmag-color-primary: #65bc7b;
+  --hybridmag-color-tertiary: #272c30;
+  --hybridmag-color-main-menu: #272c30;
+  
+  /* Text Colors */
+  --hybridmag-color-text-main: #404040;
+  --hybridmag-color-text-light: #7D7D7D;
+  --hybridmag-color-text-headings: #222222;
+  --hybridmag-color-link: #0a0808;
+  --hybridmag-color-link-hover: var(--hybridmag-color-primary);
+  --hybridmag-color-link-visited: #5d7ddb;
+  
+  /* UI Colors */
+  --hybridmag-color-border: #E0E0E0;
+  --hybridmag-color-input-border: #ccc;
+  --hybridmag-color-text-input-focus: var(--hybridmag-color-text-main);
+  --hybridmag-color-input: var(--hybridmag-color-text-main);
+  --hybridmag-color-input-background: inherit;
+  --hybridmag-color-background-pre: #eeeeee;
+  --hybridmag-color-bg-cl-sep-content: #ffffff;
+  
+  /* Button Colors */
+  --hybridmag-color-button-background: var(--hybridmag-color-primary);
+  --hybridmag-color-button-text: #ffffff;
+  --hybridmag-color-button-hover-text: #ffffff;
+  --hybridmag-color-button-hover-background: #222222;
+  --hybridmag-color-button-focus-background: #111111;
+  
+  /* === Typography === */
+  
+  /* Font Sizes */
+  --hybridmag-font-size-base: 16px;
+  --hybridmag-font-size-xxxs: 0.75rem;   /* 12px */
+  --hybridmag-font-size-xxs: 0.813rem;   /* 13px */
+  --hybridmag-font-size-xs: 0.875rem;    /* 14px */
+  --hybridmag-font-size-sm: 0.938rem;    /* 15px */
+  --hybridmag-font-size-md: 1.063rem;    /* 17px */
+  --hybridmag-font-size-amd: 1.125rem;   /* 18px */
+  --hybridmag-font-size-lg: 1.313rem;    /* 21px */
+  --hybridmag-font-size-xl: 1.5rem;      /* 24px */
+  --hybridmag-font-size-xxl: 1.625rem;   /* 26px */
+  --hybridmag-font-size-xxxl: 2rem;      /* 32px */
+  --hybridmag-font-size-xxxxl: 2.25rem;  /* 36px */
+  
+  /* Line Heights */
+  --hybridmag-line-height-body: 1.5;
+  --hybridmag-line-height-article: 1.7;
+  --hybridmag-line-height-headings: 1.3;
+  --hybridmag-line-height-pre: 1.6;
+  
+  /* Font Weight */
+  --hybridmag-font-weight-headings: 600;
+  
+  /* === Spacing === */
+  
+  --hybridmag-global-spacing: 35px;
+  --hybridmag-sidebar-spacing: 35px;
+  --hybridmag-post-cols-gap: 35px;
+  --hybridmag-post-row-gap: 35px;
+  --hybridmag-global-inner-spacing: 20px;
+  --hybridmag-footer-cols-gap: 40px;
+  
+  /* === UI Elements === */
+  
+  --hybridmag-global-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.06);
+  --hybridmag-global-border-radius: 6px;
+  --hybridmag-sticky-element-height: 80px;
+}
+
+/* Mobile adjustment for inner spacing */
+@media (min-width: 480px) {
+  :root {
+    --hybridmag-global-inner-spacing: 30px;
+  }
+}
+
+/* Dark Mode Color Overrides */
+html.hm-dark {
+  /* Text Colors */
+  --hybridmag-color-text-headings: #ffffff;
+  --hybridmag-color-link: #eeeeee;
+  --hybridmag-color-link-hover: var(--hybridmag-color-primary);
+  --hybridmag-color-text-main: #cccccc;
+  --hybridmag-color-text-light: #999999;
+  
+  /* Background Colors */
+  --hybridmag-color-bg-cl-sep-content: #1a1a1a;
+  
+  /* UI Colors */
+  --hybridmag-color-border: #333333;
+  --hybridmag-color-input-border: #444444;
+  --hybridmag-color-background-pre: #2a2a2a;
+}
+
+html.hm-dark body {
+  background-color: #0a0a0a;
+  color: var(--hybridmag-color-text-main);
+}
+
+html.hm-dark .site-header,
+html.hm-dark .hm-header-inner-wrapper {
+  background-color: #1a1a1a;
+  border-bottom: 1px solid var(--hybridmag-color-border);
+}
+
+html.hm-dark .main-navigation a {
+  color: #ffffff;
+}
+
+html.hm-dark .main-navigation a:hover {
+  color: var(--hybridmag-color-primary);
+}
+
+html.hm-dark .site-title a {
+  color: var(--hybridmag-color-text-headings);
+}
+
+html.hm-dark .hm-search-toggle,
+html.hm-dark .hm-light-dark-toggle {
+  color: #ffffff;
+  background: transparent;
+}
+
+html.hm-dark .hm-search-toggle:hover,
+html.hm-dark .hm-light-dark-toggle:hover {
+  color: var(--hybridmag-color-primary);
+}
+
+html.hm-dark .hm-social-menu a {
+  color: #ffffff;
+}
+
+html.hm-dark .hm-social-menu a:hover {
+  color: var(--hybridmag-color-primary);
+}
+
+html.hm-dark .site-footer {
+  background-color: #1a1a1a;
+  border-top: 1px solid var(--hybridmag-color-border);
+}
+
+html.hm-dark .hm-article-card,
+html.hm-dark .hm-tab-post-card {
+  background: var(--hybridmag-color-bg-cl-sep-content);
+}
+
+html.hm-dark .hm-article-card-title a,
+html.hm-dark .hm-tab-post-title a,
+html.hm-dark .site-title a {
+  color: var(--hybridmag-color-text-headings);
+}
+
+html.hm-dark .hm-article-card-excerpt,
+html.hm-dark .entry-meta,
+html.hm-dark .entry-meta a {
+  color: var(--hybridmag-color-text-light);
+}
+
