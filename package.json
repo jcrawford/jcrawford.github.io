@@ -19,12 +19,15 @@
     "gatsby-plugin-image": "^3.13.0",
     "gatsby-plugin-sharp": "^5.13.0",
     "gatsby-remark-images": "^7.15.0",
+    "gatsby-remark-shiki-twoslash": "^3.0.38",
     "gatsby-source-filesystem": "^5.13.0",
     "gatsby-transformer-json": "^5.13.0",
     "gatsby-transformer-remark": "^6.15.0",
     "gatsby-transformer-sharp": "^5.13.0",
     "react": "^18.3.0",
-    "react-dom": "^18.3.0"
+    "react-dom": "^18.3.0",
+    "shiki": "^3.15.0",
+    "twoslash": "^0.3.4"
   },
   "devDependencies": {
     "@types/node": "^20.11.0",

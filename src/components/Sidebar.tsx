@@ -2,6 +2,8 @@ import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import OptimizedImage from './OptimizedImage';
 import { formatDate } from '../utils/dateUtils';
+import SeriesWidget from './SeriesWidget';
+import type { SeriesMetadata, SeriesArticle } from '../types';
 
 interface SidebarArticle {
   id: string;
@@ -23,7 +25,22 @@ interface SidebarData {
   };
 }
 
-const Sidebar: React.FC = () => {
+interface SidebarProps {
+  /** Current article slug (for series widget) */
+  currentSlug?: string;
+  
+  /** Series metadata (if article is part of a series) */
+  series?: SeriesMetadata;
+  
+  /** All articles in the series (for table of contents) */
+  seriesArticles?: SeriesArticle[];
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ 
+  currentSlug,
+  series, 
+  seriesArticles = [] 
+}) => {
   const data = useStaticQuery<SidebarData>(graphql`
     query SidebarQuery {
       recentArticles: allArticlesJson(
@@ -50,6 +67,20 @@ const Sidebar: React.FC = () => {
   const recentArticles = data.recentArticles.nodes;
   const categories = data.allCategoriesJson.nodes;
 
+  // If this is a series article, ONLY show the series widget
+  if (series && currentSlug) {
+    return (
+      <aside id="secondary" className="hm-sidebar">
+        <SeriesWidget 
+          series={series}
+          currentSlug={currentSlug}
+          seriesArticles={seriesArticles}
+        />
+      </aside>
+    );
+  }
+
+  // Otherwise, show regular sidebar widgets
   return (
     <aside id="secondary" className="hm-sidebar">
       {/* Popular Posts Widget */}

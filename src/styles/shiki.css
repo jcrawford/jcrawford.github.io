@@ -1,0 +1,183 @@
+/**
+ * Shiki Twoslash Syntax Highlighting Styles
+ * Supports dual-theme (light/dark mode)
+ */
+
+/* Code block container */
+.shiki {
+  padding: 1.5rem;
+  border-radius: var(--hybridmag-global-border-radius);
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  box-shadow: var(--hybridmag-global-box-shadow);
+  font-size: 0.875rem;
+  line-height: 1.7;
+  font-family: 'Courier New', Courier, monospace;
+  background: #2d2d2d !important; /* Very dark gray background for code blocks */
+}
+
+/* Dark mode keeps its own background */
+html.hm-dark .shiki {
+  background: #1e1e1e !important;
+  filter: none;
+}
+
+/* Code block scrollbar styling */
+.shiki::-webkit-scrollbar {
+  height: 8px;
+}
+
+.shiki::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.shiki::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.shiki::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+html.hm-dark .shiki::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+html.hm-dark .shiki::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Inline code (not in code blocks) */
+:not(pre) > code {
+  background: var(--hybridmag-color-background-pre);
+  color: var(--hybridmag-color-text-main);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.875em;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Line highlighting */
+.shiki .highlight {
+  background-color: rgba(255, 255, 0, 0.1);
+  display: inline-block;
+  width: 100%;
+}
+
+/* Twoslash: Type info hover */
+.shiki .twoslash-hover {
+  border-bottom: 2px dotted var(--hybridmag-color-primary);
+  cursor: help;
+}
+
+/* Twoslash: Query results (type annotations) */
+.shiki .twoslash-query-presult {
+  display: block;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border-left: 3px solid var(--hybridmag-color-primary);
+  font-style: italic;
+  border-radius: 3px;
+}
+
+html.hm-dark .shiki .twoslash-query-presult {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Twoslash: Error messages */
+.shiki .twoslash-error {
+  background: rgba(255, 0, 0, 0.1);
+  border-left: 3px solid #ff0000;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 3px;
+}
+
+.shiki .twoslash-error-message {
+  color: #d32f2f;
+  font-weight: 600;
+}
+
+html.hm-dark .shiki .twoslash-error-message {
+  color: #ff6b6b;
+}
+
+/* Twoslash: Completions */
+.shiki .twoslash-completions {
+  display: inline-block;
+  background: var(--hybridmag-color-bg-cl-sep-content);
+  border: 1px solid var(--hybridmag-color-border);
+  border-radius: 4px;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  box-shadow: var(--hybridmag-global-box-shadow);
+}
+
+.shiki .twoslash-completions-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.shiki .twoslash-completions-list li {
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.shiki .twoslash-completions-list li:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+html.hm-dark .shiki .twoslash-completions-list li:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Twoslash: Cut lines indicator */
+.shiki .twoslash-cut {
+  opacity: 0.5;
+  font-style: italic;
+}
+
+/* File name annotation */
+.shiki .twoslash-meta {
+  color: var(--hybridmag-color-text-light);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+  display: block;
+  opacity: 0.8;
+}
+
+/* Code line numbers (if enabled) */
+.shiki .line-number {
+  display: inline-block;
+  width: 2rem;
+  text-align: right;
+  margin-right: 1rem;
+  color: var(--hybridmag-color-text-light);
+  opacity: 0.5;
+  user-select: none;
+}
+
+/* Mobile responsive */
+@media (max-width: 767px) {
+  .shiki {
+    padding: 1rem;
+    font-size: 0.8125rem;
+    margin: 1rem -1rem;
+    border-radius: 0;
+  }
+}
+
+/* Print styles */
+@media print {
+  .shiki {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+}
+

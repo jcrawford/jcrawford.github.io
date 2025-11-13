@@ -92,6 +92,15 @@ const config: GatsbyConfig = {
               linkImagesToOriginal: false,
             },
           },
+          {
+            resolve: 'gatsby-remark-shiki-twoslash',
+            options: {
+              theme: 'github-dark', // Dark theme with bright colors for dark background
+              defaultCompilerOptions: {
+                types: ['node'],
+              },
+            },
+          },
         ],
       },
     },
