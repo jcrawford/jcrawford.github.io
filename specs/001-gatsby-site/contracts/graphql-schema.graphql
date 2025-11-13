@@ -1,0 +1,148 @@
+# GraphQL Schema for Gatsby Magazine Website
+# This schema defines the data structure for articles, categories, authors, and site metadata
+# Used by Gatsby's GraphQL data layer
+
+"""
+Article represents a blog post with full content and metadata
+"""
+type ArticlesJson implements Node {
+  """Unique identifier"""
+  id: ID!
+  
+  """URL-friendly identifier"""
+  slug: String!
+  
+  """Article title"""
+  title: String!
+  
+  """Brief summary (100-300 characters)"""
+  excerpt: String!
+  
+  """Full article body content (HTML format)"""
+  content: String!
+  
+  """Path to featured image"""
+  featuredImage: String!
+  
+  """Category slug (fashion, lifestyle, food, travel, sports)"""
+  category: String!
+  
+  """Content tags (includes 'featured' for slider articles)"""
+  tags: [String!]!
+  
+  """Author slug"""
+  author: String!
+  
+  """Publication date (ISO 8601)"""
+  publishedAt: Date! @dateformat
+  
+  """Last update date (ISO 8601)"""
+  updatedAt: Date @dateformat
+}
+
+"""
+Category represents a content category for organizing articles
+"""
+type CategoriesJson implements Node {
+  """Unique identifier"""
+  id: ID!
+  
+  """URL-friendly identifier"""
+  slug: String!
+  
+  """Display name"""
+  name: String!
+  
+  """Category description"""
+  description: String!
+}
+
+"""
+Author represents a content author (single author for this site)
+"""
+type AuthorsJson implements Node {
+  """Unique identifier"""
+  id: ID!
+  
+  """URL-friendly identifier"""
+  slug: String!
+  
+  """Display name"""
+  name: String!
+  
+  """Author biography"""
+  bio: String!
+  
+  """Path to avatar image"""
+  avatar: String!
+  
+  """Social media links"""
+  socialLinks: AuthorSocialLinks
+}
+
+"""
+Social media links for author
+"""
+type AuthorSocialLinks {
+  """Facebook profile URL"""
+  facebook: String
+  
+  """Twitter profile URL"""
+  twitter: String
+  
+  """Instagram profile URL"""
+  instagram: String
+}
+
+"""
+Site metadata from gatsby-config.ts
+"""
+type Site {
+  siteMetadata: SiteMetadata!
+}
+
+"""
+Global site configuration
+"""
+type SiteMetadata {
+  """Site title"""
+  title: String!
+  
+  """Site description for SEO"""
+  description: String!
+  
+  """Base URL"""
+  siteUrl: String!
+  
+  """Social media links"""
+  socialLinks: SiteSocialLinks!
+  
+  """Main navigation menu items"""
+  navigation: [NavigationItem!]!
+}
+
+"""
+Social media links for site
+"""
+type SiteSocialLinks {
+  """Facebook page URL"""
+  facebook: String!
+  
+  """Twitter profile URL"""
+  twitter: String!
+  
+  """Instagram profile URL"""
+  instagram: String!
+}
+
+"""
+Navigation menu item
+"""
+type NavigationItem {
+  """Menu item display name"""
+  name: String!
+  
+  """Menu item path"""
+  path: String!
+}
+

@@ -1,0 +1,404 @@
+/**
+ * Swiper 11.1.4
+ * Most modern mobile touch slider and framework with hardware accelerated transitions
+ * https://swiperjs.com
+ *
+ * Copyright 2014-2024 Vladimir Kharlampidi
+ *
+ * Released under the MIT License
+ *
+ * Released on: May 30, 2024
+ */
+
+ .hm-swiper {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  /* Fix of Webkit flickering */
+  z-index: 1;
+}
+.hm-swiper-vertical > .hm-swiper-wrapper {
+  flex-direction: column;
+}
+.hm-swiper-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  transition-property: transform;
+  box-sizing: content-box;
+}
+.hm-swiper-android .hm-swiper-slide,
+.hm-swiper-wrapper {
+  transform: translate3d(0px, 0, 0);
+}
+.hm-swiper-pointer-events {
+  touch-action: pan-y;
+}
+.hm-swiper-pointer-events.hm-swiper-vertical {
+  touch-action: pan-x;
+}
+.hm-swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
+}
+.hm-swiper-slide-invisible-blank {
+  visibility: hidden;
+}
+/* Auto Height */
+.hm-swiper-autoheight,
+.hm-swiper-autoheight .hm-swiper-slide {
+  height: auto;
+}
+.hm-swiper-autoheight .hm-swiper-wrapper {
+  align-items: flex-start;
+  transition-property: transform, height;
+}
+.hm-swiper-backface-hidden .hm-swiper-slide {
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+/* 3D Effects */
+.hm-swiper-3d,
+.hm-swiper-3d.hm-swiper-css-mode .hm-swiper-wrapper {
+  perspective: 1200px;
+}
+.hm-swiper-3d .hm-swiper-wrapper,
+.hm-swiper-3d .hm-swiper-slide,
+.hm-swiper-3d .hm-swiper-slide-shadow,
+.hm-swiper-3d .hm-swiper-slide-shadow-left,
+.hm-swiper-3d .hm-swiper-slide-shadow-right,
+.hm-swiper-3d .hm-swiper-slide-shadow-top,
+.hm-swiper-3d .hm-swiper-slide-shadow-bottom,
+.hm-swiper-3d .hm-swiper-cube-shadow {
+  transform-style: preserve-3d;
+}
+.hm-swiper-3d .hm-swiper-slide-shadow,
+.hm-swiper-3d .hm-swiper-slide-shadow-left,
+.hm-swiper-3d .hm-swiper-slide-shadow-right,
+.hm-swiper-3d .hm-swiper-slide-shadow-top,
+.hm-swiper-3d .hm-swiper-slide-shadow-bottom {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+.hm-swiper-3d .hm-swiper-slide-shadow {
+  background: rgba(0, 0, 0, 0.15);
+}
+.hm-swiper-3d .hm-swiper-slide-shadow-left {
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+.hm-swiper-3d .hm-swiper-slide-shadow-right {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+.hm-swiper-3d .hm-swiper-slide-shadow-top {
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+.hm-swiper-3d .hm-swiper-slide-shadow-bottom {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+/* CSS Mode */
+.hm-swiper-css-mode > .hm-swiper-wrapper {
+  overflow: auto;
+  scrollbar-width: none;
+  /* For Firefox */
+  -ms-overflow-style: none;
+  /* For Internet Explorer and Edge */
+}
+.hm-swiper-css-mode > .hm-swiper-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.hm-swiper-css-mode > .hm-swiper-wrapper > .hm-swiper-slide {
+  scroll-snap-align: start start;
+}
+.hm-swiper-horizontal.hm-swiper-css-mode > .hm-swiper-wrapper {
+  scroll-snap-type: x mandatory;
+}
+.hm-swiper-vertical.hm-swiper-css-mode > .hm-swiper-wrapper {
+  scroll-snap-type: y mandatory;
+}
+.hm-swiper-centered > .hm-swiper-wrapper::before {
+  content: '';
+  flex-shrink: 0;
+  order: 9999;
+}
+.hm-swiper-centered.hm-swiper-horizontal > .hm-swiper-wrapper > .hm-swiper-slide:first-child {
+  margin-inline-start: var(--swiper-centered-offset-before);
+}
+.hm-swiper-centered.hm-swiper-horizontal > .hm-swiper-wrapper::before {
+  height: 100%;
+  min-height: 1px;
+  width: var(--swiper-centered-offset-after);
+}
+.hm-swiper-centered.hm-swiper-vertical > .hm-swiper-wrapper > .hm-swiper-slide:first-child {
+  margin-block-start: var(--swiper-centered-offset-before);
+}
+.hm-swiper-centered.hm-swiper-vertical > .hm-swiper-wrapper::before {
+  width: 100%;
+  min-width: 1px;
+  height: var(--swiper-centered-offset-after);
+}
+.hm-swiper-centered > .hm-swiper-wrapper > .hm-swiper-slide {
+  scroll-snap-align: center center;
+}
+:root {
+  --swiper-navigation-size: 44px;
+}
+.hm-swiper-button-prev,
+.hm-swiper-button-next {
+  position: absolute;
+  top: 50%;
+  width: calc(var(--swiper-navigation-size) / 44 * 27);
+  height: var(--swiper-navigation-size);
+  margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--swiper-navigation-color, var(--swiper-theme-color));
+}
+.hm-swiper-button-prev.hm-swiper-button-disabled,
+.hm-swiper-button-next.hm-swiper-button-disabled {
+  opacity: 0.35;
+  cursor: auto;
+  pointer-events: none;
+}
+.hm-swiper-button-prev
+.hm-swiper-rtl .hm-swiper-button-next {
+  left: 10px;
+  right: auto;
+}
+
+.hm-swiper-rtl .hm-swiper-button-next svg {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.hm-swiper-button-next
+.hm-swiper-rtl .hm-swiper-button-prev {
+  right: 10px;
+  left: auto;
+}
+
+.hm-swiper-rtl .hm-swiper-button-prev {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.hm-swiper-button-lock {
+  display: none;
+}
+
+.hm-swiper-lazy-preloader {
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -21px;
+  margin-top: -21px;
+  z-index: 10;
+  transform-origin: 50%;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border-top-color: transparent;
+}
+.hm-swiper-slide-visible .hm-swiper-lazy-preloader {
+  animation: swiper-preloader-spin 1s infinite linear;
+}
+.hm-swiper-lazy-preloader-white {
+  --swiper-preloader-color: #fff;
+}
+.hm-swiper-lazy-preloader-black {
+  --swiper-preloader-color: #000;
+}
+@keyframes swiper-preloader-spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* a11y */
+.hm-swiper .hm-swiper-notification {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  opacity: 0;
+  z-index: -1000;
+}
+
+.hm-swiper-pagination {
+  position: absolute;
+  text-align: center;
+  transition: 0.3s opacity;
+  transform: translate3d(0, 0, 0);
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+}
+.hm-swiper-pagination.hm-swiper-pagination-hidden {
+  opacity: 0;
+}
+.hm-swiper-pagination-disabled > .hm-swiper-pagination,
+.hm-swiper-pagination.hm-swiper-pagination-disabled {
+  display: none !important;
+}
+.swiper-horizontal > .hm-swiper-pagination-bullets,
+.hm-swiper-pagination-bullets.hm-swiper-pagination-horizontal,
+.hm-swiper-pagination-custom,
+.hm-swiper-pagination-fraction {
+  top: 20px;
+  right: 20px;
+}
+.hm-swiper-pagination-bullets-dynamic {
+  overflow: hidden;
+  font-size: 0;
+}
+.hm-swiper-pagination-bullets-dynamic .hm-swiper-pagination-bullet {
+  transform: scale(0.33);
+  position: relative;
+}
+.hm-swiper-pagination-bullets-dynamic .hm-swiper-pagination-bullet-active {
+  transform: scale(1);
+}
+.hm-swiper-pagination-bullets-dynamic .hm-swiper-pagination-bullet-active-main {
+  transform: scale(1);
+}
+.hm-swiper-pagination-bullets-dynamic .hm-swiper-pagination-bullet-active-prev {
+  transform: scale(0.66);
+}
+.hm-swiper-pagination-bullets-dynamic .hm-swiper-pagination-bullet-active-prev-prev {
+  transform: scale(0.33);
+}
+.hm-swiper-pagination-bullets-dynamic .hm-swiper-pagination-bullet-active-next {
+  transform: scale(0.66);
+}
+.hm-swiper-pagination-bullets-dynamic .hm-swiper-pagination-bullet-active-next-next {
+  transform: scale(0.33);
+}
+.hm-swiper-pagination-bullet {
+  width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 8px));
+  height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 8px));
+  border-radius: 50%;
+  background: var(--swiper-pagination-bullet-inactive-color, #ffffff);
+  opacity: var(--swiper-pagination-bullet-inactive-opacity, 0.6);
+  position: relative;
+  z-index: 99999;
+  cursor: pointer;
+}
+.hm-swiper-pagination-bullet:hover {
+  width: 10px;
+  height: 10px;
+}
+button.hm-swiper-pagination-bullet {
+  border: none;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.hm-swiper-pagination-clickable .hm-swiper-pagination-bullet {
+  cursor: pointer;
+}
+.hm-swiper-pagination-bullet:only-child {
+  display: none !important;
+}
+.hm-swiper-pagination-bullet-active {
+  opacity: var(--swiper-pagination-bullet-opacity, 1);
+  background: #ffffff;
+  width: 10px;
+  height: 10px;
+}
+.hm-swiper-pagination-vertical.hm-swiper-pagination-bullets,
+.swiper-vertical > .hm-swiper-pagination-bullets {
+  right: 10px;
+  top: 50%;
+  transform: translate3d(0px, -50%, 0);
+}
+.hm-swiper-pagination-vertical.hm-swiper-pagination-bullets .hm-swiper-pagination-bullet,
+.swiper-vertical > .hm-swiper-pagination-bullets .hm-swiper-pagination-bullet {
+  margin: var(--swiper-pagination-bullet-vertical-gap, 6px) 0;
+  display: block;
+}
+.hm-swiper-pagination-vertical.hm-swiper-pagination-bullets.hm-swiper-pagination-bullets-dynamic,
+.swiper-vertical > .hm-swiper-pagination-bullets.hm-swiper-pagination-bullets-dynamic {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+}
+.hm-swiper-pagination-vertical.hm-swiper-pagination-bullets.hm-swiper-pagination-bullets-dynamic .hm-swiper-pagination-bullet,
+.swiper-vertical > .hm-swiper-pagination-bullets.hm-swiper-pagination-bullets-dynamic .hm-swiper-pagination-bullet {
+  display: inline-block;
+  transition: 0.2s transform, 0.2s top;
+}
+.swiper-horizontal > .hm-swiper-pagination-bullets .hm-swiper-pagination-bullet,
+.hm-swiper-pagination-horizontal.hm-swiper-pagination-bullets .hm-swiper-pagination-bullet {
+  margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 4px);
+}
+.swiper-horizontal > .hm-swiper-pagination-bullets.hm-swiper-pagination-bullets-dynamic,
+.hm-swiper-pagination-horizontal.hm-swiper-pagination-bullets.hm-swiper-pagination-bullets-dynamic {
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+.swiper-horizontal > .hm-swiper-pagination-bullets.hm-swiper-pagination-bullets-dynamic .hm-swiper-pagination-bullet,
+.hm-swiper-pagination-horizontal.hm-swiper-pagination-bullets.hm-swiper-pagination-bullets-dynamic .hm-swiper-pagination-bullet {
+  transition: 0.2s transform, 0.2s left;
+}
+.swiper-horizontal.swiper-rtl > .hm-swiper-pagination-bullets-dynamic .hm-swiper-pagination-bullet {
+  transition: 0.2s transform, 0.2s right;
+}
+.hm-swiper-pagination-progressbar {
+  background: rgba(0, 0, 0, 0.25);
+  position: absolute;
+}
+.hm-swiper-pagination-progressbar .hm-swiper-pagination-progressbar-fill {
+  background: var(--swiper-pagination-color, var(--swiper-theme-color));
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(0);
+  transform-origin: left top;
+}
+.swiper-rtl .hm-swiper-pagination-progressbar .hm-swiper-pagination-progressbar-fill {
+  transform-origin: right top;
+}
+.swiper-horizontal > .hm-swiper-pagination-progressbar,
+.hm-swiper-pagination-progressbar.hm-swiper-pagination-horizontal,
+.hm-swiper-pagination-progressbar.hm-swiper-pagination-vertical.hm-swiper-pagination-progressbar-opposite,
+.swiper-vertical > .hm-swiper-pagination-progressbar.hm-swiper-pagination-progressbar-opposite {
+  width: 100%;
+  height: 4px;
+  left: 0;
+  top: 0;
+}
+.swiper-horizontal > .hm-swiper-pagination-progressbar.hm-swiper-pagination-progressbar-opposite,
+.hm-swiper-pagination-progressbar.hm-swiper-pagination-horizontal.hm-swiper-pagination-progressbar-opposite,
+.hm-swiper-pagination-progressbar.hm-swiper-pagination-vertical,
+.swiper-vertical > .hm-swiper-pagination-progressbar {
+  width: 4px;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.hm-swiper-pagination-lock {
+  display: none;
+}
