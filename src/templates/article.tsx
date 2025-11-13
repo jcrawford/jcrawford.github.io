@@ -148,7 +148,12 @@ const ArticleTemplate: React.FC<PageProps<ArticleData>> = ({ data }) => {
 };
 
 export const query = graphql`
-  query ArticleQuery($slug: String!, $category: String!, $author: String!, $publishedAt: Date!) {
+  query ArticleQuery(
+    $slug: String!
+    $category: String!
+    $author: String!
+    $publishedAt: Date!
+  ) {
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       id
       html

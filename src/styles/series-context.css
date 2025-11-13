@@ -1,0 +1,53 @@
+/**
+ * Series Context Styles
+ * Displays "This is part X of Y" message at the start of a series article
+ * Uses site CSS variables to match theme styling
+ */
+
+.series-context {
+  font-style: italic;
+  color: var(--hybridmag-color-primary);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--hybridmag-color-primary);
+  background-color: #efefef; /* Darker for emphasis */
+  border-radius: var(--hybridmag-global-border-radius);
+  font-size: var(--hybridmag-font-size-sm);
+  line-height: 1.6;
+  box-shadow: var(--hybridmag-global-box-shadow);
+}
+
+html.hm-dark .series-context {
+  background-color: var(--hybridmag-color-bg-cl-sep-content);
+}
+
+/* Add subtle opacity for better visual hierarchy */
+.series-context {
+  opacity: 0.9;
+}
+
+/* Mobile responsive */
+@media (max-width: 767px) {
+  .series-context {
+    padding: 0.875rem 1rem;
+    font-size: var(--hybridmag-font-size-xs);
+  }
+}
+
+/* Print styles */
+@media print {
+  .series-context {
+    border-left-color: #000;
+    background-color: transparent;
+    box-shadow: none;
+    color: #000;
+  }
+}
+
+/* Accessibility: High contrast mode */
+@media (prefers-contrast: high) {
+  .series-context {
+    border-left-width: 6px;
+    opacity: 1;
+  }
+}

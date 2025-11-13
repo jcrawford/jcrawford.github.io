@@ -39,6 +39,9 @@ export interface Article {
   
   /** Last update date (ISO 8601 format: YYYY-MM-DD) */
   updatedAt?: string
+  
+  /** Series metadata (if article is part of a series) */
+  series?: SeriesMetadata
 }
 
 /**
@@ -267,4 +270,66 @@ export interface SearchIndexEntry {
  * Theme preference for dark/light mode
  */
 export type ThemePreference = 'light' | 'dark'
+
+/**
+ * Article Series - Reference to external resource
+ */
+export interface SeriesReference {
+  /** External URL */
+  url: string
+  
+  /** Optional display title (defaults to URL if not provided) */
+  title?: string
+}
+
+/**
+ * Article Series - Downloadable attachment
+ */
+export interface SeriesAttachment {
+  /** Path to file (relative to /static/ or absolute URL) */
+  filename: string
+  
+  /** Optional display title (defaults to filename if not provided) */
+  title?: string
+}
+
+/**
+ * Article Series - Metadata for articles that are part of a series
+ */
+export interface SeriesMetadata {
+  /** Series name/title (required if series exists) */
+  name: string
+  
+  /** Optional explicit ordering number */
+  order?: number
+  
+  /** Slug of previous article in series */
+  prev?: string
+  
+  /** Slug of next article in series */
+  next?: string
+  
+  /** Optional array of external reference links */
+  references?: SeriesReference[]
+  
+  /** Optional array of downloadable attachments */
+  attachments?: SeriesAttachment[]
+}
+
+/**
+ * Article in a series (for Table of Contents display)
+ */
+export interface SeriesArticle {
+  /** Article slug */
+  slug: string
+  
+  /** Article title */
+  title: string
+  
+  /** Article order in series (if specified) */
+  order?: number
+  
+  /** Publication date (fallback for ordering) */
+  publishedAt: string
+}
 
