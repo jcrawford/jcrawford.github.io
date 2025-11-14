@@ -1,0 +1,40 @@
+# Image Placeholders
+
+The following images are referenced in mock articles but need to be sourced:
+
+## Article Featured Images (20 total)
+- travel-journey-beach.jpg
+- fashion-elegance.jpg
+- fashion-style.jpg
+- fashion-beauty.jpg
+- fashion-accessories.jpg
+- lifestyle-unexpected.jpg
+- lifestyle-coffee.jpg
+- lifestyle-health.jpg
+- lifestyle-home.jpg
+- food-love-language.jpg
+- food-enthusiasm.jpg
+- food-cooking.jpg
+- food-mood.jpg
+- travel-book.jpg
+- travel-richness.jpg
+- travel-adventure.jpg
+- sports-champions.jpg
+- sports-hardwork.jpg
+- sports-strength.jpg
+- sports-start.jpg
+
+## Author Avatar
+- avatar-admin.jpg
+
+## Recommended Image Sources
+- Unsplash (https://unsplash.com) - Free high-quality photos
+- Pexels (https://pexels.com) - Free stock photos
+- Pixabay (https://pixabay.com) - Free images
+
+## Image Specifications
+- Format: JPG/WebP
+- Minimum size: 1200px width
+- Aspect ratio: 16:9 or 4:3 preferred
+- File size: <200KB for featured images, <100KB for thumbnails
+- Quality: 80-85% for JPG
