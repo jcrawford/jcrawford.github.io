@@ -33,7 +33,7 @@ interface AuthorPageData {
     }>;
     totalCount: number;
   };
-  allCategoriesJson: {
+  allTagsJson: {
     nodes: Array<{
       slug: string;
       name: string;
@@ -45,11 +45,11 @@ const AuthorTemplate: React.FC<PageProps<AuthorPageData>> = ({ data }) => {
   const author = data.authorsJson;
   const articles = data.allMarkdownRemark.nodes;
   const totalCount = data.allMarkdownRemark.totalCount;
-  const categories = data.allCategoriesJson.nodes;
+  const tags = data.allTagsJson.nodes;
 
-  const getCategoryName = (slug: string) => {
-    const cat = categories.find((c) => c.slug === slug);
-    return cat?.name || slug;
+  const getTagName = (slug: string) => {
+    const tag = tags.find((t) => t.slug === slug);
+    return tag?.name || slug;
   };
 
   return (
@@ -107,7 +107,7 @@ const AuthorTemplate: React.FC<PageProps<AuthorPageData>> = ({ data }) => {
                 excerpt={article.frontmatter.excerpt}
                 featuredImage={article.frontmatter.featuredImage}
                 category={article.frontmatter.category}
-                categoryName={getCategoryName(article.frontmatter.category)}
+                categoryName={getTagName(article.frontmatter.category)}
                 publishedAt={article.frontmatter.publishedAt}
                 author={article.frontmatter.author}
                 authorName={author.name}
@@ -159,7 +159,7 @@ export const query = graphql`
       }
       totalCount
     }
-    allCategoriesJson {
+    allTagsJson {
       nodes {
         slug
         name

@@ -28,9 +28,10 @@ interface Article {
   };
 }
 
-interface Category {
+interface Tag {
   slug: string;
   name: string;
+  featured: boolean;
 }
 
 interface Author {
@@ -42,8 +43,8 @@ interface PagesQueryResult {
   allMarkdownRemark: {
     nodes: Article[];
   };
-  allCategoriesJson: {
-    nodes: Category[];
+  allTagsJson: {
+    nodes: Tag[];
   };
   allAuthorsJson: {
     nodes: Author[];
@@ -219,10 +220,11 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
           }
         }
       }
-      allCategoriesJson {
+      allTagsJson {
         nodes {
           slug
           name
+          featured
         }
       }
       allAuthorsJson {
@@ -240,7 +242,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
   }
 
   const articles = result.data?.allMarkdownRemark.nodes || [];
-  const categories = result.data?.allCategoriesJson.nodes || [];
+  const tags = result.data?.allTagsJson.nodes || [];
   const authors = result.data?.allAuthorsJson.nodes || [];
 
   if (articles.length === 0) {
@@ -277,25 +279,25 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
 
   reporter.info(`Created ${articles.length} article pages`);
 
-  // Create category pages with pagination
-  const categoryTemplate = path.resolve('./src/templates/category.tsx');
+  // Create tag pages with pagination
+  const tagTemplate = path.resolve('./src/templates/tag.tsx');
   const articlesPerPage = 15;
 
-  categories.forEach((category) => {
-    const categoryArticles = articles.filter((article) => article.frontmatter.category === category.slug);
-    const numPages = Math.ceil(categoryArticles.length / articlesPerPage);
+  tags.forEach((tag) => {
+    const tagArticles = articles.filter((article) => article.frontmatter.category === tag.slug);
+    const numPages = Math.ceil(tagArticles.length / articlesPerPage);
 
     Array.from({ length: numPages }).forEach((_, i) => {
       const currentPage = i + 1;
-      const path = currentPage === 1 
-        ? `/category/${category.slug}` 
-        : `/category/${category.slug}/${currentPage}`;
+      const pagePath = currentPage === 1 
+        ? `/tag/${tag.slug}` 
+        : `/tag/${tag.slug}/${currentPage}`;
 
       createPage({
-        path,
-        component: categoryTemplate,
+        path: pagePath,
+        component: tagTemplate,
         context: {
-          slug: category.slug,
+          slug: tag.slug,
           limit: articlesPerPage,
           skip: i * articlesPerPage,
           numPages,
@@ -304,7 +306,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
       });
     });
 
-    reporter.info(`Created ${numPages} page(s) for category: ${category.name}`);
+    reporter.info(`Created ${numPages} page(s) for tag: ${tag.name}`);
   });
 
   // Create author pages

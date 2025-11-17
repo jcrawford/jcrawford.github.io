@@ -39,7 +39,7 @@ interface SeriesArticleData {
       };
     };
   };
-  categoriesJson: {
+  tagsJson: {
     name: string;
     slug: string;
   };
@@ -66,7 +66,7 @@ interface SeriesArticleData {
 const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData>> = ({ data }) => {
   const article = data.markdownRemark.frontmatter;
   const articleHtml = data.markdownRemark.html;
-  const category = data.categoriesJson;
+  const category = data.tagsJson;
   const author = data.authorsJson;
 
   // Prepare series metadata
@@ -139,7 +139,7 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData>> = ({ data })
             <article className="hm-article">
               <header className="hm-article-header">
                 <Link 
-                  to={`/category/${category.slug}`}
+                  to={`/tag/${category.slug}`}
                   className="hm-article-category"
                 >
                   {category.name}
@@ -259,7 +259,7 @@ export const query = graphql`
         }
       }
     }
-    categoriesJson(slug: { eq: $category }) {
+    tagsJson(slug: { eq: $category }) {
       name
       slug
     }

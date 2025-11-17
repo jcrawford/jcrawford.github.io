@@ -1,0 +1,178 @@
+/* Word Cloud Widget Styles */
+
+.widget-tag-cloud {
+  margin-bottom: 30px;
+}
+
+.widget-tag-cloud .widget-title {
+  margin-bottom: 15px;
+}
+
+/* Container for word cloud */
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  align-items: baseline;
+  line-height: 1.4;
+  text-align: left;
+}
+
+/* Base tag styles - plain text, no backgrounds or borders */
+.tag-cloud-item {
+  display: inline;
+  text-decoration: none;
+  transition: opacity 0.25s ease, transform 0.2s ease;
+  font-family: inherit;
+}
+
+.tag-cloud-item:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+.tag-cloud-item:focus {
+  outline: 2px solid var(--hybridmag-color-primary);
+  outline-offset: 2px;
+  text-decoration: underline;
+}
+
+/* Size variations - much larger range */
+.tag-cloud-item.tag-xs {
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+
+.tag-cloud-item.tag-sm {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.tag-cloud-item.tag-md {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.tag-cloud-item.tag-lg {
+  font-size: 1.9rem;
+  font-weight: 600;
+}
+
+.tag-cloud-item.tag-xl {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+/* Color palette - inspired by traditional word clouds */
+.tag-cloud-item.tag-color-blue-1 {
+  color: #4A90E2;
+}
+
+.tag-cloud-item.tag-color-blue-2 {
+  color: #5B7FBF;
+}
+
+.tag-cloud-item.tag-color-green-1 {
+  color: #52B788;
+}
+
+.tag-cloud-item.tag-color-green-2 {
+  color: #6BBF59;
+}
+
+.tag-cloud-item.tag-color-purple-1 {
+  color: #8B5FBF;
+}
+
+.tag-cloud-item.tag-color-purple-2 {
+  color: #A855F7;
+}
+
+.tag-cloud-item.tag-color-brown-1 {
+  color: #8B4513;
+}
+
+.tag-cloud-item.tag-color-brown-2 {
+  color: #A0522D;
+}
+
+/* Dark theme adjustments - lighter/brighter colors */
+[data-theme="dark"] .tag-cloud-item.tag-color-blue-1 {
+  color: #6CB4FF;
+}
+
+[data-theme="dark"] .tag-cloud-item.tag-color-blue-2 {
+  color: #7B9FDF;
+}
+
+[data-theme="dark"] .tag-cloud-item.tag-color-green-1 {
+  color: #7FD8A8;
+}
+
+[data-theme="dark"] .tag-cloud-item.tag-color-green-2 {
+  color: #8BDF79;
+}
+
+[data-theme="dark"] .tag-cloud-item.tag-color-purple-1 {
+  color: #AB7FDF;
+}
+
+[data-theme="dark"] .tag-cloud-item.tag-color-purple-2 {
+  color: #C875FF;
+}
+
+[data-theme="dark"] .tag-cloud-item.tag-color-brown-1 {
+  color: #C97744;
+}
+
+[data-theme="dark"] .tag-cloud-item.tag-color-brown-2 {
+  color: #D4835A;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .tag-cloud {
+    gap: 3px 8px;
+  }
+
+  .tag-cloud-item.tag-xs {
+    font-size: 0.65rem;
+  }
+
+  .tag-cloud-item.tag-sm {
+    font-size: 0.9rem;
+  }
+
+  .tag-cloud-item.tag-md {
+    font-size: 1.2rem;
+  }
+
+  .tag-cloud-item.tag-lg {
+    font-size: 1.6rem;
+  }
+
+  .tag-cloud-item.tag-xl {
+    font-size: 2rem;
+  }
+}
+
+/* Ensure adequate touch targets on mobile */
+@media (max-width: 480px) {
+  .tag-cloud-item {
+    padding: 2px 4px;
+  }
+}
+
+/* Remove old animation - keep it simple for word cloud style */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.tag-cloud-item {
+  animation: fadeIn 0.4s ease-out;
+}

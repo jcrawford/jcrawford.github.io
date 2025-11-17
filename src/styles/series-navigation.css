@@ -62,31 +62,31 @@ html.hm-dark .series-navigation__button {
   justify-content: flex-end;
 }
 
-/* Arrow Icons */
+/* Arrow Icons - now inline with labels */
 .series-navigation__arrow {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: var(--hybridmag-color-primary);
   transition: transform 0.2s ease;
-  flex-shrink: 0;
+  display: inline-block;
+  font-weight: bold;
 }
 
-.series-navigation__button--prev .series-navigation__arrow {
-  margin-right: 1rem;
+/* Arrow spacing within label */
+.series-navigation__label .series-navigation__arrow {
+  margin-right: 0.5rem;
 }
 
-.series-navigation__button--next .series-navigation__arrow {
-  margin-left: 1rem;
+.series-navigation__next .series-navigation__label .series-navigation__arrow {
+  margin-right: 0;
+  margin-left: 0.5rem;
 }
 
-.series-navigation__button:hover .series-navigation__arrow {
-  transform: translateX(0);
-}
-
-.series-navigation__button--prev:hover .series-navigation__arrow {
+/* Hover animations */
+.series-navigation__prev:hover .series-navigation__arrow {
   transform: translateX(-4px);
 }
 
-.series-navigation__button--next:hover .series-navigation__arrow {
+.series-navigation__next:hover .series-navigation__arrow {
   transform: translateX(4px);
 }
 
@@ -135,11 +135,7 @@ html.hm-dark .series-navigation__button {
     justify-content: flex-start;
   }
 
-  .series-navigation__button--next .series-navigation__arrow {
-    order: -1;
-    margin-left: 0;
-    margin-right: 1rem;
-  }
+  /* Arrows stay inline with labels on mobile */
 }
 
 /* Accessibility: High contrast mode */

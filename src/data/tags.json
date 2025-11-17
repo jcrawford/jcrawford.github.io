@@ -1,0 +1,45 @@
+[
+  {
+    "id": "1",
+    "slug": "fashion",
+    "name": "Fashion",
+    "description": "Discover the latest fashion trends, style tips, and wardrobe essentials that define modern elegance.",
+    "featured": true
+  },
+  {
+    "id": "2",
+    "slug": "lifestyle",
+    "name": "Lifestyle",
+    "description": "Explore life's beautiful moments with insights on wellness, home, relationships, and personal growth.",
+    "featured": true
+  },
+  {
+    "id": "3",
+    "slug": "food",
+    "name": "Food",
+    "description": "Savor the world of culinary delights with recipes, restaurant reviews, and food culture stories.",
+    "featured": true
+  },
+  {
+    "id": "4",
+    "slug": "travel",
+    "name": "Travel",
+    "description": "Journey to extraordinary destinations with travel guides, tips, and inspiring stories from around the globe.",
+    "featured": true
+  },
+  {
+    "id": "5",
+    "slug": "sports",
+    "name": "Sports",
+    "description": "Stay updated with the latest in sports news, athlete profiles, and fitness inspiration.",
+    "featured": false
+  },
+  {
+    "id": "6",
+    "slug": "reviews",
+    "name": "Reviews",
+    "description": "In-depth reviews of products, software, and tools with ratings, pros/cons, and recommendations.",
+    "featured": true
+  }
+]
+

@@ -32,7 +32,7 @@ interface NotFoundPageData {
   allMarkdownRemark: {
     nodes: Article[];
   };
-  allCategoriesJson: {
+  allTagsJson: {
     nodes: Category[];
   };
   allAuthorsJson: {
@@ -42,12 +42,12 @@ interface NotFoundPageData {
 
 const NotFoundPage: React.FC<PageProps<NotFoundPageData>> = ({ data }) => {
   const articles = data.allMarkdownRemark.nodes;
-  const categories = data.allCategoriesJson.nodes;
+  const tags = data.allTagsJson.nodes;
   const authors = data.allAuthorsJson.nodes;
 
-  const getCategoryName = (slug: string) => {
-    const category = categories.find((cat) => cat.slug === slug);
-    return category?.name || slug;
+  const getTagName = (slug: string) => {
+    const tag = tags.find((t) => t.slug === slug);
+    return tag?.name || slug;
   };
 
   const getAuthorName = (slug: string) => {
@@ -111,7 +111,7 @@ const NotFoundPage: React.FC<PageProps<NotFoundPageData>> = ({ data }) => {
                     excerpt={article.frontmatter.excerpt}
                     featuredImage={article.frontmatter.featuredImage}
                     category={article.frontmatter.category}
-                    categoryName={getCategoryName(article.frontmatter.category)}
+                    categoryName={getTagName(article.frontmatter.category)}
                     publishedAt={article.frontmatter.publishedAt}
                     author={article.frontmatter.author}
                     authorName={getAuthorName(article.frontmatter.author)}
@@ -156,7 +156,7 @@ export const query = graphql`
         }
       }
     }
-    allCategoriesJson {
+    allTagsJson {
       nodes {
         slug
         name

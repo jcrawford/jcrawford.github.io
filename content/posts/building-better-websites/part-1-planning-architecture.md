@@ -65,6 +65,73 @@ function Header({ title, navigation }: HeaderProps) {
 
 Understanding how data flows through your application is crucial for maintaining clean architecture.
 
+### Type-Safe API Design
+
+TypeScript enables you to create strongly-typed APIs that catch errors at compile time:
+
+```ts twoslash
+// Define API response types
+interface ApiResponse<T> {
+  data: T;
+  status: number;
+  error?: string;
+}
+
+interface User {
+  id: string;
+  email: string;
+  name: string;
+  role: 'admin' | 'user' | 'guest';
+}
+
+// Type-safe API client
+class ApiClient {
+  private baseUrl: string;
+
+  constructor(baseUrl: string) {
+    this.baseUrl = baseUrl;
+  }
+
+  async get<T>(endpoint: string): Promise<ApiResponse<T>> {
+    const response = await fetch(`${this.baseUrl}${endpoint}`);
+    const data = await response.json();
+    
+    return {
+      data,
+      status: response.status,
+    };
+  }
+
+  async post<T, D>(endpoint: string, body: D): Promise<ApiResponse<T>> {
+    const response = await fetch(`${this.baseUrl}${endpoint}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+    
+    const data = await response.json();
+    return {
+      data,
+      status: response.status,
+    };
+  }
+}
+
+// Usage with full type safety
+async function fetchUser() {
+  const client = new ApiClient('https://api.example.com');
+  const userResponse = await client.get<User>('/user/123');
+
+  if (userResponse.data.role === 'admin') {
+    console.log('Admin user detected');
+  }
+  
+  return userResponse;
+}
+```
+
+This approach ensures type safety throughout your application and catches potential bugs during development.
+
 ## Next Steps
 
 In **Part 2**, we'll dive into the actual implementation and explore modern development workflows, build tools, and deployment strategies.

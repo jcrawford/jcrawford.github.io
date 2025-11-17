@@ -3,6 +3,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 import OptimizedImage from './OptimizedImage';
 import { formatDate } from '../utils/dateUtils';
 import SeriesWidget from './SeriesWidget';
+import TagCloud from './TagCloud';
 import type { SeriesMetadata, SeriesArticle } from '../types';
 
 interface SidebarArticle {
@@ -16,12 +17,6 @@ interface SidebarArticle {
 interface SidebarData {
   recentArticles: {
     nodes: SidebarArticle[];
-  };
-  allCategoriesJson: {
-    nodes: Array<{
-      slug: string;
-      name: string;
-    }>;
   };
 }
 
@@ -55,17 +50,10 @@ const Sidebar: React.FC<SidebarProps> = ({
           publishedAt
         }
       }
-      allCategoriesJson {
-        nodes {
-          slug
-          name
-        }
-      }
     }
   `);
 
   const recentArticles = data.recentArticles.nodes;
-  const categories = data.allCategoriesJson.nodes;
 
   // If this is a series article, ONLY show the series widget
   if (series && currentSlug) {
@@ -109,17 +97,8 @@ const Sidebar: React.FC<SidebarProps> = ({
         ))}
       </div>
 
-      {/* Categories Widget */}
-      <div className="widget widget_categories">
-        <h3 className="widget-title">Categories</h3>
-        <ul>
-          {categories.map((category) => (
-            <li key={category.slug} className="cat-item">
-              <Link to={`/category/${category.slug}`}>{category.name}</Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+      {/* Tag Cloud Widget */}
+      <TagCloud />
     </aside>
   );
 };

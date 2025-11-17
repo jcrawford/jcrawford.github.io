@@ -4,8 +4,8 @@ import Layout from '../components/Layout';
 import ArticleCard from '../components/ArticleCard';
 import SEO from '../components/SEO';
 
-interface CategoryPageData {
-  categoriesJson: {
+interface TagPageData {
+  tagsJson: {
     name: string;
     slug: string;
     description: string;
@@ -26,7 +26,7 @@ interface CategoryPageData {
     }>;
     totalCount: number;
   };
-  allCategoriesJson: {
+  allTagsJson: {
     nodes: Array<{
       slug: string;
       name: string;
@@ -40,7 +40,7 @@ interface CategoryPageData {
   };
 }
 
-interface CategoryPageContext {
+interface TagPageContext {
   slug: string;
   limit: number;
   skip: number;
@@ -48,20 +48,20 @@ interface CategoryPageContext {
   currentPage: number;
 }
 
-const CategoryTemplate: React.FC<PageProps<CategoryPageData, CategoryPageContext>> = ({ 
+const TagTemplate: React.FC<PageProps<TagPageData, TagPageContext>> = ({ 
   data, 
   pageContext 
 }) => {
-  const category = data.categoriesJson;
+  const tag = data.tagsJson;
   const articles = data.allMarkdownRemark.nodes;
   const totalCount = data.allMarkdownRemark.totalCount;
-  const categories = data.allCategoriesJson.nodes;
+  const tags = data.allTagsJson.nodes;
   const authors = data.allAuthorsJson.nodes;
   const { numPages, currentPage } = pageContext;
 
-  const getCategoryName = (slug: string) => {
-    const cat = categories.find((c) => c.slug === slug);
-    return cat?.name || slug;
+  const getTagName = (slug: string) => {
+    const t = tags.find((t) => t.slug === slug);
+    return t?.name || slug;
   };
 
   const getAuthorName = (slug: string) => {
@@ -73,8 +73,8 @@ const CategoryTemplate: React.FC<PageProps<CategoryPageData, CategoryPageContext
     <Layout>
       <div className="hm-container">
         <header className="hm-category-header">
-          <h1 className="hm-category-title">{category.name}</h1>
-          <p className="hm-category-description">{category.description}</p>
+          <h1 className="hm-category-title">{tag.name}</h1>
+          <p className="hm-category-description">{tag.description}</p>
           <p className="hm-category-count">
             {totalCount} {totalCount === 1 ? 'article' : 'articles'}
           </p>
@@ -91,7 +91,7 @@ const CategoryTemplate: React.FC<PageProps<CategoryPageData, CategoryPageContext
                   excerpt={article.frontmatter.excerpt}
                   featuredImage={article.frontmatter.featuredImage}
                   category={article.frontmatter.category}
-                  categoryName={getCategoryName(article.frontmatter.category)}
+                  categoryName={getTagName(article.frontmatter.category)}
                   publishedAt={article.frontmatter.publishedAt}
                   author={article.frontmatter.author}
                   authorName={getAuthorName(article.frontmatter.author)}
@@ -105,8 +105,8 @@ const CategoryTemplate: React.FC<PageProps<CategoryPageData, CategoryPageContext
                   {currentPage > 1 && (
                     <Link
                       to={currentPage === 2 
-                        ? `/category/${category.slug}` 
-                        : `/category/${category.slug}/${currentPage - 1}`
+                        ? `/tag/${tag.slug}` 
+                        : `/tag/${tag.slug}/${currentPage - 1}`
                       }
                       className="hm-pagination-prev"
                       rel="prev"
@@ -119,8 +119,8 @@ const CategoryTemplate: React.FC<PageProps<CategoryPageData, CategoryPageContext
                     {Array.from({ length: numPages }, (_, i) => i + 1).map((page) => {
                       const isCurrent = page === currentPage;
                       const path = page === 1 
-                        ? `/category/${category.slug}` 
-                        : `/category/${category.slug}/${page}`;
+                        ? `/tag/${tag.slug}` 
+                        : `/tag/${tag.slug}/${page}`;
                       
                       return isCurrent ? (
                         <span key={page} className="hm-pagination-number active" aria-current="page">
@@ -140,7 +140,7 @@ const CategoryTemplate: React.FC<PageProps<CategoryPageData, CategoryPageContext
 
                   {currentPage < numPages && (
                     <Link
-                      to={`/category/${category.slug}/${currentPage + 1}`}
+                      to={`/tag/${tag.slug}/${currentPage + 1}`}
                       className="hm-pagination-next"
                       rel="next"
                     >
@@ -153,7 +153,7 @@ const CategoryTemplate: React.FC<PageProps<CategoryPageData, CategoryPageContext
           </>
         ) : (
           <div className="hm-empty-state">
-            <p>No articles found in this category yet.</p>
+            <p>No articles found with this tag yet.</p>
             <Link to="/" className="hm-cta-btn">
               Browse All Articles
             </Link>
@@ -165,8 +165,8 @@ const CategoryTemplate: React.FC<PageProps<CategoryPageData, CategoryPageContext
 };
 
 export const query = graphql`
-  query CategoryQuery($slug: String!, $limit: Int!, $skip: Int!) {
-    categoriesJson(slug: { eq: $slug }) {
+  query TagQuery($slug: String!, $limit: Int!, $skip: Int!) {
+    tagsJson(slug: { eq: $slug }) {
       name
       slug
       description
@@ -192,7 +192,7 @@ export const query = graphql`
       }
       totalCount
     }
-    allCategoriesJson {
+    allTagsJson {
       nodes {
         slug
         name
@@ -207,13 +207,13 @@ export const query = graphql`
   }
 `;
 
-export const Head: HeadFC<CategoryPageData> = ({ data }) => (
+export const Head: HeadFC<TagPageData> = ({ data }) => (
   <SEO 
-    title={data.categoriesJson.name}
-    description={data.categoriesJson.description}
-    pathname={`/category/${data.categoriesJson.slug}`}
+    title={data.tagsJson.name}
+    description={data.tagsJson.description}
+    pathname={`/tag/${data.tagsJson.slug}`}
   />
 );
 
-export default CategoryTemplate;
+export default TagTemplate;
 

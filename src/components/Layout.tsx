@@ -8,6 +8,8 @@ import '../styles/sidebar.css';
 import '../styles/series-widget.css';
 import '../styles/series-navigation.css';
 import '../styles/shiki.css';
+import '../styles/review.css';
+import '../styles/tag-cloud.css';
 
 interface LayoutProps {
   children: React.ReactNode;

@@ -23,29 +23,29 @@ interface Article {
   };
 }
 
-interface Category {
+interface Tag {
   slug: string;
   name: string;
 }
 
-interface CategoryTabsProps {
-  categories: Category[];
+interface TagTabsProps {
+  tags: Tag[];
   articles: Article[];
 }
 
-const CategoryTabs: React.FC<CategoryTabsProps> = ({ categories, articles }) => {
-  const [activeTab, setActiveTab] = useState(categories[0]?.slug || '');
+const TagTabs: React.FC<TagTabsProps> = ({ tags, articles }) => {
+  const [activeTab, setActiveTab] = useState(tags[0]?.slug || '');
 
-  const getArticlesByCategory = (categorySlug: string) => {
-    const categoryArticles = articles.filter(
-      (article) => article.frontmatter.category === categorySlug
+  const getArticlesByTag = (tagSlug: string) => {
+    const tagArticles = articles.filter(
+      (article) => article.frontmatter.category === tagSlug
     );
 
     // Group series articles - show only the first article of each series
     const seriesMap = new Map<string, Article>();
     const standaloneArticles: Article[] = [];
 
-    categoryArticles.forEach((article) => {
+    tagArticles.forEach((article) => {
       if (article.frontmatter.series?.name) {
         const seriesName = article.frontmatter.series.name;
         const existing = seriesMap.get(seriesName);
@@ -99,35 +99,35 @@ const CategoryTabs: React.FC<CategoryTabsProps> = ({ categories, articles }) => 
     };
   };
 
-  const activeCategory = categories.find(cat => cat.slug === activeTab);
+  const activeTag = tags.find(tag => tag.slug === activeTab);
 
   return (
     <div className="hm-featured-tabs">
       <div className="hm-tab-header">
         <ul className="hm-tab-nav">
-          {categories.slice(0, 4).map((category) => (
-            <li key={category.slug} className="hm-tab">
+          {tags.slice(0, 4).map((tag) => (
+            <li key={tag.slug} className="hm-tab">
               <a
                 className="hm-tab-anchor"
-                aria-label={`tab-posts-${category.slug}`}
-                href={`#hm-tab-posts-${category.slug}`}
+                aria-label={`tab-posts-${tag.slug}`}
+                href={`#hm-tab-posts-${tag.slug}`}
                 onClick={(e) => {
                   e.preventDefault();
-                  setActiveTab(category.slug);
+                  setActiveTab(tag.slug);
                 }}
                 style={{
-                  borderBottom: activeTab === category.slug ? '3px solid var(--hybridmag-color-primary)' : '3px solid transparent',
-                  color: activeTab === category.slug ? 'var(--hybridmag-color-text-headings)' : 'var(--hybridmag-color-text-main)',
+                  borderBottom: activeTab === tag.slug ? '3px solid var(--hybridmag-color-primary)' : '3px solid transparent',
+                  color: activeTab === tag.slug ? 'var(--hybridmag-color-text-headings)' : 'var(--hybridmag-color-text-main)',
                 }}
               >
-                {category.name}
+                {tag.name}
               </a>
             </li>
           ))}
         </ul>
-        {activeCategory && (
+        {activeTag && (
           <Link 
-            to={`/category/${activeCategory.slug}`} 
+            to={`/tag/${activeTag.slug}`} 
             className="hm-view-more-link"
           >
             View More
@@ -136,14 +136,14 @@ const CategoryTabs: React.FC<CategoryTabsProps> = ({ categories, articles }) => 
       </div>
 
       <div className="tab-content clearfix">
-        {categories.slice(0, 4).map((category) => (
+        {tags.slice(0, 4).map((tag) => (
           <div
-            key={category.slug}
-            id={`hm-tab-posts-${category.slug}`}
-            style={{ display: activeTab === category.slug ? 'block' : 'none' }}
+            key={tag.slug}
+            id={`hm-tab-posts-${tag.slug}`}
+            style={{ display: activeTab === tag.slug ? 'block' : 'none' }}
           >
             <div className="hm-tab-posts-wrapper">
-              {getArticlesByCategory(category.slug).map((article) => {
+              {getArticlesByTag(tag.slug).map((article) => {
                 const displayData = mapArticleForDisplay(article);
                 return (
                   <div key={article.id} className="hm-tab-post-card">
@@ -181,5 +181,5 @@ const CategoryTabs: React.FC<CategoryTabsProps> = ({ categories, articles }) => 
   );
 };
 
-export default CategoryTabs;
+export default TagTabs;
 

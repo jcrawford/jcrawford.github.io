@@ -5,6 +5,7 @@ import Sidebar from '../components/Sidebar';
 import { formatDate } from '../utils/dateUtils';
 import OptimizedImage from '../components/OptimizedImage';
 import SEO from '../components/SEO';
+import ReviewBox from '../components/ReviewBox';
 
 interface ArticleData {
   markdownRemark: {
@@ -20,9 +21,18 @@ interface ArticleData {
       author: string;
       publishedAt: string;
       updatedAt: string;
+      review?: {
+        rating: number;
+        pros: string[];
+        cons: string[];
+        price?: string;
+        brand?: string;
+        productUrl?: string;
+        affiliateLink?: string;
+      };
     };
   };
-  categoriesJson: {
+  tagsJson: {
     name: string;
     slug: string;
   };
@@ -53,7 +63,7 @@ interface ArticleData {
 const ArticleTemplate: React.FC<PageProps<ArticleData>> = ({ data }) => {
   const article = data.markdownRemark.frontmatter;
   const articleHtml = data.markdownRemark.html;
-  const category = data.categoriesJson;
+  const category = data.tagsJson;
   const author = data.authorsJson;
   const previousArticle = data.previousArticle.nodes[0] || null;
   const nextArticle = data.nextArticle.nodes[0] || null;
@@ -66,7 +76,7 @@ const ArticleTemplate: React.FC<PageProps<ArticleData>> = ({ data }) => {
             <article className="hm-article">
           <header className="hm-article-header">
             <Link 
-              to={`/category/${category.slug}`}
+              to={`/tag/${category.slug}`}
               className="hm-article-category"
             >
               {category.name}
@@ -100,6 +110,18 @@ const ArticleTemplate: React.FC<PageProps<ArticleData>> = ({ data }) => {
               loading="eager"
             />
           </div>
+
+          {article.review && (
+            <ReviewBox
+              rating={article.review.rating}
+              pros={article.review.pros}
+              cons={article.review.cons}
+              price={article.review.price}
+              brand={article.review.brand}
+              productUrl={article.review.productUrl}
+              affiliateLink={article.review.affiliateLink}
+            />
+          )}
 
           <div 
             className="hm-article-content"
@@ -167,9 +189,18 @@ export const query = graphql`
         author
         publishedAt
         updatedAt
+        review {
+          rating
+          pros
+          cons
+          price
+          brand
+          productUrl
+          affiliateLink
+        }
       }
     }
-    categoriesJson(slug: { eq: $category }) {
+    tagsJson(slug: { eq: $category }) {
       name
       slug
     }

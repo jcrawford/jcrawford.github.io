@@ -62,7 +62,11 @@ const FeaturedSlider: React.FC<FeaturedSliderProps> = ({ articles }) => {
             </div>
             <div className="hm-slide-content">
               <div className="hm-slider-details-container hmfpwmeta">
-                <h3 className="hm-slider-title">{currentArticle.title}</h3>
+                <h3 className="hm-slider-title">
+                  <Link to={`/articles/${currentArticle.slug}`}>
+                    {currentArticle.title}
+                  </Link>
+                </h3>
               </div>
             </div>
           </div>

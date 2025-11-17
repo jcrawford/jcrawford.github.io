@@ -80,11 +80,11 @@ export const SeriesPrevNext: React.FC<SeriesPrevNextProps> = ({
           to={`/articles/${prevSlug}`}
           className="series-navigation__button series-navigation__prev"
         >
-          <span className="series-navigation__arrow" aria-hidden="true">
-            ←
-          </span>
           <span className="series-navigation__content">
-            <span className="series-navigation__label">Previous</span>
+            <span className="series-navigation__label">
+              <span className="series-navigation__arrow" aria-hidden="true">←</span>
+              Previous
+            </span>
             <span className="series-navigation__title">{displayPrevTitle}</span>
           </span>
         </Link>
@@ -99,11 +99,11 @@ export const SeriesPrevNext: React.FC<SeriesPrevNextProps> = ({
           className="series-navigation__button series-navigation__next"
         >
           <span className="series-navigation__content">
-            <span className="series-navigation__label">Next</span>
+            <span className="series-navigation__label">
+              Next
+              <span className="series-navigation__arrow" aria-hidden="true">→</span>
+            </span>
             <span className="series-navigation__title">{displayNextTitle}</span>
-          </span>
-          <span className="series-navigation__arrow" aria-hidden="true">
-            →
           </span>
         </Link>
       ) : (

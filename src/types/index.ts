@@ -25,8 +25,8 @@ export interface Article {
   /** Path to featured image (relative to /static/images/) */
   featuredImage: string
   
-  /** Category slug (fashion, lifestyle, food, travel, sports) */
-  category: CategorySlug
+  /** Primary tag slug (fashion, lifestyle, food, travel, sports, reviews) */
+  category: TagSlug
   
   /** Content tags (includes 'featured' for slider articles) */
   tags: string[]
@@ -42,29 +42,71 @@ export interface Article {
   
   /** Series metadata (if article is part of a series) */
   series?: SeriesMetadata
+  
+  /** Review metadata (if article is a review) */
+  review?: ReviewMetadata
 }
 
 /**
- * Category represents a content category for organizing articles
+ * Review metadata for product/software reviews
  */
-export interface Category {
+export interface ReviewMetadata {
+  /** Product rating (1-5 stars) */
+  rating: number
+  
+  /** List of positive aspects */
+  pros: string[]
+  
+  /** List of negative aspects */
+  cons: string[]
+  
+  /** Product price (e.g., "$99", "Free", "$4.99/month") */
+  price?: string
+  
+  /** Product brand/manufacturer */
+  brand?: string
+  
+  /** Official product URL */
+  productUrl?: string
+  
+  /** Affiliate purchase link */
+  affiliateLink?: string
+}
+
+/**
+ * Tag represents a content tag for organizing articles
+ */
+export interface Tag {
   /** Unique identifier */
   id: string
   
   /** URL-friendly identifier */
-  slug: CategorySlug
+  slug: TagSlug
   
   /** Display name (capitalized) */
   name: string
   
-  /** Category description (50-200 characters) */
+  /** Tag description (50-200 characters) */
   description: string
+  
+  /** Whether this tag appears in navigation */
+  featured: boolean
 }
 
 /**
- * Valid category slugs (fixed set of 5)
+ * Valid tag slugs (fixed set of 6)
  */
-export type CategorySlug = 'fashion' | 'lifestyle' | 'food' | 'travel' | 'sports'
+export type TagSlug = 'fashion' | 'lifestyle' | 'food' | 'travel' | 'sports' | 'reviews'
+
+/**
+ * @deprecated Use Tag instead
+ */
+export type Category = Tag
+
+/**
+ * @deprecated Use TagSlug instead
+ */
+export type CategorySlug = TagSlug
 
 /**
  * Author represents a content author
@@ -167,13 +209,18 @@ export interface FeaturedArticlesQuery {
 }
 
 /**
- * GraphQL query result for articles by category
+ * GraphQL query result for articles by tag
  */
-export interface ArticlesByCategoryQuery {
+export interface ArticlesByTagQuery {
   allArticlesJson: {
     nodes: Article[]
   }
 }
+
+/**
+ * @deprecated Use ArticlesByTagQuery instead
+ */
+export type ArticlesByCategoryQuery = ArticlesByTagQuery
 
 /**
  * GraphQL query result for single article
@@ -183,20 +230,30 @@ export interface ArticleQuery {
 }
 
 /**
- * GraphQL query result for all categories
+ * GraphQL query result for all tags
  */
-export interface AllCategoriesQuery {
-  allCategoriesJson: {
-    nodes: Category[]
+export interface AllTagsQuery {
+  allTagsJson: {
+    nodes: Tag[]
   }
 }
 
 /**
- * GraphQL query result for single category
+ * GraphQL query result for single tag
  */
-export interface CategoryQuery {
-  categoriesJson: Category | null
+export interface TagQuery {
+  tagsJson: Tag | null
 }
+
+/**
+ * @deprecated Use AllTagsQuery instead
+ */
+export type AllCategoriesQuery = AllTagsQuery
+
+/**
+ * @deprecated Use TagQuery instead
+ */
+export type CategoryQuery = TagQuery
 
 /**
  * GraphQL query result for author
@@ -222,15 +279,20 @@ export interface ArticlePageContext {
 }
 
 /**
- * Page context for category template
+ * Page context for tag template
  */
-export interface CategoryPageContext {
-  category: CategorySlug
+export interface TagPageContext {
+  tag: TagSlug
   limit: number
   skip: number
   numPages: number
   currentPage: number
 }
+
+/**
+ * @deprecated Use TagPageContext instead
+ */
+export type CategoryPageContext = TagPageContext
 
 /**
  * Page context for author template
@@ -259,8 +321,8 @@ export interface SearchIndexEntry {
   /** Searchable content (stripped of HTML) */
   content: string
   
-  /** Category slug */
-  category: CategorySlug
+  /** Primary tag slug */
+  category: TagSlug
   
   /** Tags */
   tags: string[]

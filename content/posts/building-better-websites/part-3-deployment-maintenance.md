@@ -83,6 +83,82 @@ Track your site's performance and user behavior:
 - **Sentry**: Error tracking and monitoring
 - **LogRocket**: Session replay and debugging
 
+Here's a TypeScript utility for tracking performance metrics:
+
+```ts twoslash
+interface PerformanceMetric {
+  name: string;
+  value: number;
+  timestamp: number;
+}
+
+class PerformanceMonitor {
+  private metrics: PerformanceMetric[] = [];
+  private apiEndpoint: string;
+
+  constructor(apiEndpoint: string) {
+    this.apiEndpoint = apiEndpoint;
+  }
+
+  // Track Core Web Vitals
+  trackWebVitals(): void {
+    // Largest Contentful Paint
+    new PerformanceObserver((list) => {
+      for (const entry of list.getEntries()) {
+        this.recordMetric('LCP', entry.startTime);
+      }
+    }).observe({ entryTypes: ['largest-contentful-paint'] });
+
+    // First Input Delay
+    new PerformanceObserver((list) => {
+      for (const entry of list.getEntries()) {
+        const fidEntry = entry as PerformanceEventTiming;
+        this.recordMetric('FID', fidEntry.processingStart - fidEntry.startTime);
+      }
+    }).observe({ entryTypes: ['first-input'] });
+
+    // Cumulative Layout Shift
+    let clsValue = 0;
+    new PerformanceObserver((list) => {
+      for (const entry of list.getEntries()) {
+        const layoutShift = entry as any;
+        if (!layoutShift.hadRecentInput) {
+          clsValue += layoutShift.value;
+        }
+      }
+      this.recordMetric('CLS', clsValue);
+    }).observe({ entryTypes: ['layout-shift'] });
+  }
+
+  private recordMetric(name: string, value: number): void {
+    const metric: PerformanceMetric = {
+      name,
+      value,
+      timestamp: Date.now(),
+    };
+    
+    this.metrics.push(metric);
+    this.sendToAnalytics(metric);
+  }
+
+  private async sendToAnalytics(metric: PerformanceMetric): Promise<void> {
+    try {
+      await fetch(this.apiEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(metric),
+      });
+    } catch (error) {
+      console.error('Failed to send metric:', error);
+    }
+  }
+}
+
+// Initialize monitoring
+const monitor = new PerformanceMonitor('/api/metrics');
+monitor.trackWebVitals();
+```
+
 ### Analytics Tools
 
 - Google Analytics 4

@@ -4,7 +4,7 @@ const config: GatsbyConfig = {
   siteMetadata: {
     title: 'Joseph Crawford',
     description: 'A blog relating to technical topics such as programming, web development, and software engineering.',
-    siteUrl: 'https://josephcraw.github.io/site',
+    siteUrl: 'https://josephcrawford.com',
     socialLinks: {
       facebook: 'https://www.facebook.com/wordpress',
       twitter: 'https://twitter.com/wordpress',
@@ -12,11 +12,11 @@ const config: GatsbyConfig = {
     },
     navigation: [
       { name: 'Home', path: '/' },
-      { name: 'Fashion', path: '/category/fashion' },
-      { name: 'Lifestyle', path: '/category/lifestyle' },
-      { name: 'Food', path: '/category/food' },
-      { name: 'Travel', path: '/category/travel' },
-      { name: 'Sports', path: '/category/sports' },
+      { name: 'Fashion', path: '/tag/fashion' },
+      { name: 'Lifestyle', path: '/tag/lifestyle' },
+      { name: 'Food', path: '/tag/food' },
+      { name: 'Travel', path: '/tag/travel' },
+      { name: 'Reviews', path: '/tag/reviews' },
     ],
     footerWidgets: [
       {
@@ -48,7 +48,6 @@ const config: GatsbyConfig = {
       },
     ],
   },
-  pathPrefix: '/site',
   plugins: [
     {
       resolve: 'gatsby-source-filesystem',
@@ -76,6 +75,13 @@ const config: GatsbyConfig = {
       options: {
         name: 'posts',
         path: `${__dirname}/content/posts`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'reviews',
+        path: `${__dirname}/content/reviews`,
       },
     },
     'gatsby-transformer-json',
@@ -107,6 +113,35 @@ const config: GatsbyConfig = {
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-plugin-gatsby-cloud',
+      options: {
+        headers: {},
+        allPageHeaders: [],
+        mergeSecurityHeaders: true,
+        mergeLinkHeaders: true,
+        mergeCachingHeaders: true,
+        transformHeaders: (headers: any) => headers,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-google-gtag',
+      options: {
+        trackingIds: [
+          'G-9LLY1071M3', // GA4 Measurement ID
+        ],
+        gtagConfig: {
+          anonymize_ip: true, // GDPR/privacy compliance
+          cookie_expires: 0,
+        },
+        pluginConfig: {
+          head: false, // Load via Partytown (not in head)
+          respectDNT: true, // Respect Do Not Track
+          exclude: ['/preview/**', '/do-not-track/me/too/'],
+          delayOnRouteUpdate: 0, // No delay for route changes
+        },
+      },
+    },
   ],
 };
 

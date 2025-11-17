@@ -39,7 +39,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
       
       <div className="hm-article-card-content">
         <Link 
-          to={`/category/${category}`}
+          to={`/tag/${category}`}
           className="hm-article-card-category"
         >
           {categoryName}
