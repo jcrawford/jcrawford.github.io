@@ -1,0 +1,45 @@
+[
+  {
+    "company": "Saferide Health",
+    "title": "Lead Full Stack Engineer",
+    "startDate": "2025-02",
+    "endDate": "Present",
+    "description": "Lead cross‑service delivery for patient transportation; driving RAA roadmap, RBF stability contributions, platform reliability, and developer velocity."
+  },
+  {
+    "company": "Saferide Health",
+    "title": "Senior Full Stack Engineer",
+    "startDate": "2024-02",
+    "endDate": "2025-02",
+    "description": "Build and scale NEMT booking across backend and web; key contributor to RBF 4.0 and owner of the push notifications service."
+  },
+  {
+    "company": "Saferide Health",
+    "title": "Full Stack Engineer",
+    "startDate": "2022-02",
+    "endDate": "2024-02",
+    "description": ""
+  },
+  {
+    "company": "Finix",
+    "title": "Senior Software Engineer",
+    "startDate": "2020-05",
+    "endDate": "2021-05",
+    "description": "This role involves developing a Jira Ticket Importer using the Jira REST API and TypeScript running on Node.js. A core responsibility is managing the release process utilizing tools like Jenkins, GitHub, Jira, and Docker. Further duties include contributing to code quality through code reviews and managing pull requests (PRs) in GitHub, as well as integrating SAML for authentication with the Identity Provider (IdP) and Active Directory. The position also focuses on improving code consistency by implementing the PSR-2 coding standard, setting up PHPCS and PHPCSFixer, and maintaining project clarity through writing Markdown documentation and adding inline documentation via docblocks. Finally, the role includes a significant refactoring effort to update the local development environment to support multi-site usage."
+  },
+  {
+    "company": "Alley",
+    "title": "Senior Software Developer",
+    "startDate": "2019-09",
+    "endDate": "2020-02",
+    "description": "This role focuses on front-end development and site maintenance, involving the creation of custom Gutenberg blocks for content management. Key responsibilities include diagnosing and debugging various site issues, specifically troubleshooting problems related to the weather.com integration. Furthermore, the position involved a technical integration of Amazon A9 into Anvato video players. The role required frequent client interaction for QA, clarifying ticket details, executing releases, and notifying the client once new features were deployed."
+  },
+  {
+    "company": "Recall Infolink",
+    "title": "Senior Software Developer",
+    "startDate": "2018-06",
+    "endDate": "2019-10",
+    "description": "This role involved comprehensive application maintenance and feature development across multiple technologies, including fixing bugs in applications written in PHP, Perl, and Python. A key quality assurance task was writing a Unit Test Suite to rigorously test the API layer. Feature work included developing the Rapid Recall Wizard to enable customers to quickly add recalls to the system. The position also required maintaining a Node.js application responsible for Twilio-based robo calls and SMS, and actively debugging issues with the primary recall platform. To improve development efficiency, a Composer-based library was created to minimize code duplication across projects. Finally, the role included modernizing the build process for Flash applications by using the ActionScript & MXML plugin for VSCode, replacing the deprecated FlashBuilder, and writing supporting documentation using Markdown."
+  }
+]
+

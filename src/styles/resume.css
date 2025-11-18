@@ -1,0 +1,1166 @@
+/**
+ * Resume Page Styles
+ * 
+ * Base styles for the /resume page with light/dark theme support
+ * Additional component-specific styles will be added in later phases
+ */
+
+/* ========================================
+   Resume Page Container
+   ======================================== */
+
+.resume-page {
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+.resume-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.resume-page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--text-color);
+}
+
+/* ========================================
+   Resume Sections
+   ======================================== */
+
+.resume-section {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: var(--card-background);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resume-section h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+/* ========================================
+   Empty State
+   ======================================== */
+
+.resume-empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--text-muted);
+}
+
+.resume-empty-state p {
+  font-size: 1.125rem;
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+@media (max-width: 768px) {
+  .resume-page {
+    padding: 1rem 0;
+  }
+  
+  .resume-container {
+    padding: 0 1rem;
+  }
+  
+  .resume-page-title {
+    font-size: 2rem;
+  }
+  
+  .resume-section {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .resume-section h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .resume-page-title {
+    font-size: 1.75rem;
+  }
+  
+  .resume-section {
+    padding: 1rem;
+  }
+}
+
+/* ========================================
+   Dark Theme Support
+   ======================================== */
+
+[data-theme="dark"] .resume-section {
+  background: var(--card-background-dark, #1a1a1a);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .resume-page-title,
+[data-theme="dark"] .resume-section h2 {
+  color: var(--text-color-dark, #f0f0f0);
+}
+
+[data-theme="dark"] .resume-empty-state {
+  color: var(--text-muted-dark, #999);
+}
+
+/* ========================================
+   Profile Section Styles
+   ======================================== */
+
+.resume-profile {
+  max-width: 100%;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.profile-photo-container {
+  flex-shrink: 0;
+}
+
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.profile-intro {
+  flex: 1;
+}
+
+.profile-name {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: var(--text-color);
+}
+
+.profile-title {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.profile-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--text-muted);
+}
+
+.contact-link {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+  color: #4CAF50;
+  text-decoration: underline;
+}
+
+.contact-text {
+  color: var(--text-color);
+}
+
+.profile-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.social-link:hover {
+  border-color: #4CAF50;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.2);
+}
+
+.social-platform {
+  font-weight: 500;
+}
+
+.social-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.profile-bio {
+  line-height: 1.7;
+  color: var(--text-color);
+}
+
+.profile-bio p {
+  margin: 0;
+}
+
+/* ========================================
+   Profile Responsive Design
+   ======================================== */
+
+@media (max-width: 768px) {
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .profile-photo {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .profile-name {
+    font-size: 1.75rem;
+  }
+  
+  .profile-title {
+    font-size: 1.125rem;
+  }
+  
+  .profile-contact {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .contact-item {
+    justify-content: center;
+  }
+  
+  .profile-social {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-photo {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .profile-name {
+    font-size: 1.5rem;
+  }
+}
+
+/* ========================================
+   Profile Dark Theme
+   ======================================== */
+
+[data-theme="dark"] .profile-photo {
+  border-color: var(--border-color-dark, #333);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .social-link {
+  background: var(--card-background-dark, #1a1a1a);
+  border-color: var(--border-color-dark, #333);
+}
+
+[data-theme="dark"] .social-link:hover {
+  border-color: #4CAF50;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+}
+
+/* ========================================
+   Skills Section Styles
+   ======================================== */
+
+.resume-skills {
+  max-width: 100%;
+}
+
+.resume-section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 2rem 0;
+  color: var(--text-color);
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #4CAF50;
+}
+
+.skills-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.skill-bar-wrapper {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skill-bar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.skill-name {
+  font-weight: 600;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.skill-percentage {
+  font-weight: 600;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.skill-bar-track {
+  width: 100%;
+  height: 12px;
+  background: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4CAF50 0%, #45a049 100%);
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+  /* Initial state - no width */
+  width: 0%;
+  /* Smooth animation - 900ms (mid-range of 800-1000ms spec) */
+  transition: width 900ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-bar-animated {
+  /* Width is set inline based on proficiency */
+}
+
+.skill-bar-shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  animation: shine 2s ease-in-out infinite;
+  animation-delay: 900ms; /* Start after bar animation completes */
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* ========================================
+   Skills Responsive Design
+   ======================================== */
+
+@media (max-width: 768px) {
+  .resume-section-title {
+    font-size: 1.5rem;
+  }
+  
+  .skills-grid {
+    gap: 1.25rem;
+  }
+  
+  .skill-name {
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .resume-section-title {
+    font-size: 1.375rem;
+  }
+  
+  .skills-grid {
+    gap: 1rem;
+  }
+  
+  .skill-bar-track {
+    height: 10px;
+  }
+}
+
+/* ========================================
+   Skills Dark Theme
+   ======================================== */
+
+[data-theme="dark"] .skill-bar-track {
+  background: var(--card-background-dark, #1a1a1a);
+  border-color: var(--border-color-dark, #333);
+}
+
+[data-theme="dark"] .skill-bar-fill {
+  background: linear-gradient(90deg, #4CAF50 0%, #45a049 100%);
+}
+
+/* ========================================
+   Skills Reduced Motion Support
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-bar-fill {
+    transition: none !important;
+  }
+  
+  .skill-bar-shine {
+    animation: none !important;
+  }
+  
+  .skill-bar-wrapper {
+    transition: none !important;
+  }
+}
+
+/* ========================================
+   Experience Section Styles
+   ======================================== */
+
+.resume-experience {
+  max-width: 100%;
+}
+
+.experience-timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.experience-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 2px;
+  background: linear-gradient(180deg, #4CAF50 0%, rgba(76, 175, 80, 0.3) 100%);
+}
+
+.experience-item {
+  position: relative;
+  padding-bottom: 2.5rem;
+}
+
+.experience-item:last-child {
+  padding-bottom: 0;
+}
+
+.experience-marker {
+  position: absolute;
+  left: -2rem;
+  top: 2rem;
+  width: 12px;
+  height: 12px;
+  background: #4CAF50;
+  border: 3px solid var(--page-background);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #4CAF50;
+  z-index: 1;
+  transform: translateX(-5px);
+}
+
+.experience-content {
+  background: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+  gap: 1rem;
+}
+
+.experience-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-color);
+}
+
+.experience-dates {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.experience-duration {
+  font-size: 0.75rem;
+  color: #4CAF50;
+  margin-top: 0.25rem;
+}
+
+.experience-company {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #4CAF50;
+  margin: 0 0 0.75rem 0;
+}
+
+.experience-description {
+  line-height: 1.7;
+  color: var(--text-color);
+  margin: 0;
+}
+
+/* ========================================
+   Grouped Experience Styles (LinkedIn-style)
+   ======================================== */
+
+/* Group container */
+.experience-group .experience-group-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.experience-group-duration {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+  font-weight: 400;
+}
+
+/* Nested roles container */
+.experience-roles {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+/* Vertical line for nested roles */
+.experience-roles::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 1rem;
+  bottom: 1rem;
+  width: 1px;
+  background: var(--border-color);
+}
+
+/* Individual role within group */
+.experience-role {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+/* Smaller marker for nested roles */
+.experience-role-marker {
+  position: absolute;
+  left: -1px;
+  top: 0.5rem;
+  width: 8px;
+  height: 8px;
+  background: var(--card-background);
+  border: 2px solid #4CAF50;
+  border-radius: 50%;
+  z-index: 1;
+  transition: all 0.2s ease;
+}
+
+.experience-role:hover .experience-role-marker {
+  background: #4CAF50;
+  transform: scale(1.2);
+}
+
+/* Role content */
+.experience-role-content {
+  background: transparent;
+  padding: 0;
+  border: none;
+}
+
+/* Override company styles for grouped display */
+.experience-group .experience-company {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+/* Override title styles for nested roles */
+.experience-role .experience-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+/* ========================================
+   Education Section Styles
+   ======================================== */
+
+.resume-education {
+  max-width: 100%;
+}
+
+.education-timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.education-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 2px;
+  background: linear-gradient(180deg, #4CAF50 0%, rgba(76, 175, 80, 0.3) 100%);
+}
+
+.education-item {
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.education-item:last-child {
+  padding-bottom: 0;
+}
+
+.education-marker {
+  position: absolute;
+  left: -2rem;
+  top: 2rem;
+  width: 12px;
+  height: 12px;
+  background: #4CAF50;
+  border: 3px solid var(--page-background);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #4CAF50;
+  z-index: 1;
+  transform: translateX(-5px);
+}
+
+.education-content {
+  background: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.education-degree {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: var(--text-color);
+}
+
+/* Certification link styles */
+.certification-link {
+  color: var(--text-color);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.certification-link:hover {
+  color: #4CAF50;
+}
+
+.certification-link .external-link-icon {
+  width: 16px;
+  height: 16px;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.certification-link:hover .external-link-icon {
+  opacity: 1;
+}
+
+/* Education meta container (date + credential link) */
+.education-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.education-institution {
+  font-weight: 600;
+  color: #4CAF50;
+  margin-bottom: 0.5rem;
+}
+
+.education-dates {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+/* Certification credential link */
+.certification-credential-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.certification-credential-link:hover {
+  opacity: 0.8;
+}
+
+.certification-credential-link .external-link-icon {
+  width: 14px;
+  height: 14px;
+}
+
+/* ========================================
+   Experience & Education Responsive Design
+   ======================================== */
+
+@media (max-width: 768px) {
+  .experience-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .experience-dates {
+    align-items: flex-start;
+  }
+  
+  .experience-title {
+    font-size: 1.125rem;
+  }
+  
+  .education-degree {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-timeline,
+  .education-timeline {
+    padding-left: 1.5rem;
+  }
+  
+  .experience-marker,
+  .education-marker {
+    left: -1.5rem;
+    width: 10px;
+    height: 10px;
+  }
+  
+  .experience-content,
+  .education-content {
+    padding: 1rem;
+  }
+  
+  /* Grouped experience mobile adjustments */
+  .experience-roles {
+    padding-left: 1rem;
+  }
+  
+  .experience-role {
+    padding-left: 1rem;
+  }
+  
+  .experience-role-marker {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+/* ========================================
+   Experience & Education Dark Theme
+   ======================================== */
+
+[data-theme="dark"] .experience-marker,
+[data-theme="dark"] .education-marker {
+  border-color: var(--page-background-dark, #0a0a0a);
+}
+
+[data-theme="dark"] .experience-content,
+[data-theme="dark"] .education-content {
+  background: var(--card-background-dark, #1a1a1a);
+  border-color: var(--border-color-dark, #333);
+}
+
+/* Grouped experience dark theme */
+[data-theme="dark"] .experience-role-marker {
+  background: var(--card-background-dark, #1a1a1a);
+  border-color: #4CAF50;
+}
+
+[data-theme="dark"] .experience-role:hover .experience-role-marker {
+  background: #4CAF50;
+}
+
+[data-theme="dark"] .experience-roles::before {
+  background: var(--border-color-dark, #333);
+}
+
+[data-theme="dark"] .experience-group .experience-group-header {
+  border-bottom-color: var(--border-color-dark, #333);
+}
+
+[data-theme="dark"] .experience-content:hover,
+[data-theme="dark"] .education-content:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================
+   Recommendations Slider Styles
+   ======================================== */
+
+.recommendations-slider {
+  max-width: 100%;
+}
+
+.recommendations-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.recommendations-source-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #4CAF50;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.recommendations-source-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.external-link-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.recommendations-slider-container {
+  position: relative;
+}
+
+/* Embla Carousel Base Styles */
+.embla {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.embla__container {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+/* Recommendation Card */
+.recommendation-card {
+  background: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.recommendation-quote {
+  position: relative;
+  flex: 1;
+}
+
+.quote-icon {
+  width: 32px;
+  height: 32px;
+  color: rgba(76, 175, 80, 0.2);
+  margin-bottom: 0.5rem;
+}
+
+.recommendation-text {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--text-color);
+  margin: 0;
+  font-style: italic;
+}
+
+.recommendation-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.author-photo-container {
+  flex-shrink: 0;
+}
+
+.author-photo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border-color);
+}
+
+/* Initials Avatar Fallback */
+.initials-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: white;
+  font-weight: 700;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  border: 2px solid var(--border-color);
+}
+
+.author-info {
+  flex: 1;
+}
+
+.author-name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 0.25rem;
+}
+
+.author-title {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 0.125rem;
+}
+
+.author-company {
+  font-size: 0.875rem;
+  color: #4CAF50;
+}
+
+/* Embla Navigation Controls */
+.embla__controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.embla__button {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #4CAF50;
+  background: rgba(76, 175, 80, 0.15);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.embla__button:hover {
+  border-color: #4CAF50;
+  background: #4CAF50;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.embla__button:active {
+  transform: scale(0.95);
+}
+
+.embla__button svg {
+  width: 24px;
+  height: 24px;
+  color: #4CAF50;
+}
+
+.embla__button:hover svg {
+  color: #ffffff;
+}
+
+/* Recommendations Footer */
+.recommendations-footer {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.recommendations-timestamp {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin: 0;
+}
+
+/* ========================================
+   Recommendations Responsive Design
+   ======================================== */
+
+@media (max-width: 768px) {
+  .recommendations-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .recommendation-card {
+    padding: 1.5rem;
+  }
+  
+  .recommendation-text {
+    font-size: 1rem;
+  }
+  
+  .author-photo,
+  .initials-avatar {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .initials-avatar {
+    font-size: 1rem;
+  }
+  
+  .embla__button {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .embla__button svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .recommendation-card {
+    padding: 1rem;
+  }
+  
+  .recommendation-author {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+  
+  .quote-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* ========================================
+   Recommendations Dark Theme
+   ======================================== */
+
+[data-theme="dark"] .recommendation-card {
+  background: var(--card-background-dark, #1a1a1a);
+  border-color: var(--border-color-dark, #333);
+}
+
+[data-theme="dark"] .recommendation-author {
+  border-top-color: var(--border-color-dark, #333);
+}
+
+[data-theme="dark"] .author-photo,
+[data-theme="dark"] .initials-avatar {
+  border-color: var(--border-color-dark, #333);
+}
+
+[data-theme="dark"] .embla__button {
+  background: rgba(76, 175, 80, 0.2);
+  border-color: #4CAF50;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .embla__button:hover {
+  background: #4CAF50;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+}
+
+[data-theme="dark"] .recommendations-footer {
+  border-top-color: var(--border-color-dark, #333);
+}
+

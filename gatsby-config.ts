@@ -17,6 +17,7 @@ const config: GatsbyConfig = {
       { name: 'Food', path: '/tag/food' },
       { name: 'Travel', path: '/tag/travel' },
       { name: 'Reviews', path: '/tag/reviews' },
+      { name: 'Resume', path: '/resume' },
     ],
     footerWidgets: [
       {
@@ -54,6 +55,13 @@ const config: GatsbyConfig = {
       options: {
         name: 'articles',
         path: `${__dirname}/src/data/articles`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'resume',
+        path: `${__dirname}/src/data/resume`,
       },
     },
     {

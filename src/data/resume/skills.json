@@ -1,0 +1,51 @@
+[
+  {
+    "name": "TypeScript",
+    "proficiency": 75
+  },
+  {
+    "name": "JavaScript",
+    "proficiency": 85
+  },
+  {
+    "name": "HTML",
+    "proficiency": 95
+  },
+  {
+    "name": "CSS",
+    "proficiency": 70
+  },
+  {
+    "name": "PHP",
+    "proficiency": 90
+  },
+  {
+    "name": "React",
+    "proficiency": 60
+  },
+  {
+    "name": "Node.js",
+    "proficiency": 70
+  },
+  {
+    "name": "GraphQL",
+    "proficiency": 45
+  },
+  {
+    "name": "AWS",
+    "proficiency": 60
+  },
+  {
+    "name": "Docker",
+    "proficiency": 70
+  },
+  {
+    "name": "MySQL",
+    "proficiency": 90
+  },
+  {
+    "name": "Git",
+    "proficiency": 90
+  }
+]
+

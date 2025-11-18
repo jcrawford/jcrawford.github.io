@@ -1,0 +1,27 @@
+{
+  "name": "Joseph Crawford",
+  "title": "Senior Software Engineer",
+  "photo": "/images/resume/profile.jpg",
+  "email": "joseph@example.com",
+  "phone": "+1 (555) 123-4567",
+  "location": "New York, NY",
+  "socialLinks": [
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/josephcrawford",
+      "icon": "github"
+    },
+    {
+      "platform": "LinkedIn",
+      "url": "https://www.linkedin.com/in/crawfordjoseph",
+      "icon": "linkedin"
+    },
+    {
+      "platform": "Twitter",
+      "url": "https://twitter.com/josephcrawford",
+      "icon": "twitter"
+    }
+  ],
+  "bio": "Passionate software engineer with 10+ years of experience building scalable web applications. Specialized in React, TypeScript, Node.js, and cloud architecture. Love solving complex problems and mentoring junior developers."
+}
+
