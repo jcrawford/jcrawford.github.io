@@ -5,6 +5,7 @@
 
 import React from 'react';
 import { Link } from 'gatsby';
+import { getArticlePath } from '../utils/articlePath';
 import '../styles/series-navigation.css';
 
 export interface SeriesPrevNextProps {
@@ -77,7 +78,7 @@ export const SeriesPrevNext: React.FC<SeriesPrevNextProps> = ({
       {/* Previous Button */}
       {prevSlug && displayPrevTitle ? (
         <Link
-          to={`/articles/${prevSlug}`}
+          to={getArticlePath(prevSlug, true)}
           className="series-navigation__button series-navigation__prev"
         >
           <span className="series-navigation__content">
@@ -95,7 +96,7 @@ export const SeriesPrevNext: React.FC<SeriesPrevNextProps> = ({
       {/* Next Button */}
       {nextSlug && displayNextTitle ? (
         <Link
-          to={`/articles/${nextSlug}`}
+          to={getArticlePath(nextSlug, true)}
           className="series-navigation__button series-navigation__next"
         >
           <span className="series-navigation__content">

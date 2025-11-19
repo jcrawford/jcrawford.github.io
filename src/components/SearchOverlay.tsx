@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
+import { useFlexSearch } from 'react-use-flexsearch';
 import { formatDate } from '../utils/dateUtils';
 
 interface SearchResult {
@@ -9,6 +10,14 @@ interface SearchResult {
   excerpt: string;
   category: string;
   publishedAt: string;
+  path: string;
+}
+
+interface LocalSearchData {
+  localSearchArticles: {
+    index: string;
+    store: string;
+  };
 }
 
 interface SearchOverlayProps {
@@ -18,50 +27,28 @@ interface SearchOverlayProps {
 
 const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose }) => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [results, setResults] = useState<SearchResult[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const data = useStaticQuery(graphql`
+  const data = useStaticQuery<LocalSearchData>(graphql`
     query SearchQuery {
-      allArticlesJson {
-        nodes {
-          id
-          slug
-          title
-          excerpt
-          content
-          category
-          publishedAt
-        }
+      localSearchArticles {
+        index
+        store
       }
     }
   `);
 
-  const articles = data.allArticlesJson.nodes;
+  const results = useFlexSearch(
+    searchTerm,
+    data.localSearchArticles.index,
+    data.localSearchArticles.store
+  ) as SearchResult[];
 
   useEffect(() => {
     if (isOpen && inputRef.current) {
       inputRef.current.focus();
     }
   }, [isOpen]);
-
-  useEffect(() => {
-    if (!searchTerm.trim()) {
-      setResults([]);
-      return;
-    }
-
-    const query = searchTerm.toLowerCase();
-    const filtered = articles.filter((article: any) => {
-      const titleMatch = article.title.toLowerCase().includes(query);
-      const excerptMatch = article.excerpt.toLowerCase().includes(query);
-      const contentMatch = article.content.toLowerCase().includes(query);
-      
-      return titleMatch || excerptMatch || contentMatch;
-    });
-
-    setResults(filtered.slice(0, 10));
-  }, [searchTerm, articles]);
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -118,10 +105,10 @@ const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose }) => {
                 {results.length} result{results.length !== 1 ? 's' : ''} found
               </div>
               <ul className="hm-search-list">
-                {results.map((article) => (
+                {results.slice(0, 10).map((article) => (
                   <li key={article.id} className="hm-search-item">
                     <Link
-                      to={`/articles/${article.slug}`}
+                      to={article.path}
                       className="hm-search-link"
                       onClick={onClose}
                     >

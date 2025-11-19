@@ -3,7 +3,7 @@ slug: "the-magic-of-iceland-awaits-34"
 title: "The Magic of Iceland Awaits"
 excerpt: "Explore the fascinating world of iceland and discover how it can transform your approach to travel. Learn practical tips and insights from experts."
 featuredImage: "/images/content/the-magic-of-iceland-awaits-34/featured.jpg"
-category: "travel"
+category: "family"
 tags: ["travel", "journey", "adventure", "tourism"]
 author: "admin"
 publishedAt: "2025-11-06"

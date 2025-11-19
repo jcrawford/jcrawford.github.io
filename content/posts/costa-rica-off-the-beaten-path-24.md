@@ -3,7 +3,7 @@ slug: "costa-rica-off-the-beaten-path-24"
 title: "Costa Rica: Off the Beaten Path"
 excerpt: "Explore the fascinating world of costa rica and discover how it can transform your approach to travel. Learn practical tips and insights from experts."
 featuredImage: "/images/content/costa-rica-off-the-beaten-path-24/featured.jpg"
-category: "travel"
+category: "family"
 tags: ["travel", "culture", "journey", "destinations"]
 author: "admin"
 publishedAt: "2025-11-01"

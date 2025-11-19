@@ -3,7 +3,7 @@ slug: "why-thailand-should-be-your-next-destination-59"
 title: "Why Thailand Should Be Your Next Destination"
 excerpt: "Explore the fascinating world of thailand and discover how it can transform your approach to travel. Learn practical tips and insights from experts."
 featuredImage: "/images/content/why-thailand-should-be-your-next-destination-59/featured.jpg"
-category: "travel"
+category: "family"
 tags: ["travel", "culture", "exploration", "wanderlust"]
 author: "admin"
 publishedAt: "2025-08-21"

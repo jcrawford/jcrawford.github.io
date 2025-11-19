@@ -3,7 +3,7 @@ slug: "the-journey-not-the-arrival-matters"
 title: "The journey, not the arrival, matters"
 excerpt: "Travel is not just about reaching your destination, but embracing every moment of the adventure along the way."
 featuredImage: "/images/content/the-journey-not-the-arrival-matters/featured.jpg"
-category: "travel"
+category: "family"
 tags: ["featured", "travel", "inspiration", "wanderlust"]
 author: "admin"
 publishedAt: "2025-01-15"

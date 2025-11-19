@@ -1,8 +1,8 @@
 ---
-slug: "building-better-websites/part-3-deployment-maintenance"
-title: "Building Better Websites: Part 3 - Deployment & Maintenance"
+slug: "building-better-websites/deployment-maintenance"
+title: "Building Better Websites: Deployment & Maintenance"
 excerpt: "Master deployment strategies, monitoring, and long-term maintenance. The final part of our web development series."
-featuredImage: "/images/content/building-better-websites/part-3-featured.jpg"
+featuredImage: "/images/content/building-better-websites/deployment-maintenance-featured.jpg"
 category: "lifestyle"
 tags: ["test-series"]
 author: "admin"
@@ -10,7 +10,6 @@ publishedAt: "2025-11-12"
 series:
   name: "Building Better Websites"
   order: 3
-  prev: "building-better-websites/part-2-implementation-development"
   references:
     - url: "https://vercel.com/docs"
       title: "Vercel Documentation"

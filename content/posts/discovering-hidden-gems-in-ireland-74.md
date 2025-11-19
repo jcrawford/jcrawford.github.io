@@ -3,7 +3,7 @@ slug: "discovering-hidden-gems-in-ireland-74"
 title: "Discovering Hidden Gems in Ireland"
 excerpt: "Explore the fascinating world of ireland and discover how it can transform your approach to travel. Learn practical tips and insights from experts."
 featuredImage: "/images/content/discovering-hidden-gems-in-ireland-74/featured.jpg"
-category: "travel"
+category: "family"
 tags: ["travel", "culture", "vacation", "tourism"]
 author: "admin"
 publishedAt: "2025-09-24"

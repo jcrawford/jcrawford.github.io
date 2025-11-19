@@ -3,7 +3,7 @@ slug: "finding-yourself-in-portugal-94"
 title: "Finding Yourself in Portugal"
 excerpt: "Explore the fascinating world of portugal and discover how it can transform your approach to travel. Learn practical tips and insights from experts."
 featuredImage: "/images/content/finding-yourself-in-portugal-94/featured.jpg"
-category: "travel"
+category: "family"
 tags: ["travel", "culture", "journey", "tourism"]
 author: "admin"
 publishedAt: "2025-11-02"

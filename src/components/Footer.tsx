@@ -1,14 +1,20 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
+import { getArticlePath } from '../utils/articlePath';
 import OptimizedImage from './OptimizedImage';
 import { formatDate } from '../utils/dateUtils';
 
 interface FooterArticle {
   id: string;
-  slug: string;
-  title: string;
-  featuredImage: string;
-  publishedAt: string;
+  frontmatter: {
+    slug: string;
+    title: string;
+    featuredImage: string;
+    publishedAt: string;
+    series?: {
+      name: string;
+    };
+  };
 }
 
 interface FooterData {
@@ -20,7 +26,7 @@ interface FooterData {
   foodArticles: {
     nodes: FooterArticle[];
   };
-  travelArticles: {
+  familyArticles: {
     nodes: FooterArticle[];
   };
 }
@@ -33,30 +39,40 @@ const Footer: React.FC = () => {
           title
         }
       }
-      foodArticles: allArticlesJson(
-        filter: { category: { eq: "food" } }
+      foodArticles: allMarkdownRemark(
+        filter: { frontmatter: { category: { eq: "food" }, slug: { ne: null } } }
         limit: 3
-        sort: { publishedAt: DESC }
+        sort: { frontmatter: { publishedAt: DESC } }
       ) {
         nodes {
           id
-          slug
-          title
-          featuredImage
-          publishedAt
+          frontmatter {
+            slug
+            title
+            featuredImage
+            publishedAt
+            series {
+              name
+            }
+          }
         }
       }
-      travelArticles: allArticlesJson(
-        filter: { category: { eq: "travel" } }
+      familyArticles: allMarkdownRemark(
+        filter: { frontmatter: { category: { eq: "family" }, slug: { ne: null } } }
         limit: 3
-        sort: { publishedAt: DESC }
+        sort: { frontmatter: { publishedAt: DESC } }
       ) {
         nodes {
           id
-          slug
-          title
-          featuredImage
-          publishedAt
+          frontmatter {
+            slug
+            title
+            featuredImage
+            publishedAt
+            series {
+              name
+            }
+          }
         }
       }
     }
@@ -64,7 +80,7 @@ const Footer: React.FC = () => {
 
   const { title } = data.site.siteMetadata;
   const foodArticles = data.foodArticles.nodes;
-  const travelArticles = data.travelArticles.nodes;
+  const familyArticles = data.familyArticles.nodes;
 
   return (
     <footer id="colophon" className="site-footer">
@@ -95,61 +111,67 @@ const Footer: React.FC = () => {
             <section className="widget widget_hybridmag_sidebar_posts">
               <div className="hm-sidebar-posts">
                 <h2 className="widget-title">Food</h2>
-                {foodArticles.map((article) => (
-                  <div key={article.id} className="hms-post clearfix">
-                    <div className="hms-thumb">
-                      <Link to={`/articles/${article.slug}`}>
-                        <OptimizedImage 
-                          src={article.featuredImage} 
-                          alt={article.title}
-                          className="attachment-thumbnail size-thumbnail wp-post-image"
-                        />
-                      </Link>
-                    </div>
-                    <div className="hms-details">
-                      <h3 className="hms-title">
-                        <Link to={`/articles/${article.slug}`}>{article.title}</Link>
-                      </h3>
+                {foodArticles.map((article) => {
+                  const articlePath = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name);
+                  return (
+                    <div key={article.id} className="hms-post clearfix">
+                      <div className="hms-thumb">
+                        <Link to={articlePath}>
+                          <OptimizedImage 
+                            src={article.frontmatter.featuredImage} 
+                            alt={article.frontmatter.title}
+                            className="attachment-thumbnail size-thumbnail wp-post-image"
+                          />
+                        </Link>
+                      </div>
+                      <div className="hms-details">
+                        <h3 className="hms-title">
+                          <Link to={articlePath}>{article.frontmatter.title}</Link>
+                        </h3>
                       <div className="entry-meta">
-                        <time className="entry-date published" dateTime={article.publishedAt}>
-                          {formatDate(article.publishedAt)}
+                        <time className="entry-date published" dateTime={article.frontmatter.publishedAt}>
+                          {formatDate(article.frontmatter.publishedAt)}
                         </time>
                       </div>
                     </div>
                   </div>
-                ))}
+                  );
+                })}
               </div>
             </section>
           </div>
 
-          {/* Travel Column */}
+          {/* Family Column */}
           <div className="hm-footer-column">
             <section className="widget widget_hybridmag_sidebar_posts">
               <div className="hm-sidebar-posts">
-                <h2 className="widget-title">Travel</h2>
-                {travelArticles.map((article) => (
-                  <div key={article.id} className="hms-post clearfix">
-                    <div className="hms-thumb">
-                      <Link to={`/articles/${article.slug}`}>
-                        <OptimizedImage 
-                          src={article.featuredImage} 
-                          alt={article.title}
-                          className="attachment-thumbnail size-thumbnail wp-post-image"
-                        />
-                      </Link>
-                    </div>
-                    <div className="hms-details">
-                      <h3 className="hms-title">
-                        <Link to={`/articles/${article.slug}`}>{article.title}</Link>
-                      </h3>
+                <h2 className="widget-title">Family</h2>
+                {familyArticles.map((article) => {
+                  const articlePath = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name);
+                  return (
+                    <div key={article.id} className="hms-post clearfix">
+                      <div className="hms-thumb">
+                        <Link to={articlePath}>
+                          <OptimizedImage 
+                            src={article.frontmatter.featuredImage} 
+                            alt={article.frontmatter.title}
+                            className="attachment-thumbnail size-thumbnail wp-post-image"
+                          />
+                        </Link>
+                      </div>
+                      <div className="hms-details">
+                        <h3 className="hms-title">
+                          <Link to={articlePath}>{article.frontmatter.title}</Link>
+                        </h3>
                       <div className="entry-meta">
-                        <time className="entry-date published" dateTime={article.publishedAt}>
-                          {formatDate(article.publishedAt)}
+                        <time className="entry-date published" dateTime={article.frontmatter.publishedAt}>
+                          {formatDate(article.frontmatter.publishedAt)}
                         </time>
                       </div>
                     </div>
                   </div>
-                ))}
+                  );
+                })}
               </div>
             </section>
           </div>

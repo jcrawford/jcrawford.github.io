@@ -3,7 +3,7 @@ slug: "adventure-awaits"
 title: "Adventure is worthwhile in itself"
 excerpt: "The rewards of exploration extend far beyond reaching any particular destination."
 featuredImage: "/images/content/adventure-awaits/featured.jpg"
-category: "travel"
+category: "family"
 tags: ["travel", "adventure", "exploration"]
 author: "admin"
 publishedAt: "2024-12-31"

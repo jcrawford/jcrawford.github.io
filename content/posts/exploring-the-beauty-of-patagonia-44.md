@@ -3,7 +3,7 @@ slug: "exploring-the-beauty-of-patagonia-44"
 title: "Exploring the Beauty of Patagonia"
 excerpt: "Explore the fascinating world of patagonia and discover how it can transform your approach to travel. Learn practical tips and insights from experts."
 featuredImage: "/images/content/exploring-the-beauty-of-patagonia-44/featured.jpg"
-category: "travel"
+category: "family"
 tags: ["travel", "wanderlust", "destinations", "exploration"]
 author: "admin"
 publishedAt: "2025-11-03"

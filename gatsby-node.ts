@@ -82,62 +82,29 @@ function validateSeriesMetadata(articles: Article[], reporter: any): boolean {
       );
       hasErrors = true;
     }
-    
-    // T006: Validate prev reference exists
-    if (series.prev) {
-      if (!articleSlugs.has(series.prev)) {
-        reporter.error(
-          `[Series Validation] Article "${slug}" has invalid series.prev reference: "${series.prev}" (article not found)`
-        );
-        hasErrors = true;
-      }
-    }
-    
-    // T006: Validate next reference exists
-    if (series.next) {
-      if (!articleSlugs.has(series.next)) {
-        reporter.error(
-          `[Series Validation] Article "${slug}" has invalid series.next reference: "${series.next}" (article not found)`
-        );
-        hasErrors = true;
-      }
-    }
   });
   
-  // T007: Detect circular references
+  // T007: Detect duplicate order values within same series
+  const seriesByName = new Map<string, Map<number, string>>();
+  
   seriesArticles.forEach((article) => {
     const { slug, series } = article.frontmatter;
     
-    if (!series?.next) return;
+    if (!series?.name || series.order === undefined) return;
     
-    const visited = new Set<string>();
-    let current: string | undefined = slug;
+    if (!seriesByName.has(series.name)) {
+      seriesByName.set(series.name, new Map());
+    }
     
-    // Follow the chain until we find a cycle or reach the end
-    while (current) {
-      if (visited.has(current)) {
-        // Found a circular reference
-        reporter.error(
-          `[Series Validation] Circular reference detected in series "${series.name}": ${Array.from(visited).join(' → ')} → ${current}`
-        );
-        hasErrors = true;
-        break;
-      }
-      
-      visited.add(current);
-      
-      // Find the next article in the chain
-      const nextArticle = articles.find((a) => a.frontmatter.slug === current);
-      current = nextArticle?.frontmatter.series?.next;
-      
-      // Safety limit to prevent infinite loops
-      if (visited.size > articles.length) {
-        reporter.error(
-          `[Series Validation] Series chain too long for "${slug}" (possible data corruption)`
-        );
-        hasErrors = true;
-        break;
-      }
+    const orderMap = seriesByName.get(series.name)!;
+    
+    if (orderMap.has(series.order)) {
+      reporter.error(
+        `[Series Validation] Duplicate order ${series.order} in series "${series.name}": "${slug}" and "${orderMap.get(series.order)}"`
+      );
+      hasErrors = true;
+    } else {
+      orderMap.set(series.order, slug);
     }
   });
   
@@ -206,8 +173,6 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
             series {
               name
               order
-              prev
-              next
               references {
                 url
                 title
@@ -265,7 +230,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
     const isSeries = !!article.frontmatter.series?.name;
     
     createPage({
-      path: `/articles/${article.frontmatter.slug}`,
+      path: isSeries ? `/series/${article.frontmatter.slug}` : `/posts/${article.frontmatter.slug}`,
       component: isSeries ? seriesArticleTemplate : articleTemplate,
       context: {
         slug: article.frontmatter.slug,

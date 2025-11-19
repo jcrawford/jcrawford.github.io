@@ -3,7 +3,7 @@ slug: "the-ultimate-greece-travel-guide-99"
 title: "The Ultimate Greece Travel Guide"
 excerpt: "Explore the fascinating world of greece and discover how it can transform your approach to travel. Learn practical tips and insights from experts."
 featuredImage: "/images/content/the-ultimate-greece-travel-guide-99/featured.jpg"
-category: "travel"
+category: "family"
 tags: ["travel", "tourism", "journey", "culture"]
 author: "admin"
 publishedAt: "2025-10-23"

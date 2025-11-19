@@ -22,10 +22,10 @@
   },
   {
     "id": "4",
-    "slug": "travel",
-    "name": "Travel",
-    "description": "Journey to extraordinary destinations with travel guides, tips, and inspiring stories from around the globe.",
-    "featured": true
+    "slug": "family",
+    "name": "Family",
+    "description": "Celebrate family moments, parenting tips, and stories that bring loved ones together.",
+    "featured": false
   },
   {
     "id": "5",

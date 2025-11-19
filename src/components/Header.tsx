@@ -24,12 +24,22 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
+    const theme = savedTheme === 'dark' ? 'dark' : 'light';
     setIsDarkMode(savedTheme === 'dark');
+    
+    // Set user property for theme preference
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('set', 'user_properties', {
+        theme_preference: theme,
+      });
+    }
   }, []);
 
   const toggleDarkMode = () => {
     const newMode = !isDarkMode;
     setIsDarkMode(newMode);
+    
+    const theme = newMode ? 'dark' : 'light';
     
     if (newMode) {
       document.documentElement.classList.add('hm-dark');
@@ -37,6 +47,15 @@ const Header: React.FC = () => {
     } else {
       document.documentElement.classList.remove('hm-dark');
       localStorage.setItem('theme', 'light');
+    }
+    
+    // Track theme toggle event
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'theme_toggle', {
+        theme_mode: theme,
+        event_category: 'engagement',
+        event_label: `Theme changed to ${theme}`,
+      });
     }
   };
 

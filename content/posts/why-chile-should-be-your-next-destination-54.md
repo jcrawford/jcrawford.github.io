@@ -3,7 +3,7 @@ slug: "why-chile-should-be-your-next-destination-54"
 title: "Why Chile Should Be Your Next Destination"
 excerpt: "Explore the fascinating world of chile and discover how it can transform your approach to travel. Learn practical tips and insights from experts."
 featuredImage: "/images/content/why-chile-should-be-your-next-destination-54/featured.jpg"
-category: "travel"
+category: "family"
 tags: ["travel", "adventure", "tourism", "journey"]
 author: "admin"
 publishedAt: "2025-10-24"

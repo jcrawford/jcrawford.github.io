@@ -3,7 +3,7 @@ slug: "the-ultimate-nepal-travel-guide-29"
 title: "The Ultimate Nepal Travel Guide"
 excerpt: "Explore the fascinating world of nepal and discover how it can transform your approach to travel. Learn practical tips and insights from experts."
 featuredImage: "/images/content/the-ultimate-nepal-travel-guide-29/featured.jpg"
-category: "travel"
+category: "family"
 tags: ["travel", "destinations", "vacation", "adventure"]
 author: "admin"
 publishedAt: "2025-07-25"

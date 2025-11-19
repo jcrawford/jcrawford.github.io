@@ -143,10 +143,14 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
     );
   }
 
-  // Development: Show full homepage
-  const articles = data.allMarkdownRemark.nodes;
+  // Development: Show full homepage (excluding family posts)
   const tags = data.allTagsJson.nodes;
   const authors = data.allAuthorsJson.nodes;
+  
+  // Filter out family posts from homepage
+  const articles = data.allMarkdownRemark.nodes.filter(
+    article => article.frontmatter.category !== 'family'
+  );
 
   // Group articles by series
   const seriesMap = new Map<string, Article[]>();
@@ -220,6 +224,7 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
     publishedAt: article.frontmatter.publishedAt,
     author: article.frontmatter.author,
     authorName: authors.find(a => a.slug === article.frontmatter.author)?.name || article.frontmatter.author,
+    isSeries: !!article.frontmatter.series?.name,
   }));
   
   const highlightedArticles = allDisplayArticles.slice(5, 7).map(mapArticleForSlider);
@@ -241,6 +246,7 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
                   category={article.frontmatter.category}
                   slug={article.frontmatter.slug}
                   featuredImage={article.frontmatter.featuredImage}
+                  isSeries={!!article.frontmatter.series?.name}
                 />
               ))}
             </div>
@@ -264,6 +270,7 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
                   publishedAt={article.frontmatter.publishedAt}
                   author={article.frontmatter.author}
                   authorName={authors.find(a => a.slug === article.frontmatter.author)?.name || article.frontmatter.author}
+                  isSeries={!!article.frontmatter.series?.name}
                 />
               ))}
             </div>

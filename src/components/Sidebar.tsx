@@ -1,24 +1,8 @@
 import React from 'react';
-import { Link, useStaticQuery, graphql } from 'gatsby';
-import OptimizedImage from './OptimizedImage';
-import { formatDate } from '../utils/dateUtils';
 import SeriesWidget from './SeriesWidget';
 import TagCloud from './TagCloud';
+import RecentArticles from './RecentArticles';
 import type { SeriesMetadata, SeriesArticle } from '../types';
-
-interface SidebarArticle {
-  id: string;
-  slug: string;
-  title: string;
-  featuredImage: string;
-  publishedAt: string;
-}
-
-interface SidebarData {
-  recentArticles: {
-    nodes: SidebarArticle[];
-  };
-}
 
 interface SidebarProps {
   /** Current article slug (for series widget) */
@@ -36,25 +20,6 @@ const Sidebar: React.FC<SidebarProps> = ({
   series, 
   seriesArticles = [] 
 }) => {
-  const data = useStaticQuery<SidebarData>(graphql`
-    query SidebarQuery {
-      recentArticles: allArticlesJson(
-        limit: 5
-        sort: { publishedAt: DESC }
-      ) {
-        nodes {
-          id
-          slug
-          title
-          featuredImage
-          publishedAt
-        }
-      }
-    }
-  `);
-
-  const recentArticles = data.recentArticles.nodes;
-
   // If this is a series article, ONLY show the series widget
   if (series && currentSlug) {
     return (
@@ -71,33 +36,7 @@ const Sidebar: React.FC<SidebarProps> = ({
   // Otherwise, show regular sidebar widgets
   return (
     <aside id="secondary" className="hm-sidebar">
-      {/* Popular Posts Widget */}
-      <div className="widget hm-sidebar-posts">
-        <h3 className="widget-title">Popular</h3>
-        {recentArticles.map((article) => (
-          <article key={article.id} className="hms-post">
-            <div className="hms-thumb">
-              <Link to={`/articles/${article.slug}`}>
-                <OptimizedImage 
-                  src={article.featuredImage} 
-                  alt={article.title}
-                  className="attachment-thumbnail size-thumbnail wp-post-image"
-                />
-              </Link>
-            </div>
-            <div className="hms-details">
-              <h4 className="hms-title">
-                <Link to={`/articles/${article.slug}`}>{article.title}</Link>
-              </h4>
-              <span className="hms-date">
-                {formatDate(article.publishedAt)}
-              </span>
-            </div>
-          </article>
-        ))}
-      </div>
-
-      {/* Tag Cloud Widget */}
+      <RecentArticles />
       <TagCloud />
     </aside>
   );

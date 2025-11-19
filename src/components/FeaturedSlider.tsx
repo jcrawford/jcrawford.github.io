@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
+import { getArticlePath } from '../utils/articlePath';
 import OptimizedImage from './OptimizedImage';
 
 interface FeaturedArticle {
@@ -12,6 +13,7 @@ interface FeaturedArticle {
   publishedAt: string;
   author: string;
   authorName: string;
+  isSeries?: boolean;
 }
 
 interface FeaturedSliderProps {
@@ -40,6 +42,7 @@ const FeaturedSlider: React.FC<FeaturedSliderProps> = ({ articles }) => {
   }
 
   const currentArticle = articles[currentSlide];
+  const articlePath = getArticlePath(currentArticle.slug, currentArticle.isSeries);
 
   return (
     <div className="hm-swiper hm-slider">
@@ -56,14 +59,14 @@ const FeaturedSlider: React.FC<FeaturedSliderProps> = ({ articles }) => {
             <div className="hm-fp-overlay">
               <Link 
                 className="hm-fp-link-overlay" 
-                to={`/articles/${currentArticle.slug}`}
+                to={articlePath}
                 aria-label={currentArticle.title}
               />
             </div>
             <div className="hm-slide-content">
               <div className="hm-slider-details-container hmfpwmeta">
                 <h3 className="hm-slider-title">
-                  <Link to={`/articles/${currentArticle.slug}`}>
+                  <Link to={articlePath}>
                     {currentArticle.title}
                   </Link>
                 </h3>

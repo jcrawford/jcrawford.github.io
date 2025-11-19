@@ -3,7 +3,7 @@ slug: "world-is-a-book"
 title: "The world is a book, and those who don't travel read only one page"
 excerpt: "Travel expands your perspective and rewrites your understanding of the world."
 featuredImage: "/images/content/world-is-a-book/featured.jpg"
-category: "travel"
+category: "family"
 tags: ["travel", "exploration", "culture"]
 author: "admin"
 publishedAt: "2025-01-02"

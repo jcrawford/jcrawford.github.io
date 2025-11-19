@@ -3,7 +3,7 @@ slug: "travel-is-the-only-thing"
 title: "Travel is the only thing you buy that makes you richer"
 excerpt: "Invest in experiences that expand your mind and enrich your soul."
 featuredImage: "/images/content/travel-is-the-only-thing/featured.jpg"
-category: "travel"
+category: "family"
 tags: ["travel", "adventure", "experiences"]
 author: "admin"
 publishedAt: "2025-01-01"

@@ -14,7 +14,7 @@ const config: GatsbyConfig = {
       { name: 'Fashion', path: '/tag/fashion' },
       { name: 'Lifestyle', path: '/tag/lifestyle' },
       { name: 'Food', path: '/tag/food' },
-      { name: 'Travel', path: '/tag/travel' },
+      { name: 'Family', path: '/tag/family' },
       { name: 'Reviews', path: '/tag/reviews' },
       { name: 'Resume', path: '/resume' },
     ],
@@ -41,21 +41,14 @@ const config: GatsbyConfig = {
         count: 3,
       },
       {
-        title: 'Travel',
+        title: 'Family',
         type: 'posts',
-        category: 'travel',
+        category: 'family',
         count: 3,
       },
     ],
   },
   plugins: [
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'articles',
-        path: `${__dirname}/src/data/articles`,
-      },
-    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -87,11 +80,70 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
+        name: 'series',
+        path: `${__dirname}/content/series`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
         name: 'reviews',
         path: `${__dirname}/content/reviews`,
       },
     },
     'gatsby-transformer-json',
+    {
+      resolve: 'gatsby-plugin-local-search',
+      options: {
+        name: 'articles',
+        engine: 'flexsearch',
+        engineOptions: {
+          encode: 'icase',
+          tokenize: 'forward',
+          threshold: 0,
+          resolution: 3,
+        },
+        query: `
+          {
+            allMarkdownRemark(filter: { frontmatter: { slug: { ne: null } } }) {
+              nodes {
+                id
+                html
+                frontmatter {
+                  slug
+                  title
+                  excerpt
+                  category
+                  tags
+                  publishedAt
+                  series {
+                    name
+                  }
+                }
+              }
+            }
+          }
+        `,
+        ref: 'id',
+        index: ['title', 'excerpt', 'body'],
+        store: ['id', 'slug', 'title', 'excerpt', 'category', 'publishedAt', 'path'],
+        normalizer: ({ data }: any) =>
+          data.allMarkdownRemark.nodes.map((node: any) => {
+            const isSeries = !!node.frontmatter.series?.name;
+            const path = isSeries ? `/series/${node.frontmatter.slug}` : `/posts/${node.frontmatter.slug}`;
+            return {
+              id: node.id,
+              slug: node.frontmatter.slug,
+              title: node.frontmatter.title,
+              excerpt: node.frontmatter.excerpt,
+              category: node.frontmatter.category,
+              publishedAt: node.frontmatter.publishedAt,
+              path,
+              body: node.html.replace(/<[^>]*>/g, ''),
+            };
+          }),
+      },
+    },
     {
       resolve: 'gatsby-transformer-remark',
       options: {

@@ -22,6 +22,9 @@ interface TagPageData {
         category: string;
         author: string;
         publishedAt: string;
+        series?: {
+          name: string;
+        };
       };
     }>;
     totalCount: number;
@@ -95,6 +98,7 @@ const TagTemplate: React.FC<PageProps<TagPageData, TagPageContext>> = ({
                   publishedAt={article.frontmatter.publishedAt}
                   author={article.frontmatter.author}
                   authorName={getAuthorName(article.frontmatter.author)}
+                  isSeries={!!article.frontmatter.series?.name}
                 />
               ))}
             </div>
@@ -188,6 +192,9 @@ export const query = graphql`
           category
           author
           publishedAt
+          series {
+            name
+          }
         }
       }
       totalCount

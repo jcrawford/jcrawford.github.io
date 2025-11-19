@@ -41,11 +41,11 @@ html.hm-dark .series-navigation__button {
 }
 
 .series-navigation__button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  outline: 2px solid green;
+  outline-offset: 2px;
 }
 
-.series-navigation__button:focus {
+.series-navigation__button:focus-visible {
   outline: 2px solid var(--hybridmag-color-primary);
   outline-offset: 2px;
 }
@@ -81,14 +81,7 @@ html.hm-dark .series-navigation__button {
   margin-left: 0.5rem;
 }
 
-/* Hover animations */
-.series-navigation__prev:hover .series-navigation__arrow {
-  transform: translateX(-4px);
-}
-
-.series-navigation__next:hover .series-navigation__arrow {
-  transform: translateX(4px);
-}
+/* Hover animations removed - no movement on hover */
 
 /* Button Content */
 .series-navigation__content {

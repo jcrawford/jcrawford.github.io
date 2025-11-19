@@ -365,12 +365,6 @@ export interface SeriesMetadata {
   /** Optional explicit ordering number */
   order?: number
   
-  /** Slug of previous article in series */
-  prev?: string
-  
-  /** Slug of next article in series */
-  next?: string
-  
   /** Optional array of external reference links */
   references?: SeriesReference[]
   

@@ -1,8 +1,8 @@
 ---
-slug: "building-better-websites/part-1-planning-architecture"
-title: "Building Better Websites: Part 1 - Planning & Architecture"
+slug: "building-better-websites/planning-architecture"
+title: "Building Better Websites: Planning & Architecture"
 excerpt: "Learn the fundamentals of planning and architecting modern websites. This is the first part of our comprehensive web development series."
-featuredImage: "/images/content/building-better-websites/part-1-featured.jpg"
+featuredImage: "/images/content/building-better-websites/planning-architecture-featured.jpg"
 category: "lifestyle"
 tags: ["featured", "test-series"]
 author: "admin"
@@ -10,7 +10,6 @@ publishedAt: "2025-11-10"
 series:
   name: "Building Better Websites"
   order: 1
-  next: "building-better-websites/part-2-implementation-development"
   references:
     - url: "https://www.gatsbyjs.com/docs"
       title: "Gatsby Documentation"

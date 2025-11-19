@@ -3,7 +3,7 @@ slug: "8-reasons-to-visit-south-africa-84"
 title: "8 Reasons to Visit South Africa"
 excerpt: "Explore the fascinating world of south africa and discover how it can transform your approach to travel. Learn practical tips and insights from experts."
 featuredImage: "/images/content/8-reasons-to-visit-south-africa-84/featured.jpg"
-category: "travel"
+category: "family"
 tags: ["travel", "adventure", "vacation", "wanderlust"]
 author: "admin"
 publishedAt: "2025-05-20"

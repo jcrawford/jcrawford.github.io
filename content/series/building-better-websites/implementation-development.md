@@ -1,8 +1,8 @@
 ---
-slug: "building-better-websites/part-2-implementation-development"
-title: "Building Better Websites: Part 2 - Implementation & Development"
+slug: "building-better-websites/implementation-development"
+title: "Building Better Websites: Implementation & Development"
 excerpt: "Dive into modern development workflows, build tools, and best practices. The second part of our web development series."
-featuredImage: "/images/content/building-better-websites/part-2-featured.jpg"
+featuredImage: "/images/content/building-better-websites/implementation-development-featured.jpg"
 category: "lifestyle"
 tags: ["test-series"]
 author: "admin"
@@ -10,8 +10,6 @@ publishedAt: "2025-11-11"
 series:
   name: "Building Better Websites"
   order: 2
-  prev: "building-better-websites/part-1-planning-architecture"
-  next: "building-better-websites/part-3-deployment-maintenance"
   references:
     - url: "https://webpack.js.org/concepts/"
       title: "Webpack Concepts"

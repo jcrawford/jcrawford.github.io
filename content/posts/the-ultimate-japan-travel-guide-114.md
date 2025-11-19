@@ -3,7 +3,7 @@ slug: "the-ultimate-japan-travel-guide-114"
 title: "The Ultimate Japan Travel Guide"
 excerpt: "Explore the fascinating world of japan and discover how it can transform your approach to travel. Learn practical tips and insights from experts."
 featuredImage: "/images/content/the-ultimate-japan-travel-guide-114/featured.jpg"
-category: "travel"
+category: "family"
 tags: ["travel", "journey", "adventure", "exploration"]
 author: "admin"
 publishedAt: "2025-10-12"

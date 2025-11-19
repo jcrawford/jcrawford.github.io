@@ -3,7 +3,7 @@ slug: "10-reasons-to-visit-turkey-49"
 title: "10 Reasons to Visit Turkey"
 excerpt: "Explore the fascinating world of turkey and discover how it can transform your approach to travel. Learn practical tips and insights from experts."
 featuredImage: "/images/content/10-reasons-to-visit-turkey-49/featured.jpg"
-category: "travel"
+category: "family"
 tags: ["travel", "adventure", "exploration", "journey"]
 author: "admin"
 publishedAt: "2025-08-10"

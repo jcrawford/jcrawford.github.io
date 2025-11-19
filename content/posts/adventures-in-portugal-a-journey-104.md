@@ -3,7 +3,7 @@ slug: "adventures-in-portugal-a-journey-104"
 title: "Adventures in Portugal: A Journey"
 excerpt: "Explore the fascinating world of portugal and discover how it can transform your approach to travel. Learn practical tips and insights from experts."
 featuredImage: "/images/content/adventures-in-portugal-a-journey-104/featured.jpg"
-category: "travel"
+category: "family"
 tags: ["travel", "vacation", "destinations", "wanderlust"]
 author: "admin"
 publishedAt: "2025-10-02"

@@ -26,8 +26,6 @@ interface SeriesArticleData {
       series: {
         name: string;
         order?: number;
-        prev?: string;
-        next?: string;
         references?: Array<{
           url: string;
           title?: string;
@@ -73,8 +71,6 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData>> = ({ data })
   const seriesMetadata: SeriesMetadata = {
     name: article.series.name,
     order: article.series.order,
-    prev: article.series.prev,
-    next: article.series.next,
     references: article.series.references,
     attachments: article.series.attachments,
   };
@@ -87,13 +83,21 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData>> = ({ data })
     order: node.frontmatter.series?.order,
   }));
 
-  // Find prev/next article data
-  const prevArticleData = article.series.prev 
-    ? seriesArticles.find((a) => a.slug === article.series.prev)
+  // Sort articles by order and find prev/next based on position
+  const sortedArticles = [...seriesArticles].sort((a, b) => 
+    (a.order || 0) - (b.order || 0)
+  );
+
+  // Find current article index
+  const currentIndex = sortedArticles.findIndex((a) => a.slug === article.slug);
+
+  // Get prev/next based on position
+  const prevArticleData = currentIndex > 0 
+    ? sortedArticles[currentIndex - 1]
     : null;
-  
-  const nextArticleData = article.series.next
-    ? seriesArticles.find((a) => a.slug === article.series.next)
+
+  const nextArticleData = currentIndex < sortedArticles.length - 1
+    ? sortedArticles[currentIndex + 1]
     : null;
 
   // Strip series name from article title
@@ -246,8 +250,6 @@ export const query = graphql`
         series {
           name
           order
-          prev
-          next
           references {
             url
             title

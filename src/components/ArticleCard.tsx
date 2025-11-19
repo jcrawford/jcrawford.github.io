@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { formatDate } from '../utils/dateUtils';
 import { truncateText } from '../utils/textUtils';
+import { getArticlePath } from '../utils/articlePath';
 import OptimizedImage from './OptimizedImage';
 
 interface ArticleCardProps {
@@ -14,6 +15,7 @@ interface ArticleCardProps {
   publishedAt: string;
   author: string;
   authorName: string;
+  isSeries?: boolean;
 }
 
 const ArticleCard: React.FC<ArticleCardProps> = ({
@@ -26,10 +28,13 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
   publishedAt,
   author,
   authorName,
+  isSeries,
 }) => {
+  const articlePath = getArticlePath(slug, isSeries);
+  
   return (
     <article className="hm-article-card">
-      <Link to={`/articles/${slug}`} className="hm-article-card-image">
+      <Link to={articlePath} className="hm-article-card-image">
         <OptimizedImage 
           src={featuredImage} 
           alt={title}
@@ -46,7 +51,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
         </Link>
         
         <h2 className="hm-article-card-title">
-          <Link to={`/articles/${slug}`}>
+          <Link to={articlePath}>
             {title}
           </Link>
         </h2>
