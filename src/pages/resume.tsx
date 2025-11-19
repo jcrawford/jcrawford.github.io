@@ -11,14 +11,14 @@ import Layout from '../components/Layout';
 import ResumeProfile from '../components/resume/ResumeProfile';
 import ResumeSkills from '../components/resume/ResumeSkills';
 import ResumeExperience from '../components/resume/ResumeExperience';
-import ResumeCourses from '../components/resume/ResumeCourses';
+import ResumeCertifications from '../components/resume/ResumeCertifications';
 import RecommendationsSlider from '../components/resume/RecommendationsSlider';
 
 // Import resume data directly (temporary until GraphQL is set up properly)
 import profileData from '../data/resume/profile.json';
 import skillsData from '../data/resume/skills.json';
 import experienceData from '../data/resume/experience.json';
-import educationData from '../data/resume/courses.json';
+import certificationsData from '../data/resume/certifications.json';
 import recommendationsData from '../data/resume/recommendations.json';
 
 /**
@@ -46,9 +46,9 @@ const ResumePage: React.FC = () => {
             <ResumeExperience experiences={experienceData} />
           </div>
           
-              {/* Courses Section - Phase 8 (US5) ✅ COMPLETE */}
-              <div className="resume-section education-section">
-                <ResumeCourses education={educationData} />
+              {/* Certifications Section - Phase 8 (US5) ✅ COMPLETE */}
+              <div className="resume-section certifications-section">
+                <ResumeCertifications certifications={certificationsData} />
               </div>
           
           {/* Recommendations Section */}

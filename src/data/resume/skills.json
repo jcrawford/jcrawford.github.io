@@ -1,51 +1,50 @@
 [
   {
-    "name": "TypeScript",
+    "name": "AWS",
     "proficiency": 75
   },
   {
-    "name": "JavaScript",
-    "proficiency": 85
+    "name": "Docker",
+    "proficiency": 75
   },
   {
-    "name": "HTML",
-    "proficiency": 95
-  },
-  {
-    "name": "CSS",
-    "proficiency": 70
-  },
-  {
-    "name": "PHP",
+    "name": "Git",
     "proficiency": 90
   },
   {
-    "name": "React",
-    "proficiency": 60
-  },
-  {
-    "name": "Node.js",
-    "proficiency": 70
-  },
-  {
     "name": "GraphQL",
-    "proficiency": 45
-  },
-  {
-    "name": "AWS",
     "proficiency": 60
   },
   {
-    "name": "Docker",
-    "proficiency": 70
+    "name": "JavaScript",
+    "proficiency": 90
+  },
+  {
+    "name": "Laravel",
+    "proficiency": 80
   },
   {
     "name": "MySQL",
     "proficiency": 90
   },
   {
-    "name": "Git",
+    "name": "Node.js",
+    "proficiency": 80
+  },
+  {
+    "name": "PHP",
+    "proficiency": 95
+  },
+  {
+    "name": "React",
+    "proficiency": 75
+  },
+  {
+    "name": "REST API",
     "proficiency": 90
+  },
+  {
+    "name": "TypeScript",
+    "proficiency": 85
   }
 ]
-

@@ -6,6 +6,7 @@
  */
 
 import React from 'react';
+import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 import type { WorkExperience } from '../../types/resume';
 
 interface ResumeExperienceProps {
@@ -123,75 +124,94 @@ const ResumeExperience: React.FC<ResumeExperienceProps> = ({ experiences }) => {
     return calculateDuration(earliestStart, latestEnd);
   };
 
-  // Render a single role (not grouped)
-  const renderSingleRole = (experience: WorkExperience, index: number) => (
-    <div key={`single-${index}`} className="experience-item">
-      <div className="experience-marker" />
-      <div className="experience-content">
-        <h3 className="experience-company">{experience.company}</h3>
-        <div className="experience-header">
-          <div className="experience-title">{experience.title}</div>
-          <div className="experience-dates">
-            {formatDate(experience.startDate)} - {formatDate(experience.endDate)}
-            <span className="experience-duration">
-              {calculateDuration(experience.startDate, experience.endDate)}
-            </span>
-          </div>
-        </div>
-        {experience.description && (
-          <p className="experience-description">{experience.description}</p>
-        )}
-      </div>
-    </div>
-  );
-
-  // Render a group of roles at the same company
-  const renderGroupedRoles = (group: ExperienceGroup, index: number) => (
-    <div key={`group-${index}`} className="experience-item experience-group">
-      <div className="experience-marker" />
-      <div className="experience-content">
-        <div className="experience-group-header">
-          <h3 className="experience-company">{group.company}</h3>
-          <div className="experience-group-duration">
-            Full-time · {calculateGroupDuration(group.roles)}
-          </div>
-        </div>
-        <div className="experience-roles">
-          {group.roles.map((role, roleIndex) => (
-            <div key={`role-${roleIndex}`} className="experience-role">
-              <div className="experience-role-marker" />
-              <div className="experience-role-content">
-                <div className="experience-header">
-                  <div className="experience-title">{role.title}</div>
-                  <div className="experience-dates">
-                    {formatDate(role.startDate)} - {formatDate(role.endDate)}
-                    <span className="experience-duration">
-                      {calculateDuration(role.startDate, role.endDate)}
-                    </span>
-                  </div>
-                </div>
-                {role.description && (
-                  <p className="experience-description">{role.description}</p>
-                )}
-              </div>
+  // Render a single role with fade-in animation
+  const SingleRole: React.FC<{ experience: WorkExperience; index: number; delay: number }> = ({ experience, index, delay }) => {
+    const { ref, isVisible } = useIntersectionObserver();
+    
+    return (
+      <div 
+        ref={ref}
+        className={`experience-item fade-in-on-scroll ${isVisible ? 'is-visible' : ''}`}
+        data-delay={delay}
+      >
+        <div className="experience-marker" />
+        <div className="experience-content">
+          <h3 className="experience-company">{experience.company}</h3>
+          <div className="experience-header">
+            <div className="experience-title">{experience.title}</div>
+            <div className="experience-dates">
+              {formatDate(experience.startDate)} - {formatDate(experience.endDate)}
+              <span className="experience-duration">
+                {calculateDuration(experience.startDate, experience.endDate)}
+              </span>
             </div>
-          ))}
+          </div>
+          {experience.description && (
+            <p className="experience-description">{experience.description}</p>
+          )}
         </div>
       </div>
-    </div>
-  );
+    );
+  };
+
+  // Render a group of roles at the same company with fade-in animation
+  const GroupedRoles: React.FC<{ group: ExperienceGroup; index: number; delay: number }> = ({ group, index, delay }) => {
+    const { ref, isVisible } = useIntersectionObserver();
+    
+    return (
+      <div 
+        key={`group-${index}`} 
+        ref={ref}
+        className={`experience-item experience-group fade-in-on-scroll ${isVisible ? 'is-visible' : ''}`}
+        data-delay={delay}
+      >
+        <div className="experience-marker" />
+        <div className="experience-content">
+          <div className="experience-group-header">
+            <h3 className="experience-company">{group.company}</h3>
+            <div className="experience-group-duration">
+              Full-time · {calculateGroupDuration(group.roles)}
+            </div>
+          </div>
+          <div className="experience-roles">
+            {group.roles.map((role, roleIndex) => (
+              <div key={`role-${roleIndex}`} className="experience-role">
+                <div className="experience-role-marker" />
+                <div className="experience-role-content">
+                  <div className="experience-header">
+                    <div className="experience-title">{role.title}</div>
+                    <div className="experience-dates">
+                      {formatDate(role.startDate)} - {formatDate(role.endDate)}
+                      <span className="experience-duration">
+                        {calculateDuration(role.startDate, role.endDate)}
+                      </span>
+                    </div>
+                  </div>
+                  {role.description && (
+                    <p className="experience-description">{role.description}</p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div className="resume-experience">
       <h2 className="resume-section-title">Work Experience</h2>
       <div className="experience-timeline">
         {finalGroups.map((item, index) => {
+          const delay = Math.min(index, 5); // Cap delay at 5 to avoid too much stagger
+          
           if ('roles' in item) {
             // It's a group
-            return renderGroupedRoles(item, index);
+            return <GroupedRoles key={`group-${index}`} group={item} index={index} delay={delay} />;
           } else {
             // It's a single experience
-            return renderSingleRole(item, index);
+            return <SingleRole key={`single-${index}`} experience={item} index={index} delay={delay} />;
           }
         })}
       </div>

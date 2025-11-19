@@ -298,3 +298,4 @@ Before deploying to production:
 **Spec Version:** 002-resume-page  
 **Status:** ✅ Ready for review and deployment (except Phase 5)
 
+

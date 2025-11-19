@@ -7,6 +7,7 @@
 
 import React, { useCallback, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
+import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 import type { Recommendation } from '../../types/resume';
 import InitialsAvatar from './InitialsAvatar';
 
@@ -27,6 +28,9 @@ const RecommendationsSlider: React.FC<RecommendationsSliderProps> = ({
 
   // Track which images failed to load
   const [imageErrors, setImageErrors] = useState<Set<number>>(new Set());
+  
+  // Add intersection observer for fade-in animation
+  const { ref, isVisible } = useIntersectionObserver();
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -60,7 +64,10 @@ const RecommendationsSlider: React.FC<RecommendationsSliderProps> = ({
   };
 
   return (
-    <div className="recommendations-slider">
+    <div 
+      ref={ref}
+      className={`recommendations-slider fade-in-on-scroll ${isVisible ? 'is-visible' : ''}`}
+    >
       <div className="recommendations-header">
         <h2 className="resume-section-title">Recommendations</h2>
         {sourceURL && (

@@ -305,3 +305,4 @@ npm run deploy
 
 Your resume page is fully functional and ready to showcase your professional experience.
 
+

@@ -22,3 +22,4 @@ const EmptyState: React.FC<EmptyStateProps> = ({ message = 'No data available' }
 
 export default EmptyState;
 
+

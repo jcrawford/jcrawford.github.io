@@ -43,3 +43,4 @@ const InitialsAvatar: React.FC<InitialsAvatarProps> = ({ name, size = 60 }) => {
 
 export default InitialsAvatar;
 
+

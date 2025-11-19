@@ -659,16 +659,19 @@
    Education Section Styles
    ======================================== */
 
-.resume-education {
+.resume-education,
+.resume-certifications {
   max-width: 100%;
 }
 
-.education-timeline {
+.education-timeline,
+.certifications-timeline {
   position: relative;
   padding-left: 2rem;
 }
 
-.education-timeline::before {
+.education-timeline::before,
+.certifications-timeline::before {
   content: '';
   position: absolute;
   left: 0;
@@ -805,7 +808,8 @@
 
 @media (max-width: 480px) {
   .experience-timeline,
-  .education-timeline {
+  .education-timeline,
+  .certifications-timeline {
     padding-left: 1.5rem;
   }
   
@@ -1162,5 +1166,61 @@
 
 [data-theme="dark"] .recommendations-footer {
   border-top-color: var(--border-color-dark, #333);
+}
+
+/* ========================================
+   Scroll-Based Fade-In Animations
+   ======================================== */
+
+/* Initial state - hidden and slightly below viewport */
+.fade-in-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Visible state - fully opaque and in normal position */
+.fade-in-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delays for sequential items */
+.fade-in-on-scroll[data-delay="0"] {
+  transition-delay: 0s;
+}
+
+.fade-in-on-scroll[data-delay="1"] {
+  transition-delay: 0.1s;
+}
+
+.fade-in-on-scroll[data-delay="2"] {
+  transition-delay: 0.2s;
+}
+
+.fade-in-on-scroll[data-delay="3"] {
+  transition-delay: 0.3s;
+}
+
+.fade-in-on-scroll[data-delay="4"] {
+  transition-delay: 0.4s;
+}
+
+.fade-in-on-scroll[data-delay="5"] {
+  transition-delay: 0.5s;
+}
+
+/* Accessibility: Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  
+  .fade-in-on-scroll.is-visible {
+    opacity: 1;
+    transform: none;
+  }
 }
 

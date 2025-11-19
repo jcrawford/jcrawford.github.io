@@ -6,9 +6,8 @@ const config: GatsbyConfig = {
     description: 'A blog relating to technical topics such as programming, web development, and software engineering.',
     siteUrl: 'https://josephcrawford.com',
     socialLinks: {
-      facebook: 'https://www.facebook.com/wordpress',
-      twitter: 'https://twitter.com/wordpress',
-      instagram: 'https://instagram.com',
+      github: 'https://github.com/jcrawford',
+      linkedin: 'https://www.linkedin.com/in/crawfordjoseph',
     },
     navigation: [
       { name: 'Home', path: '/' },

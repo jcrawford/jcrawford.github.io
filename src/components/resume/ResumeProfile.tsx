@@ -91,3 +91,4 @@ const ResumeProfile: React.FC<ResumeProfileProps> = ({ profile }) => {
 
 export default ResumeProfile;
 
+

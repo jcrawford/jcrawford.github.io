@@ -40,6 +40,112 @@
     "startDate": "2018-06",
     "endDate": "2019-10",
     "description": "This role involved comprehensive application maintenance and feature development across multiple technologies, including fixing bugs in applications written in PHP, Perl, and Python. A key quality assurance task was writing a Unit Test Suite to rigorously test the API layer. Feature work included developing the Rapid Recall Wizard to enable customers to quickly add recalls to the system. The position also required maintaining a Node.js application responsible for Twilio-based robo calls and SMS, and actively debugging issues with the primary recall platform. To improve development efficiency, a Composer-based library was created to minimize code duplication across projects. Finally, the role included modernizing the build process for Flash applications by using the ActionScript & MXML plugin for VSCode, replacing the deprecated FlashBuilder, and writing supporting documentation using Markdown."
+  },
+  {
+    "company": "802TRADERS LLC",
+    "title": "Partner / CTO",
+    "startDate": "2015-10",
+    "endDate": "2019-07",
+    "description": "Managed e-commerce infrastructure including Volusion Store and HostGator account with integrated API and FFL license system. Developed custom API layer for drop-shipping orders and implemented FFL license management system with dealer selection, expiration alerts, and automated removal. Oversaw Google Email Accounts and integrated API communication with three vendors (Zanders, Jerry's, Lipseys) for automated order placement upon customer purchase."
+  },
+  {
+    "company": "RYNO Classifieds",
+    "title": "Lead Developer",
+    "startDate": "2016-12",
+    "endDate": "2018-04",
+    "description": "Architected and built complete Laravel 5 application from ground up featuring geolocation-based post relevance and distance-based spotlighted posts. Implemented partner profit-sharing model with custom domains. Deployed on AWS infrastructure (ElasticBeanstalk, ElasticSearch, RDS, ElastiCache, Route53). Built comprehensive administration area for managing users, posts, contests, roles, and permissions. Developed API layer for web and iOS client communication."
+  },
+  {
+    "company": "Viddler",
+    "title": "PHP Developer",
+    "startDate": "2015-10",
+    "endDate": "2016-08",
+    "description": ""
+  },
+  {
+    "company": "Acronym",
+    "title": "PHP Engineer",
+    "startDate": "2012-10",
+    "endDate": "2013-01",
+    "description": ""
+  },
+  {
+    "company": "Dailybreak",
+    "title": "Senior Software Engineer",
+    "startDate": "2012-02",
+    "endDate": "2012-10",
+    "description": "Implemented geo-targeting and demographic filtering for marketing challenges, enabling clients to target specific geographic areas and demographics. Mentored junior developers through code reviews and guidance. Created AWS SDK script for weekly database replication from production to staging via cron-scheduled snapshots. Optimized homepage performance from 186 to 83 database queries through restructuring and Memcache implementation. Supported company rebrand from CampusLIVE to Dailybreak with extensive code changes and new features. Technologies: PHP, MySQL, Zend Server, Memcache, JSON, JavaScript (jQuery), CSS, Solr, SSH."
+  },
+  {
+    "company": "GSN",
+    "title": "Senior Software Engineer (Contract)",
+    "startDate": "2011-06",
+    "endDate": "2012-01",
+    "description": "Delivered server-side APIs for front-end Flash team for Facebook game launch. Created administration area for application management and Customer Support operations with role-based permissions system allowing granular access control across departments. Developed Admin tools for user management and player services tools for Customer Support to handle in-game resource transactions with comprehensive transaction logging. Built real-time QA tool using jQuery and DataTables for Facebook Test user management via Facebook Graph API. Maintained and enhanced existing games (Wheel of Fortune, Jeopardy). Worked on partnership with undisclosed major media company."
+  },
+  {
+    "company": "Nokia",
+    "title": "Senior Software Engineer",
+    "startDate": "2010-02",
+    "endDate": "2011-04",
+    "description": "Delivered mobile applications to millions of users through Ovi Store platform, managing challenges of multi-environment development and international team collaboration across time zones. Contributed to significant growth as downloads increased from 2 million to 4 million per day. Technologies: Oracle, Memcache, APC, SVN, VPN, SSH, and internal API services for Purchasing, Signing In, and Content Delivery. Development environment: Ubuntu desktop, Zend Studio IDE, gSTM tunnels, VIM/VI for server editing."
+  },
+  {
+    "company": "Tatto Media",
+    "title": "Software Engineer",
+    "startDate": "2009-10",
+    "endDate": "2010-01",
+    "description": "Created bidding system using CakePHP and PHP 5 where advertisers could log in and create conversion-based bids for Tatto Display advertising network. Worked on reporting section integrating Ajax flash charts (FusionCharts) using rsync, scp, ssh, svn, PHP 5, and CakePHP framework. Technologies: Cake PHP, PHP 5."
+  },
+  {
+    "company": "Namespace",
+    "title": "Contract Web Developer",
+    "startDate": "2009-06",
+    "endDate": "2009-10",
+    "description": "Partnered with ISP companies to create URL-free internet vision run by keywords. Created new reporting system using Object-Oriented PHP 5 allowing clients to access data via web front-end (visual browser view) or download CSV/XML formats with customizable parameters (dates, format, type). Implemented multiple fetch methods (cURL, wGet over HTTPS) for integration into client internal systems. Left position for permanent role at Tatto Media."
+  },
+  {
+    "company": "Castle Communications",
+    "title": "Website Developer",
+    "startDate": "2008-01",
+    "endDate": "2009-04",
+    "description": "Integrated CSS layout into Webdate.com codebase (complex task due to mixed HTML markup with no template control). Rewrote mobile API to be RESTful using company's internal framework with pipe-delimited format including binary photo data. Worked on Politics.com Web 2.0 social networking site with features including photo/video uploads, comments, debates, friend/foe management (with unique foe removal control and message blocking), and third-party politician data integration. Technologies: PHP 4/5, MySQL, CSS, JavaScript (Ajax, jQuery). Worked remotely with occasional office visits to Timonium MD and Alexandria VA using SVN and SSH."
+  },
+  {
+    "company": "eFashion Solutions",
+    "title": "Web Application Developer",
+    "startDate": "2007-07",
+    "endDate": "2007-12",
+    "description": "Developed and maintained company and client websites."
+  },
+  {
+    "company": "ERE Media",
+    "title": "Lead Web Developer",
+    "startDate": "2007-03",
+    "endDate": "2007-07",
+    "description": "Converted Microsoft-based solution to LAMP stack, creating job portal with PHP 5, JavaScript, and CSS. Implemented searchable job database with Google Maps integration featuring zoom-filtered results. Developed recruiter posting pack purchase system and explored single sign-on across network sites. Utilized CodeIgniter PHP framework for rapid MVC development. Position transitioned to full-time employment but ended short-term due to personal reasons."
+  },
+  {
+    "company": "eFashion Solutions",
+    "title": "Web Application Developer",
+    "startDate": "2006-08",
+    "endDate": "2007-03",
+    "description": "Developed and maintained company and client websites."
+  },
+  {
+    "company": "LicketyShip, Inc.",
+    "title": "Lead Web Developer",
+    "startDate": "2006-05",
+    "endDate": "2006-08",
+    "description": "Led team of 4 developers under Codebowl Solutions to deliver same-day delivery service platform. Built custom 100% PHP 5 solution utilizing external web services and complex calculations for delivery cost optimization. Implemented screen scraping with permission to source products from partner company, turn-by-turn directions for accurate street mileage calculations, and courier cost optimization (per mile, per minute wait time). Integrated online faxing service for courier notifications. Platform switched from LAMP to Microsoft .NET post-departure and later closed. Technologies: PHP 5, CSS, JavaScript, XML, SVN, SSH, VPN, SOAP."
+  },
+  {
+    "company": "Codebowl Solutions, Inc.",
+    "title": "Owner",
+    "startDate": "2005-05",
+    "endDate": "2008-12",
+    "description": "Provided custom website design and development services for large and small scale clients."
   }
 ]
+
 

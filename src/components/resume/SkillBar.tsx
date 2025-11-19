@@ -86,3 +86,4 @@ const SkillBar: React.FC<SkillBarProps> = ({ skill, animationDelay = 0 }) => {
 
 export default SkillBar;
 
+
