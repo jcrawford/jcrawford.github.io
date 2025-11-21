@@ -8,6 +8,7 @@ tags: ["work", "style", "elegance"]
 author: "joseph-crawford"
 publishedAt: "2025-01-14"
 updatedAt: "2025-01-14"
+featured: true
 ---
 
 In a world obsessed with making bold statements, elegance whispers rather than shouts. It's the refined choice of a perfectly tailored blazer over flashy embellishments, the confidence of understated jewelry that tells a story without overwhelming.

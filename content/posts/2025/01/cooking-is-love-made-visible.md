@@ -1,13 +1,16 @@
 ---
-slug: "cooking-is-love-made-visible"
-title: "Cooking is like love—it should be entered into with abandon"
-excerpt: "Embrace creativity, experimentation, and joy in the kitchen."
-featuredImage: "/images/content/cooking-is-love-made-visible/featured.jpg"
-category: "food"
-tags: ["food", "cooking", "recipes"]
-author: "joseph-crawford"
-publishedAt: "2025-01-04"
-updatedAt: "2025-01-04"
+slug: cooking-is-love-made-visible
+title: Cooking is like love—it should be entered into with abandon
+excerpt: 'Embrace creativity, experimentation, and joy in the kitchen.'
+featuredImage: /images/content/cooking-is-love-made-visible/featured.jpg
+category: food
+tags:
+  - food
+  - cooking
+  - recipes
+author: joseph-crawford
+publishedAt: '2025-01-04'
+updatedAt: '2025-01-04'
 ---
 
 The best cooking doesn't come from rigid recipe-following—it comes from intuition, experimentation, and willingness to make glorious mistakes. When you cook with abandon, you taste as you go, adjust seasonings boldly, and trust your instincts. This is how family recipes evolved, how signature dishes were born.

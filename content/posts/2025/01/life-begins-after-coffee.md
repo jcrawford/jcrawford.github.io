@@ -8,6 +8,7 @@ tags: ["lifestyle", "coffee", "daily rituals"]
 author: "joseph-crawford"
 publishedAt: "2025-01-09"
 updatedAt: "2025-01-09"
+featured: true
 ---
 
 For millions worldwide, the day doesn't truly start until that first sip of coffee touches their lips. It's more than caffeine—it's ritual, comfort, and transition from sleep to wakefulness. The familiar sounds of brewing, the warmth of the mug in your hands, the aroma that fills your kitchen—these sensory experiences ground us in the present moment.

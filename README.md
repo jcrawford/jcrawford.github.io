@@ -6,8 +6,8 @@ A modern, fully-featured blog built with Gatsby, TypeScript, and React. Features
 
 - **Static Site Generation**: Fast, SEO-friendly pages generated at build time
 - **Markdown Content**: 20 articles across 5 categories (Fashion, Lifestyle, Food, Travel, Sports) with YAML frontmatter
-- **Featured Slider**: Auto-playing hero slider with 3 featured articles
-- **Highlighted Posts**: 2 additional featured posts stacked alongside slider
+- **Featured Slider**: Auto-playing hero slider with 5 curated featured articles
+- **Highlighted Posts**: 2 additional featured posts stacked alongside slider (7 total featured)
 - **Category Tabs**: Browse articles by category with "View More" links
 - **Category Pages**: Filtered article views with pagination support
 - **Author Pages**: Author profiles with their published articles
@@ -62,7 +62,42 @@ npm run type-check
 
 # Clean cache
 npm run clean
+
+# Audit featured posts configuration
+npm run list-featured
+
+# Clean up excess featured posts
+npm run clean-featured
 ```
+
+### Featured Posts Management
+
+The homepage displays exactly 7 curated featured posts. To manage which posts appear:
+
+1. Add `featured: true` to the frontmatter of any post you want to feature
+2. Run `npm run list-featured` to audit your featured posts configuration
+3. The script will:
+   - List all posts marked as featured in a table format with status indicators
+   - Show which 7 posts will be displayed (✓ in green) and which will be ignored (✗ in red)
+   - Warn if more than 7 posts are featured (only the 7 most recent will display)
+   - Error if family category posts are marked as featured (they're excluded from homepage)
+4. Run `npm run clean-featured` to automatically remove the `featured` flag from:
+   - Posts beyond the first 7 most recent
+   - Any family category posts
+   - The script will show what will change and prompt for confirmation (y/N)
+
+**Example frontmatter:**
+```yaml
+---
+slug: "my-post"
+title: "My Featured Post"
+featured: true
+category: "work"
+publishedAt: "2025-11-20"
+---
+```
+
+**Important:** Do not mark family category posts as featured - they are automatically excluded from the homepage.
 
 ## 📁 Project Structure
 

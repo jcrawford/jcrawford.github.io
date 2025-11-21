@@ -2,10 +2,12 @@ import React from 'react';
 import { graphql, PageProps, HeadFC } from 'gatsby';
 import Layout from '../components/Layout';
 import FeaturedPosts from '../components/FeaturedPosts';
+import EmptyFeaturedState from '../components/EmptyFeaturedState';
 import TagTabs from '../components/TagTabs';
 import ArticleCard from '../components/ArticleCard';
 import Sidebar from '../components/Sidebar';
 import SEO from '../components/SEO';
+import '../styles/empty-featured.css';
 
 interface ArticleFrontmatter {
   slug: string;
@@ -247,10 +249,35 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
     return article;
   };
 
-  // Get latest articles for featured slider (5 for slider + 2 for highlighted posts)
-  const latestArticles = allDisplayArticles.slice(0, 7);
+  /**
+   * Filters posts to include only those marked as featured and not in the family category.
+   * Sorts results by publication date (descending) with slug as secondary sort (ascending).
+   * Limits to first 7 posts for the featured section (5 slider + 2 highlighted).
+   * 
+   * @returns Array of featured posts, limited to 7
+   */
+  const featuredPosts = allDisplayArticles.filter(
+    article => article.frontmatter.featured === true
+  );
 
-  const featuredArticles = latestArticles.slice(0, 5).map(article => {
+  // Sort featured posts: primary by publishedAt DESC, secondary by slug ASC
+  const sortedFeaturedPosts = featuredPosts.sort((a, b) => {
+    const dateA = new Date(a.frontmatter.publishedAt).getTime();
+    const dateB = new Date(b.frontmatter.publishedAt).getTime();
+    
+    if (dateA !== dateB) {
+      return dateB - dateA; // Most recent first
+    }
+    
+    // Secondary sort: slug alphabetically ascending
+    return a.frontmatter.slug.localeCompare(b.frontmatter.slug);
+  });
+
+  // Get latest articles for featured slider (5 for slider + 2 for highlighted posts)
+  const latestArticles = sortedFeaturedPosts.slice(0, 7);
+
+  // Ensure we have data to map
+  const featuredArticles = latestArticles.length > 0 ? latestArticles.slice(0, Math.min(5, latestArticles.length)).map(article => {
     const mappedArticle = mapArticleForSlider(article);
     return {
       slug: mappedArticle.frontmatter.slug,
@@ -264,9 +291,9 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
       authorName: authors.find(a => a.slug === mappedArticle.frontmatter.author)?.name || mappedArticle.frontmatter.author,
       isSeries: !!mappedArticle.frontmatter.series?.name,
     };
-  });
+  }) : [];
   
-  const highlightedArticles = latestArticles.slice(5, 7).map(article => {
+  const highlightedArticles = latestArticles.length > 5 ? latestArticles.slice(5, 7).map(article => {
     const mappedArticle = mapArticleForSlider(article);
     return {
       slug: mappedArticle.frontmatter.slug,
@@ -280,7 +307,8 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
       authorName: authors.find(a => a.slug === mappedArticle.frontmatter.author)?.name || mappedArticle.frontmatter.author,
       isSeries: !!mappedArticle.frontmatter.series?.name,
     };
-  });
+  }) : [];
+  
   const recentArticles = allDisplayArticles.slice(7, 19).map(mapArticleForSlider);
 
   // Extract slugs of featured articles (top 5 in slider) to exclude from category tabs
@@ -289,10 +317,14 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
   return (
     <Layout>
       <div className="hm-container">
-        <FeaturedPosts 
-          sliderArticles={featuredArticles}
-          highlightedArticles={highlightedArticles}
-        />
+        {featuredArticles.length === 0 ? (
+          <EmptyFeaturedState message="No featured posts configured" />
+        ) : (
+          <FeaturedPosts 
+            sliderArticles={featuredArticles}
+            highlightedArticles={highlightedArticles}
+          />
+        )}
 
         <TagTabs tags={tags} articles={articles} excludeSlugs={featuredSlugs} />
 
@@ -347,7 +379,7 @@ export const query = graphql`
   query {
     allMarkdownRemark(
       sort: { frontmatter: { publishedAt: DESC } }
-      limit: 100
+      limit: 150
     ) {
       nodes {
         id
@@ -362,6 +394,7 @@ export const query = graphql`
           author
           publishedAt
           updatedAt
+          featured
           series {
             name
             order

@@ -1,13 +1,18 @@
 ---
-slug: "champions-keep-playing"
-title: "Champions keep playing until they get it right"
-excerpt: "Persistence separates those who dream from those who achieve in sports and life."
-featuredImage: "/images/content/champions-keep-playing/featured.jpg"
-category: "sports"
-tags: ["sports", "motivation", "perseverance"]
-author: "joseph-crawford"
-publishedAt: "2024-12-30"
-updatedAt: "2024-12-30"
+slug: champions-keep-playing
+title: Champions keep playing until they get it right
+excerpt: >-
+  Persistence separates those who dream from those who achieve in sports and
+  life.
+featuredImage: /images/content/champions-keep-playing/featured.jpg
+category: sports
+tags:
+  - sports
+  - motivation
+  - perseverance
+author: joseph-crawford
+publishedAt: '2024-12-30'
+updatedAt: '2024-12-30'
 ---
 
 Every champion has a story of defeat before victory. Michael Jordan was cut from his high school basketball team. Serena Williams lost her first professional match. But champions share one quality: they refuse to quit when things get hard. Instead, they analyze what went wrong, adjust their approach, and try again.

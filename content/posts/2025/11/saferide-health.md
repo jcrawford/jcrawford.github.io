@@ -8,6 +8,7 @@ tags: ["work"]
 author: "joseph-crawford"
 publishedAt: "2025-11-20"
 updatedAt: "2025-11-20"
+featured: true
 ---
 ## When Did This Journey Begin?
 I started my employment with Saferide Health back in February of 2022.  I have to say that over the past few years I have determined that this is the best company that I have worked for over my entire career.

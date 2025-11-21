@@ -1,13 +1,16 @@
 ---
-slug: "hard-work-beats-talent"
-title: "Hard work beats talent when talent doesn't work hard"
-excerpt: "Natural ability opens doors, but dedication and effort determine success."
-featuredImage: "/images/content/hard-work-beats-talent/featured.jpg"
-category: "sports"
-tags: ["sports", "training", "discipline"]
-author: "joseph-crawford"
-publishedAt: "2024-12-29"
-updatedAt: "2024-12-29"
+slug: hard-work-beats-talent
+title: Hard work beats talent when talent doesn't work hard
+excerpt: 'Natural ability opens doors, but dedication and effort determine success.'
+featuredImage: /images/content/hard-work-beats-talent/featured.jpg
+category: sports
+tags:
+  - sports
+  - training
+  - discipline
+author: joseph-crawford
+publishedAt: '2024-12-29'
+updatedAt: '2024-12-29'
 ---
 
 Sports history is filled with naturally gifted athletes who never reached their potential, while 'underdog' competitors with less raw talent achieved greatness through relentless work. Talent might determine your starting point, but work ethic determines how far you go.

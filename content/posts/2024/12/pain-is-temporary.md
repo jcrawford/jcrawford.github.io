@@ -1,13 +1,16 @@
 ---
-slug: "pain-is-temporary"
-title: "The pain you feel today will be the strength you feel tomorrow"
-excerpt: "Every challenge in training and competition builds resilience and power."
-featuredImage: "/images/content/pain-is-temporary/featured.jpg"
-category: "sports"
-tags: ["sports", "fitness", "mindset"]
-author: "joseph-crawford"
-publishedAt: "2024-12-28"
-updatedAt: "2024-12-28"
+slug: pain-is-temporary
+title: The pain you feel today will be the strength you feel tomorrow
+excerpt: Every challenge in training and competition builds resilience and power.
+featuredImage: /images/content/pain-is-temporary/featured.jpg
+category: sports
+tags:
+  - sports
+  - fitness
+  - mindset
+author: joseph-crawford
+publishedAt: '2024-12-28'
+updatedAt: '2024-12-28'
 ---
 
 Athletes understand that discomfort signals growth. The burn in your muscles, the cardiovascular challenge, the mental fatigue—these aren't signs to quit, but markers of improvement happening. Your body adapts to stress by becoming stronger, faster, more resilient.
