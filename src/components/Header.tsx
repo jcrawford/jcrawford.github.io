@@ -105,7 +105,7 @@ const Header: React.FC = () => {
             </ul>
           </nav>
 
-          {/* Header Gadgets (Social, Subscribe, Theme Toggle, Search) */}
+          {/* Header Gadgets (Social, Theme Toggle, Search) */}
           <div className="hm-header-gadgets">
             
             {/* Social Menu */}
@@ -129,9 +129,6 @@ const Header: React.FC = () => {
                 </li>
               </ul>
             </nav>
-
-            {/* Subscribe Button */}
-            <a href="#" className="hm-cta-btn">Subscribe</a>
 
             {/* Dark Mode Toggle */}
             <div className="hm-light-dark-switch">
