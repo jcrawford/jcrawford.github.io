@@ -4,8 +4,8 @@ title: "Building Better Websites: Planning & Architecture"
 excerpt: "Learn the fundamentals of planning and architecting modern websites. This is the first part of our comprehensive web development series."
 featuredImage: "/images/content/building-better-websites/planning-architecture-featured.jpg"
 category: "lifestyle"
-tags: ["featured", "test-series"]
-author: "admin"
+tags: ["test-series"]
+author: "joseph-crawford"
 publishedAt: "2025-11-10"
 series:
   name: "Building Better Websites"

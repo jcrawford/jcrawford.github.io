@@ -5,7 +5,7 @@ excerpt: "A thorough review of the iPhone 15 Pro, examining the new titanium des
 featuredImage: "/images/content/reviews/iphone-15-pro-review/featured.jpg"
 category: "reviews"
 tags: ["reviews", "hardware", "smartphone", "apple", "mobile"]
-author: "admin"
+author: "joseph-crawford"
 publishedAt: "2025-10-12"
 updatedAt: "2025-10-12"
 review:

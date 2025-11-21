@@ -5,7 +5,7 @@ excerpt: "A comprehensive review of Docker Desktop, examining its features, perf
 featuredImage: "/images/content/reviews/docker-desktop-review/featured.jpg"
 category: "reviews"
 tags: ["reviews", "software", "development", "containers", "devops"]
-author: "admin"
+author: "joseph-crawford"
 publishedAt: "2025-10-28"
 updatedAt: "2025-10-28"
 review:

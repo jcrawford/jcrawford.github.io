@@ -5,7 +5,7 @@ excerpt: "A comprehensive review of JetBrains WebStorm, examining whether this p
 featuredImage: "/images/content/reviews/jetbrains-webstorm-review/featured.jpg"
 category: "reviews"
 tags: ["reviews", "software", "ide", "javascript", "development"]
-author: "admin"
+author: "joseph-crawford"
 publishedAt: "2025-11-08"
 updatedAt: "2025-11-08"
 review:

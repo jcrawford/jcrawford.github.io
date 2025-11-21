@@ -5,7 +5,7 @@ excerpt: "A detailed review of the MacBook Pro with M3 chip, examining its perfo
 featuredImage: "/images/content/reviews/macbook-pro-m3-review/featured.jpg"
 category: "reviews"
 tags: ["reviews", "hardware", "laptop", "apple", "productivity"]
-author: "admin"
+author: "joseph-crawford"
 publishedAt: "2025-10-20"
 updatedAt: "2025-10-20"
 review:

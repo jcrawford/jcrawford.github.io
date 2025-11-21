@@ -1,9 +1,9 @@
 [
   {
     "id": "1",
-    "slug": "fashion",
-    "name": "Fashion",
-    "description": "Discover the latest fashion trends, style tips, and wardrobe essentials that define modern elegance.",
+    "slug": "work",
+    "name": "Work",
+    "description": "Career insights, professional development, and workplace experiences.",
     "featured": true
   },
   {
@@ -32,7 +32,7 @@
     "slug": "sports",
     "name": "Sports",
     "description": "Stay updated with the latest in sports news, athlete profiles, and fitness inspiration.",
-    "featured": false
+    "featured": true
   },
   {
     "id": "6",

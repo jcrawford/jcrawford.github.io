@@ -5,7 +5,7 @@ excerpt: "Dive into modern development workflows, build tools, and best practice
 featuredImage: "/images/content/building-better-websites/implementation-development-featured.jpg"
 category: "lifestyle"
 tags: ["test-series"]
-author: "admin"
+author: "joseph-crawford"
 publishedAt: "2025-11-11"
 series:
   name: "Building Better Websites"

@@ -5,7 +5,7 @@ excerpt: "An in-depth review of Visual Studio Code, Microsoft's free and powerfu
 featuredImage: "/images/content/reviews/visual-studio-code-review/featured.jpg"
 category: "reviews"
 tags: ["reviews", "software", "ide", "development", "coding"]
-author: "admin"
+author: "joseph-crawford"
 publishedAt: "2025-11-10"
 updatedAt: "2025-11-10"
 review:

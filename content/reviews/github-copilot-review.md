@@ -5,7 +5,7 @@ excerpt: "An honest review of GitHub Copilot, the AI-powered coding assistant fr
 featuredImage: "/images/content/reviews/github-copilot-review/featured.jpg"
 category: "reviews"
 tags: ["reviews", "software", "ai", "development", "productivity"]
-author: "admin"
+author: "joseph-crawford"
 publishedAt: "2025-11-05"
 updatedAt: "2025-11-05"
 review:

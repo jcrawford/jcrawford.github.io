@@ -5,7 +5,7 @@ excerpt: "A detailed review of Notion, the productivity app that combines notes,
 featuredImage: "/images/content/reviews/notion-review/featured.jpg"
 category: "reviews"
 tags: ["reviews", "software", "productivity", "collaboration", "organization"]
-author: "admin"
+author: "joseph-crawford"
 publishedAt: "2025-11-03"
 updatedAt: "2025-11-03"
 review:

@@ -5,7 +5,7 @@ excerpt: "An honest review of the Samsung Odyssey G9, examining whether this mas
 featuredImage: "/images/content/reviews/samsung-odyssey-g9-review/featured.jpg"
 category: "reviews"
 tags: ["reviews", "hardware", "monitor", "gaming", "productivity"]
-author: "admin"
+author: "joseph-crawford"
 publishedAt: "2025-10-10"
 updatedAt: "2025-10-10"
 review:

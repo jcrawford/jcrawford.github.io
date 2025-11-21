@@ -5,7 +5,7 @@ excerpt: "An in-depth look at Figma, the collaborative web-based design tool tha
 featuredImage: "/images/content/reviews/figma-review/featured.jpg"
 category: "reviews"
 tags: ["reviews", "software", "design", "ui", "collaboration"]
-author: "admin"
+author: "joseph-crawford"
 publishedAt: "2025-11-01"
 updatedAt: "2025-11-01"
 review:

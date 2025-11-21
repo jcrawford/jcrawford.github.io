@@ -5,7 +5,7 @@ excerpt: "An honest review of Vercel, the premium hosting platform optimized for
 featuredImage: "/images/content/reviews/vercel-hosting-review/featured.jpg"
 category: "reviews"
 tags: ["reviews", "software", "hosting", "deployment", "web"]
-author: "admin"
+author: "joseph-crawford"
 publishedAt: "2025-10-22"
 updatedAt: "2025-10-22"
 review:

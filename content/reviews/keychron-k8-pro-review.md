@@ -5,7 +5,7 @@ excerpt: "A comprehensive review of the Keychron K8 Pro, examining whether this 
 featuredImage: "/images/content/reviews/keychron-k8-pro-review/featured.jpg"
 category: "reviews"
 tags: ["reviews", "hardware", "keyboard", "mechanical", "productivity"]
-author: "admin"
+author: "joseph-crawford"
 publishedAt: "2025-10-08"
 updatedAt: "2025-10-08"
 review:

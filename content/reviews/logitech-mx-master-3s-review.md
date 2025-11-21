@@ -5,7 +5,7 @@ excerpt: "A comprehensive review of the Logitech MX Master 3S, examining why thi
 featuredImage: "/images/content/reviews/logitech-mx-master-3s-review/featured.jpg"
 category: "reviews"
 tags: ["reviews", "hardware", "mouse", "productivity", "accessories"]
-author: "admin"
+author: "joseph-crawford"
 publishedAt: "2025-10-18"
 updatedAt: "2025-10-18"
 review:

@@ -6,6 +6,7 @@ import { formatDate } from '../utils/dateUtils';
 import OptimizedImage from '../components/OptimizedImage';
 import SEO from '../components/SEO';
 import ReviewBox from '../components/ReviewBox';
+import { getArticlePath } from '../utils/articlePath';
 
 interface ArticleData {
   markdownRemark: {
@@ -145,7 +146,7 @@ const ArticleTemplate: React.FC<PageProps<ArticleData>> = ({ data }) => {
                 {previousArticle && (
                   <div className="hm-nav-previous">
                     <span className="hm-nav-label">Previous Article</span>
-                    <Link to={`/articles/${previousArticle.frontmatter.slug}`} className="hm-nav-title">
+                    <Link to={getArticlePath(previousArticle.frontmatter.slug, !!previousArticle.frontmatter.series?.name)} className="hm-nav-title">
                       {previousArticle.frontmatter.title}
                     </Link>
                   </div>
@@ -153,7 +154,7 @@ const ArticleTemplate: React.FC<PageProps<ArticleData>> = ({ data }) => {
                 {nextArticle && (
                   <div className="hm-nav-next">
                     <span className="hm-nav-label">Next Article</span>
-                    <Link to={`/articles/${nextArticle.frontmatter.slug}`} className="hm-nav-title">
+                    <Link to={getArticlePath(nextArticle.frontmatter.slug, !!nextArticle.frontmatter.series?.name)} className="hm-nav-title">
                       {nextArticle.frontmatter.title}
                     </Link>
                   </div>
@@ -243,7 +244,7 @@ export const Head: HeadFC<ArticleData> = ({ data }) => (
     description={data.markdownRemark.frontmatter.excerpt}
     image={data.markdownRemark.frontmatter.featuredImage}
     article={true}
-    pathname={`/articles/${data.markdownRemark.frontmatter.slug}`}
+    pathname={getArticlePath(data.markdownRemark.frontmatter.slug, !!data.markdownRemark.frontmatter.series?.name)}
   />
 );
 

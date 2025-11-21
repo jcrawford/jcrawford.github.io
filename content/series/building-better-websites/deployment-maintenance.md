@@ -5,7 +5,7 @@ excerpt: "Master deployment strategies, monitoring, and long-term maintenance. T
 featuredImage: "/images/content/building-better-websites/deployment-maintenance-featured.jpg"
 category: "lifestyle"
 tags: ["test-series"]
-author: "admin"
+author: "joseph-crawford"
 publishedAt: "2025-11-12"
 series:
   name: "Building Better Websites"

@@ -5,7 +5,7 @@ excerpt: "An in-depth review of Sony's WH-1000XM5 headphones, examining whether 
 featuredImage: "/images/content/reviews/sony-wh1000xm5-review/featured.jpg"
 category: "reviews"
 tags: ["reviews", "hardware", "headphones", "audio", "productivity"]
-author: "admin"
+author: "joseph-crawford"
 publishedAt: "2025-10-15"
 updatedAt: "2025-10-15"
 review:

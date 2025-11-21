@@ -18,6 +18,7 @@ interface ArticleFrontmatter {
   author: string;
   publishedAt: string;
   updatedAt: string;
+  featured?: boolean;
   series?: {
     name: string;
     order?: number;
@@ -49,6 +50,14 @@ interface IndexPageData {
   };
   allAuthorsJson: {
     nodes: Author[];
+  };
+  allFile?: {
+    nodes: Array<{
+      name: string;
+      internal: {
+        content: string;
+      };
+    }>;
   };
 }
 
@@ -144,12 +153,37 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
   }
 
   // Development: Show full homepage (excluding family posts)
-  const tags = data.allTagsJson.nodes;
+  const allTags = data.allTagsJson.nodes;
   const authors = data.allAuthorsJson.nodes;
   
-  // Filter out family posts from homepage
+  // Get configured tag slugs, or fallback to first 4 tags if config doesn't exist or is malformed
+  let configuredTagSlugs: string[] = [];
+  
+  try {
+    const tagTabsFile = data.allFile?.nodes.find(node => node.name === 'tag-tabs');
+    if (tagTabsFile && tagTabsFile.internal.content) {
+      const parsed = JSON.parse(tagTabsFile.internal.content);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        configuredTagSlugs = parsed;
+      }
+    }
+  } catch (error) {
+    console.warn('Failed to parse tag-tabs.json, using fallback', error);
+  }
+  
+  // Fallback: use first 4 tags from tags.json
+  if (configuredTagSlugs.length === 0) {
+    configuredTagSlugs = allTags.slice(0, 4).map(tag => tag.slug);
+  }
+  
+  // Filter tags based on configuration (preserving order from config)
+  const tags = configuredTagSlugs
+    .map(slug => allTags.find(tag => tag.slug === slug))
+    .filter((tag): tag is Tag => tag !== undefined);
+  
+  // Filter out family posts from homepage and articles with null frontmatter
   const articles = data.allMarkdownRemark.nodes.filter(
-    article => article.frontmatter.category !== 'family'
+    article => article.frontmatter && article.frontmatter.category !== 'family'
   );
 
   // Group articles by series
@@ -214,21 +248,44 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
     return article;
   };
 
-  const featuredArticles = allDisplayArticles.slice(0, 5).map(mapArticleForSlider).map(article => ({
-    slug: article.frontmatter.slug,
-    title: article.frontmatter.title,
-    excerpt: article.frontmatter.excerpt,
-    featuredImage: article.frontmatter.featuredImage,
-    category: article.frontmatter.category,
-    categoryName: tags.find(t => t.slug === article.frontmatter.category)?.name || article.frontmatter.category,
-    publishedAt: article.frontmatter.publishedAt,
-    author: article.frontmatter.author,
-    authorName: authors.find(a => a.slug === article.frontmatter.author)?.name || article.frontmatter.author,
-    isSeries: !!article.frontmatter.series?.name,
-  }));
+  // Get latest articles for featured slider (5 for slider + 2 for highlighted posts)
+  const latestArticles = allDisplayArticles.slice(0, 7);
+
+  const featuredArticles = latestArticles.slice(0, 5).map(article => {
+    const mappedArticle = mapArticleForSlider(article);
+    return {
+      slug: mappedArticle.frontmatter.slug,
+      title: mappedArticle.frontmatter.title,
+      excerpt: mappedArticle.frontmatter.excerpt,
+      featuredImage: mappedArticle.frontmatter.featuredImage,
+      category: mappedArticle.frontmatter.category,
+      categoryName: tags.find(t => t.slug === mappedArticle.frontmatter.category)?.name || mappedArticle.frontmatter.category,
+      publishedAt: mappedArticle.frontmatter.publishedAt,
+      author: mappedArticle.frontmatter.author,
+      authorName: authors.find(a => a.slug === mappedArticle.frontmatter.author)?.name || mappedArticle.frontmatter.author,
+      isSeries: !!mappedArticle.frontmatter.series?.name,
+    };
+  });
   
-  const highlightedArticles = allDisplayArticles.slice(5, 7).map(mapArticleForSlider);
+  const highlightedArticles = latestArticles.slice(5, 7).map(article => {
+    const mappedArticle = mapArticleForSlider(article);
+    return {
+      slug: mappedArticle.frontmatter.slug,
+      title: mappedArticle.frontmatter.title,
+      excerpt: mappedArticle.frontmatter.excerpt,
+      featuredImage: mappedArticle.frontmatter.featuredImage,
+      category: mappedArticle.frontmatter.category,
+      categoryName: tags.find(t => t.slug === mappedArticle.frontmatter.category)?.name || mappedArticle.frontmatter.category,
+      publishedAt: mappedArticle.frontmatter.publishedAt,
+      author: mappedArticle.frontmatter.author,
+      authorName: authors.find(a => a.slug === mappedArticle.frontmatter.author)?.name || mappedArticle.frontmatter.author,
+      isSeries: !!mappedArticle.frontmatter.series?.name,
+    };
+  });
   const recentArticles = allDisplayArticles.slice(7, 19).map(mapArticleForSlider);
+
+  // Extract slugs of featured articles (top 5 in slider) to exclude from category tabs
+  const featuredSlugs = featuredArticles.map(article => article.slug);
 
   return (
     <Layout>
@@ -241,19 +298,19 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
             <div className="hm-highlighted-posts">
               {highlightedArticles.map((article) => (
                 <HighlightedPost
-                  key={article.id}
-                  title={article.frontmatter.title}
-                  category={article.frontmatter.category}
-                  slug={article.frontmatter.slug}
-                  featuredImage={article.frontmatter.featuredImage}
-                  isSeries={!!article.frontmatter.series?.name}
+                  key={article.slug}
+                  title={article.title}
+                  category={article.category}
+                  slug={article.slug}
+                  featuredImage={article.featuredImage}
+                  isSeries={article.isSeries}
                 />
               ))}
             </div>
           </div>
         </div>
 
-        <TagTabs tags={tags} articles={articles} />
+        <TagTabs tags={tags} articles={articles} excludeSlugs={featuredSlugs} />
 
         <div className="hm-content-sidebar-wrap">
           <main className="hm-primary-content">
@@ -338,6 +395,14 @@ export const query = graphql`
       nodes {
         slug
         name
+      }
+    }
+    allFile(filter: { name: { eq: "tag-tabs" }, sourceInstanceName: { eq: "data" } }) {
+      nodes {
+        name
+        internal {
+          content
+        }
       }
     }
   }

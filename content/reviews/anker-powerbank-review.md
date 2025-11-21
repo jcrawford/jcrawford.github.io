@@ -5,7 +5,7 @@ excerpt: "An in-depth review of the Anker PowerCore 737, examining whether this 
 featuredImage: "/images/content/reviews/anker-powerbank-review/featured.jpg"
 category: "reviews"
 tags: ["reviews", "hardware", "accessories", "battery", "travel"]
-author: "admin"
+author: "joseph-crawford"
 publishedAt: "2025-10-05"
 updatedAt: "2025-10-05"
 review:

@@ -324,7 +324,7 @@ export const Head: HeadFC<SeriesArticleData> = ({ data }) => {
       description={frontmatter.excerpt}
       image={frontmatter.featuredImage}
       article={true}
-      pathname={`/articles/${frontmatter.slug}`}
+      pathname={`/series/${frontmatter.slug}`}
     />
   );
 };

@@ -5,7 +5,7 @@ excerpt: "A thorough review of Postman, the popular API development tool that ha
 featuredImage: "/images/content/reviews/postman-review/featured.jpg"
 category: "reviews"
 tags: ["reviews", "software", "api", "development", "testing"]
-author: "admin"
+author: "joseph-crawford"
 publishedAt: "2025-10-25"
 updatedAt: "2025-10-25"
 review:

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import OptimizedImage from './OptimizedImage';
 import { formatDate } from '../utils/dateUtils';
+import { getArticlePath } from '../utils/articlePath';
 
 interface Article {
   id: string;
@@ -31,14 +32,18 @@ interface Tag {
 interface TagTabsProps {
   tags: Tag[];
   articles: Article[];
+  excludeSlugs?: string[]; // Optional array of slugs to exclude from tabs
 }
 
-const TagTabs: React.FC<TagTabsProps> = ({ tags, articles }) => {
+const TagTabs: React.FC<TagTabsProps> = ({ tags, articles, excludeSlugs = [] }) => {
   const [activeTab, setActiveTab] = useState(tags[0]?.slug || '');
 
   const getArticlesByTag = (tagSlug: string) => {
+    // Filter by category AND exclude featured articles
     const tagArticles = articles.filter(
-      (article) => article.frontmatter.category === tagSlug
+      (article) => 
+        article.frontmatter.category === tagSlug &&
+        !excludeSlugs.includes(article.frontmatter.slug)
     );
 
     // Group series articles - show only the first article of each series
@@ -145,10 +150,11 @@ const TagTabs: React.FC<TagTabsProps> = ({ tags, articles }) => {
             <div className="hm-tab-posts-wrapper">
               {getArticlesByTag(tag.slug).map((article) => {
                 const displayData = mapArticleForDisplay(article);
+                const articlePath = getArticlePath(displayData.slug, !!article.frontmatter.series?.name);
                 return (
                   <div key={article.id} className="hm-tab-post-card">
                     <div className="hm-tab-post-img">
-                      <Link to={`/articles/${displayData.slug}`} aria-label={displayData.title}>
+                      <Link to={articlePath} aria-label={displayData.title}>
                         <OptimizedImage 
                           src={displayData.featuredImage} 
                           alt={displayData.title}
@@ -158,11 +164,11 @@ const TagTabs: React.FC<TagTabsProps> = ({ tags, articles }) => {
                     </div>
                     <div className="hm-tab-post-details">
                       <h3 className="hm-tab-post-title">
-                        <Link to={`/articles/${displayData.slug}`}>{displayData.title}</Link>
+                        <Link to={articlePath}>{displayData.title}</Link>
                       </h3>
                       <div className="entry-meta">
                         <span className="posted-on">
-                          <Link to={`/articles/${displayData.slug}`}>
+                          <Link to={articlePath}>
                             <time className="entry-date published" dateTime={article.frontmatter.publishedAt}>
                               {formatDate(article.frontmatter.publishedAt)}
                             </time>
