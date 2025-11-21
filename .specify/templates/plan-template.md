@@ -31,7 +31,36 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+Verify compliance with project constitution (`.specify/memory/constitution.md`):
+
+**Type Safety** ✓ / ⚠ / ✗
+- [ ] No use of `any` type (or documented exceptions)
+- [ ] Proper TypeScript types for all functions
+- [ ] `unknown` used only as last resort with justification
+
+**Type Discipline** ✓ / ⚠ / ✗
+- [ ] Type assertions (`as`) limited and justified
+- [ ] Custom type guard functions implemented where needed
+
+**Date Handling** ✓ / ⚠ / ✗
+- [ ] `dayjs` used exclusively for date operations
+- [ ] No other date libraries introduced
+
+**Dependencies** ✓ / ⚠ / ✗
+- [ ] Vanilla JavaScript preferred over utility libraries
+- [ ] New dependencies justified and documented
+
+**Documentation** ✓ / ⚠ / ✗
+- [ ] JSDoc comments on all exported functions
+- [ ] No FR-XXX or specification markers in code comments
+
+**Gatsby/React Best Practices** ✓ / ⚠ / ✗
+- [ ] Follows official Gatsby and React patterns
+- [ ] Build-time optimization preferred over client-side processing
+
+**Testing** ✓ / ⚠ / ✗
+- [ ] Appropriate test coverage planned (unit/integration/manual)
+- [ ] Test framework: Jest + React Testing Library
 
 ## Project Structure
 
