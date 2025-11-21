@@ -35,8 +35,33 @@ function getAllMarkdownFiles(dir, files = []) {
 }
 
 /**
+ * Calculates the display width of a string, accounting for Unicode characters.
+ * 
+ * @param {string} str - The string to measure (should have ANSI codes removed)
+ * @returns {number} The display width in terminal cells
+ */
+function getDisplayWidth(str) {
+  let width = 0;
+  for (const char of str) {
+    const code = char.charCodeAt(0);
+    // Most terminals render ✓ (U+2713) and ✗ (U+2717) as single-width
+    // Only true emoji (U+1F300+) and some specific symbols render as double-width
+    if (code >= 0x1F300 && code <= 0x1F9FF) {
+      // Emoji range - these are typically double-width
+      width += 2;
+    } else if (code === 0x274C) {
+      // ❌ (cross mark emoji) - double-width
+      width += 2;
+    } else {
+      // Everything else including ✓ and ✗ - single-width
+      width += 1;
+    }
+  }
+  return width;
+}
+
+/**
  * Formats a table row with aligned columns.
- * Note: Status column handles ANSI color codes, so we don't pad it here
  * 
  * @param {string} status - Status icon (✓ or ✗) with or without color codes
  * @param {string} filename - Relative file path
@@ -46,16 +71,16 @@ function getAllMarkdownFiles(dir, files = []) {
  * @returns {string} Formatted table row
  */
 function formatTableRow(status, filename, title, category, publishedAt) {
-  // For status, we need to account for ANSI codes that don't display
-  // ANSI codes add 9 chars for color start (\x1b[32m) + 4 for reset (\x1b[0m) = 13 extra chars
-  const hasColorCodes = status.includes('\x1b[');
-  const statusPadding = hasColorCodes ? 6 + 13 : 6; // 6 visible chars + 13 for ANSI codes
-  const statusCol = status.padEnd(statusPadding);
+  // Calculate visible length of status (excluding ANSI codes)
+  const statusVisible = status.replace(/\x1b\[\d+m/g, '');
+  const statusWidth = getDisplayWidth(statusVisible);
+  const statusPadding = 8 - statusWidth; // Pad to 8 cells (for 2-cell wide symbols)
+  const statusCol = status + ' '.repeat(Math.max(0, statusPadding));
   
-  const filenameCol = filename.padEnd(50);
+  const filenameCol = filename.padEnd(45);
   const titleCol = title.slice(0, 40).padEnd(40);
   const categoryCol = category.padEnd(15);
-  const dateCol = publishedAt;
+  const dateCol = publishedAt.padEnd(10); // Pad published date to 10 chars (YYYY-MM-DD)
   
   return `| ${statusCol} | ${filenameCol} | ${titleCol} | ${categoryCol} | ${dateCol} |`;
 }
@@ -106,15 +131,12 @@ function main() {
     
     if (featuredPosts.length > 0) {
       // Table header
-      const separator = '='.repeat(140);
+      // Calculate exact width: | Display(8) | Filename(45) | Title(40) | Category(15) | Published(10) |
+      // = 1 + 1 + 8 + 1 + 1 + 1 + 45 + 1 + 1 + 1 + 40 + 1 + 1 + 1 + 15 + 1 + 1 + 1 + 10 + 1 + 1 = 135
+      const headerRow = `| ${'Display'.padEnd(8)} | ${'Filename'.padEnd(45)} | ${'Title'.padEnd(40)} | ${'Category'.padEnd(15)} | ${'Published'.padEnd(10)} |`;
+      const separator = '='.repeat(headerRow.length);
       console.log(separator);
-      // Header row - pad to visible width only (ANSI codes don't count as visible)
-      const headerStatusCol = 'Status'.padEnd(6); // Just 6 visible characters
-      const headerFilenameCol = 'Filename'.padEnd(50);
-      const headerTitleCol = 'Title'.padEnd(40);
-      const headerCategoryCol = 'Category'.padEnd(15);
-      const headerDateCol = 'Published';
-      console.log(`| ${headerStatusCol} | ${headerFilenameCol} | ${headerTitleCol} | ${headerCategoryCol} | ${headerDateCol} |`);
+      console.log(headerRow);
       console.log(separator);
       
       // Table rows - mark first 7 non-family posts with ✓, rest with ✗
@@ -122,7 +144,7 @@ function main() {
       for (const post of featuredPosts) {
         let status;
         if (post.isFamilyPost) {
-          status = '❌';
+          status = `${colors.red}❌${colors.reset}`;
         } else {
           nonFamilyCount++;
           status = nonFamilyCount <= 7 
