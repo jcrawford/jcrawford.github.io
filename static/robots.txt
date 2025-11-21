@@ -1,0 +1,7 @@
+# Robots.txt for josephcrawford.com
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://josephcrawford.com/sitemap-index.xml
+

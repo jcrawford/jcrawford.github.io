@@ -206,6 +206,46 @@ const config: GatsbyConfig = {
         },
       },
     },
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        output: '/',
+        excludes: [
+          '/dev-404-page/',
+          '/404/',
+          '/404.html',
+          '/offline-plugin-app-shell-fallback/',
+        ],
+        serialize: (page: any) => {
+          const { path } = page;
+          let priority = 0.5;
+          let changefreq = 'monthly';
+          
+          if (path === '/') {
+            priority = 1.0;
+            changefreq = 'daily';
+          } else if (path.startsWith('/posts/') || path.startsWith('/series/')) {
+            priority = 0.8;
+            changefreq = 'monthly';
+          } else if (path.startsWith('/tag/')) {
+            priority = 0.7;
+            changefreq = 'weekly';
+          } else if (path.startsWith('/author/')) {
+            priority = 0.6;
+            changefreq = 'monthly';
+          } else {
+            priority = 0.5;
+            changefreq = 'yearly';
+          }
+          
+          return {
+            url: path,
+            changefreq,
+            priority,
+          };
+        },
+      },
+    },
   ],
 };
 

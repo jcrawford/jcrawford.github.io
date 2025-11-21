@@ -17,7 +17,8 @@ A modern, fully-featured blog built with Gatsby, TypeScript, and React. Features
 - **Dark Mode**: Toggle between light and dark themes with localStorage persistence
 - **Custom 404**: Helpful 404 page with recent articles and search
 - **Fully Responsive**: Mobile-first design that works on all devices
-- **SEO Optimized**: Meta tags, Open Graph, and Twitter Cards on all pages
+- **SEO Optimized**: Meta tags, Open Graph, Twitter Cards, and automated XML sitemap
+- **Automated Sitemap**: XML sitemap with 153 URLs, automatically regenerates on every build
 - **Type-Safe**: Full TypeScript implementation with strict mode
 - **Accessible**: WCAG AAA compliant color contrasts and semantic HTML
 
@@ -69,6 +70,24 @@ npm run list-featured
 # Clean up excess featured posts
 npm run clean-featured
 ```
+
+### Sitemap Generation
+
+An XML sitemap is automatically generated on every build at `/sitemap-index.xml`. The sitemap includes all public pages (153 URLs) with proper SEO metadata (priority, changefreq) to help search engines discover and index your content.
+
+**Key Features:**
+- Auto-regenerates on every build (no manual updates needed)
+- Includes priority values (homepage: 1.0, posts: 0.8, tags: 0.7, etc.)
+- Includes change frequency hints (homepage: daily, posts: monthly, etc.)
+- Referenced in `robots.txt` for search engine discovery
+- Scales automatically (plugin handles splitting if > 50,000 URLs)
+
+**Current Metrics:**
+- 153 URLs indexed
+- 22 KB file size (well under 50 MB limit)
+- < 0.004 second load time
+
+For detailed metrics and documentation, see `specs/005-sitemap/README.md`.
 
 ### Featured Posts Management
 

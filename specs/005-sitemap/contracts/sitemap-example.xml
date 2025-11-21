@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Homepage: Highest priority, updated daily -->
+  <url>
+    <loc>https://jcrawford.github.io/</loc>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Blog Post: High priority, updated monthly -->
+  <url>
+    <loc>https://jcrawford.github.io/2025/11/saferide-health/</loc>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Blog Post: Older post with updatedAt -->
+  <url>
+    <loc>https://jcrawford.github.io/2025/01/life-is-what-happens/</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Category Page: Navigation hub, updated weekly -->
+  <url>
+    <loc>https://jcrawford.github.io/category/work/</loc>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Category Page: Another category -->
+  <url>
+    <loc>https://jcrawford.github.io/category/lifestyle/</loc>
+    <lastmod>2025-01-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Author Page: Profile page, updated monthly -->
+  <url>
+    <loc>https://jcrawford.github.io/author/joseph-crawford/</loc>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Tag Page: Secondary navigation -->
+  <url>
+    <loc>https://jcrawford.github.io/tag/work/</loc>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <!-- Static Page: About page, rarely updated -->
+  <url>
+    <loc>https://jcrawford.github.io/about/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <!-- Static Page: Contact page -->
+  <url>
+    <loc>https://jcrawford.github.io/contact/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>
+
