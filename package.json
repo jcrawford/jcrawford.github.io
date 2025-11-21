@@ -12,6 +12,8 @@
     "type-check": "tsc --noEmit",
     "deploy": "gatsby build && gh-pages -d public -t",
     "download-images": "ts-node scripts/download-images.ts",
+    "list-featured": "node scripts/list-featured.js",
+    "clean-featured": "node scripts/clean-featured.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
