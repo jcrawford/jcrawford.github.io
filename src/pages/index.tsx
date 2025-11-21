@@ -1,8 +1,7 @@
 import React from 'react';
 import { graphql, PageProps, HeadFC } from 'gatsby';
 import Layout from '../components/Layout';
-import FeaturedSlider from '../components/FeaturedSlider';
-import HighlightedPost from '../components/HighlightedPost';
+import FeaturedPosts from '../components/FeaturedPosts';
 import TagTabs from '../components/TagTabs';
 import ArticleCard from '../components/ArticleCard';
 import Sidebar from '../components/Sidebar';
@@ -290,25 +289,10 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
   return (
     <Layout>
       <div className="hm-container">
-        <div className="hm-fp1">
-          <div className="hm-fp1-left">
-            <FeaturedSlider articles={featuredArticles} />
-          </div>
-          <div className="hm-fp1-right">
-            <div className="hm-highlighted-posts">
-              {highlightedArticles.map((article) => (
-                <HighlightedPost
-                  key={article.slug}
-                  title={article.title}
-                  category={article.category}
-                  slug={article.slug}
-                  featuredImage={article.featuredImage}
-                  isSeries={article.isSeries}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
+        <FeaturedPosts 
+          sliderArticles={featuredArticles}
+          highlightedArticles={highlightedArticles}
+        />
 
         <TagTabs tags={tags} articles={articles} excludeSlugs={featuredSlugs} />
 

@@ -63,6 +63,11 @@ const config: GatsbyConfig = {
         path: `${__dirname}/src/data`,
       },
     },
+    // Images: Store all source images in static/images/
+    // - Content images: static/images/content/post-slug/featured.jpg
+    // - Resume images: static/images/resume/profile.jpg, recommendations/*.jpg
+    // - Gatsby copies static/ to public/ at build time
+    // - Reference in markdown/code as: /images/content/post-slug/featured.jpg
     {
       resolve: 'gatsby-source-filesystem',
       options: {
