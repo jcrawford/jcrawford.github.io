@@ -25,7 +25,7 @@ const ReviewBox: React.FC<ReviewBoxProps> = ({
   return (
     <div className="review-box">
       <div className="review-box-header">
-        <h3 className="review-box-title">Our Review</h3>
+        <h3 className="review-box-title">My Review</h3>
         <StarRating rating={rating} size={28} showScore={true} />
       </div>
 
