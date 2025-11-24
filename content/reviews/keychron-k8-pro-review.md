@@ -1,31 +1,39 @@
 ---
-slug: "keychron-k8-pro-review"
-title: "Keychron K8 Pro Review: Best Wireless Mechanical Keyboard for Mac"
-excerpt: "A comprehensive review of the Keychron K8 Pro, examining whether this premium wireless mechanical keyboard delivers on its promise of Mac and Windows compatibility."
-featuredImage: "/images/content/reviews/keychron-k8-pro-review/featured.jpg"
-category: "reviews"
-tags: ["reviews", "hardware", "keyboard", "mechanical", "productivity"]
-author: "joseph-crawford"
-publishedAt: "2025-10-08"
-updatedAt: "2025-10-08"
+slug: keychron-k8-pro-review
+title: 'Keychron K8 Pro Review: Best Wireless Mechanical Keyboard for Mac'
+excerpt: >-
+  A comprehensive review of the Keychron K8 Pro, examining whether this premium
+  wireless mechanical keyboard delivers on its promise of Mac and Windows
+  compatibility.
+featuredImage: /images/content/reviews/keychron-k8-pro-review/featured.jpg
+tags:
+  - reviews
+  - hardware
+  - keyboard
+  - mechanical
+  - productivity
+author: joseph-crawford
+publishedAt: '2025-10-08'
+updatedAt: '2025-10-08'
 review:
   rating: 5
   pros:
-    - "Excellent build quality with aluminum frame"
-    - "Hot-swappable switches (easy customization)"
-    - "Mac and Windows layout switching"
-    - "QMK/VIA programmability"
-    - "Great battery life (wireless)"
-    - "Affordable compared to competitors ($109)"
-    - "Multiple connectivity options"
+    - Excellent build quality with aluminum frame
+    - Hot-swappable switches (easy customization)
+    - Mac and Windows layout switching
+    - QMK/VIA programmability
+    - Great battery life (wireless)
+    - Affordable compared to competitors ($109)
+    - Multiple connectivity options
   cons:
-    - "Heavier than plastic keyboards"
-    - "Keycaps feel slightly thin"
-    - "Software configuration has learning curve"
-    - "No RGB (if you want flashy lights)"
-  price: "$109 (barebone), $119 (Gateron switches), $129 (premium switches)"
-  brand: "Keychron"
-  productUrl: "https://www.keychron.com/products/keychron-k8-pro-qmk-via-wireless-mechanical-keyboard"
+    - Heavier than plastic keyboards
+    - Keycaps feel slightly thin
+    - Software configuration has learning curve
+    - No RGB (if you want flashy lights)
+  price: '$109 (barebone), $119 (Gateron switches), $129 (premium switches)'
+  brand: Keychron
+  productUrl: >-
+    https://www.keychron.com/products/keychron-k8-pro-qmk-via-wireless-mechanical-keyboard
 ---
 
 The Keychron K8 Pro is a wireless mechanical keyboard that gets nearly everything right. After four months of daily coding and writing, it's become my favorite keyboard for both Mac and Windows development work—offering premium features at a mid-range price.

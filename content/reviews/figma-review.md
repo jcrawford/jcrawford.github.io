@@ -1,31 +1,39 @@
 ---
-slug: "figma-review"
-title: "Figma Review: The Design Tool That Changed Everything"
-excerpt: "An in-depth look at Figma, the collaborative web-based design tool that has become the industry standard for UI/UX design and prototyping."
-featuredImage: "/images/content/reviews/figma-review/featured.jpg"
-category: "reviews"
-tags: ["reviews", "software", "design", "ui", "collaboration"]
-author: "joseph-crawford"
-publishedAt: "2025-11-01"
-updatedAt: "2025-11-01"
+slug: figma-review
+title: 'Figma Review: The Design Tool That Changed Everything'
+excerpt: >-
+  An in-depth look at Figma, the collaborative web-based design tool that has
+  become the industry standard for UI/UX design and prototyping.
+featuredImage: /images/content/reviews/figma-review/featured.jpg
+tags:
+  - reviews
+  - software
+  - design
+  - ui
+  - collaboration
+author: joseph-crawford
+publishedAt: '2025-11-01'
+updatedAt: '2025-11-01'
 review:
   rating: 5
   pros:
-    - "Browser-based with no installation required"
-    - "Real-time collaboration like Google Docs"
-    - "Powerful vector editing and prototyping"
-    - "Component system for design systems"
-    - "Free for individuals and small teams"
-    - "Cross-platform (works everywhere)"
-    - "Extensive plugin ecosystem"
+    - Browser-based with no installation required
+    - Real-time collaboration like Google Docs
+    - Powerful vector editing and prototyping
+    - Component system for design systems
+    - Free for individuals and small teams
+    - Cross-platform (works everywhere)
+    - Extensive plugin ecosystem
   cons:
-    - "Requires stable internet connection"
-    - "Limited offline functionality"
-    - "Performance can lag with huge files"
-    - "Advanced features have learning curve"
-  price: "Free (Starter), $12/editor/month (Professional), $45/editor/month (Organization)"
-  brand: "Figma"
-  productUrl: "https://www.figma.com/"
+    - Requires stable internet connection
+    - Limited offline functionality
+    - Performance can lag with huge files
+    - Advanced features have learning curve
+  price: >-
+    Free (Starter), $12/editor/month (Professional), $45/editor/month
+    (Organization)
+  brand: Figma
+  productUrl: 'https://www.figma.com/'
 ---
 
 Figma didn't just improve UI/UX design—it fundamentally changed how teams collaborate on design work. As someone who has used Sketch, Adobe XD, and Figma extensively, I can confidently say Figma has won the design tool wars, and deservedly so.

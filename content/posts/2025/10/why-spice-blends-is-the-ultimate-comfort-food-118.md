@@ -1,13 +1,19 @@
 ---
-slug: "why-spice-blends-is-the-ultimate-comfort-food-118"
-title: "Why Spice Blends Is the Ultimate Comfort Food"
-excerpt: "Explore the fascinating world of spice blends and discover how it can transform your approach to food. Learn practical tips and insights from experts."
-featuredImage: "/images/content/why-spice-blends-is-the-ultimate-comfort-food-118/featured.jpg"
-category: "food"
-tags: ["food", "ingredients", "nutrition", "flavors"]
-author: "joseph-crawford"
-publishedAt: "2025-10-26"
-updatedAt: "2025-10-26"
+slug: why-spice-blends-is-the-ultimate-comfort-food-118
+title: Why Spice Blends Is the Ultimate Comfort Food
+excerpt: >-
+  Explore the fascinating world of spice blends and discover how it can
+  transform your approach to food. Learn practical tips and insights from
+  experts.
+featuredImage: /images/content/why-spice-blends-is-the-ultimate-comfort-food-118/featured.jpg
+tags:
+  - food
+  - ingredients
+  - nutrition
+  - flavors
+author: joseph-crawford
+publishedAt: '2025-10-26'
+updatedAt: '2025-10-26'
 ---
 
 In today's world, spice blends represents more than just a trend—it's a fundamental shift in how we approach food. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

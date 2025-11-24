@@ -17,7 +17,6 @@ interface ArticleData {
       title: string;
       excerpt: string;
       featuredImage: string;
-      category: string;
       tags: string[];
       author: string;
       publishedAt: string;
@@ -32,10 +31,6 @@ interface ArticleData {
         affiliateLink?: string;
       };
     };
-  };
-  tagsJson: {
-    name: string;
-    slug: string;
   };
   authorsJson: {
     name: string;
@@ -64,10 +59,12 @@ interface ArticleData {
 const ArticleTemplate: React.FC<PageProps<ArticleData>> = ({ data }) => {
   const article = data.markdownRemark.frontmatter;
   const articleHtml = data.markdownRemark.html;
-  const category = data.tagsJson;
   const author = data.authorsJson;
   const previousArticle = data.previousArticle.nodes[0] || null;
   const nextArticle = data.nextArticle.nodes[0] || null;
+  
+  // Get the first tag that's not "family" or "featured" for display
+  const primaryTag = article.tags?.find(tag => tag !== 'family' && tag !== 'featured') || article.tags?.[0];
 
   return (
     <Layout>
@@ -76,12 +73,14 @@ const ArticleTemplate: React.FC<PageProps<ArticleData>> = ({ data }) => {
           <main className="hm-primary-content">
             <article className="hm-article">
           <header className="hm-article-header">
-            <Link 
-              to={`/tag/${category.slug}`}
-              className="hm-article-category"
-            >
-              {category.name}
-            </Link>
+            {primaryTag && (
+              <Link 
+                to={`/tag/${primaryTag}`}
+                className="hm-article-category"
+              >
+                {primaryTag}
+              </Link>
+            )}
             
             <h1 className="hm-article-title">{article.title}</h1>
             
@@ -173,7 +172,6 @@ const ArticleTemplate: React.FC<PageProps<ArticleData>> = ({ data }) => {
 export const query = graphql`
   query ArticleQuery(
     $slug: String!
-    $category: String!
     $author: String!
     $publishedAt: Date!
   ) {
@@ -185,7 +183,6 @@ export const query = graphql`
         title
         excerpt
         featuredImage
-        category
         tags
         author
         publishedAt
@@ -200,10 +197,6 @@ export const query = graphql`
           affiliateLink
         }
       }
-    }
-    tagsJson(slug: { eq: $category }) {
-      name
-      slug
     }
     authorsJson(slug: { eq: $author }) {
       name

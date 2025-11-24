@@ -1,13 +1,19 @@
 ---
-slug: "discovering-hidden-gems-in-ireland-74"
-title: "Discovering Hidden Gems in Ireland"
-excerpt: "Explore the fascinating world of ireland and discover how it can transform your approach to travel. Learn practical tips and insights from experts."
-featuredImage: "/images/content/discovering-hidden-gems-in-ireland-74/featured.jpg"
-category: "family"
-tags: ["travel", "culture", "vacation", "tourism"]
-author: "joseph-crawford"
-publishedAt: "2025-09-24"
-updatedAt: "2025-09-24"
+slug: discovering-hidden-gems-in-ireland-74
+title: Discovering Hidden Gems in Ireland
+excerpt: >-
+  Explore the fascinating world of ireland and discover how it can transform
+  your approach to travel. Learn practical tips and insights from experts.
+featuredImage: /images/content/discovering-hidden-gems-in-ireland-74/featured.jpg
+tags:
+  - travel
+  - culture
+  - vacation
+  - tourism
+  - family
+author: joseph-crawford
+publishedAt: '2025-09-24'
+updatedAt: '2025-09-24'
 ---
 
 In today's world, ireland represents more than just a trend—it's a fundamental shift in how we approach travel. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

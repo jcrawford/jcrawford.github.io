@@ -1,13 +1,19 @@
 ---
-slug: "why-global-fashion-is-the-next-big-trend-101"
-title: "Why Global Fashion Is the Next Big Trend"
-excerpt: "Explore the fascinating world of global fashion and discover how it can transform your approach to fashion. Learn practical tips and insights from experts."
-featuredImage: "/images/content/why-global-fashion-is-the-next-big-trend-101/featured.jpg"
-category: "work"
-tags: ["work", "style", "trends", "outfit"]
-author: "joseph-crawford"
-publishedAt: "2025-08-07"
-updatedAt: "2025-08-07"
+slug: why-global-fashion-is-the-next-big-trend-101
+title: Why Global Fashion Is the Next Big Trend
+excerpt: >-
+  Explore the fascinating world of global fashion and discover how it can
+  transform your approach to fashion. Learn practical tips and insights from
+  experts.
+featuredImage: /images/content/why-global-fashion-is-the-next-big-trend-101/featured.jpg
+tags:
+  - work
+  - style
+  - trends
+  - outfit
+author: joseph-crawford
+publishedAt: '2025-08-07'
+updatedAt: '2025-08-07'
 ---
 
 In today's world, global fashion represents more than just a trend—it's a fundamental shift in how we approach fashion. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

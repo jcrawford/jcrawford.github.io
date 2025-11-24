@@ -21,7 +21,7 @@ interface Article {
   id: string;
   frontmatter: {
     slug: string;
-    category: string;
+    tags: string[];
     author: string;
     publishedAt: string;
     series?: SeriesMetadata;
@@ -167,7 +167,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
           id
           frontmatter {
             slug
-            category
+            tags
             author
             publishedAt
             series {
@@ -234,7 +234,6 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
       component: isSeries ? seriesArticleTemplate : articleTemplate,
       context: {
         slug: article.frontmatter.slug,
-        category: article.frontmatter.category,
         author: article.frontmatter.author,
         publishedAt: article.frontmatter.publishedAt,
         seriesName: article.frontmatter.series?.name || null,
@@ -249,7 +248,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
   const articlesPerPage = 15;
 
   tags.forEach((tag) => {
-    const tagArticles = articles.filter((article) => article.frontmatter.category === tag.slug);
+    const tagArticles = articles.filter((article) => article.frontmatter.tags?.includes(tag.slug));
     const numPages = Math.ceil(tagArticles.length / articlesPerPage);
 
     Array.from({ length: numPages }).forEach((_, i) => {

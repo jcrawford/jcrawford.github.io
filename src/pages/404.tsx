@@ -12,7 +12,7 @@ interface Article {
     title: string;
     excerpt: string;
     featuredImage: string;
-    category: string;
+    tags: string[];
     author: string;
     publishedAt: string;
   };
@@ -110,8 +110,7 @@ const NotFoundPage: React.FC<PageProps<NotFoundPageData>> = ({ data }) => {
                     title={article.frontmatter.title}
                     excerpt={article.frontmatter.excerpt}
                     featuredImage={article.frontmatter.featuredImage}
-                    category={article.frontmatter.category}
-                    categoryName={getTagName(article.frontmatter.category)}
+                    tags={article.frontmatter.tags || []}
                     publishedAt={article.frontmatter.publishedAt}
                     author={article.frontmatter.author}
                     authorName={getAuthorName(article.frontmatter.author)}
@@ -150,7 +149,7 @@ export const query = graphql`
           title
           excerpt
           featuredImage
-          category
+          tags
           author
           publishedAt
         }

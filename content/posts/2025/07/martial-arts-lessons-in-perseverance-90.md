@@ -1,13 +1,19 @@
 ---
-slug: "martial-arts-lessons-in-perseverance-90"
-title: "Martial Arts: Lessons in Perseverance"
-excerpt: "Explore the fascinating world of martial arts and discover how it can transform your approach to sports. Learn practical tips and insights from experts."
-featuredImage: "/images/content/martial-arts-lessons-in-perseverance-90/featured.jpg"
-category: "sports"
-tags: ["sports", "endurance", "athletics", "fitness"]
-author: "joseph-crawford"
-publishedAt: "2025-07-15"
-updatedAt: "2025-07-15"
+slug: martial-arts-lessons-in-perseverance-90
+title: 'Martial Arts: Lessons in Perseverance'
+excerpt: >-
+  Explore the fascinating world of martial arts and discover how it can
+  transform your approach to sports. Learn practical tips and insights from
+  experts.
+featuredImage: /images/content/martial-arts-lessons-in-perseverance-90/featured.jpg
+tags:
+  - sports
+  - endurance
+  - athletics
+  - fitness
+author: joseph-crawford
+publishedAt: '2025-07-15'
+updatedAt: '2025-07-15'
 ---
 
 In today's world, martial arts represents more than just a trend—it's a fundamental shift in how we approach sports. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

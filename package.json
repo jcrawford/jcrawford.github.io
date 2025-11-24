@@ -14,6 +14,7 @@
     "download-images": "ts-node scripts/download-images.ts",
     "list-featured": "node scripts/list-featured.js",
     "clean-featured": "node scripts/clean-featured.js",
+    "migrate-remove-category": "node scripts/migrate-remove-category.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",

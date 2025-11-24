@@ -1,13 +1,19 @@
 ---
-slug: "why-work-life-balance-matters-more-than-ever-72"
-title: "Why Work-Life Balance Matters More Than Ever"
-excerpt: "Explore the fascinating world of work-life balance and discover how it can transform your approach to lifestyle. Learn practical tips and insights from experts."
-featuredImage: "/images/content/why-work-life-balance-matters-more-than-ever-72/featured.jpg"
-category: "lifestyle"
-tags: ["lifestyle", "balance", "happiness", "productivity"]
-author: "joseph-crawford"
-publishedAt: "2025-09-05"
-updatedAt: "2025-09-05"
+slug: why-work-life-balance-matters-more-than-ever-72
+title: Why Work-Life Balance Matters More Than Ever
+excerpt: >-
+  Explore the fascinating world of work-life balance and discover how it can
+  transform your approach to lifestyle. Learn practical tips and insights from
+  experts.
+featuredImage: /images/content/why-work-life-balance-matters-more-than-ever-72/featured.jpg
+tags:
+  - lifestyle
+  - balance
+  - happiness
+  - productivity
+author: joseph-crawford
+publishedAt: '2025-09-05'
+updatedAt: '2025-09-05'
 ---
 
 In today's world, work-life balance represents more than just a trend—it's a fundamental shift in how we approach lifestyle. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

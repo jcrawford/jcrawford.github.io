@@ -1,13 +1,19 @@
 ---
-slug: "essential-street-style-tips-for-every-wardrobe-86"
-title: "Essential Street Style Tips for Every Wardrobe"
-excerpt: "Explore the fascinating world of street style and discover how it can transform your approach to fashion. Learn practical tips and insights from experts."
-featuredImage: "/images/content/essential-street-style-tips-for-every-wardrobe-86/featured.jpg"
-category: "work"
-tags: ["work", "accessories", "clothing", "style"]
-author: "joseph-crawford"
-publishedAt: "2025-09-22"
-updatedAt: "2025-09-22"
+slug: essential-street-style-tips-for-every-wardrobe-86
+title: Essential Street Style Tips for Every Wardrobe
+excerpt: >-
+  Explore the fascinating world of street style and discover how it can
+  transform your approach to fashion. Learn practical tips and insights from
+  experts.
+featuredImage: /images/content/essential-street-style-tips-for-every-wardrobe-86/featured.jpg
+tags:
+  - work
+  - accessories
+  - clothing
+  - style
+author: joseph-crawford
+publishedAt: '2025-09-22'
+updatedAt: '2025-09-22'
 ---
 
 In today's world, street style represents more than just a trend—it's a fundamental shift in how we approach fashion. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

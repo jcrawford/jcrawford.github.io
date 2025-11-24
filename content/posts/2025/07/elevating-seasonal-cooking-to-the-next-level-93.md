@@ -1,13 +1,19 @@
 ---
-slug: "elevating-seasonal-cooking-to-the-next-level-93"
-title: "Elevating Seasonal Cooking to the Next Level"
-excerpt: "Explore the fascinating world of seasonal cooking and discover how it can transform your approach to food. Learn practical tips and insights from experts."
-featuredImage: "/images/content/elevating-seasonal-cooking-to-the-next-level-93/featured.jpg"
-category: "food"
-tags: ["food", "kitchen", "culinary", "flavors"]
-author: "joseph-crawford"
-publishedAt: "2025-07-26"
-updatedAt: "2025-07-26"
+slug: elevating-seasonal-cooking-to-the-next-level-93
+title: Elevating Seasonal Cooking to the Next Level
+excerpt: >-
+  Explore the fascinating world of seasonal cooking and discover how it can
+  transform your approach to food. Learn practical tips and insights from
+  experts.
+featuredImage: /images/content/elevating-seasonal-cooking-to-the-next-level-93/featured.jpg
+tags:
+  - food
+  - kitchen
+  - culinary
+  - flavors
+author: joseph-crawford
+publishedAt: '2025-07-26'
+updatedAt: '2025-07-26'
 ---
 
 In today's world, seasonal cooking represents more than just a trend—it's a fundamental shift in how we approach food. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

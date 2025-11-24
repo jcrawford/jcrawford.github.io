@@ -1,13 +1,18 @@
 ---
-slug: "crossfit-lessons-in-perseverance-75"
-title: "CrossFit: Lessons in Perseverance"
-excerpt: "Explore the fascinating world of crossfit and discover how it can transform your approach to sports. Learn practical tips and insights from experts."
-featuredImage: "/images/content/crossfit-lessons-in-perseverance-75/featured.jpg"
-category: "sports"
-tags: ["sports", "training", "fitness", "strength"]
-author: "joseph-crawford"
-publishedAt: "2025-10-25"
-updatedAt: "2025-10-25"
+slug: crossfit-lessons-in-perseverance-75
+title: 'CrossFit: Lessons in Perseverance'
+excerpt: >-
+  Explore the fascinating world of crossfit and discover how it can transform
+  your approach to sports. Learn practical tips and insights from experts.
+featuredImage: /images/content/crossfit-lessons-in-perseverance-75/featured.jpg
+tags:
+  - sports
+  - training
+  - fitness
+  - strength
+author: joseph-crawford
+publishedAt: '2025-10-25'
+updatedAt: '2025-10-25'
 ---
 
 In today's world, crossfit represents more than just a trend—it's a fundamental shift in how we approach sports. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

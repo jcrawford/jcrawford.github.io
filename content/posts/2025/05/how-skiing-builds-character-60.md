@@ -1,13 +1,18 @@
 ---
-slug: "how-skiing-builds-character-60"
-title: "How Skiing Builds Character"
-excerpt: "Explore the fascinating world of skiing and discover how it can transform your approach to sports. Learn practical tips and insights from experts."
-featuredImage: "/images/content/how-skiing-builds-character-60/featured.jpg"
-category: "sports"
-tags: ["sports", "performance", "training", "endurance"]
-author: "joseph-crawford"
-publishedAt: "2025-05-18"
-updatedAt: "2025-05-18"
+slug: how-skiing-builds-character-60
+title: How Skiing Builds Character
+excerpt: >-
+  Explore the fascinating world of skiing and discover how it can transform your
+  approach to sports. Learn practical tips and insights from experts.
+featuredImage: /images/content/how-skiing-builds-character-60/featured.jpg
+tags:
+  - sports
+  - performance
+  - training
+  - endurance
+author: joseph-crawford
+publishedAt: '2025-05-18'
+updatedAt: '2025-05-18'
 ---
 
 In today's world, skiing represents more than just a trend—it's a fundamental shift in how we approach sports. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

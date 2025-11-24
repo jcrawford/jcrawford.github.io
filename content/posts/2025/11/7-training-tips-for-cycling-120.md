@@ -1,13 +1,18 @@
 ---
-slug: "7-training-tips-for-cycling-120"
-title: "7 Training Tips for Cycling"
-excerpt: "Explore the fascinating world of cycling and discover how it can transform your approach to sports. Learn practical tips and insights from experts."
-featuredImage: "/images/content/7-training-tips-for-cycling-120/featured.jpg"
-category: "sports"
-tags: ["sports", "strength", "fitness", "athletics"]
-author: "joseph-crawford"
-publishedAt: "2025-11-06"
-updatedAt: "2025-11-06"
+slug: 7-training-tips-for-cycling-120
+title: 7 Training Tips for Cycling
+excerpt: >-
+  Explore the fascinating world of cycling and discover how it can transform
+  your approach to sports. Learn practical tips and insights from experts.
+featuredImage: /images/content/7-training-tips-for-cycling-120/featured.jpg
+tags:
+  - sports
+  - strength
+  - fitness
+  - athletics
+author: joseph-crawford
+publishedAt: '2025-11-06'
+updatedAt: '2025-11-06'
 ---
 
 In today's world, cycling represents more than just a trend—it's a fundamental shift in how we approach sports. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

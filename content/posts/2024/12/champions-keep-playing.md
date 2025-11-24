@@ -5,7 +5,6 @@ excerpt: >-
   Persistence separates those who dream from those who achieve in sports and
   life.
 featuredImage: /images/content/champions-keep-playing/featured.jpg
-category: sports
 tags:
   - sports
   - motivation

@@ -1,13 +1,19 @@
 ---
-slug: "the-simple-joy-of-time-management-62"
-title: "The Simple Joy of Time Management"
-excerpt: "Explore the fascinating world of time management and discover how it can transform your approach to lifestyle. Learn practical tips and insights from experts."
-featuredImage: "/images/content/the-simple-joy-of-time-management-62/featured.jpg"
-category: "lifestyle"
-tags: ["lifestyle", "productivity", "inspiration", "personal-growth"]
-author: "joseph-crawford"
-publishedAt: "2025-06-23"
-updatedAt: "2025-06-23"
+slug: the-simple-joy-of-time-management-62
+title: The Simple Joy of Time Management
+excerpt: >-
+  Explore the fascinating world of time management and discover how it can
+  transform your approach to lifestyle. Learn practical tips and insights from
+  experts.
+featuredImage: /images/content/the-simple-joy-of-time-management-62/featured.jpg
+tags:
+  - lifestyle
+  - productivity
+  - inspiration
+  - personal-growth
+author: joseph-crawford
+publishedAt: '2025-06-23'
+updatedAt: '2025-06-23'
 ---
 
 In today's world, time management represents more than just a trend—it's a fundamental shift in how we approach lifestyle. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

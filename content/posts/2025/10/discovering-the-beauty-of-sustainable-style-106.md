@@ -1,13 +1,19 @@
 ---
-slug: "discovering-the-beauty-of-sustainable-style-106"
-title: "Discovering the Beauty of Sustainable Style"
-excerpt: "Explore the fascinating world of sustainable style and discover how it can transform your approach to fashion. Learn practical tips and insights from experts."
-featuredImage: "/images/content/discovering-the-beauty-of-sustainable-style-106/featured.jpg"
-category: "work"
-tags: ["work", "wardrobe", "clothing", "runway"]
-author: "joseph-crawford"
-publishedAt: "2025-10-15"
-updatedAt: "2025-10-15"
+slug: discovering-the-beauty-of-sustainable-style-106
+title: Discovering the Beauty of Sustainable Style
+excerpt: >-
+  Explore the fascinating world of sustainable style and discover how it can
+  transform your approach to fashion. Learn practical tips and insights from
+  experts.
+featuredImage: /images/content/discovering-the-beauty-of-sustainable-style-106/featured.jpg
+tags:
+  - work
+  - wardrobe
+  - clothing
+  - runway
+author: joseph-crawford
+publishedAt: '2025-10-15'
+updatedAt: '2025-10-15'
 ---
 
 In today's world, sustainable style represents more than just a trend—it's a fundamental shift in how we approach fashion. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

@@ -83,14 +83,14 @@ function promptConfirmation(question) {
  * Main execution function for cleaning featured posts.
  */
 async function main() {
-  const postsDir = path.join(__dirname, '../content/posts');
+  const contentDir = path.join(__dirname, '../content');
   
   console.log('\n========================================');
   console.log('Clean Featured Posts');
   console.log('========================================\n');
   
   try {
-    const allFiles = getAllMarkdownFiles(postsDir);
+    const allFiles = getAllMarkdownFiles(contentDir);
     const featuredPosts = [];
     
     // Parse frontmatter and collect featured posts
@@ -99,15 +99,15 @@ async function main() {
       const { data: frontmatter } = matter(content);
       
       if (frontmatter.featured === true) {
-        const relativePath = path.relative(postsDir, file);
+        const relativePath = path.relative(contentDir, file);
+        const tags = Array.isArray(frontmatter.tags) ? frontmatter.tags : [];
         featuredPosts.push({
           absolutePath: file,
           filename: relativePath,
           title: frontmatter.title || 'Untitled',
-          category: frontmatter.category || 'uncategorized',
           publishedAt: frontmatter.publishedAt || 'Unknown',
           slug: frontmatter.slug || relativePath,
-          isFamilyPost: frontmatter.category === 'family'
+          isFamilyPost: tags.includes('family')
         });
       }
     }

@@ -1,13 +1,17 @@
 ---
-slug: "elegance-is-not-standing-out"
-title: "Elegance is not standing out, but being remembered"
-excerpt: "True elegance lies in the lasting impression you make, not in demanding immediate attention."
-featuredImage: "/images/content/elegance-is-not-standing-out/featured.jpg"
-category: "work"
-tags: ["work", "style", "elegance"]
-author: "joseph-crawford"
-publishedAt: "2025-01-14"
-updatedAt: "2025-01-14"
+slug: elegance-is-not-standing-out
+title: 'Elegance is not standing out, but being remembered'
+excerpt: >-
+  True elegance lies in the lasting impression you make, not in demanding
+  immediate attention.
+featuredImage: /images/content/elegance-is-not-standing-out/featured.jpg
+tags:
+  - work
+  - style
+  - elegance
+author: joseph-crawford
+publishedAt: '2025-01-14'
+updatedAt: '2025-01-14'
 featured: true
 ---
 

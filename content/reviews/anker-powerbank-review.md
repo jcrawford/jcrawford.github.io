@@ -1,31 +1,38 @@
 ---
-slug: "anker-powerbank-review"
-title: "Anker PowerCore 737 Review: 24,000mAh Power Bank for Everything"
-excerpt: "An in-depth review of the Anker PowerCore 737, examining whether this high-capacity USB-C power bank justifies its premium price for travelers and remote workers."
-featuredImage: "/images/content/reviews/anker-powerbank-review/featured.jpg"
-category: "reviews"
-tags: ["reviews", "hardware", "accessories", "battery", "travel"]
-author: "joseph-crawford"
-publishedAt: "2025-10-05"
-updatedAt: "2025-10-05"
+slug: anker-powerbank-review
+title: 'Anker PowerCore 737 Review: 24,000mAh Power Bank for Everything'
+excerpt: >-
+  An in-depth review of the Anker PowerCore 737, examining whether this
+  high-capacity USB-C power bank justifies its premium price for travelers and
+  remote workers.
+featuredImage: /images/content/reviews/anker-powerbank-review/featured.jpg
+tags:
+  - reviews
+  - hardware
+  - accessories
+  - battery
+  - travel
+author: joseph-crawford
+publishedAt: '2025-10-05'
+updatedAt: '2025-10-05'
 review:
   rating: 5
   pros:
-    - "Massive 24,000mAh capacity"
-    - "140W USB-C PD output (charges MacBook Pro at full speed)"
-    - "3 ports (2 USB-C, 1 USB-A)"
-    - "Charges multiple devices simultaneously"
-    - "Digital display shows remaining battery"
-    - "Pass-through charging"
-    - "Premium build quality"
+    - 'Massive 24,000mAh capacity'
+    - 140W USB-C PD output (charges MacBook Pro at full speed)
+    - '3 ports (2 USB-C, 1 USB-A)'
+    - Charges multiple devices simultaneously
+    - Digital display shows remaining battery
+    - Pass-through charging
+    - Premium build quality
   cons:
-    - "Expensive at $149"
-    - "Heavy at 1.3 pounds (heavier than iPad)"
-    - "Takes 90 minutes to fully charge"
-    - "Too large for EDC in small bags"
-  price: "$149"
-  brand: "Anker"
-  productUrl: "https://www.anker.com/products/a1290"
+    - Expensive at $149
+    - Heavy at 1.3 pounds (heavier than iPad)
+    - Takes 90 minutes to fully charge
+    - Too large for EDC in small bags
+  price: $149
+  brand: Anker
+  productUrl: 'https://www.anker.com/products/a1290'
 ---
 
 The Anker PowerCore 737 is a premium power bank that doesn't compromise. With 24,000mAh capacity and 140W USB-C Power Delivery, it charges everything from smartphones to MacBook Pros at full speed. After six months of travel and remote work, it's become essential equipment for staying productive anywhere.

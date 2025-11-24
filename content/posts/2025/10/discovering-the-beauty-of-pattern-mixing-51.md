@@ -1,13 +1,19 @@
 ---
-slug: "discovering-the-beauty-of-pattern-mixing-51"
-title: "Discovering the Beauty of Pattern Mixing"
-excerpt: "Explore the fascinating world of pattern mixing and discover how it can transform your approach to fashion. Learn practical tips and insights from experts."
-featuredImage: "/images/content/discovering-the-beauty-of-pattern-mixing-51/featured.jpg"
-category: "work"
-tags: ["work", "style", "runway", "outfit"]
-author: "joseph-crawford"
-publishedAt: "2025-10-05"
-updatedAt: "2025-10-05"
+slug: discovering-the-beauty-of-pattern-mixing-51
+title: Discovering the Beauty of Pattern Mixing
+excerpt: >-
+  Explore the fascinating world of pattern mixing and discover how it can
+  transform your approach to fashion. Learn practical tips and insights from
+  experts.
+featuredImage: /images/content/discovering-the-beauty-of-pattern-mixing-51/featured.jpg
+tags:
+  - work
+  - style
+  - runway
+  - outfit
+author: joseph-crawford
+publishedAt: '2025-10-05'
+updatedAt: '2025-10-05'
 ---
 
 In today's world, pattern mixing represents more than just a trend—it's a fundamental shift in how we approach fashion. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

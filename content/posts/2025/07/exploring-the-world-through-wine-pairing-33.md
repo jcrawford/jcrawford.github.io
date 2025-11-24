@@ -1,13 +1,19 @@
 ---
-slug: "exploring-the-world-through-wine-pairing-33"
-title: "Exploring the World Through Wine Pairing"
-excerpt: "Explore the fascinating world of wine pairing and discover how it can transform your approach to food. Learn practical tips and insights from experts."
-featuredImage: "/images/content/exploring-the-world-through-wine-pairing-33/featured.jpg"
-category: "food"
-tags: ["food", "recipes", "flavors", "cooking"]
-author: "joseph-crawford"
-publishedAt: "2025-07-26"
-updatedAt: "2025-07-26"
+slug: exploring-the-world-through-wine-pairing-33
+title: Exploring the World Through Wine Pairing
+excerpt: >-
+  Explore the fascinating world of wine pairing and discover how it can
+  transform your approach to food. Learn practical tips and insights from
+  experts.
+featuredImage: /images/content/exploring-the-world-through-wine-pairing-33/featured.jpg
+tags:
+  - food
+  - recipes
+  - flavors
+  - cooking
+author: joseph-crawford
+publishedAt: '2025-07-26'
+updatedAt: '2025-07-26'
 ---
 
 In today's world, wine pairing represents more than just a trend—it's a fundamental shift in how we approach food. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

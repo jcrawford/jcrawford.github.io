@@ -1,31 +1,38 @@
 ---
-slug: "github-copilot-review"
-title: "GitHub Copilot Review: AI Pair Programmer That Actually Works"
-excerpt: "An honest review of GitHub Copilot, the AI-powered coding assistant from GitHub and OpenAI that promises to accelerate development with intelligent code suggestions."
-featuredImage: "/images/content/reviews/github-copilot-review/featured.jpg"
-category: "reviews"
-tags: ["reviews", "software", "ai", "development", "productivity"]
-author: "joseph-crawford"
-publishedAt: "2025-11-05"
-updatedAt: "2025-11-05"
+slug: github-copilot-review
+title: 'GitHub Copilot Review: AI Pair Programmer That Actually Works'
+excerpt: >-
+  An honest review of GitHub Copilot, the AI-powered coding assistant from
+  GitHub and OpenAI that promises to accelerate development with intelligent
+  code suggestions.
+featuredImage: /images/content/reviews/github-copilot-review/featured.jpg
+tags:
+  - reviews
+  - software
+  - ai
+  - development
+  - productivity
+author: joseph-crawford
+publishedAt: '2025-11-05'
+updatedAt: '2025-11-05'
 review:
   rating: 4
   pros:
-    - "Impressively accurate code suggestions"
-    - "Accelerates boilerplate and repetitive code"
-    - "Learns your coding style and patterns"
-    - "Supports dozens of programming languages"
-    - "Helpful for learning new APIs and frameworks"
-    - "Works in VS Code, JetBrains, and Neovim"
+    - Impressively accurate code suggestions
+    - Accelerates boilerplate and repetitive code
+    - Learns your coding style and patterns
+    - Supports dozens of programming languages
+    - Helpful for learning new APIs and frameworks
+    - 'Works in VS Code, JetBrains, and Neovim'
   cons:
-    - "Requires subscription ($10/month or $100/year)"
-    - "Sometimes suggests incorrect or outdated code"
-    - "Can encourage copy-paste coding without understanding"
-    - "Requires internet connection"
-    - "Privacy concerns with code being analyzed"
-  price: "$10/month or $100/year (free for students and open-source maintainers)"
-  brand: "GitHub"
-  productUrl: "https://github.com/features/copilot"
+    - Requires subscription ($10/month or $100/year)
+    - Sometimes suggests incorrect or outdated code
+    - Can encourage copy-paste coding without understanding
+    - Requires internet connection
+    - Privacy concerns with code being analyzed
+  price: $10/month or $100/year (free for students and open-source maintainers)
+  brand: GitHub
+  productUrl: 'https://github.com/features/copilot'
 ---
 
 GitHub Copilot represents a significant leap forward in AI-assisted coding. After six months of daily use, I can confidently say it's changed how I write code—mostly for the better, with some important caveats.

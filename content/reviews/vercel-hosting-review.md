@@ -1,31 +1,37 @@
 ---
-slug: "vercel-hosting-review"
-title: "Vercel Review: Premium Hosting for Modern Web Applications"
-excerpt: "An honest review of Vercel, the premium hosting platform optimized for Next.js and modern frontend frameworks with edge computing capabilities."
-featuredImage: "/images/content/reviews/vercel-hosting-review/featured.jpg"
-category: "reviews"
-tags: ["reviews", "software", "hosting", "deployment", "web"]
-author: "joseph-crawford"
-publishedAt: "2025-10-22"
-updatedAt: "2025-10-22"
+slug: vercel-hosting-review
+title: 'Vercel Review: Premium Hosting for Modern Web Applications'
+excerpt: >-
+  An honest review of Vercel, the premium hosting platform optimized for Next.js
+  and modern frontend frameworks with edge computing capabilities.
+featuredImage: /images/content/reviews/vercel-hosting-review/featured.jpg
+tags:
+  - reviews
+  - software
+  - hosting
+  - deployment
+  - web
+author: joseph-crawford
+publishedAt: '2025-10-22'
+updatedAt: '2025-10-22'
 review:
   rating: 5
   pros:
-    - "Effortless deployment from Git repositories"
-    - "Excellent Next.js integration and optimization"
-    - "Automatic preview deployments for pull requests"
-    - "Global CDN with edge functions"
-    - "Zero-config setup for most frameworks"
-    - "Generous free tier"
-    - "Outstanding developer experience"
+    - Effortless deployment from Git repositories
+    - Excellent Next.js integration and optimization
+    - Automatic preview deployments for pull requests
+    - Global CDN with edge functions
+    - Zero-config setup for most frameworks
+    - Generous free tier
+    - Outstanding developer experience
   cons:
-    - "Can become expensive at scale"
-    - "Limited backend/database options"
-    - "Vendor lock-in with some features"
-    - "Bandwidth costs add up with traffic"
-  price: "Free (Hobby), $20/month (Pro), $40/month + usage (Enterprise)"
-  brand: "Vercel"
-  productUrl: "https://vercel.com/"
+    - Can become expensive at scale
+    - Limited backend/database options
+    - Vendor lock-in with some features
+    - Bandwidth costs add up with traffic
+  price: 'Free (Hobby), $20/month (Pro), $40/month + usage (Enterprise)'
+  brand: Vercel
+  productUrl: 'https://vercel.com/'
 ---
 
 Vercel has set the gold standard for frontend deployment platforms. As the creators of Next.js, they've built a hosting solution that makes deploying modern web applications almost magical in its simplicity.

@@ -3,7 +3,6 @@ slug: hard-work-beats-talent
 title: Hard work beats talent when talent doesn't work hard
 excerpt: 'Natural ability opens doors, but dedication and effort determine success.'
 featuredImage: /images/content/hard-work-beats-talent/featured.jpg
-category: sports
 tags:
   - sports
   - training

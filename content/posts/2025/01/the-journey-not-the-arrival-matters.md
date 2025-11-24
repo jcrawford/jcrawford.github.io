@@ -1,13 +1,19 @@
 ---
-slug: "the-journey-not-the-arrival-matters"
-title: "The journey, not the arrival, matters"
-excerpt: "Travel is not just about reaching your destination, but embracing every moment of the adventure along the way."
-featuredImage: "/images/content/the-journey-not-the-arrival-matters/featured.jpg"
-category: "family"
-tags: ["featured", "travel", "inspiration", "wanderlust"]
-author: "joseph-crawford"
-publishedAt: "2025-01-15"
-updatedAt: "2025-01-15"
+slug: the-journey-not-the-arrival-matters
+title: 'The journey, not the arrival, matters'
+excerpt: >-
+  Travel is not just about reaching your destination, but embracing every moment
+  of the adventure along the way.
+featuredImage: /images/content/the-journey-not-the-arrival-matters/featured.jpg
+tags:
+  - featured
+  - travel
+  - inspiration
+  - wanderlust
+  - family
+author: joseph-crawford
+publishedAt: '2025-01-15'
+updatedAt: '2025-01-15'
 ---
 
 Travel teaches us that the experiences we gather along the way shape us more than any destination ever could. Every detour, every unexpected encounter, every challenge overcome becomes part of our story.

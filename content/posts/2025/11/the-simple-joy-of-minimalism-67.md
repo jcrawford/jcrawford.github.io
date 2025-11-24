@@ -1,13 +1,18 @@
 ---
-slug: "the-simple-joy-of-minimalism-67"
-title: "The Simple Joy of Minimalism"
-excerpt: "Explore the fascinating world of minimalism and discover how it can transform your approach to lifestyle. Learn practical tips and insights from experts."
-featuredImage: "/images/content/the-simple-joy-of-minimalism-67/featured.jpg"
-category: "lifestyle"
-tags: ["lifestyle", "inspiration", "mindfulness", "balance"]
-author: "joseph-crawford"
-publishedAt: "2025-11-09"
-updatedAt: "2025-11-09"
+slug: the-simple-joy-of-minimalism-67
+title: The Simple Joy of Minimalism
+excerpt: >-
+  Explore the fascinating world of minimalism and discover how it can transform
+  your approach to lifestyle. Learn practical tips and insights from experts.
+featuredImage: /images/content/the-simple-joy-of-minimalism-67/featured.jpg
+tags:
+  - lifestyle
+  - inspiration
+  - mindfulness
+  - balance
+author: joseph-crawford
+publishedAt: '2025-11-09'
+updatedAt: '2025-11-09'
 ---
 
 In today's world, minimalism represents more than just a trend—it's a fundamental shift in how we approach lifestyle. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

@@ -3,7 +3,6 @@ slug: good-food-good-mood
 title: Good food equals good mood
 excerpt: The connection between what we eat and how we feel runs deeper than you think.
 featuredImage: /images/content/good-food-good-mood/featured.jpg
-category: food
 tags:
   - food
   - wellness

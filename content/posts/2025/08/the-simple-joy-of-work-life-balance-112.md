@@ -1,13 +1,20 @@
 ---
-slug: "the-simple-joy-of-work-life-balance-112"
-title: "The Simple Joy of Work-Life Balance"
-excerpt: "Explore the fascinating world of work-life balance and discover how it can transform your approach to lifestyle. Learn practical tips and insights from experts."
-featuredImage: "https://images.unsplash.com/photo-1527169400375-f90d04c4c6b7?w=1200&h=800&fit=crop"
-category: "lifestyle"
-tags: ["lifestyle", "wellness", "mindfulness", "productivity"]
-author: "joseph-crawford"
-publishedAt: "2025-08-21"
-updatedAt: "2025-08-21"
+slug: the-simple-joy-of-work-life-balance-112
+title: The Simple Joy of Work-Life Balance
+excerpt: >-
+  Explore the fascinating world of work-life balance and discover how it can
+  transform your approach to lifestyle. Learn practical tips and insights from
+  experts.
+featuredImage: >-
+  https://images.unsplash.com/photo-1527169400375-f90d04c4c6b7?w=1200&h=800&fit=crop
+tags:
+  - lifestyle
+  - wellness
+  - mindfulness
+  - productivity
+author: joseph-crawford
+publishedAt: '2025-08-21'
+updatedAt: '2025-08-21'
 ---
 
 In today's world, work-life balance represents more than just a trend—it's a fundamental shift in how we approach lifestyle. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

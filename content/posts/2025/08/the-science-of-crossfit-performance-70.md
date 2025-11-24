@@ -1,13 +1,18 @@
 ---
-slug: "the-science-of-crossfit-performance-70"
-title: "The Science of CrossFit Performance"
-excerpt: "Explore the fascinating world of crossfit and discover how it can transform your approach to sports. Learn practical tips and insights from experts."
-featuredImage: "/images/content/the-science-of-crossfit-performance-70/featured.jpg"
-category: "sports"
-tags: ["sports", "training", "motivation", "competition"]
-author: "joseph-crawford"
-publishedAt: "2025-08-10"
-updatedAt: "2025-08-10"
+slug: the-science-of-crossfit-performance-70
+title: The Science of CrossFit Performance
+excerpt: >-
+  Explore the fascinating world of crossfit and discover how it can transform
+  your approach to sports. Learn practical tips and insights from experts.
+featuredImage: /images/content/the-science-of-crossfit-performance-70/featured.jpg
+tags:
+  - sports
+  - training
+  - motivation
+  - competition
+author: joseph-crawford
+publishedAt: '2025-08-10'
+updatedAt: '2025-08-10'
 ---
 
 In today's world, crossfit represents more than just a trend—it's a fundamental shift in how we approach sports. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

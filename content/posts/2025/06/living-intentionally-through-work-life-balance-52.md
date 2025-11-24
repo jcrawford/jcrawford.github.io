@@ -1,13 +1,19 @@
 ---
-slug: "living-intentionally-through-work-life-balance-52"
-title: "Living Intentionally Through Work-Life Balance"
-excerpt: "Explore the fascinating world of work-life balance and discover how it can transform your approach to lifestyle. Learn practical tips and insights from experts."
-featuredImage: "/images/content/living-intentionally-through-work-life-balance-52/featured.jpg"
-category: "lifestyle"
-tags: ["lifestyle", "habits", "wellness", "happiness"]
-author: "joseph-crawford"
-publishedAt: "2025-06-20"
-updatedAt: "2025-06-20"
+slug: living-intentionally-through-work-life-balance-52
+title: Living Intentionally Through Work-Life Balance
+excerpt: >-
+  Explore the fascinating world of work-life balance and discover how it can
+  transform your approach to lifestyle. Learn practical tips and insights from
+  experts.
+featuredImage: /images/content/living-intentionally-through-work-life-balance-52/featured.jpg
+tags:
+  - lifestyle
+  - habits
+  - wellness
+  - happiness
+author: joseph-crawford
+publishedAt: '2025-06-20'
+updatedAt: '2025-06-20'
 ---
 
 In today's world, work-life balance represents more than just a trend—it's a fundamental shift in how we approach lifestyle. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

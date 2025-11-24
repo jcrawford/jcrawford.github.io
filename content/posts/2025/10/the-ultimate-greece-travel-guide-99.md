@@ -1,13 +1,19 @@
 ---
-slug: "the-ultimate-greece-travel-guide-99"
-title: "The Ultimate Greece Travel Guide"
-excerpt: "Explore the fascinating world of greece and discover how it can transform your approach to travel. Learn practical tips and insights from experts."
-featuredImage: "/images/content/the-ultimate-greece-travel-guide-99/featured.jpg"
-category: "family"
-tags: ["travel", "tourism", "journey", "culture"]
-author: "joseph-crawford"
-publishedAt: "2025-10-23"
-updatedAt: "2025-10-23"
+slug: the-ultimate-greece-travel-guide-99
+title: The Ultimate Greece Travel Guide
+excerpt: >-
+  Explore the fascinating world of greece and discover how it can transform your
+  approach to travel. Learn practical tips and insights from experts.
+featuredImage: /images/content/the-ultimate-greece-travel-guide-99/featured.jpg
+tags:
+  - travel
+  - tourism
+  - journey
+  - culture
+  - family
+author: joseph-crawford
+publishedAt: '2025-10-23'
+updatedAt: '2025-10-23'
 ---
 
 In today's world, greece represents more than just a trend—it's a fundamental shift in how we approach travel. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

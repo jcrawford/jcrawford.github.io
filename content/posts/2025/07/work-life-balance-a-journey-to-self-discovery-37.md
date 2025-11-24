@@ -1,13 +1,19 @@
 ---
-slug: "work-life-balance-a-journey-to-self-discovery-37"
-title: "Work-Life Balance: A Journey to Self-Discovery"
-excerpt: "Explore the fascinating world of work-life balance and discover how it can transform your approach to lifestyle. Learn practical tips and insights from experts."
-featuredImage: "/images/content/work-life-balance-a-journey-to-self-discovery-37/featured.jpg"
-category: "lifestyle"
-tags: ["lifestyle", "productivity", "mindfulness", "inspiration"]
-author: "joseph-crawford"
-publishedAt: "2025-07-08"
-updatedAt: "2025-07-08"
+slug: work-life-balance-a-journey-to-self-discovery-37
+title: 'Work-Life Balance: A Journey to Self-Discovery'
+excerpt: >-
+  Explore the fascinating world of work-life balance and discover how it can
+  transform your approach to lifestyle. Learn practical tips and insights from
+  experts.
+featuredImage: /images/content/work-life-balance-a-journey-to-self-discovery-37/featured.jpg
+tags:
+  - lifestyle
+  - productivity
+  - mindfulness
+  - inspiration
+author: joseph-crawford
+publishedAt: '2025-07-08'
+updatedAt: '2025-07-08'
 ---
 
 In today's world, work-life balance represents more than just a trend—it's a fundamental shift in how we approach lifestyle. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

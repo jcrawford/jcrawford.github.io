@@ -1,13 +1,18 @@
 ---
-slug: "adventure-awaits"
-title: "Adventure is worthwhile in itself"
-excerpt: "The rewards of exploration extend far beyond reaching any particular destination."
-featuredImage: "/images/content/adventure-awaits/featured.jpg"
-category: "family"
-tags: ["travel", "adventure", "exploration"]
-author: "joseph-crawford"
-publishedAt: "2024-12-31"
-updatedAt: "2024-12-31"
+slug: adventure-awaits
+title: Adventure is worthwhile in itself
+excerpt: >-
+  The rewards of exploration extend far beyond reaching any particular
+  destination.
+featuredImage: /images/content/adventure-awaits/featured.jpg
+tags:
+  - travel
+  - adventure
+  - exploration
+  - family
+author: joseph-crawford
+publishedAt: '2024-12-31'
+updatedAt: '2024-12-31'
 ---
 
 We often justify travel with bucket lists and Instagram moments, but adventure needs no justification beyond itself. The thrill of exploring unknown streets, tasting unfamiliar foods, meeting strangers who become friends—these experiences are their own reward.

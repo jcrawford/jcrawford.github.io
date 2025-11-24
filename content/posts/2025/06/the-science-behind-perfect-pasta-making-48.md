@@ -1,13 +1,19 @@
 ---
-slug: "the-science-behind-perfect-pasta-making-48"
-title: "The Science Behind Perfect Pasta Making"
-excerpt: "Explore the fascinating world of pasta making and discover how it can transform your approach to food. Learn practical tips and insights from experts."
-featuredImage: "/images/content/the-science-behind-perfect-pasta-making-48/featured.jpg"
-category: "food"
-tags: ["food", "cooking", "nutrition", "dining"]
-author: "joseph-crawford"
-publishedAt: "2025-06-10"
-updatedAt: "2025-06-10"
+slug: the-science-behind-perfect-pasta-making-48
+title: The Science Behind Perfect Pasta Making
+excerpt: >-
+  Explore the fascinating world of pasta making and discover how it can
+  transform your approach to food. Learn practical tips and insights from
+  experts.
+featuredImage: /images/content/the-science-behind-perfect-pasta-making-48/featured.jpg
+tags:
+  - food
+  - cooking
+  - nutrition
+  - dining
+author: joseph-crawford
+publishedAt: '2025-06-10'
+updatedAt: '2025-06-10'
 ---
 
 In today's world, pasta making represents more than just a trend—it's a fundamental shift in how we approach food. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

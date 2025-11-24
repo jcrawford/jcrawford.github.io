@@ -118,7 +118,6 @@ const config: GatsbyConfig = {
                   slug
                   title
                   excerpt
-                  category
                   tags
                   publishedAt
                   series {
@@ -131,7 +130,7 @@ const config: GatsbyConfig = {
         `,
         ref: 'id',
         index: ['title', 'excerpt', 'body'],
-        store: ['id', 'slug', 'title', 'excerpt', 'category', 'publishedAt', 'path'],
+        store: ['id', 'slug', 'title', 'excerpt', 'tags', 'publishedAt', 'path'],
         normalizer: ({ data }: any) =>
           data.allMarkdownRemark.nodes.map((node: any) => {
             const isSeries = !!node.frontmatter.series?.name;
@@ -141,7 +140,7 @@ const config: GatsbyConfig = {
               slug: node.frontmatter.slug,
               title: node.frontmatter.title,
               excerpt: node.frontmatter.excerpt,
-              category: node.frontmatter.category,
+              tags: node.frontmatter.tags || [],
               publishedAt: node.frontmatter.publishedAt,
               path,
               body: node.html.replace(/<[^>]*>/g, ''),

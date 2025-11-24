@@ -5,7 +5,6 @@ excerpt: >-
   Begin your fitness journey today—greatness comes from consistency, not
   perfection.
 featuredImage: /images/content/winning-starts-with-beginning/featured.jpg
-category: sports
 tags:
   - sports
   - fitness

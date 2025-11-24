@@ -1,13 +1,19 @@
 ---
-slug: "elevating-food-culture-to-the-next-level-108"
-title: "Elevating Food Culture to the Next Level"
-excerpt: "Explore the fascinating world of food culture and discover how it can transform your approach to food. Learn practical tips and insights from experts."
-featuredImage: "/images/content/elevating-food-culture-to-the-next-level-108/featured.jpg"
-category: "food"
-tags: ["food", "kitchen", "recipes", "ingredients"]
-author: "joseph-crawford"
-publishedAt: "2025-10-10"
-updatedAt: "2025-10-10"
+slug: elevating-food-culture-to-the-next-level-108
+title: Elevating Food Culture to the Next Level
+excerpt: >-
+  Explore the fascinating world of food culture and discover how it can
+  transform your approach to food. Learn practical tips and insights from
+  experts.
+featuredImage: /images/content/elevating-food-culture-to-the-next-level-108/featured.jpg
+tags:
+  - food
+  - kitchen
+  - recipes
+  - ingredients
+author: joseph-crawford
+publishedAt: '2025-10-10'
+updatedAt: '2025-10-10'
 ---
 
 In today's world, food culture represents more than just a trend—it's a fundamental shift in how we approach food. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

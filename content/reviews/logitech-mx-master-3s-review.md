@@ -1,31 +1,37 @@
 ---
-slug: "logitech-mx-master-3s-review"
-title: "Logitech MX Master 3S Review: The Ultimate Productivity Mouse"
-excerpt: "A comprehensive review of the Logitech MX Master 3S, examining why this premium mouse has become the go-to choice for professionals and power users."
-featuredImage: "/images/content/reviews/logitech-mx-master-3s-review/featured.jpg"
-category: "reviews"
-tags: ["reviews", "hardware", "mouse", "productivity", "accessories"]
-author: "joseph-crawford"
-publishedAt: "2025-10-18"
-updatedAt: "2025-10-18"
+slug: logitech-mx-master-3s-review
+title: 'Logitech MX Master 3S Review: The Ultimate Productivity Mouse'
+excerpt: >-
+  A comprehensive review of the Logitech MX Master 3S, examining why this
+  premium mouse has become the go-to choice for professionals and power users.
+featuredImage: /images/content/reviews/logitech-mx-master-3s-review/featured.jpg
+tags:
+  - reviews
+  - hardware
+  - mouse
+  - productivity
+  - accessories
+author: joseph-crawford
+publishedAt: '2025-10-18'
+updatedAt: '2025-10-18'
 review:
   rating: 5
   pros:
-    - "Exceptionally comfortable ergonomic design"
-    - "Silent clicks (improved from MX Master 3)"
-    - "8K DPI sensor with incredible precision"
-    - "Multi-device connectivity (up to 3 devices)"
-    - "MagSpeed scrolling is magical"
-    - "Excellent battery life (70 days)"
-    - "Customizable buttons with Logi Options+"
+    - Exceptionally comfortable ergonomic design
+    - Silent clicks (improved from MX Master 3)
+    - 8K DPI sensor with incredible precision
+    - Multi-device connectivity (up to 3 devices)
+    - MagSpeed scrolling is magical
+    - Excellent battery life (70 days)
+    - Customizable buttons with Logi Options+
   cons:
-    - "Expensive at $99"
-    - "Not ideal for left-handed users"
-    - "Requires software for full functionality"
-    - "Large size not suitable for small hands"
-  price: "$99"
-  brand: "Logitech"
-  productUrl: "https://www.logitech.com/en-us/products/mice/mx-master-3s.html"
+    - Expensive at $99
+    - Not ideal for left-handed users
+    - Requires software for full functionality
+    - Large size not suitable for small hands
+  price: $99
+  brand: Logitech
+  productUrl: 'https://www.logitech.com/en-us/products/mice/mx-master-3s.html'
 ---
 
 The Logitech MX Master 3S is widely considered the best productivity mouse money can buy. After using it daily for six months, I understand why professionals across industries choose this mouse. It's genuinely transformed how I interact with my computer.

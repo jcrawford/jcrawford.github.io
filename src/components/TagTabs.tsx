@@ -12,7 +12,6 @@ interface Article {
     title: string;
     excerpt: string;
     featuredImage: string;
-    category: string;
     tags: string[];
     author: string;
     publishedAt: string;
@@ -39,10 +38,10 @@ const TagTabs: React.FC<TagTabsProps> = ({ tags, articles, excludeSlugs = [] }) 
   const [activeTab, setActiveTab] = useState(tags[0]?.slug || '');
 
   const getArticlesByTag = (tagSlug: string) => {
-    // Filter by category AND exclude featured articles
+    // Filter by tag AND exclude featured articles
     const tagArticles = articles.filter(
       (article) => 
-        article.frontmatter.category === tagSlug &&
+        article.frontmatter.tags?.includes(tagSlug) &&
         !excludeSlugs.includes(article.frontmatter.slug)
     );
 

@@ -1,27 +1,30 @@
 ---
-slug: "building-better-websites/deployment-maintenance"
-title: "Building Better Websites: Deployment & Maintenance"
-excerpt: "Master deployment strategies, monitoring, and long-term maintenance. The final part of our web development series."
-featuredImage: "/images/content/building-better-websites/deployment-maintenance-featured.jpg"
-category: "lifestyle"
-tags: ["test-series"]
-author: "joseph-crawford"
-publishedAt: "2025-11-12"
+slug: building-better-websites/deployment-maintenance
+title: 'Building Better Websites: Deployment & Maintenance'
+excerpt: >-
+  Master deployment strategies, monitoring, and long-term maintenance. The final
+  part of our web development series.
+featuredImage: /images/content/building-better-websites/deployment-maintenance-featured.jpg
+tags:
+  - test-series
+  - lifestyle
+author: joseph-crawford
+publishedAt: '2025-11-12'
 series:
-  name: "Building Better Websites"
+  name: Building Better Websites
   order: 3
   references:
-    - url: "https://vercel.com/docs"
-      title: "Vercel Documentation"
-    - url: "https://www.netlify.com/docs/"
-      title: "Netlify Documentation"
-    - url: "https://docs.github.com/en/actions"
-      title: "GitHub Actions Documentation"
-    - url: "https://cloud.google.com/lighthouse/docs"
-      title: "Google Lighthouse"
+    - url: 'https://vercel.com/docs'
+      title: Vercel Documentation
+    - url: 'https://www.netlify.com/docs/'
+      title: Netlify Documentation
+    - url: 'https://docs.github.com/en/actions'
+      title: GitHub Actions Documentation
+    - url: 'https://cloud.google.com/lighthouse/docs'
+      title: Google Lighthouse
   attachments:
-    - filename: "/images/placeholder.txt"
-      title: "Deployment Checklist"
+    - filename: /images/placeholder.txt
+      title: Deployment Checklist
 ---
 
 # Deployment & Maintenance

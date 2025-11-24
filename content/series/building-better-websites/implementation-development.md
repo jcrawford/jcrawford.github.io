@@ -1,22 +1,26 @@
 ---
-slug: "building-better-websites/implementation-development"
-title: "Building Better Websites: Implementation & Development"
-excerpt: "Dive into modern development workflows, build tools, and best practices. The second part of our web development series."
-featuredImage: "/images/content/building-better-websites/implementation-development-featured.jpg"
-category: "lifestyle"
-tags: ["test-series"]
-author: "joseph-crawford"
-publishedAt: "2025-11-11"
+slug: building-better-websites/implementation-development
+title: 'Building Better Websites: Implementation & Development'
+excerpt: >-
+  Dive into modern development workflows, build tools, and best practices. The
+  second part of our web development series.
+featuredImage: >-
+  /images/content/building-better-websites/implementation-development-featured.jpg
+tags:
+  - test-series
+  - lifestyle
+author: joseph-crawford
+publishedAt: '2025-11-11'
 series:
-  name: "Building Better Websites"
+  name: Building Better Websites
   order: 2
   references:
-    - url: "https://webpack.js.org/concepts/"
-      title: "Webpack Concepts"
-    - url: "https://vitejs.dev/guide/"
-      title: "Vite Guide"
-    - url: "https://tailwindcss.com/docs"
-      title: "Tailwind CSS Documentation"
+    - url: 'https://webpack.js.org/concepts/'
+      title: Webpack Concepts
+    - url: 'https://vitejs.dev/guide/'
+      title: Vite Guide
+    - url: 'https://tailwindcss.com/docs'
+      title: Tailwind CSS Documentation
 ---
 
 # Implementation & Development

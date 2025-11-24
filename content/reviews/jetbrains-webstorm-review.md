@@ -1,30 +1,37 @@
 ---
-slug: "jetbrains-webstorm-review"
-title: "JetBrains WebStorm Review: Professional JavaScript IDE Worth the Price?"
-excerpt: "A comprehensive review of JetBrains WebStorm, examining whether this premium JavaScript IDE justifies its subscription cost for professional web developers."
-featuredImage: "/images/content/reviews/jetbrains-webstorm-review/featured.jpg"
-category: "reviews"
-tags: ["reviews", "software", "ide", "javascript", "development"]
-author: "joseph-crawford"
-publishedAt: "2025-11-08"
-updatedAt: "2025-11-08"
+slug: jetbrains-webstorm-review
+title: 'JetBrains WebStorm Review: Professional JavaScript IDE Worth the Price?'
+excerpt: >-
+  A comprehensive review of JetBrains WebStorm, examining whether this premium
+  JavaScript IDE justifies its subscription cost for professional web
+  developers.
+featuredImage: /images/content/reviews/jetbrains-webstorm-review/featured.jpg
+tags:
+  - reviews
+  - software
+  - ide
+  - javascript
+  - development
+author: joseph-crawford
+publishedAt: '2025-11-08'
+updatedAt: '2025-11-08'
 review:
   rating: 4
   pros:
-    - "Powerful intelligent code completion and refactoring"
-    - "Excellent TypeScript and modern JavaScript support"
-    - "Built-in debugging and testing tools"
-    - "Advanced code navigation and analysis"
-    - "No extension configuration required"
-    - "Outstanding Node.js and React support"
+    - Powerful intelligent code completion and refactoring
+    - Excellent TypeScript and modern JavaScript support
+    - Built-in debugging and testing tools
+    - Advanced code navigation and analysis
+    - No extension configuration required
+    - Outstanding Node.js and React support
   cons:
-    - "Annual subscription required ($69/year)"
-    - "Heavier resource usage than VS Code"
-    - "Longer startup time"
-    - "Steeper learning curve for beginners"
-  price: "$69/year (first year), $55/year (second), $41/year (third+)"
-  brand: "JetBrains"
-  productUrl: "https://www.jetbrains.com/webstorm/"
+    - Annual subscription required ($69/year)
+    - Heavier resource usage than VS Code
+    - Longer startup time
+    - Steeper learning curve for beginners
+  price: '$69/year (first year), $55/year (second), $41/year (third+)'
+  brand: JetBrains
+  productUrl: 'https://www.jetbrains.com/webstorm/'
 ---
 
 JetBrains WebStorm positions itself as a professional JavaScript IDE, not just a code editor. After using it for several months alongside VS Code, I can say it delivers on that promise—but whether it's worth the annual subscription depends on your needs and workflow.

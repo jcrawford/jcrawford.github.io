@@ -1,31 +1,37 @@
 ---
-slug: "notion-review"
-title: "Notion Review: The All-in-One Workspace for Modern Teams"
-excerpt: "A detailed review of Notion, the productivity app that combines notes, databases, wikis, and project management into one flexible platform."
-featuredImage: "/images/content/reviews/notion-review/featured.jpg"
-category: "reviews"
-tags: ["reviews", "software", "productivity", "collaboration", "organization"]
-author: "joseph-crawford"
-publishedAt: "2025-11-03"
-updatedAt: "2025-11-03"
+slug: notion-review
+title: 'Notion Review: The All-in-One Workspace for Modern Teams'
+excerpt: >-
+  A detailed review of Notion, the productivity app that combines notes,
+  databases, wikis, and project management into one flexible platform.
+featuredImage: /images/content/reviews/notion-review/featured.jpg
+tags:
+  - reviews
+  - software
+  - productivity
+  - collaboration
+  - organization
+author: joseph-crawford
+publishedAt: '2025-11-03'
+updatedAt: '2025-11-03'
 review:
   rating: 5
   pros:
-    - "Incredibly flexible and customizable"
-    - "Beautiful, clean interface"
-    - "Powerful database and relation features"
-    - "Excellent collaboration tools"
-    - "Free for personal use"
-    - "Cross-platform sync (web, mobile, desktop)"
-    - "Rich media embedding and templates"
+    - Incredibly flexible and customizable
+    - 'Beautiful, clean interface'
+    - Powerful database and relation features
+    - Excellent collaboration tools
+    - Free for personal use
+    - 'Cross-platform sync (web, mobile, desktop)'
+    - Rich media embedding and templates
   cons:
-    - "Steep learning curve initially"
-    - "Can be slow with large databases"
-    - "Mobile app less powerful than desktop"
-    - "Offline mode is limited"
-  price: "Free (Personal), $10/user/month (Plus), $18/user/month (Business)"
-  brand: "Notion Labs"
-  productUrl: "https://www.notion.so/"
+    - Steep learning curve initially
+    - Can be slow with large databases
+    - Mobile app less powerful than desktop
+    - Offline mode is limited
+  price: 'Free (Personal), $10/user/month (Plus), $18/user/month (Business)'
+  brand: Notion Labs
+  productUrl: 'https://www.notion.so/'
 ---
 
 Notion has revolutionized how I organize information, manage projects, and collaborate with others. It's rare for a tool to be both incredibly powerful and surprisingly intuitive, but Notion manages to strike that balance beautifully.

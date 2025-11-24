@@ -3,7 +3,6 @@ slug: cooking-is-love-made-visible
 title: Cooking is like love—it should be entered into with abandon
 excerpt: 'Embrace creativity, experimentation, and joy in the kitchen.'
 featuredImage: /images/content/cooking-is-love-made-visible/featured.jpg
-category: food
 tags:
   - food
   - cooking

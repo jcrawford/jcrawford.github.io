@@ -61,42 +61,70 @@ function getDisplayWidth(str) {
 }
 
 /**
- * Formats a table row with aligned columns.
+ * Calculates the maximum width needed for each column based on the data.
+ * 
+ * @param {Array} posts - Array of post objects
+ * @returns {Object} Object with width for each column
+ */
+function calculateColumnWidths(posts) {
+  const STATUS_WIDTH = 8; // Fixed for status icons
+  const DATE_WIDTH = 10; // Fixed for YYYY-MM-DD dates
+  
+  // Start with header widths as minimum
+  let maxFilenameWidth = 'Filename'.length;
+  let maxTitleWidth = 'Title'.length;
+  
+  // Find the longest content in each column
+  for (const post of posts) {
+    maxFilenameWidth = Math.max(maxFilenameWidth, post.filename.length);
+    maxTitleWidth = Math.max(maxTitleWidth, post.title.length);
+  }
+  
+  return {
+    status: STATUS_WIDTH,
+    filename: maxFilenameWidth,
+    title: maxTitleWidth,
+    date: DATE_WIDTH
+  };
+}
+
+/**
+ * Formats a table row with aligned columns using dynamic widths.
  * 
  * @param {string} status - Status icon (✓ or ✗) with or without color codes
  * @param {string} filename - Relative file path
  * @param {string} title - Post title
- * @param {string} category - Post category
  * @param {string} publishedAt - Publication date
+ * @param {Object} widths - Object containing width for each column
  * @returns {string} Formatted table row
  */
-function formatTableRow(status, filename, title, category, publishedAt) {
+function formatTableRow(status, filename, title, publishedAt, widths) {
   // Calculate visible length of status (excluding ANSI codes)
   const statusVisible = status.replace(/\x1b\[\d+m/g, '');
   const statusWidth = getDisplayWidth(statusVisible);
-  const statusPadding = 8 - statusWidth; // Pad to 8 cells (for 2-cell wide symbols)
+  const statusPadding = widths.status - statusWidth;
   const statusCol = status + ' '.repeat(Math.max(0, statusPadding));
   
-  const filenameCol = filename.padEnd(45);
-  const titleCol = title.slice(0, 40).padEnd(40);
-  const categoryCol = category.padEnd(15);
-  const dateCol = publishedAt.padEnd(10); // Pad published date to 10 chars (YYYY-MM-DD)
+  // Pad each column to its calculated width
+  const filenameCol = filename.padEnd(widths.filename);
+  const titleCol = title.padEnd(widths.title);
+  const dateCol = publishedAt.padEnd(widths.date);
   
-  return `| ${statusCol} | ${filenameCol} | ${titleCol} | ${categoryCol} | ${dateCol} |`;
+  return `| ${statusCol} | ${filenameCol} | ${titleCol} | ${dateCol} |`;
 }
 
 /**
  * Main execution function for the featured posts audit.
  */
 function main() {
-  const postsDir = path.join(__dirname, '../content/posts');
+  const contentDir = path.join(__dirname, '../content');
   
   console.log('\n========================================');
   console.log('Featured Posts Audit');
   console.log('========================================\n');
   
   try {
-    const allFiles = getAllMarkdownFiles(postsDir);
+    const allFiles = getAllMarkdownFiles(contentDir);
     const featuredPosts = [];
     
     // Parse frontmatter and collect featured posts
@@ -105,13 +133,13 @@ function main() {
       const { data: frontmatter } = matter(content);
       
       if (frontmatter.featured === true) {
-        const relativePath = path.relative(postsDir, file);
+        const relativePath = path.relative(contentDir, file);
+        const tags = Array.isArray(frontmatter.tags) ? frontmatter.tags : [];
         featuredPosts.push({
           filename: relativePath,
           title: frontmatter.title || 'Untitled',
-          category: frontmatter.category || 'uncategorized',
           publishedAt: frontmatter.publishedAt || 'Unknown',
-          isFamilyPost: frontmatter.category === 'family'
+          isFamilyPost: tags.includes('family')
         });
       }
     }
@@ -122,7 +150,7 @@ function main() {
       return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
     });
     
-    // Group by category
+    // Group by family tag
     const familyPosts = featuredPosts.filter(p => p.isFamilyPost);
     const nonFamilyPosts = featuredPosts.filter(p => !p.isFamilyPost);
     
@@ -130,10 +158,11 @@ function main() {
     console.log(`Found ${featuredPosts.length} featured post(s):\n`);
     
     if (featuredPosts.length > 0) {
-      // Table header
-      // Calculate exact width: | Display(8) | Filename(45) | Title(40) | Category(15) | Published(10) |
-      // = 1 + 1 + 8 + 1 + 1 + 1 + 45 + 1 + 1 + 1 + 40 + 1 + 1 + 1 + 15 + 1 + 1 + 1 + 10 + 1 + 1 = 135
-      const headerRow = `| ${'Display'.padEnd(8)} | ${'Filename'.padEnd(45)} | ${'Title'.padEnd(40)} | ${'Category'.padEnd(15)} | ${'Published'.padEnd(10)} |`;
+      // Calculate dynamic column widths based on content
+      const widths = calculateColumnWidths(featuredPosts);
+      
+      // Table header with dynamic column widths
+      const headerRow = `| ${'Display'.padEnd(widths.status)} | ${'Filename'.padEnd(widths.filename)} | ${'Title'.padEnd(widths.title)} | ${'Published'.padEnd(widths.date)} |`;
       const separator = '='.repeat(headerRow.length);
       console.log(separator);
       console.log(headerRow);
@@ -151,7 +180,7 @@ function main() {
             ? `${colors.green}✓${colors.reset}` 
             : `${colors.red}✗${colors.reset}`;
         }
-        console.log(formatTableRow(status, post.filename, post.title, post.category, post.publishedAt));
+        console.log(formatTableRow(status, post.filename, post.title, post.publishedAt, widths));
       }
       console.log(separator + '\n');
     }

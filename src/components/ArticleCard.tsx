@@ -10,8 +10,7 @@ interface ArticleCardProps {
   title: string;
   excerpt: string;
   featuredImage: string;
-  category: string;
-  categoryName: string;
+  tags: string[];
   publishedAt: string;
   author: string;
   authorName: string;
@@ -23,14 +22,16 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
   title,
   excerpt,
   featuredImage,
-  category,
-  categoryName,
+  tags,
   publishedAt,
   author,
   authorName,
   isSeries,
 }) => {
   const articlePath = getArticlePath(slug, isSeries);
+  
+  // Get the first tag that's not "family" or "featured" for display
+  const primaryTag = tags.find(tag => tag !== 'family' && tag !== 'featured') || tags[0];
   
   return (
     <article className="hm-article-card">
@@ -43,12 +44,14 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
       </Link>
       
       <div className="hm-article-card-content">
-        <Link 
-          to={`/tag/${category}`}
-          className="hm-article-card-category"
-        >
-          {categoryName}
-        </Link>
+        {primaryTag && (
+          <Link 
+            to={`/tag/${primaryTag}`}
+            className="hm-article-card-category"
+          >
+            {primaryTag}
+          </Link>
+        )}
         
         <h2 className="hm-article-card-title">
           <Link to={articlePath}>

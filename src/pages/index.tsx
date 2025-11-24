@@ -14,7 +14,6 @@ interface ArticleFrontmatter {
   title: string;
   excerpt: string;
   featuredImage: string;
-  category: string;
   tags: string[];
   author: string;
   publishedAt: string;
@@ -184,7 +183,7 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
   
   // Filter out family posts from homepage and articles with null frontmatter
   const articles = data.allMarkdownRemark.nodes.filter(
-    article => article.frontmatter && article.frontmatter.category !== 'family'
+    article => article.frontmatter && !article.frontmatter.tags?.includes('family')
   );
 
   // Group articles by series
@@ -250,7 +249,7 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
   };
 
   /**
-   * Filters posts to include only those marked as featured and not in the family category.
+   * Filters posts to include only those marked as featured and not tagged with "family".
    * Sorts results by publication date (descending) with slug as secondary sort (ascending).
    * Limits to first 7 posts for the featured section (5 slider + 2 highlighted).
    * 
@@ -284,8 +283,6 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
       title: mappedArticle.frontmatter.title,
       excerpt: mappedArticle.frontmatter.excerpt,
       featuredImage: mappedArticle.frontmatter.featuredImage,
-      category: mappedArticle.frontmatter.category,
-      categoryName: tags.find(t => t.slug === mappedArticle.frontmatter.category)?.name || mappedArticle.frontmatter.category,
       publishedAt: mappedArticle.frontmatter.publishedAt,
       author: mappedArticle.frontmatter.author,
       authorName: authors.find(a => a.slug === mappedArticle.frontmatter.author)?.name || mappedArticle.frontmatter.author,
@@ -300,8 +297,6 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
       title: mappedArticle.frontmatter.title,
       excerpt: mappedArticle.frontmatter.excerpt,
       featuredImage: mappedArticle.frontmatter.featuredImage,
-      category: mappedArticle.frontmatter.category,
-      categoryName: tags.find(t => t.slug === mappedArticle.frontmatter.category)?.name || mappedArticle.frontmatter.category,
       publishedAt: mappedArticle.frontmatter.publishedAt,
       author: mappedArticle.frontmatter.author,
       authorName: authors.find(a => a.slug === mappedArticle.frontmatter.author)?.name || mappedArticle.frontmatter.author,
@@ -338,8 +333,7 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
                   title={article.frontmatter.title}
                   excerpt={article.frontmatter.excerpt}
                   featuredImage={article.frontmatter.featuredImage}
-                  category={article.frontmatter.category}
-                  categoryName={tags.find(t => t.slug === article.frontmatter.category)?.name || article.frontmatter.category}
+                  tags={article.frontmatter.tags || []}
                   publishedAt={article.frontmatter.publishedAt}
                   author={article.frontmatter.author}
                   authorName={authors.find(a => a.slug === article.frontmatter.author)?.name || article.frontmatter.author}
@@ -389,7 +383,6 @@ export const query = graphql`
           title
           excerpt
           featuredImage
-          category
           tags
           author
           publishedAt

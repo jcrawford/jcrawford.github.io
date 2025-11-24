@@ -1,13 +1,19 @@
 ---
-slug: "mastering-the-art-of-breakfast-classics-78"
-title: "Mastering the Art of Breakfast Classics"
-excerpt: "Explore the fascinating world of breakfast classics and discover how it can transform your approach to food. Learn practical tips and insights from experts."
-featuredImage: "/images/content/mastering-the-art-of-breakfast-classics-78/featured.jpg"
-category: "food"
-tags: ["food", "recipes", "cooking", "kitchen"]
-author: "joseph-crawford"
-publishedAt: "2025-09-03"
-updatedAt: "2025-09-03"
+slug: mastering-the-art-of-breakfast-classics-78
+title: Mastering the Art of Breakfast Classics
+excerpt: >-
+  Explore the fascinating world of breakfast classics and discover how it can
+  transform your approach to food. Learn practical tips and insights from
+  experts.
+featuredImage: /images/content/mastering-the-art-of-breakfast-classics-78/featured.jpg
+tags:
+  - food
+  - recipes
+  - cooking
+  - kitchen
+author: joseph-crawford
+publishedAt: '2025-09-03'
+updatedAt: '2025-09-03'
 ---
 
 In today's world, breakfast classics represents more than just a trend—it's a fundamental shift in how we approach food. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

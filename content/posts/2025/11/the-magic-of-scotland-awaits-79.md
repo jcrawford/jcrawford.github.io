@@ -1,13 +1,19 @@
 ---
-slug: "the-magic-of-scotland-awaits-79"
-title: "The Magic of Scotland Awaits"
-excerpt: "Explore the fascinating world of scotland and discover how it can transform your approach to travel. Learn practical tips and insights from experts."
-featuredImage: "/images/content/the-magic-of-scotland-awaits-79/featured.jpg"
-category: "family"
-tags: ["travel", "wanderlust", "culture", "exploration"]
-author: "joseph-crawford"
-publishedAt: "2025-11-05"
-updatedAt: "2025-11-05"
+slug: the-magic-of-scotland-awaits-79
+title: The Magic of Scotland Awaits
+excerpt: >-
+  Explore the fascinating world of scotland and discover how it can transform
+  your approach to travel. Learn practical tips and insights from experts.
+featuredImage: /images/content/the-magic-of-scotland-awaits-79/featured.jpg
+tags:
+  - travel
+  - wanderlust
+  - culture
+  - exploration
+  - family
+author: joseph-crawford
+publishedAt: '2025-11-05'
+updatedAt: '2025-11-05'
 ---
 
 In today's world, scotland represents more than just a trend—it's a fundamental shift in how we approach travel. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

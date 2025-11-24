@@ -1,30 +1,36 @@
 ---
-slug: "postman-review"
-title: "Postman Review: The Complete API Development Platform"
-excerpt: "A thorough review of Postman, the popular API development tool that has evolved from simple request testing to a comprehensive API platform."
-featuredImage: "/images/content/reviews/postman-review/featured.jpg"
-category: "reviews"
-tags: ["reviews", "software", "api", "development", "testing"]
-author: "joseph-crawford"
-publishedAt: "2025-10-25"
-updatedAt: "2025-10-25"
+slug: postman-review
+title: 'Postman Review: The Complete API Development Platform'
+excerpt: >-
+  A thorough review of Postman, the popular API development tool that has
+  evolved from simple request testing to a comprehensive API platform.
+featuredImage: /images/content/reviews/postman-review/featured.jpg
+tags:
+  - reviews
+  - software
+  - api
+  - development
+  - testing
+author: joseph-crawford
+publishedAt: '2025-10-25'
+updatedAt: '2025-10-25'
 review:
   rating: 4
   pros:
-    - "Intuitive interface for API testing"
-    - "Powerful collection and environment system"
-    - "Excellent collaboration features"
-    - "Comprehensive testing and automation"
-    - "Mock servers and API documentation"
-    - "Free tier is very generous"
+    - Intuitive interface for API testing
+    - Powerful collection and environment system
+    - Excellent collaboration features
+    - Comprehensive testing and automation
+    - Mock servers and API documentation
+    - Free tier is very generous
   cons:
-    - "Desktop app can be resource-heavy"
-    - "Advanced features have steep learning curve"
-    - "Collaboration features require paid plans"
-    - "No real API design tooling (separate from Postman)"
-  price: "Free (Basic), $14/user/month (Professional), Custom (Enterprise)"
-  brand: "Postman"
-  productUrl: "https://www.postman.com/"
+    - Desktop app can be resource-heavy
+    - Advanced features have steep learning curve
+    - Collaboration features require paid plans
+    - No real API design tooling (separate from Postman)
+  price: 'Free (Basic), $14/user/month (Professional), Custom (Enterprise)'
+  brand: Postman
+  productUrl: 'https://www.postman.com/'
 ---
 
 Postman has grown from a simple Chrome extension for API testing into a comprehensive platform for API development, testing, and collaboration. After using it for API development for several years, I can attest to both its power and occasional complexity.

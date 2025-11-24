@@ -1,22 +1,25 @@
 ---
-slug: "building-better-websites/planning-architecture"
-title: "Building Better Websites: Planning & Architecture"
-excerpt: "Learn the fundamentals of planning and architecting modern websites. This is the first part of our comprehensive web development series."
-featuredImage: "/images/content/building-better-websites/planning-architecture-featured.jpg"
-category: "lifestyle"
-tags: ["test-series"]
-author: "joseph-crawford"
-publishedAt: "2025-11-10"
+slug: building-better-websites/planning-architecture
+title: 'Building Better Websites: Planning & Architecture'
+excerpt: >-
+  Learn the fundamentals of planning and architecting modern websites. This is
+  the first part of our comprehensive web development series.
+featuredImage: /images/content/building-better-websites/planning-architecture-featured.jpg
+tags:
+  - test-series
+  - lifestyle
+author: joseph-crawford
+publishedAt: '2025-11-10'
 series:
-  name: "Building Better Websites"
+  name: Building Better Websites
   order: 1
   references:
-    - url: "https://www.gatsbyjs.com/docs"
-      title: "Gatsby Documentation"
-    - url: "https://reactjs.org/docs/getting-started.html"
-      title: "React Official Docs"
-    - url: "https://www.typescriptlang.org/docs/"
-      title: "TypeScript Handbook"
+    - url: 'https://www.gatsbyjs.com/docs'
+      title: Gatsby Documentation
+    - url: 'https://reactjs.org/docs/getting-started.html'
+      title: React Official Docs
+    - url: 'https://www.typescriptlang.org/docs/'
+      title: TypeScript Handbook
 ---
 
 # Planning & Architecture

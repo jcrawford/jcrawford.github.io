@@ -1,13 +1,19 @@
 ---
-slug: "pushing-limits-with-marathon-running-105"
-title: "Pushing Limits with Marathon Running"
-excerpt: "Explore the fascinating world of marathon running and discover how it can transform your approach to sports. Learn practical tips and insights from experts."
-featuredImage: "/images/content/pushing-limits-with-marathon-running-105/featured.jpg"
-category: "sports"
-tags: ["sports", "training", "fitness", "athletics"]
-author: "joseph-crawford"
-publishedAt: "2025-09-18"
-updatedAt: "2025-09-18"
+slug: pushing-limits-with-marathon-running-105
+title: Pushing Limits with Marathon Running
+excerpt: >-
+  Explore the fascinating world of marathon running and discover how it can
+  transform your approach to sports. Learn practical tips and insights from
+  experts.
+featuredImage: /images/content/pushing-limits-with-marathon-running-105/featured.jpg
+tags:
+  - sports
+  - training
+  - fitness
+  - athletics
+author: joseph-crawford
+publishedAt: '2025-09-18'
+updatedAt: '2025-09-18'
 ---
 
 In today's world, marathon running represents more than just a trend—it's a fundamental shift in how we approach sports. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

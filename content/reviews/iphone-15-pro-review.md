@@ -1,31 +1,38 @@
 ---
-slug: "iphone-15-pro-review"
-title: "iPhone 15 Pro Review: Titanium Design Meets USB-C Reality"
-excerpt: "A thorough review of the iPhone 15 Pro, examining the new titanium design, A17 Pro chip, Action button, and whether the incremental upgrades justify the premium price."
-featuredImage: "/images/content/reviews/iphone-15-pro-review/featured.jpg"
-category: "reviews"
-tags: ["reviews", "hardware", "smartphone", "apple", "mobile"]
-author: "joseph-crawford"
-publishedAt: "2025-10-12"
-updatedAt: "2025-10-12"
+slug: iphone-15-pro-review
+title: 'iPhone 15 Pro Review: Titanium Design Meets USB-C Reality'
+excerpt: >-
+  A thorough review of the iPhone 15 Pro, examining the new titanium design, A17
+  Pro chip, Action button, and whether the incremental upgrades justify the
+  premium price.
+featuredImage: /images/content/reviews/iphone-15-pro-review/featured.jpg
+tags:
+  - reviews
+  - hardware
+  - smartphone
+  - apple
+  - mobile
+author: joseph-crawford
+publishedAt: '2025-10-12'
+updatedAt: '2025-10-12'
 review:
   rating: 4
   pros:
-    - "Premium titanium build feels lighter"
-    - "Action button is surprisingly useful"
-    - "USB-C finally replaces Lightning"
-    - "A17 Pro chip handles everything effortlessly"
-    - "Camera improvements, especially telephoto"
-    - "Excellent battery life"
+    - Premium titanium build feels lighter
+    - Action button is surprisingly useful
+    - USB-C finally replaces Lightning
+    - A17 Pro chip handles everything effortlessly
+    - 'Camera improvements, especially telephoto'
+    - Excellent battery life
   cons:
-    - "Very expensive starting at $999"
-    - "Titanium scratches more easily than stainless steel"
-    - "Minimal upgrade from iPhone 14 Pro"
-    - "USB-C limited to USB 2.0 speeds on base model"
-    - "Still no USB-C on included cable to brick"
-  price: "$999 (128GB), $1,099 (256GB), $1,299 (512GB), $1,499 (1TB)"
-  brand: "Apple"
-  productUrl: "https://www.apple.com/iphone-15-pro/"
+    - Very expensive starting at $999
+    - Titanium scratches more easily than stainless steel
+    - Minimal upgrade from iPhone 14 Pro
+    - USB-C limited to USB 2.0 speeds on base model
+    - Still no USB-C on included cable to brick
+  price: '$999 (128GB), $1,099 (256GB), $1,299 (512GB), $1,499 (1TB)'
+  brand: Apple
+  productUrl: 'https://www.apple.com/iphone-15-pro/'
 ---
 
 The iPhone 15 Pro marks a transitional year for Apple's flagship smartphone. With titanium construction, USB-C adoption, and the new Action button, it's evolutionary rather than revolutionary. After three months of daily use, here's whether the incremental improvements justify the premium price.

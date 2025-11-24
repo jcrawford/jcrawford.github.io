@@ -1,13 +1,19 @@
 ---
-slug: "why-martial-arts-is-more-than-a-game-115"
-title: "Why Martial Arts Is More Than a Game"
-excerpt: "Explore the fascinating world of martial arts and discover how it can transform your approach to sports. Learn practical tips and insights from experts."
-featuredImage: "/images/content/why-martial-arts-is-more-than-a-game-115/featured.jpg"
-category: "sports"
-tags: ["sports", "athletics", "performance", "strength"]
-author: "joseph-crawford"
-publishedAt: "2025-06-04"
-updatedAt: "2025-06-04"
+slug: why-martial-arts-is-more-than-a-game-115
+title: Why Martial Arts Is More Than a Game
+excerpt: >-
+  Explore the fascinating world of martial arts and discover how it can
+  transform your approach to sports. Learn practical tips and insights from
+  experts.
+featuredImage: /images/content/why-martial-arts-is-more-than-a-game-115/featured.jpg
+tags:
+  - sports
+  - athletics
+  - performance
+  - strength
+author: joseph-crawford
+publishedAt: '2025-06-04'
+updatedAt: '2025-06-04'
 ---
 
 In today's world, martial arts represents more than just a trend—it's a fundamental shift in how we approach sports. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

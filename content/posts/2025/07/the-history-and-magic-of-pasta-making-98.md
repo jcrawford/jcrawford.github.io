@@ -1,13 +1,19 @@
 ---
-slug: "the-history-and-magic-of-pasta-making-98"
-title: "The History and Magic of Pasta Making"
-excerpt: "Explore the fascinating world of pasta making and discover how it can transform your approach to food. Learn practical tips and insights from experts."
-featuredImage: "/images/content/the-history-and-magic-of-pasta-making-98/featured.jpg"
-category: "food"
-tags: ["food", "culinary", "ingredients", "dining"]
-author: "joseph-crawford"
-publishedAt: "2025-07-07"
-updatedAt: "2025-07-07"
+slug: the-history-and-magic-of-pasta-making-98
+title: The History and Magic of Pasta Making
+excerpt: >-
+  Explore the fascinating world of pasta making and discover how it can
+  transform your approach to food. Learn practical tips and insights from
+  experts.
+featuredImage: /images/content/the-history-and-magic-of-pasta-making-98/featured.jpg
+tags:
+  - food
+  - culinary
+  - ingredients
+  - dining
+author: joseph-crawford
+publishedAt: '2025-07-07'
+updatedAt: '2025-07-07'
 ---
 
 In today's world, pasta making represents more than just a trend—it's a fundamental shift in how we approach food. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

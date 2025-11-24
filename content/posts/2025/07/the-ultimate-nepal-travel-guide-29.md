@@ -1,13 +1,19 @@
 ---
-slug: "the-ultimate-nepal-travel-guide-29"
-title: "The Ultimate Nepal Travel Guide"
-excerpt: "Explore the fascinating world of nepal and discover how it can transform your approach to travel. Learn practical tips and insights from experts."
-featuredImage: "/images/content/the-ultimate-nepal-travel-guide-29/featured.jpg"
-category: "family"
-tags: ["travel", "destinations", "vacation", "adventure"]
-author: "joseph-crawford"
-publishedAt: "2025-07-25"
-updatedAt: "2025-07-25"
+slug: the-ultimate-nepal-travel-guide-29
+title: The Ultimate Nepal Travel Guide
+excerpt: >-
+  Explore the fascinating world of nepal and discover how it can transform your
+  approach to travel. Learn practical tips and insights from experts.
+featuredImage: /images/content/the-ultimate-nepal-travel-guide-29/featured.jpg
+tags:
+  - travel
+  - destinations
+  - vacation
+  - adventure
+  - family
+author: joseph-crawford
+publishedAt: '2025-07-25'
+updatedAt: '2025-07-25'
 ---
 
 In today's world, nepal represents more than just a trend—it's a fundamental shift in how we approach travel. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

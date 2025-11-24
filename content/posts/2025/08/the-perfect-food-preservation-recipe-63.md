@@ -1,13 +1,19 @@
 ---
-slug: "the-perfect-food-preservation-recipe-63"
-title: "The Perfect Food Preservation Recipe"
-excerpt: "Explore the fascinating world of food preservation and discover how it can transform your approach to food. Learn practical tips and insights from experts."
-featuredImage: "/images/content/the-perfect-food-preservation-recipe-63/featured.jpg"
-category: "food"
-tags: ["food", "culinary", "dining", "kitchen"]
-author: "joseph-crawford"
-publishedAt: "2025-08-29"
-updatedAt: "2025-08-29"
+slug: the-perfect-food-preservation-recipe-63
+title: The Perfect Food Preservation Recipe
+excerpt: >-
+  Explore the fascinating world of food preservation and discover how it can
+  transform your approach to food. Learn practical tips and insights from
+  experts.
+featuredImage: /images/content/the-perfect-food-preservation-recipe-63/featured.jpg
+tags:
+  - food
+  - culinary
+  - dining
+  - kitchen
+author: joseph-crawford
+publishedAt: '2025-08-29'
+updatedAt: '2025-08-29'
 ---
 
 In today's world, food preservation represents more than just a trend—it's a fundamental shift in how we approach food. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

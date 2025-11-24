@@ -1,13 +1,19 @@
 ---
-slug: "how-goal-setting-transforms-daily-life-102"
-title: "How Goal Setting Transforms Daily Life"
-excerpt: "Explore the fascinating world of goal setting and discover how it can transform your approach to lifestyle. Learn practical tips and insights from experts."
-featuredImage: "/images/content/how-goal-setting-transforms-daily-life-102/featured.jpg"
-category: "lifestyle"
-tags: ["lifestyle", "productivity", "balance", "mindfulness"]
-author: "joseph-crawford"
-publishedAt: "2025-09-30"
-updatedAt: "2025-09-30"
+slug: how-goal-setting-transforms-daily-life-102
+title: How Goal Setting Transforms Daily Life
+excerpt: >-
+  Explore the fascinating world of goal setting and discover how it can
+  transform your approach to lifestyle. Learn practical tips and insights from
+  experts.
+featuredImage: /images/content/how-goal-setting-transforms-daily-life-102/featured.jpg
+tags:
+  - lifestyle
+  - productivity
+  - balance
+  - mindfulness
+author: joseph-crawford
+publishedAt: '2025-09-30'
+updatedAt: '2025-09-30'
 ---
 
 In today's world, goal setting represents more than just a trend—it's a fundamental shift in how we approach lifestyle. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

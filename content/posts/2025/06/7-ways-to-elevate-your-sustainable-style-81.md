@@ -1,13 +1,19 @@
 ---
-slug: "7-ways-to-elevate-your-sustainable-style-81"
-title: "7 Ways to Elevate Your Sustainable Style"
-excerpt: "Explore the fascinating world of sustainable style and discover how it can transform your approach to fashion. Learn practical tips and insights from experts."
-featuredImage: "/images/content/7-ways-to-elevate-your-sustainable-style-81/featured.jpg"
-category: "work"
-tags: ["work", "trends", "runway", "wardrobe"]
-author: "joseph-crawford"
-publishedAt: "2025-06-06"
-updatedAt: "2025-06-06"
+slug: 7-ways-to-elevate-your-sustainable-style-81
+title: 7 Ways to Elevate Your Sustainable Style
+excerpt: >-
+  Explore the fascinating world of sustainable style and discover how it can
+  transform your approach to fashion. Learn practical tips and insights from
+  experts.
+featuredImage: /images/content/7-ways-to-elevate-your-sustainable-style-81/featured.jpg
+tags:
+  - work
+  - trends
+  - runway
+  - wardrobe
+author: joseph-crawford
+publishedAt: '2025-06-06'
+updatedAt: '2025-06-06'
 ---
 
 In today's world, sustainable style represents more than just a trend—it's a fundamental shift in how we approach fashion. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

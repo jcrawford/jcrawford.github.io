@@ -1,13 +1,20 @@
 ---
-slug: "the-art-of-seasonal-wardrobes-in-modern-fashion-21"
-title: "The Art of Seasonal Wardrobes in Modern Fashion"
-excerpt: "Explore the fascinating world of seasonal wardrobes and discover how it can transform your approach to fashion. Learn practical tips and insights from experts."
-featuredImage: "/images/content/the-art-of-seasonal-wardrobes-in-modern-fashion-21/featured.jpg"
-category: "work"
-tags: ["work", "designer", "wardrobe", "trends"]
-author: "joseph-crawford"
-publishedAt: "2025-06-13"
-updatedAt: "2025-06-13"
+slug: the-art-of-seasonal-wardrobes-in-modern-fashion-21
+title: The Art of Seasonal Wardrobes in Modern Fashion
+excerpt: >-
+  Explore the fascinating world of seasonal wardrobes and discover how it can
+  transform your approach to fashion. Learn practical tips and insights from
+  experts.
+featuredImage: >-
+  /images/content/the-art-of-seasonal-wardrobes-in-modern-fashion-21/featured.jpg
+tags:
+  - work
+  - designer
+  - wardrobe
+  - trends
+author: joseph-crawford
+publishedAt: '2025-06-13'
+updatedAt: '2025-06-13'
 ---
 
 In today's world, seasonal wardrobes represents more than just a trend—it's a fundamental shift in how we approach fashion. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

@@ -1,13 +1,18 @@
 ---
-slug: "the-evolution-of-team-sports-85"
-title: "The Evolution of Team Sports"
-excerpt: "Explore the fascinating world of team sports and discover how it can transform your approach to sports. Learn practical tips and insights from experts."
-featuredImage: "/images/content/the-evolution-of-team-sports-85/featured.jpg"
-category: "sports"
-tags: ["sports", "fitness", "strength", "training"]
-author: "joseph-crawford"
-publishedAt: "2025-05-27"
-updatedAt: "2025-05-27"
+slug: the-evolution-of-team-sports-85
+title: The Evolution of Team Sports
+excerpt: >-
+  Explore the fascinating world of team sports and discover how it can transform
+  your approach to sports. Learn practical tips and insights from experts.
+featuredImage: /images/content/the-evolution-of-team-sports-85/featured.jpg
+tags:
+  - sports
+  - fitness
+  - strength
+  - training
+author: joseph-crawford
+publishedAt: '2025-05-27'
+updatedAt: '2025-05-27'
 ---
 
 In today's world, team sports represents more than just a trend—it's a fundamental shift in how we approach sports. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

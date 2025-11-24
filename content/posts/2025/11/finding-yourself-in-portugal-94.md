@@ -1,13 +1,19 @@
 ---
-slug: "finding-yourself-in-portugal-94"
-title: "Finding Yourself in Portugal"
-excerpt: "Explore the fascinating world of portugal and discover how it can transform your approach to travel. Learn practical tips and insights from experts."
-featuredImage: "/images/content/finding-yourself-in-portugal-94/featured.jpg"
-category: "family"
-tags: ["travel", "culture", "journey", "tourism"]
-author: "joseph-crawford"
-publishedAt: "2025-11-02"
-updatedAt: "2025-11-02"
+slug: finding-yourself-in-portugal-94
+title: Finding Yourself in Portugal
+excerpt: >-
+  Explore the fascinating world of portugal and discover how it can transform
+  your approach to travel. Learn practical tips and insights from experts.
+featuredImage: /images/content/finding-yourself-in-portugal-94/featured.jpg
+tags:
+  - travel
+  - culture
+  - journey
+  - tourism
+  - family
+author: joseph-crawford
+publishedAt: '2025-11-02'
+updatedAt: '2025-11-02'
 ---
 
 In today's world, portugal represents more than just a trend—it's a fundamental shift in how we approach travel. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

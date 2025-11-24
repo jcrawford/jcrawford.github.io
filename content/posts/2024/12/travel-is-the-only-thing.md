@@ -1,13 +1,16 @@
 ---
-slug: "travel-is-the-only-thing"
-title: "Travel is the only thing you buy that makes you richer"
-excerpt: "Invest in experiences that expand your mind and enrich your soul."
-featuredImage: "/images/content/travel-is-the-only-thing/featured.jpg"
-category: "family"
-tags: ["travel", "adventure", "experiences"]
-author: "joseph-crawford"
-publishedAt: "2025-01-01"
-updatedAt: "2025-01-01"
+slug: travel-is-the-only-thing
+title: Travel is the only thing you buy that makes you richer
+excerpt: Invest in experiences that expand your mind and enrich your soul.
+featuredImage: /images/content/travel-is-the-only-thing/featured.jpg
+tags:
+  - travel
+  - adventure
+  - experiences
+  - family
+author: joseph-crawford
+publishedAt: '2025-01-01'
+updatedAt: '2025-01-01'
 ---
 
 Material possessions depreciate the moment you buy them. But travel? It appreciates over time. The memories strengthen, the lessons learned compound, the connections made deepen. Years later, you'll forget what you spent, but you'll remember every sunset, every conversation, every moment of wonder.

@@ -1,13 +1,19 @@
 ---
-slug: "turkey-off-the-beaten-path-109"
-title: "Turkey: Off the Beaten Path"
-excerpt: "Explore the fascinating world of turkey and discover how it can transform your approach to travel. Learn practical tips and insights from experts."
-featuredImage: "/images/content/turkey-off-the-beaten-path-109/featured.jpg"
-category: "family"
-tags: ["travel", "journey", "vacation", "culture"]
-author: "joseph-crawford"
-publishedAt: "2025-06-11"
-updatedAt: "2025-06-11"
+slug: turkey-off-the-beaten-path-109
+title: 'Turkey: Off the Beaten Path'
+excerpt: >-
+  Explore the fascinating world of turkey and discover how it can transform your
+  approach to travel. Learn practical tips and insights from experts.
+featuredImage: /images/content/turkey-off-the-beaten-path-109/featured.jpg
+tags:
+  - travel
+  - journey
+  - vacation
+  - culture
+  - family
+author: joseph-crawford
+publishedAt: '2025-06-11'
+updatedAt: '2025-06-11'
 ---
 
 In today's world, turkey represents more than just a trend—it's a fundamental shift in how we approach travel. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

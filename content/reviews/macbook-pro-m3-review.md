@@ -1,31 +1,38 @@
 ---
-slug: "macbook-pro-m3-review"
-title: "MacBook Pro M3 Review: Unmatched Performance for Professionals"
-excerpt: "A detailed review of the MacBook Pro with M3 chip, examining its performance, battery life, display, and whether it's worth the premium price for developers and creators."
-featuredImage: "/images/content/reviews/macbook-pro-m3-review/featured.jpg"
-category: "reviews"
-tags: ["reviews", "hardware", "laptop", "apple", "productivity"]
-author: "joseph-crawford"
-publishedAt: "2025-10-20"
-updatedAt: "2025-10-20"
+slug: macbook-pro-m3-review
+title: 'MacBook Pro M3 Review: Unmatched Performance for Professionals'
+excerpt: >-
+  A detailed review of the MacBook Pro with M3 chip, examining its performance,
+  battery life, display, and whether it's worth the premium price for developers
+  and creators.
+featuredImage: /images/content/reviews/macbook-pro-m3-review/featured.jpg
+tags:
+  - reviews
+  - hardware
+  - laptop
+  - apple
+  - productivity
+author: joseph-crawford
+publishedAt: '2025-10-20'
+updatedAt: '2025-10-20'
 review:
   rating: 5
   pros:
-    - "Exceptional performance for development and creative work"
-    - "Incredible battery life (15-20 hours real-world use)"
-    - "Stunning Liquid Retina XDR display"
-    - "Silent operation (no fan noise)"
-    - "Excellent build quality and trackpad"
-    - "MagSafe charging returns"
+    - Exceptional performance for development and creative work
+    - Incredible battery life (15-20 hours real-world use)
+    - Stunning Liquid Retina XDR display
+    - Silent operation (no fan noise)
+    - Excellent build quality and trackpad
+    - MagSafe charging returns
   cons:
-    - "Very expensive ($1,599+)"
-    - "Limited to 2 external displays on base M3"
-    - "Notch can interfere with menu bar items"
-    - "No USB-A ports (dongles required)"
-    - "16GB RAM feels limiting for $2K+ laptop"
-  price: "$1,599 (14-inch M3), $1,999 (14-inch M3 Pro), $2,499+ (16-inch)"
-  brand: "Apple"
-  productUrl: "https://www.apple.com/macbook-pro/"
+    - 'Very expensive ($1,599+)'
+    - Limited to 2 external displays on base M3
+    - Notch can interfere with menu bar items
+    - No USB-A ports (dongles required)
+    - 16GB RAM feels limiting for $2K+ laptop
+  price: '$1,599 (14-inch M3), $1,999 (14-inch M3 Pro), $2,499+ (16-inch)'
+  brand: Apple
+  productUrl: 'https://www.apple.com/macbook-pro/'
 ---
 
 The MacBook Pro with M3 chip represents the pinnacle of laptop engineering. After three months of intensive daily use for software development, I can confidently say it's the best laptop I've ever used—with some important caveats about pricing and configuration.

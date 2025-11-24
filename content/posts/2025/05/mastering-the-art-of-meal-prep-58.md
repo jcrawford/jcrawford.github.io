@@ -1,13 +1,18 @@
 ---
-slug: "mastering-the-art-of-meal-prep-58"
-title: "Mastering the Art of Meal Prep"
-excerpt: "Explore the fascinating world of meal prep and discover how it can transform your approach to food. Learn practical tips and insights from experts."
-featuredImage: "/images/content/mastering-the-art-of-meal-prep-58/featured.jpg"
-category: "food"
-tags: ["food", "recipes", "kitchen", "cooking"]
-author: "joseph-crawford"
-publishedAt: "2025-05-28"
-updatedAt: "2025-05-28"
+slug: mastering-the-art-of-meal-prep-58
+title: Mastering the Art of Meal Prep
+excerpt: >-
+  Explore the fascinating world of meal prep and discover how it can transform
+  your approach to food. Learn practical tips and insights from experts.
+featuredImage: /images/content/mastering-the-art-of-meal-prep-58/featured.jpg
+tags:
+  - food
+  - recipes
+  - kitchen
+  - cooking
+author: joseph-crawford
+publishedAt: '2025-05-28'
+updatedAt: '2025-05-28'
 ---
 
 In today's world, meal prep represents more than just a trend—it's a fundamental shift in how we approach food. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

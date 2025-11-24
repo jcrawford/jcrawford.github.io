@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
         }
       }
       foodArticles: allMarkdownRemark(
-        filter: { frontmatter: { category: { eq: "food" }, slug: { ne: null } } }
+        filter: { frontmatter: { tags: { in: ["food"] }, slug: { ne: null } } }
         limit: 3
         sort: { frontmatter: { publishedAt: DESC } }
       ) {
@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
         }
       }
       familyArticles: allMarkdownRemark(
-        filter: { frontmatter: { category: { eq: "family" }, slug: { ne: null } } }
+        filter: { frontmatter: { tags: { in: ["family"] }, slug: { ne: null } } }
         limit: 3
         sort: { frontmatter: { publishedAt: DESC } }
       ) {

@@ -1,13 +1,19 @@
 ---
-slug: "why-farm-to-table-is-the-ultimate-comfort-food-43"
-title: "Why Farm-to-Table Is the Ultimate Comfort Food"
-excerpt: "Explore the fascinating world of farm-to-table and discover how it can transform your approach to food. Learn practical tips and insights from experts."
-featuredImage: "/images/content/why-farm-to-table-is-the-ultimate-comfort-food-43/featured.jpg"
-category: "food"
-tags: ["food", "cooking", "nutrition", "ingredients"]
-author: "joseph-crawford"
-publishedAt: "2025-07-07"
-updatedAt: "2025-07-07"
+slug: why-farm-to-table-is-the-ultimate-comfort-food-43
+title: Why Farm-to-Table Is the Ultimate Comfort Food
+excerpt: >-
+  Explore the fascinating world of farm-to-table and discover how it can
+  transform your approach to food. Learn practical tips and insights from
+  experts.
+featuredImage: /images/content/why-farm-to-table-is-the-ultimate-comfort-food-43/featured.jpg
+tags:
+  - food
+  - cooking
+  - nutrition
+  - ingredients
+author: joseph-crawford
+publishedAt: '2025-07-07'
+updatedAt: '2025-07-07'
 ---
 
 In today's world, farm-to-table represents more than just a trend—it's a fundamental shift in how we approach food. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

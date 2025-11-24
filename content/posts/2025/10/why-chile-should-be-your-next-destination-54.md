@@ -1,13 +1,19 @@
 ---
-slug: "why-chile-should-be-your-next-destination-54"
-title: "Why Chile Should Be Your Next Destination"
-excerpt: "Explore the fascinating world of chile and discover how it can transform your approach to travel. Learn practical tips and insights from experts."
-featuredImage: "/images/content/why-chile-should-be-your-next-destination-54/featured.jpg"
-category: "family"
-tags: ["travel", "adventure", "tourism", "journey"]
-author: "joseph-crawford"
-publishedAt: "2025-10-24"
-updatedAt: "2025-10-24"
+slug: why-chile-should-be-your-next-destination-54
+title: Why Chile Should Be Your Next Destination
+excerpt: >-
+  Explore the fascinating world of chile and discover how it can transform your
+  approach to travel. Learn practical tips and insights from experts.
+featuredImage: /images/content/why-chile-should-be-your-next-destination-54/featured.jpg
+tags:
+  - travel
+  - adventure
+  - tourism
+  - journey
+  - family
+author: joseph-crawford
+publishedAt: '2025-10-24'
+updatedAt: '2025-10-24'
 ---
 
 In today's world, chile represents more than just a trend—it's a fundamental shift in how we approach travel. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

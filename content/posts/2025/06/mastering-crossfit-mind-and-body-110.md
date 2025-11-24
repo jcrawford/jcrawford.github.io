@@ -1,13 +1,18 @@
 ---
-slug: "mastering-crossfit-mind-and-body-110"
-title: "Mastering CrossFit: Mind and Body"
-excerpt: "Explore the fascinating world of crossfit and discover how it can transform your approach to sports. Learn practical tips and insights from experts."
-featuredImage: "/images/content/mastering-crossfit-mind-and-body-110/featured.jpg"
-category: "sports"
-tags: ["sports", "fitness", "strength", "athletics"]
-author: "joseph-crawford"
-publishedAt: "2025-07-01"
-updatedAt: "2025-07-01"
+slug: mastering-crossfit-mind-and-body-110
+title: 'Mastering CrossFit: Mind and Body'
+excerpt: >-
+  Explore the fascinating world of crossfit and discover how it can transform
+  your approach to sports. Learn practical tips and insights from experts.
+featuredImage: /images/content/mastering-crossfit-mind-and-body-110/featured.jpg
+tags:
+  - sports
+  - fitness
+  - strength
+  - athletics
+author: joseph-crawford
+publishedAt: '2025-07-01'
+updatedAt: '2025-07-01'
 ---
 
 In today's world, crossfit represents more than just a trend—it's a fundamental shift in how we approach sports. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

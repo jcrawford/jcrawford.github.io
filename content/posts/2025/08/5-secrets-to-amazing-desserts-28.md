@@ -1,13 +1,18 @@
 ---
-slug: "5-secrets-to-amazing-desserts-28"
-title: "5 Secrets to Amazing Desserts"
-excerpt: "Explore the fascinating world of desserts and discover how it can transform your approach to food. Learn practical tips and insights from experts."
-featuredImage: "/images/content/5-secrets-to-amazing-desserts-28/featured.jpg"
-category: "food"
-tags: ["food", "recipes", "culinary", "dining"]
-author: "joseph-crawford"
-publishedAt: "2025-08-07"
-updatedAt: "2025-08-07"
+slug: 5-secrets-to-amazing-desserts-28
+title: 5 Secrets to Amazing Desserts
+excerpt: >-
+  Explore the fascinating world of desserts and discover how it can transform
+  your approach to food. Learn practical tips and insights from experts.
+featuredImage: /images/content/5-secrets-to-amazing-desserts-28/featured.jpg
+tags:
+  - food
+  - recipes
+  - culinary
+  - dining
+author: joseph-crawford
+publishedAt: '2025-08-07'
+updatedAt: '2025-08-07'
 ---
 
 In today's world, desserts represents more than just a trend—it's a fundamental shift in how we approach food. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

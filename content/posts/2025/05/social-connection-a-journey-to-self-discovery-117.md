@@ -1,13 +1,19 @@
 ---
-slug: "social-connection-a-journey-to-self-discovery-117"
-title: "Social Connection: A Journey to Self-Discovery"
-excerpt: "Explore the fascinating world of social connection and discover how it can transform your approach to lifestyle. Learn practical tips and insights from experts."
-featuredImage: "/images/content/social-connection-a-journey-to-self-discovery-117/featured.jpg"
-category: "lifestyle"
-tags: ["lifestyle", "balance", "habits", "productivity"]
-author: "joseph-crawford"
-publishedAt: "2025-06-01"
-updatedAt: "2025-06-01"
+slug: social-connection-a-journey-to-self-discovery-117
+title: 'Social Connection: A Journey to Self-Discovery'
+excerpt: >-
+  Explore the fascinating world of social connection and discover how it can
+  transform your approach to lifestyle. Learn practical tips and insights from
+  experts.
+featuredImage: /images/content/social-connection-a-journey-to-self-discovery-117/featured.jpg
+tags:
+  - lifestyle
+  - balance
+  - habits
+  - productivity
+author: joseph-crawford
+publishedAt: '2025-06-01'
+updatedAt: '2025-06-01'
 ---
 
 In today's world, social connection represents more than just a trend—it's a fundamental shift in how we approach lifestyle. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

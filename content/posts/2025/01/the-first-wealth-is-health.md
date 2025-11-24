@@ -1,13 +1,15 @@
 ---
-slug: "the-first-wealth-is-health"
-title: "The first wealth is health"
-excerpt: "Prioritizing wellness creates the foundation for everything else in life."
-featuredImage: "/images/content/the-first-wealth-is-health/featured.jpg"
-category: "lifestyle"
-tags: ["lifestyle", "wellness", "health"]
-author: "joseph-crawford"
-publishedAt: "2025-01-08"
-updatedAt: "2025-01-08"
+slug: the-first-wealth-is-health
+title: The first wealth is health
+excerpt: Prioritizing wellness creates the foundation for everything else in life.
+featuredImage: /images/content/the-first-wealth-is-health/featured.jpg
+tags:
+  - lifestyle
+  - wellness
+  - health
+author: joseph-crawford
+publishedAt: '2025-01-08'
+updatedAt: '2025-01-08'
 ---
 
 We chase success, accumulate possessions, build careers—all while neglecting the foundation that makes everything possible: our health. Without vitality, achievement rings hollow. Money can buy many things, but it can't purchase back the years we spent sacrificing sleep, skipping meals, and ignoring stress.

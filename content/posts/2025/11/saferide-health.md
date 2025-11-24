@@ -1,13 +1,16 @@
 ---
-slug: "saferide-health"
-title: "SafeRide Health: Building the Future of Healthcare Transportation"
-excerpt: "SafeRide Health takes non-emergency medical transportation (NEMT) further with leading technology and a digitized network that gets patients to the right care at the right time."
-featuredImage: "/images/content/saferide-health/featured.jpg"
-category: "work"
-tags: ["work"]
-author: "joseph-crawford"
-publishedAt: "2025-11-20"
-updatedAt: "2025-11-20"
+slug: saferide-health
+title: 'SafeRide Health: Building the Future of Healthcare Transportation'
+excerpt: >-
+  SafeRide Health takes non-emergency medical transportation (NEMT) further with
+  leading technology and a digitized network that gets patients to the right
+  care at the right time.
+featuredImage: /images/content/saferide-health/featured.jpg
+tags:
+  - work
+author: joseph-crawford
+publishedAt: '2025-11-20'
+updatedAt: '2025-11-20'
 featured: true
 ---
 

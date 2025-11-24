@@ -3,7 +3,6 @@ slug: pain-is-temporary
 title: The pain you feel today will be the strength you feel tomorrow
 excerpt: Every challenge in training and competition builds resilience and power.
 featuredImage: /images/content/pain-is-temporary/featured.jpg
-category: sports
 tags:
   - sports
   - fitness

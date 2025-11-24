@@ -1,31 +1,37 @@
 ---
-slug: "sony-wh1000xm5-review"
-title: "Sony WH-1000XM5 Review: Best Noise-Canceling Headphones for Focus"
-excerpt: "An in-depth review of Sony's WH-1000XM5 headphones, examining whether they maintain Sony's crown as the king of active noise cancellation."
-featuredImage: "/images/content/reviews/sony-wh1000xm5-review/featured.jpg"
-category: "reviews"
-tags: ["reviews", "hardware", "headphones", "audio", "productivity"]
-author: "joseph-crawford"
-publishedAt: "2025-10-15"
-updatedAt: "2025-10-15"
+slug: sony-wh1000xm5-review
+title: 'Sony WH-1000XM5 Review: Best Noise-Canceling Headphones for Focus'
+excerpt: >-
+  An in-depth review of Sony's WH-1000XM5 headphones, examining whether they
+  maintain Sony's crown as the king of active noise cancellation.
+featuredImage: /images/content/reviews/sony-wh1000xm5-review/featured.jpg
+tags:
+  - reviews
+  - hardware
+  - headphones
+  - audio
+  - productivity
+author: joseph-crawford
+publishedAt: '2025-10-15'
+updatedAt: '2025-10-15'
 review:
   rating: 5
   pros:
-    - "Industry-leading noise cancellation"
-    - "Exceptional sound quality"
-    - "All-day comfort"
-    - "40-hour battery life"
-    - "Excellent call quality with 4 microphones"
-    - "Intuitive touch controls"
-    - "Multipoint connection (2 devices)"
+    - Industry-leading noise cancellation
+    - Exceptional sound quality
+    - All-day comfort
+    - 40-hour battery life
+    - Excellent call quality with 4 microphones
+    - Intuitive touch controls
+    - Multipoint connection (2 devices)
   cons:
-    - "Expensive at $399"
-    - "New design not foldable (less portable)"
-    - "Limited customization without Sony app"
-    - "Leather-like material attracts fingerprints"
-  price: "$399"
-  brand: "Sony"
-  productUrl: "https://electronics.sony.com/audio/headphones/headband/p/wh1000xm5-b"
+    - Expensive at $399
+    - New design not foldable (less portable)
+    - Limited customization without Sony app
+    - Leather-like material attracts fingerprints
+  price: $399
+  brand: Sony
+  productUrl: 'https://electronics.sony.com/audio/headphones/headband/p/wh1000xm5-b'
 ---
 
 Sony's WH-1000XM5 headphones set the gold standard for active noise cancellation. After using them daily for four months in offices, airplanes, and coffee shops, they've become essential equipment for maintaining focus in noisy environments.

@@ -25,7 +25,7 @@ interface AuthorPageData {
         title: string;
         excerpt: string;
         featuredImage: string;
-        category: string;
+        tags: string[];
         author: string;
         publishedAt: string;
       };
@@ -98,8 +98,7 @@ const AuthorTemplate: React.FC<PageProps<AuthorPageData>> = ({ data }) => {
                 title={article.frontmatter.title}
                 excerpt={article.frontmatter.excerpt}
                 featuredImage={article.frontmatter.featuredImage}
-                category={article.frontmatter.category}
-                categoryName={getTagName(article.frontmatter.category)}
+                tags={article.frontmatter.tags || []}
                 publishedAt={article.frontmatter.publishedAt}
                 author={article.frontmatter.author}
                 authorName={author.name}
@@ -143,7 +142,7 @@ export const query = graphql`
           title
           excerpt
           featuredImage
-          category
+          tags
           author
           publishedAt
         }

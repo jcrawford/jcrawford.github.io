@@ -1,13 +1,19 @@
 ---
-slug: "the-art-of-ethical-fashion-in-modern-fashion-96"
-title: "The Art of Ethical Fashion in Modern Fashion"
-excerpt: "Explore the fascinating world of ethical fashion and discover how it can transform your approach to fashion. Learn practical tips and insights from experts."
-featuredImage: "/images/content/the-art-of-ethical-fashion-in-modern-fashion-96/featured.jpg"
-category: "work"
-tags: ["work", "designer", "runway", "wardrobe"]
-author: "joseph-crawford"
-publishedAt: "2025-11-06"
-updatedAt: "2025-11-06"
+slug: the-art-of-ethical-fashion-in-modern-fashion-96
+title: The Art of Ethical Fashion in Modern Fashion
+excerpt: >-
+  Explore the fascinating world of ethical fashion and discover how it can
+  transform your approach to fashion. Learn practical tips and insights from
+  experts.
+featuredImage: /images/content/the-art-of-ethical-fashion-in-modern-fashion-96/featured.jpg
+tags:
+  - work
+  - designer
+  - runway
+  - wardrobe
+author: joseph-crawford
+publishedAt: '2025-11-06'
+updatedAt: '2025-11-06'
 ---
 
 In today's world, ethical fashion represents more than just a trend—it's a fundamental shift in how we approach fashion. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

@@ -1,13 +1,19 @@
 ---
-slug: "adventures-in-portugal-a-journey-104"
-title: "Adventures in Portugal: A Journey"
-excerpt: "Explore the fascinating world of portugal and discover how it can transform your approach to travel. Learn practical tips and insights from experts."
-featuredImage: "/images/content/adventures-in-portugal-a-journey-104/featured.jpg"
-category: "family"
-tags: ["travel", "vacation", "destinations", "wanderlust"]
-author: "joseph-crawford"
-publishedAt: "2025-10-02"
-updatedAt: "2025-10-02"
+slug: adventures-in-portugal-a-journey-104
+title: 'Adventures in Portugal: A Journey'
+excerpt: >-
+  Explore the fascinating world of portugal and discover how it can transform
+  your approach to travel. Learn practical tips and insights from experts.
+featuredImage: /images/content/adventures-in-portugal-a-journey-104/featured.jpg
+tags:
+  - travel
+  - vacation
+  - destinations
+  - wanderlust
+  - family
+author: joseph-crawford
+publishedAt: '2025-10-02'
+updatedAt: '2025-10-02'
 ---
 
 In today's world, portugal represents more than just a trend—it's a fundamental shift in how we approach travel. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

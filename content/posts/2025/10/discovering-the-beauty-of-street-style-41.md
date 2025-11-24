@@ -1,13 +1,19 @@
 ---
-slug: "discovering-the-beauty-of-street-style-41"
-title: "Discovering the Beauty of Street Style"
-excerpt: "Explore the fascinating world of street style and discover how it can transform your approach to fashion. Learn practical tips and insights from experts."
-featuredImage: "/images/content/discovering-the-beauty-of-street-style-41/featured.jpg"
-category: "work"
-tags: ["work", "style", "accessories", "outfit"]
-author: "joseph-crawford"
-publishedAt: "2025-10-12"
-updatedAt: "2025-10-12"
+slug: discovering-the-beauty-of-street-style-41
+title: Discovering the Beauty of Street Style
+excerpt: >-
+  Explore the fascinating world of street style and discover how it can
+  transform your approach to fashion. Learn practical tips and insights from
+  experts.
+featuredImage: /images/content/discovering-the-beauty-of-street-style-41/featured.jpg
+tags:
+  - work
+  - style
+  - accessories
+  - outfit
+author: joseph-crawford
+publishedAt: '2025-10-12'
+updatedAt: '2025-10-12'
 ---
 
 In today's world, street style represents more than just a trend—it's a fundamental shift in how we approach fashion. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

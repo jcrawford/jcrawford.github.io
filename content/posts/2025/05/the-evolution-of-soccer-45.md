@@ -1,13 +1,18 @@
 ---
-slug: "the-evolution-of-soccer-45"
-title: "The Evolution of Soccer"
-excerpt: "Explore the fascinating world of soccer and discover how it can transform your approach to sports. Learn practical tips and insights from experts."
-featuredImage: "/images/content/the-evolution-of-soccer-45/featured.jpg"
-category: "sports"
-tags: ["sports", "athletics", "training", "performance"]
-author: "joseph-crawford"
-publishedAt: "2025-05-25"
-updatedAt: "2025-05-25"
+slug: the-evolution-of-soccer-45
+title: The Evolution of Soccer
+excerpt: >-
+  Explore the fascinating world of soccer and discover how it can transform your
+  approach to sports. Learn practical tips and insights from experts.
+featuredImage: /images/content/the-evolution-of-soccer-45/featured.jpg
+tags:
+  - sports
+  - athletics
+  - training
+  - performance
+author: joseph-crawford
+publishedAt: '2025-05-25'
+updatedAt: '2025-05-25'
 ---
 
 In today's world, soccer represents more than just a trend—it's a fundamental shift in how we approach sports. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

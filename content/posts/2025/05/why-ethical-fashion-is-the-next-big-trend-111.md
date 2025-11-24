@@ -1,13 +1,19 @@
 ---
-slug: "why-ethical-fashion-is-the-next-big-trend-111"
-title: "Why Ethical Fashion Is the Next Big Trend"
-excerpt: "Explore the fascinating world of ethical fashion and discover how it can transform your approach to fashion. Learn practical tips and insights from experts."
-featuredImage: "/images/content/why-ethical-fashion-is-the-next-big-trend-111/featured.jpg"
-category: "work"
-tags: ["work", "wardrobe", "runway", "designer"]
-author: "joseph-crawford"
-publishedAt: "2025-05-17"
-updatedAt: "2025-05-17"
+slug: why-ethical-fashion-is-the-next-big-trend-111
+title: Why Ethical Fashion Is the Next Big Trend
+excerpt: >-
+  Explore the fascinating world of ethical fashion and discover how it can
+  transform your approach to fashion. Learn practical tips and insights from
+  experts.
+featuredImage: /images/content/why-ethical-fashion-is-the-next-big-trend-111/featured.jpg
+tags:
+  - work
+  - wardrobe
+  - runway
+  - designer
+author: joseph-crawford
+publishedAt: '2025-05-17'
+updatedAt: '2025-05-17'
 ---
 
 In today's world, ethical fashion represents more than just a trend—it's a fundamental shift in how we approach fashion. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

@@ -1,13 +1,15 @@
 ---
-slug: "life-is-what-happens"
-title: "Life is what happens when you're busy making other plans"
-excerpt: "Embrace the unexpected moments that become your most cherished memories."
-featuredImage: "/images/content/life-is-what-happens/featured.jpg"
-category: "lifestyle"
-tags: ["lifestyle", "mindfulness", "inspiration"]
-author: "joseph-crawford"
-publishedAt: "2025-01-10"
-updatedAt: "2025-01-10"
+slug: life-is-what-happens
+title: Life is what happens when you're busy making other plans
+excerpt: Embrace the unexpected moments that become your most cherished memories.
+featuredImage: /images/content/life-is-what-happens/featured.jpg
+tags:
+  - lifestyle
+  - mindfulness
+  - inspiration
+author: joseph-crawford
+publishedAt: '2025-01-10'
+updatedAt: '2025-01-10'
 featured: true
 ---
 

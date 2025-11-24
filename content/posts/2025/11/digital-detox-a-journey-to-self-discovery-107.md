@@ -1,13 +1,19 @@
 ---
-slug: "digital-detox-a-journey-to-self-discovery-107"
-title: "Digital Detox: A Journey to Self-Discovery"
-excerpt: "Explore the fascinating world of digital detox and discover how it can transform your approach to lifestyle. Learn practical tips and insights from experts."
-featuredImage: "/images/content/digital-detox-a-journey-to-self-discovery-107/featured.jpg"
-category: "lifestyle"
-tags: ["lifestyle", "habits", "wellness", "personal-growth"]
-author: "joseph-crawford"
-publishedAt: "2025-11-05"
-updatedAt: "2025-11-05"
+slug: digital-detox-a-journey-to-self-discovery-107
+title: 'Digital Detox: A Journey to Self-Discovery'
+excerpt: >-
+  Explore the fascinating world of digital detox and discover how it can
+  transform your approach to lifestyle. Learn practical tips and insights from
+  experts.
+featuredImage: /images/content/digital-detox-a-journey-to-self-discovery-107/featured.jpg
+tags:
+  - lifestyle
+  - habits
+  - wellness
+  - personal-growth
+author: joseph-crawford
+publishedAt: '2025-11-05'
+updatedAt: '2025-11-05'
 ---
 
 In today's world, digital detox represents more than just a trend—it's a fundamental shift in how we approach lifestyle. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

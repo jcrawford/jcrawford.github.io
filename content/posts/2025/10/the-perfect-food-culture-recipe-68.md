@@ -1,13 +1,19 @@
 ---
-slug: "the-perfect-food-culture-recipe-68"
-title: "The Perfect Food Culture Recipe"
-excerpt: "Explore the fascinating world of food culture and discover how it can transform your approach to food. Learn practical tips and insights from experts."
-featuredImage: "/images/content/the-perfect-food-culture-recipe-68/featured.jpg"
-category: "food"
-tags: ["food", "dining", "kitchen", "ingredients"]
-author: "joseph-crawford"
-publishedAt: "2025-10-08"
-updatedAt: "2025-10-08"
+slug: the-perfect-food-culture-recipe-68
+title: The Perfect Food Culture Recipe
+excerpt: >-
+  Explore the fascinating world of food culture and discover how it can
+  transform your approach to food. Learn practical tips and insights from
+  experts.
+featuredImage: /images/content/the-perfect-food-culture-recipe-68/featured.jpg
+tags:
+  - food
+  - dining
+  - kitchen
+  - ingredients
+author: joseph-crawford
+publishedAt: '2025-10-08'
+updatedAt: '2025-10-08'
 ---
 
 In today's world, food culture represents more than just a trend—it's a fundamental shift in how we approach food. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

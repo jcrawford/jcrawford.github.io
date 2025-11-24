@@ -1,13 +1,19 @@
 ---
-slug: "the-magic-of-thailand-awaits-89"
-title: "The Magic of Thailand Awaits"
-excerpt: "Explore the fascinating world of thailand and discover how it can transform your approach to travel. Learn practical tips and insights from experts."
-featuredImage: "/images/content/the-magic-of-thailand-awaits-89/featured.jpg"
-category: "family"
-tags: ["travel", "tourism", "wanderlust", "vacation"]
-author: "joseph-crawford"
-publishedAt: "2025-10-01"
-updatedAt: "2025-10-01"
+slug: the-magic-of-thailand-awaits-89
+title: The Magic of Thailand Awaits
+excerpt: >-
+  Explore the fascinating world of thailand and discover how it can transform
+  your approach to travel. Learn practical tips and insights from experts.
+featuredImage: /images/content/the-magic-of-thailand-awaits-89/featured.jpg
+tags:
+  - travel
+  - tourism
+  - wanderlust
+  - vacation
+  - family
+author: joseph-crawford
+publishedAt: '2025-10-01'
+updatedAt: '2025-10-01'
 ---
 
 In today's world, thailand represents more than just a trend—it's a fundamental shift in how we approach travel. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

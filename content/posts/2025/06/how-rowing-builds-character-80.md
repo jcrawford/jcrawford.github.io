@@ -1,13 +1,18 @@
 ---
-slug: "how-rowing-builds-character-80"
-title: "How Rowing Builds Character"
-excerpt: "Explore the fascinating world of rowing and discover how it can transform your approach to sports. Learn practical tips and insights from experts."
-featuredImage: "/images/content/how-rowing-builds-character-80/featured.jpg"
-category: "sports"
-tags: ["sports", "strength", "athletics", "motivation"]
-author: "joseph-crawford"
-publishedAt: "2025-06-10"
-updatedAt: "2025-06-10"
+slug: how-rowing-builds-character-80
+title: How Rowing Builds Character
+excerpt: >-
+  Explore the fascinating world of rowing and discover how it can transform your
+  approach to sports. Learn practical tips and insights from experts.
+featuredImage: /images/content/how-rowing-builds-character-80/featured.jpg
+tags:
+  - sports
+  - strength
+  - athletics
+  - motivation
+author: joseph-crawford
+publishedAt: '2025-06-10'
+updatedAt: '2025-06-10'
 ---
 
 In today's world, rowing represents more than just a trend—it's a fundamental shift in how we approach sports. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

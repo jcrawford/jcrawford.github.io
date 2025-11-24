@@ -1,13 +1,18 @@
 ---
-slug: "the-mental-game-of-hiking-55"
-title: "The Mental Game of Hiking"
-excerpt: "Explore the fascinating world of hiking and discover how it can transform your approach to sports. Learn practical tips and insights from experts."
-featuredImage: "/images/content/the-mental-game-of-hiking-55/featured.jpg"
-category: "sports"
-tags: ["sports", "fitness", "training", "endurance"]
-author: "joseph-crawford"
-publishedAt: "2025-10-30"
-updatedAt: "2025-10-30"
+slug: the-mental-game-of-hiking-55
+title: The Mental Game of Hiking
+excerpt: >-
+  Explore the fascinating world of hiking and discover how it can transform your
+  approach to sports. Learn practical tips and insights from experts.
+featuredImage: /images/content/the-mental-game-of-hiking-55/featured.jpg
+tags:
+  - sports
+  - fitness
+  - training
+  - endurance
+author: joseph-crawford
+publishedAt: '2025-10-30'
+updatedAt: '2025-10-30'
 ---
 
 In today's world, hiking represents more than just a trend—it's a fundamental shift in how we approach sports. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

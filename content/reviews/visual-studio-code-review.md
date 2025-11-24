@@ -1,31 +1,38 @@
 ---
-slug: "visual-studio-code-review"
-title: "Visual Studio Code Review: The Developer's Swiss Army Knife"
-excerpt: "An in-depth review of Visual Studio Code, Microsoft's free and powerful code editor that has revolutionized modern development workflows with its extensibility and performance."
-featuredImage: "/images/content/reviews/visual-studio-code-review/featured.jpg"
-category: "reviews"
-tags: ["reviews", "software", "ide", "development", "coding"]
-author: "joseph-crawford"
-publishedAt: "2025-11-10"
-updatedAt: "2025-11-10"
+slug: visual-studio-code-review
+title: 'Visual Studio Code Review: The Developer''s Swiss Army Knife'
+excerpt: >-
+  An in-depth review of Visual Studio Code, Microsoft's free and powerful code
+  editor that has revolutionized modern development workflows with its
+  extensibility and performance.
+featuredImage: /images/content/reviews/visual-studio-code-review/featured.jpg
+tags:
+  - reviews
+  - software
+  - ide
+  - development
+  - coding
+author: joseph-crawford
+publishedAt: '2025-11-10'
+updatedAt: '2025-11-10'
 review:
   rating: 5
   pros:
-    - "Completely free and open-source"
-    - "Massive extension marketplace with thousands of plugins"
-    - "Excellent performance even with large projects"
-    - "Built-in Git integration and terminal"
-    - "IntelliSense for smart code completion"
-    - "Cross-platform support (Windows, Mac, Linux)"
-    - "Active development and frequent updates"
+    - Completely free and open-source
+    - Massive extension marketplace with thousands of plugins
+    - Excellent performance even with large projects
+    - Built-in Git integration and terminal
+    - IntelliSense for smart code completion
+    - 'Cross-platform support (Windows, Mac, Linux)'
+    - Active development and frequent updates
   cons:
-    - "Can become resource-heavy with many extensions"
-    - "Initial setup requires extension configuration"
-    - "Some features require additional extensions"
-  price: "Free"
-  brand: "Microsoft"
-  productUrl: "https://code.visualstudio.com/"
-  affiliateLink: "https://code.visualstudio.com/"
+    - Can become resource-heavy with many extensions
+    - Initial setup requires extension configuration
+    - Some features require additional extensions
+  price: Free
+  brand: Microsoft
+  productUrl: 'https://code.visualstudio.com/'
+  affiliateLink: 'https://code.visualstudio.com/'
 ---
 
 Visual Studio Code (VS Code) has become the de facto standard for modern software development, and for good reason. Since its release in 2015, Microsoft's free code editor has captured the hearts of developers worldwide with its perfect balance of power, performance, and extensibility.

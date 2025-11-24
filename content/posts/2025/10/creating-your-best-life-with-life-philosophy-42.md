@@ -1,13 +1,19 @@
 ---
-slug: "creating-your-best-life-with-life-philosophy-42"
-title: "Creating Your Best Life with Life Philosophy"
-excerpt: "Explore the fascinating world of life philosophy and discover how it can transform your approach to lifestyle. Learn practical tips and insights from experts."
-featuredImage: "/images/content/creating-your-best-life-with-life-philosophy-42/featured.jpg"
-category: "lifestyle"
-tags: ["lifestyle", "inspiration", "habits", "wellness"]
-author: "joseph-crawford"
-publishedAt: "2025-10-05"
-updatedAt: "2025-10-05"
+slug: creating-your-best-life-with-life-philosophy-42
+title: Creating Your Best Life with Life Philosophy
+excerpt: >-
+  Explore the fascinating world of life philosophy and discover how it can
+  transform your approach to lifestyle. Learn practical tips and insights from
+  experts.
+featuredImage: /images/content/creating-your-best-life-with-life-philosophy-42/featured.jpg
+tags:
+  - lifestyle
+  - inspiration
+  - habits
+  - wellness
+author: joseph-crawford
+publishedAt: '2025-10-05'
+updatedAt: '2025-10-05'
 ---
 
 In today's world, life philosophy represents more than just a trend—it's a fundamental shift in how we approach lifestyle. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

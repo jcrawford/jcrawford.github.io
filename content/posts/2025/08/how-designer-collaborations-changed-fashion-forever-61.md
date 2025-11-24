@@ -1,13 +1,20 @@
 ---
-slug: "how-designer-collaborations-changed-fashion-forever-61"
-title: "How Designer Collaborations Changed Fashion Forever"
-excerpt: "Explore the fascinating world of designer collaborations and discover how it can transform your approach to fashion. Learn practical tips and insights from experts."
-featuredImage: "/images/content/how-designer-collaborations-changed-fashion-forever-61/featured.jpg"
-category: "work"
-tags: ["work", "designer", "trends", "runway"]
-author: "joseph-crawford"
-publishedAt: "2025-08-09"
-updatedAt: "2025-08-09"
+slug: how-designer-collaborations-changed-fashion-forever-61
+title: How Designer Collaborations Changed Fashion Forever
+excerpt: >-
+  Explore the fascinating world of designer collaborations and discover how it
+  can transform your approach to fashion. Learn practical tips and insights from
+  experts.
+featuredImage: >-
+  /images/content/how-designer-collaborations-changed-fashion-forever-61/featured.jpg
+tags:
+  - work
+  - designer
+  - trends
+  - runway
+author: joseph-crawford
+publishedAt: '2025-08-09'
+updatedAt: '2025-08-09'
 ---
 
 In today's world, designer collaborations represents more than just a trend—it's a fundamental shift in how we approach fashion. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

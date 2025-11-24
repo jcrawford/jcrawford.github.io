@@ -1,30 +1,38 @@
 ---
-slug: "docker-desktop-review"
-title: "Docker Desktop Review: Essential Container Platform for Development"
-excerpt: "A comprehensive review of Docker Desktop, examining its features, performance, and whether it's worth the licensing changes for professional developers."
-featuredImage: "/images/content/reviews/docker-desktop-review/featured.jpg"
-category: "reviews"
-tags: ["reviews", "software", "development", "containers", "devops"]
-author: "joseph-crawford"
-publishedAt: "2025-10-28"
-updatedAt: "2025-10-28"
+slug: docker-desktop-review
+title: 'Docker Desktop Review: Essential Container Platform for Development'
+excerpt: >-
+  A comprehensive review of Docker Desktop, examining its features, performance,
+  and whether it's worth the licensing changes for professional developers.
+featuredImage: /images/content/reviews/docker-desktop-review/featured.jpg
+tags:
+  - reviews
+  - software
+  - development
+  - containers
+  - devops
+author: joseph-crawford
+publishedAt: '2025-10-28'
+updatedAt: '2025-10-28'
 review:
   rating: 4
   pros:
-    - "Easy setup and management of containers"
-    - "Excellent Docker Compose integration"
-    - "Kubernetes support built-in"
-    - "Resource management controls"
-    - "Seamless Docker Hub integration"
-    - "VS Code and IDE extensions"
+    - Easy setup and management of containers
+    - Excellent Docker Compose integration
+    - Kubernetes support built-in
+    - Resource management controls
+    - Seamless Docker Hub integration
+    - VS Code and IDE extensions
   cons:
-    - "Requires paid license for larger companies ($9/user/month)"
-    - "Resource-intensive on host machine"
-    - "Can be slow on non-Linux systems"
-    - "Occasional stability issues"
-  price: "Free (Personal/Education/Small Business), $9/user/month (Pro), $24/user/month (Team), Contact (Business)"
-  brand: "Docker Inc."
-  productUrl: "https://www.docker.com/products/docker-desktop/"
+    - Requires paid license for larger companies ($9/user/month)
+    - Resource-intensive on host machine
+    - Can be slow on non-Linux systems
+    - Occasional stability issues
+  price: >-
+    Free (Personal/Education/Small Business), $9/user/month (Pro),
+    $24/user/month (Team), Contact (Business)
+  brand: Docker Inc.
+  productUrl: 'https://www.docker.com/products/docker-desktop/'
 ---
 
 Docker Desktop has become the standard tool for running containers on macOS and Windows. While the 2021 licensing changes caused controversy, Docker Desktop remains the most polished way to work with containers in local development environments.

@@ -1,13 +1,19 @@
 ---
-slug: "7-ways-to-elevate-your-layering-techniques-26"
-title: "7 Ways to Elevate Your Layering Techniques"
-excerpt: "Explore the fascinating world of layering techniques and discover how it can transform your approach to fashion. Learn practical tips and insights from experts."
-featuredImage: "/images/content/7-ways-to-elevate-your-layering-techniques-26/featured.jpg"
-category: "work"
-tags: ["work", "designer", "clothing", "style"]
-author: "joseph-crawford"
-publishedAt: "2025-10-19"
-updatedAt: "2025-10-19"
+slug: 7-ways-to-elevate-your-layering-techniques-26
+title: 7 Ways to Elevate Your Layering Techniques
+excerpt: >-
+  Explore the fascinating world of layering techniques and discover how it can
+  transform your approach to fashion. Learn practical tips and insights from
+  experts.
+featuredImage: /images/content/7-ways-to-elevate-your-layering-techniques-26/featured.jpg
+tags:
+  - work
+  - designer
+  - clothing
+  - style
+author: joseph-crawford
+publishedAt: '2025-10-19'
+updatedAt: '2025-10-19'
 ---
 
 In today's world, layering techniques represents more than just a trend—it's a fundamental shift in how we approach fashion. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

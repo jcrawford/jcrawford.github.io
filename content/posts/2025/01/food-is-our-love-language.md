@@ -1,13 +1,17 @@
 ---
-slug: "food-is-our-love-language"
-title: "Food is our common ground, a universal experience"
-excerpt: "Discover how meals bring us together across cultures, generations, and differences."
-featuredImage: "/images/content/food-is-our-love-language/featured.jpg"
-category: "food"
-tags: ["food", "culture", "family"]
-author: "joseph-crawford"
-publishedAt: "2025-01-06"
-updatedAt: "2025-01-06"
+slug: food-is-our-love-language
+title: 'Food is our common ground, a universal experience'
+excerpt: >-
+  Discover how meals bring us together across cultures, generations, and
+  differences.
+featuredImage: /images/content/food-is-our-love-language/featured.jpg
+tags:
+  - food
+  - culture
+  - family
+author: joseph-crawford
+publishedAt: '2025-01-06'
+updatedAt: '2025-01-06'
 ---
 
 Every culture expresses love through food. The Italian grandmother rolling pasta by hand. The Mexican family gathering for tamale-making day. The Japanese tea ceremony's precise ritual. Food transcends language barriers and connects us to our heritage while building bridges to others.

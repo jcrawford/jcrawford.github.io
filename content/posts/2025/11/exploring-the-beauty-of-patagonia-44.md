@@ -1,13 +1,19 @@
 ---
-slug: "exploring-the-beauty-of-patagonia-44"
-title: "Exploring the Beauty of Patagonia"
-excerpt: "Explore the fascinating world of patagonia and discover how it can transform your approach to travel. Learn practical tips and insights from experts."
-featuredImage: "/images/content/exploring-the-beauty-of-patagonia-44/featured.jpg"
-category: "family"
-tags: ["travel", "wanderlust", "destinations", "exploration"]
-author: "joseph-crawford"
-publishedAt: "2025-11-03"
-updatedAt: "2025-11-03"
+slug: exploring-the-beauty-of-patagonia-44
+title: Exploring the Beauty of Patagonia
+excerpt: >-
+  Explore the fascinating world of patagonia and discover how it can transform
+  your approach to travel. Learn practical tips and insights from experts.
+featuredImage: /images/content/exploring-the-beauty-of-patagonia-44/featured.jpg
+tags:
+  - travel
+  - wanderlust
+  - destinations
+  - exploration
+  - family
+author: joseph-crawford
+publishedAt: '2025-11-03'
+updatedAt: '2025-11-03'
 ---
 
 In today's world, patagonia represents more than just a trend—it's a fundamental shift in how we approach travel. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

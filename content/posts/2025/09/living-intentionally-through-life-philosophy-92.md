@@ -1,13 +1,19 @@
 ---
-slug: "living-intentionally-through-life-philosophy-92"
-title: "Living Intentionally Through Life Philosophy"
-excerpt: "Explore the fascinating world of life philosophy and discover how it can transform your approach to lifestyle. Learn practical tips and insights from experts."
-featuredImage: "/images/content/living-intentionally-through-life-philosophy-92/featured.jpg"
-category: "lifestyle"
-tags: ["lifestyle", "productivity", "mindfulness", "habits"]
-author: "joseph-crawford"
-publishedAt: "2025-09-09"
-updatedAt: "2025-09-09"
+slug: living-intentionally-through-life-philosophy-92
+title: Living Intentionally Through Life Philosophy
+excerpt: >-
+  Explore the fascinating world of life philosophy and discover how it can
+  transform your approach to lifestyle. Learn practical tips and insights from
+  experts.
+featuredImage: /images/content/living-intentionally-through-life-philosophy-92/featured.jpg
+tags:
+  - lifestyle
+  - productivity
+  - mindfulness
+  - habits
+author: joseph-crawford
+publishedAt: '2025-09-09'
+updatedAt: '2025-09-09'
 ---
 
 In today's world, life philosophy represents more than just a trend—it's a fundamental shift in how we approach lifestyle. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

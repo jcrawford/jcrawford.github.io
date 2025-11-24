@@ -1,13 +1,17 @@
 ---
-slug: "fashion-fades-style-remains"
-title: "Fashion fades, only style remains the same"
-excerpt: "Discover the difference between fleeting fashion trends and timeless personal style that defines who you are."
-featuredImage: "/images/content/fashion-fades-style-remains/featured.jpg"
-category: "work"
-tags: ["work", "personal style", "wardrobe"]
-author: "joseph-crawford"
-publishedAt: "2025-01-13"
-updatedAt: "2025-01-13"
+slug: fashion-fades-style-remains
+title: 'Fashion fades, only style remains the same'
+excerpt: >-
+  Discover the difference between fleeting fashion trends and timeless personal
+  style that defines who you are.
+featuredImage: /images/content/fashion-fades-style-remains/featured.jpg
+tags:
+  - work
+  - personal style
+  - wardrobe
+author: joseph-crawford
+publishedAt: '2025-01-13'
+updatedAt: '2025-01-13'
 featured: true
 ---
 

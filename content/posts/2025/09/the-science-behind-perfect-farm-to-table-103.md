@@ -1,13 +1,19 @@
 ---
-slug: "the-science-behind-perfect-farm-to-table-103"
-title: "The Science Behind Perfect Farm-to-Table"
-excerpt: "Explore the fascinating world of farm-to-table and discover how it can transform your approach to food. Learn practical tips and insights from experts."
-featuredImage: "/images/content/the-science-behind-perfect-farm-to-table-103/featured.jpg"
-category: "food"
-tags: ["food", "cooking", "flavors", "culinary"]
-author: "joseph-crawford"
-publishedAt: "2025-09-24"
-updatedAt: "2025-09-24"
+slug: the-science-behind-perfect-farm-to-table-103
+title: The Science Behind Perfect Farm-to-Table
+excerpt: >-
+  Explore the fascinating world of farm-to-table and discover how it can
+  transform your approach to food. Learn practical tips and insights from
+  experts.
+featuredImage: /images/content/the-science-behind-perfect-farm-to-table-103/featured.jpg
+tags:
+  - food
+  - cooking
+  - flavors
+  - culinary
+author: joseph-crawford
+publishedAt: '2025-09-24'
+updatedAt: '2025-09-24'
 ---
 
 In today's world, farm-to-table represents more than just a trend—it's a fundamental shift in how we approach food. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

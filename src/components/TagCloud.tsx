@@ -21,7 +21,7 @@ const TagCloud: React.FC = () => {
       allMarkdownRemark {
         nodes {
           frontmatter {
-            category
+            tags
           }
         }
       }
@@ -48,7 +48,7 @@ const TagCloud: React.FC = () => {
   
   tags.forEach((tag: { slug: string; name: string }) => {
     const count = articles.filter(
-      (article: any) => article.frontmatter.category === tag.slug
+      (article: any) => article.frontmatter.tags?.includes(tag.slug)
     ).length;
     
     if (count > 0) {

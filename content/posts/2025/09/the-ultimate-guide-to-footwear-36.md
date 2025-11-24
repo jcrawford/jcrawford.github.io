@@ -1,13 +1,19 @@
 ---
-slug: "the-ultimate-guide-to-footwear-36"
-title: "The Ultimate Guide to Footwear"
-excerpt: "Explore the fascinating world of footwear and discover how it can transform your approach to fashion. Learn practical tips and insights from experts."
-featuredImage: "https://images.unsplash.com/photo-1558769132-cb1aea1f1c85?w=1200&h=800&fit=crop"
-category: "work"
-tags: ["work", "wardrobe", "style", "trends"]
-author: "joseph-crawford"
-publishedAt: "2025-09-30"
-updatedAt: "2025-09-30"
+slug: the-ultimate-guide-to-footwear-36
+title: The Ultimate Guide to Footwear
+excerpt: >-
+  Explore the fascinating world of footwear and discover how it can transform
+  your approach to fashion. Learn practical tips and insights from experts.
+featuredImage: >-
+  https://images.unsplash.com/photo-1558769132-cb1aea1f1c85?w=1200&h=800&fit=crop
+tags:
+  - work
+  - wardrobe
+  - style
+  - trends
+author: joseph-crawford
+publishedAt: '2025-09-30'
+updatedAt: '2025-09-30'
 ---
 
 In today's world, footwear represents more than just a trend—it's a fundamental shift in how we approach fashion. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

@@ -1,13 +1,19 @@
 ---
-slug: "costa-rica-off-the-beaten-path-24"
-title: "Costa Rica: Off the Beaten Path"
-excerpt: "Explore the fascinating world of costa rica and discover how it can transform your approach to travel. Learn practical tips and insights from experts."
-featuredImage: "/images/content/costa-rica-off-the-beaten-path-24/featured.jpg"
-category: "family"
-tags: ["travel", "culture", "journey", "destinations"]
-author: "joseph-crawford"
-publishedAt: "2025-11-01"
-updatedAt: "2025-11-01"
+slug: costa-rica-off-the-beaten-path-24
+title: 'Costa Rica: Off the Beaten Path'
+excerpt: >-
+  Explore the fascinating world of costa rica and discover how it can transform
+  your approach to travel. Learn practical tips and insights from experts.
+featuredImage: /images/content/costa-rica-off-the-beaten-path-24/featured.jpg
+tags:
+  - travel
+  - culture
+  - journey
+  - destinations
+  - family
+author: joseph-crawford
+publishedAt: '2025-11-01'
+updatedAt: '2025-11-01'
 ---
 
 In today's world, costa rica represents more than just a trend—it's a fundamental shift in how we approach travel. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

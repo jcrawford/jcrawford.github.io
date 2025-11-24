@@ -1,13 +1,20 @@
 ---
-slug: "essential-sustainable-style-tips-for-every-wardrobe-31"
-title: "Essential Sustainable Style Tips for Every Wardrobe"
-excerpt: "Explore the fascinating world of sustainable style and discover how it can transform your approach to fashion. Learn practical tips and insights from experts."
-featuredImage: "/images/content/essential-sustainable-style-tips-for-every-wardrobe-31/featured.jpg"
-category: "work"
-tags: ["work", "runway", "accessories", "style"]
-author: "joseph-crawford"
-publishedAt: "2025-09-12"
-updatedAt: "2025-09-12"
+slug: essential-sustainable-style-tips-for-every-wardrobe-31
+title: Essential Sustainable Style Tips for Every Wardrobe
+excerpt: >-
+  Explore the fascinating world of sustainable style and discover how it can
+  transform your approach to fashion. Learn practical tips and insights from
+  experts.
+featuredImage: >-
+  /images/content/essential-sustainable-style-tips-for-every-wardrobe-31/featured.jpg
+tags:
+  - work
+  - runway
+  - accessories
+  - style
+author: joseph-crawford
+publishedAt: '2025-09-12'
+updatedAt: '2025-09-12'
 ---
 
 In today's world, sustainable style represents more than just a trend—it's a fundamental shift in how we approach fashion. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

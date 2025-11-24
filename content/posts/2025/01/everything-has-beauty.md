@@ -1,13 +1,17 @@
 ---
-slug: "everything-has-beauty"
-title: "Everything has beauty, but not everyone sees it"
-excerpt: "Train your eye to find beauty in unexpected places, from minimalist design to bold statements."
-featuredImage: "/images/content/everything-has-beauty/featured.jpg"
-category: "work"
-tags: ["work", "aesthetic", "design"]
-author: "joseph-crawford"
-publishedAt: "2025-01-12"
-updatedAt: "2025-01-12"
+slug: everything-has-beauty
+title: 'Everything has beauty, but not everyone sees it'
+excerpt: >-
+  Train your eye to find beauty in unexpected places, from minimalist design to
+  bold statements.
+featuredImage: /images/content/everything-has-beauty/featured.jpg
+tags:
+  - work
+  - aesthetic
+  - design
+author: joseph-crawford
+publishedAt: '2025-01-12'
+updatedAt: '2025-01-12'
 featured: true
 ---
 

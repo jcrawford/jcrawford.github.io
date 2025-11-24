@@ -1,13 +1,20 @@
 ---
-slug: "transform-your-style-with-designer-collaborations-56"
-title: "Transform Your Style with Designer Collaborations"
-excerpt: "Explore the fascinating world of designer collaborations and discover how it can transform your approach to fashion. Learn practical tips and insights from experts."
-featuredImage: "/images/content/transform-your-style-with-designer-collaborations-56/featured.jpg"
-category: "work"
-tags: ["work", "style", "clothing", "wardrobe"]
-author: "joseph-crawford"
-publishedAt: "2025-07-18"
-updatedAt: "2025-07-18"
+slug: transform-your-style-with-designer-collaborations-56
+title: Transform Your Style with Designer Collaborations
+excerpt: >-
+  Explore the fascinating world of designer collaborations and discover how it
+  can transform your approach to fashion. Learn practical tips and insights from
+  experts.
+featuredImage: >-
+  /images/content/transform-your-style-with-designer-collaborations-56/featured.jpg
+tags:
+  - work
+  - style
+  - clothing
+  - wardrobe
+author: joseph-crawford
+publishedAt: '2025-07-18'
+updatedAt: '2025-07-18'
 ---
 
 In today's world, designer collaborations represents more than just a trend—it's a fundamental shift in how we approach fashion. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

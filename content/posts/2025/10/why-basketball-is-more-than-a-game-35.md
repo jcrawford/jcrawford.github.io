@@ -1,13 +1,18 @@
 ---
-slug: "why-basketball-is-more-than-a-game-35"
-title: "Why Basketball Is More Than a Game"
-excerpt: "Explore the fascinating world of basketball and discover how it can transform your approach to sports. Learn practical tips and insights from experts."
-featuredImage: "/images/content/why-basketball-is-more-than-a-game-35/featured.jpg"
-category: "sports"
-tags: ["sports", "endurance", "performance", "motivation"]
-author: "joseph-crawford"
-publishedAt: "2025-10-05"
-updatedAt: "2025-10-05"
+slug: why-basketball-is-more-than-a-game-35
+title: Why Basketball Is More Than a Game
+excerpt: >-
+  Explore the fascinating world of basketball and discover how it can transform
+  your approach to sports. Learn practical tips and insights from experts.
+featuredImage: /images/content/why-basketball-is-more-than-a-game-35/featured.jpg
+tags:
+  - sports
+  - endurance
+  - performance
+  - motivation
+author: joseph-crawford
+publishedAt: '2025-10-05'
+updatedAt: '2025-10-05'
 ---
 
 In today's world, basketball represents more than just a trend—it's a fundamental shift in how we approach sports. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

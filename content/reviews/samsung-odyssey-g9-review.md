@@ -1,31 +1,39 @@
 ---
-slug: "samsung-odyssey-g9-review"
-title: "Samsung Odyssey G9 Review: Ultra-Wide Gaming Monitor for Productivity"
-excerpt: "An honest review of the Samsung Odyssey G9, examining whether this massive 49-inch curved gaming monitor works for professional development and creative work."
-featuredImage: "/images/content/reviews/samsung-odyssey-g9-review/featured.jpg"
-category: "reviews"
-tags: ["reviews", "hardware", "monitor", "gaming", "productivity"]
-author: "joseph-crawford"
-publishedAt: "2025-10-10"
-updatedAt: "2025-10-10"
+slug: samsung-odyssey-g9-review
+title: 'Samsung Odyssey G9 Review: Ultra-Wide Gaming Monitor for Productivity'
+excerpt: >-
+  An honest review of the Samsung Odyssey G9, examining whether this massive
+  49-inch curved gaming monitor works for professional development and creative
+  work.
+featuredImage: /images/content/reviews/samsung-odyssey-g9-review/featured.jpg
+tags:
+  - reviews
+  - hardware
+  - monitor
+  - gaming
+  - productivity
+author: joseph-crawford
+publishedAt: '2025-10-10'
+updatedAt: '2025-10-10'
 review:
   rating: 4
   pros:
-    - "Immersive 49-inch 1000R curved display"
-    - "Replaces dual monitor setup elegantly"
-    - "240Hz refresh rate for smooth gaming"
-    - "QLED panel with excellent colors"
-    - "1000 nits HDR brightness"
-    - "Built-in KVM switch"
+    - Immersive 49-inch 1000R curved display
+    - Replaces dual monitor setup elegantly
+    - 240Hz refresh rate for smooth gaming
+    - QLED panel with excellent colors
+    - 1000 nits HDR brightness
+    - Built-in KVM switch
   cons:
-    - "Extremely expensive ($1,299-1,599)"
-    - "Requires powerful GPU for gaming at native resolution"
-    - "Takes enormous desk space"
-    - "Some applications don't handle ultra-wide well"
-    - "Occasional flickering with G-Sync"
-  price: "$1,299-1,599 depending on model (G9, Neo G9)"
-  brand: "Samsung"
-  productUrl: "https://www.samsung.com/us/computing/monitors/gaming/49-odyssey-g9-gaming-monitor-lc49g95tssnxza/"
+    - 'Extremely expensive ($1,299-1,599)'
+    - Requires powerful GPU for gaming at native resolution
+    - Takes enormous desk space
+    - Some applications don't handle ultra-wide well
+    - Occasional flickering with G-Sync
+  price: '$1,299-1,599 depending on model (G9, Neo G9)'
+  brand: Samsung
+  productUrl: >-
+    https://www.samsung.com/us/computing/monitors/gaming/49-odyssey-g9-gaming-monitor-lc49g95tssnxza/
 ---
 
 The Samsung Odyssey G9 is an audacious monitor that replaces two 27-inch displays with one continuous 49-inch curved screen. After six months using it for software development, gaming, and content creation, it's transformed my workflow—though it's definitely not for everyone.

@@ -7,8 +7,6 @@ interface SliderArticle {
   title: string;
   excerpt: string;
   featuredImage: string;
-  category: string;
-  categoryName: string;
   publishedAt: string;
   author: string;
   authorName: string;

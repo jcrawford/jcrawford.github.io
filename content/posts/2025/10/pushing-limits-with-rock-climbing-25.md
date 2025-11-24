@@ -1,13 +1,19 @@
 ---
-slug: "pushing-limits-with-rock-climbing-25"
-title: "Pushing Limits with Rock Climbing"
-excerpt: "Explore the fascinating world of rock climbing and discover how it can transform your approach to sports. Learn practical tips and insights from experts."
-featuredImage: "/images/content/pushing-limits-with-rock-climbing-25/featured.jpg"
-category: "sports"
-tags: ["sports", "athletics", "performance", "training"]
-author: "joseph-crawford"
-publishedAt: "2025-10-09"
-updatedAt: "2025-10-09"
+slug: pushing-limits-with-rock-climbing-25
+title: Pushing Limits with Rock Climbing
+excerpt: >-
+  Explore the fascinating world of rock climbing and discover how it can
+  transform your approach to sports. Learn practical tips and insights from
+  experts.
+featuredImage: /images/content/pushing-limits-with-rock-climbing-25/featured.jpg
+tags:
+  - sports
+  - athletics
+  - performance
+  - training
+author: joseph-crawford
+publishedAt: '2025-10-09'
+updatedAt: '2025-10-09'
 ---
 
 In today's world, rock climbing represents more than just a trend—it's a fundamental shift in how we approach sports. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

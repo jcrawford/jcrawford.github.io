@@ -1,13 +1,18 @@
 ---
-slug: "how-gratitude-transforms-daily-life-22"
-title: "How Gratitude Transforms Daily Life"
-excerpt: "Explore the fascinating world of gratitude and discover how it can transform your approach to lifestyle. Learn practical tips and insights from experts."
-featuredImage: "/images/content/how-gratitude-transforms-daily-life-22/featured.jpg"
-category: "lifestyle"
-tags: ["lifestyle", "inspiration", "habits", "productivity"]
-author: "joseph-crawford"
-publishedAt: "2025-07-01"
-updatedAt: "2025-07-01"
+slug: how-gratitude-transforms-daily-life-22
+title: How Gratitude Transforms Daily Life
+excerpt: >-
+  Explore the fascinating world of gratitude and discover how it can transform
+  your approach to lifestyle. Learn practical tips and insights from experts.
+featuredImage: /images/content/how-gratitude-transforms-daily-life-22/featured.jpg
+tags:
+  - lifestyle
+  - inspiration
+  - habits
+  - productivity
+author: joseph-crawford
+publishedAt: '2025-07-01'
+updatedAt: '2025-07-01'
 ---
 
 In today's world, gratitude represents more than just a trend—it's a fundamental shift in how we approach lifestyle. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

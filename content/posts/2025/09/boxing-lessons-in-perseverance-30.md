@@ -1,13 +1,18 @@
 ---
-slug: "boxing-lessons-in-perseverance-30"
-title: "Boxing: Lessons in Perseverance"
-excerpt: "Explore the fascinating world of boxing and discover how it can transform your approach to sports. Learn practical tips and insights from experts."
-featuredImage: "/images/content/boxing-lessons-in-perseverance-30/featured.jpg"
-category: "sports"
-tags: ["sports", "performance", "strength", "training"]
-author: "joseph-crawford"
-publishedAt: "2025-09-21"
-updatedAt: "2025-09-21"
+slug: boxing-lessons-in-perseverance-30
+title: 'Boxing: Lessons in Perseverance'
+excerpt: >-
+  Explore the fascinating world of boxing and discover how it can transform your
+  approach to sports. Learn practical tips and insights from experts.
+featuredImage: /images/content/boxing-lessons-in-perseverance-30/featured.jpg
+tags:
+  - sports
+  - performance
+  - strength
+  - training
+author: joseph-crawford
+publishedAt: '2025-09-21'
+updatedAt: '2025-09-21'
 ---
 
 In today's world, boxing represents more than just a trend—it's a fundamental shift in how we approach sports. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

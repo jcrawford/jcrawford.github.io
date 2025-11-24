@@ -1,13 +1,20 @@
 ---
-slug: "elevating-plant-based-cuisine-to-the-next-level-23"
-title: "Elevating Plant-Based Cuisine to the Next Level"
-excerpt: "Explore the fascinating world of plant-based cuisine and discover how it can transform your approach to food. Learn practical tips and insights from experts."
-featuredImage: "/images/content/elevating-plant-based-cuisine-to-the-next-level-23/featured.jpg"
-category: "food"
-tags: ["food", "ingredients", "nutrition", "cooking"]
-author: "joseph-crawford"
-publishedAt: "2025-07-09"
-updatedAt: "2025-07-09"
+slug: elevating-plant-based-cuisine-to-the-next-level-23
+title: Elevating Plant-Based Cuisine to the Next Level
+excerpt: >-
+  Explore the fascinating world of plant-based cuisine and discover how it can
+  transform your approach to food. Learn practical tips and insights from
+  experts.
+featuredImage: >-
+  /images/content/elevating-plant-based-cuisine-to-the-next-level-23/featured.jpg
+tags:
+  - food
+  - ingredients
+  - nutrition
+  - cooking
+author: joseph-crawford
+publishedAt: '2025-07-09'
+updatedAt: '2025-07-09'
 ---
 
 In today's world, plant-based cuisine represents more than just a trend—it's a fundamental shift in how we approach food. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.

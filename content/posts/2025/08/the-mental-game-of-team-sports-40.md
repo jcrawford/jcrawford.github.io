@@ -1,13 +1,18 @@
 ---
-slug: "the-mental-game-of-team-sports-40"
-title: "The Mental Game of Team Sports"
-excerpt: "Explore the fascinating world of team sports and discover how it can transform your approach to sports. Learn practical tips and insights from experts."
-featuredImage: "/images/content/the-mental-game-of-team-sports-40/featured.jpg"
-category: "sports"
-tags: ["sports", "training", "performance", "fitness"]
-author: "joseph-crawford"
-publishedAt: "2025-08-23"
-updatedAt: "2025-08-23"
+slug: the-mental-game-of-team-sports-40
+title: The Mental Game of Team Sports
+excerpt: >-
+  Explore the fascinating world of team sports and discover how it can transform
+  your approach to sports. Learn practical tips and insights from experts.
+featuredImage: /images/content/the-mental-game-of-team-sports-40/featured.jpg
+tags:
+  - sports
+  - training
+  - performance
+  - fitness
+author: joseph-crawford
+publishedAt: '2025-08-23'
+updatedAt: '2025-08-23'
 ---
 
 In today's world, team sports represents more than just a trend—it's a fundamental shift in how we approach sports. Understanding the nuances and deeper meaning behind this concept can transform your perspective and enrich your experience.
