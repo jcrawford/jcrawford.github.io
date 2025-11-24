@@ -5,6 +5,7 @@ interface HighlightedArticle {
   slug: string;
   title: string;
   featuredImage: string;
+  tags: string[];
   isSeries: boolean;
 }
 
@@ -21,6 +22,7 @@ const FeaturedHighlight: React.FC<FeaturedHighlightProps> = ({ articles }) => {
           title={article.title}
           slug={article.slug}
           featuredImage={article.featuredImage}
+          tags={article.tags}
           isSeries={article.isSeries}
         />
       ))}

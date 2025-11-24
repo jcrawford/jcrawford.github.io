@@ -10,6 +10,7 @@ interface RecentArticle {
     slug: string;
     title: string;
     featuredImage: string;
+    tags: string[];
     publishedAt: string;
     series?: {
       name: string;
@@ -37,6 +38,7 @@ const RecentArticles: React.FC = () => {
             slug
             title
             featuredImage
+            tags
             publishedAt
             series {
               name
@@ -53,7 +55,8 @@ const RecentArticles: React.FC = () => {
     <div className="widget hm-sidebar-posts">
       <h3 className="widget-title">Popular</h3>
       {recentArticles.map((article) => {
-        const articlePath = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name);
+        const isReview = article.frontmatter.tags.includes('reviews');
+        const articlePath = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name, isReview);
         return (
           <article key={article.id} className="hms-post">
             <div className="hms-thumb">

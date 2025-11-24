@@ -10,6 +10,7 @@ interface FooterArticle {
     slug: string;
     title: string;
     featuredImage: string;
+    tags: string[];
     publishedAt: string;
     series?: {
       name: string;
@@ -50,6 +51,7 @@ const Footer: React.FC = () => {
             slug
             title
             featuredImage
+            tags
             publishedAt
             series {
               name
@@ -68,6 +70,7 @@ const Footer: React.FC = () => {
             slug
             title
             featuredImage
+            tags
             publishedAt
             series {
               name
@@ -112,7 +115,8 @@ const Footer: React.FC = () => {
               <div className="hm-sidebar-posts">
                 <h2 className="widget-title">Food</h2>
                 {foodArticles.map((article) => {
-                  const articlePath = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name);
+                  const isReview = article.frontmatter.tags.includes('reviews');
+                  const articlePath = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name, isReview);
                   return (
                     <div key={article.id} className="hms-post clearfix">
                       <div className="hms-thumb">
@@ -147,7 +151,8 @@ const Footer: React.FC = () => {
               <div className="hm-sidebar-posts">
                 <h2 className="widget-title">Family</h2>
                 {familyArticles.map((article) => {
-                  const articlePath = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name);
+                  const isReview = article.frontmatter.tags.includes('reviews');
+                  const articlePath = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name, isReview);
                   return (
                     <div key={article.id} className="hms-post clearfix">
                       <div className="hms-thumb">

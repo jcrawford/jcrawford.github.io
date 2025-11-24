@@ -49,7 +49,7 @@ If all you need is a simple, largely self‑service checking account with a soli
 
 ## The Most Recent Issue: Authorization Holds
 
-The turning point for me came during a recent incident tied to a [Walmart Online Grocery Pickup](./walmart-online-order-process-review) order. In short:
+The turning point for me came during a recent incident tied to a [Walmart Online Grocery Pickup](/reviews/walmart-online-grocery-ordering-process/) order. In short:
 
 - Walmart cancelled a large grocery order after placing an authorization hold.
 - Walmart provided a **Hold Release Authorization Code** and directed me to my bank.

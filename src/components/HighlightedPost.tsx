@@ -7,6 +7,7 @@ interface HighlightedPostProps {
   slug: string;
   title: string;
   featuredImage: string;
+  tags: string[];
   isSeries?: boolean;
 }
 
@@ -14,9 +15,11 @@ const HighlightedPost: React.FC<HighlightedPostProps> = ({
   slug,
   title,
   featuredImage,
+  tags,
   isSeries,
 }) => {
-  const articlePath = getArticlePath(slug, isSeries);
+  const isReview = tags.includes('reviews');
+  const articlePath = getArticlePath(slug, isSeries, isReview);
   
   return (
     <div className="hm-highlighted-post">

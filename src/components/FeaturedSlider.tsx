@@ -8,6 +8,7 @@ interface FeaturedArticle {
   title: string;
   excerpt: string;
   featuredImage: string;
+  tags: string[];
   publishedAt: string;
   author: string;
   authorName: string;
@@ -40,7 +41,8 @@ const FeaturedSlider: React.FC<FeaturedSliderProps> = ({ articles }) => {
   }
 
   const currentArticle = articles[currentSlide];
-  const articlePath = getArticlePath(currentArticle.slug, currentArticle.isSeries);
+  const isReview = currentArticle.tags.includes('reviews');
+  const articlePath = getArticlePath(currentArticle.slug, currentArticle.isSeries, isReview);
 
   return (
     <div className="hm-swiper hm-slider">

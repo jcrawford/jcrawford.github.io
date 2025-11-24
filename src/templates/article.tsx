@@ -43,6 +43,10 @@ interface ArticleData {
       frontmatter: {
         slug: string;
         title: string;
+        tags: string[];
+        series?: {
+          name: string;
+        };
       };
     }>;
   };
@@ -51,6 +55,10 @@ interface ArticleData {
       frontmatter: {
         slug: string;
         title: string;
+        tags: string[];
+        series?: {
+          name: string;
+        };
       };
     }>;
   };
@@ -145,7 +153,7 @@ const ArticleTemplate: React.FC<PageProps<ArticleData>> = ({ data }) => {
                 {previousArticle && (
                   <div className="hm-nav-previous">
                     <span className="hm-nav-label">Previous Article</span>
-                    <Link to={getArticlePath(previousArticle.frontmatter.slug, !!previousArticle.frontmatter.series?.name)} className="hm-nav-title">
+                    <Link to={getArticlePath(previousArticle.frontmatter.slug, !!previousArticle.frontmatter.series?.name, previousArticle.frontmatter.tags.includes('reviews'))} className="hm-nav-title">
                       {previousArticle.frontmatter.title}
                     </Link>
                   </div>
@@ -153,7 +161,7 @@ const ArticleTemplate: React.FC<PageProps<ArticleData>> = ({ data }) => {
                 {nextArticle && (
                   <div className="hm-nav-next">
                     <span className="hm-nav-label">Next Article</span>
-                    <Link to={getArticlePath(nextArticle.frontmatter.slug, !!nextArticle.frontmatter.series?.name)} className="hm-nav-title">
+                    <Link to={getArticlePath(nextArticle.frontmatter.slug, !!nextArticle.frontmatter.series?.name, nextArticle.frontmatter.tags.includes('reviews'))} className="hm-nav-title">
                       {nextArticle.frontmatter.title}
                     </Link>
                   </div>
@@ -213,6 +221,10 @@ export const query = graphql`
         frontmatter {
           slug
           title
+          tags
+          series {
+            name
+          }
         }
       }
     }
@@ -225,21 +237,28 @@ export const query = graphql`
         frontmatter {
           slug
           title
+          tags
+          series {
+            name
+          }
         }
       }
     }
   }
 `;
 
-export const Head: HeadFC<ArticleData> = ({ data }) => (
-  <SEO 
-    title={data.markdownRemark.frontmatter.title}
-    description={data.markdownRemark.frontmatter.excerpt}
-    image={data.markdownRemark.frontmatter.featuredImage}
-    article={true}
-    pathname={getArticlePath(data.markdownRemark.frontmatter.slug, !!data.markdownRemark.frontmatter.series?.name)}
-  />
-);
+export const Head: HeadFC<ArticleData> = ({ data }) => {
+  const isReview = data.markdownRemark.frontmatter.tags.includes('reviews');
+  return (
+    <SEO 
+      title={data.markdownRemark.frontmatter.title}
+      description={data.markdownRemark.frontmatter.excerpt}
+      image={data.markdownRemark.frontmatter.featuredImage}
+      article={true}
+      pathname={getArticlePath(data.markdownRemark.frontmatter.slug, !!data.markdownRemark.frontmatter.series?.name, isReview)}
+    />
+  );
+};
 
 export default ArticleTemplate;
 

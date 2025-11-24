@@ -28,7 +28,8 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
   authorName,
   isSeries,
 }) => {
-  const articlePath = getArticlePath(slug, isSeries);
+  const isReview = tags.includes('reviews');
+  const articlePath = getArticlePath(slug, isSeries, isReview);
   
   // Get the first tag that's not "family" or "featured" for display
   const primaryTag = tags.find(tag => tag !== 'family' && tag !== 'featured') || tags[0];

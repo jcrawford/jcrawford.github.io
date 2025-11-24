@@ -19,6 +19,7 @@ interface SeriesMetadata {
 
 interface Article {
   id: string;
+  fileAbsolutePath: string;
   frontmatter: {
     slug: string;
     tags: string[];
@@ -165,6 +166,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
       allMarkdownRemark(filter: { frontmatter: { slug: { ne: null } } }) {
         nodes {
           id
+          fileAbsolutePath
           frontmatter {
             slug
             tags
@@ -228,9 +230,20 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
 
   articles.forEach((article) => {
     const isSeries = !!article.frontmatter.series?.name;
+    const isReview = article.fileAbsolutePath.includes('/content/reviews/');
+    
+    // Determine the path based on article type
+    let articlePath: string;
+    if (isSeries) {
+      articlePath = `/series/${article.frontmatter.slug}`;
+    } else if (isReview) {
+      articlePath = `/reviews/${article.frontmatter.slug}`;
+    } else {
+      articlePath = `/posts/${article.frontmatter.slug}`;
+    }
     
     createPage({
-      path: isSeries ? `/series/${article.frontmatter.slug}` : `/posts/${article.frontmatter.slug}`,
+      path: articlePath,
       component: isSeries ? seriesArticleTemplate : articleTemplate,
       context: {
         slug: article.frontmatter.slug,
