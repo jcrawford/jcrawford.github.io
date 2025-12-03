@@ -813,7 +813,8 @@ html.hm-dark .hm-article {
 }
 
 .hm-article-content a:hover {
-  color: var(--hybridmag-color-button-hover-background);
+  color: var(--hybridmag-color-primary);
+  opacity: 0.8;
 }
 
 .hm-article-tags {
