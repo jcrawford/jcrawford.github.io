@@ -139,7 +139,7 @@ export const query = graphql`
     allMarkdownRemark(
       sort: { frontmatter: { publishedAt: DESC } }
       limit: 6
-      filter: { frontmatter: { slug: { ne: null } } }
+      filter: { frontmatter: { slug: { ne: null }, draft: { ne: true } } }
     ) {
       nodes {
         id

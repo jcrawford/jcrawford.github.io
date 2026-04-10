@@ -30,7 +30,7 @@ const RecentArticles: React.FC = () => {
       recentArticles: allMarkdownRemark(
         limit: 5
         sort: { frontmatter: { publishedAt: DESC } }
-        filter: { frontmatter: { slug: { ne: null } } }
+        filter: { frontmatter: { slug: { ne: null }, draft: { ne: true } } }
       ) {
         nodes {
           id

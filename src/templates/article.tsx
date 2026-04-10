@@ -213,7 +213,7 @@ export const query = graphql`
       avatar
     }
     previousArticle: allMarkdownRemark(
-      filter: { frontmatter: { publishedAt: { lt: $publishedAt } } }
+      filter: { frontmatter: { publishedAt: { lt: $publishedAt }, draft: { ne: true } } }
       sort: { frontmatter: { publishedAt: DESC } }
       limit: 1
     ) {
@@ -229,7 +229,7 @@ export const query = graphql`
       }
     }
     nextArticle: allMarkdownRemark(
-      filter: { frontmatter: { publishedAt: { gt: $publishedAt } } }
+      filter: { frontmatter: { publishedAt: { gt: $publishedAt }, draft: { ne: true } } }
       sort: { frontmatter: { publishedAt: ASC } }
       limit: 1
     ) {

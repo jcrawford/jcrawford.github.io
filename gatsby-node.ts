@@ -2,6 +2,20 @@ import type { GatsbyNode } from 'gatsby';
 import path from 'path';
 import fs from 'fs';
 
+/**
+ * Define custom schema types to ensure draft field is queryable
+ */
+export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] = ({ actions }) => {
+  const { createTypes } = actions;
+  
+  createTypes(`
+    type MarkdownRemarkFrontmatter {
+      draft: Boolean
+    }
+  `);
+};
+
+
 interface SeriesMetadata {
   name?: string;
   order?: number;
@@ -163,7 +177,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
 
   const result = await graphql<PagesQueryResult>(`
     query {
-      allMarkdownRemark(filter: { frontmatter: { slug: { ne: null } } }) {
+      allMarkdownRemark(filter: { frontmatter: { slug: { ne: null }, draft: { ne: true } } }) {
         nodes {
           id
           fileAbsolutePath

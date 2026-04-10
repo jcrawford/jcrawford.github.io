@@ -175,7 +175,7 @@ export const query = graphql`
       description
     }
     allMarkdownRemark(
-      filter: { frontmatter: { tags: { in: [$slug] } } }
+      filter: { frontmatter: { tags: { in: [$slug] }, draft: { ne: true } } }
       sort: { frontmatter: { publishedAt: DESC } }
       limit: $limit
       skip: $skip

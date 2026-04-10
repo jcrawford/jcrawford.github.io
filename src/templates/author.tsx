@@ -131,7 +131,7 @@ export const query = graphql`
       }
     }
     allMarkdownRemark(
-      filter: { frontmatter: { author: { eq: $slug } } }
+      filter: { frontmatter: { author: { eq: $slug }, draft: { ne: true } } }
       sort: { frontmatter: { publishedAt: DESC } }
     ) {
       nodes {

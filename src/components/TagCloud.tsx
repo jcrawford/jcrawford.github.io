@@ -18,7 +18,7 @@ const TagCloud: React.FC = () => {
           name
         }
       }
-      allMarkdownRemark {
+      allMarkdownRemark(filter: { frontmatter: { draft: { ne: true } } }) {
         nodes {
           frontmatter {
             tags

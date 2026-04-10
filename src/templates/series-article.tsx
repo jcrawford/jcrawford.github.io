@@ -265,7 +265,7 @@ export const query = graphql`
       avatar
     }
     seriesArticles: allMarkdownRemark(
-      filter: { frontmatter: { series: { name: { eq: $seriesName } } } }
+      filter: { frontmatter: { series: { name: { eq: $seriesName } }, draft: { ne: true } } }
       sort: [
         { frontmatter: { series: { order: ASC } } }
         { frontmatter: { publishedAt: ASC } }
