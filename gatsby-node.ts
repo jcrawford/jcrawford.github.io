@@ -7,10 +7,34 @@ import fs from 'fs';
  */
 export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] = ({ actions }) => {
   const { createTypes } = actions;
-  
+
   createTypes(`
     type MarkdownRemarkFrontmatter {
       draft: Boolean
+    }
+
+    type AuthorsJson implements Node {
+      id: String
+      jsonId: String
+      slug: String
+      name: String
+      bio: String
+      avatar: String
+      socialLinks: AuthorsJsonSocialLinks
+    }
+
+    type AuthorsJsonSocialLinks {
+      linkedin: String
+      github: String
+    }
+
+    type TagsJson implements Node {
+      id: String
+      jsonId: String
+      slug: String
+      name: String
+      description: String
+      featured: Boolean
     }
   `);
 };

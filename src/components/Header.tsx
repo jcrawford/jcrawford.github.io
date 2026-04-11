@@ -21,6 +21,7 @@ interface SiteMetadata {
 const Header: React.FC = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
@@ -155,7 +156,11 @@ const Header: React.FC = () => {
             </div>
 
             {/* Mobile Menu Toggle */}
-            <button className="hm-mobile-menu-toggle" aria-label="Open mobile menu">
+            <button 
+              className="hm-mobile-menu-toggle" 
+              aria-label="Open mobile menu"
+              onClick={() => setIsMobileMenuOpen(true)}
+            >
               <span className="screen-reader-text">Main Menu</span>
               <span className="hm-menu-bars">☰</span>
             </button>
@@ -168,6 +173,37 @@ const Header: React.FC = () => {
       isOpen={isSearchOpen} 
       onClose={() => setIsSearchOpen(false)} 
     />
+    
+    {/* Mobile Navigation Menu */}
+    {isMobileMenuOpen && (
+      <div className="hm-mobile-menu-overlay" onClick={() => setIsMobileMenuOpen(false)}>
+        <nav className="hm-mobile-navigation" onClick={(e) => e.stopPropagation()}>
+          <div className="hm-mobile-menu-header">
+            <span className="hm-mobile-menu-title">Menu</span>
+            <button 
+              className="hm-mobile-menu-close" 
+              aria-label="Close mobile menu"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              ✕
+            </button>
+          </div>
+          <ul className="hm-mobile-menu-list">
+            {navigation.map((item) => (
+              <li key={item.path} className="hm-mobile-menu-item">
+                <Link to={item.path} onClick={() => setIsMobileMenuOpen(false)}>
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <div className="hm-mobile-menu-social">
+            <a href={socialLinks.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </nav>
+      </div>
+    )}
   </>
   );
 };
