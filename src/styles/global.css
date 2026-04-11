@@ -216,6 +216,13 @@ body {
   font-size: 1.5rem;
   color: inherit;
   cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  min-width: 44px; /* iOS touch target size */
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 960px) {
@@ -2504,6 +2511,11 @@ html.hm-dark .hm-search-link:hover .hm-search-item-meta,
   z-index: 9999;
   display: flex;
   justify-content: flex-end;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  /* iOS Safari viewport fix */
+  height: 100vh;
+  height: 100dvh;
 }
 
 .hm-mobile-navigation {
@@ -2511,9 +2523,13 @@ html.hm-dark .hm-search-link:hover .hm-search-item-meta,
   width: 300px;
   max-width: 85%;
   height: 100%;
+  max-height: 100dvh; /* Use dynamic viewport height for iOS Safari */
   padding: 20px;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  /* Prevent zoom on iOS when tapping */
+  touch-action: pan-y;
 }
 
 html.hm-dark .hm-mobile-navigation {
@@ -2547,6 +2563,13 @@ html.hm-dark .hm-mobile-menu-title {
   cursor: pointer;
   padding: 5px;
   line-height: 1;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  min-width: 44px; /* iOS touch target size */
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hm-mobile-menu-close:hover {
@@ -2572,6 +2595,11 @@ html.hm-dark .hm-mobile-menu-title {
   font-size: 1.1rem;
   font-weight: 500;
   transition: color 0.2s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 44px; /* iOS touch target size */
+  display: flex;
+  align-items: center;
 }
 
 .hm-mobile-menu-item a:hover {
@@ -2599,6 +2627,12 @@ html.hm-dark .hm-mobile-menu-item {
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  min-width: 44px; /* iOS touch target size */
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
 }
 
 .hm-mobile-menu-social a:hover {
