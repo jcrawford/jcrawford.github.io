@@ -7,6 +7,7 @@ import SeriesContext from '../components/SeriesContext';
 import { formatDate } from '../utils/dateUtils';
 import OptimizedImage from '../components/OptimizedImage';
 import SEO from '../components/SEO';
+import Comments from '../components/Comments';
 import type { SeriesMetadata, SeriesArticle } from '../types';
 
 interface SeriesArticleData {
@@ -199,6 +200,7 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData>> = ({ data })
                   ))}
                 </div>
               )}
+              <Comments slug={article.slug} title={article.title} />
             </article>
 
             {/* Series Navigation - Bottom */}

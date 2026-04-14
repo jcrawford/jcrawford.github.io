@@ -2646,3 +2646,26 @@ html.hm-dark .hm-mobile-menu-social a {
 html.hm-dark .hm-mobile-menu-social {
   border-top-color: #3f4549;
 }
+
+/* Comments Section (Giscus) */
+.hm-comments {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--hybridmag-color-border, #E0E0E0);
+}
+
+.hm-comments-heading {
+  font-size: var(--hybridmag-font-size-xl, 1.5rem);
+  font-weight: var(--hybridmag-font-weight-headings, 600);
+  margin-bottom: 1.5rem;
+  color: var(--hybridmag-color-text-headings, #222222);
+}
+
+html.hm-dark .hm-comments {
+  border-top-color: var(--hybridmag-color-border, #333333);
+}
+
+/* Ensure Giscus iframe respects the container width */
+.hm-comments .giscus {
+  max-width: 100%;
+}

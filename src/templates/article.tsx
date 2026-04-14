@@ -6,6 +6,7 @@ import { formatDate } from '../utils/dateUtils';
 import OptimizedImage from '../components/OptimizedImage';
 import SEO from '../components/SEO';
 import ReviewBox from '../components/ReviewBox';
+import Comments from '../components/Comments';
 import { getArticlePath } from '../utils/articlePath';
 
 interface ArticleData {
@@ -146,6 +147,8 @@ const ArticleTemplate: React.FC<PageProps<ArticleData>> = ({ data }) => {
               ))}
             </div>
           )}
+
+          <Comments slug={article.slug} title={article.title} />
             </article>
 
             {(previousArticle || nextArticle) && (

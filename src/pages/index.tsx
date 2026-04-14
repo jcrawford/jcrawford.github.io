@@ -306,10 +306,14 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
     };
   }) : [];
   
-  const recentArticles = allDisplayArticles.slice(7, 19).map(mapArticleForSlider);
+  // Exclude ALL featured posts from tag tabs and the article grid below
+  const featuredSlugs = sortedFeaturedPosts.map(article => article.frontmatter.slug);
 
-  // Extract slugs of featured articles (top 5 in slider) to exclude from category tabs
-  const featuredSlugs = featuredArticles.map(article => article.slug);
+  // Recent articles: non-featured posts only (skip the featured section entirely)
+  const recentArticles = allDisplayArticles
+    .filter(article => article.frontmatter.featured !== true)
+    .slice(0, 12)
+    .map(mapArticleForSlider);
 
   return (
     <Layout>
