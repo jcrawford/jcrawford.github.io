@@ -57,6 +57,14 @@ function base64Url(input) {
     .replace(/\//g, '_');
 }
 
+function getFormattedGa4PrivateKey() {
+  if (!GA4_SERVICE_ACCOUNT_PRIVATE_KEY) {
+    return null;
+  }
+
+  return GA4_SERVICE_ACCOUNT_PRIVATE_KEY.replace(/\\n/g, '\n');
+}
+
 async function getGoogleAccessToken() {
   if (!GA4_PROPERTY_ID || !GA4_SERVICE_ACCOUNT_EMAIL || !GA4_SERVICE_ACCOUNT_PRIVATE_KEY) {
     return null;
@@ -76,32 +84,49 @@ async function getGoogleAccessToken() {
   signer.update(`${header}.${claimSet}`);
   signer.end();
 
-  const privateKey = GA4_SERVICE_ACCOUNT_PRIVATE_KEY.replace(/\\n/g, '\n');
-  const signature = signer.sign(privateKey, 'base64')
-    .replace(/=/g, '')
-    .replace(/\+/g, '-')
-    .replace(/\//g, '_');
+  const privateKey = getFormattedGa4PrivateKey();
 
-  const assertion = `${header}.${claimSet}.${signature}`;
-  const body = new URLSearchParams({
-    grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
-    assertion,
-  }).toString();
+  try {
+    const signature = signer.sign(privateKey, 'base64')
+      .replace(/=/g, '')
+      .replace(/\+/g, '-')
+      .replace(/\//g, '_');
 
-  const tokenResponse = await requestJson('https://oauth2.googleapis.com/token', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-      'Content-Length': Buffer.byteLength(body),
-    },
-    body,
-  });
+    const assertion = `${header}.${claimSet}.${signature}`;
+    const body = new URLSearchParams({
+      grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
+      assertion,
+    }).toString();
 
-  return tokenResponse.access_token;
+    const tokenResponse = await requestJson('https://oauth2.googleapis.com/token', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Content-Length': Buffer.byteLength(body),
+      },
+      body,
+    });
+
+    return tokenResponse.access_token;
+  } catch (error) {
+    if (/DECODER routines::unsupported|PEM routines|private key|key/i.test(error.message || '')) {
+      throw new Error('Failed to parse GA4 service account private key. Ensure GA4_SERVICE_ACCOUNT_PRIVATE_KEY includes the BEGIN/END PRIVATE KEY markers and uses real newlines or escaped \\n sequences.');
+    }
+
+    throw error;
+  }
 }
 
 async function fetchGa4Views() {
-  const accessToken = await getGoogleAccessToken();
+  let accessToken;
+
+  try {
+    accessToken = await getGoogleAccessToken();
+  } catch (error) {
+    console.warn(`Skipping GA4 popular article data: ${error.message || error}`);
+    return new Map();
+  }
+
   if (!accessToken || !GA4_PROPERTY_ID) {
     return new Map();
   }
