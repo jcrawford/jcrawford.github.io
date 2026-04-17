@@ -149,7 +149,7 @@ const TagTabs: React.FC<TagTabsProps> = ({ tags, articles, excludeSlugs = [] }) 
             <div className="hm-tab-posts-wrapper">
               {getArticlesByTag(tag.slug).map((article) => {
                 const displayData = mapArticleForDisplay(article);
-                const isReview = article.frontmatter.tags.includes('reviews');
+                const isReview = article.frontmatter.tags.some(t => t.toLowerCase() === 'reviews');
                 const articlePath = getArticlePath(displayData.slug, !!article.frontmatter.series?.name, isReview);
                 return (
                   <div key={article.id} className="hm-tab-post-card">

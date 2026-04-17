@@ -10,7 +10,6 @@ tags:
 author: joseph-crawford
 publishedAt: '2025-01-11'
 updatedAt: '2025-01-11'
-featured: true
 ---
 
 A simple black dress becomes a statement with the right accessories. Bold earrings, a vintage belt, a structured bag—each piece adds personality and tells your story. This is where your creativity truly shines.

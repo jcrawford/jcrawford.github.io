@@ -115,7 +115,7 @@ const Footer: React.FC = () => {
               <div className="hm-sidebar-posts">
                 <h2 className="widget-title">Food</h2>
                 {foodArticles.map((article) => {
-                  const isReview = article.frontmatter.tags.includes('reviews');
+                  const isReview = article.frontmatter.tags.some(t => t.toLowerCase() === 'reviews');
                   const articlePath = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name, isReview);
                   return (
                     <div key={article.id} className="hms-post clearfix">
@@ -151,7 +151,7 @@ const Footer: React.FC = () => {
               <div className="hm-sidebar-posts">
                 <h2 className="widget-title">Family</h2>
                 {familyArticles.map((article) => {
-                  const isReview = article.frontmatter.tags.includes('reviews');
+                  const isReview = article.frontmatter.tags.some(t => t.toLowerCase() === 'reviews');
                   const articlePath = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name, isReview);
                   return (
                     <div key={article.id} className="hms-post clearfix">

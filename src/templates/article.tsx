@@ -18,6 +18,7 @@ interface ArticleData {
       title: string;
       excerpt: string;
       featuredImage: string;
+      featuredImageLink?: string;
       tags: string[];
       author: string;
       publishedAt: string;
@@ -65,12 +66,19 @@ interface ArticleData {
   };
 }
 
-const ArticleTemplate: React.FC<PageProps<ArticleData>> = ({ data }) => {
+const ArticleTemplate: React.FC<PageProps<ArticleData>> = ({ data, pageContext }) => {
   const article = data.markdownRemark.frontmatter;
   const articleHtml = data.markdownRemark.html;
   const author = data.authorsJson;
-  const previousArticle = data.previousArticle.nodes[0] || null;
-  const nextArticle = data.nextArticle.nodes[0] || null;
+  const isReview = pageContext.isReview as boolean;
+  
+  // Filter navigation: reviews only link to reviews, posts only link to posts
+  const previousArticle = data.previousArticle.nodes.find(node => 
+    isReview ? node.frontmatter.tags?.includes('reviews') : !node.frontmatter.tags?.includes('reviews')
+  ) || null;
+  const nextArticle = data.nextArticle.nodes.find(node => 
+    isReview ? node.frontmatter.tags?.includes('reviews') : !node.frontmatter.tags?.includes('reviews')
+  ) || null;
   
   // Get the first tag that's not "family" or "featured" for display
   const primaryTag = article.tags?.find(tag => tag !== 'family' && tag !== 'featured') || article.tags?.[0];
@@ -113,11 +121,21 @@ const ArticleTemplate: React.FC<PageProps<ArticleData>> = ({ data }) => {
           </header>
 
           <div className="hm-article-featured-image">
-            <OptimizedImage 
-              src={article.featuredImage} 
-              alt={article.title}
-              loading="eager"
-            />
+            {article.featuredImageLink ? (
+              <a href={article.featuredImageLink} target="_blank" rel="noopener noreferrer">
+                <OptimizedImage 
+                  src={article.featuredImage} 
+                  alt={article.title}
+                  loading="eager"
+                />
+              </a>
+            ) : (
+              <OptimizedImage 
+                src={article.featuredImage} 
+                alt={article.title}
+                loading="eager"
+              />
+            )}
           </div>
 
           {article.review && (
@@ -155,7 +173,7 @@ const ArticleTemplate: React.FC<PageProps<ArticleData>> = ({ data }) => {
               <nav className="hm-post-navigation">
                 {previousArticle && (
                   <div className="hm-nav-previous">
-                    <span className="hm-nav-label">Previous Article</span>
+                                        <span className="hm-nav-label">{isReview ? 'Previous Review' : 'Previous Article'}</span>
                     <Link to={getArticlePath(previousArticle.frontmatter.slug, !!previousArticle.frontmatter.series?.name, previousArticle.frontmatter.tags.includes('reviews'))} className="hm-nav-title">
                       {previousArticle.frontmatter.title}
                     </Link>
@@ -163,7 +181,7 @@ const ArticleTemplate: React.FC<PageProps<ArticleData>> = ({ data }) => {
                 )}
                 {nextArticle && (
                   <div className="hm-nav-next">
-                    <span className="hm-nav-label">Next Article</span>
+                                        <span className="hm-nav-label">{isReview ? 'Next Review' : 'Next Article'}</span>
                     <Link to={getArticlePath(nextArticle.frontmatter.slug, !!nextArticle.frontmatter.series?.name, nextArticle.frontmatter.tags.includes('reviews'))} className="hm-nav-title">
                       {nextArticle.frontmatter.title}
                     </Link>
@@ -194,6 +212,7 @@ export const query = graphql`
         title
         excerpt
         featuredImage
+        featuredImageLink
         tags
         author
         publishedAt
@@ -218,7 +237,7 @@ export const query = graphql`
     previousArticle: allMarkdownRemark(
       filter: { frontmatter: { publishedAt: { lt: $publishedAt }, draft: { ne: true } } }
       sort: { frontmatter: { publishedAt: DESC } }
-      limit: 1
+      limit: 10
     ) {
       nodes {
         frontmatter {
@@ -234,7 +253,7 @@ export const query = graphql`
     nextArticle: allMarkdownRemark(
       filter: { frontmatter: { publishedAt: { gt: $publishedAt }, draft: { ne: true } } }
       sort: { frontmatter: { publishedAt: ASC } }
-      limit: 1
+      limit: 10
     ) {
       nodes {
         frontmatter {

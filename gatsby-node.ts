@@ -3,6 +3,29 @@ import path from 'path';
 import fs from 'fs';
 
 /**
+ * @giscus/react uses Lit custom elements that call browser globals (window,
+ * document, customElements) at module evaluation time. embla-carousel also
+ * uses browser globals (self, window, ownerWindow) at module scope.
+ *
+ * Gatsby's SSR/HTML rendering runs in Node, where those globals don't exist.
+ * We replace these modules with null-returning stubs during SSR so they're
+ * never evaluated in the server bundle. The real modules are loaded
+ * client-only via dynamic import() or conditional require() in components.
+ */
+export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({ stage, actions, getConfig }) => {
+  if (stage === 'build-html' || stage === 'develop-html') {
+    actions.setWebpackConfig({
+      resolve: {
+        alias: {
+          '@giscus/react': path.resolve(__dirname, 'src/components/ssr-stubs/GiscusStub.tsx'),
+          'embla-carousel-react': path.resolve(__dirname, 'src/components/ssr-stubs/EmblaCarouselStub.tsx'),
+        },
+      },
+    });
+  }
+};
+
+/**
  * Define custom schema types to ensure draft field is queryable
  */
 export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] = ({ actions }) => {
@@ -288,6 +311,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
         author: article.frontmatter.author,
         publishedAt: article.frontmatter.publishedAt,
         seriesName: article.frontmatter.series?.name || null,
+        isReview,
       },
     });
   });

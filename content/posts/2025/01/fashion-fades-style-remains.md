@@ -12,7 +12,6 @@ tags:
 author: joseph-crawford
 publishedAt: '2025-01-13'
 updatedAt: '2025-01-13'
-featured: true
 ---
 
 Fashion is temporary—a season's hottest trend becomes next year's thrift store find. But style? Style is eternal. It's the throughline that connects your wardrobe choices across decades, the signature that makes people recognize your aesthetic even when you're experimenting.

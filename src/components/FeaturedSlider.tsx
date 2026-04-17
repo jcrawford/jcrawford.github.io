@@ -41,7 +41,7 @@ const FeaturedSlider: React.FC<FeaturedSliderProps> = ({ articles }) => {
   }
 
   const currentArticle = articles[currentSlide];
-  const isReview = currentArticle.tags.includes('reviews');
+  const isReview = currentArticle.tags.some(t => t.toLowerCase() === 'reviews');
   const articlePath = getArticlePath(currentArticle.slug, currentArticle.isSeries, isReview);
 
   return (

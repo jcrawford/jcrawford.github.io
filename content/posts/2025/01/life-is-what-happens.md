@@ -10,7 +10,6 @@ tags:
 author: joseph-crawford
 publishedAt: '2025-01-10'
 updatedAt: '2025-01-10'
-featured: true
 ---
 
 We spend so much time planning the perfect life—the career milestones, the Pinterest-worthy home, the curated social media presence. But the moments that truly define us often arrive unannounced, in the spaces between our carefully laid plans.

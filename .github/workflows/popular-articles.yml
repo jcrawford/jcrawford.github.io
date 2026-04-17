@@ -1,0 +1,44 @@
+name: Refresh popular articles data
+
+on:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+  GA4_SERVICE_ACCOUNT_EMAIL: ${{ secrets.GA4_SERVICE_ACCOUNT_EMAIL }}
+  GA4_SERVICE_ACCOUNT_PRIVATE_KEY: ${{ secrets.GA4_SERVICE_ACCOUNT_PRIVATE_KEY }}
+  GITHUB_TOKEN: ${{ secrets.POPULAR_POSTS_GITHUB_TOKEN }}
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+      - run: npm run generate:popular
+
+      - name: Commit updated popular article data
+        run: |
+          if git diff --quiet -- static/data/popular-articles.json; then
+            echo "No popular article changes"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add static/data/popular-articles.json
+          git commit -m "chore: refresh popular articles data"
+          git push origin HEAD:main

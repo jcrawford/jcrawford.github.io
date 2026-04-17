@@ -18,7 +18,7 @@ const HighlightedPost: React.FC<HighlightedPostProps> = ({
   tags,
   isSeries,
 }) => {
-  const isReview = tags.includes('reviews');
+  const isReview = tags.some(t => t.toLowerCase() === 'reviews');
   const articlePath = getArticlePath(slug, isSeries, isReview);
   
   return (

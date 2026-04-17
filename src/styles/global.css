@@ -796,6 +796,15 @@ html.hm-dark .hm-article {
   display: block;
 }
 
+.hm-article-featured-image a {
+  display: block;
+  transition: opacity 0.2s ease;
+}
+
+.hm-article-featured-image a:hover {
+  opacity: 0.85;
+}
+
 .hm-article-content {
   font-size: var(--hybridmag-font-size-md);
   line-height: var(--hybridmag-line-height-article);

@@ -28,7 +28,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
   authorName,
   isSeries,
 }) => {
-  const isReview = tags.includes('reviews');
+  const isReview = tags.some(t => t.toLowerCase() === 'reviews');
   const articlePath = getArticlePath(slug, isSeries, isReview);
   
   // Get the first tag that's not "family" or "featured" for display

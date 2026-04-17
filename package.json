@@ -10,7 +10,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "type-check": "tsc --noEmit",
-    "deploy": "gatsby build && gh-pages -d public -t",
+    "generate:popular": "node scripts/generate-popular-articles.js",
+    "deploy": "npm run generate:popular && gatsby build && gh-pages -d public -t",
     "download-images": "ts-node scripts/download-images.ts",
     "list-featured": "node scripts/list-featured.js",
     "clean-featured": "node scripts/clean-featured.js",
@@ -21,6 +22,8 @@
     "test:ci": "jest --ci --coverage --maxWorkers=2"
   },
   "dependencies": {
+    "@giscus/react": "^3.1.0",
+    "@loadable/component": "^5.16.7",
     "dayjs": "^1.11.10",
     "dotenv": "^17.2.3",
     "embla-carousel-react": "^8.6.0",

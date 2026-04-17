@@ -12,7 +12,6 @@ tags:
 author: joseph-crawford
 publishedAt: '2025-01-12'
 updatedAt: '2025-01-12'
-featured: true
 ---
 
 Fashion is often about seeing what others overlook. The way light catches a fabric, the perfect drape of a sleeve, the unexpected combination of textures—these details separate those who simply wear clothes from those who understand style.

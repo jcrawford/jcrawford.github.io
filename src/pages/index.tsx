@@ -65,92 +65,7 @@ interface IndexPageData {
 const IS_PRODUCTION = process.env.NODE_ENV === 'production';
 
 const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
-  // If production, render coming soon overlay (but still render layout underneath to avoid build errors)
-  if (IS_PRODUCTION) {
-    return (
-      <Layout>
-        <div style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          zIndex: 999999,
-          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
-        }}>
-          <style dangerouslySetInnerHTML={{
-            __html: `
-              body {
-                margin: 0;
-                padding: 0;
-                overflow: hidden !important;
-              }
-              
-              #___gatsby,
-              #gatsby-focus-wrapper {
-                height: 100%;
-                overflow: hidden !important;
-              }
-              
-              @keyframes fadeIn {
-                from { opacity: 0; transform: translateY(20px); }
-                to { opacity: 1; transform: translateY(0); }
-              }
-            `
-          }} />
-          <div style={{
-            textAlign: 'center',
-            padding: '2rem',
-            maxWidth: '600px',
-            animation: 'fadeIn 1s ease-in',
-            color: '#fff',
-          }}>
-            <div style={{
-              fontSize: '3rem',
-              marginBottom: '2rem',
-            }}>✨</div>
-            <h1 style={{
-              fontSize: 'clamp(2.5rem, 6vw, 4rem)',
-              fontWeight: 700,
-              marginBottom: '1.5rem',
-              lineHeight: 1.2,
-              textShadow: '0 2px 10px rgba(0, 0, 0, 0.2)',
-            }}>
-              Coming Soon
-            </h1>
-            <p style={{
-              fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)',
-              marginBottom: '3rem',
-              opacity: 0.95,
-              lineHeight: 1.6,
-              fontWeight: 300,
-            }}>
-              Something amazing is in the works. We're crafting a beautiful experience and can't wait to share it with you.
-            </p>
-            <div style={{
-              display: 'inline-block',
-              padding: '1rem 2.5rem',
-              background: 'rgba(255, 255, 255, 0.2)',
-              backdropFilter: 'blur(10px)',
-              borderRadius: '50px',
-              fontSize: '0.9rem',
-              fontWeight: 600,
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
-              border: '2px solid rgba(255, 255, 255, 0.3)',
-              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
-            }}>
-              Stay Tuned
-            </div>
-          </div>
-        </div>
-      </Layout>
-    );
-  }
+  // Production homepage is live — no more Coming Soon overlay
 
   // Development: Show full homepage (excluding family posts)
   const allTags = data.allTagsJson.nodes;
@@ -181,9 +96,11 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
     .map(slug => allTags.find(tag => tag.slug === slug))
     .filter((tag): tag is Tag => tag !== undefined);
   
-  // Filter out family posts from homepage and articles with null frontmatter
+  // Filter out family posts and reviews from homepage — reviews have their own page
   const articles = data.allMarkdownRemark.nodes.filter(
-    article => article.frontmatter && !article.frontmatter.tags?.includes('family')
+    article => article.frontmatter && 
+      !article.frontmatter.tags?.some(t => t.toLowerCase() === 'family') &&
+      !article.frontmatter.tags?.some(t => t.toLowerCase() === 'reviews')
   );
 
   // Group articles by series
@@ -361,17 +278,6 @@ export default IndexPage;
 
 export const Head: HeadFC = () => {
   // Show Coming Soon title in production
-  if (IS_PRODUCTION) {
-    return (
-      <>
-        <title>Coming Soon | Joseph Crawford</title>
-        <meta name="description" content="Something amazing is coming soon." />
-        <meta name="robots" content="noindex, nofollow" />
-      </>
-    );
-  }
-  
-  // Regular SEO in development
   return <SEO />;
 };
 
