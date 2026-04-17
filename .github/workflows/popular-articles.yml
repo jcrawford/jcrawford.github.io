@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main
+          ref: master
 
       - uses: actions/setup-node@v4
         with:
@@ -41,4 +41,4 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add static/data/popular-articles.json
           git commit -m "chore: refresh popular articles data"
-          git push origin HEAD:main
+          git push origin HEAD:master
