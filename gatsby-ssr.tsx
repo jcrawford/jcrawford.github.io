@@ -18,7 +18,7 @@ export const onRenderBody = ({ setHeadComponents }: any) => {
       key="agent-skills"
       rel="agent-skills"
       type="application/json"
-      href="/.well-known/agent-skills.json"
+      href="/agent-skills.json"
     />,
   ]);
 };

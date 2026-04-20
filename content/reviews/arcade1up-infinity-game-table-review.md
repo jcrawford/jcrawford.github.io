@@ -6,7 +6,7 @@ excerpt: >-
   Game Table. It's a conversation starter with animated tablecloth themes and
   solid build quality, but touch lag, a locked ecosystem, and questions about
   long-term value keep this from being the dream digital game table I hoped for.
-featuredImage: /images/content/reviews/arcade1up-infinity-game-table-review/featured.jpg
+featuredImage: /images/content/reviews/arcade1up-infinity-game-table-review/featured.png
 tags:
   - reviews
   - gaming

@@ -5,7 +5,7 @@ excerpt: >-
   A detailed look at the Patrick Adair Designs Stardust ring with carbon fiber
   and meteorite inlay. I love the design and comfort, and while there were some
   bumps along the way, the company ultimately made things right.
-featuredImage: /images/content/reviews/patrick-adair-designs-review/featured.jpg
+featuredImage: /images/content/reviews/patrick-adair-designs-review/featured.png
 tags:
   - reviews
   - accessories
