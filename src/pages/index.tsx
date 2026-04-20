@@ -7,6 +7,7 @@ import TagTabs from '../components/TagTabs';
 import ArticleCard from '../components/ArticleCard';
 import Sidebar from '../components/Sidebar';
 import SEO from '../components/SEO';
+import { hasTag } from '../utils/tagUtils';
 import '../styles/empty-featured.css';
 
 interface ArticleFrontmatter {
@@ -225,9 +226,53 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
   // Exclude ALL featured posts from tag tabs and the article grid below
   const featuredSlugs = sortedFeaturedPosts.map(article => article.frontmatter.slug);
 
-  // Recent articles: non-featured posts only (skip the featured section entirely)
+  // Also exclude anything already shown in the tag tabs to avoid duplicate cards below
+  const tagTabDisplayedSlugs = new Set<string>();
+
+  tags.slice(0, 4).forEach((tag) => {
+    const tagArticles = articles.filter(
+      (article) => hasTag(article.frontmatter.tags || [], tag.slug) && !featuredSlugs.includes(article.frontmatter.slug)
+    );
+
+    const tabSeriesMap = new Map<string, Article>();
+    const tabStandaloneArticles: Article[] = [];
+
+    tagArticles.forEach((article) => {
+      if (article.frontmatter.series?.name) {
+        const seriesName = article.frontmatter.series.name;
+        const existing = tabSeriesMap.get(seriesName);
+
+        if (!existing) {
+          tabSeriesMap.set(seriesName, article);
+        } else {
+          const currentOrder = article.frontmatter.series.order ?? Infinity;
+          const existingOrder = existing.frontmatter.series?.order ?? Infinity;
+
+          if (
+            currentOrder < existingOrder ||
+            (currentOrder === existingOrder &&
+              new Date(article.frontmatter.publishedAt) < new Date(existing.frontmatter.publishedAt))
+          ) {
+            tabSeriesMap.set(seriesName, article);
+          }
+        }
+      } else {
+        tabStandaloneArticles.push(article);
+      }
+    });
+
+    [...Array.from(tabSeriesMap.values()), ...tabStandaloneArticles]
+      .slice(0, 4)
+      .forEach((article) => tagTabDisplayedSlugs.add(article.frontmatter.slug));
+  });
+
+  // Recent articles: non-featured posts only, excluding anything already shown above
   const recentArticles = allDisplayArticles
-    .filter(article => article.frontmatter.featured !== true)
+    .filter(
+      (article) =>
+        article.frontmatter.featured !== true &&
+        !tagTabDisplayedSlugs.has(article.frontmatter.slug)
+    )
     .slice(0, 12)
     .map(mapArticleForSlider);
 
