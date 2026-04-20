@@ -101,6 +101,35 @@ Some feel like shallow mobile ports. Others have mechanics that don't translate 
 
 The game library has grown over five years, which is good. But quantity doesn't equal quality, and I wish more titles took full advantage of the table format rather than feeling like stretched phone games.
 
+## Online Multiplayer: Technically Exists, Practically Broken
+
+I need to address the online multiplayer feature because it's a common question from potential buyers.
+
+**Yes, online multiplayer is available.** There's a "Connect" button in the interface that's supposed to match you with other players over the internet. This isn't local multiplayer — it's meant to find random opponents worldwide.
+
+**Here's my reality:** In five years of ownership, I have **never successfully connected to another player** through this feature. Not once.
+
+I've tried multiple times. In practice, each attempt lasts around a minute before the table gives up and fails to find a match. It never successfully connects. The matchmaking simply never completes.
+
+I've recorded video of this exact experience across multiple games: the table sitting on the Connect screen for about a minute each time, then failing to find a match. I've included that footage below so you can see this isn't just a one-off glitch — it's the consistent behavior I've experienced across years of attempts.
+
+<video controls width="100%" style="max-width: 800px; margin: 2rem 0;">
+  <source src="/videos/content/reviews/arcade1up-infinity-game-table-review/multiplayer-matchmaking.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<p style="font-size: 0.9em; color: #666; font-style: italic; margin-top: -1rem;">Video: The Infinity Game Table's Connect screen attempting online matchmaking across multiple games. Each attempt runs for roughly a minute before no match is found.</p>
+
+Now, I should note: I live in a reasonably populated area with good internet. This isn't a connection issue on my end. Other devices connect fine. The problem appears to be either:
+
+1. **Dead servers** — Arcade1Up's matchmaking infrastructure may no longer be actively maintained
+2. **Empty player pool** — There may simply be nobody else online trying to connect
+3. **Broken matchmaking** — The feature itself may have bugs that prevent connections
+
+Whatever the cause, the practical result is the same: **online multiplayer exists on paper, but not in practice.** If you're buying this table hoping to play games against random opponents online, don't count on it working.
+
+Local multiplayer — playing with people in the same room — works perfectly fine. That's actually where this table shines: when you have family or friends gathered around physically. But the promise of online connectivity? That's been a complete disappointment in my experience.
+
 ## The Tablecloth Themes: The Real Star of the Show
 
 ![Tablecloth Theme](/images/content/reviews/arcade1up-infinity-game-table-review/tablecloth-cafe-theme.jpg "The café tablecloth theme with donut and coffee cup featuring infinity symbol latte art")
