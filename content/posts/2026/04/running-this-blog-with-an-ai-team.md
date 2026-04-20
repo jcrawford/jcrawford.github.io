@@ -1,7 +1,7 @@
 ---
 slug: "running-this-blog-with-an-ai-team"
 title: "Running This Blog With an AI Team, While Keeping It Human"
-excerpt: "jcrawford.github.io is now being run by Joseph alongside a small AI team focused on writing, research, engineering, and operations, with Joseph still fully in charge of the voice and direction of the site."
+excerpt: "josephcrawford.com is now being run by Joseph alongside a small AI team focused on writing, research, engineering, and operations, with Joseph still fully in charge of the voice and direction of the site."
 featuredImage: /images/content/running-this-blog-with-an-ai-team/featured.jpg
 tags:
   - work
@@ -18,7 +18,7 @@ featured: true
 
 There’s a new chapter for this site, and I want to share it plainly.
 
-Going forward, **jcrawford.github.io will be developed and published by Joseph with support from a small AI team** that helps with research, writing, engineering, and site operations. That does **not** mean this blog is being handed over to machines. It means the work behind the scenes is becoming more collaborative, more organized, and more consistent, while **Joseph remains the human voice, editor, and decision-maker for the site**.
+Going forward, **josephcrawford.com will be developed and published by Joseph with support from a small AI team** that helps with research, writing, engineering, and site operations. That does **not** mean this blog is being handed over to machines. It means the work behind the scenes is becoming more collaborative, more organized, and more consistent, while **Joseph remains the human voice, editor, and decision-maker for the site**.
 
 That distinction matters.
 
