@@ -1,6 +1,7 @@
 import type { GatsbyNode } from 'gatsby';
 import path from 'path';
 import fs from 'fs';
+import { normalizeTagSlug } from './src/utils/tagUtils';
 
 /**
  * @giscus/react uses Lit custom elements that call browser globals (window,
@@ -35,6 +36,17 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
     type MarkdownRemarkFrontmatter {
       draft: Boolean
       series: SeriesFrontmatter
+      review: MarkdownRemarkFrontmatterReview
+    }
+
+    type MarkdownRemarkFrontmatterReview {
+      rating: Int
+      pros: [String]
+      cons: [String]
+      price: String
+      brand: String
+      productUrl: String
+      affiliateLink: String
     }
 
     type SeriesFrontmatter {
@@ -343,25 +355,48 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
   const articlesPerPage = 15;
 
   tags.forEach((tag) => {
-    const tagArticles = articles.filter((article) => article.frontmatter.tags?.includes(tag.slug));
+    const tagArticles = articles.filter((article) =>
+      article.frontmatter.tags?.some((articleTag) => normalizeTagSlug(articleTag) === tag.slug)
+    );
     const numPages = Math.ceil(tagArticles.length / articlesPerPage);
+
+    const tagAliases = Array.from(new Set([
+      tag.name,
+      ...tagArticles.flatMap((article) =>
+        (article.frontmatter.tags || []).filter((articleTag) => normalizeTagSlug(articleTag) === tag.slug)
+      ),
+    ])).filter((alias) => alias && alias !== tag.slug);
 
     Array.from({ length: numPages }).forEach((_, i) => {
       const currentPage = i + 1;
-      const pagePath = currentPage === 1 
+      const canonicalPagePath = currentPage === 1 
         ? `/tag/${tag.slug}` 
         : `/tag/${tag.slug}/${currentPage}`;
+      const pageContext = {
+        slug: tag.slug,
+        articleSlugs: tagArticles.map((article) => article.frontmatter.slug),
+        limit: articlesPerPage,
+        skip: i * articlesPerPage,
+        numPages,
+        currentPage,
+      };
 
       createPage({
-        path: pagePath,
+        path: canonicalPagePath,
         component: tagTemplate,
-        context: {
-          slug: tag.slug,
-          limit: articlesPerPage,
-          skip: i * articlesPerPage,
-          numPages,
-          currentPage,
-        },
+        context: pageContext,
+      });
+
+      tagAliases.forEach((alias) => {
+        const aliasPagePath = currentPage === 1
+          ? `/tag/${alias}`
+          : `/tag/${alias}/${currentPage}`;
+
+        createPage({
+          path: aliasPagePath,
+          component: tagTemplate,
+          context: pageContext,
+        });
       });
     });
 
