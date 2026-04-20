@@ -34,6 +34,26 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
   createTypes(`
     type MarkdownRemarkFrontmatter {
       draft: Boolean
+      series: SeriesFrontmatter
+    }
+
+    type SeriesFrontmatter {
+      name: String
+      order: Int
+      prev: String
+      next: String
+      references: [SeriesReferenceFrontmatter]
+      attachments: [SeriesAttachmentFrontmatter]
+    }
+
+    type SeriesReferenceFrontmatter {
+      url: String
+      title: String
+    }
+
+    type SeriesAttachmentFrontmatter {
+      filename: String
+      title: String
     }
 
     type AuthorsJson implements Node {
