@@ -33,10 +33,9 @@ Allow: /
 User-agent: Meta-ExternalAgent
 Allow: /
 
+# Content Signals for AI agents
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
+
 # Sitemap location
 Sitemap: https://josephcrawford.com/sitemap-index.xml
-
-# Content signals for AI agents
-# Agent-ready: llms.txt available
-# Content-policy: public blog content, attribution appreciated
 

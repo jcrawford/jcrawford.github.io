@@ -96,11 +96,10 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
     .map(slug => allTags.find(tag => tag.slug === slug))
     .filter((tag): tag is Tag => tag !== undefined);
   
-  // Filter out family posts and reviews from homepage — reviews have their own page
+  // Filter out family posts from homepage — reviews are allowed in the main feed but not in featured
   const articles = data.allMarkdownRemark.nodes.filter(
     article => article.frontmatter && 
-      !article.frontmatter.tags?.some(t => t.toLowerCase() === 'family') &&
-      !article.frontmatter.tags?.some(t => t.toLowerCase() === 'reviews')
+      !article.frontmatter.tags?.some(t => t.toLowerCase() === 'family')
   );
 
   // Group articles by series

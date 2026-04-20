@@ -2,7 +2,7 @@
 slug: flexispot-e7-plus
 title: 'FlexiSpot E7 Plus Standing Desk Review: 8 Months of Daily Use'
 excerpt: A comprehensive review of the FlexiSpot E7 Plus four-leg standing desk after eight months of intensive use in a busy home office environment.
-featuredImage: /images/content/reviews/flexispot-e7-plus/featured.jpg
+featuredImage: /images/content/reviews/flexispot-e7-plus/featured.png
 tags:
   - reviews
   - shopping
