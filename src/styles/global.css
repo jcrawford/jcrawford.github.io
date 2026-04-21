@@ -549,8 +549,8 @@ html.hm-dark .hm-article-card-image {
   
   .hm-article-card-image {
     flex-shrink: 0;
-    width: 38%;
-    min-width: 240px;
+    width: 32%;
+    min-width: 200px;
     aspect-ratio: auto;
     align-self: stretch;
   }
