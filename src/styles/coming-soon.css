@@ -1,0 +1,71 @@
+/* Coming Soon Page Styles */
+
+.coming-soon-page {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1rem;
+}
+
+.coming-soon-container {
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+.coming-soon-content {
+  background: var(--hybridmag-color-bg-cl-sep-content);
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.coming-soon-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--hybridmag-color-text);
+  line-height: 1.2;
+}
+
+.coming-soon-description {
+  font-size: 1.25rem;
+  color: var(--hybridmag-color-text-light);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.coming-soon-divider {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--hybridmag-color-accent), var(--hybridmag-color-accent-secondary));
+  margin: 0 auto 2rem;
+  border-radius: 2px;
+}
+
+.coming-soon-tagline {
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--hybridmag-color-text-light);
+  opacity: 0.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .coming-soon-page {
+    padding: 2rem 1rem;
+  }
+
+  .coming-soon-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .coming-soon-title {
+    font-size: 2.25rem;
+  }
+
+  .coming-soon-description {
+    font-size: 1.1rem;
+  }
+}
