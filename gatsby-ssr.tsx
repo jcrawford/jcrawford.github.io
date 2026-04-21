@@ -1,6 +1,8 @@
 import React from 'react';
 
-export const onRenderBody = ({ setHeadComponents }: any) => {
+export const onRenderBody = ({ setHeadComponents, setHtmlAttributes }: any) => {
+  setHtmlAttributes({ className: 'hm-dark' });
+
   setHeadComponents([
     <link
       key="llms-txt"

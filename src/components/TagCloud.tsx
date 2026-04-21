@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
+import { hasTag } from '../utils/tagUtils';
 
 interface TagCloudItem {
   slug: string;
@@ -48,7 +49,7 @@ const TagCloud: React.FC = () => {
   
   tags.forEach((tag: { slug: string; name: string }) => {
     const count = articles.filter(
-      (article: any) => article.frontmatter.tags?.includes(tag.slug)
+      (article: any) => hasTag(article.frontmatter.tags || [], tag.slug)
     ).length;
     
     if (count > 0) {

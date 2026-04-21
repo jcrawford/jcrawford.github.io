@@ -1485,7 +1485,7 @@ html.hm-dark .hm-article {
 @media (min-width: 768px) {
   .hm-highlighted-posts {
     margin: 0;
-    height: 380px;
+    height: 460px;
     display: flex;
     flex-direction: column;
     gap: 2px;
@@ -1814,19 +1814,19 @@ li.hm-tab a {
 
 .hm-slide-holder {
   position: relative;
-  height: 380px;
+  height: 460px;
   overflow: hidden;
 }
 
 @media (max-width: 768px) {
   .hm-slide-holder {
-    height: 280px;
+    height: 340px;
   }
 }
 
 @media (max-width: 480px) {
   .hm-slide-holder {
-    height: 220px;
+    height: 260px;
   }
 }
 
@@ -1841,20 +1841,18 @@ li.hm-tab a {
 .hm-slide-image img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
 }
 
 @media (max-width: 768px) {
   .hm-slide-image img {
-    object-fit: contain;
     object-position: center;
   }
 }
 
 @media (max-width: 480px) {
   .hm-slide-image img {
-    object-fit: contain;
     object-position: center;
   }
 }
@@ -2628,7 +2626,6 @@ html.hm-dark .hm-mobile-menu-item {
 .hm-mobile-menu-social {
   margin-top: 30px;
   padding-top: 20px;
-  border-top: 1px solid var(--hybridmag-color-border, #e0e0e0);
   display: flex;
   gap: 20px;
 }
@@ -2654,9 +2651,6 @@ html.hm-dark .hm-mobile-menu-social a {
   color: var(--hybridmag-color-text-main, #ffffff);
 }
 
-html.hm-dark .hm-mobile-menu-social {
-  border-top-color: #3f4549;
-}
 
 /* Comments Section (Giscus) */
 .hm-comments {

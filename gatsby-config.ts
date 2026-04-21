@@ -12,12 +12,10 @@ const config: GatsbyConfig = {
     },
     navigation: [
       { name: 'Home', path: '/' },
-      { name: 'Work', path: '/tag/work' },
-      { name: 'Lifestyle', path: '/tag/lifestyle' },
-      { name: 'Food', path: '/tag/food' },
       { name: 'Family', path: '/tag/family' },
       { name: 'Reviews', path: '/tag/reviews' },
       { name: 'Resume', path: '/resume' },
+      { name: 'Work', path: '/tag/work' },
     ],
     footerWidgets: [
       {

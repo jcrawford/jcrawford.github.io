@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import OptimizedImage from './OptimizedImage';
 import { formatDate } from '../utils/dateUtils';
 import { getArticlePath } from '../utils/articlePath';
+import { hasTag } from '../utils/tagUtils';
 
 interface Article {
   id: string;
@@ -41,7 +42,7 @@ const TagTabs: React.FC<TagTabsProps> = ({ tags, articles, excludeSlugs = [] }) 
     // Filter by tag AND exclude featured articles
     const tagArticles = articles.filter(
       (article) => 
-        article.frontmatter.tags?.includes(tagSlug) &&
+        hasTag(article.frontmatter.tags || [], tagSlug) &&
         !excludeSlugs.includes(article.frontmatter.slug)
     );
 

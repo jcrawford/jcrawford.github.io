@@ -40,6 +40,13 @@
     "name": "Reviews",
     "description": "In-depth reviews of products, software, and tools with ratings, pros/cons, and recommendations.",
     "featured": true
+  },
+  {
+    "id": "7",
+    "slug": "ai",
+    "name": "AI",
+    "description": "Articles about AI, agents, language models, tooling, and practical experiments using artificial intelligence.",
+    "featured": false
   }
 ]
 
