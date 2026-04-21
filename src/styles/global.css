@@ -561,6 +561,14 @@ html.hm-dark .hm-article-card-image {
   }
 }
 
+/* Mid-range desktop with sidebar: reduce image width to prevent cutoff */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .hm-article-card-image {
+    width: 24%;
+    min-width: 160px;
+  }
+}
+
 /* Article Grid */
 .hm-article-grid {
   display: grid;
