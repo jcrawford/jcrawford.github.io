@@ -38,11 +38,20 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
   return (
     <article className="hm-article-card">
       <Link to={articlePath} className="hm-article-card-image">
-        <OptimizedImage 
-          src={featuredImage} 
-          alt={title}
-          loading="lazy"
-        />
+        <span className="hm-article-card-image-bg" aria-hidden="true">
+          <OptimizedImage 
+            src={featuredImage} 
+            alt=""
+            loading="lazy"
+          />
+        </span>
+        <span className="hm-article-card-image-main">
+          <OptimizedImage 
+            src={featuredImage} 
+            alt={title}
+            loading="lazy"
+          />
+        </span>
       </Link>
       
       <div className="hm-article-card-content">
