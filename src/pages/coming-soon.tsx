@@ -4,7 +4,7 @@ import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import '../styles/coming-soon.css';
 
-const IndexPage: React.FC = () => {
+const ComingSoonPage: React.FC = () => {
   return (
     <Layout className="coming-soon-page">
       <div className="coming-soon-container">
@@ -23,7 +23,7 @@ const IndexPage: React.FC = () => {
   );
 };
 
-export default IndexPage;
+export default ComingSoonPage;
 
 export const Head: HeadFC = () => (
   <SEO title="Coming Soon" />
