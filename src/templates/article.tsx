@@ -160,9 +160,9 @@ const ArticleTemplate: React.FC<PageProps<ArticleData>> = ({ data, pageContext }
             <div className="hm-article-tags">
               <span className="hm-article-tags-label">Tags:</span>
               {article.tags.map((tag) => (
-                <span key={tag} className="hm-article-tag">
+                <Link key={tag} to={`/tag/${normalizeTagSlug(tag)}`} className="hm-article-tag">
                   {tag}
-                </span>
+                </Link>
               ))}
             </div>
           )}
