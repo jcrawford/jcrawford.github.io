@@ -2050,8 +2050,8 @@ body .hm-cl-sep #secondary .widget {
 
 .hm-sidebar .hms-thumb {
   flex-shrink: 0;
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   overflow: hidden;
   border-radius: var(--hybridmag-global-border-radius);
 }
