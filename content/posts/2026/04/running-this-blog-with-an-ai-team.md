@@ -4,7 +4,6 @@ title: "Running This Blog With an AI Team, While Keeping It Human"
 excerpt: "josephcrawford.com is now being run by Joseph alongside a small AI team focused on writing, research, engineering, and operations, with Joseph still fully in charge of the voice and direction of the site."
 featuredImage: /images/content/running-this-blog-with-an-ai-team/featured.jpg
 tags:
-  - work
   - ai
   - blog
   - developer-tools

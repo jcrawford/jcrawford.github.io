@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import { formatDate } from '../utils/dateUtils';
 import { truncateText } from '../utils/textUtils';
 import { getArticlePath } from '../utils/articlePath';
+import { hasTag, normalizeTagSlug, tagMatches } from '../utils/tagUtils';
 import OptimizedImage from './OptimizedImage';
 
 interface ArticleCardProps {
@@ -28,11 +29,11 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
   authorName,
   isSeries,
 }) => {
-  const isReview = tags.some(t => t.toLowerCase() === 'reviews');
+  const isReview = hasTag(tags, 'reviews');
   const articlePath = getArticlePath(slug, isSeries, isReview);
   
   // Get the first tag that's not "family" or "featured" for display
-  const primaryTag = tags.find(tag => tag !== 'family' && tag !== 'featured') || tags[0];
+  const primaryTag = tags.find(tag => !tagMatches(tag, 'family') && !tagMatches(tag, 'featured')) || tags[0];
   
   return (
     <article className="hm-article-card">
@@ -47,7 +48,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
       <div className="hm-article-card-content">
         {primaryTag && (
           <Link 
-            to={`/tag/${primaryTag}`}
+            to={`/tag/${normalizeTagSlug(primaryTag)}`}
             className="hm-article-card-category"
           >
             {primaryTag}

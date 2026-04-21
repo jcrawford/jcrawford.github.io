@@ -8,6 +8,7 @@ import { formatDate } from '../utils/dateUtils';
 import OptimizedImage from '../components/OptimizedImage';
 import SEO from '../components/SEO';
 import Comments from '../components/Comments';
+import { normalizeTagSlug, tagMatches } from '../utils/tagUtils';
 import type { SeriesMetadata, SeriesArticle } from '../types';
 
 interface SeriesArticleData {
@@ -63,7 +64,7 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData>> = ({ data })
   const author = data.authorsJson;
   
   // Get the first tag that's not "family" or "featured" for display
-  const primaryTag = article.tags?.find(tag => tag !== 'family' && tag !== 'featured') || article.tags?.[0];
+  const primaryTag = article.tags?.find(tag => !tagMatches(tag, 'family') && !tagMatches(tag, 'featured')) || article.tags?.[0];
 
   // Prepare series metadata
   const seriesMetadata: SeriesMetadata = {
@@ -142,7 +143,7 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData>> = ({ data })
               <header className="hm-article-header">
                 {primaryTag && (
                   <Link 
-                    to={`/tag/${primaryTag}`}
+                    to={`/tag/${normalizeTagSlug(primaryTag)}`}
                     className="hm-article-category"
                   >
                     {primaryTag}

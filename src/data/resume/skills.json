@@ -1,5 +1,9 @@
 [
   {
+    "name": "AI",
+    "proficiency": 55
+  },
+  {
     "name": "AWS",
     "proficiency": 75
   },

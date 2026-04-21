@@ -8,6 +8,7 @@ import SEO from '../components/SEO';
 import ReviewBox from '../components/ReviewBox';
 import Comments from '../components/Comments';
 import { getArticlePath } from '../utils/articlePath';
+import { hasTag, normalizeTagSlug, tagMatches } from '../utils/tagUtils';
 
 interface ArticleData {
   markdownRemark: {
@@ -74,14 +75,14 @@ const ArticleTemplate: React.FC<PageProps<ArticleData>> = ({ data, pageContext }
   
   // Filter navigation: reviews only link to reviews, posts only link to posts
   const previousArticle = data.previousArticle.nodes.find(node => 
-    isReview ? node.frontmatter.tags?.includes('reviews') : !node.frontmatter.tags?.includes('reviews')
+    isReview ? hasTag(node.frontmatter.tags || [], 'reviews') : !hasTag(node.frontmatter.tags || [], 'reviews')
   ) || null;
   const nextArticle = data.nextArticle.nodes.find(node => 
-    isReview ? node.frontmatter.tags?.includes('reviews') : !node.frontmatter.tags?.includes('reviews')
+    isReview ? hasTag(node.frontmatter.tags || [], 'reviews') : !hasTag(node.frontmatter.tags || [], 'reviews')
   ) || null;
   
   // Get the first tag that's not "family" or "featured" for display
-  const primaryTag = article.tags?.find(tag => tag !== 'family' && tag !== 'featured') || article.tags?.[0];
+  const primaryTag = article.tags?.find(tag => !tagMatches(tag, 'family') && !tagMatches(tag, 'featured')) || article.tags?.[0];
 
   return (
     <Layout>
@@ -92,7 +93,7 @@ const ArticleTemplate: React.FC<PageProps<ArticleData>> = ({ data, pageContext }
           <header className="hm-article-header">
             {primaryTag && (
               <Link 
-                to={`/tag/${primaryTag}`}
+                to={`/tag/${normalizeTagSlug(primaryTag)}`}
                 className="hm-article-category"
               >
                 {primaryTag}
@@ -174,7 +175,7 @@ const ArticleTemplate: React.FC<PageProps<ArticleData>> = ({ data, pageContext }
                 {previousArticle && (
                   <div className="hm-nav-previous">
                                         <span className="hm-nav-label">{isReview ? 'Previous Review' : 'Previous Article'}</span>
-                    <Link to={getArticlePath(previousArticle.frontmatter.slug, !!previousArticle.frontmatter.series?.name, previousArticle.frontmatter.tags.includes('reviews'))} className="hm-nav-title">
+                    <Link to={getArticlePath(previousArticle.frontmatter.slug, !!previousArticle.frontmatter.series?.name, hasTag(previousArticle.frontmatter.tags || [], 'reviews'))} className="hm-nav-title">
                       {previousArticle.frontmatter.title}
                     </Link>
                   </div>
@@ -182,7 +183,7 @@ const ArticleTemplate: React.FC<PageProps<ArticleData>> = ({ data, pageContext }
                 {nextArticle && (
                   <div className="hm-nav-next">
                                         <span className="hm-nav-label">{isReview ? 'Next Review' : 'Next Article'}</span>
-                    <Link to={getArticlePath(nextArticle.frontmatter.slug, !!nextArticle.frontmatter.series?.name, nextArticle.frontmatter.tags.includes('reviews'))} className="hm-nav-title">
+                    <Link to={getArticlePath(nextArticle.frontmatter.slug, !!nextArticle.frontmatter.series?.name, hasTag(nextArticle.frontmatter.tags || [], 'reviews'))} className="hm-nav-title">
                       {nextArticle.frontmatter.title}
                     </Link>
                   </div>
@@ -270,7 +271,7 @@ export const query = graphql`
 `;
 
 export const Head: HeadFC<ArticleData> = ({ data }) => {
-  const isReview = data.markdownRemark.frontmatter.tags.includes('reviews');
+  const isReview = hasTag(data.markdownRemark.frontmatter.tags || [], 'reviews');
   return (
     <SEO 
       title={data.markdownRemark.frontmatter.title}

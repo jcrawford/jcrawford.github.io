@@ -45,8 +45,14 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
-    const theme = savedTheme === 'dark' ? 'dark' : 'light';
-    setIsDarkMode(savedTheme === 'dark');
+    const theme = savedTheme === 'light' ? 'light' : 'dark';
+    setIsDarkMode(theme === 'dark');
+
+    if (theme === 'dark') {
+      document.documentElement.classList.add('hm-dark');
+    } else {
+      document.documentElement.classList.remove('hm-dark');
+    }
     
     // Set user property for theme preference
     if (typeof window !== 'undefined' && window.gtag) {

@@ -1,6 +1,8 @@
 ---
 slug: arcade1up-infinity-game-table-review
-title: 'Arcade1Up Infinity Game Table (32-inch) Review: Cool Concept, Compromised Reality After 5 Years'
+title: >-
+  Arcade1Up Infinity Game Table (32-inch) Review: Cool Concept, Compromised
+  Reality After 5 Years
 excerpt: >-
   After five years of ownership, here's an honest look at the Arcade1Up Infinity
   Game Table. It's a conversation starter with animated tablecloth themes and
@@ -15,11 +17,10 @@ tags:
 author: joseph-crawford
 publishedAt: '2026-04-11'
 updatedAt: '2026-04-11'
-featured: true
 review:
   rating: 3
   pros:
-    - 'Striking conversation piece when guests see it animated'
+    - Striking conversation piece when guests see it animated
     - 'Animated tablecloth themes with moving elements (steam, holiday rotations)'
     - Kids enjoy board games and some titles
     - 'Excellent build quality: heavy, stable, no tip-over risk'
@@ -29,9 +30,12 @@ review:
     - 'Noticeable touch lag, especially in fast-paced games like air hockey'
     - Locked ecosystem — cannot root or install third-party Android games
     - Game costs add up over time despite individual prices being reasonable
-    - Usage frequency doesn't justify the ~$1,000 price point for many families
+    - 'Usage frequency doesn''t justify the ~$1,000 price point for many families'
     - Most games beyond trivia are not particularly engaging
     - Underside screws loosen repeatedly and need regular tightening
+    - >-
+      Online multiplayer matchmaking is non-functional — never connects after
+      30+ minute waits
   price: ~$999
   brand: Arcade1Up
   productUrl: 'https://arcade1up.com'
@@ -109,18 +113,20 @@ I need to address the online multiplayer feature because it's a common question 
 
 **Here's my reality:** In five years of ownership, I have **never successfully connected to another player** through this feature. Not once.
 
-I've tried multiple times. In practice, each attempt lasts around a minute before the table gives up and fails to find a match. It never successfully connects. The matchmaking simply never completes.
+I've tried multiple times across different games. The matchmaking should happen within about a minute — that's a reasonable expectation for any matching service. Instead, I sit there waiting, nothing happens, and I eventually cancel out of frustration. I've also let it run for 30+ minutes in extended testing sessions just to see if it would eventually find something — it never did. No matches found, ever.
 
-I've recorded video of this exact experience across multiple games: the table sitting on the Connect screen for about a minute each time, then failing to find a match. I've included that footage below so you can see this isn't just a one-off glitch — it's the consistent behavior I've experienced across years of attempts.
+I have excellent internet connectivity, and every other device in my house connects to matchmaking services without issue. The problem is specific to this table.
 
-<video controls width="100%" style="max-width: 800px; margin: 2rem 0;">
+I've recorded video of this exact experience across multiple games: the table sitting on the Connect screen, waiting for a match that never comes. The footage below shows roughly a minute of waiting per game — I've canceled each attempt because there's no point in waiting indefinitely when the system should match within a minute.
+
+<video controls playsinline style="width: 100%; max-width: 500px; margin: 2rem 0; display: block;">
   <source src="/videos/content/reviews/arcade1up-infinity-game-table-review/multiplayer-matchmaking.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
-<p style="font-size: 0.9em; color: #666; font-style: italic; margin-top: -1rem;">Video: The Infinity Game Table's Connect screen attempting online matchmaking across multiple games. Each attempt runs for roughly a minute before no match is found.</p>
+<p style="font-size: 0.9em; color: #666; font-style: italic; margin-top: -1rem;">Video: The Infinity Game Table's Connect screen attempting online matchmaking. Each attempt shown runs for roughly a minute before I cancel out of frustration. Extended testing (30+ minutes) yields the same result — no matches found.</p>
 
-Now, I should note: I live in a reasonably populated area with good internet. This isn't a connection issue on my end. Other devices connect fine. The problem appears to be either:
+The problem appears to be one of three things:
 
 1. **Dead servers** — Arcade1Up's matchmaking infrastructure may no longer be actively maintained
 2. **Empty player pool** — There may simply be nobody else online trying to connect
@@ -128,7 +134,7 @@ Now, I should note: I live in a reasonably populated area with good internet. Th
 
 Whatever the cause, the practical result is the same: **online multiplayer exists on paper, but not in practice.** If you're buying this table hoping to play games against random opponents online, don't count on it working.
 
-Local multiplayer — playing with people in the same room — works perfectly fine. That's actually where this table shines: when you have family or friends gathered around physically. But the promise of online connectivity? That's been a complete disappointment in my experience.
+Local multiplayer — playing with people in the same room — works perfectly fine. That's actually where this table shines: when you have family or friends gathered around physically. But the promise of online connectivity? That's been a complete disappointment.
 
 ## The Tablecloth Themes: The Real Star of the Show
 
@@ -156,72 +162,32 @@ There is one recurring annoyance, though: **the screws on the underside continuo
 
 ## The Conversation Piece Factor
 
-I'll say it again because it matters: **the Infinity Game Table is always a conversation piece**. When guests walk in and see it animated — especially with one of the animated tablecloth themes running — they're intrigued. They ask about it. They want to try it.
+When guests walk in and see the table animated — especially with one of the animated tablecloth themes running — they're intrigued. They ask about it. They want to try it.
 
 For hosting and entertaining, this is a genuine benefit. It's something different, something memorable. If you love having people over and want a unique focal point, the table delivers on that front.
 
 But a conversation piece is different from a frequently-used entertainment system. One impresses visitors. The other serves your family daily. The Infinity Game Table is better at the former than the latter.
 
-## What Other Owners Say: Community Sentiment
-
-I spent some time reading through owner communities, forums, and other reviews to see how my experience compares. Here's what I found:
-
-**What people love:**
-- Build quality and stability (echoes my experience)
-- The tablecloth/decorative themes (also my highlight)
-- Family gathering around the table together
-- The flip-screen feature for different player positions
-- Easy navigation for kids
-
-**What people hate:**
-- Touch lag in fast-paced games (same frustration I have)
-- Locked ecosystem and inability to easily sideload games
-- Game prices adding up over time
-- Some units developing power supply issues after 1-2 years
-- Screws loosening over time (confirmed: not just my table)
-
-The community sentiment matches my experience: people who love this table tend to love the *concept* and the *furniture* aspects. People who are frustrated tend to be frustrated by the *software limitations* and the *touch performance*.
-
 ## Five Years Later: Would I Buy It Again?
-
-This is the question that matters.
 
 After five years of ownership, knowing what I know now: **I'm not sure I would buy it again at $1,000**.
 
-The touch lag is still frustrating. The locked ecosystem still feels restrictive. The usage frequency still doesn't match the price. And the game quality, while improved, still doesn't consistently deliver the experiences I hoped for.
+The touch lag is still frustrating. The locked ecosystem still feels restrictive. The usage frequency still doesn't match the price. The game quality, while improved, still doesn't consistently deliver the experiences I hoped for. And the online multiplayer feature — which sounded great on paper — has never worked once in my testing.
 
 That said, I don't regret having it. My kids have enjoyed it. We've had good moments around this table. The tablecloth themes have made it more useful as actual furniture. And yes, it still turns heads when people see it for the first time.
 
 I just wish it had delivered more of what I originally imagined.
 
-## Who Should Buy This?
-
-**Consider the Infinity Game Table if:**
-- You want a unique conversation piece for your living room
-- You host frequently and want something guests can interact with
-- Your kids enjoy board games and you want a digital hybrid option
-- The animated tablecloth themes appeal to you as functional decor
-- You value excellent build quality and stability (especially with kids)
-- You're comfortable with a locked game ecosystem
-
-**Think twice if:**
-- You expect crisp, lag-free touch gameplay (especially for fast games)
-- You want to install third-party games or customize the software
-- You need daily-use value to justify a $1,000 purchase
-- You're hoping for deep, engaging game libraries beyond trivia and casual titles
-- You have limited space and need every purchase to earn its keep
-- You're not willing to periodically tighten underside screws
-
 ## The Bottom Line
 
 The Arcade1Up Infinity Game Table is a product that's better at being a concept than at being a daily-use entertainment system.
 
-It looks great. It sparks conversations. The **animated tablecloth themes are genuinely brilliant** — moving steam, holiday rotations, and all. The build quality is excellent: heavy, stable, and safe even around toddlers. My kids have had fun with it over the years, and the flip-screen feature is a clever touch I wish I'd noticed sooner.
+It looks great. It sparks conversations. The **animated tablecloth themes are genuinely brilliant** — moving steam, holiday rotations, and all. The build quality is excellent: heavy, stable, and safe even around toddlers. My kids have had fun with it over the years.
 
-But the touch lag in fast-paced games, the locked ecosystem, the recurring screws issue, and questions about long-term value keep this from being the dream digital game table I hoped for. At $1,000, I expected more polish, more freedom, and more reasons to use it every single day.
+But the touch lag in fast-paced games, the locked ecosystem, the non-functional online multiplayer, the recurring screws issue, and questions about long-term value keep this from being the dream digital game table I hoped for. At $1,000, I expected more polish, more freedom, and more reasons to use it every single day.
 
 The reality? For such an expensive game table, it spends most of its time sitting unused or being used as a typical coffee table. That's not a failure — it's still a nice piece of furniture — but it's not the revolution I imagined.
 
 After five years, it's a piece of furniture I'm glad to have, but not one I'd rush to replace if it ever broke.
 
-**Rating: 3/5** — A striking conversation piece with excellent build quality and genuinely clever animated tablecloth themes, but compromised by touch lag, a locked ecosystem, and value concerns that become clearer after years of real ownership. Community sentiment echoes these same highs and lows.
+**Rating: 3/5** — A striking conversation piece with excellent build quality and genuinely clever animated tablecloth themes, but compromised by touch lag, a locked ecosystem, non-functional online multiplayer, and value concerns that become clearer after years of real ownership.

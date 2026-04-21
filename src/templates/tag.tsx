@@ -45,6 +45,7 @@ interface TagPageData {
 
 interface TagPageContext {
   slug: string;
+  articleSlugs: string[];
   limit: number;
   skip: number;
   numPages: number;
@@ -78,9 +79,6 @@ const TagTemplate: React.FC<PageProps<TagPageData, TagPageContext>> = ({
         <header className="hm-category-header">
           <h1 className="hm-category-title">{tag.name}</h1>
           <p className="hm-category-description">{tag.description}</p>
-          <p className="hm-category-count">
-            {totalCount} {totalCount === 1 ? 'article' : 'articles'}
-          </p>
         </header>
 
         {articles.length > 0 ? (
@@ -168,14 +166,14 @@ const TagTemplate: React.FC<PageProps<TagPageData, TagPageContext>> = ({
 };
 
 export const query = graphql`
-  query TagQuery($slug: String!, $limit: Int!, $skip: Int!) {
+  query TagQuery($slug: String!, $articleSlugs: [String!]!, $limit: Int!, $skip: Int!) {
     tagsJson(slug: { eq: $slug }) {
       name
       slug
       description
     }
     allMarkdownRemark(
-      filter: { frontmatter: { tags: { in: [$slug] }, draft: { ne: true } } }
+      filter: { frontmatter: { slug: { in: $articleSlugs }, draft: { ne: true } } }
       sort: { frontmatter: { publishedAt: DESC } }
       limit: $limit
       skip: $skip

@@ -11,7 +11,6 @@ tags:
 author: joseph-crawford
 publishedAt: '2025-11-20'
 updatedAt: '2025-11-20'
-featured: true
 ---
 
 After nearly three years with SafeRide Health, I can confidently say this is the most rewarding and challenging position of my career. What started as an opportunity to work with familiar technologies quickly evolved into a transformative journey that pushed me far beyond my comfort zone—and I wouldn't have it any other way.
