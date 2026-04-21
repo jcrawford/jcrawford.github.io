@@ -24,7 +24,7 @@ interface FooterData {
       title: string;
     };
   };
-  foodArticles: {
+  workArticles: {
     nodes: FooterArticle[];
   };
   familyArticles: {
@@ -40,8 +40,8 @@ const Footer: React.FC = () => {
           title
         }
       }
-      foodArticles: allMarkdownRemark(
-        filter: { frontmatter: { tags: { in: ["food"] }, slug: { ne: null }, draft: { ne: true } } }
+      workArticles: allMarkdownRemark(
+        filter: { frontmatter: { tags: { in: ["work"] }, slug: { ne: null }, draft: { ne: true } } }
         limit: 3
         sort: { frontmatter: { publishedAt: DESC } }
       ) {
@@ -82,7 +82,7 @@ const Footer: React.FC = () => {
   `);
 
   const { title } = data.site.siteMetadata;
-  const foodArticles = data.foodArticles.nodes;
+  const workArticles = data.workArticles.nodes;
   const familyArticles = data.familyArticles.nodes;
 
   return (
@@ -109,12 +109,12 @@ const Footer: React.FC = () => {
             </section>
           </div>
 
-          {/* Food Column */}
+          {/* Work Column */}
           <div className="hm-footer-column">
             <section className="widget widget_hybridmag_sidebar_posts">
               <div className="hm-sidebar-posts">
-                <h2 className="widget-title">Food</h2>
-                {foodArticles.map((article) => {
+                <h2 className="widget-title">Work</h2>
+                {workArticles.map((article) => {
                   const isReview = article.frontmatter.tags.some(t => t.toLowerCase() === 'reviews');
                   const articlePath = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name, isReview);
                   return (
