@@ -441,7 +441,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 30% center;
+  object-position: 25% center;
   transition: transform 0.3s ease;
   transform-origin: center center;
   filter: none;
@@ -549,8 +549,8 @@ html.hm-dark .hm-article-card-image {
   
   .hm-article-card-image {
     flex-shrink: 0;
-    width: 32%;
-    min-width: 200px;
+    width: 28%;
+    min-width: 180px;
     aspect-ratio: auto;
     align-self: stretch;
   }
