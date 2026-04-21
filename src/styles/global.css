@@ -1649,6 +1649,7 @@ html.hm-dark .hm-article {
   object-fit: cover;
   position: absolute;
   top: 0;
+  object-position: center 35%;
 }
 
 .hmhp-content {
@@ -1887,18 +1888,18 @@ li.hm-tab a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center 35%;
 }
 
 @media (max-width: 768px) {
   .hm-slide-image img {
-    object-position: center;
+    object-position: center 35%;
   }
 }
 
 @media (max-width: 480px) {
   .hm-slide-image img {
-    object-position: center;
+    object-position: center 35%;
   }
 }
 
