@@ -172,6 +172,8 @@ Recently, the kids discovered **Huupe Royale**, a matchmaking mode where you can
 
 We've only tried 1v1 matches, but it's pretty fun. The gaming system will matchmake you to other players online, which is something the [Arcade1Up Infinity Game Table](/reviews/arcade1up-infinity-game-table-review) I reviewed previously does not do at all. This is a strong differentiator for the Huupe.
 
+Over the last week, they've been having a ton of fun playing 1v1 matches against each other and other players online. This makes the Huupe Mini much more appealing as a single-player game—even when the kids don't all want to play together, one kid can hop on and compete in a 1v1 match and have a great time.
+
 ---
 
 The replacement unit has been working well otherwise. The kids have used it for several hours daily, and the game modes remain engaging. The AI shot tracking is accurate, the display is clear, and the streaming apps work as expected—except for the really terrible speakers.
