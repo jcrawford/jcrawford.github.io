@@ -15,9 +15,10 @@ import '../styles/resume.css';
 interface LayoutProps {
   children: React.ReactNode;
   className?: string;
+  hideFooter?: boolean;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children, className }) => {
+const Layout: React.FC<LayoutProps> = ({ children, className, hideFooter }) => {
   return (
     <div id="page" className="site hm-cl-sep">
       <Header />
@@ -31,7 +32,7 @@ const Layout: React.FC<LayoutProps> = ({ children, className }) => {
         </main>
       </div>
 
-      <Footer />
+      {!hideFooter && <Footer />}
     </div>
   );
 };

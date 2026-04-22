@@ -6,7 +6,7 @@ import '../styles/coming-soon.css';
 
 const IndexPage: React.FC = () => {
   return (
-    <Layout className="coming-soon-page">
+    <Layout className="coming-soon-page" hideFooter>
       <div className="coming-soon-container">
         <div className="coming-soon-content">
           <h1 className="coming-soon-title">Coming Soon</h1>

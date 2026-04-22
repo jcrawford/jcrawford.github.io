@@ -1,11 +1,12 @@
 /* Coming Soon Page Styles */
 
 .coming-soon-page {
-  min-height: 60vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 4rem 1rem;
+  background: linear-gradient(135deg, #111147 0%, #1a1a6e 100%);
 }
 
 .coming-soon-container {
@@ -15,23 +16,25 @@
 }
 
 .coming-soon-content {
-  background: var(--hybridmag-color-bg-cl-sep-content);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
   padding: 3rem 2rem;
   border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .coming-soon-title {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: var(--hybridmag-color-text);
+  color: #ffffff;
   line-height: 1.2;
 }
 
 .coming-soon-description {
   font-size: 1.25rem;
-  color: var(--hybridmag-color-text-light);
+  color: rgba(255, 255, 255, 0.8);
   margin-bottom: 2rem;
   line-height: 1.6;
 }
@@ -39,7 +42,7 @@
 .coming-soon-divider {
   width: 60px;
   height: 4px;
-  background: linear-gradient(90deg, var(--hybridmag-color-accent), var(--hybridmag-color-accent-secondary));
+  background: linear-gradient(90deg, #00d074, #00ff88);
   margin: 0 auto 2rem;
   border-radius: 2px;
 }
@@ -47,7 +50,7 @@
 .coming-soon-tagline {
   font-size: 1rem;
   font-style: italic;
-  color: var(--hybridmag-color-text-light);
+  color: rgba(255, 255, 255, 0.6);
   opacity: 0.8;
 }
 
