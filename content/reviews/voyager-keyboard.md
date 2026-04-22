@@ -40,6 +40,49 @@ review:
 
 The ZSA Voyager represents a paradigm shift in keyboard design philosophy, prioritizing ergonomic optimization and customization over conventional typing familiarity. After two years of intensive daily use as a professional software developer, I can confidently assess both its transformative benefits and significant adoption challenges. This review provides a comprehensive analysis of the complete ownership experience—from initial purchase through long-term reliability—to help prospective buyers make an informed decision about this substantial investment.
 
+## Ergonomics vs. Typing Speed: The Two-Year Reality Check
+
+After two years of daily use with the Voyager, I need to be direct about what this keyboard will and won't do for your performance. There's a common assumption that ergonomic keyboards automatically make you faster. That hasn't been my experience—and it's important to set realistic expectations upfront.
+
+**The honest assessment:** My typing speed has not improved beyond my baseline. Before switching to the Voyager, I typed at approximately 75–85 WPM on traditional keyboards. After the full learning curve and two years of optimization, I'm back at that same 75–85 WPM range. The Voyager didn't make me faster; it brought me back to where I was before, but with fundamentally different physical costs.
+
+What *has* changed dramatically is comfort. The chronic wrist soreness that used to build up after long coding sessions? Gone. The habit of holding my hands close together on the keyboard, which I didn't even realize I was doing? Broken. These aren't minor quality-of-life improvements—they're the difference between ending a workday feeling fatigued versus feeling fine.
+
+### The Chest Tightening Effect You Didn't Know You Had
+
+Here's something I noticed only after switching to the Voyager: on a traditional keyboard, when your hands are positioned close together in the center, your chest subtly tightens. It's not dramatic—you probably won't consciously register it happening—but it's a real physical effect from the cramped, inward hand position.
+
+Think about the geometry: standard keyboards force your arms into a narrow V-shape, drawing your shoulders slightly forward and inward. Your pectoral muscles engage to maintain this position, and over hours of typing, that creates low-grade tension across your upper chest. Most people adapt to this sensation so completely that they don't notice it until it's gone.
+
+I didn't realize I was experiencing this until I switched to the Voyager's split design. With each half positioned shoulder-width apart, my arms naturally fall outward rather than crossing toward the center. The first few weeks felt almost unnaturally open—like I was typing with my arms too wide. But that sensation wasn't excess space; it was my body returning to neutral alignment after years of subtle compression.
+
+### Try This Breathing Exercise
+
+If you're skeptical about the chest-tightening effect (and you should be—this sounds like one of those ergonomic claims that's hard to verify), here's a simple test you can do right now with your current keyboard:
+
+1. **Position A:** Place your hands on your keyboard in your normal typing position, fingers on the home row. Keep your arms relaxed. Take a slow, deep breath in through your nose, filling your lungs completely.
+
+2. **Position B:** Now separate your hands to shoulder-width apart—as if you were using a split keyboard like the Voyager. You can use the edges of your current keyboard or just rest your hands on the desk. Again, take a slow, deep breath in through your nose.
+
+3. **Compare:** Notice the difference? In Position A, you may feel slight resistance or tightness across your chest as you inhale. In Position B, your chest should expand more freely without that subtle constriction.
+
+![Breathing exercise comparison: hands close together vs. shoulder-width apart](/images/content/reviews/voyager-keyboard/ergonomic-breathing-exercise.png)
+
+This exercise takes thirty seconds, but it demonstrates something profound: the way we position our hands while typing directly affects our breathing mechanics. And breathing affects everything—stress levels, focus, fatigue, even posture throughout the rest of your body.
+
+### The Real Value: Comfort Without Compromise
+
+So if the Voyager didn't make me faster, why do I still recommend it? Because typing speed isn't the only metric that matters. Here's what actually changed:
+
+- **Wrist pain elimination:** After eight-hour workdays, my wrists no longer feel sore or inflamed. This alone justified the investment.
+- **Shoulder relaxation:** The split positioning stopped me from hunching my shoulders forward during intense focus periods.
+- **Sustainable endurance:** I can type for longer stretches without needing breaks due to discomfort.
+- **Posture awareness:** The physical openness of the split layout made me more conscious of overall posture, not just hand position.
+
+The Voyager trades the illusion of speed for genuine sustainability. Yes, I spent months retraining my muscle memory. Yes, my WPM temporarily cratered during the transition. But two years in, I've recovered my baseline speed *and* eliminated the physical toll that came with it. That's not a performance upgrade—it's a quality-of-life upgrade that happens to preserve performance.
+
+For anyone considering an ergonomic keyboard, here's my advice: don't buy the Voyager expecting to become a faster typist. Buy it because you want to type comfortably for decades without paying for it in pain. The speed will come back. The comfort, once you have it, you won't want to give up.
+
 ## Introduction to Ergonomic Split Keyboards
 
 ### The Case for Ergonomic Design
