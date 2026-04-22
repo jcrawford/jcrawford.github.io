@@ -2,6 +2,40 @@
 User-agent: *
 Allow: /
 
+# AI bot rules
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Cohere-AI
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Content Signals for AI agents
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
+
 # Sitemap location
 Sitemap: https://josephcrawford.com/sitemap-index.xml
 
