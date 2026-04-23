@@ -20,7 +20,7 @@ interface SiteMetadata {
 
 const Header: React.FC = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Lock body scroll when mobile menu or search is open
@@ -45,7 +45,7 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
-    const theme = savedTheme === 'light' ? 'light' : 'dark';
+    const theme = savedTheme === 'light' ? 'light' : 'dark'; // Default to dark
     setIsDarkMode(theme === 'dark');
 
     if (theme === 'dark') {

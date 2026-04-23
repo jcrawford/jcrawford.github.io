@@ -2,13 +2,13 @@ import { useState, useEffect } from "react";
 
 export const useDarkMode = (): [boolean, () => void] => {
   const [darkMode, setDarkMode] = useState<boolean>(() => {
-    if (typeof window === "undefined") return false;
+    if (typeof window === "undefined") return true; // Default to dark mode for SSR
 
     const stored = localStorage.getItem("hybridmagDarkMode");
     if (stored === "enabled") return true;
     if (stored === "disabled") return false;
 
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+    return true; // Default to dark mode; respects stored preference if set
   });
 
   useEffect(() => {
@@ -16,10 +16,10 @@ export const useDarkMode = (): [boolean, () => void] => {
 
     const html = document.documentElement;
     if (darkMode) {
-      html.classList.add("dark");
+      html.classList.add("hm-dark");
       localStorage.setItem("hybridmagDarkMode", "enabled");
     } else {
-      html.classList.remove("dark");
+      html.classList.remove("hm-dark");
       localStorage.setItem("hybridmagDarkMode", "disabled");
     }
   }, [darkMode]);
