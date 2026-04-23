@@ -11,6 +11,7 @@ tags:
 author: joseph-crawford
 publishedAt: "2026-04-23"
 draft: false
+featured: true
 ---
 
 The open-source LLM landscape has a new headline: Qwen3.6-27B, a dense 27-billion-parameter model from the Qwen team, is beating models fifteen times its size on the coding benchmarks that matter. If that sounds familiar—smaller model, outsized results—it should. But this time the margins are hard to ignore.
