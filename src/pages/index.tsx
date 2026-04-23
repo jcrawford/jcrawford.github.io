@@ -63,10 +63,13 @@ interface IndexPageData {
   };
 }
 
-const IS_PRODUCTION = process.env.NODE_ENV === 'production';
+// Show real homepage only when explicitly enabled via GATSBY_SHOW_HOMEPAGE env var
+// This is set in .env.development and NOT in production
+const SHOW_HOMEPAGE = process.env.GATSBY_SHOW_HOMEPAGE === 'true';
 
 const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
-  if (IS_PRODUCTION) {
+  // If SHOW_HOMEPAGE is not set (production), render Coming Soon
+  if (!SHOW_HOMEPAGE) {
     return (
       <div className="coming-soon-page">
         <div className="coming-soon-container">
@@ -315,7 +318,7 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
 export default IndexPage;
 
 export const Head: HeadFC = () => (
-  <SEO title={IS_PRODUCTION ? 'Coming Soon' : undefined} />
+  <SEO title={SHOW_HOMEPAGE ? undefined : 'Coming Soon'} />
 );
 
 export const query = graphql`
