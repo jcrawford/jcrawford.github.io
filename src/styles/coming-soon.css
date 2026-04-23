@@ -1,26 +1,18 @@
-/* Coming Soon Page Styles - Full Blocking Overlay */
+/* Coming Soon Page Styles */
 
 .coming-soon-page {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 4rem 1rem;
   background: linear-gradient(135deg, #111147 0%, #1a1a6e 100%);
-  z-index: 999999;
-  overflow: hidden;
 }
 
 .coming-soon-container {
   max-width: 600px;
   width: 100%;
   text-align: center;
-  z-index: 1;
 }
 
 .coming-soon-content {

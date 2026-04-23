@@ -1,11 +1,12 @@
 import React from 'react';
 import { HeadFC } from 'gatsby';
+import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import '../styles/coming-soon.css';
 
 const IndexPage: React.FC = () => {
   return (
-    <div className="coming-soon-page">
+    <Layout className="coming-soon-page" hideFooter>
       <div className="coming-soon-container">
         <div className="coming-soon-content">
           <h1 className="coming-soon-title">Coming Soon</h1>
@@ -18,7 +19,7 @@ const IndexPage: React.FC = () => {
           </p>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 
