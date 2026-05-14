@@ -11,7 +11,17 @@ import { hasTag } from '../utils/tagUtils';
 import '../styles/empty-featured.css';
 import '../styles/coming-soon.css';
 
-const IS_PRODUCTION = process.env.GATSBY_IS_PRODUCTION === 'true';
+// Use hostname detection so the gate works regardless of build env quirks.
+// Gatsby's webpack DefinePlugin was not reliably injecting GATSBY_IS_PRODUCTION,
+// so we check whether we're on the production domain at runtime.
+const IS_PRODUCTION = (() => {
+  if (typeof window === 'undefined') {
+    // SSR/build-time: use the env var if available
+    return process.env.GATSBY_IS_PRODUCTION === 'true';
+  }
+  // Client-side: production domain means Coming Soon
+  return window.location.hostname === 'josephcrawford.com';
+})();
 
 interface ArticleFrontmatter {
   slug: string;
