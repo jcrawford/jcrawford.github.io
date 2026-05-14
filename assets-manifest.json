@@ -9,8 +9,9 @@
   "component---src-pages-coming-soon-tsx-e1b2def6650e22f7fda2.js.map": "component---src-pages-coming-soon-tsx-e1b2def6650e22f7fda2.js.map",
   "component---src-pages-coming-soon-tsx.js": "component---src-pages-coming-soon-tsx-e1b2def6650e22f7fda2.js",
   "component---src-pages-index-tsx-0dacb1b4009eb29fab68.js.map": "component---src-pages-index-tsx-0dacb1b4009eb29fab68.js.map",
+  "component---src-pages-index-tsx-9697a0208cc0afcbde62.js.map": "component---src-pages-index-tsx-9697a0208cc0afcbde62.js.map",
   "component---src-pages-index-tsx-ff7c1e7c30c674099c7e.js.map": "component---src-pages-index-tsx-ff7c1e7c30c674099c7e.js.map",
-  "component---src-pages-index-tsx.js": "component---src-pages-index-tsx-0dacb1b4009eb29fab68.js",
+  "component---src-pages-index-tsx.js": "component---src-pages-index-tsx-9697a0208cc0afcbde62.js",
   "component---src-pages-resume-tsx-0f3ac5a510d6ff0ed6b3.js.map": "component---src-pages-resume-tsx-0f3ac5a510d6ff0ed6b3.js.map",
   "component---src-pages-resume-tsx.js": "component---src-pages-resume-tsx-0f3ac5a510d6ff0ed6b3.js",
   "component---src-pages-test-page-tsx-8754b6b471d437298b3d.js.map": "component---src-pages-test-page-tsx-8754b6b471d437298b3d.js.map",
@@ -26,6 +27,7 @@
   "framework.js": "framework-f2d663642d972f9b3120.js",
   "styles.css": "styles.ff90ad3963ebd3be0274.css",
   "webpack-runtime-1bee87a921148a08b0d1.js.map": "webpack-runtime-1bee87a921148a08b0d1.js.map",
+  "webpack-runtime-9dcaf69556e8ea70cb33.js.map": "webpack-runtime-9dcaf69556e8ea70cb33.js.map",
   "webpack-runtime-ca614f20b1b3c724e3af.js.map": "webpack-runtime-ca614f20b1b3c724e3af.js.map",
-  "webpack-runtime.js": "webpack-runtime-1bee87a921148a08b0d1.js"
+  "webpack-runtime.js": "webpack-runtime-9dcaf69556e8ea70cb33.js"
 }
