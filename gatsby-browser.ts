@@ -1,4 +1,5 @@
 import type { GatsbyBrowser } from 'gatsby';
+import './src/styles/global.css';
 
 export const onClientEntry: GatsbyBrowser['onClientEntry'] = () => {
   const savedTheme = localStorage.getItem('theme');
@@ -10,4 +11,3 @@ export const onClientEntry: GatsbyBrowser['onClientEntry'] = () => {
     document.documentElement.classList.remove('hm-dark');
   }
 };
-
