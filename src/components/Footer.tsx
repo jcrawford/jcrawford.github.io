@@ -229,7 +229,7 @@ const Footer: React.FC = () => {
             Copyright © {new Date().getFullYear()} <Link to="/" title={title}>{title}</Link>.
           </div>
           <div className="hm-designer-credit">
-            Powered by <a href="https://www.gatsbyjs.com/" target="_blank" rel="noopener noreferrer">Gatsby</a>, <a href="https://themezhut.com/themes/hybridmag/" target="_blank" rel="noopener noreferrer">HybridMag</a> and <a href="https://github.com/github/spec-kit" target="_blank" rel="noopener noreferrer">Spec-Kit</a>.
+            Powered by <a href="https://www.gatsbyjs.com/" target="_blank" rel="noopener noreferrer">Gatsby</a> and <a href="https://themezhut.com/themes/hybridmag/" target="_blank" rel="noopener noreferrer">HybridMag</a>.
           </div>
         </div>
       </div>
