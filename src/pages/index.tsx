@@ -9,7 +9,6 @@ import Sidebar from '../components/Sidebar';
 import SEO from '../components/SEO';
 import { hasTag } from '../utils/tagUtils';
 import '../styles/empty-featured.css';
-import '../styles/coming-soon.css';
 
 interface ArticleFrontmatter {
   slug: string;
@@ -63,36 +62,13 @@ interface IndexPageData {
   };
 }
 
-// Show real homepage only when explicitly enabled via GATSBY_SHOW_HOMEPAGE env var
-// This is set in .env.development and NOT in production
-const SHOW_HOMEPAGE = process.env.GATSBY_SHOW_HOMEPAGE === 'true';
-
 const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
-  // If SHOW_HOMEPAGE is not set (production), render Coming Soon
-  if (!SHOW_HOMEPAGE) {
-    return (
-      <div className="coming-soon-page">
-        <div className="coming-soon-container">
-          <div className="coming-soon-content">
-            <h1 className="coming-soon-title">Coming Soon</h1>
-            <p className="coming-soon-description">
-              Something amazing is in the works. Check back soon!
-            </p>
-            <div className="coming-soon-divider"></div>
-            <p className="coming-soon-tagline">
-              Building better experiences, one line at a time.
-            </p>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   const allTags = data.allTagsJson.nodes;
   const authors = data.allAuthorsJson.nodes;
-
+  
+  // Get configured tag slugs, or fallback to first 4 tags if config doesn't exist or is malformed
   let configuredTagSlugs: string[] = [];
-
+  
   try {
     const tagTabsFile = data.allFile?.nodes.find(node => node.name === 'tag-tabs');
     if (tagTabsFile && tagTabsFile.internal.content) {
@@ -104,20 +80,24 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
   } catch (error) {
     console.warn('Failed to parse tag-tabs.json, using fallback', error);
   }
-
+  
+  // Fallback: use first 4 tags from tags.json
   if (configuredTagSlugs.length === 0) {
     configuredTagSlugs = allTags.slice(0, 4).map(tag => tag.slug);
   }
-
+  
+  // Filter tags based on configuration (preserving order from config)
   const tags = configuredTagSlugs
     .map(slug => allTags.find(tag => tag.slug === slug))
     .filter((tag): tag is Tag => tag !== undefined);
-
+  
+  // Filter out family posts from homepage — reviews are allowed in the main feed but not in featured
   const articles = data.allMarkdownRemark.nodes.filter(
-    article => article.frontmatter &&
+    article => article.frontmatter && 
       !article.frontmatter.tags?.some(t => t.toLowerCase() === 'family')
   );
 
+  // Group articles by series
   const seriesMap = new Map<string, Article[]>();
   const standaloneArticles: Article[] = [];
 
@@ -133,35 +113,38 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
     }
   });
 
+  // Extract first article from each series (sorted by order, then publishedAt)
   const seriesFirstArticles: Article[] = [];
   seriesMap.forEach((seriesArticles) => {
     const sortedArticles = [...seriesArticles].sort((a, b) => {
       const orderA = a.frontmatter.series?.order ?? 999;
       const orderB = b.frontmatter.series?.order ?? 999;
-
+      
       if (orderA !== orderB) {
         return orderA - orderB;
       }
-
-      return new Date(a.frontmatter.publishedAt).getTime() -
+      
+      return new Date(a.frontmatter.publishedAt).getTime() - 
              new Date(b.frontmatter.publishedAt).getTime();
     });
-
+    
     seriesFirstArticles.push(sortedArticles[0]);
   });
 
+  // Combine standalone articles and series first articles
   const allDisplayArticles = [...standaloneArticles, ...seriesFirstArticles].sort((a, b) => {
-    return new Date(b.frontmatter.publishedAt).getTime() -
+    return new Date(b.frontmatter.publishedAt).getTime() - 
            new Date(a.frontmatter.publishedAt).getTime();
   });
 
+  // Helper to map article for display (handles series vs standalone)
   const mapArticleForSlider = (article: Article) => {
     const isSeries = !!article.frontmatter.series?.name;
-
+    
     if (isSeries) {
       const seriesName = article.frontmatter.series!.name;
       const seriesArticles = seriesMap.get(seriesName) || [];
-
+      
       return {
         ...article,
         frontmatter: {
@@ -172,27 +155,38 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
         },
       };
     }
-
+    
     return article;
   };
 
+  /**
+   * Filters posts to include only those marked as featured and not tagged with "family".
+   * Sorts results by publication date (descending) with slug as secondary sort (ascending).
+   * Limits to first 7 posts for the featured section (5 slider + 2 highlighted).
+   * 
+   * @returns Array of featured posts, limited to 7
+   */
   const featuredPosts = allDisplayArticles.filter(
     article => article.frontmatter.featured === true
   );
 
+  // Sort featured posts: primary by publishedAt DESC, secondary by slug ASC
   const sortedFeaturedPosts = featuredPosts.sort((a, b) => {
     const dateA = new Date(a.frontmatter.publishedAt).getTime();
     const dateB = new Date(b.frontmatter.publishedAt).getTime();
-
+    
     if (dateA !== dateB) {
-      return dateB - dateA;
+      return dateB - dateA; // Most recent first
     }
-
+    
+    // Secondary sort: slug alphabetically ascending
     return a.frontmatter.slug.localeCompare(b.frontmatter.slug);
   });
 
+  // Get latest articles for featured slider (5 for slider + 2 for highlighted posts)
   const latestArticles = sortedFeaturedPosts.slice(0, 7);
 
+  // Ensure we have data to map
   const featuredArticles = latestArticles.length > 0 ? latestArticles.slice(0, Math.min(5, latestArticles.length)).map(article => {
     const mappedArticle = mapArticleForSlider(article);
     return {
@@ -207,7 +201,7 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
       isSeries: !!mappedArticle.frontmatter.series?.name,
     };
   }) : [];
-
+  
   const highlightedArticles = latestArticles.length > 5 ? latestArticles.slice(5, 7).map(article => {
     const mappedArticle = mapArticleForSlider(article);
     return {
@@ -222,9 +216,11 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
       isSeries: !!mappedArticle.frontmatter.series?.name,
     };
   }) : [];
-
+  
+  // Exclude ALL featured posts from tag tabs and the article grid below
   const featuredSlugs = sortedFeaturedPosts.map(article => article.frontmatter.slug);
 
+  // Also exclude anything already shown in the tag tabs to avoid duplicate cards below
   const tagTabDisplayedSlugs = new Set<string>();
 
   tags.slice(0, 4).forEach((tag) => {
@@ -264,6 +260,7 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
       .forEach((article) => tagTabDisplayedSlugs.add(article.frontmatter.slug));
   });
 
+  // Recent articles: non-featured posts only, excluding anything already shown above
   const recentArticles = allDisplayArticles
     .filter(
       (article) =>
@@ -279,7 +276,7 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
         {featuredArticles.length === 0 ? (
           <EmptyFeaturedState message="No featured posts configured" />
         ) : (
-          <FeaturedPosts
+          <FeaturedPosts 
             sliderArticles={featuredArticles}
             highlightedArticles={highlightedArticles}
           />
@@ -318,7 +315,7 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
 export default IndexPage;
 
 export const Head: HeadFC = () => (
-  <SEO title={SHOW_HOMEPAGE ? undefined : 'Coming Soon'} />
+  <SEO title={undefined} />
 );
 
 export const query = graphql`

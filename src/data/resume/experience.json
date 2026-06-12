@@ -1,24 +1,24 @@
 [
   {
-    "company": "Saferide Health",
+    "company": "SafeRide Health",
     "title": "Lead Full Stack Engineer",
     "startDate": "2025-02",
     "endDate": "Present",
-    "description": "Lead cross‑service delivery for patient transportation; driving RAA roadmap, RBF stability contributions, platform reliability, and developer velocity."
+    "description": "Led cross-service delivery for patient transportation; owned Ride Assignment Algorithm Engine (RAA), RBF stability, platform reliability, and developer velocity."
   },
   {
-    "company": "Saferide Health",
+    "company": "SafeRide Health",
     "title": "Senior Full Stack Engineer",
     "startDate": "2024-02",
     "endDate": "2025-02",
-    "description": "Build and scale NEMT booking across backend and web; key contributor to RBF 4.0 and owner of the push notifications service."
+    "description": "Scaled NEMT booking across backend and web; owned push notifications and contributed to RBF 4.0 and Ride Assignment Algorithm Engine (RAA) stability."
   },
   {
-    "company": "Saferide Health",
+    "company": "SafeRide Health",
     "title": "Full Stack Engineer",
     "startDate": "2022-02",
     "endDate": "2024-02",
-    "description": ""
+    "description": "Built and maintained NEMT booking features across web and backend; helped establish Ride Assignment Algorithm Engine (RAA) foundations and improve reliability."
   },
   {
     "company": "Finix",

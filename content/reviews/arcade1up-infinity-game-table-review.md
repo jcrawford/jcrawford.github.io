@@ -105,17 +105,17 @@ Some feel like shallow mobile ports. Others have mechanics that don't translate 
 
 The game library has grown over five years, which is good. But quantity doesn't equal quality, and I wish more titles took full advantage of the table format rather than feeling like stretched phone games.
 
-## Online Multiplayer: Technically Exists, Practically Broken
+## Online Matchmaking: Technically Exists, Practically Broken
 
-I need to address the online multiplayer feature because it's a common question from potential buyers.
+I need to address the online matchmaking feature because it's a common question from potential buyers.
 
-**Yes, online multiplayer is available.** There's a "Connect" button in the interface that's supposed to match you with other players over the internet. This isn't local multiplayer — it's meant to find random opponents worldwide.
+**Yes, matchmaking exists.** There's a "Connect" button in the interface that's supposed to pair you with other players over the internet. This is not local multiplayer — it's meant to find random opponents online.
 
 **Here's my reality:** In five years of ownership, I have **never successfully connected to another player** through this feature. Not once.
 
-I've tried multiple times across different games. The matchmaking should happen within about a minute — that's a reasonable expectation for any matching service. Instead, I sit there waiting, nothing happens, and I eventually cancel out of frustration. I've also let it run for 30+ minutes in extended testing sessions just to see if it would eventually find something — it never did. No matches found, ever.
+I've tried it repeatedly across different games, and it has never worked for me. The matchmaking should happen within about a minute — that's a reasonable expectation for any service like this. Instead, I wait, nothing happens, and I eventually cancel out of frustration. I've also let it run for 30+ minutes in extended testing sessions just to see if it would eventually find something — it never did. No matches found, ever.
 
-I have excellent internet connectivity, and every other device in my house connects to matchmaking services without issue. The problem is specific to this table.
+I have excellent internet connectivity, and every other device in my house connects to matchmaking services without issue. The problem seems specific to this table.
 
 I've recorded video of this exact experience across multiple games: the table sitting on the Connect screen, waiting for a match that never comes. The footage below shows roughly a minute of waiting per game — I've canceled each attempt because there's no point in waiting indefinitely when the system should match within a minute.
 
@@ -132,7 +132,7 @@ The problem appears to be one of three things:
 2. **Empty player pool** — There may simply be nobody else online trying to connect
 3. **Broken matchmaking** — The feature itself may have bugs that prevent connections
 
-Whatever the cause, the practical result is the same: **online multiplayer exists on paper, but not in practice.** If you're buying this table hoping to play games against random opponents online, don't count on it working.
+Whatever the cause, the practical result is the same: **matchmaking exists on paper, but not in practice.** If you're buying this table hoping to play games against random opponents online, don't count on it working.
 
 Local multiplayer — playing with people in the same room — works perfectly fine. That's actually where this table shines: when you have family or friends gathered around physically. But the promise of online connectivity? That's been a complete disappointment.
 
@@ -172,7 +172,7 @@ But a conversation piece is different from a frequently-used entertainment syste
 
 After five years of ownership, knowing what I know now: **I'm not sure I would buy it again at $1,000**.
 
-The touch lag is still frustrating. The locked ecosystem still feels restrictive. The usage frequency still doesn't match the price. The game quality, while improved, still doesn't consistently deliver the experiences I hoped for. And the online multiplayer feature — which sounded great on paper — has never worked once in my testing.
+The touch lag is still frustrating. The locked ecosystem still feels restrictive. The usage frequency still doesn't match the price. The game quality, while improved, still doesn't consistently deliver the experiences I hoped for. And the online matchmaking feature — which sounded great on paper — has never worked once in my testing.
 
 That said, I don't regret having it. My kids have enjoyed it. We've had good moments around this table. The tablecloth themes have made it more useful as actual furniture. And yes, it still turns heads when people see it for the first time.
 
@@ -184,10 +184,10 @@ The Arcade1Up Infinity Game Table is a product that's better at being a concept 
 
 It looks great. It sparks conversations. The **animated tablecloth themes are genuinely brilliant** — moving steam, holiday rotations, and all. The build quality is excellent: heavy, stable, and safe even around toddlers. My kids have had fun with it over the years.
 
-But the touch lag in fast-paced games, the locked ecosystem, the non-functional online multiplayer, the recurring screws issue, and questions about long-term value keep this from being the dream digital game table I hoped for. At $1,000, I expected more polish, more freedom, and more reasons to use it every single day.
+But the touch lag in fast-paced games, the locked ecosystem, the broken online matchmaking, the recurring screws issue, and questions about long-term value keep this from being the dream digital game table I hoped for. At $1,000, I expected more polish, more freedom, and more reasons to use it every single day.
 
 The reality? For such an expensive game table, it spends most of its time sitting unused or being used as a typical coffee table. That's not a failure — it's still a nice piece of furniture — but it's not the revolution I imagined.
 
 After five years, it's a piece of furniture I'm glad to have, but not one I'd rush to replace if it ever broke.
 
-**Rating: 3/5** — A striking conversation piece with excellent build quality and genuinely clever animated tablecloth themes, but compromised by touch lag, a locked ecosystem, non-functional online multiplayer, and value concerns that become clearer after years of real ownership.
+**Rating: 3/5** — A striking conversation piece with excellent build quality and genuinely clever animated tablecloth themes, but compromised by touch lag, a locked ecosystem, broken online matchmaking, and value concerns that become clearer after years of real ownership.
