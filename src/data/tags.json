@@ -47,6 +47,13 @@
     "name": "AI",
     "description": "Articles about AI, agents, language models, tooling, and practical experiments using artificial intelligence.",
     "featured": false
+  },
+  {
+    "id": "8",
+    "slug": "development",
+    "name": "Development",
+    "description": "Programming languages, developer tools, frameworks, and technical deep dives for software engineers.",
+    "featured": true
   }
 ]
 
