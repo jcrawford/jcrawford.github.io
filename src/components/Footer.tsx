@@ -30,6 +30,9 @@ interface FooterData {
   familyArticles: {
     nodes: FooterArticle[];
   };
+  aiArticles: {
+    nodes: FooterArticle[];
+  };
 }
 
 const Footer: React.FC = () => {
@@ -78,33 +81,69 @@ const Footer: React.FC = () => {
           }
         }
       }
+      aiArticles: allMarkdownRemark(
+        filter: { frontmatter: { tags: { in: ["ai"] }, slug: { ne: null }, draft: { ne: true } } }
+        limit: 3
+        sort: { frontmatter: { publishedAt: DESC } }
+      ) {
+        nodes {
+          id
+          frontmatter {
+            slug
+            title
+            featuredImage
+            tags
+            publishedAt
+            series {
+              name
+            }
+          }
+        }
+      }
     }
   `);
 
   const { title } = data.site.siteMetadata;
   const workArticles = data.workArticles.nodes;
   const familyArticles = data.familyArticles.nodes;
+  const aiArticles = data.aiArticles.nodes;
 
   return (
     <footer id="colophon" className="site-footer">
       <div className="hm-footer-widget-area">
         <div className="hm-container hm-footer-widgets-inner">
-          {/* About Column */}
+          {/* AI Column */}
           <div className="hm-footer-column">
-            <section className="widget widget_text">
-              <h2 className="widget-title">About This Site</h2>
-              <div className="textwidget">
-                <p>This may be a good place to introduce yourself and your site or include some credits.</p>
-                <p>
-                  <strong>Address</strong><br />
-                  123 Main Street<br />
-                  New York, NY 10001
-                </p>
-                <p>
-                  <strong>Hours</strong><br />
-                  Monday–Friday: 9:00AM–5:00PM<br />
-                  Saturday &amp; Sunday: 11:00AM–3:00PM
-                </p>
+            <section className="widget widget_hybridmag_sidebar_posts">
+              <div className="hm-sidebar-posts">
+                <h2 className="widget-title">AI</h2>
+                {aiArticles.map((article) => {
+                  const isReview = article.frontmatter.tags.some(t => t.toLowerCase() === 'reviews');
+                  const articlePath = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name, isReview);
+                  return (
+                    <div key={article.id} className="hms-post clearfix">
+                      <div className="hms-thumb">
+                        <Link to={articlePath}>
+                          <OptimizedImage
+                            src={article.frontmatter.featuredImage}
+                            alt={article.frontmatter.title}
+                            className="attachment-thumbnail size-thumbnail wp-post-image"
+                          />
+                        </Link>
+                      </div>
+                      <div className="hms-details">
+                        <h3 className="hms-title">
+                          <Link to={articlePath}>{article.frontmatter.title}</Link>
+                        </h3>
+                      <div className="entry-meta">
+                        <time className="entry-date published" dateTime={article.frontmatter.publishedAt}>
+                          {formatDate(article.frontmatter.publishedAt)}
+                        </time>
+                      </div>
+                    </div>
+                  </div>
+                  );
+                })}
               </div>
             </section>
           </div>
