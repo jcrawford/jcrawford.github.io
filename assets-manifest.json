@@ -6,8 +6,9 @@
   "app.js": "app-30256f0608d54c544e37.js",
   "component---src-pages-404-tsx-acb43145b0b7114ee563.js.map": "component---src-pages-404-tsx-acb43145b0b7114ee563.js.map",
   "component---src-pages-404-tsx.js": "component---src-pages-404-tsx-acb43145b0b7114ee563.js",
+  "component---src-pages-index-tsx-1780753c43e5c2de3c4c.js.map": "component---src-pages-index-tsx-1780753c43e5c2de3c4c.js.map",
   "component---src-pages-index-tsx-735824147cb68ed4ec51.js.map": "component---src-pages-index-tsx-735824147cb68ed4ec51.js.map",
-  "component---src-pages-index-tsx.js": "component---src-pages-index-tsx-735824147cb68ed4ec51.js",
+  "component---src-pages-index-tsx.js": "component---src-pages-index-tsx-1780753c43e5c2de3c4c.js",
   "component---src-pages-resume-tsx-0f3ac5a510d6ff0ed6b3.js.map": "component---src-pages-resume-tsx-0f3ac5a510d6ff0ed6b3.js.map",
   "component---src-pages-resume-tsx.js": "component---src-pages-resume-tsx-0f3ac5a510d6ff0ed6b3.js",
   "component---src-pages-test-page-tsx-8754b6b471d437298b3d.js.map": "component---src-pages-test-page-tsx-8754b6b471d437298b3d.js.map",
@@ -27,7 +28,8 @@
   "framework.js": "framework-f2d663642d972f9b3120.js",
   "styles.css": "styles.129f1c311628d26c94c9.css",
   "webpack-runtime-22c53031412a966cd651.js.map": "webpack-runtime-22c53031412a966cd651.js.map",
+  "webpack-runtime-2a706c903f6111bcb65d.js.map": "webpack-runtime-2a706c903f6111bcb65d.js.map",
   "webpack-runtime-37546f9ede9cf7242cb7.js.map": "webpack-runtime-37546f9ede9cf7242cb7.js.map",
   "webpack-runtime-8caed09243cca398593e.js.map": "webpack-runtime-8caed09243cca398593e.js.map",
-  "webpack-runtime.js": "webpack-runtime-22c53031412a966cd651.js"
+  "webpack-runtime.js": "webpack-runtime-2a706c903f6111bcb65d.js"
 }
