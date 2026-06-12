@@ -1,19 +1,10 @@
 {
-  "a724a8ee19e67cf409e4858e66b30f2dec99d6ef-8e6821762195e8b32ad8.js.map": "a724a8ee19e67cf409e4858e66b30f2dec99d6ef-8e6821762195e8b32ad8.js.map",
-  "a724a8ee19e67cf409e4858e66b30f2dec99d6ef.js": "a724a8ee19e67cf409e4858e66b30f2dec99d6ef-8e6821762195e8b32ad8.js",
-  "app-26e5daf4b03bdb9862b6.js.LICENSE.txt": "app-26e5daf4b03bdb9862b6.js.LICENSE.txt",
-  "app-26e5daf4b03bdb9862b6.js.map": "app-26e5daf4b03bdb9862b6.js.map",
   "app-30256f0608d54c544e37.js.LICENSE.txt": "app-30256f0608d54c544e37.js.LICENSE.txt",
   "app-30256f0608d54c544e37.js.map": "app-30256f0608d54c544e37.js.map",
   "app.js": "app-30256f0608d54c544e37.js",
   "component---src-pages-404-tsx-acb43145b0b7114ee563.js.map": "component---src-pages-404-tsx-acb43145b0b7114ee563.js.map",
   "component---src-pages-404-tsx.js": "component---src-pages-404-tsx-acb43145b0b7114ee563.js",
-  "component---src-pages-coming-soon-tsx-e1b2def6650e22f7fda2.js.map": "component---src-pages-coming-soon-tsx-e1b2def6650e22f7fda2.js.map",
-  "component---src-pages-coming-soon-tsx.js": "component---src-pages-coming-soon-tsx-e1b2def6650e22f7fda2.js",
-  "component---src-pages-index-tsx-0dacb1b4009eb29fab68.js.map": "component---src-pages-index-tsx-0dacb1b4009eb29fab68.js.map",
   "component---src-pages-index-tsx-735824147cb68ed4ec51.js.map": "component---src-pages-index-tsx-735824147cb68ed4ec51.js.map",
-  "component---src-pages-index-tsx-9697a0208cc0afcbde62.js.map": "component---src-pages-index-tsx-9697a0208cc0afcbde62.js.map",
-  "component---src-pages-index-tsx-ff7c1e7c30c674099c7e.js.map": "component---src-pages-index-tsx-ff7c1e7c30c674099c7e.js.map",
   "component---src-pages-index-tsx.js": "component---src-pages-index-tsx-735824147cb68ed4ec51.js",
   "component---src-pages-resume-tsx-0f3ac5a510d6ff0ed6b3.js.map": "component---src-pages-resume-tsx-0f3ac5a510d6ff0ed6b3.js.map",
   "component---src-pages-resume-tsx.js": "component---src-pages-resume-tsx-0f3ac5a510d6ff0ed6b3.js",
@@ -31,9 +22,6 @@
   "framework-f2d663642d972f9b3120.js.map": "framework-f2d663642d972f9b3120.js.map",
   "framework.js": "framework-f2d663642d972f9b3120.js",
   "styles.css": "styles.129f1c311628d26c94c9.css",
-  "webpack-runtime-08d474f63f0a5f5ff428.js.map": "webpack-runtime-08d474f63f0a5f5ff428.js.map",
-  "webpack-runtime-1bee87a921148a08b0d1.js.map": "webpack-runtime-1bee87a921148a08b0d1.js.map",
-  "webpack-runtime-9dcaf69556e8ea70cb33.js.map": "webpack-runtime-9dcaf69556e8ea70cb33.js.map",
-  "webpack-runtime-ca614f20b1b3c724e3af.js.map": "webpack-runtime-ca614f20b1b3c724e3af.js.map",
-  "webpack-runtime.js": "webpack-runtime-08d474f63f0a5f5ff428.js"
+  "webpack-runtime-0ab6d890904a7dd15b7d.js.map": "webpack-runtime-0ab6d890904a7dd15b7d.js.map",
+  "webpack-runtime.js": "webpack-runtime-0ab6d890904a7dd15b7d.js"
 }
