@@ -9,19 +9,6 @@ import Sidebar from '../components/Sidebar';
 import SEO from '../components/SEO';
 import { hasTag } from '../utils/tagUtils';
 import '../styles/empty-featured.css';
-import '../styles/coming-soon.css';
-
-// Use hostname detection so the gate works regardless of build env quirks.
-// Gatsby's webpack DefinePlugin was not reliably injecting GATSBY_IS_PRODUCTION,
-// so we check whether we're on the production domain at runtime.
-const IS_PRODUCTION = (() => {
-  if (typeof window === 'undefined') {
-    // SSR/build-time: use the env var if available
-    return process.env.GATSBY_IS_PRODUCTION === 'true';
-  }
-  // Client-side: production domain means Coming Soon
-  return window.location.hostname === 'josephcrawford.com';
-})();
 
 interface ArticleFrontmatter {
   slug: string;
@@ -75,28 +62,7 @@ interface IndexPageData {
   };
 }
 
-// Production gate: show Coming Soon in production, real homepage in dev
 const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
-  if (IS_PRODUCTION) {
-    return (
-      <div className="coming-soon-page">
-        <div className="coming-soon-container">
-          <div className="coming-soon-content">
-            <h1 className="coming-soon-title">Coming Soon</h1>
-            <p className="coming-soon-description">
-              Something amazing is in the works. Check back soon!
-            </p>
-            <div className="coming-soon-divider"></div>
-            <p className="coming-soon-tagline">
-              Building better experiences, one line at a time.
-            </p>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  // Development: Show full homepage (excluding family posts)
   const allTags = data.allTagsJson.nodes;
   const authors = data.allAuthorsJson.nodes;
   
@@ -349,7 +315,7 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
 export default IndexPage;
 
 export const Head: HeadFC = () => (
-  <SEO title={IS_PRODUCTION ? 'Coming Soon' : undefined} />
+  <SEO title={undefined} />
 );
 
 export const query = graphql`
