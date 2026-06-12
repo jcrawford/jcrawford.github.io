@@ -223,7 +223,7 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
   // Also exclude anything already shown in the tag tabs to avoid duplicate cards below
   const tagTabDisplayedSlugs = new Set<string>();
 
-  tags.slice(0, 4).forEach((tag) => {
+  tags.forEach((tag) => {
     const tagArticles = articles.filter(
       (article) => hasTag(article.frontmatter.tags || [], tag.slug) && !featuredSlugs.includes(article.frontmatter.slug)
     );

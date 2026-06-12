@@ -110,7 +110,7 @@ const TagTabs: React.FC<TagTabsProps> = ({ tags, articles, excludeSlugs = [] }) 
     <div className="hm-featured-tabs">
       <div className="hm-tab-header">
         <ul className="hm-tab-nav">
-          {tags.slice(0, 4).map((tag) => (
+          {tags.map((tag) => (
             <li key={tag.slug} className="hm-tab">
               <a
                 className="hm-tab-anchor"
@@ -141,7 +141,7 @@ const TagTabs: React.FC<TagTabsProps> = ({ tags, articles, excludeSlugs = [] }) 
       </div>
 
       <div className="tab-content clearfix">
-        {tags.slice(0, 4).map((tag) => (
+        {tags.map((tag) => (
           <div
             key={tag.slug}
             id={`hm-tab-posts-${tag.slug}`}
