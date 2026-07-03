@@ -91,10 +91,9 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
     .map(slug => allTags.find(tag => tag.slug === slug))
     .filter((tag): tag is Tag => tag !== undefined);
   
-  // Filter out family posts from homepage — reviews are allowed in the main feed but not in featured
+  // All published posts and reviews
   const articles = data.allMarkdownRemark.nodes.filter(
-    article => article.frontmatter && 
-      !article.frontmatter.tags?.some(t => t.toLowerCase() === 'family')
+    article => article.frontmatter
   );
 
   // Group articles by series
@@ -323,7 +322,7 @@ export const query = graphql`
     allMarkdownRemark(
       sort: { frontmatter: { publishedAt: DESC } }
       limit: 150
-      filter: { frontmatter: { draft: { ne: true } } }
+      filter: { frontmatter: { draft: { ne: true } }, fileAbsolutePath: { regex: "//content/(posts|reviews)/" } }
     ) {
       nodes {
         id

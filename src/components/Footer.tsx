@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
         }
       }
       workArticles: allMarkdownRemark(
-        filter: { frontmatter: { tags: { in: ["work"] }, slug: { ne: null }, draft: { ne: true } } }
+        filter: { frontmatter: { tags: { in: ["work"] }, slug: { ne: null }, draft: { ne: true } }, fileAbsolutePath: { regex: "//content/(posts|reviews)/" } }
         limit: 3
         sort: { frontmatter: { publishedAt: DESC } }
       ) {
@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
         }
       }
       familyArticles: allMarkdownRemark(
-        filter: { frontmatter: { tags: { in: ["family"] }, slug: { ne: null }, draft: { ne: true } } }
+        filter: { frontmatter: { tags: { in: ["family"] }, slug: { ne: null }, draft: { ne: true } }, fileAbsolutePath: { regex: "//content/(posts|reviews)/" } }
         limit: 3
         sort: { frontmatter: { publishedAt: DESC } }
       ) {
@@ -82,7 +82,7 @@ const Footer: React.FC = () => {
         }
       }
       aiArticles: allMarkdownRemark(
-        filter: { frontmatter: { tags: { in: ["ai"] }, slug: { ne: null }, draft: { ne: true } } }
+        filter: { frontmatter: { tags: { in: ["ai"] }, slug: { ne: null }, draft: { ne: true } }, fileAbsolutePath: { regex: "//content/(posts|reviews)/" } }
         limit: 3
         sort: { frontmatter: { publishedAt: DESC } }
       ) {
@@ -118,7 +118,7 @@ const Footer: React.FC = () => {
               <div className="hm-sidebar-posts">
                 <h2 className="widget-title">AI</h2>
                 {aiArticles.map((article) => {
-                  const isReview = article.frontmatter.tags.some(t => t.toLowerCase() === 'reviews');
+                  const isReview = article.frontmatter.tags?.some(t => t.toLowerCase() === 'reviews');
                   const articlePath = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name, isReview);
                   return (
                     <div key={article.id} className="hms-post clearfix">
@@ -154,7 +154,7 @@ const Footer: React.FC = () => {
               <div className="hm-sidebar-posts">
                 <h2 className="widget-title">Work</h2>
                 {workArticles.map((article) => {
-                  const isReview = article.frontmatter.tags.some(t => t.toLowerCase() === 'reviews');
+                  const isReview = article.frontmatter.tags?.some(t => t.toLowerCase() === 'reviews');
                   const articlePath = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name, isReview);
                   return (
                     <div key={article.id} className="hms-post clearfix">
@@ -190,7 +190,7 @@ const Footer: React.FC = () => {
               <div className="hm-sidebar-posts">
                 <h2 className="widget-title">Family</h2>
                 {familyArticles.map((article) => {
-                  const isReview = article.frontmatter.tags.some(t => t.toLowerCase() === 'reviews');
+                  const isReview = article.frontmatter.tags?.some(t => t.toLowerCase() === 'reviews');
                   const articlePath = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name, isReview);
                   return (
                     <div key={article.id} className="hms-post clearfix">

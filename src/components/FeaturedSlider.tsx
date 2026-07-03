@@ -41,7 +41,7 @@ const FeaturedSlider: React.FC<FeaturedSliderProps> = ({ articles }) => {
   }
 
   const currentArticle = articles[currentSlide];
-  const isReview = currentArticle.tags.some(t => t.toLowerCase() === 'reviews');
+  const isReview = currentArticle.tags?.some(t => t.toLowerCase() === 'reviews') ?? false;
   const articlePath = getArticlePath(currentArticle.slug, currentArticle.isSeries, isReview);
 
   return (
@@ -63,15 +63,7 @@ const FeaturedSlider: React.FC<FeaturedSliderProps> = ({ articles }) => {
                 aria-label={currentArticle.title}
               />
             </div>
-            <div className="hm-slide-content">
-              <div className="hm-slider-details-container hmfpwmeta">
-                <h3 className="hm-slider-title">
-                  <Link to={articlePath}>
-                    {currentArticle.title}
-                  </Link>
-                </h3>
-              </div>
-            </div>
+
           </div>
         </div>
       </div>

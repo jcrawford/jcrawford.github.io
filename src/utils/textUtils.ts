@@ -3,6 +3,7 @@
  * Ensures truncation happens at word boundaries
  */
 export function truncateText(text: string, maxLength: number): string {
+  if (!text) return '';
   if (text.length <= maxLength) {
     return text;
   }
@@ -28,6 +29,7 @@ export function truncateExcerpt(excerpt: string): string {
  * Strip HTML tags from text
  */
 export function stripHtml(html: string): string {
+  if (!html) return '';
   return html.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
 }
 
@@ -35,6 +37,7 @@ export function stripHtml(html: string): string {
  * Get reading time estimate (words per minute: 200)
  */
 export function getReadingTime(text: string): number {
+  if (!text) return 1;
   const words = stripHtml(text).split(/\s+/).length;
   const minutes = Math.ceil(words / 200);
   return minutes;

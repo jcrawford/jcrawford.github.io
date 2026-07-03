@@ -1,4 +1,5 @@
 ---
+draft: true
 slug: saferide-health-cursor-ai-adoption
 title: "How SafeRide Health Adopted AI in Engineering: Velocity Gains, Budget Lessons, and a Veteran Engineer's Perspective"
 excerpt: >-

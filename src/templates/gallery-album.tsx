@@ -1,0 +1,171 @@
+import React, { useState, useCallback } from 'react';
+import { Link, graphql, PageProps } from 'gatsby';
+import Layout from '../components/Layout';
+import SEO from '../components/SEO';
+import { RowsPhotoAlbum } from 'react-photo-album';
+import 'react-photo-album/rows.css';
+import Lightbox from 'yet-another-react-lightbox';
+import 'yet-another-react-lightbox/styles.css';
+import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
+import 'yet-another-react-lightbox/plugins/thumbnails.css';
+import Zoom from 'yet-another-react-lightbox/plugins/zoom';
+import Captions from 'yet-another-react-lightbox/plugins/captions';
+import 'yet-another-react-lightbox/plugins/captions.css';
+import Counter from 'yet-another-react-lightbox/plugins/counter';
+import 'yet-another-react-lightbox/plugins/counter.css';
+import type { GalleryPhoto, GalleryVideo } from '../types/gallery';
+import '../styles/gallery.css';
+
+interface GalleryAlbumData {
+  markdownRemark: {
+    frontmatter: {
+      title: string;
+      slug: string;
+      date: string;
+      description: string;
+      coverImage: string;
+      photos: GalleryPhoto[];
+      videos?: GalleryVideo[];
+    };
+    html: string;
+  };
+}
+
+const GalleryAlbumTemplate: React.FC<PageProps<GalleryAlbumData>> = ({ data }) => {
+  const { frontmatter, html } = data.markdownRemark;
+  const { title, date, description, photos, videos } = frontmatter;
+
+  const [lightboxIndex, setLightboxIndex] = useState(-1);
+
+  const openLightbox = useCallback((index: number) => {
+    setLightboxIndex(index);
+  }, []);
+
+  const closeLightbox = useCallback(() => {
+    setLightboxIndex(-1);
+  }, []);
+
+  // Format date for display
+  const formattedDate = new Date(date + 'T00:00:00').toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+
+  const lightboxSlides = photos.map((photo) => ({
+    src: photo.src,
+    alt: photo.alt,
+    width: photo.width,
+    height: photo.height,
+    title: photo.caption || photo.alt,
+  }));
+
+  return (
+    <Layout>
+      <div className="hm-container hm-gallery-album">
+        <nav className="hm-gallery-breadcrumb" aria-label="Breadcrumb">
+          <Link to="/gallery">Gallery</Link>
+          <span className="hm-breadcrumb-separator">›</span>
+          <span>{title}</span>
+        </nav>
+
+        <header className="hm-gallery-album-header">
+          <h1 className="hm-gallery-album-title">{title}</h1>
+          <p className="hm-gallery-album-date">{formattedDate}</p>
+          {description && (
+            <p className="hm-gallery-album-description">{description}</p>
+          )}
+        </header>
+
+        {html && html.trim() !== '<p></p>' && (
+          <div
+            className="hm-gallery-album-body hm-article-content"
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+        )}
+
+        {videos && videos.length > 0 && (
+          <div className="hm-gallery-videos">
+            {videos.map((video) => (
+              <div key={video.src} className="hm-gallery-video">
+                <video
+                  src={video.src}
+                  controls
+                  muted
+                  playsInline
+                  preload="metadata"
+                  aria-label={video.alt}
+                  style={{ width: '100%', borderRadius: '4px' }}
+                />
+                {video.caption && (
+                  <p className="hm-gallery-video-caption">{video.caption}</p>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
+
+        <div className="hm-gallery-grid">
+          <RowsPhotoAlbum
+            photos={photos}
+            targetRowHeight={280}
+            rowConstraints={{ minPhotos: 2 }}
+            spacing={6}
+            padding={0}
+            defaultContainerWidth={1200}
+            onClick={({ index }) => openLightbox(index)}
+          />
+        </div>
+
+        <Lightbox
+          open={lightboxIndex >= 0}
+          close={closeLightbox}
+          index={lightboxIndex}
+          slides={lightboxSlides}
+          plugins={[Thumbnails, Zoom, Captions, Counter]}
+          animation={{ swipe: 300 }}
+          carousel={{ finite: false }}
+          styles={{
+            container: { backgroundColor: 'rgba(0, 0, 0, 0.92)' },
+          }}
+        />
+
+        <nav className="hm-gallery-back">
+          <Link to="/gallery" className="hm-cta-btn">← Back to Gallery</Link>
+        </nav>
+      </div>
+    </Layout>
+  );
+};
+
+export default GalleryAlbumTemplate;
+
+import { HeadFC } from 'gatsby';
+
+export const Head: HeadFC = () => <SEO title="Gallery" />;
+
+export const query = graphql`
+  query GalleryAlbumQuery($slug: String!) {
+    markdownRemark(
+      frontmatter: { slug: { eq: $slug } }
+      fileAbsolutePath: { regex: "/content/galleries/" }
+    ) {
+      frontmatter {
+        title
+        slug
+        date
+        description
+        coverImage
+        photos {
+          src
+          alt
+          width
+          height
+          caption
+        }
+        videos
+      }
+      html
+    }
+  }
+`;

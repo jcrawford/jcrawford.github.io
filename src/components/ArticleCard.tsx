@@ -9,9 +9,9 @@ import OptimizedImage from './OptimizedImage';
 interface ArticleCardProps {
   slug: string;
   title: string;
-  excerpt: string;
+  excerpt: string | null;
   featuredImage: string;
-  tags: string[];
+  tags: string[] | null;
   publishedAt: string;
   author: string;
   authorName: string;
@@ -29,11 +29,11 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
   authorName,
   isSeries,
 }) => {
-  const isReview = hasTag(tags, 'reviews');
+  const isReview = hasTag(tags || [], 'reviews');
   const articlePath = getArticlePath(slug, isSeries, isReview);
   
   // Get the first tag that's not "family" or "featured" for display
-  const primaryTag = tags.find(tag => !tagMatches(tag, 'family') && !tagMatches(tag, 'featured')) || tags[0];
+  const primaryTag = (tags || []).find(tag => !tagMatches(tag, 'family') && !tagMatches(tag, 'featured')) || (tags || [])[0];
   
   return (
     <article className="hm-article-card">

@@ -54,6 +54,320 @@
     "name": "Development",
     "description": "Programming languages, developer tools, frameworks, and technical deep dives for software engineers.",
     "featured": true
+  },
+  {
+    "id": "9",
+    "slug": "developer-tools",
+    "name": "Developer Tools",
+    "description": "Tools, editors, frameworks, and platforms that make developers more productive.",
+    "featured": false
+  },
+  {
+    "id": "10",
+    "slug": "mysql",
+    "name": "MySQL",
+    "description": "Database design, query optimization, indexing strategies, and MySQL internals.",
+    "featured": false
+  },
+  {
+    "id": "11",
+    "slug": "database",
+    "name": "Database",
+    "description": "Database engines, data modeling, migrations, and performance tuning.",
+    "featured": false
+  },
+  {
+    "id": "12",
+    "slug": "backend",
+    "name": "Backend",
+    "description": "Server-side development, APIs, infrastructure, and systems architecture.",
+    "featured": false
+  },
+  {
+    "id": "13",
+    "slug": "engineering",
+    "name": "Engineering",
+    "description": "Software engineering culture, practices, and lessons from the trenches.",
+    "featured": false
+  },
+  {
+    "id": "14",
+    "slug": "team-culture",
+    "name": "Team Culture",
+    "description": "Building great engineering teams, onboarding, adoption, and organizational change.",
+    "featured": false
+  },
+  {
+    "id": "15",
+    "slug": "blog",
+    "name": "Blog",
+    "description": "Meta-posts about running this site, writing, and building in public.",
+    "featured": false
+  },
+  {
+    "id": "16",
+    "slug": "opinions",
+    "name": "Opinions",
+    "description": "Commentary, hot takes, and perspective pieces on the tech industry.",
+    "featured": false
+  },
+  {
+    "id": "17",
+    "slug": "wordpress",
+    "name": "WordPress",
+    "description": "WordPress development, plugins, security, and ecosystem news.",
+    "featured": false
+  },
+  {
+    "id": "18",
+    "slug": "security",
+    "name": "Security",
+    "description": "Software security, supply chain attacks, vulnerability analysis, and defense strategies.",
+    "featured": false
+  },
+  {
+    "id": "19",
+    "slug": "supply-chain",
+    "name": "Supply Chain",
+    "description": "Software supply chain risks, open-source dependencies, and vendor trust.",
+    "featured": false
+  },
+  {
+    "id": "20",
+    "slug": "open-source",
+    "name": "Open Source",
+    "description": "Open-source projects, licensing, community, and sustainability.",
+    "featured": false
+  },
+  {
+    "id": "21",
+    "slug": "typescript",
+    "name": "TypeScript",
+    "description": "TypeScript tips, deep dives, compiler updates, and type-level programming.",
+    "featured": false
+  },
+  {
+    "id": "22",
+    "slug": "javascript",
+    "name": "JavaScript",
+    "description": "JavaScript language features, patterns, and ecosystem updates.",
+    "featured": false
+  },
+  {
+    "id": "23",
+    "slug": "php",
+    "name": "PHP",
+    "description": "PHP development, frameworks, tooling, and modern PHP practices.",
+    "featured": false
+  },
+  {
+    "id": "24",
+    "slug": "machine-learning",
+    "name": "Machine Learning",
+    "description": "ML models, training, inference, and practical AI engineering.",
+    "featured": false
+  },
+  {
+    "id": "25",
+    "slug": "tts",
+    "name": "TTS",
+    "description": "Text-to-speech technology, voice synthesis, and audio AI.",
+    "featured": false
+  },
+  {
+    "id": "26",
+    "slug": "voice-ui",
+    "name": "Voice UI",
+    "description": "Voice interfaces, conversational design, and audio-first experiences.",
+    "featured": false
+  },
+  {
+    "id": "27",
+    "slug": "space",
+    "name": "Space",
+    "description": "Space exploration, rockets, NASA, and the future of spaceflight.",
+    "featured": false
+  },
+  {
+    "id": "28",
+    "slug": "nasa",
+    "name": "NASA",
+    "description": "NASA missions, programs, and the future of American space exploration.",
+    "featured": false
+  },
+  {
+    "id": "29",
+    "slug": "artemis",
+    "name": "Artemis",
+    "description": "NASA's Artemis program to return humans to the Moon and beyond.",
+    "featured": false
+  },
+  {
+    "id": "30",
+    "slug": "moon",
+    "name": "Moon",
+    "description": "Lunar exploration, missions, and science.",
+    "featured": false
+  },
+  {
+    "id": "31",
+    "slug": "mars",
+    "name": "Mars",
+    "description": "Mars exploration, colonization plans, and planetary science.",
+    "featured": false
+  },
+  {
+    "id": "32",
+    "slug": "hardware",
+    "name": "Hardware",
+    "description": "Keyboards, mice, monitors, and other gear reviews and recommendations.",
+    "featured": false
+  },
+  {
+    "id": "33",
+    "slug": "mouse",
+    "name": "Mouse",
+    "description": "Mice, pointing devices, and ergonomic peripherals.",
+    "featured": false
+  },
+  {
+    "id": "34",
+    "slug": "productivity",
+    "name": "Productivity",
+    "description": "Tools, workflows, and habits for getting more done.",
+    "featured": false
+  },
+  {
+    "id": "35",
+    "slug": "accessories",
+    "name": "Accessories",
+    "description": "Accessories and peripherals that complement your setup.",
+    "featured": false
+  },
+  {
+    "id": "36",
+    "slug": "keyboards",
+    "name": "Keyboards",
+    "description": "Mechanical keyboards, ergonomics, and custom layouts.",
+    "featured": false
+  },
+  {
+    "id": "37",
+    "slug": "ergonomics",
+    "name": "Ergonomics",
+    "description": "Ergonomic setups, health-conscious workspaces, and comfort-first design.",
+    "featured": false
+  },
+  {
+    "id": "38",
+    "slug": "programming",
+    "name": "Programming",
+    "description": "Coding practices, language deep dives, and software craftsmanship.",
+    "featured": false
+  },
+  {
+    "id": "39",
+    "slug": "learning",
+    "name": "Learning",
+    "description": "Online courses, self-education, and skill-building resources.",
+    "featured": false
+  },
+  {
+    "id": "40",
+    "slug": "web-development",
+    "name": "Web Development",
+    "description": "Frontend, backend, and full-stack web development topics.",
+    "featured": false
+  },
+  {
+    "id": "41",
+    "slug": "gaming",
+    "name": "Gaming",
+    "description": "Gaming hardware, reviews, and the intersection of tech and play.",
+    "featured": false
+  },
+  {
+    "id": "42",
+    "slug": "smart-home",
+    "name": "Smart Home",
+    "description": "Smart home devices, automation, and connected living.",
+    "featured": false
+  },
+  {
+    "id": "43",
+    "slug": "basketball",
+    "name": "Basketball",
+    "description": "Basketball gear, training tech, and the sport at home.",
+    "featured": false
+  },
+  {
+    "id": "44",
+    "slug": "shopping",
+    "name": "Shopping",
+    "description": "Online shopping, product comparisons, and buying guides.",
+    "featured": false
+  },
+  {
+    "id": "45",
+    "slug": "online",
+    "name": "Online",
+    "description": "Online services, digital banking, and internet-first experiences.",
+    "featured": false
+  },
+  {
+    "id": "46",
+    "slug": "banking",
+    "name": "Banking",
+    "description": "Digital banking, online accounts, and personal finance tools.",
+    "featured": false
+  },
+  {
+    "id": "47",
+    "slug": "furniture",
+    "name": "Furniture",
+    "description": "Home and office furniture reviews and recommendations.",
+    "featured": false
+  },
+  {
+    "id": "48",
+    "slug": "desks",
+    "name": "Desks",
+    "description": "Standing desks, desk converters, and workspace setups.",
+    "featured": false
+  },
+  {
+    "id": "49",
+    "slug": "office",
+    "name": "Office",
+    "description": "Office setups, gear, and productivity environments.",
+    "featured": false
+  },
+  {
+    "id": "50",
+    "slug": "groceries",
+    "name": "Groceries",
+    "description": "Online grocery ordering, delivery services, and food shopping.",
+    "featured": false
+  },
+  {
+    "id": "51",
+    "slug": "wedding",
+    "name": "Wedding",
+    "description": "Wedding planning, rings, and celebration.",
+    "featured": false
+  },
+  {
+    "id": "52",
+    "slug": "jewelry",
+    "name": "Jewelry",
+    "description": "Jewelry reviews, custom rings, and accessory recommendations.",
+    "featured": false
+  },
+  {
+    "id": "53",
+    "slug": "performance",
+    "name": "Performance",
+    "description": "Application performance, optimization, and speed techniques.",
+    "featured": false
   }
 ]
-

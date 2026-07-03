@@ -17,7 +17,7 @@ tags:
 author: joseph-crawford
 publishedAt: '2026-04-13'
 updatedAt: '2026-04-13'
-featured: true
+featured: false
 ---
 
 I've been a space nerd for as long as I can remember. I watched the shuttle launches on grainy VHS tapes. I stayed up late to watch Mars rover landings. I know how hard this stuff is.

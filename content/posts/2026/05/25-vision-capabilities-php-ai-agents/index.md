@@ -4,9 +4,9 @@ title: "PHP Can See Now: Vision Capabilities for AI Agents Are Here"
 excerpt: "The Neuron AI framework just added image understanding to PHP agents. That's not a small thing—PHP powers over half the web, and until now, building vision-capable AI in PHP meant bolting on Python microservices. Here's what changed, how it works, and what you can actually build with it."
 featuredImage: /images/content/vision-capabilities-php-ai-agents/featured.png
 tags:
-  - AI
-  - PHP
-  - Developer Tools
+  - ai
+  - php
+  - developer-tools
 author: joseph-crawford
 publishedAt: "2026-05-25"
 ---

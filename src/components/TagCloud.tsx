@@ -19,7 +19,7 @@ const TagCloud: React.FC = () => {
           name
         }
       }
-      allMarkdownRemark(filter: { frontmatter: { draft: { ne: true } } }) {
+      allMarkdownRemark(filter: { frontmatter: { draft: { ne: true } }, fileAbsolutePath: { regex: "//content/(posts|reviews)/" } }) {
         nodes {
           frontmatter {
             tags

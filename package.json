@@ -42,9 +42,11 @@
     "gatsby-transformer-sharp": "^5.13.0",
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
+    "react-photo-album": "^3.6.0",
     "react-use-flexsearch": "^0.1.1",
     "shiki": "^3.15.0",
     "twoslash": "^0.3.4",
+    "yet-another-react-lightbox": "^3.32.0",
     "zod": "^3.25.76"
   },
   "devDependencies": {

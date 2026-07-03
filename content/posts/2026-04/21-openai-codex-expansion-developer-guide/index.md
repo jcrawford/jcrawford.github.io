@@ -4,9 +4,9 @@ title: "OpenAI Codex Expanded: A Developer's Guide to the New AI Pair Programmer
 excerpt: "OpenAI just released a major Codex update with computer use, in-app browser, image generation, 90+ new plugins, and memory. Here's what developers need to know—and how it compares to GitHub Copilot and Claude Code."
 featuredImage: /images/content/codex-2026-update/codex-2026-update.png
 tags:
-  - AI
-  - Developer Tools
-  - OpenAI
+  - ai
+  - developer-tools
+
 author: joseph-crawford
 publishedAt: 2026-04-21T14:30:00-04:00
 featured: true
