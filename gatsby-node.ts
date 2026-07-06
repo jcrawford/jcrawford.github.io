@@ -48,7 +48,7 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
     }
 
     type MarkdownRemarkFrontmatterReview {
-      rating: Int
+      rating: Float
       pros: [String]
       cons: [String]
       price: String

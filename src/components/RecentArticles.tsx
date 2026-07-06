@@ -52,6 +52,7 @@ const RecentArticles: React.FC = () => {
   `);
 
   const [popularOrder, setPopularOrder] = useState<Map<string, { score?: number | null }>>(new Map());
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     let isMounted = true;
@@ -62,23 +63,32 @@ const RecentArticles: React.FC = () => {
     };
 
     if (typeof window === 'undefined') {
+      setIsLoading(false);
       return () => {
         isMounted = false;
       };
     }
 
     const cached = window.localStorage.getItem(POPULAR_ARTICLES_STORAGE_KEY);
-    applyPayload(cached);
 
     fetch('/data/popular-articles.json')
       .then((response) => (response.ok ? response.text() : null))
       .then((payload) => {
-        if (!payload) return;
-        window.localStorage.setItem(POPULAR_ARTICLES_STORAGE_KEY, payload);
-        applyPayload(payload);
+        if (!isMounted) return;
+        if (payload) {
+          window.localStorage.setItem(POPULAR_ARTICLES_STORAGE_KEY, payload);
+          applyPayload(payload);
+        } else if (cached) {
+          applyPayload(cached);
+        }
+        setIsLoading(false);
       })
       .catch(() => {
-        // Keep the cached/fallback ordering when analytics data is unavailable.
+        if (!isMounted) return;
+        if (cached) {
+          applyPayload(cached);
+        }
+        setIsLoading(false);
       });
 
     return () => {
@@ -123,7 +133,7 @@ const RecentArticles: React.FC = () => {
   return (
     <div className="widget hm-sidebar-posts">
       <h3 className="widget-title">Popular</h3>
-      {articles.map((article) => {
+      {isLoading ? null : articles.map((article) => {
         const isReview = article.frontmatter.tags?.some((t) => t.toLowerCase() === 'reviews') ?? false;
         const articlePath = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name, isReview);
         return (

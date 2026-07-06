@@ -52,7 +52,7 @@ const ImageSpinner: React.FC<ImageSpinnerProps> = ({ images }) => {
                   playsInline
                   preload="metadata"
                   aria-label={currentImage.alt}
-                  style={{ width: '100%', borderRadius: '4px' }}
+                  style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '4px' }}
                 />
               ) : (
                 <OptimizedImage
