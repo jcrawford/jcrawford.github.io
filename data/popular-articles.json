@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-06T21:09:33.750Z",
+  "generatedAt": "2026-07-06T21:51:15.440Z",
   "windowDays": 30,
   "entries": [
     {
@@ -58,6 +58,12 @@
     },
     {
       "id": "/posts/claude-opus-4-7-whats-new",
+      "views": 1,
+      "comments": 0,
+      "score": 1
+    },
+    {
+      "id": "/posts/disney-vacation-2026",
       "views": 1,
       "comments": 0,
       "score": 1
