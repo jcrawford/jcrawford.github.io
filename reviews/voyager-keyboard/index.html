@@ -555,7 +555,21 @@
 
         gtag('config', 'G-9LLY1071M3', {"anonymize_ip":true,"send_page_view":false});
       }
-      </script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/reviews/voyager-keyboard/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+      </script><script>
+          (function() {
+            function sendPageView() {
+              if (typeof window.gtag === 'function') {
+                window.gtag('event', 'page_view', {
+                  page_path: window.location.pathname + window.location.search + window.location.hash,
+                  send_to: 'G-9LLY1071M3'
+                });
+              } else {
+                setTimeout(sendPageView, 100);
+              }
+            }
+            setTimeout(sendPageView, 300);
+          })();
+        </script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/reviews/voyager-keyboard/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >

@@ -1,7 +1,13 @@
 {
-  "generatedAt": "2026-07-07T15:32:59.681Z",
+  "generatedAt": "2026-07-07T17:06:40.490Z",
   "windowDays": 30,
   "entries": [
+    {
+      "id": "/posts/disney-vacation-2026",
+      "views": 12,
+      "comments": 0,
+      "score": 12
+    },
     {
       "id": "/reviews/huupe-mini-review",
       "views": 11,
@@ -25,12 +31,6 @@
       "views": 5,
       "comments": 0,
       "score": 5
-    },
-    {
-      "id": "/posts/disney-vacation-2026",
-      "views": 4,
-      "comments": 0,
-      "score": 4
     },
     {
       "id": "/reviews/arcade1up-infinity-game-table-review",
