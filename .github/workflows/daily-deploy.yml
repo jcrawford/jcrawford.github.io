@@ -13,10 +13,6 @@ env:
   GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
   GA4_SERVICE_ACCOUNT_EMAIL: ${{ secrets.GA4_SERVICE_ACCOUNT_EMAIL }}
   GA4_SERVICE_ACCOUNT_PRIVATE_KEY: ${{ secrets.GA4_SERVICE_ACCOUNT_PRIVATE_KEY }}
-  # Use the auto-provided GITHUB_TOKEN for git push and gh-pages deploy
-  # POPULAR_POSTS_GITHUB_TOKEN only needed for GitHub Discussions API (comment counts)
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  POPULAR_POSTS_GITHUB_TOKEN: ${{ secrets.POPULAR_POSTS_GITHUB_TOKEN }}
 
 jobs:
   deploy:
@@ -25,7 +21,6 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: master
-          # Need full history for gh-pages push
           fetch-depth: 0
 
       - uses: actions/setup-node@v4
@@ -37,7 +32,6 @@ jobs:
 
       - name: Generate popular articles data
         env:
-          # Override GITHUB_TOKEN with the discussions token for the generate script
           GITHUB_TOKEN: ${{ secrets.POPULAR_POSTS_GITHUB_TOKEN }}
         run: npm run generate:popular
 
@@ -55,6 +49,8 @@ jobs:
 
       - name: Build and deploy to GitHub Pages
         env:
-          # Use the auto-provided token for gh-pages push
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx gatsby build && npx gh-pages -d public -t
+        run: |
+          git config --global url."https://${GH_TOKEN}@github.com/jcrawford/jcrawford.github.io.git".insteadOf "https://github.com/jcrawford/jcrawford.github.io.git"
+          npx gatsby build
+          npx gh-pages -d public -t
