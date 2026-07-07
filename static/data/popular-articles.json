@@ -1,24 +1,24 @@
 {
-  "generatedAt": "2026-07-07T18:24:17.990Z",
+  "generatedAt": "2026-07-07T20:17:08.384Z",
   "windowDays": 30,
   "entries": [
     {
-      "id": "/posts/disney-vacation-2026",
-      "views": 13,
+      "id": "/reviews/ford-transit-15-passenger-van-review",
+      "views": 66,
       "comments": 0,
-      "score": 13
+      "score": 66
+    },
+    {
+      "id": "/posts/disney-vacation-2026",
+      "views": 15,
+      "comments": 0,
+      "score": 15
     },
     {
       "id": "/reviews/huupe-mini-review",
       "views": 11,
       "comments": 0,
       "score": 11
-    },
-    {
-      "id": "/reviews/ford-transit-15-passenger-van-review",
-      "views": 7,
-      "comments": 0,
-      "score": 7
     },
     {
       "id": "/reviews/voyager-keyboard",
