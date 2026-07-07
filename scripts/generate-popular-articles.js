@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+require('dotenv').config();
+
 const fs = require('fs/promises');
 const path = require('path');
 const https = require('https');
@@ -241,7 +243,10 @@ function normalizePath(input) {
 async function main() {
   const [viewsByPath, commentsByPath] = await Promise.all([
     fetchGa4Views(),
-    fetchDiscussionCommentCounts(),
+    fetchDiscussionCommentCounts().catch((error) => {
+      console.warn(`Skipping discussion comment counts: ${error.message || error}`);
+      return new Map();
+    }),
   ]);
 
   const uniquePaths = new Set([
