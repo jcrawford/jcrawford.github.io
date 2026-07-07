@@ -6,10 +6,10 @@ featuredImage: "/images/content/total-typescript-review.jpg"
 featuredImageLink: "https://www.totaltypescript.com/workshops"
 tags:
   - reviews
-  - TypeScript
-  - Learning
-  - "Web Development"
-  - Work
+  - typescript
+  - learning
+  - web-development
+  - work
 author: joseph-crawford
 publishedAt: "2026-04-14"
 review:

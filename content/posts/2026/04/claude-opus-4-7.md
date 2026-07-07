@@ -4,10 +4,9 @@ title: "Claude Opus 4.7: What's New and Why Developers Should Care"
 excerpt: "Anthropic's latest flagship model brings meaningful improvements in coding autonomy, vision, and safety. Here's what changed between 4.6 and 4.7—and whether it's worth upgrading your workflows."
 featuredImage: /images/content/claude-opus-4-7-hero.png
 tags:
-  - AI
-  - Claude
-  - Developer Tools
-  - Machine Learning
+  - ai
+  - developer-tools
+  - machine-learning
 author: joseph-crawford
 publishedAt: "2026-04-16"
 draft: false

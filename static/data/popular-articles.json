@@ -1,5 +1,126 @@
 {
-  "generatedAt": "2026-06-12T13:52:57.605Z",
+  "generatedAt": "2026-07-06T22:04:10.539Z",
   "windowDays": 30,
-  "entries": []
+  "entries": [
+    {
+      "id": "/reviews/huupe-mini-review",
+      "views": 10,
+      "comments": 0,
+      "score": 10
+    },
+    {
+      "id": "/reviews/voyager-keyboard",
+      "views": 6,
+      "comments": 0,
+      "score": 6
+    },
+    {
+      "id": "/posts/saferide-health-cursor-ai-adoption",
+      "views": 5,
+      "comments": 0,
+      "score": 5
+    },
+    {
+      "id": "/reviews/total-typescript-pro-complete-review",
+      "views": 5,
+      "comments": 0,
+      "score": 5
+    },
+    {
+      "id": "/reviews/arcade1up-infinity-game-table-review",
+      "views": 3,
+      "comments": 0,
+      "score": 3
+    },
+    {
+      "id": "/posts/gpt-5-5-first-impressions",
+      "views": 2,
+      "comments": 0,
+      "score": 2
+    },
+    {
+      "id": "/posts/long-running-ai-agents-adk",
+      "views": 2,
+      "comments": 0,
+      "score": 2
+    },
+    {
+      "id": "/posts/typescript-7-beta-go-rewrite",
+      "views": 2,
+      "comments": 0,
+      "score": 2
+    },
+    {
+      "id": "/posts/anthropics-mythos-moment-feels-familiar-and-not-in-a-good-way",
+      "views": 1,
+      "comments": 0,
+      "score": 1
+    },
+    {
+      "id": "/posts/claude-opus-4-7-whats-new",
+      "views": 1,
+      "comments": 0,
+      "score": 1
+    },
+    {
+      "id": "/posts/disney-vacation-2026",
+      "views": 1,
+      "comments": 0,
+      "score": 1
+    },
+    {
+      "id": "/posts/gemini-3-1-flash-tts-practical-guide",
+      "views": 1,
+      "comments": 0,
+      "score": 1
+    },
+    {
+      "id": "/posts/running-this-blog-with-an-ai-team",
+      "views": 1,
+      "comments": 0,
+      "score": 1
+    },
+    {
+      "id": "/posts/saferide-health",
+      "views": 1,
+      "comments": 0,
+      "score": 1
+    },
+    {
+      "id": "/posts/things-you-didnt-know-about-mysql-indexes",
+      "views": 1,
+      "comments": 0,
+      "score": 1
+    },
+    {
+      "id": "/posts/vision-capabilities-php-ai-agents",
+      "views": 1,
+      "comments": 0,
+      "score": 1
+    },
+    {
+      "id": "/posts/wordpress-plugin-supply-chain-attack-2026",
+      "views": 1,
+      "comments": 0,
+      "score": 1
+    },
+    {
+      "id": "/reviews/flexispot-e7-plus",
+      "views": 1,
+      "comments": 0,
+      "score": 1
+    },
+    {
+      "id": "/reviews/logitech-mx-master-3s-review",
+      "views": 1,
+      "comments": 0,
+      "score": 1
+    },
+    {
+      "id": "/reviews/patrick-adair-designs-review",
+      "views": 1,
+      "comments": 0,
+      "score": 1
+    }
+  ]
 }

@@ -12,6 +12,7 @@ const config: GatsbyConfig = {
     },
     navigation: [
       { name: 'Home', path: '/' },
+      { name: 'Gallery', path: '/gallery' },
       { name: 'Family', path: '/tag/family' },
       { name: 'Reviews', path: '/tag/reviews' },
       { name: 'Resume', path: '/resume' },
@@ -95,6 +96,13 @@ const config: GatsbyConfig = {
         path: `${__dirname}/content/reviews`,
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'galleries',
+        path: `${__dirname}/content/galleries`,
+      },
+    },
     'gatsby-transformer-json',
     {
       resolve: 'gatsby-plugin-local-search',
@@ -109,7 +117,7 @@ const config: GatsbyConfig = {
         },
         query: `
           {
-            allMarkdownRemark(filter: { frontmatter: { slug: { ne: null } } }) {
+            allMarkdownRemark(filter: { frontmatter: { slug: { ne: null }, draft: { ne: true } }, fileAbsolutePath: { regex: "//content/(posts|reviews)/" } }) {
               nodes {
                 id
                 html

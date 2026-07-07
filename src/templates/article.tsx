@@ -7,8 +7,30 @@ import OptimizedImage from '../components/OptimizedImage';
 import SEO from '../components/SEO';
 import ReviewBox from '../components/ReviewBox';
 import Comments from '../components/Comments';
+import ImageSpinner from '../components/ImageSpinner';
+import GalleryEmbed from '../components/GalleryEmbed';
 import { getArticlePath } from '../utils/articlePath';
 import { hasTag, normalizeTagSlug, tagMatches } from '../utils/tagUtils';
+
+interface SpinnerImage {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
+interface NamedSpinner {
+  id: string;
+  images: SpinnerImage[] | null;
+}
+
+interface GalleryEmbedData {
+  slug: string;
+  title: string;
+  coverImage: string;
+  description: string;
+  photoCount: number;
+  date: string;
+}
 
 interface ArticleData {
   markdownRemark: {
@@ -20,10 +42,13 @@ interface ArticleData {
       excerpt: string;
       featuredImage: string;
       featuredImageLink?: string;
-      tags: string[];
+      tags: string[] | null;
       author: string;
       publishedAt: string;
       updatedAt: string;
+      imageSpinner?: SpinnerImage[];
+      imageSpinners?: NamedSpinner[];
+      galleryEmbeds?: GalleryEmbedData[];
       review?: {
         rating: number;
         pros: string[];
@@ -46,7 +71,7 @@ interface ArticleData {
       frontmatter: {
         slug: string;
         title: string;
-        tags: string[];
+        tags: string[] | null;
         series?: {
           name: string;
         };
@@ -58,7 +83,7 @@ interface ArticleData {
       frontmatter: {
         slug: string;
         title: string;
-        tags: string[];
+        tags: string[] | null;
         series?: {
           name: string;
         };
@@ -83,6 +108,75 @@ const ArticleTemplate: React.FC<PageProps<ArticleData>> = ({ data, pageContext }
   
   // Get the first tag that's not "family" or "featured" for display
   const primaryTag = article.tags?.find(tag => !tagMatches(tag, 'family') && !tagMatches(tag, 'featured')) || article.tags?.[0];
+
+  // Process content with inline spinners and gallery embeds
+  // Splits HTML on <!-- spinner:id --> and <!-- gallery:slug --> markers
+  // and interleaves React components
+  const renderContentWithSpinners = (): React.ReactNode[] => {
+    const spinners = article.imageSpinners;
+    const galleryEmbeds = article.galleryEmbeds;
+    const hasSpinners = spinners && spinners.length > 0;
+    const hasGalleries = galleryEmbeds && galleryEmbeds.length > 0;
+
+    if (!hasSpinners && !hasGalleries) {
+      return [<div key="content" className="hm-article-content" dangerouslySetInnerHTML={{ __html: articleHtml }} />];
+    }
+
+    // Build lookups
+    const spinnerMap = new Map<string, { images: SpinnerImage[] | null }>();
+    if (hasSpinners) {
+      for (const spinner of spinners!) {
+        spinnerMap.set(spinner.id, spinner);
+      }
+    }
+
+    const galleryMap = new Map<string, GalleryEmbedData>();
+    if (hasGalleries) {
+      for (const gallery of galleryEmbeds!) {
+        galleryMap.set(gallery.slug, gallery);
+      }
+    }
+
+    // Find all markers in HTML order (both spinner and gallery)
+    const markerRegex = /<!--\s*(spinner:[\w-]+|gallery:[\w-]+)\s*-->/g;
+    const parts: React.ReactNode[] = [];
+    let keyIndex = 0;
+    let lastIndex = 0;
+    let match: RegExpExecArray | null;
+
+    while ((match = markerRegex.exec(articleHtml)) !== null) {
+      const before = articleHtml.substring(lastIndex, match.index);
+      const markerType = match[1]; // e.g. "spinner:refuge" or "gallery:savannah-wildlife-refuge-album"
+
+      if (before.trim()) {
+        parts.push(<div key={`part-${keyIndex++}`} className="hm-article-content" dangerouslySetInnerHTML={{ __html: before }} />);
+      }
+
+      if (markerType.startsWith('spinner:')) {
+        const spinnerId = markerType.replace('spinner:', '');
+        const spinnerData = spinnerMap.get(spinnerId);
+        if (spinnerData?.images && spinnerData.images.length > 0) {
+          parts.push(<ImageSpinner key={`spinner-${spinnerId}`} images={spinnerData.images} />);
+        }
+      } else if (markerType.startsWith('gallery:')) {
+        const gallerySlug = markerType.replace('gallery:', '');
+        const galleryData = galleryMap.get(gallerySlug);
+        if (galleryData) {
+          parts.push(<GalleryEmbed key={`gallery-${gallerySlug}`} {...galleryData} />);
+        }
+      }
+
+      lastIndex = match.index + match[0].length;
+    }
+
+    // Append any remaining HTML after the last marker
+    const remaining = articleHtml.substring(lastIndex);
+    if (remaining.trim()) {
+      parts.push(<div key={`part-${keyIndex++}`} className="hm-article-content" dangerouslySetInnerHTML={{ __html: remaining }} />);
+    }
+
+    return parts;
+  };
 
   return (
     <Layout>
@@ -121,23 +215,29 @@ const ArticleTemplate: React.FC<PageProps<ArticleData>> = ({ data, pageContext }
             </div>
           </header>
 
-          <div className="hm-article-featured-image">
-            {article.featuredImageLink ? (
-              <a href={article.featuredImageLink} target="_blank" rel="noopener noreferrer">
+          {!(article.imageSpinner && article.imageSpinner.length > 0) && (
+            <div className="hm-article-featured-image">
+              {article.featuredImageLink ? (
+                <a href={article.featuredImageLink} target="_blank" rel="noopener noreferrer">
+                  <OptimizedImage 
+                    src={article.featuredImage} 
+                    alt={article.title}
+                    loading="eager"
+                  />
+                </a>
+              ) : (
                 <OptimizedImage 
                   src={article.featuredImage} 
                   alt={article.title}
                   loading="eager"
                 />
-              </a>
-            ) : (
-              <OptimizedImage 
-                src={article.featuredImage} 
-                alt={article.title}
-                loading="eager"
-              />
-            )}
-          </div>
+              )}
+            </div>
+          )}
+
+          {article.imageSpinner && article.imageSpinner.length > 0 && (
+            <ImageSpinner images={article.imageSpinner} />
+          )}
 
           {article.review && (
             <ReviewBox
@@ -151,15 +251,12 @@ const ArticleTemplate: React.FC<PageProps<ArticleData>> = ({ data, pageContext }
             />
           )}
 
-          <div 
-            className="hm-article-content"
-            dangerouslySetInnerHTML={{ __html: articleHtml }}
-          />
+          {renderContentWithSpinners()}
 
-          {article.tags.length > 0 && (
+          {article.tags?.length > 0 && (
             <div className="hm-article-tags">
               <span className="hm-article-tags-label">Tags:</span>
-              {article.tags.map((tag) => (
+              {article.tags?.map((tag) => (
                 <Link key={tag} to={`/tag/${normalizeTagSlug(tag)}`} className="hm-article-tag">
                   {tag}
                 </Link>
@@ -205,7 +302,7 @@ export const query = graphql`
     $author: String!
     $publishedAt: Date!
   ) {
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+    markdownRemark(frontmatter: { slug: { eq: $slug } }, fileAbsolutePath: { regex: "/content/(posts|reviews)/" }) {
       id
       html
       frontmatter {
@@ -218,6 +315,20 @@ export const query = graphql`
         author
         publishedAt
         updatedAt
+        imageSpinner {
+          src
+          alt
+          caption
+        }
+        imageSpinners {
+          id
+          images {
+            src
+            alt
+            caption
+          }
+        }
+        galleryEmbeds
         review {
           rating
           pros
@@ -284,4 +395,3 @@ export const Head: HeadFC<ArticleData> = ({ data }) => {
 };
 
 export default ArticleTemplate;
-

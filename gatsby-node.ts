@@ -35,18 +35,51 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
   createTypes(`
     type MarkdownRemarkFrontmatter {
       draft: Boolean
+      date: Date
+      description: String
+      coverImage: String
       series: SeriesFrontmatter
       review: MarkdownRemarkFrontmatterReview
+      photos: [GalleryPhoto]
+      videos: JSON
+      imageSpinner: [SpinnerImage]
+      imageSpinners: [NamedSpinner]
+      galleryEmbeds: JSON
     }
 
     type MarkdownRemarkFrontmatterReview {
-      rating: Int
+      rating: Float
       pros: [String]
       cons: [String]
       price: String
       brand: String
       productUrl: String
       affiliateLink: String
+    }
+
+    type GalleryPhoto {
+      src: String
+      alt: String
+      width: Int
+      height: Int
+      caption: String
+    }
+
+    type GalleryVideo {
+      src: String
+      alt: String
+      caption: String
+    }
+
+    type SpinnerImage {
+      src: String
+      alt: String
+      caption: String
+    }
+
+    type NamedSpinner {
+      id: String
+      images: [SpinnerImage]
     }
 
     type SeriesFrontmatter {
@@ -256,7 +289,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
 
   const result = await graphql<PagesQueryResult>(`
     query {
-      allMarkdownRemark(filter: { frontmatter: { slug: { ne: null }, draft: { ne: true } } }) {
+      allMarkdownRemark(filter: { frontmatter: { slug: { ne: null }, draft: { ne: true } }, fileAbsolutePath: { regex: "//content/(posts|reviews)/" } }) {
         nodes {
           id
           fileAbsolutePath
@@ -360,13 +393,6 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
     );
     const numPages = Math.ceil(tagArticles.length / articlesPerPage);
 
-    const tagAliases = Array.from(new Set([
-      tag.name,
-      ...tagArticles.flatMap((article) =>
-        (article.frontmatter.tags || []).filter((articleTag) => normalizeTagSlug(articleTag) === tag.slug)
-      ),
-    ])).filter((alias) => alias && alias !== tag.slug);
-
     Array.from({ length: numPages }).forEach((_, i) => {
       const currentPage = i + 1;
       const canonicalPagePath = currentPage === 1 
@@ -385,18 +411,6 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
         path: canonicalPagePath,
         component: tagTemplate,
         context: pageContext,
-      });
-
-      tagAliases.forEach((alias) => {
-        const aliasPagePath = currentPage === 1
-          ? `/tag/${alias}`
-          : `/tag/${alias}/${currentPage}`;
-
-        createPage({
-          path: aliasPagePath,
-          component: tagTemplate,
-          context: pageContext,
-        });
       });
     });
 
@@ -417,4 +431,54 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
 
     reporter.info(`Created author page: ${author.name}`);
   });
+
+  // Create gallery pages only if gallery content exists
+  // Gallery pages are skipped if no gallery albums are found
+  const galleryIndexTemplate = path.resolve('./src/templates/gallery-index.tsx');
+  const galleryAlbumTemplate = path.resolve('./src/templates/gallery-album.tsx');
+
+  const galleryResult = await graphql<{ allMarkdownRemark: { nodes: Array<{ frontmatter: { slug: string; title: string } }> } }>(`
+    query GalleryAlbumsQuery {
+      allMarkdownRemark(
+        filter: {
+          fileAbsolutePath: { regex: "/content/galleries/" }
+          frontmatter: { slug: { ne: null }, draft: { ne: true } }
+        }
+      ) {
+        nodes {
+          frontmatter {
+            slug
+            title
+          }
+        }
+      }
+    }
+  `);
+
+  if (!galleryResult.errors && galleryResult.data?.allMarkdownRemark.nodes && galleryResult.data.allMarkdownRemark.nodes.length > 0) {
+    // Gallery index page
+    createPage({
+      path: '/gallery',
+      component: galleryIndexTemplate,
+      context: {},
+    });
+
+    reporter.info('Created gallery index page: /gallery');
+
+    const galleryAlbums = galleryResult.data.allMarkdownRemark.nodes;
+
+    galleryAlbums.forEach((album) => {
+      createPage({
+        path: `/gallery/${album.frontmatter.slug}`,
+        component: galleryAlbumTemplate,
+        context: {
+          slug: album.frontmatter.slug,
+        },
+      });
+
+      reporter.info(`Created gallery album page: ${album.frontmatter.title}`);
+    });
+  } else {
+    reporter.info('No gallery albums found, skipping gallery pages');
+  }
 };

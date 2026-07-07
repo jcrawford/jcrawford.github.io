@@ -3,7 +3,7 @@ slug: gemini-3-1-flash-tts-practical-guide
 title: "Gemini 3.1 Flash TTS: A Practical Guide to Building Dynamic Voice Interfaces"
 excerpt: "Google's new text-to-speech model introduces promptable audio tags for granular control. Here's how to use them in real projects—from audiobooks to interactive voice experiences."
 featuredImage: /images/content/gemini-3-1-flash-tts-hero.png
-tags: ["AI", "Google", "Text-to-Speech", "Developer Tools", "Voice UI"]
+tags: ["ai", "developer-tools", "tts", "voice-ui"]
 author: joseph-crawford
 publishedAt: "2026-04-16T12:30:00-04:00"
 draft: false

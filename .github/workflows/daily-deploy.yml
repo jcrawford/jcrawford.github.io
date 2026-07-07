@@ -1,0 +1,49 @@
+name: Daily deploy
+
+on:
+  schedule:
+    # 7:00 AM ET = 11:00 UTC (EDT: UTC-4)
+    - cron: '0 11 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+  GA4_SERVICE_ACCOUNT_EMAIL: ${{ secrets.GA4_SERVICE_ACCOUNT_EMAIL }}
+  GA4_SERVICE_ACCOUNT_PRIVATE_KEY: ${{ secrets.GA4_SERVICE_ACCOUNT_PRIVATE_KEY }}
+  GITHUB_TOKEN: ${{ secrets.POPULAR_POSTS_GITHUB_TOKEN }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Generate popular articles data
+        run: npm run generate:popular
+
+      - name: Commit updated popular articles data
+        run: |
+          if git diff --quiet -- static/data/popular-articles.json; then
+            echo "No popular article changes"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add static/data/popular-articles.json
+            git commit -m "chore: refresh popular articles data"
+            git push origin HEAD:master
+          fi
+
+      - name: Build and deploy to GitHub Pages
+        run: npx gatsby build && npx gh-pages -d public -t

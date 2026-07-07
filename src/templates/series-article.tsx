@@ -8,8 +8,20 @@ import { formatDate } from '../utils/dateUtils';
 import OptimizedImage from '../components/OptimizedImage';
 import SEO from '../components/SEO';
 import Comments from '../components/Comments';
+import ImageSpinner from '../components/ImageSpinner';
 import { normalizeTagSlug, tagMatches } from '../utils/tagUtils';
 import type { SeriesMetadata, SeriesArticle } from '../types';
+
+interface SpinnerImage {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
+interface NamedSpinner {
+  id: string;
+  images: SpinnerImage[] | null;
+}
 
 interface SeriesArticleData {
   markdownRemark: {
@@ -20,10 +32,12 @@ interface SeriesArticleData {
       title: string;
       excerpt: string;
       featuredImage: string;
-      tags: string[];
+      tags: string[] | null;
       author: string;
       publishedAt: string;
       updatedAt: string;
+      imageSpinner?: SpinnerImage[];
+      imageSpinners?: NamedSpinner[];
       series: {
         name: string;
         order?: number;
@@ -122,6 +136,51 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData>> = ({ data })
 
   const displayTitle = getDisplayTitle(article.title);
 
+  // Process content with inline spinners
+  const renderContentWithSpinners = (): React.ReactNode[] => {
+    const spinners = article.imageSpinners;
+    if (!spinners || spinners.length === 0) {
+      return [<div key="content" className="hm-article-content" dangerouslySetInnerHTML={{ __html: articleHtml }} />];
+    }
+
+    // Build a lookup from spinner id to spinner data
+    const spinnerMap = new Map<string, { images: SpinnerImage[] | null }>();
+    for (const spinner of spinners) {
+      spinnerMap.set(spinner.id, spinner);
+    }
+
+    // Find all spinner markers in HTML order
+    const markerRegex = /<!--\s*spinner:([\w-]+)\s*-->/g;
+    const parts: React.ReactNode[] = [];
+    let keyIndex = 0;
+    let lastIndex = 0;
+    let match: RegExpExecArray | null;
+
+    while ((match = markerRegex.exec(articleHtml)) !== null) {
+      const before = articleHtml.substring(lastIndex, match.index);
+      const spinnerId = match[1];
+
+      if (before.trim()) {
+        parts.push(<div key={`part-${keyIndex++}`} className="hm-article-content" dangerouslySetInnerHTML={{ __html: before }} />);
+      }
+
+      const spinnerData = spinnerMap.get(spinnerId);
+      if (spinnerData?.images && spinnerData.images.length > 0) {
+        parts.push(<ImageSpinner key={`spinner-${spinnerId}`} images={spinnerData.images} />);
+      }
+
+      lastIndex = match.index + match[0].length;
+    }
+
+    // Append any remaining HTML after the last marker
+    const remaining = articleHtml.substring(lastIndex);
+    if (remaining.trim()) {
+      parts.push(<div key={`part-${keyIndex++}`} className="hm-article-content" dangerouslySetInnerHTML={{ __html: remaining }} />);
+    }
+
+    return parts;
+  };
+
   return (
     <Layout>
       <div className="hm-container">
@@ -171,13 +230,15 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData>> = ({ data })
                 </div>
               </header>
 
-              <div className="hm-article-featured-image">
-                <OptimizedImage 
-                  src={article.featuredImage} 
-                  alt={article.title}
-                  loading="eager"
-                />
-              </div>
+              {!(article.imageSpinner && article.imageSpinner.length > 0) && (
+                <div className="hm-article-featured-image">
+                  <OptimizedImage 
+                    src={article.featuredImage} 
+                    alt={article.title}
+                    loading="eager"
+                  />
+                </div>
+              )}
 
               {/* Series Context - Auto-generated */}
               <SeriesContext
@@ -186,15 +247,16 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData>> = ({ data })
                 totalArticles={seriesArticles.length}
               />
 
-              <div 
-                className="hm-article-content"
-                dangerouslySetInnerHTML={{ __html: articleHtml }}
-              />
+              {article.imageSpinner && article.imageSpinner.length > 0 && (
+                <ImageSpinner images={article.imageSpinner} />
+              )}
 
-              {article.tags.length > 0 && (
+              {renderContentWithSpinners()}
+
+              {article.tags?.length > 0 && (
                 <div className="hm-article-tags">
                   <span className="hm-article-tags-label">Tags:</span>
-                  {article.tags.map((tag) => (
+                  {article.tags?.map((tag) => (
                     <span key={tag} className="hm-article-tag">
                       {tag}
                     </span>
@@ -235,7 +297,7 @@ export const query = graphql`
     $author: String!
     $seriesName: String!
   ) {
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+    markdownRemark(frontmatter: { slug: { eq: $slug } }, fileAbsolutePath: { regex: "/content/(posts|reviews)/" }) {
       id
       html
       frontmatter {
@@ -247,6 +309,19 @@ export const query = graphql`
         author
         publishedAt
         updatedAt
+        imageSpinner {
+          src
+          alt
+          caption
+        }
+        imageSpinners {
+          id
+          images {
+            src
+            alt
+            caption
+          }
+        }
         series {
           name
           order
