@@ -73,6 +73,8 @@ This isn't just about caution — it's about compliance. We deal with healthcare
 
 The agents can still be enormously useful on lower environments — staging, dev, QA — where the data is synthetic or sanitized. That's where the log investigation and container management work happens. Production stays off-limits.
 
+But here's the thing — even though the agent can't touch production itself, the `no-production-allowed` skill makes it **aware** of that constraint. So when I need something from production, the agent provides me with the exact queries I need to run. I tell it what I'm looking for, it crafts the SQL or the log search commands, and I execute them myself against production. The agent helps me narrow down the results and find the critical data we're looking for without ever touching the production database itself. It's a clean separation: the agent does the thinking, I do the executing.
+
 ### Context Skills
 
 We have around 25 skills in place now, and this number only seems to be growing. Every time we identify a repetitive workflow or a context gap, we build a skill for it. The collection has become a living layer of operational knowledge that makes the agents more useful the more we add to it.
