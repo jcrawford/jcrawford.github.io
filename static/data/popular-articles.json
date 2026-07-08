@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-07-07T20:17:08.384Z",
+  "generatedAt": "2026-07-08T03:45:02.915Z",
   "windowDays": 30,
   "entries": [
     {
       "id": "/reviews/ford-transit-15-passenger-van-review",
-      "views": 66,
+      "views": 72,
       "comments": 0,
-      "score": 66
+      "score": 72
     },
     {
       "id": "/posts/disney-vacation-2026",
-      "views": 15,
+      "views": 54,
       "comments": 0,
-      "score": 15
+      "score": 54
     },
     {
       "id": "/reviews/huupe-mini-review",
@@ -37,6 +37,12 @@
       "views": 5,
       "comments": 0,
       "score": 5
+    },
+    {
+      "id": "/posts/wordpress-plugin-supply-chain-attack-2026",
+      "views": 3,
+      "comments": 0,
+      "score": 3
     },
     {
       "id": "/reviews/arcade1up-infinity-game-table-review",
@@ -100,12 +106,6 @@
     },
     {
       "id": "/posts/vision-capabilities-php-ai-agents",
-      "views": 1,
-      "comments": 0,
-      "score": 1
-    },
-    {
-      "id": "/posts/wordpress-plugin-supply-chain-attack-2026",
       "views": 1,
       "comments": 0,
       "score": 1
