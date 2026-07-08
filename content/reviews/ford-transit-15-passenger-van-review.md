@@ -5,7 +5,6 @@ excerpt: >-
   A family road trip to Disney World put the 2026 Ford Transit through its
   paces. The van impressed — the Budget rental process, not so much.
 featuredImage: /images/content/reviews/ford-transit-15-passenger-van-review/featured.jpg
-featured: true
 tags:
   - reviews
   - family

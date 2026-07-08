@@ -9,7 +9,6 @@ tags:
 
 author: joseph-crawford
 publishedAt: 2026-04-21T14:30:00-04:00
-featured: true
 ---
 
 OpenAI announced a **major expansion of Codex** this week, transforming it from a code-focused assistant into a full-spectrum development partner that can operate your computer, browse the web, generate images, and remember your preferences across sessions.

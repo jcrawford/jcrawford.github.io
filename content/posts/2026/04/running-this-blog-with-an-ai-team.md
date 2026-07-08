@@ -10,7 +10,6 @@ tags:
 author: joseph-crawford
 publishedAt: "2026-04-09"
 updatedAt: "2026-04-09"
-featured: true
 ---
 
 # Running This Blog With an AI Team, While Keeping It Human

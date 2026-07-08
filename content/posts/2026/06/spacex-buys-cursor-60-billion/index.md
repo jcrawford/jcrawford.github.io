@@ -8,7 +8,6 @@ tags:
   - development
 author: joseph-crawford
 publishedAt: "2026-06-17"
-featured: true
 ---
 
 # SpaceX Is Buying Cursor for $60 Billion — and I Can't Wait to See What Comes Next

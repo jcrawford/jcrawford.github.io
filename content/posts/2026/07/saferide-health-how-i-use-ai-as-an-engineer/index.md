@@ -14,7 +14,6 @@ tags:
 author: joseph-crawford
 publishedAt: "2026-07-08"
 draft: false
-featured: true
 ---
 
 I've written before about our broader AI adoption at [SafeRide Health](https://www.saferidehealth.com) — the budget lessons, the model selection standards, the cultural shift. This post is different. This is about the day-to-day. What I actually do with AI, how I use it, and the infrastructure we've built that makes it work.

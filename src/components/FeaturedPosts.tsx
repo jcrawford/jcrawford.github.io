@@ -7,6 +7,7 @@ interface SliderArticle {
   title: string;
   excerpt: string;
   featuredImage: string;
+  tags: string[];
   publishedAt: string;
   author: string;
   authorName: string;
@@ -16,7 +17,12 @@ interface SliderArticle {
 interface HighlightedArticle {
   slug: string;
   title: string;
+  excerpt: string;
   featuredImage: string;
+  tags: string[];
+  publishedAt: string;
+  author: string;
+  authorName: string;
   isSeries: boolean;
 }
 
