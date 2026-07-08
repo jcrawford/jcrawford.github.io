@@ -35,11 +35,6 @@ const HighlightedPost: React.FC<HighlightedPostProps> = ({
         <div className="hm-fp-overlay">
           <Link className="hm-fp-link-overlay" to={articlePath} aria-label={title} />
         </div>
-        <div className="hmhp-content">
-          <div className="hmhp-details-container">
-            <h3 className="hmhp-title">{title}</h3>
-          </div>
-        </div>
       </div>
     </div>
   );
