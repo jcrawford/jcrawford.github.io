@@ -119,10 +119,7 @@ I have excellent internet connectivity, and every other device in my house conne
 
 I've recorded video of this exact experience across multiple games: the table sitting on the Connect screen, waiting for a match that never comes. The footage below shows roughly a minute of waiting per game — I've canceled each attempt because there's no point in waiting indefinitely when the system should match within a minute.
 
-<video controls playsinline style="width: 100%; max-width: 500px; margin: 2rem 0; display: block;">
-  <source src="/videos/content/reviews/arcade1up-infinity-game-table-review/multiplayer-matchmaking.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4kL01nYPkuI" title="Arcade1up Infinity Game Table — Multiplayer Matchmaking" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width: 100%; aspect-ratio: 16 / 9; margin: 2rem 0; display: block; border: none;"></iframe>
 
 <p style="font-size: 0.9em; color: #666; font-style: italic; margin-top: -1rem;">Video: The Infinity Game Table's Connect screen attempting online matchmaking. Each attempt shown runs for roughly a minute before I cancel out of frustration. Extended testing (30+ minutes) yields the same result — no matches found.</p>
 

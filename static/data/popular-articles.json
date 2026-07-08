@@ -1,12 +1,24 @@
 {
-  "generatedAt": "2026-07-06T22:04:10.539Z",
+  "generatedAt": "2026-07-07T20:05:52.684Z",
   "windowDays": 30,
   "entries": [
     {
-      "id": "/reviews/huupe-mini-review",
-      "views": 10,
+      "id": "/reviews/ford-transit-15-passenger-van-review",
+      "views": 63,
       "comments": 0,
-      "score": 10
+      "score": 63
+    },
+    {
+      "id": "/posts/disney-vacation-2026",
+      "views": 14,
+      "comments": 0,
+      "score": 14
+    },
+    {
+      "id": "/reviews/huupe-mini-review",
+      "views": 11,
+      "comments": 0,
+      "score": 11
     },
     {
       "id": "/reviews/voyager-keyboard",
@@ -58,12 +70,6 @@
     },
     {
       "id": "/posts/claude-opus-4-7-whats-new",
-      "views": 1,
-      "comments": 0,
-      "score": 1
-    },
-    {
-      "id": "/posts/disney-vacation-2026",
       "views": 1,
       "comments": 0,
       "score": 1

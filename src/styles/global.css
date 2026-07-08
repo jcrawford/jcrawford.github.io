@@ -2010,6 +2010,17 @@ body .hm-cl-sep #secondary .widget {
   vertical-align: middle;
 }
 
+.hm-article-views {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--hybridmag-color-text-light);
+}
+
+.hm-article-views svg {
+  vertical-align: middle;
+}
+
 /* Remove old meta styles */
 .hm-article-author-info,
 .hm-article-author-avatar,
@@ -2034,7 +2045,8 @@ body .hm-cl-sep #secondary .widget {
 html.hm-dark .hm-article-meta-by,
 html.hm-dark .hm-article-meta-separator,
 html.hm-dark .hm-article-date,
-html.hm-dark .hm-article-comments {
+html.hm-dark .hm-article-comments,
+html.hm-dark .hm-article-views {
   color: var(--hybridmag-color-text-light);
 }
 

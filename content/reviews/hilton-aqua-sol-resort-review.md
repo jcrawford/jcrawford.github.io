@@ -32,9 +32,9 @@ review:
   brand: Hilton
   productUrl: 'https://www.hilton.com/en/hotels/mcotkgv-hilton-vacation-club-aqua-sol-orlando/'
 galleryEmbeds:
-  - slug: hilton-aqua-sol-2024-album
-    title: "Hilton Aqua Sol 2024"
-    coverImage: /images/galleries/hilton-aqua-sol-2024/aqua-poolside-hug.jpg
+  - slug: hilton-aqua-sol-2026-album
+    title: "Hilton Aqua Sol 2026"
+    coverImage: /images/galleries/hilton-aqua-sol-2026/aqua-poolside-hug.jpg
     description: "Photos from our stay at the Hilton Aqua Sol Resort — pool days, s'mores nights, and the moments that made it our favorite place to stay."
     photoCount: 22
     date: "2024-08-01"
@@ -98,7 +98,7 @@ The waterpark keeps the kids entertained all day. The grills let you cook your o
 
 Since our visit in 2024 when we were married there, there is no other place we would want to stay. And every time we plan a Florida trip now, it's the same answer: Aqua Sol.
 
-<!-- gallery:hilton-aqua-sol-2024-album -->
+<!-- gallery:hilton-aqua-sol-2026-album -->
 
 ## The Verdict
 

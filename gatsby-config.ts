@@ -202,10 +202,9 @@ const config: GatsbyConfig = {
         ],
         gtagConfig: {
           anonymize_ip: true, // GDPR/privacy compliance
-          cookie_expires: 0,
         },
         pluginConfig: {
-          head: false, // Load via Partytown (not in head)
+          head: false, // Load in body, not head
           respectDNT: true, // Respect Do Not Track
           exclude: ['/preview/**', '/do-not-track/me/too/'],
           delayOnRouteUpdate: 0, // No delay for route changes

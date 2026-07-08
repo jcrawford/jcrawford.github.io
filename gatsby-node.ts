@@ -350,6 +350,20 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
     return;
   }
 
+  // Read popular articles data for build-time view counts
+  let viewCountMap = new Map<string, number>();
+  try {
+    const popularPath = path.join(__dirname, 'static', 'data', 'popular-articles.json');
+    const popularData = JSON.parse(fs.readFileSync(popularPath, 'utf-8'));
+    if (popularData?.entries) {
+      popularData.entries.forEach((entry: { id: string; views: number }) => {
+        viewCountMap.set(entry.id, entry.views);
+      });
+    }
+  } catch (e) {
+    reporter.warn('Could not read popular-articles.json for view counts');
+  }
+
   // Create article pages - use different templates for series vs standalone articles
   const articleTemplate = path.resolve('./src/templates/article.tsx');
   const seriesArticleTemplate = path.resolve('./src/templates/series-article.tsx');
@@ -377,6 +391,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
         publishedAt: article.frontmatter.publishedAt,
         seriesName: article.frontmatter.series?.name || null,
         isReview,
+        viewCount: viewCountMap.get(articlePath) ?? 0,
       },
     });
   });

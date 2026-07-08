@@ -15,6 +15,16 @@ function isVideo(src: string): boolean {
   return /\.(mp4|mov|webm|ogg)$/i.test(src);
 }
 
+function isYouTube(src: string): boolean {
+  return src.startsWith('youtube:') || src.startsWith('https://www.youtube.com/') || src.startsWith('https://youtu.be/');
+}
+
+function getYouTubeId(src: string): string {
+  if (src.startsWith('youtube:')) return src.replace('youtube:', '');
+  const match = src.match(/(?:youtube\.com\/embed\/|youtu\.be\/|v=)([\w-]{11})/);
+  return match ? match[1] : '';
+}
+
 const ImageSpinner: React.FC<ImageSpinnerProps> = ({ images }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -44,7 +54,18 @@ const ImageSpinner: React.FC<ImageSpinnerProps> = ({ images }) => {
         <div className="hm-swiper-slide">
           <div className="hm-slide-holder">
             <div className="hm-slide-image" key={currentSlide}>
-              {isVideo(currentImage.src) ? (
+              {isYouTube(currentImage.src) ? (
+                <iframe
+                  width="560"
+                  height="315"
+                  src={`https://www.youtube.com/embed/${getYouTubeId(currentImage.src)}`}
+                  title={currentImage.alt}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  style={{ width: '100%', height: '100%', borderRadius: '4px', border: 'none', display: 'block' }}
+                />
+              ) : isVideo(currentImage.src) ? (
                 <video
                   src={currentImage.src}
                   controls

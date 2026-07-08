@@ -14,10 +14,10 @@ imageSpinners:
     images:
   - id: adults-night
     images:
-      - src: /images/content/disney-vacation-2026/adults-night-01.mp4
-        alt: "Joseph and Ashley at the Slingshot on Father's Day night"
-      - src: /images/content/disney-vacation-2026/adults-night-02.mp4
-        alt: "Joseph and Ashley at the Slingshot on Father's Day night"
+      - src: youtube:cWyUiUJTWPI
+        alt: "Slingshot ride — Video 1"
+      - src: youtube:vXDkic3H0uM
+        alt: "Slingshot ride — Video 2"
 galleryEmbeds:
   - slug: magic-kingdom-2026-album
     title: "Magic Kingdom 2026"
@@ -31,9 +31,9 @@ galleryEmbeds:
     description: "Photos from our visit to the Savannah National Wildlife Refuge — alligators, wetlands, and wildlife on the drive home from Florida."
     photoCount: 42
     date: "2026-07-02"
-  - slug: hilton-aqua-sol-2024-album
-    title: "Hilton Aqua Sol 2024"
-    coverImage: /images/galleries/hilton-aqua-sol-2024/aqua-poolside-hug.jpg
+  - slug: hilton-aqua-sol-2026-album
+    title: "Hilton Aqua Sol 2026"
+    coverImage: /images/galleries/hilton-aqua-sol-2026/aqua-poolside-hug.jpg
     description: "Photos from our stay at the Hilton Aqua Sol Resort in Winter Garden, Florida — pool days, s'mores nights, and the moments that made it our favorite place to stay."
     photoCount: 22
     date: "2024-08-01"
@@ -55,15 +55,13 @@ Winter Garden is a nice little area too. If you've only ever stayed on Disney pr
 
 You can see my full review on [Hilton Aqua Sol](/reviews/hilton-aqua-sol-resort-review/).
 
-<!-- gallery:hilton-aqua-sol-2024-album -->
-
 ## The Adults' Night Out
 
 On Father's Day night — June 21st — we had the older kids (18 and 19) watch the younger ones so we could go out for some fun and headed out. The original plan was CityWalk. We took an Uber and arrived at 11:40pm, only to find out they close at midnight. We weren't about to go through security just to turn around and leave, so we called another Uber and ended up at [Tin Roof](https://tinrooforlando.com/) instead — and honestly, I'm glad we did.
 
 Drinks, live music, and a moment I'll never forget. The second we walked through the door, the band started playing "How You Remind Me" by Nickelback — the song I played at my father's funeral. It was Father's Day. That song, at that exact moment, hitting me as soon as I stepped inside — it felt like a sign. Like my dad was letting me know he was still watching over me. I was floored.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Aiay8I5IPB8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width: 100%; max-width: 800px; margin: 1em auto; display: block;"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Aiay8I5IPB8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width: 100%; aspect-ratio: 16 / 9; margin: 1em auto; display: block; border: none;"></iframe>
 
 After we left the bar, my wife looked at me and said, "Let's go do the [Slingshot](https://iconparkorlando.com/attractions/orlando-slingshot/)."
 
@@ -71,7 +69,9 @@ I looked at her and said, "You're amazing. Let's do it." We did it once and she 
 
 <!-- spinner:adults-night -->
 
-*(The videos in the carousel above are muted — they contained language not safe for young viewers.)*
+*(These videos contain language not safe for young viewers, so the audio has been removed.)*
+
+
 
 Now, this is a ride I did way back in 2002 when I went to Orlando with my father. Back then it might have been a different company running the show — Because the towers swayed a lot more and the chair was a repurposed ski chairlift with a lap belt. On the front of the chair was a mounted full size VHS camera to record your ride.
 
@@ -83,6 +83,8 @@ After that, we called it a night and got an Uber back to the resort.
 
 This was our day to just be at the resort, and it turned out to be one of the best days of the trip. We spent the whole day at the water park — the kids were in heaven, especially on the water slides. Once the water park closed, we grabbed some food and headed over to the pool that stayed open until 11pm. We grilled out and kept swimming. After the pool closed, we retired to our room, but we weren't done socializing — drinks and conversation kept going. Before we knew it, it was 1am. We'd planned to get up early to go see the Falcon 9 launch from Cape Canaveral, so we really needed to hit the hay.
 
+<!-- gallery:hilton-aqua-sol-2026-album -->
+
 ## The Falcon 9 Launch
 
 The morning of June 23rd, SpaceX launched a Falcon 9 rocket from Cape Canaveral carrying something new — a demonstration mission called Starfall. It's an uncrewed reentry capsule SpaceX is developing to enable rapid, point-to-point cargo delivery through space and eventually support in-orbit manufacturing. Think of it as a scaled-down successor to the cargo capabilities the ISS provides today, but designed to be reusable and operate at scale. Each capsule is about 10 feet in diameter, can carry roughly 2,200 pounds of payload, and reenters through the atmosphere to be recovered in the Pacific — similar to how they bring Dragon back, but for cargo, not crew.
@@ -91,10 +93,7 @@ This was the first time Starfall had ever flown, and it went up as the sun was r
 
 I did manage to see it from the resort, though. Just barely. It was a thin bright streak climbing over the treeline for a few seconds, then gone. Underwhelming from that distance, honestly — nothing like being on the coast would have been. But still cool to say I watched a Falcon 9 go up on vacation, even if it was through half-open eyes from a hotel parking lot.
 
-<video controls muted style="width: 100%; max-width: 800px; margin: 1em auto; display: block;">
-  <source src="/images/content/disney-vacation-2026/falcon-9-launch.mov" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pKsBsmXrIdM" title="Falcon 9 Starfall launch from Cape Canaveral" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width: 100%; aspect-ratio: 16 / 9; margin: 1em auto; display: block; border: none;"></iframe>
 
 ## The Magic Kingdom
 

@@ -96,8 +96,9 @@ const ArticleTemplate: React.FC<PageProps<ArticleData>> = ({ data, pageContext }
   const article = data.markdownRemark.frontmatter;
   const articleHtml = data.markdownRemark.html;
   const author = data.authorsJson;
-  const isReview = pageContext.isReview as boolean;
-  
+const isReview = pageContext.isReview as boolean;
+  const viewCount = (pageContext.viewCount as number) ?? 0;
+
   // Filter navigation: reviews only link to reviews, posts only link to posts
   const previousArticle = data.previousArticle.nodes.find(node => 
     isReview ? hasTag(node.frontmatter.tags || [], 'reviews') : !hasTag(node.frontmatter.tags || [], 'reviews')
@@ -211,6 +212,14 @@ const ArticleTemplate: React.FC<PageProps<ArticleData>> = ({ data, pageContext }
                   <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                 </svg>
                 0
+              </span>
+              <span className="hm-article-meta-separator">•</span>
+              <span className="hm-article-views">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                {(viewCount ?? 0).toLocaleString()}
               </span>
             </div>
           </header>
