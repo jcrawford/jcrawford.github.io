@@ -6,6 +6,7 @@ excerpt: >-
   including for our wedding in August 2024. Affordable pricing, an incredible
   waterpark, and a staff that genuinely cares.
 featuredImage: /images/content/reviews/hilton-aqua-sol-review/featured.jpg
+featured: true
 tags:
   - reviews
   - family
