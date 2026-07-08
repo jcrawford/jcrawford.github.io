@@ -1,7 +1,9 @@
 ---
 slug: flexispot-e7-plus
 title: 'FlexiSpot E7 Plus Standing Desk Review: 8 Months of Daily Use'
-excerpt: A comprehensive review of the FlexiSpot E7 Plus four-leg standing desk after eight months of intensive use in a busy home office environment.
+excerpt: >-
+  A comprehensive review of the FlexiSpot E7 Plus four-leg standing desk after
+  eight months of intensive use in a busy home office environment.
 featuredImage: /images/content/reviews/flexispot-e7-plus/featured.png
 tags:
   - reviews
@@ -14,7 +16,6 @@ tags:
 author: joseph-crawford
 publishedAt: '2025-11-25'
 updatedAt: '2025-11-25'
-featured: true
 review:
   rating: 4
   pros:
@@ -22,13 +23,13 @@ review:
     - Excellent assembly instructions
     - Superior build quality and stability (4-leg design)
     - Impressive 550 lb weight capacity
-    - Smooth, quiet height adjustment
+    - 'Smooth, quiet height adjustment'
     - Durable bamboo desktop surface
   cons:
     - Heavy weight requires two people for assembly
     - Child lock is not particularly effective
     - Limited under-desk storage options
-  price: $1,089.99
+  price: '$1,089.99'
   brand: FlexiSpot
   productUrl: 'https://www.flexispot.com/flexispot-4-leg-standing-desk-e7plus'
 ---

@@ -11,33 +11,41 @@ tags:
   - family
 author: joseph-crawford
 publishedAt: '2026-07-06'
-featured: true
 review:
   rating: 4.5
   pros:
     - Incredibly affordable compared to other resorts in the area
     - Outstanding waterpark with slides and pools the kids love
-    - Friendly, accommodating staff across the board
+    - 'Friendly, accommodating staff across the board'
     - Grills and fire pits available by the pool area
     - Pools stay open until 11 PM — long after the waterpark closes
     - Connected rooms available for larger families
-    - Front desk happily provided extra place settings and even a blender upon request
-    - Relaxed atmosphere — brought our own drinks around the resort without any hassle
+    - >-
+      Front desk happily provided extra place settings and even a blender upon
+      request
+    - >-
+      Relaxed atmosphere — brought our own drinks around the resort without any
+      hassle
   cons:
-    - Waterpark closes at 8:30 PM
-    - Pools and waterpark close 1–3 times daily for lightning storms (10-mile radius policy)
+    - 'Waterpark closes at 8:30 PM'
+    - >-
+      Pools and waterpark close 1–3 times daily for lightning storms (10-mile
+      radius policy)
     - Bar prices have increased drastically since 2024
     - No on-site restaurant for dinner (grab-and-go only)
   price: '$2,400 for two connected rooms, 6 nights'
   brand: Hilton
-  productUrl: 'https://www.hilton.com/en/hotels/mcotkgv-hilton-vacation-club-aqua-sol-orlando/'
+  productUrl: >-
+    https://www.hilton.com/en/hotels/mcotkgv-hilton-vacation-club-aqua-sol-orlando/
 galleryEmbeds:
   - slug: hilton-aqua-sol-2026-album
-    title: "Hilton Aqua Sol 2026"
+    title: Hilton Aqua Sol 2026
     coverImage: /images/galleries/hilton-aqua-sol-2026/aqua-poolside-hug.jpg
-    description: "Photos from our stay at the Hilton Aqua Sol Resort — pool days, s'mores nights, and the moments that made it our favorite place to stay."
+    description: >-
+      Photos from our stay at the Hilton Aqua Sol Resort — pool days, s'mores
+      nights, and the moments that made it our favorite place to stay.
     photoCount: 22
-    date: "2024-08-01"
+    date: '2024-08-01'
 ---
 
 I've been going to Florida since I was a kid — many, many times over the years. Theme parks, beach trips, family vacations, you name it. And after all those trips, the Hilton Aqua Sol Resort in Winter Garden, Florida is the best place I've ever stayed. Not one of the best — the best.

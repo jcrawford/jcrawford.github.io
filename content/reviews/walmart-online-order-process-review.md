@@ -11,7 +11,6 @@ tags:
 author: joseph-crawford
 publishedAt: '2025-11-24'
 updatedAt: '2025-11-24'
-featured: true
 review:
   rating: 2
   pros:
@@ -21,7 +20,9 @@ review:
     - Schedule around your busy schedule
   cons:
     - Sometimes you wait a while for your order to be brought out
-    - There are sometimes issues after placing your oder and there is no contact or communication from Walmart.
+    - >-
+      There are sometimes issues after placing your oder and there is no contact
+      or communication from Walmart.
   price: Free
   brand: Walmart
   productUrl: 'https://www.walmart.com/store/2289-bennington-vt/shopping-services'

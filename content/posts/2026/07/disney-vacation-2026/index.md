@@ -1,42 +1,51 @@
 ---
 slug: disney-vacation-2026
-title: "Our 2026 Disney World Vacation"
-excerpt: "No buildup, no countdown, no planning posts. We just... went. A surprise family trip to Magic Kingdom, staying at the Hilton Aqua Sol in Winter Garden, and the kind of memories you don't see coming."
+title: Our 2026 Disney World Vacation
+excerpt: >-
+  No buildup, no countdown, no planning posts. We just... went. A surprise
+  family trip to Magic Kingdom, staying at the Hilton Aqua Sol in Winter Garden,
+  and the kind of memories you don't see coming.
 featuredImage: /images/content/disney-vacation-2026/hero.jpg
 tags:
   - family
 author: joseph-crawford
-publishedAt: "2026-07-02"
+publishedAt: '2026-07-02'
 draft: false
-featured: true
 imageSpinners:
   - id: magic-kingdom
-    images:
+    images: null
   - id: adults-night
     images:
-      - src: youtube:cWyUiUJTWPI
-        alt: "Slingshot ride — Video 1"
-      - src: youtube:vXDkic3H0uM
-        alt: "Slingshot ride — Video 2"
+      - src: 'youtube:cWyUiUJTWPI'
+        alt: Slingshot ride — Video 1
+      - src: 'youtube:vXDkic3H0uM'
+        alt: Slingshot ride — Video 2
 galleryEmbeds:
   - slug: magic-kingdom-2026-album
-    title: "Magic Kingdom 2026"
+    title: Magic Kingdom 2026
     coverImage: /images/galleries/magic-kingdom-2026/mk-fireworks-castle.jpg
-    description: "Photos and videos from our day at Magic Kingdom — Cinderella Castle, the fireworks, and the moments that made the whole trip worth it."
+    description: >-
+      Photos and videos from our day at Magic Kingdom — Cinderella Castle, the
+      fireworks, and the moments that made the whole trip worth it.
     photoCount: 40
-    date: "2026-07-02"
+    date: '2026-07-02'
   - slug: savannah-wildlife-refuge-album
-    title: "Savannah Wildlife Refuge"
+    title: Savannah Wildlife Refuge
     coverImage: /images/galleries/savannah-wildlife-refuge/refuge-01.jpg
-    description: "Photos from our visit to the Savannah National Wildlife Refuge — alligators, wetlands, and wildlife on the drive home from Florida."
+    description: >-
+      Photos from our visit to the Savannah National Wildlife Refuge —
+      alligators, wetlands, and wildlife on the drive home from Florida.
     photoCount: 42
-    date: "2026-07-02"
+    date: '2026-07-02'
   - slug: hilton-aqua-sol-2026-album
-    title: "Hilton Aqua Sol 2026"
+    title: Hilton Aqua Sol 2026
     coverImage: /images/galleries/hilton-aqua-sol-2026/aqua-poolside-hug.jpg
-    description: "Photos from our stay at the Hilton Aqua Sol Resort in Winter Garden, Florida — pool days, s'mores nights, and the moments that made it our favorite place to stay."
+    description: >-
+      Photos from our stay at the Hilton Aqua Sol Resort in Winter Garden,
+      Florida — pool days, s'mores nights, and the moments that made it our
+      favorite place to stay.
     photoCount: 22
-    date: "2024-08-01"
+    date: '2024-08-01'
 ---
 
 We drove straight through from North Bennington, Vermont to Winter Garden, Florida. No overnight stop, no splitting it into two days — just gas, food, and go. My wife did the majority of the driving; I took over for about 8 hours of the trip. The rest was all her.

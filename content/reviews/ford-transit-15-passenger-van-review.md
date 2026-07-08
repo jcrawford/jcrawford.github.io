@@ -2,8 +2,8 @@
 slug: ford-transit-15-passenger-van-review
 title: '2026 Ford Transit 15-Passenger Van Review: Great Ride, Rough Rental Experience'
 excerpt: >-
-  A family road trip to Disney World put the 2026 Ford Transit through its paces.
-  The van impressed — the Budget rental process, not so much.
+  A family road trip to Disney World put the 2026 Ford Transit through its
+  paces. The van impressed — the Budget rental process, not so much.
 featuredImage: /images/content/reviews/ford-transit-15-passenger-van-review/featured.jpg
 tags:
   - reviews
@@ -12,22 +12,27 @@ tags:
   - performance
 author: joseph-crawford
 publishedAt: '2026-07-06'
-featured: true
 review:
   rating: 4
   pros:
     - Comfortable ride for long distances
-    - Surprisingly good gas mileage (17.6 MPG overall, 18.4 MPG highway)
+    - 'Surprisingly good gas mileage (17.6 MPG overall, 18.4 MPG highway)'
     - Removable middle seats for cargo flexibility
     - Smooth highway handling for a full-size van
     - More interior space than expected
     - Hauled 11 passengers and all their luggage comfortably
   cons:
     - 15-passenger version has zero cargo room behind the last row
-    - Seats barely recline — only about an inch, making sleep on long trips nearly impossible
-    - Lane keeping assistance is overly sensitive, especially in construction zones
+    - >-
+      Seats barely recline — only about an inch, making sleep on long trips
+      nearly impossible
+    - >-
+      Lane keeping assistance is overly sensitive, especially in construction
+      zones
     - Hands-on-wheel nag even when both hands are on the wheel
-    - LKAS displays "Cancelled" when adjusting near lane lines, but cruise never actually cancels — confusing and annoying
+    - >-
+      LKAS displays "Cancelled" when adjusting near lane lines, but cruise never
+      actually cancels — confusing and annoying
     - Budget rental pickup was an absolute disaster
     - Deposit policy contradicted what customer service confirmed by phone
     - Vehicle wasn't ready at the reserved time

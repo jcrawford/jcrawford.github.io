@@ -1,5 +1,5 @@
 ---
-slug: capital-one-360-checking 
+slug: capital-one-360-checking
 title: 'Capital One: 360 Checking'
 excerpt: What are my thoughts on Capital One 360 Checking accounts?
 featuredImage: /images/content/reviews/capital-one-360-checking/featured.jpg
@@ -10,7 +10,6 @@ tags:
 author: joseph-crawford
 publishedAt: '2025-11-24'
 updatedAt: '2025-11-24'
-featured: true
 review:
   rating: 3
   pros:
@@ -22,7 +21,7 @@ review:
   cons:
     - No local branches in my aread
     - Customer Service has not been great
-    - Only one debit card, even if you have multiple checking accounts
+    - 'Only one debit card, even if you have multiple checking accounts'
     - No way to release a hold from a purchase that was cancelled.
   price: Free
   brand: Capital One

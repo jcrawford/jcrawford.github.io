@@ -1,7 +1,10 @@
 ---
-slug: voyager-keyboard 
+slug: voyager-keyboard
 title: 'ZSA Voyager: A Comprehensive Two-Year Review'
-excerpt: An in-depth analysis of the ZSA Voyager split ergonomic keyboard after two years of daily professional use, covering build quality, customization, learning curve, and long-term reliability.
+excerpt: >-
+  An in-depth analysis of the ZSA Voyager split ergonomic keyboard after two
+  years of daily professional use, covering build quality, customization,
+  learning curve, and long-term reliability.
 featuredImage: /images/content/reviews/voyager-keyboard/featured.png
 tags:
   - reviews
@@ -12,15 +15,20 @@ tags:
 author: joseph-crawford
 publishedAt: '2025-12-01'
 updatedAt: '2025-12-01'
-featured: true
 review:
   rating: 4
   pros:
-    - Exceptional ergonomic design significantly reduces wrist, shoulder, and RSI strain
-    - Premium aluminum and polycarbonate construction with magnetic tenting system
+    - >-
+      Exceptional ergonomic design significantly reduces wrist, shoulder, and
+      RSI strain
+    - >-
+      Premium aluminum and polycarbonate construction with magnetic tenting
+      system
     - Fully programmable QMK/ZMK firmware with unlimited layers and macros
     - Per-key RGB LED customization for visual layer feedback
-    - Hot-swappable Kailh Choc v1 switches for easy maintenance and customization
+    - >-
+      Hot-swappable Kailh Choc v1 switches for easy maintenance and
+      customization
     - Excellent customer support with US-based RMA processing
     - Proven long-term durability (2+ years of intensive daily use)
     - Ortholinear columnar layout optimizes finger travel and reduces fatigue
