@@ -1,18 +1,24 @@
 {
-  "generatedAt": "2026-07-08T14:41:22.682Z",
+  "generatedAt": "2026-07-08T19:55:55.179Z",
   "windowDays": 30,
   "entries": [
     {
       "id": "/reviews/ford-transit-15-passenger-van-review",
-      "views": 87,
+      "views": 89,
       "comments": 0,
-      "score": 87
+      "score": 89
     },
     {
       "id": "/posts/disney-vacation-2026",
       "views": 42,
       "comments": 0,
       "score": 42
+    },
+    {
+      "id": "/posts/saferide-health-how-i-use-ai-as-an-engineer",
+      "views": 21,
+      "comments": 0,
+      "score": 21
     },
     {
       "id": "/reviews/huupe-mini-review",
