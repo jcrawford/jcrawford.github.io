@@ -1,24 +1,30 @@
 {
-  "generatedAt": "2026-07-07T20:05:52.684Z",
+  "generatedAt": "2026-07-08T17:57:44.463Z",
   "windowDays": 30,
   "entries": [
     {
       "id": "/reviews/ford-transit-15-passenger-van-review",
-      "views": 63,
+      "views": 87,
       "comments": 0,
-      "score": 63
+      "score": 87
     },
     {
       "id": "/posts/disney-vacation-2026",
-      "views": 14,
+      "views": 42,
       "comments": 0,
-      "score": 14
+      "score": 42
     },
     {
       "id": "/reviews/huupe-mini-review",
       "views": 11,
       "comments": 0,
       "score": 11
+    },
+    {
+      "id": "/posts/long-running-ai-agents-adk",
+      "views": 6,
+      "comments": 0,
+      "score": 6
     },
     {
       "id": "/reviews/voyager-keyboard",
@@ -39,6 +45,12 @@
       "score": 5
     },
     {
+      "id": "/posts/wordpress-plugin-supply-chain-attack-2026",
+      "views": 3,
+      "comments": 0,
+      "score": 3
+    },
+    {
       "id": "/reviews/arcade1up-infinity-game-table-review",
       "views": 3,
       "comments": 0,
@@ -46,12 +58,6 @@
     },
     {
       "id": "/posts/gpt-5-5-first-impressions",
-      "views": 2,
-      "comments": 0,
-      "score": 2
-    },
-    {
-      "id": "/posts/long-running-ai-agents-adk",
       "views": 2,
       "comments": 0,
       "score": 2
@@ -100,12 +106,6 @@
     },
     {
       "id": "/posts/vision-capabilities-php-ai-agents",
-      "views": 1,
-      "comments": 0,
-      "score": 1
-    },
-    {
-      "id": "/posts/wordpress-plugin-supply-chain-attack-2026",
       "views": 1,
       "comments": 0,
       "score": 1
