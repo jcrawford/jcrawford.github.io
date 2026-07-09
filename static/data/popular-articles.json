@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-09T13:45:59.884Z",
+  "generatedAt": "2026-07-09T15:33:59.720Z",
   "windowDays": 30,
   "entries": [
     {
@@ -34,9 +34,9 @@
     },
     {
       "id": "/posts/long-running-ai-agents-adk",
-      "views": 6,
+      "views": 8,
       "comments": 0,
-      "score": 6
+      "score": 8
     },
     {
       "id": "/posts/saferide-health-cursor-ai-adoption",
