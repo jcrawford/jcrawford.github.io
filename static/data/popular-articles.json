@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-08T19:55:55.179Z",
+  "generatedAt": "2026-07-09T04:14:15.981Z",
   "windowDays": 30,
   "entries": [
     {
@@ -10,15 +10,15 @@
     },
     {
       "id": "/posts/disney-vacation-2026",
-      "views": 42,
+      "views": 49,
       "comments": 0,
-      "score": 42
+      "score": 49
     },
     {
       "id": "/posts/saferide-health-how-i-use-ai-as-an-engineer",
-      "views": 21,
+      "views": 27,
       "comments": 0,
-      "score": 21
+      "score": 27
     },
     {
       "id": "/reviews/huupe-mini-review",
@@ -27,13 +27,13 @@
       "score": 11
     },
     {
-      "id": "/posts/long-running-ai-agents-adk",
-      "views": 6,
+      "id": "/reviews/voyager-keyboard",
+      "views": 9,
       "comments": 0,
-      "score": 6
+      "score": 9
     },
     {
-      "id": "/reviews/voyager-keyboard",
+      "id": "/posts/long-running-ai-agents-adk",
       "views": 6,
       "comments": 0,
       "score": 6
@@ -70,6 +70,12 @@
     },
     {
       "id": "/posts/typescript-7-beta-go-rewrite",
+      "views": 2,
+      "comments": 0,
+      "score": 2
+    },
+    {
+      "id": "/reviews/patrick-adair-designs-review",
       "views": 2,
       "comments": 0,
       "score": 2
@@ -124,12 +130,6 @@
     },
     {
       "id": "/reviews/logitech-mx-master-3s-review",
-      "views": 1,
-      "comments": 0,
-      "score": 1
-    },
-    {
-      "id": "/reviews/patrick-adair-designs-review",
       "views": 1,
       "comments": 0,
       "score": 1
