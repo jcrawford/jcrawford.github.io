@@ -1790,13 +1790,14 @@ li.hm-tab a {
 
 @media (max-width: 768px) {
   .hm-slide-holder {
-    height: 300px;
+    height: auto;
+    min-height: 200px;
   }
 }
 
 @media (max-width: 480px) {
   .hm-slide-holder {
-    height: 220px;
+    min-height: 160px;
   }
 }
 
@@ -1816,14 +1817,23 @@ li.hm-tab a {
 }
 
 @media (max-width: 768px) {
+  .hm-slide-holder {
+    height: auto;
+    min-height: 200px;
+  }
+  .hm-slide-image {
+    position: relative;
+    height: auto;
+  }
   .hm-slide-image img {
-    object-position: center;
+    object-fit: contain;
+    height: auto;
   }
 }
 
 @media (max-width: 480px) {
-  .hm-slide-image img {
-    object-position: center;
+  .hm-slide-holder {
+    min-height: 160px;
   }
 }
 
