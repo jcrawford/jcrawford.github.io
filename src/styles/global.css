@@ -1398,13 +1398,13 @@ html.hm-dark .hm-article {
 
 /* Featured Section Layout - Homepage */
 .hm-fp1 {
-  margin: 5px 0 35px;
+  margin: 5px 0 50px;
   width: 100%;
 }
 
 @media (max-width: 767px) {
   .hm-fp1 {
-    margin: 5px 0 15px;
+    margin: 5px 0 30px;
   }
   .hm-fp1::after {
     display: block;
@@ -1850,6 +1850,7 @@ li.hm-tab a {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--hybridmag-sidebar-spacing);
+  margin-top: 20px;
 }
 
 @media (min-width: 992px) {
