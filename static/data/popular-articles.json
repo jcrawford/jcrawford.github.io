@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T04:15:25.704Z",
+  "generatedAt": "2026-07-10T09:53:13.151Z",
   "windowDays": 30,
   "entries": [
     {
@@ -75,6 +75,12 @@
       "score": 2
     },
     {
+      "id": "/reviews/logitech-mx-master-3s-review",
+      "views": 2,
+      "comments": 0,
+      "score": 2
+    },
+    {
       "id": "/reviews/patrick-adair-designs-review",
       "views": 2,
       "comments": 0,
@@ -124,12 +130,6 @@
     },
     {
       "id": "/reviews/flexispot-e7-plus",
-      "views": 1,
-      "comments": 0,
-      "score": 1
-    },
-    {
-      "id": "/reviews/logitech-mx-master-3s-review",
       "views": 1,
       "comments": 0,
       "score": 1
