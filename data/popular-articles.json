@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-08T23:32:18.320Z",
+  "generatedAt": "2026-07-10T13:50:41.922Z",
   "windowDays": 30,
   "entries": [
     {
@@ -10,21 +10,21 @@
     },
     {
       "id": "/posts/disney-vacation-2026",
-      "views": 42,
+      "views": 49,
       "comments": 0,
-      "score": 42
+      "score": 49
     },
     {
       "id": "/posts/saferide-health-how-i-use-ai-as-an-engineer",
-      "views": 24,
+      "views": 31,
       "comments": 0,
-      "score": 24
+      "score": 31
     },
     {
       "id": "/reviews/huupe-mini-review",
-      "views": 11,
+      "views": 19,
       "comments": 0,
-      "score": 11
+      "score": 19
     },
     {
       "id": "/reviews/voyager-keyboard",
@@ -34,9 +34,9 @@
     },
     {
       "id": "/posts/long-running-ai-agents-adk",
-      "views": 6,
+      "views": 8,
       "comments": 0,
-      "score": 6
+      "score": 8
     },
     {
       "id": "/posts/saferide-health-cursor-ai-adoption",
@@ -57,12 +57,6 @@
       "score": 3
     },
     {
-      "id": "/reviews/arcade1up-infinity-game-table-review",
-      "views": 3,
-      "comments": 0,
-      "score": 3
-    },
-    {
       "id": "/posts/gpt-5-5-first-impressions",
       "views": 2,
       "comments": 0,
@@ -70,6 +64,18 @@
     },
     {
       "id": "/posts/typescript-7-beta-go-rewrite",
+      "views": 2,
+      "comments": 0,
+      "score": 2
+    },
+    {
+      "id": "/reviews/arcade1up-infinity-game-table-review",
+      "views": 2,
+      "comments": 0,
+      "score": 2
+    },
+    {
+      "id": "/reviews/logitech-mx-master-3s-review",
       "views": 2,
       "comments": 0,
       "score": 2
@@ -124,12 +130,6 @@
     },
     {
       "id": "/reviews/flexispot-e7-plus",
-      "views": 1,
-      "comments": 0,
-      "score": 1
-    },
-    {
-      "id": "/reviews/logitech-mx-master-3s-review",
       "views": 1,
       "comments": 0,
       "score": 1
