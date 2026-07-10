@@ -1579,6 +1579,13 @@ html.hm-dark .hm-article {
   pointer-events: none;
 }
 
+/* Hide title overlay on highlighted posts for mobile */
+@media screen and (max-width: 767px) {
+  .hmhp-content {
+    display: none;
+  }
+}
+
 /* Category Tabs */
 .hm-featured-tabs {
   position: relative;
