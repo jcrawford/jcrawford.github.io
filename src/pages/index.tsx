@@ -3,11 +3,9 @@ import { graphql, PageProps, HeadFC } from 'gatsby';
 import Layout from '../components/Layout';
 import FeaturedPosts from '../components/FeaturedPosts';
 import EmptyFeaturedState from '../components/EmptyFeaturedState';
-import TagTabs from '../components/TagTabs';
 import ArticleCard from '../components/ArticleCard';
 import Sidebar from '../components/Sidebar';
 import SEO from '../components/SEO';
-import { hasTag } from '../utils/tagUtils';
 import '../styles/empty-featured.css';
 
 interface ArticleFrontmatter {
@@ -31,11 +29,6 @@ interface Article {
   frontmatter: ArticleFrontmatter;
 }
 
-interface Tag {
-  slug: string;
-  name: string;
-}
-
 interface Author {
   slug: string;
   name: string;
@@ -45,50 +38,13 @@ interface IndexPageData {
   allMarkdownRemark: {
     nodes: Article[];
   };
-  allTagsJson: {
-    nodes: Tag[];
-  };
   allAuthorsJson: {
     nodes: Author[];
-  };
-  allFile?: {
-    nodes: Array<{
-      name: string;
-      internal: {
-        content: string;
-      };
-    }>;
   };
 }
 
 const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
-  const allTags = data.allTagsJson.nodes;
   const authors = data.allAuthorsJson.nodes;
-  
-  // Get configured tag slugs, or fallback to first 4 tags if config doesn't exist or is malformed
-  let configuredTagSlugs: string[] = [];
-  
-  try {
-    const tagTabsFile = data.allFile?.nodes.find(node => node.name === 'tag-tabs');
-    if (tagTabsFile && tagTabsFile.internal.content) {
-      const parsed = JSON.parse(tagTabsFile.internal.content);
-      if (Array.isArray(parsed) && parsed.length > 0) {
-        configuredTagSlugs = parsed;
-      }
-    }
-  } catch (error) {
-    console.warn('Failed to parse tag-tabs.json, using fallback', error);
-  }
-  
-  // Fallback: use first 4 tags from tags.json
-  if (configuredTagSlugs.length === 0) {
-    configuredTagSlugs = allTags.slice(0, 4).map(tag => tag.slug);
-  }
-  
-  // Filter tags based on configuration (preserving order from config)
-  const tags = configuredTagSlugs
-    .map(slug => allTags.find(tag => tag.slug === slug))
-    .filter((tag): tag is Tag => tag !== undefined);
   
   // All published posts and reviews
   const articles = data.allMarkdownRemark.nodes.filter(
@@ -192,55 +148,14 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
     };
   }) : [];
   
-  // Exclude ALL posts shown in the featured section from tag tabs and the article grid below
+  // Exclude ALL posts shown in the featured section from the article grid below
   const featuredSlugs = latestArticles.map(article => article.frontmatter.slug);
 
-  // Also exclude anything already shown in the tag tabs to avoid duplicate cards below
-  const tagTabDisplayedSlugs = new Set<string>();
-
-  tags.forEach((tag) => {
-    const tagArticles = articles.filter(
-      (article) => hasTag(article.frontmatter.tags || [], tag.slug) && !featuredSlugs.includes(article.frontmatter.slug)
-    );
-
-    const tabSeriesMap = new Map<string, Article>();
-    const tabStandaloneArticles: Article[] = [];
-
-    tagArticles.forEach((article) => {
-      if (article.frontmatter.series?.name) {
-        const seriesName = article.frontmatter.series.name;
-        const existing = tabSeriesMap.get(seriesName);
-
-        if (!existing) {
-          tabSeriesMap.set(seriesName, article);
-        } else {
-          const currentOrder = article.frontmatter.series.order ?? Infinity;
-          const existingOrder = existing.frontmatter.series?.order ?? Infinity;
-
-          if (
-            currentOrder < existingOrder ||
-            (currentOrder === existingOrder &&
-              new Date(article.frontmatter.publishedAt) < new Date(existing.frontmatter.publishedAt))
-          ) {
-            tabSeriesMap.set(seriesName, article);
-          }
-        }
-      } else {
-        tabStandaloneArticles.push(article);
-      }
-    });
-
-    [...Array.from(tabSeriesMap.values()), ...tabStandaloneArticles]
-      .slice(0, 4)
-      .forEach((article) => tagTabDisplayedSlugs.add(article.frontmatter.slug));
-  });
-
-  // Recent articles: non-featured posts only, excluding anything already shown above
+  // Recent articles: non-featured posts only
   const recentArticles = allDisplayArticles
     .filter(
       (article) =>
-        !featuredSlugs.includes(article.frontmatter.slug) &&
-        !tagTabDisplayedSlugs.has(article.frontmatter.slug)
+        !featuredSlugs.includes(article.frontmatter.slug)
     )
     .slice(0, 12)
     .map(mapArticleForSlider);
@@ -256,8 +171,6 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
             highlightedArticles={highlightedArticles}
           />
         )}
-
-        <TagTabs tags={tags} articles={articles} excludeSlugs={featuredSlugs} />
 
         <div className="hm-content-sidebar-wrap">
           <main className="hm-primary-content">
@@ -319,24 +232,10 @@ export const query = graphql`
         }
       }
     }
-    allTagsJson {
-      nodes {
-        slug
-        name
-      }
-    }
     allAuthorsJson {
       nodes {
         slug
         name
-      }
-    }
-    allFile(filter: { name: { eq: "tag-tabs" }, sourceInstanceName: { eq: "data" } }) {
-      nodes {
-        name
-        internal {
-          content
-        }
       }
     }
   }
