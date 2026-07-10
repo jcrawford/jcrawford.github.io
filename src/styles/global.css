@@ -1586,6 +1586,13 @@ html.hm-dark .hm-article {
   }
 }
 
+/* Hide category tabs on mobile */
+@media screen and (max-width: 767px) {
+  .hm-featured-tabs {
+    display: none;
+  }
+}
+
 /* Category Tabs */
 .hm-featured-tabs {
   position: relative;
