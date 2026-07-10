@@ -10,7 +10,6 @@ tags:
 author: joseph-crawford
 publishedAt: '2025-11-24'
 updatedAt: '2025-11-24'
-featured: true
 review:
   rating: 3
   pros:

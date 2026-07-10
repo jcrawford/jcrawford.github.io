@@ -11,7 +11,6 @@ tags:
   - family
 author: joseph-crawford
 publishedAt: '2026-07-06'
-featured: true
 review:
   rating: 4.5
   pros:

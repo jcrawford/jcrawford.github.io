@@ -14,7 +14,6 @@ tags:
 author: joseph-crawford
 publishedAt: '2025-11-25'
 updatedAt: '2025-11-25'
-featured: true
 review:
   rating: 4
   pros:

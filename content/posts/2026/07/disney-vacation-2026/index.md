@@ -8,7 +8,6 @@ tags:
 author: joseph-crawford
 publishedAt: "2026-07-02"
 draft: false
-featured: true
 imageSpinners:
   - id: magic-kingdom
     images:

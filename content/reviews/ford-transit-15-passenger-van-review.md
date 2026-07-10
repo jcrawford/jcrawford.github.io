@@ -1,9 +1,9 @@
 ---
 slug: ford-transit-15-passenger-van-review
-title: '2026 Ford Transit 15-Passenger Van Review: Great Ride, Rough Rental Experience'
+title: '2026 Ford Transit 15-Passenger Van Review: 3,000 Miles to Disney and Back'
 excerpt: >-
   A family road trip to Disney World put the 2026 Ford Transit through its paces.
-  The van impressed — the Budget rental process, not so much.
+  Over 3,000 miles, 11 passengers, and 65 hours behind the wheel — here's how it held up.
 featuredImage: /images/content/reviews/ford-transit-15-passenger-van-review/featured.jpg
 tags:
   - reviews
@@ -12,9 +12,8 @@ tags:
   - performance
 author: joseph-crawford
 publishedAt: '2026-07-06'
-featured: true
 review:
-  rating: 4
+  rating: 4.5
   pros:
     - Comfortable ride for long distances
     - Surprisingly good gas mileage (17.6 MPG overall, 18.4 MPG highway)
@@ -28,45 +27,14 @@ review:
     - Lane keeping assistance is overly sensitive, especially in construction zones
     - Hands-on-wheel nag even when both hands are on the wheel
     - LKAS displays "Cancelled" when adjusting near lane lines, but cruise never actually cancels — confusing and annoying
-    - Budget rental pickup was an absolute disaster
-    - Deposit policy contradicted what customer service confirmed by phone
-    - Vehicle wasn't ready at the reserved time
   price: '$1,600 (rental, 2 weeks)'
   brand: Ford
   productUrl: 'https://www.ford.com/trucks/transit-passenger-van-wagon/'
 ---
 
-We rented the 2026 Ford Transit 15-Passenger Van from Budget for our [family trip to Disney World](/posts/disney-vacation-2026/) — a road trip from southern Vermont down to Orlando, Florida, and back. Over 3,000 miles, 11 passengers, and 65 hours behind the wheel, this van was put through its paces. The short version? I loved the vehicle. The rental experience? Not so much.
+We rented the 2026 Ford Transit 15-Passenger Van for our [family trip to Disney World](/posts/disney-vacation-2026/) — a road trip from southern Vermont down to Orlando, Florida, and back. Over 3,000 miles, 11 passengers, and 65 hours behind the wheel, this van was put through its paces. The short version? I loved it.
 
-## The Rental from Hell
-
-Let me be upfront: this review is about two very different experiences. The Ford Transit itself? I was genuinely impressed. But getting it from Budget at Albany International Airport? One of the most frustrating consumer experiences I've had in a long time.
-
-### Three Hours in Line
-
-When my family arrived at the Budget counter, we found a line of roughly 80 people — all renting vehicles on the spot. There was no expedited lane, no way to walk up and say "I have a reservation." Everyone, whether they'd booked weeks in advance or walked in that morning, was in the same queue.
-
-We waited approximately three hours before reaching the counter. Three hours. With kids.
-
-### The Deposit Bait-and-Switch
-
-I knew there would be a deposit required, so before our trip I called Budget's customer service to confirm the details. I was explicitly told that a debit card would be acceptable for the deposit.
-
-After standing in line for three hours, the agent at the counter informed me that a **major credit card** was required for the deposit. No debit card. No exceptions. This was the exact opposite of what I had been told over the phone.
-
-I was furious. I had done my due diligence, called ahead, confirmed the policy — and it didn't matter. The agent at the counter had different rules than the customer service representative on the phone.
-
-After some back-and-forth, we managed to sort it out, but the experience left a terrible impression. If you're going to require a credit card for deposits, your phone representatives should know that and communicate it clearly.
-
-### "Your Vehicle Isn't Ready"
-
-Once the deposit situation was finally resolved, I was told my vehicle wasn't ready. It wouldn't be available until around 6 PM.
-
-My reservation was supposed to be ready by noon. It was now past 3 PM. I had paid nearly $1,600 for this rental, and the van wasn't even on the lot yet.
-
-After speaking with the manager, we were assured the vehicle would be ready shortly — and to their credit, it was. We were directed to Budget's satellite office in the parking garage, where the van was waiting.
-
-One more thing about Budget: they have several locations around the Albany area, but for some reason the airport was the only location where I could pick up the van. If other locations had been an option, I could have avoided the airport chaos entirely. Instead, I was locked into the worst of it.
+I should note up front: the [Budget rental process](/reviews/budget-auto-rental-process-review/) was its own headache, and I've written about that separately. This review is about the vehicle itself.
 
 ## The Van Itself
 
@@ -144,10 +112,8 @@ Ford's 3.5L V6 engine clearly isn't working as hard as you'd expect to move this
 
 The 2026 Ford Transit 15-Passenger Van is a solid vehicle for large families or groups who need to move people and stuff over long distances. The ride is comfortable, the gas mileage is better than expected, and the removable seats give you flexibility that a minivan simply can't match.
 
-But I have to split this rating, because the Budget rental experience was genuinely awful:
+The seats that barely recline and the overly sensitive lane keeping assistance are real annoyances on a trip this long. But those are nitpicks against a van that hauled 11 people and all their luggage over 3,000 miles without complaint.
 
-**Ford Transit: 4/5** — A capable, comfortable van that exceeded expectations on the road. The removable seats are a lifesaver for families who need both passenger and cargo space. Despite some frustrating driver-assist quirks and seats that refuse to recline, we liked it so much it's sparked conversations about buying one for future family trips.
+**4.5/5** — A capable, comfortable van that exceeded expectations on the road. The removable seats are a lifesaver for families who need both passenger and cargo space. Despite some frustrating driver-assist quirks and seats that refuse to recline, we liked it so much it's sparked conversations about buying one for future family trips.
 
-**Budget Rental (Albany Airport): 1/5** — Three-hour lines, contradictory deposit policies, and a vehicle that wasn't ready on time. For a nearly $1,600 rental, I expected dramatically better service.
-
-If you're renting a Transit from Budget, bring a credit card, pack your patience, and don't expect your reservation to mean much. But once you're behind the wheel, you'll probably enjoy the ride.
+If you're curious about what it took to actually get this van from Budget, I've written about that ordeal in my [Budget Auto Rental process review](/reviews/budget-auto-rental-process-review/).

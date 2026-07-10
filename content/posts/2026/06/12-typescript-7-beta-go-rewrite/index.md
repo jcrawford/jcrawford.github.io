@@ -10,7 +10,6 @@ tags:
   - javascript
 author: joseph-crawford
 publishedAt: "2026-06-12"
-featured: true
 ---
 
 # TypeScript 7.0 Beta: The Compiler Rewritten in Go and What It Means for Your Projects

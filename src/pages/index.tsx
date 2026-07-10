@@ -19,7 +19,6 @@ interface ArticleFrontmatter {
   author: string;
   publishedAt: string;
   updatedAt: string;
-  featured?: boolean;
   series?: {
     name: string;
     order?: number;
@@ -158,32 +157,9 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
     return article;
   };
 
-  /**
-   * Filters posts to include only those marked as featured and not tagged with "family".
-   * Sorts results by publication date (descending) with slug as secondary sort (ascending).
-   * Limits to first 7 posts for the featured section (5 slider + 2 highlighted).
-   * 
-   * @returns Array of featured posts, limited to 7
-   */
-  const featuredPosts = allDisplayArticles.filter(
-    article => article.frontmatter.featured === true
-  );
-
-  // Sort featured posts: primary by publishedAt DESC, secondary by slug ASC
-  const sortedFeaturedPosts = featuredPosts.sort((a, b) => {
-    const dateA = new Date(a.frontmatter.publishedAt).getTime();
-    const dateB = new Date(b.frontmatter.publishedAt).getTime();
-    
-    if (dateA !== dateB) {
-      return dateB - dateA; // Most recent first
-    }
-    
-    // Secondary sort: slug alphabetically ascending
-    return a.frontmatter.slug.localeCompare(b.frontmatter.slug);
-  });
-
-  // Get latest articles for featured slider (5 for slider + 2 for highlighted posts)
-  const latestArticles = sortedFeaturedPosts.slice(0, 7);
+  // Get the first 7 posts for the featured section (5 slider + 2 highlighted)
+  // Posts live here until pushed out by newer content
+  const latestArticles = allDisplayArticles.slice(0, 7);
 
   // Ensure we have data to map
   const featuredArticles = latestArticles.length > 0 ? latestArticles.slice(0, Math.min(5, latestArticles.length)).map(article => {
@@ -216,8 +192,8 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
     };
   }) : [];
   
-  // Exclude ALL featured posts from tag tabs and the article grid below
-  const featuredSlugs = sortedFeaturedPosts.map(article => article.frontmatter.slug);
+  // Exclude ALL posts shown in the featured section from tag tabs and the article grid below
+  const featuredSlugs = latestArticles.map(article => article.frontmatter.slug);
 
   // Also exclude anything already shown in the tag tabs to avoid duplicate cards below
   const tagTabDisplayedSlugs = new Set<string>();
@@ -263,7 +239,7 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
   const recentArticles = allDisplayArticles
     .filter(
       (article) =>
-        article.frontmatter.featured !== true &&
+        !featuredSlugs.includes(article.frontmatter.slug) &&
         !tagTabDisplayedSlugs.has(article.frontmatter.slug)
     )
     .slice(0, 12)
@@ -273,7 +249,7 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
     <Layout>
       <div className="hm-container">
         {featuredArticles.length === 0 ? (
-          <EmptyFeaturedState message="No featured posts configured" />
+          <EmptyFeaturedState message="No recent posts" />
         ) : (
           <FeaturedPosts 
             sliderArticles={featuredArticles}
@@ -336,7 +312,6 @@ export const query = graphql`
           author
           publishedAt
           updatedAt
-          featured
           series {
             name
             order
