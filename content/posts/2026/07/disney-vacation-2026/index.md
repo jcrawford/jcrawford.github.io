@@ -54,7 +54,7 @@ Winter Garden is a nice little area too. If you've only ever stayed on Disney pr
 
 You can see my full review on [Hilton Aqua Sol](/reviews/hilton-aqua-sol-resort-review/).
 
-<!-- gallery:hilton-aqua-sol-2024-album -->
+<!-- gallery:hilton-aqua-sol-2026-album -->
 
 ## The Adults' Night Out
 
