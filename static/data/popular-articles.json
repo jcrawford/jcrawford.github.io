@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-11T03:43:29.217Z",
+  "generatedAt": "2026-07-11T08:15:03.165Z",
   "windowDays": 30,
   "entries": [
     {
@@ -28,9 +28,9 @@
     },
     {
       "id": "/reviews/huupe-mini-review",
-      "views": 20,
+      "views": 19,
       "comments": 0,
-      "score": 20
+      "score": 19
     },
     {
       "id": "/reviews/voyager-keyboard",
