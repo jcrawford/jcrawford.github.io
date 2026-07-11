@@ -11,6 +11,7 @@ import ImageSpinner from '../components/ImageSpinner';
 import GalleryEmbed from '../components/GalleryEmbed';
 import { getArticlePath } from '../utils/articlePath';
 import { hasTag, normalizeTagSlug, tagMatches } from '../utils/tagUtils';
+import { postProcessImages } from '../utils/postProcessImages';
 
 interface SpinnerImage {
   src: string;
@@ -94,7 +95,7 @@ interface ArticleData {
 
 const ArticleTemplate: React.FC<PageProps<ArticleData>> = ({ data, pageContext }) => {
   const article = data.markdownRemark.frontmatter;
-  const articleHtml = data.markdownRemark.html;
+  const articleHtml = postProcessImages(data.markdownRemark.html);
   const author = data.authorsJson;
   const isReview = pageContext.isReview as boolean;
   

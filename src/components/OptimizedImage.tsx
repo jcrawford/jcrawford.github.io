@@ -44,8 +44,10 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
 
   const dotIndex = src.lastIndexOf('.');
   const base = dotIndex !== -1 ? src.substring(0, dotIndex) : src;
-  const webpFallback = `${base}_480w.webp`;
-  const jpgFallback = `${base}_480w.jpg`;
+  // Use the smallest JPG variant as the <img> fallback instead of the original.
+  // This prevents browsers from preloading the full-resolution original (2-8MB)
+  // before evaluating <source> tags.
+  const imgFallback = `${base}_480w.jpg`;
 
   return (
     <picture>
@@ -64,7 +66,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
         />
       )}
       <img
-        src={src}
+        src={imgFallback}
         alt={alt}
         className={className}
         loading={loading}
