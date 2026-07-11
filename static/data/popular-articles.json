@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T19:52:38.864Z",
+  "generatedAt": "2026-07-11T03:43:29.217Z",
   "windowDays": 30,
   "entries": [
     {
@@ -9,6 +9,12 @@
       "score": 89
     },
     {
+      "id": "/reviews/budget-auto-rental-process-review",
+      "views": 68,
+      "comments": 0,
+      "score": 68
+    },
+    {
       "id": "/posts/disney-vacation-2026",
       "views": 49,
       "comments": 0,
@@ -16,9 +22,9 @@
     },
     {
       "id": "/posts/saferide-health-how-i-use-ai-as-an-engineer",
-      "views": 31,
+      "views": 32,
       "comments": 0,
-      "score": 31
+      "score": 32
     },
     {
       "id": "/reviews/huupe-mini-review",
@@ -58,6 +64,18 @@
     },
     {
       "id": "/posts/gpt-5-5-first-impressions",
+      "views": 2,
+      "comments": 0,
+      "score": 2
+    },
+    {
+      "id": "/posts/grok-4-5-cursor-first-impressions",
+      "views": 2,
+      "comments": 0,
+      "score": 2
+    },
+    {
+      "id": "/posts/nasa-artemis-return-to-the-moon",
       "views": 2,
       "comments": 0,
       "score": 2
