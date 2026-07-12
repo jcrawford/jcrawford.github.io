@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-11T19:32:26.848Z",
+  "generatedAt": "2026-07-12T03:58:00.251Z",
   "windowDays": 30,
   "entries": [
     {
@@ -10,15 +10,15 @@
     },
     {
       "id": "/reviews/budget-auto-rental-process-review",
-      "views": 68,
+      "views": 74,
       "comments": 0,
-      "score": 68
+      "score": 74
     },
     {
       "id": "/posts/disney-vacation-2026",
-      "views": 49,
+      "views": 51,
       "comments": 0,
-      "score": 49
+      "score": 51
     },
     {
       "id": "/posts/saferide-health-how-i-use-ai-as-an-engineer",
@@ -58,6 +58,12 @@
     },
     {
       "id": "/posts/wordpress-plugin-supply-chain-attack-2026",
+      "views": 3,
+      "comments": 0,
+      "score": 3
+    },
+    {
+      "id": "/reviews/hilton-aqua-sol-resort-review",
       "views": 3,
       "comments": 0,
       "score": 3
@@ -142,12 +148,6 @@
     },
     {
       "id": "/posts/vision-capabilities-php-ai-agents",
-      "views": 1,
-      "comments": 0,
-      "score": 1
-    },
-    {
-      "id": "/reviews/flexispot-e7-plus",
       "views": 1,
       "comments": 0,
       "score": 1
