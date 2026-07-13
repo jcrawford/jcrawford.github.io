@@ -10,7 +10,7 @@ import SEO from '../components/SEO';
 import Comments from '../components/Comments';
 import ImageSpinner from '../components/ImageSpinner';
 import { normalizeTagSlug, tagMatches } from '../utils/tagUtils';
-import { postProcessImages } from '../utils/postProcessImages';
+import { postProcessImages, postProcessTables } from '../utils/postProcessImages';
 import type { SeriesMetadata, SeriesArticle } from '../types';
 
 interface SpinnerImage {
@@ -75,7 +75,7 @@ interface SeriesArticleData {
 
 const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData>> = ({ data }) => {
   const article = data.markdownRemark.frontmatter;
-  const articleHtml = postProcessImages(data.markdownRemark.html);
+  const articleHtml = postProcessTables(postProcessImages(data.markdownRemark.html));
   const author = data.authorsJson;
   
   // Get the first tag that's not "family" or "featured" for display

@@ -5,15 +5,23 @@ interface OptimizedImageProps {
   alt: string;
   className?: string;
   loading?: 'lazy' | 'eager';
+  sizes?: string;
 }
 
 const SIZES = [480, 768, 1200, 1920];
+const DEFAULT_SIZES_ATTR = '(max-width: 768px) 100vw, (max-width: 1200px) 65vw, 1200px';
+
+// Directories where pre-generated responsive variants exist
+const OPTIMIZED_PATHS = ['/images/content/', '/images/galleries/'];
+
+function hasVariants(src: string): boolean {
+  return OPTIMIZED_PATHS.some((p) => src.startsWith(p));
+}
 
 /**
  * Generates srcset string for responsive images.
  * Looks for pre-generated variants (e.g. image_480w.webp, image_768w.jpg)
- * alongside the original image. Falls back to the original if variants
- * don't exist.
+ * alongside the original image.
  */
 function generateSrcSet(src: string, extension: string): string | null {
   const dotIndex = src.lastIndexOf('.');
@@ -34,45 +42,56 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   alt,
   className,
   loading = 'lazy',
+  sizes,
 }) => {
-  const webpSrcSet = generateSrcSet(src, 'webp');
-  const jpgSrcSet = generateSrcSet(src, 'jpg');
-
-  // Determine a reasonable sizes attribute based on context
-  // Default: full width on mobile, constrained on desktop
-  const sizesAttr = '(max-width: 768px) 100vw, (max-width: 1200px) 65vw, 1200px';
-
   const dotIndex = src.lastIndexOf('.');
   const base = dotIndex !== -1 ? src.substring(0, dotIndex) : src;
-  // Use the smallest JPG variant as the <img> fallback instead of the original.
-  // This prevents browsers from preloading the full-resolution original (2-8MB)
-  // before evaluating <source> tags.
-  const imgFallback = `${base}_480w.jpg`;
+  const sizesAttr = sizes || DEFAULT_SIZES_ATTR;
 
+  // If variants exist for this path, use <picture> with responsive srcset
+  // and use the smallest JPG variant as the <img> fallback.
+  // If variants don't exist, use a plain <img> with the original src.
+  if (hasVariants(src)) {
+    const webpSrcSet = generateSrcSet(src, 'webp');
+    const jpgSrcSet = generateSrcSet(src, 'jpg');
+    const imgFallback = `${base}_480w.jpg`;
+
+    return (
+      <picture>
+        {webpSrcSet && (
+          <source
+            type="image/webp"
+            srcSet={webpSrcSet}
+            sizes={sizesAttr}
+          />
+        )}
+        {jpgSrcSet && (
+          <source
+            type="image/jpeg"
+            srcSet={jpgSrcSet}
+            sizes={sizesAttr}
+          />
+        )}
+        <img
+          src={imgFallback}
+          alt={alt}
+          className={className}
+          loading={loading}
+          decoding="async"
+        />
+      </picture>
+    );
+  }
+
+  // No variants — use plain <img> with original src
   return (
-    <picture>
-      {webpSrcSet && (
-        <source
-          type="image/webp"
-          srcSet={webpSrcSet}
-          sizes={sizesAttr}
-        />
-      )}
-      {jpgSrcSet && (
-        <source
-          type="image/jpeg"
-          srcSet={jpgSrcSet}
-          sizes={sizesAttr}
-        />
-      )}
-      <img
-        src={imgFallback}
-        alt={alt}
-        className={className}
-        loading={loading}
-        decoding="async"
-      />
-    </picture>
+    <img
+      src={src}
+      alt={alt}
+      className={className}
+      loading={loading}
+      decoding="async"
+    />
   );
 };
 

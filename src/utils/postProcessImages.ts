@@ -70,3 +70,44 @@ export function postProcessImages(html: string): string {
     return match;
   });
 }
+
+/**
+ * Post-processes HTML to add data-label attributes to table cells
+ * based on their column headers. This enables responsive card-style
+ * table layout on mobile where each row becomes a labeled card.
+ */
+export function postProcessTables(html: string): string {
+  // Match each <table>...</table> block
+  return html.replace(/<table[^>]*>([\s\S]*?)<\/table>/g, (tableMatch, tableContent) => {
+    // Extract all header texts from <th> elements
+    const headerTexts: string[] = [];
+    const thRegex = /<th[^>]*>([\s\S]*?)<\/th>/g;
+    let thMatch;
+    while ((thMatch = thRegex.exec(tableContent)) !== null) {
+      // Strip HTML tags from header content, keep text
+      const text = thMatch[1].replace(/<[^>]+>/g, '').trim();
+      headerTexts.push(text);
+    }
+
+    if (headerTexts.length === 0) return tableMatch;
+
+    // Process each <tr> row, adding data-label to <td> cells based on column index
+    const processedContent = tableContent.replace(/<tr[^>]*>([\s\S]*?)<\/tr>/g, (_rowMatch: string, rowContent: string) => {
+      // Count cells in this row (both th and td) to track column position
+      let colIndex = 0;
+      const newRow = rowContent.replace(/<(td|th)[^>]*>([\s\S]*?)<\/\1>/g, (cellMatch: string, tag: string) => {
+        const isTd = tag.toLowerCase() === 'td';
+        const label = headerTexts[colIndex % headerTexts.length] || '';
+        colIndex++;
+
+        if (isTd && label) {
+          return cellMatch.replace(/<td/, `<td data-label="${label.replace(/"/g, '&quot;')}"`);
+        }
+        return cellMatch;
+      });
+      return `<tr>${newRow}</tr>`;
+    });
+
+    return `<table>${processedContent}</table>`;
+  });
+}

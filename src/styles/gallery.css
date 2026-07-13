@@ -71,6 +71,12 @@ html.hm-dark .hm-gallery-album-card:hover {
   background: #0f1217;
 }
 
+.hm-gallery-album-card-image picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .hm-gallery-album-card-image img {
   width: 100%;
   height: 100%;
@@ -272,6 +278,12 @@ html:not(.hm-dark) .hm-gallery-embed-image {
   background: #dfe5eb;
 }
 
+.hm-gallery-embed-image picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .hm-gallery-embed-image img {
   width: 100%;
   height: 100%;
@@ -378,4 +390,213 @@ html.hm-dark .hm-gallery-album-card-image {
   .hm-gallery-album-card-content {
     padding: 15px;
   }
+}
+
+/* ============================================
+   Mobile Gallery Optimization
+   ============================================ */
+
+@media (max-width: 768px) {
+  .hm-gallery-grid {
+    margin-bottom: 30px;
+  }
+
+  /* Larger thumbnails on mobile — fewer per row, easier to tap */
+  .hm-gallery-grid .react-photo-album--rows {
+    --row-height: 200px;
+  }
+
+  /* Ensure gallery thumbnails are optimized on mobile */
+  .hm-gallery-grid img {
+    content-visibility: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Even larger thumbnails on very small screens */
+  .hm-gallery-grid .react-photo-album--rows {
+    --row-height: 180px;
+  }
+
+  /* Tighter spacing on mobile */
+  .hm-gallery-grid {
+    margin-bottom: 20px;
+  }
+
+  /* Gallery embed — full width image on mobile */
+  .hm-gallery-embed {
+    margin: 20px 0;
+  }
+
+  .hm-gallery-embed-content {
+    padding: 16px;
+  }
+
+  .hm-gallery-embed-title {
+    font-size: var(--hybridmag-font-size-md);
+  }
+}
+
+/* ============================================
+   Gallery Category Page
+   ============================================ */
+
+.hm-gallery-category {
+  padding-top: 0;
+}
+
+.hm-gallery-category-hero {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  background: #0f1217;
+}
+
+.hm-gallery-category-hero picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hm-gallery-category-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hm-gallery-category-hero-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40px 30px 36px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.5) 60%,
+    transparent 100%
+  );
+  color: #fff;
+}
+
+.hm-gallery-category-hero-overlay .hm-gallery-breadcrumb {
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 12px;
+}
+
+.hm-gallery-category-hero-overlay .hm-gallery-breadcrumb a {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hm-gallery-category-hero-overlay .hm-gallery-breadcrumb a:hover {
+  color: #fff;
+}
+
+.hm-gallery-category-hero-overlay .hm-breadcrumb-separator {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.hm-gallery-category-title {
+  font-size: var(--hybridmag-font-size-xxxxl);
+  font-weight: 700;
+  margin: 0 0 10px;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.hm-gallery-category-description {
+  font-size: var(--hybridmag-font-size-md);
+  line-height: 1.6;
+  margin: 0 0 10px;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 700px;
+}
+
+.hm-gallery-category-meta {
+  font-size: var(--hybridmag-font-size-sm);
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+/* Category hero — mobile */
+@media (max-width: 768px) {
+  .hm-gallery-category-hero {
+    height: 300px;
+    margin-bottom: 30px;
+  }
+
+  .hm-gallery-category-hero-overlay {
+    padding: 24px 20px 24px;
+  }
+
+  .hm-gallery-category-title {
+    font-size: var(--hybridmag-font-size-xxl);
+  }
+
+  .hm-gallery-category-description {
+    font-size: var(--hybridmag-font-size-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .hm-gallery-category-hero {
+    height: 240px;
+    margin-bottom: 20px;
+  }
+
+  .hm-gallery-category-hero-overlay {
+    padding: 20px 16px 18px;
+  }
+}
+
+/* ============================================
+   Gallery Index — Category Sections
+   ============================================ */
+
+.hm-gallery-categories-section,
+.hm-gallery-standalone-section {
+  margin-bottom: 50px;
+}
+
+.hm-gallery-section-title {
+  font-size: var(--hybridmag-font-size-xl);
+  font-weight: 700;
+  color: var(--hybridmag-color-text-headings);
+  margin: 0 0 24px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--hybridmag-color-border);
+}
+
+html.hm-dark .hm-gallery-section-title {
+  color: #fff;
+}
+
+/* Category card — used on gallery index page */
+.hm-gallery-category-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--hybridmag-color-bg-cl-sep-content, #ffffff);
+  border-radius: var(--hybridmag-global-border-radius);
+  overflow: hidden;
+  box-shadow: var(--hybridmag-global-box-shadow);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.hm-gallery-category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+html.hm-dark .hm-gallery-category-card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+html.hm-dark .hm-gallery-category-card {
+  background: var(--hybridmag-color-bg-cl-sep-content);
 }

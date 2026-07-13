@@ -1,0 +1,30 @@
+[
+  {
+    "slug": "family-trips",
+    "title": "Family Trips",
+    "description": "Our family adventures — resorts, theme parks, wildlife, and the moments that make trips worth remembering.",
+    "coverImage": "/images/galleries/magic-kingdom-2026/mk-fireworks-castle.jpg",
+    "parent": null
+  },
+  {
+    "slug": "2026",
+    "title": "2026",
+    "description": "Disney World, the Hilton Aqua Sol resort, and Savannah Wildlife Refuge — our 2026 family trip.",
+    "coverImage": "/images/galleries/hilton-aqua-sol-2026/aqua-poolside-hug.jpg",
+    "parent": "family-trips"
+  },
+  {
+    "slug": "racing",
+    "title": "Racing",
+    "description": "Racing events attended by my family.",
+    "coverImage": "/images/galleries/lebanon-valley-2026/lvs-photo-02.jpg",
+    "parent": null
+  },
+  {
+    "slug": "lebanon-valley",
+    "title": "Lebanon Valley",
+    "description": "Photos and videos from our nights at Lebanon Valley Speedway in West Lebanon, New York.",
+    "coverImage": "/images/galleries/lebanon-valley-2026/lvs-photo-02.jpg",
+    "parent": "racing"
+  }
+]

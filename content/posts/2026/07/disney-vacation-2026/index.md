@@ -19,23 +19,23 @@ imageSpinners:
         alt: "Joseph and Ashley at the Slingshot on Father's Day night"
 galleryEmbeds:
   - slug: magic-kingdom-2026-album
-    title: "Magic Kingdom 2026"
+    title: "Magic Kingdom"
     coverImage: /images/galleries/magic-kingdom-2026/mk-fireworks-castle.jpg
     description: "Photos and videos from our day at Magic Kingdom — Cinderella Castle, the fireworks, and the moments that made the whole trip worth it."
     photoCount: 40
-    date: "2026-07-02"
-  - slug: savannah-wildlife-refuge-album
+    date: "2026-06-24"
+  - slug: savannah-wildlife-refuge-2026-album
     title: "Savannah Wildlife Refuge"
-    coverImage: /images/galleries/savannah-wildlife-refuge/refuge-01.jpg
+    coverImage: /images/galleries/savannah-wildlife-refuge-2026/refuge-01.jpg
     description: "Photos from our visit to the Savannah National Wildlife Refuge — alligators, wetlands, and wildlife on the drive home from Florida."
     photoCount: 42
-    date: "2026-07-02"
-  - slug: hilton-aqua-sol-2024-album
-    title: "Hilton Aqua Sol 2024"
-    coverImage: /images/galleries/hilton-aqua-sol-2024/aqua-poolside-hug.jpg
+    date: "2026-06-29"
+  - slug: hilton-aqua-sol-2026-album
+    title: "Hilton Aqua Sol"
+    coverImage: /images/galleries/hilton-aqua-sol-2026/aqua-poolside-hug.jpg
     description: "Photos from our stay at the Hilton Aqua Sol Resort in Winter Garden, Florida — pool days, s'mores nights, and the moments that made it our favorite place to stay."
     photoCount: 22
-    date: "2024-08-01"
+    date: "2026-06-28"
 ---
 
 We drove straight through from North Bennington, Vermont to Winter Garden, Florida. No overnight stop, no splitting it into two days — just gas, food, and go. My wife did the majority of the driving; I took over for about 8 hours of the trip. The rest was all her.
@@ -48,7 +48,7 @@ We stayed at the Hilton Aqua Sol in Winter Garden, Florida — the same place we
 
 The hotel itself was clean, comfortable, and honestly exactly what we needed. We ended up spending way more time at the resort than we expected — which says a lot, because you never really do on a Florida trip. The kids loved it. They spent hours running around the grounds catching lizards, which became this whole unexpected obsession. And the water park was a massive hit — especially the water slides. They would've stayed there all day if we'd let them.
 
-The mornings were easy, the breakfast got us out the door quickly, and coming back to a quiet room at the end of a long day was exactly right.
+The ability to have breakfast in our room made the mornings easy and let us get out the door quickly to enjoy our day, and coming back to a quiet room at the end of a long day was exactly right.
 
 Winter Garden is a nice little area too. If you've only ever stayed on Disney property, it's worth knowing there's a whole world just outside the gates that's more relaxed and a lot easier on the wallet.
 
@@ -113,7 +113,10 @@ Happily Ever After is still the closer, and it's still worth staying for. But I'
 
 And then Tinker Bell flies. I mean that literally — she comes down a zip line from the top of the castle, soaring right over the crowd with the fireworks going off behind her. The kids lost their minds. Honestly, so did I. It's one of those things where you've seen it in pictures and you think you know what to expect, and then she swoops over your head and you realize you absolutely did not. That moment alone — Tinker Bell flying over us with the castle lit up and the sky exploding in color — that's the image that's going to stick with me from this trip forever.
 
-
+<video controls muted style="width: 100%; max-width: 800px; margin: 1em auto; display: block;">
+  <source src="/images/galleries/magic-kingdom-2026/mk-fireworks-show-06.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 ### The Moments That Mattered
 
@@ -135,7 +138,7 @@ Along the way, we made a couple of stops worth mentioning.
 
 Right on the border of South Carolina and Georgia, there's the Savannah National Wildlife Refuge — and they have a wildlife drive you can take right through it. This was my fourth time visiting, and I always try to make this stop when we're in the area. The kids had been asking about seeing alligators in the wild, and this delivered — they loved it just as much as I did my first time.
 
-<!-- gallery:savannah-wildlife-refuge-album -->
+<!-- gallery:savannah-wildlife-refuge-2026-album -->
 
 The Laurel Hill Wildlife Drive is a 4.5-mile, one-way dirt road that winds through the heart of the refuge. You take it at your own pace — some people breeze through in twenty minutes, satisfied with spotting one or two gators from the car — and if you're wondering whether a bigger vehicle can make it, we took our 15-passenger low-roof Ford Transit through with room to spare, while others spend hours pulled off along the canals with binoculars and cameras. We fell somewhere in between, but the kids would have stayed all day if we'd let them.
 

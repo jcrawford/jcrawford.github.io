@@ -14,6 +14,7 @@ import 'yet-another-react-lightbox/plugins/captions.css';
 import Counter from 'yet-another-react-lightbox/plugins/counter';
 import 'yet-another-react-lightbox/plugins/counter.css';
 import type { GalleryPhoto, GalleryVideo } from '../types/gallery';
+import { buildSrcSetVariants, buildWebpSrcSetVariants, GALLERY_SIZES } from '../utils/galleryImages';
 import '../styles/gallery.css';
 
 interface GalleryAlbumData {
@@ -24,6 +25,7 @@ interface GalleryAlbumData {
       date: string;
       description: string;
       coverImage: string;
+      category?: string;
       photos: GalleryPhoto[];
       videos?: GalleryVideo[];
     };
@@ -31,9 +33,17 @@ interface GalleryAlbumData {
   };
 }
 
-const GalleryAlbumTemplate: React.FC<PageProps<GalleryAlbumData>> = ({ data }) => {
+interface GalleryAlbumContext {
+  categorySlug: string | null;
+  categoryTitle: string | null;
+  parentCategorySlug: string | null;
+  parentCategoryTitle: string | null;
+}
+
+const GalleryAlbumTemplate: React.FC<PageProps<GalleryAlbumData, GalleryAlbumContext>> = ({ data, pageContext }) => {
   const { frontmatter, html } = data.markdownRemark;
   const { title, date, description, photos, videos } = frontmatter;
+  const { categorySlug, categoryTitle, parentCategorySlug, parentCategoryTitle } = pageContext;
 
   const [lightboxIndex, setLightboxIndex] = useState(-1);
 
@@ -52,19 +62,44 @@ const GalleryAlbumTemplate: React.FC<PageProps<GalleryAlbumData>> = ({ data }) =
     day: 'numeric',
   });
 
+  // Build responsive srcSet arrays for the photo album and lightbox
+  const albumPhotos = photos.map((photo) => ({
+    src: photo.src,
+    width: photo.width,
+    height: photo.height,
+    alt: photo.alt,
+    title: photo.caption || photo.alt,
+    srcSet: buildSrcSetVariants(photo.src, photo.width, photo.height),
+  }));
+
   const lightboxSlides = photos.map((photo) => ({
     src: photo.src,
     alt: photo.alt,
     width: photo.width,
     height: photo.height,
     title: photo.caption || photo.alt,
+    srcSet: buildSrcSetVariants(photo.src, photo.width, photo.height),
   }));
 
   return (
     <Layout>
       <div className="hm-container hm-gallery-album">
         <nav className="hm-gallery-breadcrumb" aria-label="Breadcrumb">
-          <Link to="/gallery">Gallery</Link>
+          <Link to="/gallery">Galleries</Link>
+          {parentCategorySlug && parentCategoryTitle && (
+            <>
+              <span className="hm-breadcrumb-separator">›</span>
+              <Link to={`/gallery/${parentCategorySlug}`}>{parentCategoryTitle}</Link>
+            </>
+          )}
+          {categorySlug && categoryTitle && (
+            <>
+              <span className="hm-breadcrumb-separator">›</span>
+              <Link to={parentCategorySlug ? `/gallery/${parentCategorySlug}/${categorySlug}` : `/gallery/${categorySlug}`}>
+                {categoryTitle}
+              </Link>
+            </>
+          )}
           <span className="hm-breadcrumb-separator">›</span>
           <span>{title}</span>
         </nav>
@@ -107,12 +142,16 @@ const GalleryAlbumTemplate: React.FC<PageProps<GalleryAlbumData>> = ({ data }) =
 
         <div className="hm-gallery-grid">
           <RowsPhotoAlbum
-            photos={photos}
+            photos={albumPhotos}
             targetRowHeight={280}
             rowConstraints={{ minPhotos: 2 }}
             spacing={6}
             padding={0}
             defaultContainerWidth={1200}
+            sizes={GALLERY_SIZES}
+            componentsProps={{
+              image: { loading: 'lazy', decoding: 'async' },
+            }}
             onClick={({ index }) => openLightbox(index)}
           />
         </div>
@@ -131,7 +170,16 @@ const GalleryAlbumTemplate: React.FC<PageProps<GalleryAlbumData>> = ({ data }) =
         />
 
         <nav className="hm-gallery-back">
-          <Link to="/gallery" className="hm-cta-btn">← Back to Gallery</Link>
+          {categorySlug && categoryTitle ? (
+            <Link
+              to={parentCategorySlug ? `/gallery/${parentCategorySlug}/${categorySlug}` : `/gallery/${categorySlug}`}
+              className="hm-cta-btn"
+            >
+              ← Back to {categoryTitle}
+            </Link>
+          ) : (
+            <Link to="/gallery" className="hm-cta-btn">← Back to Galleries</Link>
+          )}
         </nav>
       </div>
     </Layout>
@@ -142,7 +190,7 @@ export default GalleryAlbumTemplate;
 
 import { HeadFC } from 'gatsby';
 
-export const Head: HeadFC = () => <SEO title="Gallery" />;
+export const Head: HeadFC = () => <SEO title="Galleries" />;
 
 export const query = graphql`
   query GalleryAlbumQuery($slug: String!) {

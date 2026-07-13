@@ -1,6 +1,7 @@
 ---
-title: "Hilton Aqua Sol 2026"
+title: "Hilton Aqua Sol"
 slug: hilton-aqua-sol-2026-album
+category: 2026
 date: "2026-06-01"
 draft: false
 description: "Photos from our stay at the Hilton Aqua Sol Resort in Winter Garden, Florida — pool days, s'mores nights, and the moments that made it our favorite place to stay."

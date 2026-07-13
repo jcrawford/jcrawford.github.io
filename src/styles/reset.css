@@ -67,6 +67,10 @@ img {
   border-style: none;
 }
 
+picture {
+  display: block;
+}
+
 /* Lists */
 ul, ol {
   list-style: none;

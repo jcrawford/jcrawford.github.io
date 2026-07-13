@@ -1,7 +1,8 @@
 ---
-title: "Magic Kingdom 2026"
+title: "Magic Kingdom"
 slug: magic-kingdom-2026-album
-date: "2026-07-02"
+category: 2026
+date: "2026-06-24"
 draft: false
 description: "Photos and videos from our day at Magic Kingdom — Cinderella Castle, the fireworks, and the moments that made the whole trip worth it."
 coverImage: /images/galleries/magic-kingdom-2026/mk-fireworks-castle.jpg

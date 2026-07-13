@@ -11,7 +11,7 @@ import ImageSpinner from '../components/ImageSpinner';
 import GalleryEmbed from '../components/GalleryEmbed';
 import { getArticlePath } from '../utils/articlePath';
 import { hasTag, normalizeTagSlug, tagMatches } from '../utils/tagUtils';
-import { postProcessImages } from '../utils/postProcessImages';
+import { postProcessImages, postProcessTables } from '../utils/postProcessImages';
 
 interface SpinnerImage {
   src: string;
@@ -95,7 +95,7 @@ interface ArticleData {
 
 const ArticleTemplate: React.FC<PageProps<ArticleData>> = ({ data, pageContext }) => {
   const article = data.markdownRemark.frontmatter;
-  const articleHtml = postProcessImages(data.markdownRemark.html);
+  const articleHtml = postProcessTables(postProcessImages(data.markdownRemark.html));
   const author = data.authorsJson;
   const isReview = pageContext.isReview as boolean;
   
@@ -147,7 +147,7 @@ const ArticleTemplate: React.FC<PageProps<ArticleData>> = ({ data, pageContext }
 
     while ((match = markerRegex.exec(articleHtml)) !== null) {
       const before = articleHtml.substring(lastIndex, match.index);
-      const markerType = match[1]; // e.g. "spinner:refuge" or "gallery:savannah-wildlife-refuge-album"
+      const markerType = match[1]; // e.g. "spinner:refuge" or "gallery:savannah-wildlife-refuge-2026-album"
 
       if (before.trim()) {
         parts.push(<div key={`part-${keyIndex++}`} className="hm-article-content" dangerouslySetInnerHTML={{ __html: before }} />);

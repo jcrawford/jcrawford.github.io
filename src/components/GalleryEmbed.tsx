@@ -30,7 +30,12 @@ const GalleryEmbed: React.FC<GalleryEmbedProps> = ({
   return (
     <Link to={`/gallery/${slug}`} className="hm-gallery-embed">
       <div className="hm-gallery-embed-image">
-        <OptimizedImage src={coverImage} alt={title} loading="lazy" />
+        <OptimizedImage
+          src={coverImage}
+          alt={title}
+          loading="lazy"
+          sizes="(max-width: 600px) 100vw, 280px"
+        />
       </div>
       <div className="hm-gallery-embed-content">
         <h3 className="hm-gallery-embed-title">📷 {title}</h3>

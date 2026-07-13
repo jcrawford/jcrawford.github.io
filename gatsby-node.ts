@@ -38,6 +38,7 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
       date: Date
       description: String
       coverImage: String
+      category: String
       series: SeriesFrontmatter
       review: MarkdownRemarkFrontmatterReview
       photos: [GalleryPhoto]
@@ -436,8 +437,19 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
   // Gallery pages are skipped if no gallery albums are found
   const galleryIndexTemplate = path.resolve('./src/templates/gallery-index.tsx');
   const galleryAlbumTemplate = path.resolve('./src/templates/gallery-album.tsx');
+  const galleryCategoryTemplate = path.resolve('./src/templates/gallery-category.tsx');
 
-  const galleryResult = await graphql<{ allMarkdownRemark: { nodes: Array<{ frontmatter: { slug: string; title: string } }> } }>(`
+  const galleryResult = await graphql<{
+    allMarkdownRemark: {
+      nodes: Array<{
+        frontmatter: {
+          slug: string;
+          title: string;
+          category?: string;
+        };
+      }>;
+    };
+  }>(`
     query GalleryAlbumsQuery {
       allMarkdownRemark(
         filter: {
@@ -449,6 +461,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
           frontmatter {
             slug
             title
+            category
           }
         }
       }
@@ -456,27 +469,132 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
   `);
 
   if (!galleryResult.errors && galleryResult.data?.allMarkdownRemark.nodes && galleryResult.data.allMarkdownRemark.nodes.length > 0) {
-    // Gallery index page
+    // Load category metadata from gallery-categories.json
+    interface CategoryMeta {
+      slug: string;
+      title: string;
+      description: string;
+      coverImage: string;
+      parent: string | null;
+    }
+
+    const categoriesPath = path.resolve('./src/data/gallery-categories.json');
+    const categoriesData: CategoryMeta[] = fs.existsSync(categoriesPath) ? JSON.parse(fs.readFileSync(categoriesPath, 'utf-8')) : [];
+
+    // Build lookups
+    const categoryMap = new Map<string, CategoryMeta>();
+    const topLevelCategories: CategoryMeta[] = [];
+    const childCategories = new Map<string, CategoryMeta[]>(); // parent slug -> children
+
+    for (const cat of categoriesData) {
+      categoryMap.set(cat.slug, cat);
+      if (cat.parent === null) {
+        topLevelCategories.push(cat);
+      } else {
+        const existing = childCategories.get(cat.parent) || [];
+        existing.push(cat);
+        childCategories.set(cat.parent, existing);
+      }
+    }
+
+    // Collect distinct category slugs from gallery frontmatter
+    const albumCategorySlugs = new Set<string>();
+    const galleryAlbums = galleryResult.data.allMarkdownRemark.nodes;
+
+    for (const album of galleryAlbums) {
+      const cat = album.frontmatter.category;
+      if (cat) {
+        albumCategorySlugs.add(cat);
+      }
+    }
+
+    // Gallery index page — pass all categories (index builds hierarchy)
     createPage({
       path: '/gallery',
       component: galleryIndexTemplate,
-      context: {},
+      context: {
+        categories: categoriesData,
+      },
     });
 
     reporter.info('Created gallery index page: /gallery');
 
-    const galleryAlbums = galleryResult.data.allMarkdownRemark.nodes;
+    // Create pages for ALL categories (both top-level and child)
+    // Top-level: /gallery/{slug} — shows subcategory cards
+    // Child: /gallery/{parent-slug}/{slug} — shows album cards
+    for (const cat of categoriesData) {
+      const hasAlbums = albumCategorySlugs.has(cat.slug);
+      const hasChildren = (childCategories.get(cat.slug) || []).length > 0;
 
+      if (!hasAlbums && !hasChildren) continue;
+
+      if (cat.parent === null) {
+        // Top-level category page
+        const children = childCategories.get(cat.slug) || [];
+
+        createPage({
+          path: `/gallery/${cat.slug}`,
+          component: galleryCategoryTemplate,
+          context: {
+            categorySlug: cat.slug,
+            categoryTitle: cat.title,
+            categoryDescription: cat.description,
+            categoryCoverImage: cat.coverImage,
+            isTopLevel: true,
+            childCategories: children,
+          },
+        });
+
+        reporter.info(`Created gallery category page: /gallery/${cat.slug}`);
+      } else {
+        // Child category page — nested URL
+        const parentMeta = categoryMap.get(cat.parent);
+
+        createPage({
+          path: `/gallery/${cat.parent}/${cat.slug}`,
+          component: galleryCategoryTemplate,
+          context: {
+            categorySlug: cat.slug,
+            categoryTitle: cat.title,
+            categoryDescription: cat.description,
+            categoryCoverImage: cat.coverImage,
+            isTopLevel: false,
+            parentSlug: cat.parent,
+            parentTitle: parentMeta?.title || cat.parent,
+          },
+        });
+
+        reporter.info(`Created gallery category page: /gallery/${cat.parent}/${cat.slug}`);
+      }
+    }
+
+    // Create individual album pages
     galleryAlbums.forEach((album) => {
+      const catSlug = album.frontmatter.category || null;
+      const catMeta = catSlug ? categoryMap.get(catSlug) : null;
+      const parentMeta = catMeta?.parent ? categoryMap.get(catMeta.parent) : null;
+
+      // Build full path from category hierarchy: /gallery/{parent}/{category}/{album-slug}
+      let albumPath = `/gallery/${album.frontmatter.slug}`;
+      if (parentMeta && catMeta) {
+        albumPath = `/gallery/${parentMeta.slug}/${catMeta.slug}/${album.frontmatter.slug}`;
+      } else if (catMeta) {
+        albumPath = `/gallery/${catMeta.slug}/${album.frontmatter.slug}`;
+      }
+
       createPage({
-        path: `/gallery/${album.frontmatter.slug}`,
+        path: albumPath,
         component: galleryAlbumTemplate,
         context: {
           slug: album.frontmatter.slug,
+          categorySlug: catSlug,
+          categoryTitle: catMeta?.title || null,
+          parentCategorySlug: parentMeta?.slug || null,
+          parentCategoryTitle: parentMeta?.title || null,
         },
       });
 
-      reporter.info(`Created gallery album page: ${album.frontmatter.title}`);
+      reporter.info(`Created gallery album page: ${albumPath}`);
     });
   } else {
     reporter.info('No gallery albums found, skipping gallery pages');
