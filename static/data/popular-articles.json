@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-13T13:16:38.039Z",
+  "generatedAt": "2026-07-13T15:12:44.338Z",
   "windowDays": 30,
   "entries": [
     {
@@ -45,16 +45,22 @@
       "score": 8
     },
     {
+      "id": "/reviews/total-typescript-pro-complete-review",
+      "views": 6,
+      "comments": 0,
+      "score": 6
+    },
+    {
       "id": "/posts/saferide-health-cursor-ai-adoption",
       "views": 5,
       "comments": 0,
       "score": 5
     },
     {
-      "id": "/reviews/total-typescript-pro-complete-review",
-      "views": 5,
+      "id": "/posts/gpt-5-5-first-impressions",
+      "views": 3,
       "comments": 0,
-      "score": 5
+      "score": 3
     },
     {
       "id": "/posts/wordpress-plugin-supply-chain-attack-2026",
@@ -69,7 +75,7 @@
       "score": 3
     },
     {
-      "id": "/posts/gpt-5-5-first-impressions",
+      "id": "/posts/claude-opus-4-7-whats-new",
       "views": 2,
       "comments": 0,
       "score": 2
@@ -112,12 +118,6 @@
     },
     {
       "id": "/posts/anthropics-mythos-moment-feels-familiar-and-not-in-a-good-way",
-      "views": 1,
-      "comments": 0,
-      "score": 1
-    },
-    {
-      "id": "/posts/claude-opus-4-7-whats-new",
       "views": 1,
       "comments": 0,
       "score": 1
