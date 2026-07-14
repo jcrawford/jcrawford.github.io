@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-14T12:09:21.377Z",
+  "generatedAt": "2026-07-14T14:15:32.993Z",
   "windowDays": 30,
   "entries": [
     {
@@ -81,6 +81,12 @@
       "score": 3
     },
     {
+      "id": "/reviews/arcade1up-infinity-game-table-review",
+      "views": 3,
+      "comments": 0,
+      "score": 3
+    },
+    {
       "id": "/reviews/hilton-aqua-sol-resort-review",
       "views": 3,
       "comments": 0,
@@ -100,12 +106,6 @@
     },
     {
       "id": "/posts/typescript-7-beta-go-rewrite",
-      "views": 2,
-      "comments": 0,
-      "score": 2
-    },
-    {
-      "id": "/reviews/arcade1up-infinity-game-table-review",
       "views": 2,
       "comments": 0,
       "score": 2
