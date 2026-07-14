@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-13T19:51:08.560Z",
+  "generatedAt": "2026-07-14T03:35:58.866Z",
   "windowDays": 30,
   "entries": [
     {
@@ -64,6 +64,12 @@
     },
     {
       "id": "/posts/gpt-5-5-first-impressions",
+      "views": 3,
+      "comments": 0,
+      "score": 3
+    },
+    {
+      "id": "/posts/lebanon-valley-speedway-2026",
       "views": 3,
       "comments": 0,
       "score": 3
@@ -141,13 +147,7 @@
       "score": 1
     },
     {
-      "id": "/posts/things-you-didnt-know-about-mysql-indexes",
-      "views": 1,
-      "comments": 0,
-      "score": 1
-    },
-    {
-      "id": "/posts/vision-capabilities-php-ai-agents",
+      "id": "/posts/spacex-buys-cursor-60-billion",
       "views": 1,
       "comments": 0,
       "score": 1
