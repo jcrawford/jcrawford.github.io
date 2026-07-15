@@ -2,7 +2,6 @@ import React, { useState, useCallback } from 'react';
 
 interface ShareCounts {
   facebook?: number;
-  twitter?: number;
   linkedin?: number;
   copy?: number;
 }
@@ -10,8 +9,6 @@ interface ShareCounts {
 interface ShareButtonsProps {
   title: string;
   url: string;
-  description?: string;
-  tags?: string[];
   variant?: 'top' | 'bottom';
   shareCounts?: ShareCounts;
 }
@@ -23,7 +20,7 @@ declare global {
   }
 }
 
-const ShareButtons: React.FC<ShareButtonsProps> = ({ title, url, description = '', tags = [], variant = 'bottom', shareCounts = {} }) => {
+const ShareButtons: React.FC<ShareButtonsProps> = ({ title, url, variant = 'bottom', shareCounts = {} }) => {
   const [copied, setCopied] = useState(false);
 
   const trackShare = useCallback((method: string) => {
@@ -63,15 +60,6 @@ const ShareButtons: React.FC<ShareButtonsProps> = ({ title, url, description = '
   }, [url, trackShare]);
 
   const encodedUrl = encodeURIComponent(url);
-  const encodedTitle = encodeURIComponent(title);
-
-  // Build hashtags from tags (skip generic ones, limit to 3)
-  const skipTags = new Set(['reviews', 'featured', 'family']);
-  const hashtagList = tags
-    .filter(tag => !skipTags.has(tag.toLowerCase()))
-    .slice(0, 3)
-    .map(tag => tag.replace(/[^a-zA-Z0-9]/g, ''))
-    .join(',');
 
   const shareLinks = [
     {

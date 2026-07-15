@@ -332,7 +332,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
   // Load popular-articles.json (generated at deploy start by generate:popular script)
   // to inject view counts and comment counts at build time — no client-side pop-in.
   const popularDataPath = path.resolve('./static/data/popular-articles.json');
-  const metricsByPath = new Map<string, { views: number; comments: number; shares?: { facebook: number; twitter: number; linkedin: number; copy: number } }>();
+  const metricsByPath = new Map<string, { views: number; comments: number; shares?: { facebook: number; linkedin: number; copy: number } }>();
   try {
     const rawJson = fs.readFileSync(popularDataPath, 'utf-8');
     const parsed = JSON.parse(rawJson);
@@ -342,7 +342,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
           metricsByPath.set(entry.id, {
             views: entry.views || 0,
             comments: entry.comments || 0,
-            shares: entry.shares || { facebook: 0, twitter: 0, linkedin: 0, copy: 0 },
+            shares: entry.shares || { facebook: 0, linkedin: 0, copy: 0 },
           });
         }
       }
@@ -378,7 +378,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
     }
     
     // Look up view/comment counts for this article path
-    const metrics = metricsByPath.get(articlePath) || { views: 0, comments: 0, shares: { facebook: 0, twitter: 0, linkedin: 0, copy: 0 } };
+    const metrics = metricsByPath.get(articlePath) || { views: 0, comments: 0, shares: { facebook: 0, linkedin: 0, copy: 0 } };
 
     createPage({
       path: articlePath,
@@ -391,7 +391,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
         isReview,
         viewCount: metrics.views,
         commentCount: metrics.comments,
-        shareCounts: metrics.shares || { facebook: 0, twitter: 0, linkedin: 0, copy: 0 },
+        shareCounts: metrics.shares || { facebook: 0, linkedin: 0, copy: 0 },
       },
     });
   });

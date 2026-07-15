@@ -238,8 +238,6 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
             <ShareButtons
               title={article.title}
               url={shareUrl}
-              description={article.description || article.title}
-              tags={article.tags || []}
               variant="top"
               shareCounts={shareCounts}
             />
@@ -297,8 +295,6 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
           <ShareButtons
             title={article.title}
             url={shareUrl}
-            description={article.excerpt}
-            tags={article.tags || []}
             shareCounts={shareCounts}
           />
 

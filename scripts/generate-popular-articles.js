@@ -214,7 +214,7 @@ async function fetchGa4ShareCounts() {
     }),
   });
 
-  // Map: pagePath → { facebook, twitter, linkedin, copy }
+  // Map: pagePath → { facebook, linkedin, copy }
   const sharesByPath = new Map();
   for (const row of response.rows || []) {
     const rawPath = row.dimensionValues?.[0]?.value;
@@ -225,12 +225,12 @@ async function fetchGa4ShareCounts() {
 
     if (pagePath && rawMethod && count > 0) {
       if (!sharesByPath.has(pagePath)) {
-        sharesByPath.set(pagePath, { facebook: 0, twitter: 0, linkedin: 0, copy: 0 });
+        sharesByPath.set(pagePath, { facebook: 0, linkedin: 0, copy: 0 });
       }
       const entry = sharesByPath.get(pagePath);
       // Map GA4 method values to our keys
       const methodKey = rawMethod.toLowerCase();
-      if (methodKey === 'facebook' || methodKey === 'twitter' || methodKey === 'linkedin' || methodKey === 'copy') {
+      if (methodKey === 'facebook' || methodKey === 'linkedin' || methodKey === 'copy') {
         entry[methodKey] = count;
       }
     }
@@ -333,7 +333,7 @@ async function main() {
     .map((pathName) => {
       const views = viewsByPath.get(pathName) || 0;
       const comments = commentsByPath.get(pathName) || 0;
-      const shares = sharesByPath.get(pathName) || { facebook: 0, twitter: 0, linkedin: 0, copy: 0 };
+      const shares = sharesByPath.get(pathName) || { facebook: 0, linkedin: 0, copy: 0 };
       const score = views + comments * COMMENT_WEIGHT;
       return {
         path: pathName,
