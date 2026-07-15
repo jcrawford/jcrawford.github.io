@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-15T18:52:12.376Z",
+  "generatedAt": "2026-07-15T19:38:49.821Z",
   "windowDays": 30,
   "entries": [
     {
@@ -40,6 +40,17 @@
       "views": 32,
       "comments": 0,
       "score": 32,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/benq-rd320ua-monitor-review",
+      "views": 19,
+      "comments": 0,
+      "score": 19,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -91,17 +102,6 @@
       }
     },
     {
-      "id": "/reviews/benq-rd320ua-monitor-review",
-      "views": 6,
-      "comments": 0,
-      "score": 6,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
       "id": "/posts/saferide-health-cursor-ai-adoption",
       "views": 5,
       "comments": 0,
@@ -117,6 +117,17 @@
       "views": 5,
       "comments": 0,
       "score": 5,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/spacex-buys-cursor-60-billion",
+      "views": 4,
+      "comments": 0,
+      "score": 4,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -213,17 +224,6 @@
     },
     {
       "id": "/posts/claude-opus-4-7-whats-new",
-      "views": 1,
-      "comments": 0,
-      "score": 1,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/posts/spacex-buys-cursor-60-billion",
       "views": 1,
       "comments": 0,
       "score": 1,
