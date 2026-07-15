@@ -468,6 +468,18 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
   `);
 
   if (!galleryResult.errors && galleryResult.data?.allMarkdownRemark.nodes && galleryResult.data.allMarkdownRemark.nodes.length > 0) {
+    // Load photo view counts from GA4 data (generated at deploy start)
+    const photoViewsPath = path.resolve('./static/data/photo-view-counts.json');
+    let photoViewCounts: Record<string, number> = {};
+    if (fs.existsSync(photoViewsPath)) {
+      try {
+        const photoViewsData = JSON.parse(fs.readFileSync(photoViewsPath, 'utf-8'));
+        photoViewCounts = photoViewsData.counts || {};
+      } catch {
+        reporter.warn('Failed to parse photo-view-counts.json, using empty counts');
+      }
+    }
+
     // Load category metadata from gallery-categories.json
     interface CategoryMeta {
       slug: string;
@@ -590,6 +602,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
           categoryTitle: catMeta?.title || null,
           parentCategorySlug: parentMeta?.slug || null,
           parentCategoryTitle: parentMeta?.title || null,
+          photoViewCounts,
         },
       });
 

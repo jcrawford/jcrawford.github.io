@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { Link, graphql, PageProps } from 'gatsby';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
@@ -16,6 +16,12 @@ import 'yet-another-react-lightbox/plugins/counter.css';
 import type { GalleryPhoto, GalleryVideo } from '../types/gallery';
 import { buildSrcSetVariants, buildWebpSrcSetVariants, GALLERY_SIZES } from '../utils/galleryImages';
 import '../styles/gallery.css';
+
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
 
 interface GalleryAlbumData {
   markdownRemark: {
@@ -38,12 +44,13 @@ interface GalleryAlbumContext {
   categoryTitle: string | null;
   parentCategorySlug: string | null;
   parentCategoryTitle: string | null;
+  photoViewCounts?: Record<string, number>;
 }
 
 const GalleryAlbumTemplate: React.FC<PageProps<GalleryAlbumData, GalleryAlbumContext>> = ({ data, pageContext }) => {
   const { frontmatter, html } = data.markdownRemark;
   const { title, date, description, photos, videos } = frontmatter;
-  const { categorySlug, categoryTitle, parentCategorySlug, parentCategoryTitle } = pageContext;
+  const { categorySlug, categoryTitle, parentCategorySlug, parentCategoryTitle, photoViewCounts } = pageContext;
 
   const [lightboxIndex, setLightboxIndex] = useState(-1);
 
@@ -54,6 +61,17 @@ const GalleryAlbumTemplate: React.FC<PageProps<GalleryAlbumData, GalleryAlbumCon
   const closeLightbox = useCallback(() => {
     setLightboxIndex(-1);
   }, []);
+
+  // Track photo views in GA4 when lightbox index changes
+  useEffect(() => {
+    if (lightboxIndex >= 0 && lightboxIndex < photos.length && typeof window !== 'undefined' && window.gtag) {
+      const photo = photos[lightboxIndex];
+      window.gtag('event', 'photo_view', {
+        photo_url: photo.src,
+        album_title: title,
+      });
+    }
+  }, [lightboxIndex, photos, title]);
 
   // Format date for display
   const formattedDate = new Date(date + 'T00:00:00').toLocaleDateString('en-US', {
@@ -166,6 +184,22 @@ const GalleryAlbumTemplate: React.FC<PageProps<GalleryAlbumData, GalleryAlbumCon
           carousel={{ finite: false }}
           styles={{
             container: { backgroundColor: 'rgba(0, 0, 0, 0.92)' },
+          }}
+          render={{
+            slideFooter: () => {
+              const currentPhoto = lightboxIndex >= 0 ? photos[lightboxIndex] : null;
+              const viewCount = currentPhoto ? (photoViewCounts?.[currentPhoto.src] || 0) : 0;
+              if (viewCount === 0) return null;
+              return (
+                <div className="hm-photo-view-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                  {viewCount} {viewCount === 1 ? 'view' : 'views'}
+                </div>
+              );
+            },
           }}
         />
 

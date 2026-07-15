@@ -9,6 +9,7 @@ const crypto = require('crypto');
 
 const SITE_URL = 'https://josephcrawford.com';
 const OUTPUT_PATH = path.resolve(__dirname, '../static/data/popular-articles.json');
+const PHOTO_VIEWS_PATH = path.resolve(__dirname, '../static/data/photo-view-counts.json');
 const DAYS_TO_TRACK = 30;
 const COMMENT_WEIGHT = 25;
 
@@ -239,6 +240,61 @@ async function fetchGa4ShareCounts() {
   return sharesByPath;
 }
 
+async function fetchGa4PhotoViewCounts() {
+  let accessToken;
+
+  try {
+    accessToken = await getGoogleAccessToken();
+  } catch (error) {
+    console.warn(`Skipping GA4 photo view counts: ${error.message || error}`);
+    return new Map();
+  }
+
+  if (!accessToken || !GA4_PROPERTY_ID) {
+    return new Map();
+  }
+
+  const response = await requestJson(`https://analyticsdata.googleapis.com/v1beta/properties/${GA4_PROPERTY_ID}:runReport`, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      dateRanges: [{ startDate: `${DAYS_TO_TRACK}daysAgo`, endDate: 'today' }],
+      dimensions: [
+        { name: 'customEvent:photo_url' },
+      ],
+      metrics: [{ name: 'eventCount' }],
+      dimensionFilter: {
+        filter: {
+          fieldName: 'eventName',
+          stringFilter: {
+            matchType: 'EXACT',
+            value: 'photo_view',
+          },
+        },
+      },
+      orderBys: [{ metric: { metricName: 'eventCount' }, desc: true }],
+      limit: 500,
+    }),
+  });
+
+  // Map: photo_url → view count
+  const photoViewsBySrc = new Map();
+  for (const row of response.rows || []) {
+    const rawPhotoUrl = row.dimensionValues?.[0]?.value;
+    const rawCount = row.metricValues?.[0]?.value;
+    const count = Number.parseInt(rawCount || '0', 10);
+
+    if (rawPhotoUrl && count > 0) {
+      photoViewsBySrc.set(rawPhotoUrl, count);
+    }
+  }
+
+  return photoViewsBySrc;
+}
+
 async function fetchDiscussionCommentCounts() {
   const token = GITHUB_TOKEN || GH_TOKEN;
   if (!token) {
@@ -310,7 +366,7 @@ function normalizePath(input) {
 }
 
 async function main() {
-  const [viewsByPath, commentsByPath, sharesByPath] = await Promise.all([
+  const [viewsByPath, commentsByPath, sharesByPath, photoViewsBySrc] = await Promise.all([
     fetchGa4Views(),
     fetchDiscussionCommentCounts().catch((error) => {
       console.warn(`Skipping discussion comment counts: ${error.message || error}`);
@@ -318,6 +374,10 @@ async function main() {
     }),
     fetchGa4ShareCounts().catch((error) => {
       console.warn(`Skipping GA4 share counts: ${error.message || error}`);
+      return new Map();
+    }),
+    fetchGa4PhotoViewCounts().catch((error) => {
+      console.warn(`Skipping GA4 photo view counts: ${error.message || error}`);
       return new Map();
     }),
   ]);
@@ -360,6 +420,16 @@ async function main() {
   }, null, 2) + '\n');
 
   console.log(`Wrote ${popularArticles.length} popular articles to ${OUTPUT_PATH}`);
+
+  // Write photo view counts to separate file for gallery album pages
+  const photoViewEntries = Object.fromEntries(photoViewsBySrc);
+  await fs.writeFile(PHOTO_VIEWS_PATH, JSON.stringify({
+    generatedAt: new Date().toISOString(),
+    windowDays: DAYS_TO_TRACK,
+    counts: photoViewEntries,
+  }, null, 2) + '\n');
+
+  console.log(`Wrote ${Object.keys(photoViewEntries).length} photo view counts to ${PHOTO_VIEWS_PATH}`);
 }
 
 main().catch((error) => {
