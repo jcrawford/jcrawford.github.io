@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-15T18:07:31.001Z",
+  "generatedAt": "2026-07-15T18:12:58.950Z",
   "windowDays": 30,
   "entries": [
     {
@@ -111,7 +111,7 @@
       }
     },
     {
-      "id": "/reviews/total-typescript-pro-complete-review",
+      "id": "/reviews/benq-rd320ua-monitor-review",
       "views": 5,
       "comments": 0,
       "score": 5,
@@ -123,10 +123,10 @@
       }
     },
     {
-      "id": "/reviews/benq-rd320ua-monitor-review",
-      "views": 4,
+      "id": "/reviews/total-typescript-pro-complete-review",
+      "views": 5,
       "comments": 0,
-      "score": 4,
+      "score": 5,
       "shares": {
         "facebook": 0,
         "twitter": 0,
