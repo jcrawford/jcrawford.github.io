@@ -213,6 +213,13 @@ async function fetchGa4ShareCounts() {
       orderBys: [{ metric: { metricName: 'eventCount' }, desc: true }],
       limit: 500,
     }),
+  }).catch((error) => {
+    // customEvent dimensions require registration in GA4 admin — return empty if not registered yet
+    if (error.message && error.message.includes('customEvent:method')) {
+      console.warn('GA4 custom dimension method not registered yet — returning empty share counts');
+      return { rows: [] };
+    }
+    throw error;
   });
 
   // Map: pagePath → { facebook, linkedin, copy }
@@ -278,6 +285,13 @@ async function fetchGa4PhotoViewCounts() {
       orderBys: [{ metric: { metricName: 'eventCount' }, desc: true }],
       limit: 500,
     }),
+  }).catch((error) => {
+    // customEvent dimensions require registration in GA4 admin — return empty if not registered yet
+    if (error.message && error.message.includes('customEvent:photo_url')) {
+      console.warn('GA4 custom dimension photo_url not registered yet — returning empty photo view counts');
+      return { rows: [] };
+    }
+    throw error;
   });
 
   // Map: photo_url → view count
