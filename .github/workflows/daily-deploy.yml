@@ -11,8 +11,6 @@ on:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 env:
   GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
@@ -52,15 +50,9 @@ jobs:
             git push origin master
           fi
 
-      - name: Build site
-        run: npx gatsby build
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./public
-
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and deploy to GitHub Pages
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npx gatsby build
+          npx gh-pages -d public -t -r "https://${GH_TOKEN}@github.com/jcrawford/jcrawford.github.io.git"
