@@ -375,6 +375,11 @@ html:not(.hm-dark) .hm-gallery-embed-image {
   z-index: 10;
 }
 
+/* Fix lightbox caption title overlapping the counter (2/42) */
+.yarl__slide_captions_container {
+  padding-left: 80px;
+}
+
 html.hm-dark .hm-gallery-album-card {
   background: var(--hybridmag-color-bg-cl-sep-content);
 }
