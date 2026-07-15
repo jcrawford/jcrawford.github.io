@@ -9,6 +9,7 @@ import ReviewBox from '../components/ReviewBox';
 import Comments from '../components/Comments';
 import ImageSpinner from '../components/ImageSpinner';
 import GalleryEmbed from '../components/GalleryEmbed';
+import ShareButtons from '../components/ShareButtons';
 import { getArticlePath } from '../utils/articlePath';
 import { hasTag, normalizeTagSlug, tagMatches } from '../utils/tagUtils';
 import { postProcessImages, postProcessTables } from '../utils/postProcessImages';
@@ -27,9 +28,11 @@ interface NamedSpinner {
 interface GalleryEmbedData {
   slug: string;
   title: string;
+  path?: string;
   coverImage: string;
   description: string;
   photoCount: number;
+  videoCount?: number;
   date: string;
 }
 
@@ -93,11 +96,22 @@ interface ArticleData {
   };
 }
 
-const ArticleTemplate: React.FC<PageProps<ArticleData>> = ({ data, pageContext }) => {
+interface ArticlePageContext {
+  isReview: boolean;
+  viewCount: number;
+  commentCount: number;
+  shareCounts: { facebook: number; twitter: number; linkedin: number; copy: number };
+}
+
+const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({ data, pageContext }) => {
   const article = data.markdownRemark.frontmatter;
   const articleHtml = postProcessTables(postProcessImages(data.markdownRemark.html));
   const author = data.authorsJson;
   const isReview = pageContext.isReview as boolean;
+  const viewCount = pageContext.viewCount || 0;
+  const commentCount = pageContext.commentCount || 0;
+  const shareCounts = pageContext.shareCounts || { facebook: 0, twitter: 0, linkedin: 0, copy: 0 };
+  const shareUrl = `https://josephcrawford.com${getArticlePath(article.slug, false, isReview)}`;
   
   // Filter navigation: reviews only link to reviews, posts only link to posts
   const previousArticle = data.previousArticle.nodes.find(node => 
@@ -199,21 +213,36 @@ const ArticleTemplate: React.FC<PageProps<ArticleData>> = ({ data, pageContext }
             
             <div className="hm-article-meta">
               <span className="hm-article-meta-by">by</span>
-              <Link to={`/author/${author.slug}`} className="hm-article-author-name">
-                {author.name}
-              </Link>
+              <span className="hm-article-author-name">{author.name}</span>
               <span className="hm-article-meta-separator">•</span>
               <time className="hm-article-date" dateTime={article.publishedAt}>
                 {formatDate(article.publishedAt)}
               </time>
               <span className="hm-article-meta-separator">•</span>
+              <span className="hm-article-views">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                {viewCount.toLocaleString()}
+              </span>
+              <span className="hm-article-meta-separator">•</span>
               <span className="hm-article-comments">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                 </svg>
-                0
+                {commentCount}
               </span>
             </div>
+
+            <ShareButtons
+              title={article.title}
+              url={shareUrl}
+              description={article.description || article.title}
+              tags={article.tags || []}
+              variant="top"
+              shareCounts={shareCounts}
+            />
           </header>
 
           {!(article.imageSpinner && article.imageSpinner.length > 0) && (
@@ -264,6 +293,14 @@ const ArticleTemplate: React.FC<PageProps<ArticleData>> = ({ data, pageContext }
               ))}
             </div>
           )}
+
+          <ShareButtons
+            title={article.title}
+            url={shareUrl}
+            description={article.excerpt}
+            tags={article.tags || []}
+            shareCounts={shareCounts}
+          />
 
           <Comments slug={article.slug} title={article.title} />
             </article>

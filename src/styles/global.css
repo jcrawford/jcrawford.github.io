@@ -987,6 +987,128 @@ html.hm-dark .hm-article-content tbody tr:hover {
   transform: translateY(-1px);
 }
 
+/* Share Buttons */
+.hm-share-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 20px 0;
+  margin-bottom: 30px;
+  border-top: 1px solid var(--hybridmag-color-border);
+}
+
+.hm-share-label {
+  font-weight: 600;
+  color: var(--hybridmag-color-text-headings);
+  font-size: var(--hybridmag-font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hm-share-buttons-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hm-share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 14px;
+  border-radius: 22px;
+  border: 1px solid var(--hybridmag-color-border);
+  background: transparent;
+  color: var(--hybridmag-color-text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.hm-share-btn:hover {
+  background: var(--share-color, #3a3a3a);
+  border-color: var(--share-color, #3a3a3a);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.hm-share-btn:active {
+  transform: translateY(0);
+}
+
+.hm-share-btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hm-share-btn-name {
+  font-weight: 600;
+}
+
+.hm-share-btn-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 18px;
+  padding: 0 6px;
+  border-radius: 9px;
+  background: rgba(0, 0, 0, 0.08);
+  font-size: 11px;
+  font-weight: 700;
+  color: inherit;
+  flex-shrink: 0;
+}
+
+.hm-share-btn:hover .hm-share-btn-count {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.hm-share-copy.hm-share-copied {
+  background: #2d7d46;
+  border-color: #2d7d46;
+  color: #ffffff;
+}
+
+.hm-share-copy.hm-share-copied .hm-share-btn-count {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Share Buttons — Top variant (inline under byline) */
+.hm-share-top {
+  padding: 10px 0;
+  margin-bottom: 0;
+  border-top: none;
+}
+
+.hm-share-top .hm-share-buttons-list {
+  gap: 6px;
+}
+
+.hm-share-top .hm-share-btn {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+.hm-share-top .hm-share-btn-icon svg {
+  width: 13px;
+  height: 13px;
+}
+
+.hm-share-top .hm-share-btn-count {
+  min-width: 17px;
+  height: 15px;
+  padding: 0 5px;
+  font-size: 10px;
+}
+
 /* Post Navigation (Previous/Next) */
 .hm-post-navigation {
   display: flex;
@@ -2217,6 +2339,17 @@ body .hm-cl-sep #secondary .widget {
   vertical-align: middle;
 }
 
+.hm-article-views {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--hybridmag-color-text-light);
+}
+
+.hm-article-views svg {
+  vertical-align: middle;
+}
+
 /* Remove old meta styles */
 .hm-article-author-info,
 .hm-article-author-avatar,
@@ -2241,7 +2374,8 @@ body .hm-cl-sep #secondary .widget {
 html.hm-dark .hm-article-meta-by,
 html.hm-dark .hm-article-meta-separator,
 html.hm-dark .hm-article-date,
-html.hm-dark .hm-article-comments {
+html.hm-dark .hm-article-comments,
+html.hm-dark .hm-article-views {
   color: var(--hybridmag-color-text-light);
 }
 
@@ -2274,6 +2408,24 @@ html.hm-dark .hm-article-tag {
 html.hm-dark .hm-article-tag:hover {
   background: #3a3a3a;
   color: #ffffff;
+}
+
+/* Dark Mode - Share Buttons */
+html.hm-dark .hm-share-btn {
+  border-color: #3a3a3a;
+  color: #cccccc;
+}
+
+html.hm-dark .hm-share-label {
+  color: var(--hybridmag-color-text-headings);
+}
+
+html.hm-dark .hm-share-btn-count {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+html.hm-dark .hm-share-btn:hover .hm-share-btn-count {
+  background: rgba(255, 255, 255, 0.25);
 }
 
 /* Dark Mode - Article Card Links */

@@ -17,6 +17,7 @@ const {
   GA4_SERVICE_ACCOUNT_EMAIL,
   GA4_SERVICE_ACCOUNT_PRIVATE_KEY,
   GITHUB_TOKEN,
+  GH_TOKEN,
   POPULAR_POSTS_REPO = 'jcrawford/jcrawford.github.io',
 } = process.env;
 
@@ -172,8 +173,76 @@ async function fetchGa4Views() {
   return viewsByPath;
 }
 
+async function fetchGa4ShareCounts() {
+  let accessToken;
+
+  try {
+    accessToken = await getGoogleAccessToken();
+  } catch (error) {
+    console.warn(`Skipping GA4 share counts: ${error.message || error}`);
+    return new Map();
+  }
+
+  if (!accessToken || !GA4_PROPERTY_ID) {
+    return new Map();
+  }
+
+  const response = await requestJson(`https://analyticsdata.googleapis.com/v1beta/properties/${GA4_PROPERTY_ID}:runReport`, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      dateRanges: [{ startDate: `${DAYS_TO_TRACK}daysAgo`, endDate: 'today' }],
+      dimensions: [
+        { name: 'pagePath' },
+        { name: 'customEvent:method' },
+      ],
+      metrics: [{ name: 'eventCount' }],
+      dimensionFilter: {
+        filter: {
+          fieldName: 'eventName',
+          stringFilter: {
+            matchType: 'EXACT',
+            value: 'share',
+          },
+        },
+      },
+      orderBys: [{ metric: { metricName: 'eventCount' }, desc: true }],
+      limit: 500,
+    }),
+  });
+
+  // Map: pagePath → { facebook, twitter, linkedin, copy }
+  const sharesByPath = new Map();
+  for (const row of response.rows || []) {
+    const rawPath = row.dimensionValues?.[0]?.value;
+    const rawMethod = row.dimensionValues?.[1]?.value;
+    const rawCount = row.metricValues?.[0]?.value;
+    const pagePath = normalizePath(rawPath);
+    const count = Number.parseInt(rawCount || '0', 10);
+
+    if (pagePath && rawMethod && count > 0) {
+      if (!sharesByPath.has(pagePath)) {
+        sharesByPath.set(pagePath, { facebook: 0, twitter: 0, linkedin: 0, copy: 0 });
+      }
+      const entry = sharesByPath.get(pagePath);
+      // Map GA4 method values to our keys
+      const methodKey = rawMethod.toLowerCase();
+      if (methodKey === 'facebook' || methodKey === 'twitter' || methodKey === 'linkedin' || methodKey === 'copy') {
+        entry[methodKey] = count;
+      }
+    }
+  }
+
+  return sharesByPath;
+}
+
 async function fetchDiscussionCommentCounts() {
-  if (!GITHUB_TOKEN) {
+  const token = GITHUB_TOKEN || GH_TOKEN;
+  if (!token) {
+    console.warn('Skipping discussion comment counts: no GITHUB_TOKEN or GH_TOKEN found in environment');
     return new Map();
   }
 
@@ -194,7 +263,7 @@ async function fetchDiscussionCommentCounts() {
   const response = await requestJson('https://api.github.com/graphql', {
     method: 'POST',
     headers: {
-      Authorization: `bearer ${GITHUB_TOKEN}`,
+      Authorization: `bearer ${token}`,
       'Content-Type': 'application/json',
       'User-Agent': 'popular-articles-generator',
     },
@@ -241,10 +310,14 @@ function normalizePath(input) {
 }
 
 async function main() {
-  const [viewsByPath, commentsByPath] = await Promise.all([
+  const [viewsByPath, commentsByPath, sharesByPath] = await Promise.all([
     fetchGa4Views(),
     fetchDiscussionCommentCounts().catch((error) => {
       console.warn(`Skipping discussion comment counts: ${error.message || error}`);
+      return new Map();
+    }),
+    fetchGa4ShareCounts().catch((error) => {
+      console.warn(`Skipping GA4 share counts: ${error.message || error}`);
       return new Map();
     }),
   ]);
@@ -252,6 +325,7 @@ async function main() {
   const uniquePaths = new Set([
     ...viewsByPath.keys(),
     ...commentsByPath.keys(),
+    ...sharesByPath.keys(),
   ]);
 
   const popularArticles = Array.from(uniquePaths)
@@ -259,12 +333,14 @@ async function main() {
     .map((pathName) => {
       const views = viewsByPath.get(pathName) || 0;
       const comments = commentsByPath.get(pathName) || 0;
+      const shares = sharesByPath.get(pathName) || { facebook: 0, twitter: 0, linkedin: 0, copy: 0 };
       const score = views + comments * COMMENT_WEIGHT;
       return {
         path: pathName,
         views,
         comments,
         score,
+        shares,
       };
     })
     .sort((a, b) => b.score - a.score || b.views - a.views || b.comments - a.comments)
@@ -279,6 +355,7 @@ async function main() {
       views: article.views,
       comments: article.comments,
       score: article.score,
+      shares: article.shares,
     })),
   }, null, 2) + '\n');
 

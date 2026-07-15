@@ -68,11 +68,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
         </p>
         
         <div className="hm-article-card-meta">
-          <span>
-            <Link to={`/author/${author}`}>
-              {authorName}
-            </Link>
-          </span>
+          <span>{authorName}</span>
           <span>•</span>
           <span>
             <time dateTime={publishedAt}>

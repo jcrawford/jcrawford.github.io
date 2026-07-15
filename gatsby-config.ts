@@ -15,8 +15,8 @@ const config: GatsbyConfig = {
       { name: 'Galleries', path: '/gallery' },
       { name: 'Family', path: '/tag/family' },
       { name: 'Reviews', path: '/tag/reviews' },
-      { name: 'Resume', path: '/resume' },
       { name: 'Work', path: '/tag/work' },
+      { name: 'Resume', path: '/resume' },
     ],
     footerWidgets: [
       {
@@ -194,24 +194,26 @@ const config: GatsbyConfig = {
         transformHeaders: (headers: any) => headers,
       },
     },
-    {
-      resolve: 'gatsby-plugin-google-gtag',
-      options: {
-        trackingIds: [
-          'G-9LLY1071M3', // GA4 Measurement ID
-        ],
-        gtagConfig: {
-          anonymize_ip: true, // GDPR/privacy compliance
-          cookie_expires: 0,
-        },
-        pluginConfig: {
-          head: false, // Load via Partytown (not in head)
-          respectDNT: true, // Respect Do Not Track
-          exclude: ['/preview/**', '/do-not-track/me/too/'],
-          delayOnRouteUpdate: 0, // No delay for route changes
-        },
-      },
-    },
+    ...(process.env.NODE_ENV === 'production'
+      ? [{
+          resolve: 'gatsby-plugin-google-gtag',
+          options: {
+            trackingIds: [
+              'G-9LLY1071M3', // GA4 Measurement ID
+            ],
+            gtagConfig: {
+              anonymize_ip: true, // GDPR/privacy compliance
+              cookie_expires: 0,
+            },
+            pluginConfig: {
+              head: false, // Load via Partytown (not in head)
+              respectDNT: true, // Respect Do Not Track
+              exclude: ['/preview/**', '/do-not-track/me/too/'],
+              delayOnRouteUpdate: 0, // No delay for route changes
+            },
+          },
+        }]
+      : []),
     {
       resolve: 'gatsby-plugin-sitemap',
       options: {
@@ -236,9 +238,6 @@ const config: GatsbyConfig = {
           } else if (path.startsWith('/tag/')) {
             priority = 0.7;
             changefreq = 'weekly';
-          } else if (path.startsWith('/author/')) {
-            priority = 0.6;
-            changefreq = 'monthly';
           } else {
             priority = 0.5;
             changefreq = 'yearly';

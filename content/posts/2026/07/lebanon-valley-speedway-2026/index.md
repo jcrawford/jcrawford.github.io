@@ -8,6 +8,15 @@ tags:
 author: joseph-crawford
 publishedAt: "2026-07-13"
 draft: false
+galleryEmbeds:
+  - slug: july-11-2026-album
+    title: "July 11, 2026 — Lebanon Valley Speedway"
+    path: /gallery/racing/lebanon-valley/july-11-2026-album
+    coverImage: /images/galleries/lebanon-valley-2026/lvs-photo-02.jpg
+    description: "Photos and videos from our Saturday night at Lebanon Valley Speedway — Big Block Modifieds, Twin 20s, fireworks, and the grandstands under the lights."
+    photoCount: 6
+    videoCount: 4
+    date: "2026-07-11"
 ---
 
 Lebanon Valley Speedway is about 30 miles from our house in North Bennington, Vermont — straight down Route 22 into New York, maybe 40 minutes if you don't get stuck behind a tractor.
@@ -82,6 +91,8 @@ There was something about standing on a dirt track grandstand in the dark, smell
 </video>
 
 The video above doesn't do it justice — phone cameras never do with fireworks — but it gives you a sense of the scale. The bursts just kept coming, one after another, layering on top of each other until the smoke hung in the air and the next shell punched through it.
+
+<!-- gallery:july-11-2026-album -->
 
 ## Concessions
 

@@ -31,12 +31,13 @@ review:
   brand: Hilton
   productUrl: 'https://www.hilton.com/en/hotels/mcotkgv-hilton-vacation-club-aqua-sol-orlando/'
 galleryEmbeds:
-  - slug: hilton-aqua-sol-2024-album
-    title: "Hilton Aqua Sol 2024"
-    coverImage: /images/galleries/hilton-aqua-sol-2024/aqua-poolside-hug.jpg
+  - slug: hilton-aqua-sol-2026-album
+    title: "Hilton Aqua Sol 2026"
+    path: /gallery/family-trips/2026/hilton-aqua-sol-2026-album
+    coverImage: /images/galleries/hilton-aqua-sol-2026/aqua-poolside-hug.jpg
     description: "Photos from our stay at the Hilton Aqua Sol Resort — pool days, s'mores nights, and the moments that made it our favorite place to stay."
     photoCount: 22
-    date: "2024-08-01"
+    date: "2026-06-28"
 ---
 
 I've been going to Florida since I was a kid — many, many times over the years. Theme parks, beach trips, family vacations, you name it. And after all those trips, the Hilton Aqua Sol Resort in Winter Garden, Florida is the best place I've ever stayed. Not one of the best — the best.

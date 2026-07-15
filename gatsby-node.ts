@@ -162,20 +162,12 @@ interface Tag {
   featured: boolean;
 }
 
-interface Author {
-  slug: string;
-  name: string;
-}
-
 interface PagesQueryResult {
   allMarkdownRemark: {
     nodes: Article[];
   };
   allTagsJson: {
     nodes: Tag[];
-  };
-  allAuthorsJson: {
-    nodes: Author[];
   };
 }
 
@@ -321,12 +313,6 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
           featured
         }
       }
-      allAuthorsJson {
-        nodes {
-          slug
-          name
-        }
-      }
     }
   `);
 
@@ -337,11 +323,33 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
 
   const articles = result.data?.allMarkdownRemark.nodes || [];
   const tags = result.data?.allTagsJson.nodes || [];
-  const authors = result.data?.allAuthorsJson.nodes || [];
 
   if (articles.length === 0) {
     reporter.warn('No articles found to create pages');
     return;
+  }
+
+  // Load popular-articles.json (generated at deploy start by generate:popular script)
+  // to inject view counts and comment counts at build time — no client-side pop-in.
+  const popularDataPath = path.resolve('./static/data/popular-articles.json');
+  const metricsByPath = new Map<string, { views: number; comments: number; shares?: { facebook: number; twitter: number; linkedin: number; copy: number } }>();
+  try {
+    const rawJson = fs.readFileSync(popularDataPath, 'utf-8');
+    const parsed = JSON.parse(rawJson);
+    if (parsed?.entries && Array.isArray(parsed.entries)) {
+      for (const entry of parsed.entries) {
+        if (entry.id) {
+          metricsByPath.set(entry.id, {
+            views: entry.views || 0,
+            comments: entry.comments || 0,
+            shares: entry.shares || { facebook: 0, twitter: 0, linkedin: 0, copy: 0 },
+          });
+        }
+      }
+    }
+    reporter.info(`Loaded ${metricsByPath.size} article metrics from popular-articles.json`);
+  } catch {
+    reporter.warn('No popular-articles.json found or invalid — view counts will default to 0');
   }
 
   // Validate series metadata before creating pages
@@ -369,6 +377,9 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
       articlePath = `/posts/${article.frontmatter.slug}`;
     }
     
+    // Look up view/comment counts for this article path
+    const metrics = metricsByPath.get(articlePath) || { views: 0, comments: 0, shares: { facebook: 0, twitter: 0, linkedin: 0, copy: 0 } };
+
     createPage({
       path: articlePath,
       component: isSeries ? seriesArticleTemplate : articleTemplate,
@@ -378,6 +389,9 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
         publishedAt: article.frontmatter.publishedAt,
         seriesName: article.frontmatter.series?.name || null,
         isReview,
+        viewCount: metrics.views,
+        commentCount: metrics.comments,
+        shareCounts: metrics.shares || { facebook: 0, twitter: 0, linkedin: 0, copy: 0 },
       },
     });
   });
@@ -416,21 +430,6 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
     });
 
     reporter.info(`Created ${numPages} page(s) for tag: ${tag.name}`);
-  });
-
-  // Create author pages
-  const authorTemplate = path.resolve('./src/templates/author.tsx');
-
-  authors.forEach((author) => {
-    createPage({
-      path: `/author/${author.slug}`,
-      component: authorTemplate,
-      context: {
-        slug: author.slug,
-      },
-    });
-
-    reporter.info(`Created author page: ${author.name}`);
   });
 
   // Create gallery pages only if gallery content exists

@@ -256,13 +256,6 @@ export type AllCategoriesQuery = AllTagsQuery
 export type CategoryQuery = TagQuery
 
 /**
- * GraphQL query result for author
- */
-export interface AuthorQuery {
-  authorsJson: Author | null
-}
-
-/**
  * GraphQL query result for site metadata
  */
 export interface SiteMetadataQuery {

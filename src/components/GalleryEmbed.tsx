@@ -5,18 +5,22 @@ import OptimizedImage from './OptimizedImage';
 interface GalleryEmbedProps {
   title: string;
   slug: string;
+  path?: string;
   coverImage: string;
   description?: string;
   photoCount?: number;
+  videoCount?: number;
   date?: string;
 }
 
 const GalleryEmbed: React.FC<GalleryEmbedProps> = ({
   title,
   slug,
+  path,
   coverImage,
   description,
   photoCount,
+  videoCount,
   date,
 }) => {
   const formattedDate = date
@@ -28,7 +32,7 @@ const GalleryEmbed: React.FC<GalleryEmbedProps> = ({
     : null;
 
   return (
-    <Link to={`/gallery/${slug}`} className="hm-gallery-embed">
+    <Link to={path || `/gallery/${slug}`} className="hm-gallery-embed">
       <div className="hm-gallery-embed-image">
         <OptimizedImage
           src={coverImage}
@@ -45,9 +49,24 @@ const GalleryEmbed: React.FC<GalleryEmbedProps> = ({
         {description && (
           <p className="hm-gallery-embed-description">{description}</p>
         )}
-        {photoCount !== undefined && (
+        {(photoCount !== undefined || videoCount !== undefined) && (
           <span className="hm-gallery-embed-count">
-            {photoCount} {photoCount === 1 ? 'photo' : 'photos'} — View full gallery →
+            {photoCount !== undefined && photoCount > 0 && (
+              <>
+                {photoCount} {photoCount === 1 ? 'photo' : 'photos'}
+              </>
+            )}
+            {photoCount !== undefined && photoCount > 0 && videoCount !== undefined && videoCount > 0 && (
+              <>
+                {' — '}
+              </>
+            )}
+            {videoCount !== undefined && videoCount > 0 && (
+              <>
+                {videoCount} {videoCount === 1 ? 'video' : 'videos'}
+              </>
+            )}
+            {' — View full gallery →'}
           </span>
         )}
       </div>
