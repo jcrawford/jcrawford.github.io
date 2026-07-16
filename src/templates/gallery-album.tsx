@@ -189,7 +189,6 @@ const GalleryAlbumTemplate: React.FC<PageProps<GalleryAlbumData, GalleryAlbumCon
             slideFooter: () => {
               const currentPhoto = lightboxIndex >= 0 ? photos[lightboxIndex] : null;
               const viewCount = currentPhoto ? (photoViewCounts?.[currentPhoto.src] || 0) : 0;
-              if (viewCount === 0) return null;
               return (
                 <div className="hm-photo-view-badge">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
