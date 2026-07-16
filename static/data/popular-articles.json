@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-16T13:03:20.251Z",
+  "generatedAt": "2026-07-16T14:25:22.978Z",
   "windowDays": 30,
   "entries": [
     {
@@ -37,9 +37,9 @@
     },
     {
       "id": "/reviews/benq-rd320ua-monitor-review",
-      "views": 41,
+      "views": 46,
       "comments": 0,
-      "score": 41,
+      "score": 46,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -81,6 +81,17 @@
     },
     {
       "id": "/posts/grok-4-5-cursor-first-impressions",
+      "views": 11,
+      "comments": 0,
+      "score": 11,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/lebanon-valley-speedway-2026",
       "views": 11,
       "comments": 0,
       "score": 11,
@@ -136,17 +147,6 @@
     },
     {
       "id": "/posts/gpt-5-5-first-impressions",
-      "views": 3,
-      "comments": 0,
-      "score": 3,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/posts/lebanon-valley-speedway-2026",
       "views": 3,
       "comments": 0,
       "score": 3,
