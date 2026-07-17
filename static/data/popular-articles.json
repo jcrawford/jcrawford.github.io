@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-17T12:06:51.768Z",
+  "generatedAt": "2026-07-17T14:05:43.263Z",
   "windowDays": 30,
   "entries": [
     {
@@ -113,10 +113,10 @@
       }
     },
     {
-      "id": "/posts/saferide-health-cursor-ai-adoption",
-      "views": 5,
+      "id": "/reviews/total-typescript-pro-complete-review",
+      "views": 6,
       "comments": 0,
-      "score": 5,
+      "score": 6,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -124,7 +124,7 @@
       }
     },
     {
-      "id": "/reviews/total-typescript-pro-complete-review",
+      "id": "/posts/saferide-health-cursor-ai-adoption",
       "views": 5,
       "comments": 0,
       "score": 5,
@@ -245,6 +245,17 @@
       }
     },
     {
+      "id": "/posts/openai-codex-expansion-developer-guide",
+      "views": 1,
+      "comments": 0,
+      "score": 1,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/posts/typescript-7-beta-go-rewrite",
       "views": 1,
       "comments": 0,
@@ -257,17 +268,6 @@
     },
     {
       "id": "/reviews/flexispot-e7-plus",
-      "views": 1,
-      "comments": 0,
-      "score": 1,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/logitech-mx-master-3s-review",
       "views": 1,
       "comments": 0,
       "score": 1,
