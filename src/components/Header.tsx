@@ -24,24 +24,31 @@ const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Lock body scroll when mobile menu or search is open
-  useEffect(() => {
-    if (isMobileMenuOpen || isSearchOpen) {
-      document.body.style.overflow = 'hidden';
-      // iOS Safari fix: prevent rubber-band scrolling
-      document.body.style.position = 'fixed';
-      document.body.style.width = '100%';
-    } else {
-      document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
-    }
-    
-    return () => {
-      document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
-    };
-  }, [isMobileMenuOpen, isSearchOpen]);
+    useEffect(() => {
+      if (isMobileMenuOpen || isSearchOpen) {
+        // Save current scroll position
+        const scrollY = window.scrollY;
+        document.body.style.top = `-${scrollY}px`;
+        document.body.style.position = 'fixed';
+        document.body.style.width = '100%';
+        document.body.style.overflow = 'hidden';
+      } else {
+        // Restore scroll position
+        const scrollY = parseInt(document.body.style.top || '0', 10) * -1;
+        document.body.style.position = '';
+        document.body.style.width = '';
+        document.body.style.overflow = '';
+        document.body.style.top = '';
+        window.scrollTo(0, scrollY);
+      }
+      
+      return () => {
+        document.body.style.overflow = '';
+        document.body.style.position = '';
+        document.body.style.width = '';
+        document.body.style.top = '';
+      };
+    }, [isMobileMenuOpen, isSearchOpen]);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');

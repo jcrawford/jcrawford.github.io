@@ -3,6 +3,7 @@ import SeriesWidget from './SeriesWidget';
 import TagCloud from './TagCloud';
 import RecentArticles from './RecentArticles';
 import type { SeriesMetadata, SeriesArticle } from '../types';
+import '../styles/sidebar.css';
 
 interface SidebarProps {
   /** Current article slug (for series widget) */

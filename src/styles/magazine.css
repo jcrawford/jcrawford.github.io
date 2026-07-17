@@ -1,8 +1,5 @@
 /* Modern Magazine Theme CSS - Copied from inspiration/css/magazine.css */
 
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
-
 /* ==========================================================================
    Reset & Base Styles
    ========================================================================== */
@@ -12,6 +9,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 
 html {
     font-size: 16px;

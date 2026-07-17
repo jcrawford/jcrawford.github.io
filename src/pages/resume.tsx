@@ -1,10 +1,3 @@
-/**
- * Resume Page
- * 
- * Main page component for the professional resume at /resume
- * Displays profile, skills, work experience, education, and LinkedIn recommendations
- */
-
 import React from 'react';
 import { HeadFC } from 'gatsby';
 import Layout from '../components/Layout';
@@ -13,6 +6,7 @@ import ResumeSkills from '../components/resume/ResumeSkills';
 import ResumeExperience from '../components/resume/ResumeExperience';
 import ResumeCertifications from '../components/resume/ResumeCertifications';
 import RecommendationsSlider from '../components/resume/RecommendationsSlider';
+import '../styles/resume.css';
 
 // Import resume data directly (temporary until GraphQL is set up properly)
 import profileData from '../data/resume/profile.json';
@@ -46,10 +40,10 @@ const ResumePage: React.FC = () => {
             <ResumeExperience experiences={experienceData} />
           </div>
           
-              {/* Certifications Section - Phase 8 (US5) ✅ COMPLETE */}
-              <div className="resume-section certifications-section">
-                <ResumeCertifications certifications={certificationsData} />
-              </div>
+          {/* Certifications Section - Phase 8 (US5) ✅ COMPLETE */}
+          <div className="resume-section certifications-section">
+            <ResumeCertifications certifications={certificationsData} />
+          </div>
           
           {/* Recommendations Section */}
           <div className="resume-section recommendations-section">

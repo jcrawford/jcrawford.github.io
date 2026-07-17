@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-17T14:05:43.263Z",
+  "generatedAt": "2026-07-17T19:07:02.737Z",
   "windowDays": 30,
   "entries": [
     {
@@ -59,9 +59,9 @@
     },
     {
       "id": "/posts/lebanon-valley-speedway-2026",
-      "views": 21,
+      "views": 23,
       "comments": 0,
-      "score": 21,
+      "score": 23,
       "shares": {
         "facebook": 1,
         "linkedin": 0,
@@ -114,9 +114,9 @@
     },
     {
       "id": "/reviews/total-typescript-pro-complete-review",
-      "views": 6,
+      "views": 7,
       "comments": 0,
-      "score": 6,
+      "score": 7,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -201,6 +201,17 @@
       }
     },
     {
+      "id": "/posts/openai-codex-expansion-developer-guide",
+      "views": 2,
+      "comments": 0,
+      "score": 2,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/posts/saferide-health",
       "views": 2,
       "comments": 0,
@@ -235,17 +246,6 @@
     },
     {
       "id": "/posts/claude-opus-4-7-whats-new",
-      "views": 1,
-      "comments": 0,
-      "score": 1,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/posts/openai-codex-expansion-developer-guide",
       "views": 1,
       "comments": 0,
       "score": 1,

@@ -13,6 +13,8 @@ import ShareButtons from '../components/ShareButtons';
 import { getArticlePath } from '../utils/articlePath';
 import { hasTag, normalizeTagSlug, tagMatches } from '../utils/tagUtils';
 import { postProcessImages, postProcessTables } from '../utils/postProcessImages';
+import '../styles/review.css';
+import '../styles/tag-cloud.css';
 
 interface SpinnerImage {
   src: string;
