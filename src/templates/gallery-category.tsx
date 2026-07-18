@@ -121,8 +121,8 @@ const GalleryCategoryTemplate: React.FC<PageProps<GalleryCategoryData, GalleryCa
     <Link to="/gallery" className="hm-cta-btn">← Back to Galleries</Link>
   );
 
-  // For top-level categories: show subcategory cards
-  if (isTopLevel && childCategories && childCategories.length > 0) {
+  // If this category has subcategories, show them
+  if (childCategories && childCategories.length > 0) {
     return (
       <Layout>
         <div className="hm-container hm-gallery-category">
@@ -177,6 +177,7 @@ const GalleryCategoryTemplate: React.FC<PageProps<GalleryCategoryData, GalleryCa
         </div>
       </Layout>
     );
+  }
   }
 
   // For leaf categories: show album cards
