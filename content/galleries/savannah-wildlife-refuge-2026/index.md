@@ -1,7 +1,7 @@
 ---
 title: "Savannah Wildlife Refuge"
 slug: savannah-wildlife-refuge-2026-album
-category: 2026
+category: disney-vacation
 date: "2026-06-29"
 draft: false
 description: "Photos from our visit to the Savannah National Wildlife Refuge — alligators, wetlands, and wildlife on the drive home from Florida."

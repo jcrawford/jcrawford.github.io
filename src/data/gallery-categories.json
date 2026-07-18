@@ -14,6 +14,13 @@
     "parent": "family-trips"
   },
   {
+    "slug": "disney-vacation",
+    "title": "Disney Vacation",
+    "description": "Magic and memories from our time at Disney World.",
+    "coverImage": "/images/galleries/magic-kingdom-2026/mk-fireworks-castle.jpg",
+    "parent": "2026"
+  },
+  {
     "slug": "racing",
     "title": "Racing",
     "description": "Racing events attended by my family.",
