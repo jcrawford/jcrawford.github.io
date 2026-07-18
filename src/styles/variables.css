@@ -148,6 +148,22 @@ html.hm-dark .site-footer {
   border-top: 1px solid var(--hybridmag-color-border);
 }
 
+html.hm-dark .hm-footer-bottom {
+  border-top-color: var(--hybridmag-color-border);
+}
+
+html.hm-dark .site-footer .widget-title {
+  color: var(--hybridmag-color-text-headings);
+}
+
+html.hm-dark .site-footer .hms-title a {
+  color: var(--hybridmag-color-text-headings);
+}
+
+html.hm-dark .site-footer .hms-title a:hover {
+  color: var(--hybridmag-color-primary);
+}
+
 html.hm-dark .hm-article-card,
 html.hm-dark .hm-tab-post-card {
   background: var(--hybridmag-color-bg-cl-sep-content);
