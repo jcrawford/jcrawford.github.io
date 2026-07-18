@@ -55,7 +55,7 @@ interface GalleryAlbumContext {
 const GalleryAlbumTemplate: React.FC<PageProps<GalleryAlbumData, GalleryAlbumContext>> = ({ data, pageContext }) => {
   const { frontmatter, html } = data.markdownRemark;
   const { title, date, description, photos, videos } = frontmatter;
-  const { categorySlug, categoryTitle, categoryPath, categoryChain, photoViewCounts } = pageContext;
+  const { categoryTitle, categoryPath, categoryChain, photoViewCounts } = pageContext;
 
   const [lightboxIndex, setLightboxIndex] = useState(-1);
 
