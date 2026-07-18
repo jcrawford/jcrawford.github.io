@@ -530,67 +530,73 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
 
     reporter.info('Created gallery index page: /gallery');
 
-    // Create pages for ALL categories (both top-level and child)
-    // Top-level: /gallery/{slug} — shows subcategory cards
-    // Child: /gallery/{parent-slug}/{slug} — shows album cards
+    // Build a full URL path for a category slug by walking up the parent chain.
+    // e.g. "disney-vacation" with parent "2026" with parent "family-trips"
+    //   → "/gallery/family-trips/2026/disney-vacation"
+    const getFullPath = (slug: string): string => {
+      const pathParts: string[] = [];
+      let currentSlug: string | undefined = slug;
+      while (currentSlug) {
+        pathParts.unshift(currentSlug);
+        const cat = categoryMap.get(currentSlug);
+        currentSlug = cat?.parent ?? undefined;
+      }
+      return `/gallery/${pathParts.join('/')}`;
+    };
+
+    // Build an ordered chain of { slug, title } from root → leaf for a slug.
+    // Used by templates to render multi-level breadcrumbs.
+    const getCategoryChain = (slug: string): Array<{ slug: string; title: string }> => {
+      const chain: Array<{ slug: string; title: string }> = [];
+      let currentSlug: string | undefined = slug;
+      while (currentSlug) {
+        const cat = categoryMap.get(currentSlug);
+        if (!cat) break;
+        chain.unshift({ slug: cat.slug, title: cat.title });
+        currentSlug = cat.parent ?? undefined;
+      }
+      return chain;
+    };
+
+    // Create a page for every category that has albums or children.
+    // URL reflects the full hierarchy: /gallery/{root}/.../{slug}
     for (const cat of categoriesData) {
       const hasAlbums = albumCategorySlugs.has(cat.slug);
       const hasChildren = (childCategories.get(cat.slug) || []).length > 0;
-
       if (!hasAlbums && !hasChildren) continue;
 
-      if (cat.parent === null) {
-        // Top-level category page
-        const children = childCategories.get(cat.slug) || [];
+      const fullPath = getFullPath(cat.slug);
+      const chain = getCategoryChain(cat.slug);
 
-        createPage({
-          path: `/gallery/${cat.slug}`,
-          component: galleryCategoryTemplate,
-          context: {
-            categorySlug: cat.slug,
-            categoryTitle: cat.title,
-            categoryDescription: cat.description,
-            categoryCoverImage: cat.coverImage,
-            isTopLevel: true,
-            childCategories: children,
-          },
-        });
+      createPage({
+        path: fullPath,
+        component: galleryCategoryTemplate,
+        context: {
+          categorySlug: cat.slug,
+          categoryTitle: cat.title,
+          categoryDescription: cat.description,
+          categoryCoverImage: cat.coverImage,
+          categoryPath: fullPath,
+          isTopLevel: cat.parent === null,
+          childCategories: childCategories.get(cat.slug) || [],
+          categoryChain: chain,
+        },
+      });
 
-        reporter.info(`Created gallery category page: /gallery/${cat.slug}`);
-      } else {
-        // Child category page — nested URL
-        const parentMeta = categoryMap.get(cat.parent);
-
-        createPage({
-          path: `/gallery/${cat.parent}/${cat.slug}`,
-          component: galleryCategoryTemplate,
-          context: {
-            categorySlug: cat.slug,
-            categoryTitle: cat.title,
-            categoryDescription: cat.description,
-            categoryCoverImage: cat.coverImage,
-            isTopLevel: false,
-            parentSlug: cat.parent,
-            parentTitle: parentMeta?.title || cat.parent,
-          },
-        });
-
-        reporter.info(`Created gallery category page: /gallery/${cat.parent}/${cat.slug}`);
-      }
+      reporter.info(`Created gallery category page: ${fullPath}`);
     }
 
-    // Create individual album pages
+    // Create individual album pages.
+    // URL: /gallery/{root}/.../{leaf-category}/{album-slug}
     galleryAlbums.forEach((album) => {
       const catSlug = album.frontmatter.category || null;
       const catMeta = catSlug ? categoryMap.get(catSlug) : null;
-      const parentMeta = catMeta?.parent ? categoryMap.get(catMeta.parent) : null;
 
-      // Build full path from category hierarchy: /gallery/{parent}/{category}/{album-slug}
       let albumPath = `/gallery/${album.frontmatter.slug}`;
-      if (parentMeta && catMeta) {
-        albumPath = `/gallery/${parentMeta.slug}/${catMeta.slug}/${album.frontmatter.slug}`;
-      } else if (catMeta) {
-        albumPath = `/gallery/${catMeta.slug}/${album.frontmatter.slug}`;
+      let categoryChain: Array<{ slug: string; title: string }> = [];
+      if (catMeta) {
+        albumPath = `${getFullPath(catMeta.slug)}/${album.frontmatter.slug}`;
+        categoryChain = getCategoryChain(catMeta.slug);
       }
 
       createPage({
@@ -600,8 +606,8 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
           slug: album.frontmatter.slug,
           categorySlug: catSlug,
           categoryTitle: catMeta?.title || null,
-          parentCategorySlug: parentMeta?.slug || null,
-          parentCategoryTitle: parentMeta?.title || null,
+          categoryPath: catMeta ? getFullPath(catMeta.slug) : null,
+          categoryChain,
           photoViewCounts,
         },
       });

@@ -39,18 +39,23 @@ interface GalleryAlbumData {
   };
 }
 
+interface ChainEntry {
+  slug: string;
+  title: string;
+}
+
 interface GalleryAlbumContext {
   categorySlug: string | null;
   categoryTitle: string | null;
-  parentCategorySlug: string | null;
-  parentCategoryTitle: string | null;
+  categoryPath: string | null;
+  categoryChain: ChainEntry[];
   photoViewCounts?: Record<string, number>;
 }
 
 const GalleryAlbumTemplate: React.FC<PageProps<GalleryAlbumData, GalleryAlbumContext>> = ({ data, pageContext }) => {
   const { frontmatter, html } = data.markdownRemark;
   const { title, date, description, photos, videos } = frontmatter;
-  const { categorySlug, categoryTitle, parentCategorySlug, parentCategoryTitle, photoViewCounts } = pageContext;
+  const { categorySlug, categoryTitle, categoryPath, categoryChain, photoViewCounts } = pageContext;
 
   const [lightboxIndex, setLightboxIndex] = useState(-1);
 
@@ -104,20 +109,16 @@ const GalleryAlbumTemplate: React.FC<PageProps<GalleryAlbumData, GalleryAlbumCon
       <div className="hm-container hm-gallery-album">
         <nav className="hm-gallery-breadcrumb" aria-label="Breadcrumb">
           <Link to="/gallery">Galleries</Link>
-          {parentCategorySlug && parentCategoryTitle && (
-            <>
-              <span className="hm-breadcrumb-separator">›</span>
-              <Link to={`/gallery/${parentCategorySlug}`}>{parentCategoryTitle}</Link>
-            </>
-          )}
-          {categorySlug && categoryTitle && (
-            <>
-              <span className="hm-breadcrumb-separator">›</span>
-              <Link to={parentCategorySlug ? `/gallery/${parentCategorySlug}/${categorySlug}` : `/gallery/${categorySlug}`}>
-                {categoryTitle}
-              </Link>
-            </>
-          )}
+          {categoryChain.map((entry) => {
+            const idx = categoryChain.findIndex((c) => c.slug === entry.slug);
+            const partialPath = `/gallery/${categoryChain.slice(0, idx + 1).map((c) => c.slug).join('/')}`;
+            return (
+              <React.Fragment key={entry.slug}>
+                <span className="hm-breadcrumb-separator">›</span>
+                <Link to={partialPath}>{entry.title}</Link>
+              </React.Fragment>
+            );
+          })}
           <span className="hm-breadcrumb-separator">›</span>
           <span>{title}</span>
         </nav>
@@ -203,9 +204,9 @@ const GalleryAlbumTemplate: React.FC<PageProps<GalleryAlbumData, GalleryAlbumCon
         />
 
         <nav className="hm-gallery-back">
-          {categorySlug && categoryTitle ? (
+          {categoryPath && categoryTitle ? (
             <Link
-              to={parentCategorySlug ? `/gallery/${parentCategorySlug}/${categorySlug}` : `/gallery/${categorySlug}`}
+              to={categoryPath}
               className="hm-cta-btn"
             >
               ← Back to {categoryTitle}

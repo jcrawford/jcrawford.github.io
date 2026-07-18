@@ -33,7 +33,7 @@ review:
 galleryEmbeds:
   - slug: hilton-aqua-sol-2026-album
     title: "Hilton Aqua Sol 2026"
-    path: /gallery/family-trips/2026/hilton-aqua-sol-2026-album
+    path: /gallery/family-trips/2026/disney-vacation/hilton-aqua-sol-2026-album
     coverImage: /images/galleries/hilton-aqua-sol-2026/aqua-poolside-hug.jpg
     description: "Photos from our stay at the Hilton Aqua Sol Resort — pool days, s'mores nights, and the moments that made it our favorite place to stay."
     photoCount: 22

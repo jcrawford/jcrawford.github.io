@@ -20,21 +20,21 @@ imageSpinners:
 galleryEmbeds:
   - slug: magic-kingdom-2026-album
     title: "Magic Kingdom"
-    path: /gallery/family-trips/2026/magic-kingdom-2026-album
+    path: /gallery/family-trips/2026/disney-vacation/magic-kingdom-2026-album
     coverImage: /images/galleries/magic-kingdom-2026/mk-fireworks-castle.jpg
     description: "Photos and videos from our day at Magic Kingdom — Cinderella Castle, the fireworks, and the moments that made the whole trip worth it."
     photoCount: 40
     date: "2026-06-24"
   - slug: savannah-wildlife-refuge-2026-album
     title: "Savannah Wildlife Refuge"
-    path: /gallery/family-trips/2026/savannah-wildlife-refuge-2026-album
+    path: /gallery/family-trips/2026/disney-vacation/savannah-wildlife-refuge-2026-album
     coverImage: /images/galleries/savannah-wildlife-refuge-2026/refuge-01.jpg
     description: "Photos from our visit to the Savannah National Wildlife Refuge — alligators, wetlands, and wildlife on the drive home from Florida."
     photoCount: 42
     date: "2026-06-29"
   - slug: hilton-aqua-sol-2026-album
     title: "Hilton Aqua Sol"
-    path: /gallery/family-trips/2026/hilton-aqua-sol-2026-album
+    path: /gallery/family-trips/2026/disney-vacation/hilton-aqua-sol-2026-album
     coverImage: /images/galleries/hilton-aqua-sol-2026/aqua-poolside-hug.jpg
     description: "Photos from our stay at the Hilton Aqua Sol Resort in Winter Garden, Florida — pool days, s'mores nights, and the moments that made it our favorite place to stay."
     photoCount: 22

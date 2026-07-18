@@ -30,15 +30,20 @@ interface ChildCategoryMeta {
   parent: string | null;
 }
 
+interface ChainEntry {
+  slug: string;
+  title: string;
+}
+
 interface GalleryCategoryContext {
   categorySlug: string;
   categoryTitle: string;
   categoryDescription: string;
   categoryCoverImage: string;
+  categoryPath: string;
   isTopLevel: boolean;
   childCategories?: ChildCategoryMeta[];
-  parentSlug?: string;
-  parentTitle?: string;
+  categoryChain: ChainEntry[];
 }
 
 function renderAlbumCard(
@@ -93,35 +98,47 @@ const GalleryCategoryTemplate: React.FC<PageProps<GalleryCategoryData, GalleryCa
     categoryTitle,
     categoryDescription,
     categoryCoverImage,
-    isTopLevel,
+    categoryPath,
     childCategories,
-    parentSlug,
-    parentTitle,
+    categoryChain,
   } = pageContext;
 
-  // Build breadcrumb items
+  // Build breadcrumb from the full category chain (root → leaf).
+  // chain = [{ family-trips }, { 2026 }, { disney-vacation }]
+  // breadcrumb: Galleries › Family Trips › 2026 › Disney Vacation
   const breadcrumb = (
     <nav className="hm-gallery-breadcrumb" aria-label="Breadcrumb">
       <Link to="/gallery">Galleries</Link>
-      {parentSlug && parentTitle && (
-        <>
-          <span className="hm-breadcrumb-separator">›</span>
-          <Link to={`/gallery/${parentSlug}`}>{parentTitle}</Link>
-        </>
-      )}
+      {categoryChain.slice(0, -1).map((entry) => {
+        const idx = categoryChain.findIndex((c) => c.slug === entry.slug);
+        const partialPath = `/gallery/${categoryChain.slice(0, idx + 1).map((c) => c.slug).join('/')}`;
+        return (
+          <React.Fragment key={entry.slug}>
+            <span className="hm-breadcrumb-separator">›</span>
+            <Link to={partialPath}>{entry.title}</Link>
+          </React.Fragment>
+        );
+      })}
       <span className="hm-breadcrumb-separator">›</span>
       <span>{categoryTitle}</span>
     </nav>
   );
 
-  // Build back link
-  const backLink = parentSlug ? (
-    <Link to={`/gallery/${parentSlug}`} className="hm-cta-btn">← Back to {parentTitle}</Link>
+  // Back link goes to the parent category (or gallery index if top-level).
+  const parentChain = categoryChain.slice(0, -1);
+  const backLink = parentChain.length > 0 ? (
+    <Link
+      to={`/gallery/${parentChain.map((c) => c.slug).join('/')}`}
+      className="hm-cta-btn"
+    >
+      ← Back to {parentChain[parentChain.length - 1].title}
+    </Link>
   ) : (
     <Link to="/gallery" className="hm-cta-btn">← Back to Galleries</Link>
   );
 
-  // If this category has subcategories, show them
+  // If this category has subcategories, show them.
+  // Child links use the full path: /gallery/{root}/.../{this-category}/{child-slug}
   if (childCategories && childCategories.length > 0) {
     return (
       <Layout>
@@ -149,7 +166,7 @@ const GalleryCategoryTemplate: React.FC<PageProps<GalleryCategoryData, GalleryCa
             {childCategories.map((child) => (
               <Link
                 key={child.slug}
-                to={`/gallery/${categorySlug}/${child.slug}`}
+                to={`${categoryPath}/${child.slug}`}
                 className="hm-gallery-album-card"
               >
                 <div className="hm-gallery-album-card-image">
@@ -178,7 +195,8 @@ const GalleryCategoryTemplate: React.FC<PageProps<GalleryCategoryData, GalleryCa
       </Layout>
     );
   }
-}
+
+  // Leaf category — show album cards.
   const albums = data.allMarkdownRemark.nodes
     .filter((node) => node.frontmatter.category === categorySlug)
     .map((node) => ({
@@ -195,7 +213,6 @@ const GalleryCategoryTemplate: React.FC<PageProps<GalleryCategoryData, GalleryCa
 
   const totalPhotos = albums.reduce((sum, album) => sum + album.photoCount, 0);
   const totalVideos = albums.reduce((sum, album) => sum + album.videoCount, 0);
-  const parentPath = parentSlug ? `/gallery/${parentSlug}/${categorySlug}` : `/gallery/${categorySlug}`;
 
   return (
     <Layout>
@@ -225,7 +242,7 @@ const GalleryCategoryTemplate: React.FC<PageProps<GalleryCategoryData, GalleryCa
           </div>
         ) : (
           <div className="hm-gallery-albums-grid">
-            {albums.map((album) => renderAlbumCard(album, parentPath))}
+            {albums.map((album) => renderAlbumCard(album, categoryPath))}
           </div>
         )}
 
