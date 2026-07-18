@@ -173,27 +173,41 @@ const GalleryIndex: React.FC<PageProps<GalleryIndexData, GalleryIndexContext>> =
   standaloneAlbums.sort((a, b) => b.date.localeCompare(a.date));
 
   // Count albums and photos under a top-level category
-  // (walks through child categories to sum up)
+  // (recursively walks through all subcategories to sum up)
   function countAlbumsForTopLevel(topSlug: string): { albumCount: number; photoCount: number; videoCount: number; hasChildren: boolean } {
-    const children = childCategoryMap.get(topSlug) || [];
-    let albumCount = 0;
-    let photoCount = 0;
-    let videoCount = 0;
+    let totalAlbums = 0;
+    let totalPhotos = 0;
+    let totalVideos = 0;
+    let foundChildren = false;
 
-    for (const child of children) {
-      const albums = albumsByCategory.get(child.slug) || [];
-      albumCount += albums.length;
-      photoCount += albums.reduce((sum, a) => sum + a.photoCount, 0);
-      videoCount += albums.reduce((sum, a) => sum + a.videoCount, 0);
+    const queue = [topSlug];
+    const visited = new Set<string>();
+
+    while (queue.length > 0) {
+      const currentSlug = queue.shift()!;
+      if (visited.has(currentSlug)) continue;
+      visited.add(currentSlug);
+
+      // 1. Count albums directly in this category
+      const albums = albumsByCategory.get(currentSlug) || [];
+      totalAlbums += albums.length;
+      totalPhotos += albums.reduce((sum, a) => sum + a.photoCount, 0);
+      totalVideos += albums.reduce((sum, a) => sum + a.videoCount, 0);
+
+      // 2. Find subcategories and add to queue
+      const children = childCategoryMap.get(currentSlug) || [];
+      if (children.length > 0) {
+        foundChildren = true;
+        queue.push(...children.map(c => c.slug));
+      }
     }
 
-    // Also count albums directly under this top-level category (flat case)
-    const directAlbums = albumsByCategory.get(topSlug) || [];
-    albumCount += directAlbums.length;
-    photoCount += directAlbums.reduce((sum, a) => sum + a.photoCount, 0);
-    videoCount += directAlbums.reduce((sum, a) => sum + a.videoCount, 0);
-
-    return { albumCount, photoCount, videoCount, hasChildren: children.length > 0 };
+    return { 
+      albumCount: totalAlbums, 
+      photoCount: totalPhotos, 
+      videoCount: totalVideos, 
+      hasChildren: foundChildren 
+    };
   }
 
   // Only show top-level categories that have albums (directly or via children)
