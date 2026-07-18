@@ -178,9 +178,7 @@ const GalleryCategoryTemplate: React.FC<PageProps<GalleryCategoryData, GalleryCa
       </Layout>
     );
   }
-  }
-
-  // For leaf categories: show album cards
+}
   const albums = data.allMarkdownRemark.nodes
     .filter((node) => node.frontmatter.category === categorySlug)
     .map((node) => ({
