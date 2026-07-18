@@ -343,20 +343,9 @@ body {
   .site-title {
     font-size: var(--hybridmag-font-size-xl);
   }
-}
 
-/* Tier 3: Small Phones (up to 480px) */
-@media (max-width: 480px) {
   .hm-footer-widgets-inner {
     grid-template-columns: 1fr;
-  }
-
-  .hm-header-inner {
-    min-height: 60px;
-  }
-
-  .site-title {
-    font-size: var(--hybridmag-font-size-lg);
   }
 
   .hm-footer-bottom-inner {
@@ -366,6 +355,17 @@ body {
 
   .hm-footer-widget-columns {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Tier 3: Small Phones (up to 480px) */
+@media (max-width: 480px) {
+  .hm-header-inner {
+    min-height: 60px;
+  }
+
+  .site-title {
+    font-size: var(--hybridmag-font-size-lg);
   }
 }
 
