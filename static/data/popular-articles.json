@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-19T19:34:42.718Z",
+  "generatedAt": "2026-07-20T04:05:58.035Z",
   "windowDays": 30,
   "entries": [
     {
@@ -234,17 +234,6 @@
       }
     },
     {
-      "id": "/reviews/patrick-adair-designs-review",
-      "views": 2,
-      "comments": 0,
-      "score": 2,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
       "id": "/posts/claude-opus-4-7-whats-new",
       "views": 1,
       "comments": 0,
@@ -268,6 +257,17 @@
     },
     {
       "id": "/reviews/flexispot-e7-plus",
+      "views": 1,
+      "comments": 0,
+      "score": 1,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/logitech-mx-master-3s-review",
       "views": 1,
       "comments": 0,
       "score": 1,
