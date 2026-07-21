@@ -37,7 +37,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
   
   return (
     <article className="hm-article-card">
-      <Link to={articlePath} className="hm-article-card-image">
+      <Link to={articlePath} className="hm-article-card-image" target="_blank" rel="noopener noreferrer">
         <span className="hm-article-card-image-main">
           <OptimizedImage 
             src={featuredImage} 
@@ -52,13 +52,15 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
           <Link 
             to={`/tag/${normalizeTagSlug(primaryTag)}`}
             className="hm-article-card-category"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             {primaryTag}
           </Link>
         )}
         
         <h2 className="hm-article-card-title">
-          <Link to={articlePath}>
+          <Link to={articlePath} target="_blank" rel="noopener noreferrer">
             {title}
           </Link>
         </h2>

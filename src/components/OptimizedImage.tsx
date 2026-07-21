@@ -44,6 +44,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   loading = 'lazy',
   sizes,
 }) => {
+  if (!src) return null;
   const dotIndex = src.lastIndexOf('.');
   const base = dotIndex !== -1 ? src.substring(0, dotIndex) : src;
   const sizesAttr = sizes || DEFAULT_SIZES_ATTR;

@@ -137,66 +137,7 @@ const GalleryCategoryTemplate: React.FC<PageProps<GalleryCategoryData, GalleryCa
     <Link to="/gallery" className="hm-cta-btn">← Back to Galleries</Link>
   );
 
-  // If this category has subcategories, show them.
-  // Child links use the full path: /gallery/{root}/.../{this-category}/{child-slug}
-  if (childCategories && childCategories.length > 0) {
-    return (
-      <Layout>
-        <div className="hm-container hm-gallery-category">
-          {/* Hero Banner */}
-          <div className="hm-gallery-category-hero">
-            <OptimizedImage
-              src={categoryCoverImage}
-              alt={categoryTitle}
-              loading="eager"
-              sizes="100vw"
-            />
-            <div className="hm-gallery-category-hero-overlay">
-              {breadcrumb}
-              <h1 className="hm-gallery-category-title">{categoryTitle}</h1>
-              <p className="hm-gallery-category-description">{categoryDescription}</p>
-              <p className="hm-gallery-category-meta">
-                {childCategories.length} {childCategories.length === 1 ? 'collection' : 'collections'}
-              </p>
-            </div>
-          </div>
 
-          {/* Subcategory Grid */}
-          <div className="hm-gallery-albums-grid">
-            {childCategories.map((child) => (
-              <Link
-                key={child.slug}
-                to={`${categoryPath}/${child.slug}`}
-                className="hm-gallery-album-card"
-              >
-                <div className="hm-gallery-album-card-image">
-                  <OptimizedImage
-                    src={child.coverImage}
-                    alt={child.title}
-                    loading="lazy"
-                    sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 320px"
-                  />
-                </div>
-                <div className="hm-gallery-album-card-content">
-                  <h2 className="hm-gallery-album-card-title">{child.title}</h2>
-                  <p className="hm-gallery-album-card-description">{child.description}</p>
-                  <span className="hm-gallery-album-card-count">
-                    View collection →
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </div>
-
-          <nav className="hm-gallery-back">
-            {backLink}
-          </nav>
-        </div>
-      </Layout>
-    );
-  }
-
-  // Leaf category — show album cards.
   const albums = data.allMarkdownRemark.nodes
     .filter((node) => node.frontmatter.category === categorySlug)
     .map((node) => ({
@@ -230,19 +171,45 @@ const GalleryCategoryTemplate: React.FC<PageProps<GalleryCategoryData, GalleryCa
             <h1 className="hm-gallery-category-title">{categoryTitle}</h1>
             <p className="hm-gallery-category-description">{categoryDescription}</p>
             <p className="hm-gallery-category-meta">
+              {childCategories?.length ? `${childCategories.length} ${childCategories.length === 1 ? 'collection' : 'collections'} · ` : ''}
               {albums.length} {albums.length === 1 ? 'album' : 'albums'} · {totalPhotos} {totalPhotos === 1 ? 'photo' : 'photos'}{totalVideos > 0 ? `, ${totalVideos} ${totalVideos === 1 ? 'video' : 'videos'}` : ''}
             </p>
           </div>
         </div>
 
-        {/* Album Grid */}
-        {albums.length === 0 ? (
-          <div className="hm-empty-state">
-            <p>No albums in this collection yet. Check back soon!</p>
+        {/* Combined Subcategory + Album Grid */}
+        {(childCategories?.length || albums.length) > 0 ? (
+          <div className="hm-gallery-albums-grid">
+            {/* Child categories (collections) first */}
+            {childCategories?.map((child) => (
+              <Link
+                key={`cat-${child.slug}`}
+                to={`${categoryPath}/${child.slug}`}
+                className="hm-gallery-album-card"
+              >
+                <div className="hm-gallery-album-card-image">
+                  <OptimizedImage
+                    src={child.coverImage}
+                    alt={child.title}
+                    loading="lazy"
+                    sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 320px"
+                  />
+                </div>
+                <div className="hm-gallery-album-card-content">
+                  <h2 className="hm-gallery-album-card-title">{child.title}</h2>
+                  <p className="hm-gallery-album-card-description">{child.description}</p>
+                  <span className="hm-gallery-album-card-count">
+                    View collection →
+                  </span>
+                </div>
+              </Link>
+            ))}
+            {/* Albums */}
+            {albums.map((album) => renderAlbumCard(album, categoryPath))}
           </div>
         ) : (
-          <div className="hm-gallery-albums-grid">
-            {albums.map((album) => renderAlbumCard(album, categoryPath))}
+          <div className="hm-empty-state">
+            <p>No albums in this collection yet. Check back soon!</p>
           </div>
         )}
 

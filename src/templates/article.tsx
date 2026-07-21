@@ -106,6 +106,21 @@ interface ArticlePageContext {
 }
 
 const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({ data, pageContext }) => {
+  if (!data || !data.markdownRemark) {
+    return (
+      <Layout>
+        <div className="hm-container">
+          <main className="hm-primary-content">
+            <article className="hm-article">
+              <h1 className="hm-article-title">Post Not Found</h1>
+              <p>The article you are looking for could not be found or is still being indexed.</p>
+            </article>
+          </main>
+        </div>
+      </Layout>
+    );
+  }
+
   const article = data.markdownRemark.frontmatter;
   const articleHtml = postProcessTables(postProcessImages(data.markdownRemark.html));
   const author = data.authorsJson;
