@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import StarRating from './StarRating';
 
 interface ReviewBoxProps {
@@ -25,17 +25,13 @@ const ReviewBox: React.FC<ReviewBoxProps> = ({
   const targetUrl = affiliateLink || productUrl;
   const hasChildRating = childRating != null && !isNaN(childRating);
   const overallRating = hasChildRating ? (rating + childRating!) / 2 : rating;
-  const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <div className="review-box">
       <div className="review-box-header">
         {/* Composite Rating - Prominent */}
         <div 
-          className={`review-composite ${hasChildRating ? 'review-composite-interactive' : ''} ${isExpanded ? 'review-composite-expanded' : ''}`}
-          onClick={() => hasChildRating && setIsExpanded(!isExpanded)}
-          onMouseEnter={() => hasChildRating && setIsExpanded(true)}
-          onMouseLeave={() => hasChildRating && setIsExpanded(false)}
+          className={`review-composite ${hasChildRating ? 'review-composite-interactive' : ''}`}
         >
           <div className="review-composite-score">
             <span className="review-composite-number">{overallRating.toFixed(1)}</span>
@@ -54,13 +50,8 @@ const ReviewBox: React.FC<ReviewBoxProps> = ({
                 Blended Rating
               </div>
               
-              {/* Mobile hint */}
-              <div className="review-composite-hint">
-                Tap to see breakdown
-              </div>
-              
-              {/* Expanded Breakdown */}
-              <div className={`review-breakdown ${isExpanded ? 'review-breakdown-visible' : ''}`}>
+              {/* Always visible breakdown */}
+              <div className="review-breakdown review-breakdown-visible">
                 <div className="review-breakdown-item">
                   <span className="review-breakdown-label">My Rating</span>
                   <div className="review-breakdown-stars">
