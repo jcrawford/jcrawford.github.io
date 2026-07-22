@@ -46,7 +46,7 @@ const ReviewBox: React.FC<ReviewBoxProps> = ({
         </div>
       )}
 
-      {pros.length > 0 && (
+      {pros && pros.length > 0 && (
         <div className="review-pros">
           <h4 className="review-section-title">Pros</h4>
           <ul className="review-list">
@@ -62,7 +62,7 @@ const ReviewBox: React.FC<ReviewBoxProps> = ({
         </div>
       )}
 
-      {cons.length > 0 && (
+      {cons && cons.length > 0 && (
         <div className="review-cons">
           <h4 className="review-section-title">Cons</h4>
           <ul className="review-list">
