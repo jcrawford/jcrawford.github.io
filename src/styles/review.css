@@ -406,6 +406,13 @@
   color: var(--hybridmag-color-text-light);
 }
 
+.review-composite-hint {
+  display: none;
+  font-size: 12px;
+  color: var(--hybridmag-color-text-light);
+  opacity: 0.7;
+}
+
 /* Breakdown Dropdown */
 .review-breakdown {
   display: flex;
@@ -485,6 +492,27 @@
 
   .review-overall-stars .star-rating-value {
     font-size: 28px;
+  }
+
+  /* Mobile composite rating */
+  .review-composite-interactive:hover {
+    box-shadow: none;
+    border-color: rgba(255, 193, 7, 0.4);
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.15), rgba(255, 193, 7, 0.05));
+  }
+
+  .review-composite-interactive.review-composite-expanded {
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.25), rgba(255, 193, 7, 0.1)) !important;
+    border-color: rgba(255, 193, 7, 0.6) !important;
+    box-shadow: 0 4px 20px rgba(255, 193, 7, 0.2) !important;
+  }
+
+  .review-composite-hint {
+    display: block;
+  }
+
+  .review-composite-expanded .review-composite-hint {
+    display: none;
   }
 }
 

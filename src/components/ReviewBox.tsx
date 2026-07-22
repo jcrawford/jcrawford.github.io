@@ -32,7 +32,7 @@ const ReviewBox: React.FC<ReviewBoxProps> = ({
       <div className="review-box-header">
         {/* Composite Rating - Prominent */}
         <div 
-          className={`review-composite ${hasChildRating ? 'review-composite-interactive' : ''}`}
+          className={`review-composite ${hasChildRating ? 'review-composite-interactive' : ''} ${isExpanded ? 'review-composite-expanded' : ''}`}
           onClick={() => hasChildRating && setIsExpanded(!isExpanded)}
           onMouseEnter={() => hasChildRating && setIsExpanded(true)}
           onMouseLeave={() => hasChildRating && setIsExpanded(false)}
@@ -52,6 +52,11 @@ const ReviewBox: React.FC<ReviewBoxProps> = ({
                   <path d="M16 3.13C16.8604 3.35031 17.623 3.8507 18.1676 4.55232C18.7122 5.25394 19.0078 6.11683 19.0078 7.005C19.0078 7.89318 18.7122 8.75607 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
                 Blended Rating
+              </div>
+              
+              {/* Mobile hint */}
+              <div className="review-composite-hint">
+                Tap to see breakdown
               </div>
               
               {/* Expanded Breakdown */}
