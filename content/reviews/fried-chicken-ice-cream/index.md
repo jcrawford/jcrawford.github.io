@@ -83,6 +83,8 @@ Is it fine dining? No. Is it a genuinely clever bit of food engineering that del
 
 They'd rate it higher if they could. This is peak novelty dessert — the kind of thing that shouldn't work but absolutely does, that creates genuine joy through sheer ridiculousness.
 
+<em>An update: Two of my kids weren't home for the first round — the 13-year-old and the 10-year-old had to wait until Wednesday to try it. They both rated it 5/5 as well, which means all three kids independently agree: this stuff is legit.</em>
+
 For parents: yes, it's overpriced. Yes, you will be asked to find it again. Yes, there are probably better uses of your time than driving to Price Chopper for ice cream that looks like poultry.
 
 But will you cave and do it anyway? Probably. And will you secretly enjoy the weird, crunchy, creamy experience when you steal a bite? Also probably.
