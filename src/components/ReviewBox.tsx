@@ -3,6 +3,7 @@ import StarRating from './StarRating';
 
 interface ReviewBoxProps {
   rating: number;
+  childRating?: number;
   pros: string[];
   cons: string[];
   price?: string;
@@ -13,6 +14,7 @@ interface ReviewBoxProps {
 
 const ReviewBox: React.FC<ReviewBoxProps> = ({
   rating,
+  childRating,
   pros,
   cons,
   price,
@@ -21,13 +23,34 @@ const ReviewBox: React.FC<ReviewBoxProps> = ({
   affiliateLink,
 }) => {
   const targetUrl = affiliateLink || productUrl;
+  const hasChildRating = childRating !== undefined;
+  const overallRating = hasChildRating ? (rating + childRating) / 2 : rating;
 
   return (
     <div className="review-box">
       <div className="review-box-header">
-        <h3 className="review-box-title">My Review</h3>
-        <StarRating rating={rating} size={28} showScore={true} />
+        <div className="review-ratings-container">
+          <div className="review-rating-main">
+            <h3 className="review-box-title review-title-my">My Rating</h3>
+            <StarRating rating={rating} size={28} showScore={true} color="#2196F3" />
+          </div>
+          {hasChildRating && (
+            <div className="review-rating-child">
+              <h3 className="review-box-title review-title-child">Kids' Rating</h3>
+              <StarRating rating={childRating} size={28} showScore={true} color="#4CAF50" />
+            </div>
+          )}
+        </div>
       </div>
+
+      {hasChildRating && (
+        <div className="review-overall">
+          <span className="review-overall-label">Overall</span>
+          <div className="review-overall-stars">
+            <StarRating rating={overallRating} size={24} showScore={true} color="#FFC107" />
+          </div>
+        </div>
+      )}
 
       {(brand || price) && (
         <div className="review-meta">

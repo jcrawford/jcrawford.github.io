@@ -4,9 +4,10 @@ interface StarRatingProps {
   rating: number;
   size?: number;
   showScore?: boolean;
+  color?: string;
 }
 
-const StarRating: React.FC<StarRatingProps> = ({ rating, size = 24, showScore = true }) => {
+const StarRating: React.FC<StarRatingProps> = ({ rating, size = 24, showScore = true, color = '#FFC107' }) => {
   // Clamp rating between 0 and 5
   const clampedRating = Math.min(Math.max(rating, 0), 5);
   
@@ -26,6 +27,9 @@ const StarRating: React.FC<StarRatingProps> = ({ rating, size = 24, showScore = 
     }
   });
 
+  // Generate unique gradient ID based on color
+  const gradientId = color.replace('#', '');
+
   return (
     <div className="star-rating">
       <div className="star-rating-stars" style={{ display: 'flex', gap: '2px' }}>
@@ -40,15 +44,15 @@ const StarRating: React.FC<StarRatingProps> = ({ rating, size = 24, showScore = 
             className="star"
           >
             <defs>
-              <linearGradient id={`star-gradient-${index}-${fillPercentage}`}>
-                <stop offset={`${fillPercentage}%`} stopColor="#FFC107" />
+              <linearGradient id={`star-gradient-${index}-${fillPercentage}-${gradientId}`}>
+                <stop offset={`${fillPercentage}%`} stopColor={color} />
                 <stop offset={`${fillPercentage}%`} stopColor="#E0E0E0" />
               </linearGradient>
             </defs>
             <path
               d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
-              fill={`url(#star-gradient-${index}-${fillPercentage})`}
-              stroke="#FFC107"
+              fill={`url(#star-gradient-${index}-${fillPercentage}-${gradientId})`}
+              stroke={color}
               strokeWidth="0.5"
               strokeLinejoin="round"
             />
@@ -57,7 +61,7 @@ const StarRating: React.FC<StarRatingProps> = ({ rating, size = 24, showScore = 
       </div>
       {showScore && (
         <div className="star-rating-score">
-          <span className="star-rating-value">{clampedRating.toFixed(1)}</span>
+          <span className="star-rating-value" style={{ color }}>{clampedRating.toFixed(1)}</span>
         </div>
       )}
     </div>
@@ -65,4 +69,3 @@ const StarRating: React.FC<StarRatingProps> = ({ rating, size = 24, showScore = 
 };
 
 export default StarRating;
-

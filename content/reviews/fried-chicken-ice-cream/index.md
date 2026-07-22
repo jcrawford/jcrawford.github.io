@@ -13,7 +13,8 @@ tags:
   - reviews
   - family
 review:
-  rating: 5
+  rating: 3.8
+  childRating: 5
   ratingMax: 5
   ratingLabel: According to my kids
   productUrl: 'https://www.instagram.com/icenovadesserts'
@@ -30,9 +31,7 @@ review:
     - 'Chocolate bone is slightly unsettling'
 ---
 
-I was settling in for the evening — feet up, tea in hand, that rare moment of quiet after dinner — when my wife and kids burst through the door with a very specific energy. The kind that means I'm about to be sent on an errand.
-
-"We need fried chicken ice cream!"
+I was settling in for the evening when my wife and kids gave me the look. The look they had screamed they want something. I knew I was about to be sent on an errand.
 
 Not fried chicken. Not ice cream. *Fried chicken ice cream*. They'd seen it on TikTok, YouTube, a friend's story, who knows — and the obsession had already taken root. When I asked what exactly they expected me to do about it at 8pm on a Monday, the answer was simple: Go to Price Chopper and get it.
 
