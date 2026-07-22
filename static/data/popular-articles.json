@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-22T14:22:09.658Z",
+  "generatedAt": "2026-07-22T18:53:10.053Z",
   "windowDays": 30,
   "entries": [
     {
@@ -146,6 +146,17 @@
       }
     },
     {
+      "id": "/reviews/via-aquarium",
+      "views": 5,
+      "comments": 0,
+      "score": 5,
+      "shares": {
+        "facebook": 3,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/posts/gpt-5-5-first-impressions",
       "views": 3,
       "comments": 0,
@@ -179,7 +190,7 @@
       }
     },
     {
-      "id": "/reviews/hilton-aqua-sol-resort-review",
+      "id": "/reviews/fried-chicken-ice-cream-review",
       "views": 3,
       "comments": 0,
       "score": 3,
@@ -190,12 +201,12 @@
       }
     },
     {
-      "id": "/reviews/via-aquarium",
+      "id": "/reviews/hilton-aqua-sol-resort-review",
       "views": 3,
       "comments": 0,
       "score": 3,
       "shares": {
-        "facebook": 3,
+        "facebook": 0,
         "linkedin": 0,
         "copy": 0
       }
@@ -257,17 +268,6 @@
     },
     {
       "id": "/posts/typescript-7-beta-go-rewrite",
-      "views": 1,
-      "comments": 0,
-      "score": 1,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/flexispot-e7-plus",
       "views": 1,
       "comments": 0,
       "score": 1,
