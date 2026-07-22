@@ -60,12 +60,13 @@ const ShareButtons: React.FC<ShareButtonsProps> = ({ title, url, variant = 'bott
   }, [url, trackShare]);
 
   const encodedUrl = encodeURIComponent(url);
+  const encodedTitle = encodeURIComponent(title);
 
   const shareLinks = [
     {
       name: 'Facebook',
       method: 'facebook',
-      href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
+      href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}&t=${encodedTitle}`,
       color: '#1877F2',
       icon: (
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">

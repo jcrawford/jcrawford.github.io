@@ -1833,7 +1833,7 @@ html.hm-dark .hm-article-content tbody tr:hover {
   .hm-highlighted-post {
     width: 50%;
     float: left;
-    padding: 2px 1px 0 1px;
+    padding: 8px 4px 0 4px;
   }
 }
 
@@ -1929,8 +1929,16 @@ html.hm-dark .hm-article-content tbody tr:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   position: absolute;
   top: 0;
+}
+
+/* Mobile: prevent image cutoff in highlighted posts */
+@media screen and (max-width: 767px) {
+  .hmhp-thumb img {
+    object-position: center 30%;
+  }
 }
 
 
