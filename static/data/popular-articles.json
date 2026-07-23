@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T08:46:08.862Z",
+  "generatedAt": "2026-07-23T12:23:21.769Z",
   "windowDays": 30,
   "entries": [
     {
@@ -91,7 +91,7 @@
       }
     },
     {
-      "id": "/reviews/voyager-keyboard",
+      "id": "/reviews/total-typescript-pro-complete-review",
       "views": 11,
       "comments": 0,
       "score": 11,
@@ -102,10 +102,10 @@
       }
     },
     {
-      "id": "/reviews/total-typescript-pro-complete-review",
-      "views": 10,
+      "id": "/reviews/voyager-keyboard",
+      "views": 11,
       "comments": 0,
-      "score": 10,
+      "score": 11,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
