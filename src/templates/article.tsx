@@ -62,6 +62,7 @@ interface ArticleData {
       author: string;
       publishedAt: string;
       updatedAt: string;
+      type?: string;
       imageSpinner?: SpinnerImage[];
       imageSpinners?: NamedSpinner[];
       galleryEmbeds?: GalleryEmbedData[];
@@ -163,7 +164,7 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
   const article = data.markdownRemark.frontmatter;
   const author = data.authorsJson;
   const isReview = pageContext.isReview;
-  const isBrewing = pageContext.isBrewing || hasTag(article.tags || [], 'brewing');
+  const isBrewing = pageContext.isBrewing ?? false;
   const { viewCount, commentCount, shareCounts } = pageContext;
   
   const shareUrl = typeof window !== 'undefined' ? window.location.href : `https://josephcrawford.com${getArticlePath(article.slug, !!article.series?.name, isReview)}`;
@@ -473,6 +474,7 @@ export const query = graphql`
         author
         publishedAt
         updatedAt
+        type
         imageSpinner {
           src
           alt
@@ -568,7 +570,7 @@ export const query = graphql`
 
 export const Head: HeadFC<ArticleData> = ({ data }) => {
   const isReview = hasTag(data.markdownRemark.frontmatter.tags || [], 'reviews');
-  const isBrewing = hasTag(data.markdownRemark.frontmatter.tags || [], 'brewing');
+  const isBrewing = data.markdownRemark.frontmatter.type === 'brewing-recipe';
   return (
     <SEO 
       title={data.markdownRemark.frontmatter.title}
