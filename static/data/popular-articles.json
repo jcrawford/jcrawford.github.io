@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-24T01:55:13.329Z",
+  "generatedAt": "2026-07-24T03:45:35.627Z",
   "windowDays": 30,
   "entries": [
     {
@@ -69,10 +69,10 @@
       }
     },
     {
-      "id": "/reviews/huupe-mini-review",
-      "views": 12,
+      "id": "/reviews/total-typescript-pro-complete-review",
+      "views": 14,
       "comments": 0,
-      "score": 12,
+      "score": 14,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -80,7 +80,7 @@
       }
     },
     {
-      "id": "/reviews/total-typescript-pro-complete-review",
+      "id": "/reviews/huupe-mini-review",
       "views": 12,
       "comments": 0,
       "score": 12,
