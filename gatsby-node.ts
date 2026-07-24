@@ -308,7 +308,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
 
   const result = await graphql<PagesQueryResult>(`
     query {
-      allMarkdownRemark(filter: { frontmatter: { slug: { ne: null }, draft: { ne: true } }, fileAbsolutePath: { regex: "//content/(posts|reviews)/" } }) {
+      allMarkdownRemark(filter: { frontmatter: { slug: { ne: null }, draft: { ne: true } }, fileAbsolutePath: { regex: "//content/(posts|reviews|brewing)/" } }) {
         nodes {
           id
           fileAbsolutePath
@@ -392,6 +392,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
   articles.forEach((article) => {
     const isSeries = !!article.frontmatter.series?.name;
     const isReview = article.fileAbsolutePath.includes('/content/reviews/');
+    const isBrewing = article.fileAbsolutePath.includes('/content/brewing/');
     
     // Determine the path based on article type
     let articlePath: string;
@@ -399,6 +400,8 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
       articlePath = `/series/${article.frontmatter.slug}`;
     } else if (isReview) {
       articlePath = `/reviews/${article.frontmatter.slug}`;
+    } else if (isBrewing) {
+      articlePath = `/brewing/${article.frontmatter.slug}`;
     } else {
       articlePath = `/posts/${article.frontmatter.slug}`;
     }
@@ -415,6 +418,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
         publishedAt: article.frontmatter.publishedAt,
         seriesName: article.frontmatter.series?.name || null,
         isReview,
+        isBrewing,
         viewCount: metrics.views,
         commentCount: metrics.comments,
         shareCounts: metrics.shares || { facebook: 0, linkedin: 0, copy: 0 },
@@ -423,90 +427,6 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
   });
 
   reporter.info(`Created ${articles.length} article pages`);
-
-  // Create brewing recipe pages using article.tsx template
-  // They will render with standard post layout + brewing-specific components
-  // Reuse articleTemplate from above
-
-  const brewingResult = await graphql<{
-    allMarkdownRemark: {
-      nodes: Array<{
-        id: string;
-        frontmatter: {
-          slug: string;
-          title: string;
-          publishedAt: string;
-          tags: string[] | null;
-        };
-      }>;
-    };
-  }>(`
-    query BrewingQuery {
-      allMarkdownRemark(
-        filter: {
-          fileAbsolutePath: { regex: "/content/brewing/" }
-          frontmatter: { slug: { ne: null }, draft: { ne: true } }
-        }
-        sort: { frontmatter: { publishedAt: DESC } }
-      ) {
-        nodes {
-          id
-          frontmatter {
-            slug
-            title
-            publishedAt
-            tags
-          }
-        }
-      }
-    }
-  `);
-
-  if (brewingResult.errors) {
-    reporter.panicOnBuild('Error loading brewing recipes', brewingResult.errors);
-  }
-
-  const brewingRecipes = brewingResult.data?.allMarkdownRemark.nodes || [];
-
-  brewingRecipes.forEach((recipe) => {
-    const recipePath = `/brewing/${recipe.frontmatter.slug}`;
-    const metrics = metricsByPath.get(recipePath) || { views: 0, comments: 0, shares: { facebook: 0, linkedin: 0, copy: 0 } };
-    const isBrewing = recipe.frontmatter.tags?.includes('brewing') || false;
-
-    createPage({
-      path: recipePath,
-      component: articleTemplate,
-      context: {
-        slug: recipe.frontmatter.slug,
-        author: 'joseph-crawford',
-        publishedAt: recipe.frontmatter.publishedAt,
-        viewCount: metrics.views,
-        commentCount: metrics.comments,
-        shareCounts: metrics.shares || { facebook: 0, linkedin: 0, copy: 0 },
-        isBrewing: isBrewing,
-      },
-    });
-  });
-
-  reporter.info(`Created ${brewingRecipes.length} brewing recipe pages`);
-
-  // Create brewing category listing page
-  const brewingListingTemplate = path.resolve('./src/templates/brewing-index.tsx');
-  const recipesPerPage = 12;
-  const numBrewingPages = Math.ceil(brewingRecipes.length / recipesPerPage);
-
-  Array.from({ length: numBrewingPages || 1 }).forEach((_, i) => {
-    createPage({
-      path: i === 0 ? '/brewing' : `/brewing/${i + 1}`,
-      component: brewingListingTemplate,
-      context: {
-        limit: recipesPerPage,
-        skip: i * recipesPerPage,
-        numPages: numBrewingPages || 1,
-        currentPage: i + 1,
-      },
-    });
-  });
 
   // Create tag pages with pagination
   const tagTemplate = path.resolve('./src/templates/tag.tsx');

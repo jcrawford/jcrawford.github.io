@@ -369,5 +369,12 @@
     "name": "Performance",
     "description": "Application performance, optimization, and speed techniques.",
     "featured": false
+  },
+  {
+    "id": "54",
+    "slug": "brewing",
+    "name": "Brewing",
+    "description": "Home brewing recipes, techniques, and fermentation experiments with beer, wine, and mead.",
+    "featured": true
   }
 ]
