@@ -13,7 +13,7 @@ const config: GatsbyConfig = {
     navigation: [
       { name: 'Home', path: '/' },
       { name: 'Galleries', path: '/gallery' },
-      { name: 'Brewing', path: '/brewing' },
+      { name: 'Brewing', path: '/tag/brewing' },
       { name: 'Family', path: '/tag/family' },
       { name: 'Reviews', path: '/tag/reviews' },
       { name: 'Work', path: '/tag/work' },
