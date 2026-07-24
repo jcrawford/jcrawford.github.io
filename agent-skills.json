@@ -1,0 +1,19 @@
+{
+  "skills": [
+    {
+      "name": "browse-posts",
+      "description": "Browse and read blog posts about programming languages, AI advancements, and developer tools",
+      "endpoint": "https://josephcrawford.com",
+      "type": "content"
+    },
+    {
+      "name": "browse-reviews",
+      "description": "Browse product reviews including tech hardware, software, and services",
+      "endpoint": "https://josephcrawford.com/tag/reviews/",
+      "type": "content"
+    }
+  ],
+  "agentReady": true,
+  "llmsTxt": "https://josephcrawford.com/llms.txt",
+  "llmsFullTxt": "https://josephcrawford.com/llms-full.txt"
+}

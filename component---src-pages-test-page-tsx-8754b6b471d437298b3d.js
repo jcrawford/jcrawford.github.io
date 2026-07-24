@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgatsby_magazine_site=self.webpackChunkgatsby_magazine_site||[]).push([[289],{3915:function(e,t,a){a.r(t);var s=a(6540);t.default=()=>s.createElement("div",null,s.createElement("h1",null,"Test Page Works!"),s.createElement("p",null,"If you can see this, Gatsby is creating pages correctly."))}}]);
+//# sourceMappingURL=component---src-pages-test-page-tsx-8754b6b471d437298b3d.js.map

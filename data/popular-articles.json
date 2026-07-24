@@ -1,0 +1,281 @@
+{
+  "generatedAt": "2026-07-24T01:52:16.243Z",
+  "windowDays": 30,
+  "entries": [
+    {
+      "id": "/reviews/budget-auto-rental-process-review",
+      "views": 123,
+      "comments": 0,
+      "score": 123,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/ford-transit-15-passenger-van-review",
+      "views": 97,
+      "comments": 0,
+      "score": 97,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/benq-rd320ua-monitor-review",
+      "views": 66,
+      "comments": 0,
+      "score": 66,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 4
+      }
+    },
+    {
+      "id": "/posts/disney-vacation-2026",
+      "views": 55,
+      "comments": 0,
+      "score": 55,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/saferide-health-how-i-use-ai-as-an-engineer",
+      "views": 32,
+      "comments": 0,
+      "score": 32,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/lebanon-valley-speedway-2026",
+      "views": 26,
+      "comments": 0,
+      "score": 26,
+      "shares": {
+        "facebook": 1,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/huupe-mini-review",
+      "views": 12,
+      "comments": 0,
+      "score": 12,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/total-typescript-pro-complete-review",
+      "views": 12,
+      "comments": 0,
+      "score": 12,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/grok-4-5-cursor-first-impressions",
+      "views": 11,
+      "comments": 0,
+      "score": 11,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/voyager-keyboard",
+      "views": 11,
+      "comments": 0,
+      "score": 11,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/long-running-ai-agents-adk",
+      "views": 7,
+      "comments": 0,
+      "score": 7,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/spacex-buys-cursor-60-billion",
+      "views": 6,
+      "comments": 0,
+      "score": 6,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/saferide-health-cursor-ai-adoption",
+      "views": 5,
+      "comments": 0,
+      "score": 5,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/via-aquarium",
+      "views": 5,
+      "comments": 0,
+      "score": 5,
+      "shares": {
+        "facebook": 3,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/gpt-5-5-first-impressions",
+      "views": 3,
+      "comments": 0,
+      "score": 3,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/wordpress-plugin-supply-chain-attack-2026",
+      "views": 3,
+      "comments": 0,
+      "score": 3,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/arcade1up-infinity-game-table-review",
+      "views": 3,
+      "comments": 0,
+      "score": 3,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/fried-chicken-ice-cream-review",
+      "views": 3,
+      "comments": 0,
+      "score": 3,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/hilton-aqua-sol-resort-review",
+      "views": 3,
+      "comments": 0,
+      "score": 3,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/nasa-artemis-return-to-the-moon",
+      "views": 2,
+      "comments": 0,
+      "score": 2,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/openai-codex-expansion-developer-guide",
+      "views": 2,
+      "comments": 0,
+      "score": 2,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/saferide-health",
+      "views": 2,
+      "comments": 0,
+      "score": 2,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/things-you-didnt-know-about-mysql-indexes",
+      "views": 2,
+      "comments": 0,
+      "score": 2,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/claude-opus-4-7-whats-new",
+      "views": 1,
+      "comments": 0,
+      "score": 1,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/typescript-7-beta-go-rewrite",
+      "views": 1,
+      "comments": 0,
+      "score": 1,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    }
+  ]
+}
