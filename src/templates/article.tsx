@@ -243,7 +243,7 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
               {isReview ? (
                 <span className="hm-article-category">Review</span>
               ) : isBrewing ? (
-                <Link to="/brewing/" className="hm-article-category">Brewing</Link>
+                <Link to="/tag/brewing/" className="hm-article-category">Brewing</Link>
               ) : (
                 article.tags && article.tags.length > 0 && (
                   <div className="hm-article-categories">
