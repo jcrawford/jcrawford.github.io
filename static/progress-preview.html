@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body { background: #1a1a2e; font-family: sans-serif; padding: 40px; }
+.fermentation-progress {
+  background: #1a1a2e;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  --progress-complete: #22c55e;
+  --progress-active: #f97316;
+  --progress-pending: #444;
+}
+.fermentation-progress-title {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #888;
+  margin: 0 0 1rem 0;
+}
+.fermentation-progress-track {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  margin-bottom: 1rem;
+  position: relative;
+}
+.fermentation-progress-stage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-top: 1.5rem;
+}
+.fermentation-progress-stage::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--progress-pending);
+  border: 2px solid #222;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.fermentation-progress-stage.completed::before {
+  background: var(--progress-complete);
+  border-color: var(--progress-complete);
+}
+.fermentation-progress-stage.active::before {
+  background: var(--progress-active);
+  border-color: var(--progress-active);
+  box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.3);
+}
+.fermentation-progress-stage::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  width: 100%;
+  height: 3px;
+  background: var(--progress-pending);
+  z-index: 0;
+  border-radius: 2px;
+}
+.fermentation-progress-stage:last-child::after {
+  display: none;
+}
+.fermentation-progress-stage.completed::after {
+  background: var(--progress-complete);
+}
+
+/* Bottle conditioning at 50% (6 months of 12) */
+.fermentation-progress-stage.bottle-conditioning.active::after {
+  background: linear-gradient(
+    to right,
+    #22c55e 0%,
+    #22c55e 48%,
+    #f97316 50%,
+    #444 52%,
+    #444 100%
+  );
+}
+
+.fermentation-progress-stage.completed.ready-to-drink::before {
+  content: '✓';
+  background: var(--progress-complete);
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fermentation-progress-stage-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  text-align: center;
+  white-space: nowrap;
+  color: var(--progress-pending);
+}
+.fermentation-progress-stage.completed .fermentation-progress-stage-label {
+  color: var(--progress-complete);
+}
+.fermentation-progress-stage.active .fermentation-progress-stage-label {
+  color: var(--progress-active);
+}
+.fermentation-progress-stage-days {
+  font-size: 0.75rem;
+  color: #888;
+  margin-top: 0.25rem;
+  text-align: center;
+}
+.fermentation-progress-stage-days.ready-date {
+  font-weight: 600;
+}
+.fermentation-progress-total {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #888;
+  border-top: 1px solid #333;
+  padding-top: 0.75rem;
+  margin-top: 0.5rem;
+}
+.fermentation-progress-total-value {
+  font-weight: 700;
+  color: #fff;
+}
+.date-note {
+  color: #888;
+  font-size: 0.75rem;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+</style>
+</head>
+<body>
+
+<div class="fermentation-progress">
+  <p class="fermentation-progress-title">Brewing Progress (Preview: October 2026)</p>
+  <div class="fermentation-progress-track">
+    
+    <div class="fermentation-progress-stage completed">
+      <span class="fermentation-progress-stage-label">Primary</span>
+      <span class="fermentation-progress-stage-days">6 days</span>
+    </div>
+    
+    <div class="fermentation-progress-stage completed">
+      <span class="fermentation-progress-stage-label">Secondary</span>
+      <span class="fermentation-progress-stage-days">15 days</span>
+    </div>
+    
+    <div class="fermentation-progress-stage completed">
+      <span class="fermentation-progress-stage-label">Conditioning</span>
+      <span class="fermentation-progress-stage-days">—</span>
+    </div>
+    
+    <div class="fermentation-progress-stage completed">
+      <span class="fermentation-progress-stage-label">Bottled</span>
+      <span class="fermentation-progress-stage-days ready-date">Apr 5, 2026</span>
+    </div>
+    
+    <div class="fermentation-progress-stage bottle-conditioning active">
+      <span class="fermentation-progress-stage-label">Bottle Conditioning</span>
+      <span class="fermentation-progress-stage-days" style="color: #f97316;">~182 days left</span>
+    </div>
+    
+    <div class="fermentation-progress-stage">
+      <span class="fermentation-progress-stage-label">Ready to Drink</span>
+      <span class="fermentation-progress-stage-days ready-date">2027-04-05</span>
+    </div>
+    
+  </div>
+  <div class="fermentation-progress-total">
+    <span>Total:</span>
+    <span class="fermentation-progress-total-value">386 days</span>
+  </div>
+  <p class="date-note">Simulated date: October 5, 2026 (6 months into 1-year bottle conditioning)</p>
+</div>
+
+</body>
+</html>

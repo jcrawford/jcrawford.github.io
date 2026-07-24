@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
         }
       }
       workArticles: allMarkdownRemark(
-        filter: { frontmatter: { tags: { in: ["work"] }, slug: { ne: null }, draft: { ne: true } }, fileAbsolutePath: { regex: "//content/(posts|reviews)/" } }
+        filter: { frontmatter: { tags: { in: ["work"] }, slug: { ne: null }, draft: { ne: true } }, fileAbsolutePath: { regex: "//content/(posts|reviews|brewing)/" } }
         limit: 3
         sort: { frontmatter: { publishedAt: DESC } }
       ) {
@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
         }
       }
       familyArticles: allMarkdownRemark(
-        filter: { frontmatter: { tags: { in: ["family"] }, slug: { ne: null }, draft: { ne: true } }, fileAbsolutePath: { regex: "//content/(posts|reviews)/" } }
+        filter: { frontmatter: { tags: { in: ["family"] }, slug: { ne: null }, draft: { ne: true } }, fileAbsolutePath: { regex: "//content/(posts|reviews|brewing)/" } }
         limit: 3
         sort: { frontmatter: { publishedAt: DESC } }
       ) {
@@ -119,7 +119,8 @@ const Footer: React.FC = () => {
                 <h2 className="widget-title">AI</h2>
                 {aiArticles.map((article) => {
                   const isReview = article.frontmatter.tags?.some(t => t.toLowerCase() === 'reviews');
-                  const articlePath = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name, isReview);
+                  const isBrewing = article.frontmatter.tags?.some(t => t.toLowerCase() === 'brewing');
+                  const articlePath = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name, isReview, isBrewing);
                   return (
                     <div key={article.id} className="hms-post clearfix">
                       <div className="hms-thumb">
@@ -155,7 +156,8 @@ const Footer: React.FC = () => {
                 <h2 className="widget-title">Work</h2>
                 {workArticles.map((article) => {
                   const isReview = article.frontmatter.tags?.some(t => t.toLowerCase() === 'reviews');
-                  const articlePath = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name, isReview);
+                  const isBrewing = article.frontmatter.tags?.some(t => t.toLowerCase() === 'brewing');
+                  const articlePath = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name, isReview, isBrewing);
                   return (
                     <div key={article.id} className="hms-post clearfix">
                       <div className="hms-thumb">

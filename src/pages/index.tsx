@@ -14,6 +14,7 @@ interface ArticleFrontmatter {
   excerpt: string;
   featuredImage: string;
   tags: string[];
+  type: string;
   author: string;
   publishedAt: string;
   updatedAt: string;
@@ -126,6 +127,7 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
       excerpt: mappedArticle.frontmatter.excerpt,
       featuredImage: mappedArticle.frontmatter.featuredImage,
       tags: mappedArticle.frontmatter.tags,
+      type: mappedArticle.frontmatter.type,
       publishedAt: mappedArticle.frontmatter.publishedAt,
       author: mappedArticle.frontmatter.author,
       authorName: authors.find(a => a.slug === mappedArticle.frontmatter.author)?.name || mappedArticle.frontmatter.author,
@@ -141,6 +143,7 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
       excerpt: mappedArticle.frontmatter.excerpt,
       featuredImage: mappedArticle.frontmatter.featuredImage,
       tags: mappedArticle.frontmatter.tags,
+      type: mappedArticle.frontmatter.type,
       publishedAt: mappedArticle.frontmatter.publishedAt,
       author: mappedArticle.frontmatter.author,
       authorName: authors.find(a => a.slug === mappedArticle.frontmatter.author)?.name || mappedArticle.frontmatter.author,
@@ -211,7 +214,7 @@ export const query = graphql`
     allMarkdownRemark(
       sort: { frontmatter: { publishedAt: DESC } }
       limit: 150
-      filter: { frontmatter: { draft: { ne: true } }, fileAbsolutePath: { regex: "//content/(posts|reviews)/" } }
+      filter: { frontmatter: { draft: { ne: true } }, fileAbsolutePath: { regex: "//content/(posts|reviews|brewing)/" } }
     ) {
       nodes {
         id
@@ -222,6 +225,7 @@ export const query = graphql`
           excerpt
           featuredImage
           tags
+          type
           author
           publishedAt
           updatedAt

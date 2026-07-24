@@ -9,6 +9,7 @@ interface FeaturedArticle {
   excerpt: string;
   featuredImage: string;
   tags: string[];
+  type?: string;
   publishedAt: string;
   author: string;
   authorName: string;
@@ -42,7 +43,8 @@ const FeaturedSlider: React.FC<FeaturedSliderProps> = ({ articles }) => {
 
   const currentArticle = articles[currentSlide];
   const isReview = currentArticle.tags?.some(t => t.toLowerCase() === 'reviews') ?? false;
-  const articlePath = getArticlePath(currentArticle.slug, currentArticle.isSeries, isReview);
+  const isBrewing = currentArticle.type === 'brewing-recipe';
+  const articlePath = getArticlePath(currentArticle.slug, currentArticle.isSeries, isReview, isBrewing);
 
   return (
     <div className="hm-swiper hm-slider">

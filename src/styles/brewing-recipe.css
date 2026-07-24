@@ -1,0 +1,294 @@
+/* Brewing Recipe Template - Light/Dark Theme Support */
+.brewing-recipe {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.brewing-recipe-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.brewing-recipe-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--hybridmag-color-text-headings, #111827);
+}
+
+html.hm-dark .brewing-recipe-header h1 {
+  color: var(--hybridmag-color-text-headings, #f3f4f6);
+}
+
+.brewing-recipe-header .recipe-rating {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.brewing-recipe-header .recipe-meta {
+  color: var(--hybridmag-color-text-light, #6b7280);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+html.hm-dark .brewing-recipe-header .recipe-meta {
+  color: var(--hybridmag-color-text-light, #9ca3af);
+}
+
+.recipe-meta-separator {
+  color: var(--hybridmag-color-text-light, #6b7280);
+}
+
+html.hm-dark .recipe-meta-separator {
+  color: var(--hybridmag-color-text-light, #9ca3af);
+}
+
+.recipe-views,
+.recipe-comments {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.recipe-views svg,
+.recipe-comments svg {
+  width: 16px;
+  height: 16px;
+}
+
+.brewing-recipe-featured-image {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.brewing-recipe-featured-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Brew Data Card */
+.brew-data-card {
+  background: var(--hybridmag-color-bg-cl-sep-content, #f8f9fa);
+  border: 1px solid var(--hybridmag-color-border, #e0e0e0);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+html.hm-dark .brew-data-card {
+  background: var(--hybridmag-color-bg-cl-sep-content, #1a1a2e);
+  border-color: var(--hybridmag-color-border, #333);
+}
+
+.brew-data-card h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  color: var(--hybridmag-color-text-headings, #111827);
+  border-bottom: 1px solid var(--hybridmag-color-border, #e0e0e0);
+  padding-bottom: 0.5rem;
+}
+
+html.hm-dark .brew-data-card h2 {
+  color: var(--hybridmag-color-text-headings, #f3f4f6);
+  border-color: var(--hybridmag-color-border, #333);
+}
+
+.brew-data-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.brew-data-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.brew-data-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--hybridmag-color-text-light, #6b7280);
+  margin-bottom: 0.25rem;
+}
+
+html.hm-dark .brew-data-label {
+  color: var(--hybridmag-color-text-light, #9ca3af);
+}
+
+.brew-data-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--hybridmag-color-text-headings, #111827);
+}
+
+html.hm-dark .brew-data-value {
+  color: var(--hybridmag-color-text-headings, #f3f4f6);
+}
+
+/* Ingredients Section */
+.recipe-ingredients {
+  margin-bottom: 2rem;
+}
+
+.recipe-ingredients h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--hybridmag-color-text-headings, #111827);
+}
+
+html.hm-dark .recipe-ingredients h2 {
+  color: var(--hybridmag-color-text-headings, #f3f4f6);
+}
+
+.recipe-ingredients ul {
+  list-style: none;
+  padding: 0;
+}
+
+.recipe-ingredients li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--hybridmag-color-border, #e0e0e0);
+  font-size: 1.05rem;
+  color: var(--hybridmag-color-text-main, #374151);
+}
+
+html.hm-dark .recipe-ingredients li {
+  color: var(--hybridmag-color-text-main, #d1d5db);
+  border-color: var(--hybridmag-color-border, #333);
+}
+
+/* Recipe Steps */
+.recipe-steps {
+  margin-bottom: 2rem;
+}
+
+.recipe-steps h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--hybridmag-color-text-headings, #111827);
+}
+
+html.hm-dark .recipe-steps h2 {
+  color: var(--hybridmag-color-text-headings, #f3f4f6);
+}
+
+.recipe-step {
+  margin-bottom: 2rem;
+}
+
+/* Watermark step style */
+.watermark-step {
+  position: relative;
+  padding-left: 5rem;
+  min-height: 60px;
+}
+
+.watermark-number {
+  position: absolute;
+  left: 0;
+  top: -0.5rem;
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--hybridmag-color-primary, #48b490);
+  opacity: 0.15;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.recipe-step-content {
+  position: relative;
+}
+
+.recipe-step-content h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  color: var(--hybridmag-color-text-headings, #111827);
+}
+
+html.hm-dark .recipe-step-content h3 {
+  color: var(--hybridmag-color-text-headings, #f3f4f6);
+}
+
+.recipe-step-content p {
+  margin: 0 0 0.75rem 0;
+  line-height: 1.6;
+  color: var(--hybridmag-color-text-main, #374151);
+}
+
+html.hm-dark .recipe-step-content p {
+  color: var(--hybridmag-color-text-main, #d1d5db);
+}
+
+.recipe-step-image {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 0.75rem;
+}
+
+.recipe-step-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Recipe Step Video - smaller than images */
+.recipe-step-video {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 0.75rem;
+}
+
+.recipe-step-video video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Additional content */
+.recipe-additional-content {
+  margin-top: 2rem;
+  line-height: 1.7;
+  color: var(--hybridmag-color-text-main, #374151);
+}
+
+html.hm-dark .recipe-additional-content {
+  color: var(--hybridmag-color-text-main, #d1d5db);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .brewing-recipe {
+    padding: 1rem 0.75rem;
+  }
+
+  .brewing-recipe-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .brew-data-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .watermark-step {
+    padding-left: 3.5rem;
+  }
+
+  .watermark-number {
+    font-size: 2.5rem;
+  }
+}

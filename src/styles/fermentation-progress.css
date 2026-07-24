@@ -1,0 +1,273 @@
+/* Fermentation Progress - Segmented Pills */
+.fermentation-progress {
+  background: var(--hybridmag-color-bg-cl-sep-content, #f8f9fa);
+  border: 1px solid var(--hybridmag-color-border, #e0e0e0);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  --progress-complete: #22c55e;
+  --progress-active: #f97316;
+  --progress-pending: #d1d5db;
+}
+
+html.hm-dark .fermentation-progress {
+  background: var(--hybridmag-color-bg-cl-sep-content, #1a1a2e);
+  border-color: var(--hybridmag-color-border, #333);
+  --progress-pending: #4b5563;
+}
+
+.fermentation-progress-title {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--hybridmag-color-text-light, #6b7280);
+  margin: 0 0 1rem 0;
+}
+
+html.hm-dark .fermentation-progress-title {
+  color: var(--hybridmag-color-text-light, #9ca3af);
+}
+
+.fermentation-progress-track {
+  margin-bottom: 1rem;
+}
+
+/* Segmented bar container */
+.fermentation-progress-bar {
+  display: flex;
+  height: 10px;
+  gap: 3px;
+  margin: 0 10px 8px 10px;
+}
+
+/* Each pill segment */
+.ferment-segment {
+  flex: 1;
+  border-radius: 5px;
+  background: var(--progress-pending);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Inner fill that animates */
+.ferment-segment::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: fillSegment 0.5s ease-out forwards;
+}
+
+/* Staggered animation delays */
+.ferment-segment:nth-child(1)::before { animation-delay: 0s; }
+.ferment-segment:nth-child(2)::before { animation-delay: 0.5s; }
+.ferment-segment:nth-child(3)::before { animation-delay: 1s; }
+.ferment-segment:nth-child(4)::before { animation-delay: 1.5s; }
+.ferment-segment:nth-child(5)::before { animation-delay: 2s; }
+.ferment-segment:nth-child(6)::before { animation-delay: 2.5s; }
+
+@keyframes fillSegment {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+/* Completed - green fill */
+.ferment-segment.completed::before {
+  background: var(--progress-complete);
+}
+
+/* Active - gradient showing progress (orange = elapsed, grey = remaining) */
+.ferment-segment.active::before {
+  background: linear-gradient(
+    90deg,
+    var(--progress-active) 0%,
+    var(--progress-active) var(--segment-fill, 50%),
+    var(--progress-pending) var(--segment-fill, 50%),
+    var(--progress-pending) 100%
+  );
+}
+
+/* Stage labels */
+.fermentation-progress-labels {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px;
+}
+
+.ferment-label {
+  flex: 1;
+  text-align: center;
+  padding: 0 2px;
+}
+
+.ferment-label-text {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--hybridmag-color-text-light, #6b7280);
+  margin-bottom: 0.25rem;
+}
+
+html.hm-dark .ferment-label-text {
+  color: var(--hybridmag-color-text-light, #9ca3af);
+}
+
+.ferment-label.completed .ferment-label-text {
+  color: var(--progress-complete);
+}
+
+.ferment-label.active .ferment-label-text {
+  color: var(--progress-active);
+  font-weight: 600;
+}
+
+.ferment-label-days {
+  font-size: 0.7rem;
+  color: var(--hybridmag-color-text-light, #6b7280);
+}
+
+html.hm-dark .ferment-label-days {
+  color: var(--hybridmag-color-text-light, #9ca3af);
+}
+
+/* Total */
+.fermentation-progress-total {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--hybridmag-color-text-light, #6b7280);
+  border-top: 1px solid var(--hybridmag-color-border, #e0e0e0);
+  padding-top: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+html.hm-dark .fermentation-progress-total {
+  color: var(--hybridmag-color-text-light, #9ca3af);
+  border-color: var(--hybridmag-color-border, #333);
+}
+
+.fermentation-progress-total-value {
+  font-weight: 700;
+  color: var(--hybridmag-color-text-headings, #111827);
+}
+
+html.hm-dark .fermentation-progress-total-value {
+  color: var(--hybridmag-color-text-headings, #f3f4f6);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .fermentation-progress {
+    padding: 1rem;
+  }
+
+  /* Switch to vertical layout on mobile */
+  .fermentation-progress-bar {
+    display: none; /* Hide horizontal bar */
+  }
+
+  .fermentation-progress-labels {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 0;
+  }
+
+  .ferment-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: left;
+    padding: 0.5rem;
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 8px;
+    border-left: 3px solid var(--progress-pending);
+    opacity: 0;
+    transform: translateX(-10px);
+    animation: slideInMobile 0.4s ease-out forwards;
+  }
+
+  html.hm-dark .ferment-label {
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .ferment-label:nth-child(1) { animation-delay: 0s; }
+  .ferment-label:nth-child(2) { animation-delay: 0.15s; }
+  .ferment-label:nth-child(3) { animation-delay: 0.3s; }
+  .ferment-label:nth-child(4) { animation-delay: 0.45s; }
+  .ferment-label:nth-child(5) { animation-delay: 0.6s; }
+  .ferment-label:nth-child(6) { animation-delay: 0.75s; }
+
+  @keyframes slideInMobile {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .ferment-label.completed {
+    border-left-color: var(--progress-complete);
+  }
+
+  .ferment-label.active {
+    border-left-color: var(--progress-active);
+    background: rgba(249, 115, 22, 0.08);
+  }
+
+  /* Dot indicator */
+  .ferment-label::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--progress-pending);
+    flex-shrink: 0;
+  }
+
+  .ferment-label.completed::before {
+    background: var(--progress-complete);
+  }
+
+  .ferment-label.active::before {
+    background: var(--progress-active);
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.3);
+  }
+
+  .ferment-label-text {
+    font-size: 0.9rem;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    flex: 1;
+    margin: 0;
+  }
+
+  .ferment-label-days {
+    font-size: 0.8rem;
+    margin: 0;
+    color: var(--hybridmag-color-text-light, #6b7280);
+  }
+
+  html.hm-dark .ferment-label-days {
+    color: var(--hybridmag-color-text-light, #9ca3af);
+  }
+
+  /* Hide days for future stages on mobile */
+  .ferment-label:not(.completed):not(.active) .ferment-label-days {
+    display: none;
+  }
+
+  .fermentation-progress-total {
+    justify-content: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+  }
+}

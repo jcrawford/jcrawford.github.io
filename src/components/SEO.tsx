@@ -35,7 +35,7 @@ const SEO: React.FC<SEOProps> = ({
     title: title ? `${title} | ${siteMetadata.title}` : siteMetadata.title,
     description: description || siteMetadata.description,
     url: `${siteMetadata.siteUrl}${pathname}`,
-    image: image || `${siteMetadata.siteUrl}/og-image.jpg`,
+    image: image?.startsWith('http') ? image : `${siteMetadata.siteUrl}${image || '/og-image.jpg'}`,
   };
 
   return (

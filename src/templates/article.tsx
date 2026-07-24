@@ -15,6 +15,9 @@ import { hasTag, normalizeTagSlug, tagMatches } from '../utils/tagUtils';
 import { postProcessImages, postProcessTables } from '../utils/postProcessImages';
 import '../styles/review.css';
 import '../styles/tag-cloud.css';
+import '../styles/brewing-recipe.css';
+
+import FermentationProgress from '../components/FermentationProgress';
 
 interface SpinnerImage {
   src: string;
@@ -64,6 +67,30 @@ interface ArticleData {
         productUrl?: string;
         affiliateLink?: string;
       };
+      brewData?: {
+        originalGravity?: number;
+        finalGravity?: number;
+        startDate?: string;
+        primaryEndDate?: string;
+        secondaryStartDate?: string;
+        secondaryEndDate?: string;
+        bottlingDate?: string;
+        drinkingReadyDate?: string;
+        bulkConditioningTime?: string;
+        bottleConditioningTime?: string;
+        abv?: number;
+        batchSize?: string;
+        yeast?: string;
+        fermentationTime?: string;
+        secondaryTime?: string;
+      };
+      ingredients?: string[];
+      steps?: Array<{
+        title: string;
+        description: string;
+        image?: string;
+        video?: string;
+      }>;
     };
   };
   authorsJson: {
@@ -100,6 +127,7 @@ interface ArticleData {
 
 interface ArticlePageContext {
   isReview: boolean;
+  isBrewing?: boolean;
   viewCount: number;
   commentCount: number;
   shareCounts: { facebook: number; twitter: number; linkedin: number; copy: number };
@@ -125,6 +153,7 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
   const articleHtml = postProcessTables(postProcessImages(data.markdownRemark.html));
   const author = data.authorsJson;
   const isReview = pageContext.isReview as boolean;
+  const isBrewing = pageContext.isBrewing as boolean;
   const viewCount = pageContext.viewCount || 0;
   const commentCount = pageContext.commentCount || 0;
   const shareCounts = pageContext.shareCounts || { facebook: 0, twitter: 0, linkedin: 0, copy: 0 };
@@ -287,7 +316,6 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
           {article.review && (
             <ReviewBox
               rating={article.review.rating}
-              childRating={article.review.childRating}
               pros={article.review.pros}
               cons={article.review.cons}
               price={article.review.price}
@@ -297,7 +325,51 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
             />
           )}
 
-          {renderContentWithSpinners()}
+          {isBrewing && article.brewData && (
+            <>
+              <FermentationProgress brewData={article.brewData} />
+              
+              {article.ingredients && article.ingredients.length > 0 && (
+                <section className="recipe-ingredients">
+                  <h2>Ingredients</h2>
+                  <ul>
+                    {article.ingredients.map((ingredient, index) => (
+                      <li key={index}>{ingredient}</li>
+                    ))}
+                  </ul>
+                </section>
+              )}
+              
+              {article.steps && article.steps.length > 0 && (
+                <section className="recipe-steps">
+                  <h2>Instructions</h2>
+                  {article.steps.map((step, index) => (
+                    <div key={index} className="recipe-step watermark-step">
+                      <span className="watermark-number">{index + 1}</span>
+                      <div className="recipe-step-content">
+                        <h3>{step.title}</h3>
+                        <p>{step.description}</p>
+                        {step.video && (
+                          <div className="recipe-step-video">
+                            <video controls playsInline muted loop>
+                              <source src={step.video} type="video/mp4" />
+                            </video>
+                          </div>
+                        )}
+                        {step.image && (
+                          <div className="recipe-step-image">
+                            <OptimizedImage src={step.image} alt={step.title} />
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </section>
+              )}
+            </>
+          )}
+
+          {!isBrewing && renderContentWithSpinners()}
 
           {article.tags?.length > 0 && (
             <div className="hm-article-tags">
@@ -354,7 +426,7 @@ export const query = graphql`
     $author: String!
     $publishedAt: Date!
   ) {
-    markdownRemark(frontmatter: { slug: { eq: $slug } }, fileAbsolutePath: { regex: "/content/(posts|reviews)/" }) {
+    markdownRemark(frontmatter: { slug: { eq: $slug } }, fileAbsolutePath: { regex: "/content/(posts|reviews|brewing)/" }) {
       id
       html
       frontmatter {
@@ -383,13 +455,36 @@ export const query = graphql`
         galleryEmbeds
         review {
           rating
-          childRating
           pros
           cons
           price
           brand
           productUrl
           affiliateLink
+        }
+        brewData {
+          originalGravity
+          finalGravity
+          startDate
+          primaryEndDate
+          secondaryStartDate
+          secondaryEndDate
+          bottlingDate
+          drinkingReadyDate
+          bulkConditioningTime
+          bottleConditioningTime
+          abv
+          batchSize
+          yeast
+          fermentationTime
+          secondaryTime
+        }
+        ingredients
+        steps {
+          title
+          description
+          image
+          video
         }
       }
     }

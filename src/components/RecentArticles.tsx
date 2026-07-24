@@ -32,7 +32,7 @@ const RecentArticles: React.FC = () => {
     query RecentArticlesQuery {
       allArticles: allMarkdownRemark(
         sort: { frontmatter: { publishedAt: DESC } }
-        filter: { frontmatter: { slug: { ne: null }, draft: { ne: true } }, fileAbsolutePath: { regex: "//content/(posts|reviews)/" } }
+        filter: { frontmatter: { slug: { ne: null }, draft: { ne: true } }, fileAbsolutePath: { regex: "//content/(posts|reviews|brewing)/" } }
       ) {
         nodes {
           id
@@ -106,7 +106,8 @@ const RecentArticles: React.FC = () => {
     const articlesByPath = new Map(
       allArticles.map((article) => {
         const isReview = article.frontmatter.tags?.some((tag) => tag.toLowerCase() === 'reviews') ?? false;
-        const path = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name, isReview);
+        const isBrewing = article.frontmatter.tags?.some((tag) => tag.toLowerCase() === 'brewing') ?? false;
+        const path = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name, isReview, isBrewing);
         return [path, article] as const;
       })
     );
@@ -135,7 +136,8 @@ const RecentArticles: React.FC = () => {
       <h3 className="widget-title">Popular</h3>
       {isLoading ? null : articles.map((article) => {
         const isReview = article.frontmatter.tags?.some((t) => t.toLowerCase() === 'reviews') ?? false;
-        const articlePath = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name, isReview);
+        const isBrewing = article.frontmatter.tags?.some((t) => t.toLowerCase() === 'brewing') ?? false;
+        const articlePath = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name, isReview, isBrewing);
         return (
           <article key={article.id} className="hms-post">
             <div className="hms-thumb">

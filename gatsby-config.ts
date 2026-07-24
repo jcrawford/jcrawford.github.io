@@ -13,6 +13,7 @@ const config: GatsbyConfig = {
     navigation: [
       { name: 'Home', path: '/' },
       { name: 'Galleries', path: '/gallery' },
+      { name: 'Brewing', path: '/brewing' },
       { name: 'Family', path: '/tag/family' },
       { name: 'Reviews', path: '/tag/reviews' },
       { name: 'Work', path: '/tag/work' },
@@ -94,6 +95,13 @@ const config: GatsbyConfig = {
       options: {
         name: 'reviews',
         path: `${__dirname}/content/reviews`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'brewing',
+        path: `${__dirname}/content/brewing`,
       },
     },
     {
@@ -233,6 +241,9 @@ const config: GatsbyConfig = {
             changefreq = 'daily';
           } else if (path.startsWith('/posts/') || path.startsWith('/series/')) {
             priority = 0.8;
+            changefreq = 'monthly';
+          } else if (path.startsWith('/brewing/')) {
+            priority = 0.6;
             changefreq = 'monthly';
           } else if (path.startsWith('/tag/')) {
             priority = 0.7;

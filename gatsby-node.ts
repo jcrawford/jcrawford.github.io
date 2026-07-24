@@ -46,6 +46,32 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
       imageSpinner: [SpinnerImage]
       imageSpinners: [NamedSpinner]
       galleryEmbeds: JSON
+      type: String
+      rating: Float
+      brewData: BrewingBrewData
+      ingredients: [String]
+      steps: [BrewingStep]
+    }
+
+    type BrewingBrewData {
+      originalGravity: Float
+      finalGravity: Float
+
+      startDate: Date
+      primaryEndDate: Date
+      secondaryStartDate: Date
+      bottlingDate: Date
+      drinkingReadyDate: Date
+      abv: Float
+      batchSize: String
+      yeast: String
+      fermentationTime: String
+    }
+
+    type BrewingStep {
+      title: String
+      description: String
+      image: String
     }
 
     type MarkdownRemarkFrontmatterReview {
@@ -397,6 +423,90 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
   });
 
   reporter.info(`Created ${articles.length} article pages`);
+
+  // Create brewing recipe pages using article.tsx template
+  // They will render with standard post layout + brewing-specific components
+  // Reuse articleTemplate from above
+
+  const brewingResult = await graphql<{
+    allMarkdownRemark: {
+      nodes: Array<{
+        id: string;
+        frontmatter: {
+          slug: string;
+          title: string;
+          publishedAt: string;
+          tags: string[] | null;
+        };
+      }>;
+    };
+  }>(`
+    query BrewingQuery {
+      allMarkdownRemark(
+        filter: {
+          fileAbsolutePath: { regex: "/content/brewing/" }
+          frontmatter: { slug: { ne: null }, draft: { ne: true } }
+        }
+        sort: { frontmatter: { publishedAt: DESC } }
+      ) {
+        nodes {
+          id
+          frontmatter {
+            slug
+            title
+            publishedAt
+            tags
+          }
+        }
+      }
+    }
+  `);
+
+  if (brewingResult.errors) {
+    reporter.panicOnBuild('Error loading brewing recipes', brewingResult.errors);
+  }
+
+  const brewingRecipes = brewingResult.data?.allMarkdownRemark.nodes || [];
+
+  brewingRecipes.forEach((recipe) => {
+    const recipePath = `/brewing/${recipe.frontmatter.slug}`;
+    const metrics = metricsByPath.get(recipePath) || { views: 0, comments: 0, shares: { facebook: 0, linkedin: 0, copy: 0 } };
+    const isBrewing = recipe.frontmatter.tags?.includes('brewing') || false;
+
+    createPage({
+      path: recipePath,
+      component: articleTemplate,
+      context: {
+        slug: recipe.frontmatter.slug,
+        author: 'joseph-crawford',
+        publishedAt: recipe.frontmatter.publishedAt,
+        viewCount: metrics.views,
+        commentCount: metrics.comments,
+        shareCounts: metrics.shares || { facebook: 0, linkedin: 0, copy: 0 },
+        isBrewing: isBrewing,
+      },
+    });
+  });
+
+  reporter.info(`Created ${brewingRecipes.length} brewing recipe pages`);
+
+  // Create brewing category listing page
+  const brewingListingTemplate = path.resolve('./src/templates/brewing-index.tsx');
+  const recipesPerPage = 12;
+  const numBrewingPages = Math.ceil(brewingRecipes.length / recipesPerPage);
+
+  Array.from({ length: numBrewingPages || 1 }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? '/brewing' : `/brewing/${i + 1}`,
+      component: brewingListingTemplate,
+      context: {
+        limit: recipesPerPage,
+        skip: i * recipesPerPage,
+        numPages: numBrewingPages || 1,
+        currentPage: i + 1,
+      },
+    });
+  });
 
   // Create tag pages with pagination
   const tagTemplate = path.resolve('./src/templates/tag.tsx');

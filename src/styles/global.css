@@ -317,12 +317,30 @@ body {
    RESPONSIVE SYSTEM
    ========================================================================== */
 
+/* Tier 0.5: Portrait monitors / narrow desktops (961px - 1100px) */
+@media (min-width: 961px) and (max-width: 1100px) {
+  .main-navigation ul li a {
+    padding: 0 8px;
+    font-size: 0.9rem;
+    line-height: 44px;
+    min-height: 44px;
+  }
+
+  .hm-header-inner {
+    gap: 15px;
+  }
+
+  .site-title {
+    font-size: var(--hybridmag-font-size-lg);
+  }
+}
+
 /* Tier 1: Tablets & Small Desktops (up to 960px) */
 @media (max-width: 960px) {
   .hm-mobile-menu-toggle {
     display: block;
   }
-  
+
   .main-navigation.desktop-only {
     display: none;
   }

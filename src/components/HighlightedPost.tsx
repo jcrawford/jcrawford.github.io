@@ -19,7 +19,8 @@ const HighlightedPost: React.FC<HighlightedPostProps> = ({
   isSeries,
 }) => {
   const isReview = tags.some(t => t.toLowerCase() === 'reviews');
-  const articlePath = getArticlePath(slug, isSeries, isReview);
+  const isBrewing = tags.some(t => t.toLowerCase() === 'brewing');
+  const articlePath = getArticlePath(slug, isSeries, isReview, isBrewing);
   
   return (
     <div className="hm-highlighted-post">
