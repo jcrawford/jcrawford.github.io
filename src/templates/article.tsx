@@ -226,7 +226,7 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
     "dateModified": article.updatedAt || article.publishedAt,
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://josephcrawford.com${getArticlePath(article.slug, !!article.series?.name, isReview)}`
+      "@id": `https://josephcrawford.com${getArticlePath(article.slug, !!article.series?.name, isReview, isBrewing)}`
     }
   };
 
@@ -568,13 +568,14 @@ export const query = graphql`
 
 export const Head: HeadFC<ArticleData> = ({ data }) => {
   const isReview = hasTag(data.markdownRemark.frontmatter.tags || [], 'reviews');
+  const isBrewing = hasTag(data.markdownRemark.frontmatter.tags || [], 'brewing');
   return (
     <SEO 
       title={data.markdownRemark.frontmatter.title}
       description={data.markdownRemark.frontmatter.excerpt}
       image={data.markdownRemark.frontmatter.featuredImage}
       article={true}
-      pathname={getArticlePath(data.markdownRemark.frontmatter.slug, !!data.markdownRemark.frontmatter.series?.name, isReview)}
+      pathname={getArticlePath(data.markdownRemark.frontmatter.slug, !!data.markdownRemark.frontmatter.series?.name, isReview, isBrewing)}
       siteMetadata={data.site.siteMetadata}
     />
   );
