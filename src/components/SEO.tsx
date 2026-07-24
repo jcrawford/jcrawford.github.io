@@ -1,6 +1,12 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import { Helmet } from 'react-helmet';
+
+interface SEOData {
+  siteMetadata: {
+    title: string;
+    description: string;
+    siteUrl: string;
+  };
+}
 
 interface SEOProps {
   title?: string;
@@ -8,29 +14,32 @@ interface SEOProps {
   image?: string;
   article?: boolean;
   pathname?: string;
+  siteMetadata: SEOData['siteMetadata'];
 }
 
+/**
+ * SEO component for use within Gatsby's Head API export
+ * Does NOT use hooks - receives siteMetadata via props
+ * 
+ * Usage in Head export:
+ * export const Head: HeadFC<DataType> = ({ data }) => (
+ *   <SEO 
+ *     title={data.markdownRemark.frontmatter.title}
+ *     description={data.markdownRemark.frontmatter.excerpt}
+ *     image={data.markdownRemark.frontmatter.featuredImage}
+ *     pathname={`/posts/${data.markdownRemark.frontmatter.slug}`}
+ *     siteMetadata={data.site.siteMetadata}
+ *   />
+ * );
+ */
 const SEO: React.FC<SEOProps> = ({ 
   title, 
   description, 
   image,
   article = false,
   pathname = '/',
+  siteMetadata,
 }) => {
-  const data = useStaticQuery(graphql`
-    query SEOQuery {
-      site {
-        siteMetadata {
-          title
-          description
-          siteUrl
-        }
-      }
-    }
-  `);
-
-  const siteMetadata = data.site.siteMetadata;
-  
   const seo = {
     title: title ? `${title} | ${siteMetadata.title}` : siteMetadata.title,
     description: description || siteMetadata.description,
@@ -39,7 +48,7 @@ const SEO: React.FC<SEOProps> = ({
   };
 
   return (
-    <Helmet>
+    <>
       <title>{seo.title}</title>
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
@@ -63,7 +72,7 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
       <link rel="canonical" href={seo.url} />
-    </Helmet>
+    </>
   );
 };
 

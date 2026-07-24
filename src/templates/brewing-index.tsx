@@ -115,6 +115,11 @@ export const Head: HeadFC = () => (
   <SEO
     title="Brewing Recipes"
     description="Homebrew brewing recipes with step-by-step instructions and brewing data."
+    siteMetadata={{
+      title: 'Joseph Crawford',
+      description: 'A blog relating to technical topics such as programming, web development, and software engineering.',
+      siteUrl: 'https://josephcrawford.com'
+    }}
   />
 );
 

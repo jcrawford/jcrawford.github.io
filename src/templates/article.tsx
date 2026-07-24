@@ -42,6 +42,13 @@ interface GalleryEmbedData {
 }
 
 interface ArticleData {
+  site: {
+    siteMetadata: {
+      title: string;
+      description: string;
+      siteUrl: string;
+    };
+  };
   markdownRemark: {
     id: string;
     html: string;
@@ -58,6 +65,9 @@ interface ArticleData {
       imageSpinner?: SpinnerImage[];
       imageSpinners?: NamedSpinner[];
       galleryEmbeds?: GalleryEmbedData[];
+      series?: {
+        name: string;
+      };
       review?: {
         rating: number;
         pros: string[];
@@ -141,155 +151,131 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
           <main className="hm-primary-content">
             <article className="hm-article">
               <h1 className="hm-article-title">Post Not Found</h1>
-              <p>The article you are looking for could not be found or is still being indexed.</p>
+              <p>The requested article could not be found.</p>
             </article>
           </main>
+          <Sidebar />
         </div>
       </Layout>
     );
   }
 
   const article = data.markdownRemark.frontmatter;
-  const articleHtml = postProcessTables(postProcessImages(data.markdownRemark.html));
   const author = data.authorsJson;
-  const isReview = pageContext.isReview as boolean;
-  const isBrewing = pageContext.isBrewing as boolean;
-  const viewCount = pageContext.viewCount || 0;
-  const commentCount = pageContext.commentCount || 0;
-  const shareCounts = pageContext.shareCounts || { facebook: 0, twitter: 0, linkedin: 0, copy: 0 };
-  const shareUrl = `https://josephcrawford.com${getArticlePath(article.slug, false, isReview)}`;
+  const isReview = pageContext.isReview;
+  const isBrewing = pageContext.isBrewing || hasTag(article.tags || [], 'brewing');
+  const { viewCount, commentCount, shareCounts } = pageContext;
   
-  // Filter navigation: reviews only link to reviews, posts only link to posts
-  const previousArticle = data.previousArticle.nodes.find(node => 
-    isReview ? hasTag(node.frontmatter.tags || [], 'reviews') : !hasTag(node.frontmatter.tags || [], 'reviews')
-  ) || null;
-  const nextArticle = data.nextArticle.nodes.find(node => 
-    isReview ? hasTag(node.frontmatter.tags || [], 'reviews') : !hasTag(node.frontmatter.tags || [], 'reviews')
-  ) || null;
+  const shareUrl = typeof window !== 'undefined' ? window.location.href : `https://josephcrawford.com${getArticlePath(article.slug, !!article.series?.name, isReview)}`;
   
-  // Get the first tag that's not "family" or "featured" for display
-  const primaryTag = article.tags?.find(tag => !tagMatches(tag, 'family') && !tagMatches(tag, 'featured')) || article.tags?.[0];
+  const processedContent = postProcessTables(
+    postProcessImages(data.markdownRemark.html || ''),
+    article.slug
+  );
+  
+  const previousArticle = data.previousArticle?.nodes?.[0] || null;
+  const nextArticle = data.nextArticle?.nodes?.[0] || null;
 
-  // Process content with inline spinners and gallery embeds
-  // Splits HTML on <!-- spinner:id --> and <!-- gallery:slug --> markers
-  // and interleaves React components
-  const renderContentWithSpinners = (): React.ReactNode[] => {
-    const spinners = article.imageSpinners;
-    const galleryEmbeds = article.galleryEmbeds;
-    const hasSpinners = spinners && spinners.length > 0;
-    const hasGalleries = galleryEmbeds && galleryEmbeds.length > 0;
-
-    if (!hasSpinners && !hasGalleries) {
-      return [<div key="content" className="hm-article-content" dangerouslySetInnerHTML={{ __html: articleHtml }} />];
-    }
-
-    // Build lookups
-    const spinnerMap = new Map<string, { images: SpinnerImage[] | null }>();
-    if (hasSpinners) {
-      for (const spinner of spinners!) {
-        spinnerMap.set(spinner.id, spinner);
+  const schema = isReview && article.review ? {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "Product",
+      "name": article.title,
+      "brand": {
+        "@type": "Brand",
+        "name": article.review.brand || "Unknown"
+      },
+      "offers": article.review.price ? {
+        "@type": "Offer",
+        "price": article.review.price,
+        "priceCurrency": "USD"
+      } : undefined
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": article.review.rating.toString(),
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "author": {
+      "@type": "Person",
+      "name": author?.name || "Joseph Crawford"
+    },
+    "reviewBody": article.excerpt,
+    "datePublished": article.publishedAt
+  } : {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": article.title,
+    "description": article.excerpt,
+    "image": article.featuredImage ? `https://josephcrawford.com${article.featuredImage}` : undefined,
+    "author": {
+      "@type": "Person",
+      "name": author?.name || "Joseph Crawford"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Joseph Crawford",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://josephcrawford.com/icon-512x512.png"
       }
+    },
+    "datePublished": article.publishedAt,
+    "dateModified": article.updatedAt || article.publishedAt,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://josephcrawford.com${getArticlePath(article.slug, !!article.series?.name, isReview)}`
     }
-
-    const galleryMap = new Map<string, GalleryEmbedData>();
-    if (hasGalleries) {
-      for (const gallery of galleryEmbeds!) {
-        galleryMap.set(gallery.slug, gallery);
-      }
-    }
-
-    // Find all markers in HTML order (both spinner and gallery)
-    const markerRegex = /<!--\s*(spinner:[\w-]+|gallery:[\w-]+)\s*-->/g;
-    const parts: React.ReactNode[] = [];
-    let keyIndex = 0;
-    let lastIndex = 0;
-    let match: RegExpExecArray | null;
-
-    while ((match = markerRegex.exec(articleHtml)) !== null) {
-      const before = articleHtml.substring(lastIndex, match.index);
-      const markerType = match[1]; // e.g. "spinner:refuge" or "gallery:savannah-wildlife-refuge-2026-album"
-
-      if (before.trim()) {
-        parts.push(<div key={`part-${keyIndex++}`} className="hm-article-content" dangerouslySetInnerHTML={{ __html: before }} />);
-      }
-
-      if (markerType.startsWith('spinner:')) {
-        const spinnerId = markerType.replace('spinner:', '');
-        const spinnerData = spinnerMap.get(spinnerId);
-        if (spinnerData?.images && spinnerData.images.length > 0) {
-          parts.push(<ImageSpinner key={`spinner-${spinnerId}`} images={spinnerData.images} />);
-        }
-      } else if (markerType.startsWith('gallery:')) {
-        const gallerySlug = markerType.replace('gallery:', '');
-        const galleryData = galleryMap.get(gallerySlug);
-        if (galleryData) {
-          parts.push(<GalleryEmbed key={`gallery-${gallerySlug}`} {...galleryData} />);
-        }
-      }
-
-      lastIndex = match.index + match[0].length;
-    }
-
-    // Append any remaining HTML after the last marker
-    const remaining = articleHtml.substring(lastIndex);
-    if (remaining.trim()) {
-      parts.push(<div key={`part-${keyIndex++}`} className="hm-article-content" dangerouslySetInnerHTML={{ __html: remaining }} />);
-    }
-
-    return parts;
   };
 
   return (
     <Layout>
+      <script type="application/ld+json">
+        {JSON.stringify(schema)}
+      </script>
       <div className="hm-container">
         <div className="hm-content-sidebar-wrap">
           <main className="hm-primary-content">
             <article className="hm-article">
-          <header className="hm-article-header">
-            {primaryTag && (
-              <Link 
-                to={`/tag/${normalizeTagSlug(primaryTag)}`}
-                className="hm-article-category"
-              >
-                {primaryTag}
-              </Link>
+            <header className="hm-article-header">
+              {isReview ? (
+                <span className="hm-article-category">Review</span>
+              ) : (
+                article.tags && article.tags.length > 0 && (
+                  <div className="hm-article-categories">
+                    {article.tags.filter(tag => tag !== 'reviews').slice(0, 3).map((tag, index) => (
+                      <Link
+                        key={index}
+                        to={`/tag/${normalizeTagSlug(tag)}/`}
+                        className="hm-article-category"
+                      >
+                        {tag}
+                      </Link>
+                    ))}
+                  </div>
+                )
+              )}
+              <h1 className="hm-article-title">{article.title}</h1>
+              <div className="hm-article-meta">
+                <span className="hm-article-meta-by">By</span>
+                <span className="hm-article-author-name">{author?.name || 'Joseph Crawford'}</span>
+                <span className="hm-article-meta-separator">•</span>
+                <time className="hm-article-date" dateTime={article.publishedAt}>
+                  {formatDate(article.publishedAt)}
+                </time>
+              </div>
+            </header>
+
+            {article.series && (
+              <div className="hm-series-banner">
+                <span className="hm-series-label">Series</span>
+                <span className="hm-series-name">{article.series.name}</span>
+              </div>
             )}
-            
-            <h1 className="hm-article-title">{article.title}</h1>
-            
-            <div className="hm-article-meta">
-              <span className="hm-article-meta-by">by</span>
-              <span className="hm-article-author-name">{author.name}</span>
-              <span className="hm-article-meta-separator">•</span>
-              <time className="hm-article-date" dateTime={article.publishedAt}>
-                {formatDate(article.publishedAt)}
-              </time>
-              <span className="hm-article-meta-separator">•</span>
-              <span className="hm-article-views">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                  <circle cx="12" cy="12" r="3"></circle>
-                </svg>
-                {viewCount.toLocaleString()}
-              </span>
-              <span className="hm-article-meta-separator">•</span>
-              <span className="hm-article-comments">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                </svg>
-                {commentCount}
-              </span>
-            </div>
 
-            <ShareButtons
-              title={article.title}
-              url={shareUrl}
-              variant="top"
-              shareCounts={shareCounts}
-            />
-          </header>
-
-          {!(article.imageSpinner && article.imageSpinner.length > 0) && (
+          {article.featuredImage && (
             <div className="hm-article-featured-image">
               {article.featuredImageLink ? (
                 <a href={article.featuredImageLink} target="_blank" rel="noopener noreferrer">
@@ -345,20 +331,20 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
                   <h2>Instructions</h2>
                   {article.steps.map((step, index) => (
                     <div key={index} className="recipe-step watermark-step">
-                      <span className="watermark-number">{index + 1}</span>
+                      <div className="watermark-number">{index + 1}</div>
                       <div className="recipe-step-content">
                         <h3>{step.title}</h3>
                         <p>{step.description}</p>
-                        {step.video && (
-                          <div className="recipe-step-video">
-                            <video controls playsInline muted loop>
-                              <source src={step.video} type="video/mp4" />
-                            </video>
-                          </div>
-                        )}
                         {step.image && (
                           <div className="recipe-step-image">
                             <OptimizedImage src={step.image} alt={step.title} />
+                          </div>
+                        )}
+                        {step.video && (
+                          <div className="recipe-step-video">
+                            <video controls preload="metadata">
+                              <source src={step.video} type="video/mp4" />
+                            </video>
                           </div>
                         )}
                       </div>
@@ -369,33 +355,50 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
             </>
           )}
 
-          {!isBrewing && renderContentWithSpinners()}
+          <div 
+            className="hm-article-content"
+            dangerouslySetInnerHTML={{ __html: processedContent }}
+          />
 
-          {article.tags?.length > 0 && (
-            <div className="hm-article-tags">
-              <span className="hm-article-tags-label">Tags:</span>
-              {article.tags?.map((tag) => (
-                <Link key={tag} to={`/tag/${normalizeTagSlug(tag)}`} className="hm-article-tag">
-                  {tag}
-                </Link>
+          {article.galleryEmbeds && article.galleryEmbeds.length > 0 && (
+            <div className="hm-article-gallery-embeds">
+              {article.galleryEmbeds.map((embed) => (
+                <GalleryEmbed key={embed.slug} embed={embed} />
               ))}
             </div>
           )}
 
-          <ShareButtons
-            title={article.title}
-            url={shareUrl}
-            shareCounts={shareCounts}
-          />
+          <div className="hm-article-footer">
+            {article.tags && article.tags.length > 0 && (
+              <div className="hm-article-tags">
+                <span className="hm-article-tags-label">Tags:</span>
+                {article.tags.map((tag, index) => (
+                  <Link
+                    key={index}
+                    to={`/tag/${normalizeTagSlug(tag)}/`}
+                    className="hm-article-tag"
+                  >
+                    {tag}
+                  </Link>
+                ))}
+              </div>
+            )}
 
-          <Comments slug={article.slug} title={article.title} />
-            </article>
+            <ShareButtons
+              title={article.title}
+              url={shareUrl}
+              shareCounts={shareCounts}
+            />
+
+            <Comments slug={article.slug} title={article.title} />
+          </div>
+        </article>
 
             {(previousArticle || nextArticle) && (
               <nav className="hm-post-navigation">
                 {previousArticle && (
                   <div className="hm-nav-previous">
-                                        <span className="hm-nav-label">{isReview ? 'Previous Review' : 'Previous Article'}</span>
+                    <span className="hm-nav-label">{isReview ? 'Previous Review' : 'Previous Article'}</span>
                     <Link to={getArticlePath(previousArticle.frontmatter.slug, !!previousArticle.frontmatter.series?.name, hasTag(previousArticle.frontmatter.tags || [], 'reviews'))} className="hm-nav-title">
                       {previousArticle.frontmatter.title}
                     </Link>
@@ -403,7 +406,7 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
                 )}
                 {nextArticle && (
                   <div className="hm-nav-next">
-                                        <span className="hm-nav-label">{isReview ? 'Next Review' : 'Next Article'}</span>
+                    <span className="hm-nav-label">{isReview ? 'Next Review' : 'Next Article'}</span>
                     <Link to={getArticlePath(nextArticle.frontmatter.slug, !!nextArticle.frontmatter.series?.name, hasTag(nextArticle.frontmatter.tags || [], 'reviews'))} className="hm-nav-title">
                       {nextArticle.frontmatter.title}
                     </Link>
@@ -426,6 +429,13 @@ export const query = graphql`
     $author: String!
     $publishedAt: Date!
   ) {
+    site {
+      siteMetadata {
+        title
+        description
+        siteUrl
+      }
+    }
     markdownRemark(frontmatter: { slug: { eq: $slug } }, fileAbsolutePath: { regex: "/content/(posts|reviews|brewing)/" }) {
       id
       html
@@ -486,6 +496,9 @@ export const query = graphql`
           image
           video
         }
+        series {
+          name
+        }
       }
     }
     authorsJson(slug: { eq: $author }) {
@@ -538,6 +551,7 @@ export const Head: HeadFC<ArticleData> = ({ data }) => {
       image={data.markdownRemark.frontmatter.featuredImage}
       article={true}
       pathname={getArticlePath(data.markdownRemark.frontmatter.slug, !!data.markdownRemark.frontmatter.series?.name, isReview)}
+      siteMetadata={data.site.siteMetadata}
     />
   );
 };

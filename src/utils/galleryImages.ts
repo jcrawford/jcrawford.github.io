@@ -16,6 +16,10 @@ interface ResponsiveImage {
   height: number;
 }
 
+interface ResponsiveImageWithSources extends ResponsiveImage {
+  sources?: { srcSet: { src: string; width: number; height: number }[]; type: string }[];
+}
+
 /**
  * Given an original image src like `/images/galleries/album/photo.jpg`
  * and its intrinsic dimensions, returns an array of responsive variants
@@ -23,38 +27,62 @@ interface ResponsiveImage {
  *
  * Only includes variants that are smaller than or equal to the original
  * width (no upscaling).
+ *
+ * Includes both JPG and WebP sources for modern browsers.
  */
 export function buildSrcSetVariants(
   src: string,
   originalWidth: number,
   originalHeight: number
-): ResponsiveImage[] {
+): ResponsiveImageWithSources[] {
   const dotIndex = src.lastIndexOf('.');
   if (dotIndex === -1) return [];
 
   const base = src.substring(0, dotIndex);
-  const ext = src.substring(dotIndex + 1);
+  const ext = src.substring(dotIndex + 1).toLowerCase();
 
-  const variants: ResponsiveImage[] = [];
+  const variants: ResponsiveImageWithSources[] = [];
 
   for (const width of WIDTHS) {
     if (width > originalWidth) break;
 
     const height = Math.round((originalHeight / originalWidth) * width);
-    variants.push({
+    const imageVariant: ResponsiveImageWithSources = {
       src: `${base}_${width}w.${ext}`,
       width,
       height,
-    });
+    };
+
+    // Add WebP source for better compression
+    imageVariant.sources = [
+      {
+        srcSet: [{ src: `${base}_${width}w.webp`, width, height }],
+        type: 'image/webp',
+      },
+    ];
+
+    variants.push(imageVariant);
   }
 
   // Always include the original as the largest variant
   if (variants.length === 0 || variants[variants.length - 1].width < originalWidth) {
-    variants.push({
+    const originalVariant: ResponsiveImageWithSources = {
       src,
       width: originalWidth,
       height: originalHeight,
-    });
+    };
+
+    // Add WebP for original too if it's not already WebP
+    if (ext !== 'webp') {
+      originalVariant.sources = [
+        {
+          srcSet: [{ src: `${base}.webp`, width: originalWidth, height: originalHeight }],
+          type: 'image/webp',
+        },
+      ];
+    }
+
+    variants.push(originalVariant);
   }
 
   return variants;

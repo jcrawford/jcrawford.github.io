@@ -174,5 +174,10 @@ export const Head: HeadFC = () => (
   <SEO 
     title="404: Page Not Found"
     description="The page you're looking for doesn't exist."
+    siteMetadata={{
+      title: 'Joseph Crawford',
+      description: 'A blog relating to technical topics such as programming, web development, and software engineering.',
+      siteUrl: 'https://josephcrawford.com'
+    }}
   />
 );

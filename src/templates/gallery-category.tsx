@@ -226,7 +226,14 @@ export default GalleryCategoryTemplate;
 import { HeadFC } from 'gatsby';
 
 export const Head: HeadFC<GalleryCategoryData, GalleryCategoryContext> = ({ pageContext }) => (
-  <SEO title={pageContext.categoryTitle} />
+  <SEO 
+    title={pageContext.categoryTitle} 
+    siteMetadata={{
+      title: 'Joseph Crawford',
+      description: 'A blog relating to technical topics such as programming, web development, and software engineering.',
+      siteUrl: 'https://josephcrawford.com'
+    }}
+  />
 );
 
 export const query = graphql`

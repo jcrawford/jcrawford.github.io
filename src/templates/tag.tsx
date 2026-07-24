@@ -5,6 +5,13 @@ import ArticleCard from '../components/ArticleCard';
 import SEO from '../components/SEO';
 
 interface TagPageData {
+  site: {
+    siteMetadata: {
+      title: string;
+      description: string;
+      siteUrl: string;
+    };
+  };
   tagsJson: {
     name: string;
     slug: string;
@@ -167,6 +174,13 @@ const TagTemplate: React.FC<PageProps<TagPageData, TagPageContext>> = ({
 
 export const query = graphql`
   query TagQuery($slug: String!, $articleSlugs: [String!]!, $limit: Int!, $skip: Int!) {
+    site {
+      siteMetadata {
+        title
+        description
+        siteUrl
+      }
+    }
     tagsJson(slug: { eq: $slug }) {
       name
       slug
@@ -216,6 +230,7 @@ export const Head: HeadFC<TagPageData> = ({ data }) => (
     title={data.tagsJson.name}
     description={data.tagsJson.description}
     pathname={`/tag/${data.tagsJson.slug}`}
+    siteMetadata={data.site.siteMetadata}
   />
 );
 

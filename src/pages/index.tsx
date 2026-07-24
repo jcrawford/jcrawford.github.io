@@ -206,7 +206,14 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
 export default IndexPage;
 
 export const Head: HeadFC = () => (
-  <SEO title={undefined} />
+  <SEO 
+    title={undefined} 
+    siteMetadata={{
+      title: 'Joseph Crawford',
+      description: 'A blog relating to technical topics such as programming, web development, and software engineering.',
+      siteUrl: 'https://josephcrawford.com'
+    }}
+  />
 );
 
 export const query = graphql`
