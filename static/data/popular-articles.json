@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-07-24T15:13:22.234Z",
+  "generatedAt": "2026-07-24T19:47:51.262Z",
   "windowDays": 30,
   "entries": [
     {
       "id": "/reviews/budget-auto-rental-process-review",
-      "views": 123,
+      "views": 125,
       "comments": 0,
-      "score": 123,
+      "score": 125,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -73,6 +73,17 @@
       "views": 14,
       "comments": 0,
       "score": 14,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/home-brewing-journey",
+      "views": 13,
+      "comments": 0,
+      "score": 13,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -257,17 +268,6 @@
     },
     {
       "id": "/posts/claude-opus-4-7-whats-new",
-      "views": 1,
-      "comments": 0,
-      "score": 1,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/posts/typescript-7-beta-go-rewrite",
       "views": 1,
       "comments": 0,
       "score": 1,
