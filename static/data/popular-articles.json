@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-25T12:00:17.304Z",
+  "generatedAt": "2026-07-25T14:02:29.670Z",
   "windowDays": 30,
   "entries": [
     {
@@ -91,7 +91,7 @@
       }
     },
     {
-      "id": "/reviews/huupe-mini-review",
+      "id": "/posts/grok-4-5-cursor-first-impressions",
       "views": 12,
       "comments": 0,
       "score": 12,
@@ -102,10 +102,10 @@
       }
     },
     {
-      "id": "/posts/grok-4-5-cursor-first-impressions",
-      "views": 11,
+      "id": "/reviews/huupe-mini-review",
+      "views": 12,
       "comments": 0,
-      "score": 11,
+      "score": 12,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
