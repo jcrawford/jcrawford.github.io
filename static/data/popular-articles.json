@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-25T19:35:31.777Z",
+  "generatedAt": "2026-07-26T03:56:39.743Z",
   "windowDays": 30,
   "entries": [
     {
@@ -80,7 +80,7 @@
       }
     },
     {
-      "id": "/reviews/total-typescript-pro-complete-review",
+      "id": "/posts/grok-4-5-cursor-first-impressions",
       "views": 14,
       "comments": 0,
       "score": 14,
@@ -91,10 +91,10 @@
       }
     },
     {
-      "id": "/posts/grok-4-5-cursor-first-impressions",
-      "views": 12,
+      "id": "/reviews/total-typescript-pro-complete-review",
+      "views": 14,
       "comments": 0,
-      "score": 12,
+      "score": 14,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
