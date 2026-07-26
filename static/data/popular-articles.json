@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-26T03:56:39.743Z",
+  "generatedAt": "2026-07-26T08:39:55.218Z",
   "windowDays": 30,
   "entries": [
     {
@@ -125,9 +125,9 @@
     },
     {
       "id": "/posts/long-running-ai-agents-adk",
-      "views": 8,
+      "views": 7,
       "comments": 0,
-      "score": 8,
+      "score": 7,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
