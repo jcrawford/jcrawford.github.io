@@ -2,7 +2,7 @@
 slug: long-running-ai-agents-adk
 title: "Building Long-Running AI Agents That Actually Survive: A Practical Look at Google's ADK"
 excerpt: "Most agent tutorials build stateless chatbots that forget everything when the container restarts. Google's Agent Development Kit takes a different approach—durable state machines, event-driven dormancy, and multi-agent coordination. Here's how it works and why it matters."
-featuredImage: /images/content/long-running-agents-adk/featured.png
+featuredImage: /images/content/long-running-agents-adk/featured.jpg
 tags:
   - ai
   - developer-tools

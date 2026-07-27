@@ -2,7 +2,7 @@
 slug: qwen3-6-27b-flagship-coding-local
 title: "Qwen3.6-27B: Flagship Coding Performance You Can Run on Your Laptop"
 excerpt: "Qwen's newest 27-billion-parameter dense model claims to outperform the previous 397B MoE flagship on coding benchmarks—and it fits in 17GB of RAM. Here's what the numbers say, what the architecture looks like, and how to actually run it locally."
-featuredImage: /images/content/qwen3-6-27b-hero.png
+featuredImage: /images/content/qwen3-6-27b-hero.jpg
 tags:
   - AI
   - LLMs

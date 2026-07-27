@@ -2,7 +2,7 @@
 slug: gpt-5-5-first-impressions
 title: "GPT-5.5 First Impressions: What OpenAI's Latest Model Means for Developers"
 excerpt: "OpenAI just shipped GPT-5.5 with big claims about agentic coding, efficiency, and real-world autonomy. I haven't tried it yet—but here's what the announcement, benchmarks, and early signals tell us before Monday's hands-on test."
-featuredImage: /images/content/gpt-5-5-first-impressions-hero.png
+featuredImage: /images/content/gpt-5-5-first-impressions-hero.jpg
 tags:
   - ai
   - developer-tools
