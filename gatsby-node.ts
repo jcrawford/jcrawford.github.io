@@ -388,6 +388,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
   // Create article pages - use different templates for series vs standalone articles
   const articleTemplate = path.resolve('./src/templates/article.tsx');
   const seriesArticleTemplate = path.resolve('./src/templates/series-article.tsx');
+  const brewingRecipeTemplate = path.resolve('./src/templates/brewing-recipe.tsx');
 
   articles.forEach((article) => {
     const isSeries = !!article.frontmatter.series?.name;
@@ -411,7 +412,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
 
     createPage({
       path: articlePath,
-      component: isSeries ? seriesArticleTemplate : articleTemplate,
+      component: isSeries ? seriesArticleTemplate : isBrewing ? brewingRecipeTemplate : articleTemplate,
       context: {
         slug: article.frontmatter.slug,
         author: article.frontmatter.author,

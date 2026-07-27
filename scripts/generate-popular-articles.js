@@ -403,7 +403,7 @@ async function main() {
   ]);
 
   const popularArticles = Array.from(uniquePaths)
-    .filter((pathName) => pathName.startsWith('/posts/') || pathName.startsWith('/series/') || pathName.startsWith('/reviews/'))
+    .filter((pathName) => pathName.startsWith('/posts/') || pathName.startsWith('/series/') || pathName.startsWith('/reviews/') || pathName.startsWith('/brewing/'))
     .map((pathName) => {
       const views = viewsByPath.get(pathName) || 0;
       const comments = commentsByPath.get(pathName) || 0;
