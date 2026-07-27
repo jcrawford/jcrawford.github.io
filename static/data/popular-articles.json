@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-27T19:31:12.062Z",
+  "generatedAt": "2026-07-27T19:57:06.924Z",
   "windowDays": 30,
   "entries": [
     {
@@ -59,9 +59,9 @@
     },
     {
       "id": "/brewing/strawberry-wine",
-      "views": 27,
+      "views": 29,
       "comments": 0,
-      "score": 27,
+      "score": 29,
       "shares": {
         "facebook": 7,
         "linkedin": 0,
