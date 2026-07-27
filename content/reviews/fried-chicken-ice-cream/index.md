@@ -7,7 +7,7 @@ excerpt: >-
   — and somehow, it works.
 publishedAt: 2026-07-20
 author: joseph-crawford
-featuredImage: /images/content/posts/fried-chicken-ice-cream/featured.png
+featuredImage: /images/content/posts/fried-chicken-ice-cream/featured.jpg
 featuredImageAlt: Icenova Fried Chicken Ice Cream product packaging showing the crispy exterior with vanilla ice cream inside
 tags:
   - reviews
