@@ -49,7 +49,13 @@ html.hm-dark .fermentation-progress-title {
   overflow: hidden;
 }
 
-/* Inner fill that animates */
+/* Active segment needs overflow visible for tooltip */
+.ferment-segment.active {
+  overflow: visible;
+  cursor: pointer;
+}
+
+/* Inner fill - no animation for active segments (progress shown by gradient) */
 .ferment-segment::before {
   content: '';
   position: absolute;
@@ -58,30 +64,93 @@ html.hm-dark .fermentation-progress-title {
   width: 100%;
   height: 100%;
   border-radius: 5px;
+  background: var(--progress-pending);
+}
+
+/* Completed - animated green fill */
+.ferment-segment.completed::before {
+  background: var(--progress-complete);
   transform: scaleX(0);
   transform-origin: left;
   animation: fillSegment 0.5s ease-out forwards;
 }
 
-/* Staggered animation delays */
-.ferment-segment:nth-child(1)::before { animation-delay: 0s; }
-.ferment-segment:nth-child(2)::before { animation-delay: 0.5s; }
-.ferment-segment:nth-child(3)::before { animation-delay: 1s; }
-.ferment-segment:nth-child(4)::before { animation-delay: 1.5s; }
-.ferment-segment:nth-child(5)::before { animation-delay: 2s; }
-.ferment-segment:nth-child(6)::before { animation-delay: 2.5s; }
+/* Staggered animation delays for completed segments */
+.ferment-segment:nth-child(1).completed::before { animation-delay: 0s; }
+.ferment-segment:nth-child(2).completed::before { animation-delay: 0.5s; }
+.ferment-segment:nth-child(3).completed::before { animation-delay: 1s; }
+.ferment-segment:nth-child(4).completed::before { animation-delay: 1.5s; }
+.ferment-segment:nth-child(5).completed::before { animation-delay: 2s; }
+.ferment-segment:nth-child(6).completed::before { animation-delay: 2.5s; }
 
 @keyframes fillSegment {
   from { transform: scaleX(0); }
   to { transform: scaleX(1); }
 }
 
-/* Completed - green fill */
-.ferment-segment.completed::before {
-  background: var(--progress-complete);
+/* Tooltip for active segments - hover on desktop, tap on mobile */
+.ferment-segment.active {
+  cursor: pointer;
+  position: relative;
 }
 
-/* Active - gradient showing progress (orange = elapsed, grey = remaining) */
+/* Tooltip text using child span */
+.ferment-segment-tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+  pointer-events: none;
+  z-index: 100;
+}
+
+/* Arrow for tooltip */
+.ferment-segment-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid rgba(0, 0, 0, 0.85);
+}
+
+/* Show tooltip on hover (desktop) */
+@media (hover: hover) and (pointer: fine) {
+  .ferment-segment.active:hover .ferment-segment-tooltip {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* Show tooltip on active/tap (mobile) */
+.ferment-segment.active:active .ferment-segment-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mobile: also show tooltip on focus */
+.ferment-segment.active:focus .ferment-segment-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Tooltip must be above the ::before gradient fill */
+.ferment-segment.active .ferment-segment-tooltip {
+  z-index: 200;
+}
+
+/* Active - gradient showing progress with animation */
 .ferment-segment.active::before {
   background: linear-gradient(
     90deg,
@@ -90,6 +159,27 @@ html.hm-dark .fermentation-progress-title {
     var(--progress-pending) var(--segment-fill, 50%),
     var(--progress-pending) 100%
   );
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  z-index: 1;
+  animation: fillActiveSegment 0.8s ease-out forwards;
+}
+
+/* Staggered after all completed segments (max 6 segments * 0.5s + 0.5s delay = 3.5s) */
+.ferment-segment:nth-child(1).active::before { animation-delay: 0.5s; }
+.ferment-segment:nth-child(2).active::before { animation-delay: 1s; }
+.ferment-segment:nth-child(3).active::before { animation-delay: 1.5s; }
+.ferment-segment:nth-child(4).active::before { animation-delay: 2s; }
+.ferment-segment:nth-child(5).active::before { animation-delay: 2.5s; }
+.ferment-segment:nth-child(6).active::before { animation-delay: 3s; }
+
+@keyframes fillActiveSegment {
+  from {
+    background-size: 0% 100%;
+  }
+  to {
+    background-size: 100% 100%;
+  }
 }
 
 /* Stage labels */

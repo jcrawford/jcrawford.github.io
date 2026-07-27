@@ -5,9 +5,6 @@ excerpt: "How I started home brewing in 2022 with a 1-gallon mead kit and ended 
 featuredImage: /images/content/brewing/home-brewing-journey/featured.png
 tags:
   - brewing
-  - beer
-  - mead
-  - homebrew
 author: joseph-crawford
 publishedAt: '2026-07-23'
 type: post

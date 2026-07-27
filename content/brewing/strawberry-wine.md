@@ -68,3 +68,5 @@ steps:
 ## Awaiting the Taste Test
 
 Now these bottles will go on the shelf until one year has passed, at which point I will do a taste testing and update this post with the taste testing results.
+
+**Note on Secondary Fruit Addition:** I considered adding fresh strawberries to secondary fermentation for more vibrant color and flavor, similar to the cherry mead technique. However, when I treated the original fruit with a Camden tablet, I noticed the strawberries turned from bright red to a muted pink — I suspect this chemical reaction would affect any fresh fruit added later as well. Additionally, since fresh strawberries carry wild yeast on their surfaces, adding them to secondary could introduce unwanted fermentation activity and alter the wine's flavor profile. I opted to keep the secondary phase fruit-free and let the wine develop from the single fruit addition in primary.
