@@ -4,7 +4,7 @@ title: 'VIA Aquarium Review: A Rainy Day Surprise'
 excerpt: >-
   Sometimes the best-laid plans get washed away. A trip to Adirondack Animal Land
   that ended before it began — and the aquarium that saved the day.
-featuredImage: /images/content/posts/via-aquarium/featured.png
+featuredImage: /images/content/posts/via-aquarium/featured.jpg
 tags:
   - reviews
   - family
