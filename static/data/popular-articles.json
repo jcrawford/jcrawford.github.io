@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-27T22:27:13.268Z",
+  "generatedAt": "2026-07-27T22:34:11.688Z",
   "windowDays": 30,
   "entries": [
     {
@@ -37,9 +37,9 @@
     },
     {
       "id": "/posts/disney-vacation-2026",
-      "views": 55,
+      "views": 56,
       "comments": 0,
-      "score": 55,
+      "score": 56,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
