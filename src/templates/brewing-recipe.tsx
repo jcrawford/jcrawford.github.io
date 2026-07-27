@@ -97,9 +97,9 @@ const BrewingRecipeTemplate: React.FC<PageProps<RecipeData, BrewingRecipePageCon
   const ingredients = frontmatter.ingredients || [];
   const steps = frontmatter.steps || [];
 
-  // Track page view in GA4
+  // Track page view in GA4 (production only)
   useEffect(() => {
-    if (typeof window !== 'undefined' && window.gtag) {
+    if (typeof window !== 'undefined' && window.gtag && window.location.hostname === 'josephcrawford.com') {
       window.gtag('event', 'page_view', {
         page_path: `/brewing/${frontmatter.slug}`,
         page_title: frontmatter.title,
@@ -130,7 +130,7 @@ const BrewingRecipeTemplate: React.FC<PageProps<RecipeData, BrewingRecipePageCon
     { label: 'Start Date', value: brewData?.startDate ? formatDate(brewData.startDate) : undefined },
     { label: 'Secondary Start', value: brewData?.secondaryStartDate ? formatDate(brewData.secondaryStartDate) : undefined },
     { label: 'Bottling Date', value: brewData?.bottlingDate ? formatDate(brewData.bottlingDate) : undefined },
-  ].filter(item => item.value !== undefined);
+  ].filter(item => item.value !== undefined && item.value !== '' && item.value !== null);
 
   return (
     <Layout>
@@ -174,9 +174,11 @@ const BrewingRecipeTemplate: React.FC<PageProps<RecipeData, BrewingRecipePageCon
         {/* Featured Image */}
         {frontmatter.featuredImage && (
           <div className="brewing-recipe-featured-image">
-            <OptimizedImage
+            <img
               src={frontmatter.featuredImage}
               alt={frontmatter.title}
+              loading="eager"
+              style={{ width: '100%', height: 'auto', display: 'block' }}
             />
           </div>
         )}

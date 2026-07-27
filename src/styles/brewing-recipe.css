@@ -68,6 +68,11 @@ html.hm-dark .recipe-meta-separator {
   overflow: hidden;
 }
 
+.brewing-recipe-featured-image picture {
+  display: block;
+  width: 100%;
+}
+
 .brewing-recipe-featured-image img {
   width: 100%;
   height: auto;
@@ -243,6 +248,11 @@ html.hm-dark .recipe-step-content p {
   display: block;
 }
 
+.recipe-step-image picture {
+  display: block;
+  width: 100%;
+}
+
 /* Recipe Step Video - smaller than images */
 .recipe-step-video {
   max-width: 400px;
@@ -262,6 +272,7 @@ html.hm-dark .recipe-step-content p {
 /* Additional content */
 .recipe-additional-content {
   margin-top: 2rem;
+  padding-bottom: 2rem;
   line-height: 1.7;
   color: var(--hybridmag-color-text-main, #374151);
 }

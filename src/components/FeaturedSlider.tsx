@@ -52,10 +52,11 @@ const FeaturedSlider: React.FC<FeaturedSliderProps> = ({ articles }) => {
         <div className="hm-swiper-slide">
           <div className="hm-slide-holder">
             <div className="hm-slide-image">
-              <OptimizedImage 
+              <img 
                 src={currentArticle.featuredImage} 
                 alt={currentArticle.title}
                 loading="eager"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }}
               />
             </div>
             <div className="hm-fp-overlay">

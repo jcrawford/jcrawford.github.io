@@ -24,7 +24,7 @@ const ShareButtons: React.FC<ShareButtonsProps> = ({ title, url, variant = 'bott
   const [copied, setCopied] = useState(false);
 
   const trackShare = useCallback((method: string) => {
-    if (typeof window !== 'undefined' && window.gtag) {
+    if (typeof window !== 'undefined' && window.gtag && window.location.hostname === 'josephcrawford.com') {
       window.gtag('event', 'share', {
         method,
         content_url: url,
@@ -52,7 +52,9 @@ const ShareButtons: React.FC<ShareButtonsProps> = ({ title, url, variant = 'bott
       document.body.appendChild(textarea);
       textarea.select();
       document.execCommand('copy');
-      document.body.removeChild(textarea);
+      if (textarea.parentNode) {
+        textarea.parentNode.removeChild(textarea);
+      }
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
       trackShare('copy');

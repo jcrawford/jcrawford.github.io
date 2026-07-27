@@ -2,7 +2,7 @@
 slug: strawberry-wine
 title: "Strawberry Wine"
 excerpt: "A fresh strawberry wine made with pureed strawberries and a unique Camden tablet treatment to eliminate wild yeast before fermentation."
-featuredImage: /images/content/brewing/strawberry-wine/featured.png
+featuredImage: /images/content/brewing/strawberry-wine/featured.jpg
 tags:
   - brewing
   - wine

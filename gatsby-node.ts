@@ -60,18 +60,23 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
       startDate: Date
       primaryEndDate: Date
       secondaryStartDate: Date
+      secondaryEndDate: Date
       bottlingDate: Date
       drinkingReadyDate: Date
       abv: Float
       batchSize: String
       yeast: String
       fermentationTime: String
+      secondaryTime: String
+      bulkConditioningTime: String
+      bottleConditioningTime: String
     }
 
     type BrewingStep {
       title: String
       description: String
       image: String
+      video: String
     }
 
     type MarkdownRemarkFrontmatterReview {
@@ -428,6 +433,14 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
   });
 
   reporter.info(`Created ${articles.length} article pages`);
+
+  // Create brewing index page
+  const brewingIndexTemplate = path.resolve('./src/templates/brewing-index.tsx');
+  createPage({
+    path: '/brewing',
+    component: brewingIndexTemplate,
+  });
+  reporter.info('Created brewing index page: /brewing');
 
   // Create tag pages with pagination
   const tagTemplate = path.resolve('./src/templates/tag.tsx');
