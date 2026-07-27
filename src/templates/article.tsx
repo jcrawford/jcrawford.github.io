@@ -71,6 +71,7 @@ interface ArticleData {
       };
       review?: {
         rating: number;
+        childRating?: number;
         pros: string[];
         cons: string[];
         price?: string;
@@ -327,6 +328,7 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
           {article.review && (
             <ReviewBox
               rating={article.review.rating}
+              childRating={article.review.childRating}
               pros={article.review.pros}
               cons={article.review.cons}
               price={article.review.price}
@@ -491,6 +493,7 @@ export const query = graphql`
         galleryEmbeds
         review {
           rating
+          childRating
           pros
           cons
           price
