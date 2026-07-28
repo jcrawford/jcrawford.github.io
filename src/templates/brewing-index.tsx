@@ -141,12 +141,12 @@ const BrewingIndexTemplate: React.FC<PageProps<ListingData>> = ({
           </section>
         )}
 
-        {/* Brewing Posts Section */}
+        {/* Brewing Articles Section */}
         {brewingPosts.length > 0 && (
           <section className="brewing-section">
             <h2 className="brewing-section-title">
               <span className="section-icon">📝</span>
-              Brewing Posts
+              Brewing Articles
             </h2>
             <p className="brewing-section-description">
               Articles and notes about brewing techniques, equipment, and experiments.
