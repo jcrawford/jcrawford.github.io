@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-28T19:55:11.521Z",
+  "generatedAt": "2026-07-29T03:43:02.505Z",
   "windowDays": 30,
   "entries": [
     {
@@ -37,9 +37,9 @@
     },
     {
       "id": "/posts/disney-vacation-2026",
-      "views": 56,
+      "views": 65,
       "comments": 0,
-      "score": 56,
+      "score": 65,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -80,10 +80,10 @@
       }
     },
     {
-      "id": "/posts/grok-4-5-cursor-first-impressions",
-      "views": 14,
+      "id": "/reviews/total-typescript-pro-complete-review",
+      "views": 16,
       "comments": 0,
-      "score": 14,
+      "score": 16,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -91,7 +91,7 @@
       }
     },
     {
-      "id": "/reviews/total-typescript-pro-complete-review",
+      "id": "/posts/grok-4-5-cursor-first-impressions",
       "views": 14,
       "comments": 0,
       "score": 14,
