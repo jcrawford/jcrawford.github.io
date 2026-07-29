@@ -3,7 +3,7 @@
 /* Base Styles */
 body {
   margin: 0;
-  font-family: "Figtree", Helvetica, Arial, sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   font-size: 1rem;
   line-height: var(--hybridmag-line-height-body);
   color: var(--hybridmag-color-text-main);
@@ -863,11 +863,19 @@ html.hm-dark .hm-article {
   font-size: var(--hybridmag-font-size-md);
   line-height: var(--hybridmag-line-height-article);
   color: var(--hybridmag-color-text-main);
-  margin-bottom: 30px;
+  margin-bottom: 0;
+}
+
+.hm-article-content > *:last-child {
+  margin-bottom: 0;
 }
 
 .hm-article-content p {
   margin-bottom: 1.5em;
+}
+
+.hm-article-content p:last-child {
+  margin-bottom: 0;
 }
 
 .hm-article-content picture {
@@ -1039,14 +1047,27 @@ html.hm-dark .hm-article-content tbody tr:hover {
   opacity: 0.8;
 }
 
+.hm-article-content > *:last-child {
+  margin-bottom: 0;
+}
+
+.hm-article-footer {
+  padding: 0;
+  border-top: none;
+  margin-top: 50px;
+}
+
+.hm-article-footer > hr:first-child {
+  margin-top: 0;
+}
+
 .hm-article-tags {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 10px;
-  padding: 20px 0;
-  border-top: 1px solid var(--hybridmag-color-border);
-  margin-bottom: 30px;
+  padding: 0;
+  margin: 0;
 }
 
 .hm-article-tags-label {
@@ -1079,9 +1100,8 @@ html.hm-dark .hm-article-content tbody tr:hover {
   align-items: center;
   flex-wrap: wrap;
   gap: 12px;
-  padding: 20px 0;
-  margin-bottom: 30px;
-  border-top: 1px solid var(--hybridmag-color-border);
+  padding: 0;
+  margin: 0;
 }
 
 .hm-share-label {
@@ -1257,11 +1277,6 @@ html.hm-dark .hm-article-content tbody tr:hover {
   }
 }
 
-.hm-article-footer {
-  padding: 30px 0;
-  border-top: 2px solid var(--hybridmag-color-border);
-}
-
 .hm-article-author-bio {
   display: flex;
   gap: 20px;
@@ -1314,7 +1329,6 @@ html.hm-dark .hm-article-content tbody tr:hover {
 .hm-related-articles {
   margin-top: 50px;
   padding-top: 30px;
-  border-top: 2px solid var(--hybridmag-color-border);
 }
 
 .hm-related-articles-title {
@@ -1855,15 +1869,6 @@ html.hm-dark .hm-article-content tbody tr:hover {
   }
 }
 
-
-.hm-highlighted-post:hover .hmhp-details-container::before {
-  opacity: 0.7;
-}
-
-.hm-highlighted-post:hover .hmhp-title {
-  color: #ffffff;
-}
-
 .hmhp-thumbnail picture {
   display: block;
   width: 100%;
@@ -2207,6 +2212,7 @@ li.hm-tab a {
 }
 
 .hm-slide-image picture {
+  display: block;
   width: 100%;
   height: 100%;
 }
@@ -2219,12 +2225,7 @@ li.hm-tab a {
 }
 
 @media (max-width: 768px) {
-  .hm-slide-holder {
-    height: auto;
-    min-height: 200px;
-  }
-  .hm-slide-image {
-    position: relative;
+  .hm-slide-image picture {
     height: auto;
   }
   .hm-slide-image img {
@@ -2456,17 +2457,16 @@ body .hm-cl-sep #secondary .widget {
   display: none;
 }
 
-/* Tags spacing - no HR */
+/* Tags spacing — template already has HR separators */
 .hm-article-tags {
-  margin-top: 40px;
-  margin-bottom: 50px;
-  padding-top: 30px;
-  border-top: 1px solid var(--hybridmag-color-border);
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding-top: 0;
 }
 
-/* Related articles spacing - no HR before */
+/* Related articles spacing */
 .hm-related-articles {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 /* Dark mode for new meta styles */
@@ -3001,15 +3001,15 @@ html.hm-dark .hm-mobile-menu-social a {
 
 /* Comments Section (Giscus) */
 .hm-comments {
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--hybridmag-color-border, #E0E0E0);
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .hm-comments-heading {
   font-size: var(--hybridmag-font-size-xl, 1.5rem);
   font-weight: var(--hybridmag-font-weight-headings, 600);
-  margin-bottom: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
   color: var(--hybridmag-color-text-headings, #222222);
 }
 

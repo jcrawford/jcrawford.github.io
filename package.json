@@ -12,7 +12,7 @@
     "type-check": "tsc --noEmit",
     "generate:popular": "node scripts/generate-popular-articles.js",
     "optimize:images": "node scripts/optimize-images.js",
-    "deploy": "npm run optimize:images && npm run generate:popular && gatsby build && gh-pages -d public -t",
+    "deploy": "npm run optimize:images && npm run generate:popular && gatsby build && node scripts/strip-partytown-debug.js && gh-pages -d public -t",
     "download-images": "ts-node scripts/download-images.ts",
     "list-featured": "node scripts/list-featured.js",
     "clean-featured": "node scripts/clean-featured.js",

@@ -32,7 +32,7 @@ const GalleryEmbed: React.FC<GalleryEmbedProps> = ({
     : null;
 
   return (
-    <Link to={path || `/gallery/${slug}`} className="hm-gallery-embed">
+    <Link to={path || `/gallery/${slug}/`} className="hm-gallery-embed">
       <div className="hm-gallery-embed-image">
         <OptimizedImage
           src={coverImage}

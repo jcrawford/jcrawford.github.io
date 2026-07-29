@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { graphql, PageProps, HeadFC } from 'gatsby';
+import React, { Suspense, useEffect } from 'react';
+import { graphql, HeadFC, PageProps } from 'gatsby';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import OptimizedImage from '../components/OptimizedImage';
@@ -171,14 +171,13 @@ const BrewingRecipeTemplate: React.FC<PageProps<RecipeData, BrewingRecipePageCon
           )}
         </header>
 
-        {/* Featured Image */}
         {frontmatter.featuredImage && (
           <div className="brewing-recipe-featured-image">
-            <img
+            <OptimizedImage
               src={frontmatter.featuredImage}
               alt={frontmatter.title}
               loading="eager"
-              style={{ width: '100%', height: 'auto', display: 'block' }}
+              sizes="(max-width: 768px) 100vw, 850px"
             />
           </div>
         )}
@@ -238,6 +237,7 @@ const BrewingRecipeTemplate: React.FC<PageProps<RecipeData, BrewingRecipePageCon
                       <OptimizedImage
                         src={step.image}
                         alt={step.title}
+                        sizes="(max-width: 768px) 100vw, 850px"
                       />
                     </div>
                   )}
@@ -255,13 +255,17 @@ const BrewingRecipeTemplate: React.FC<PageProps<RecipeData, BrewingRecipePageCon
           />
         )}
 
-        <ShareButtons
-          title={frontmatter.title}
-          url={shareUrl}
-          shareCounts={shareCounts}
-        />
+        <div className="recipe-footer">
+          <ShareButtons
+            title={frontmatter.title}
+            url={shareUrl}
+            shareCounts={shareCounts}
+          />
 
-        <Comments slug={frontmatter.slug} title={frontmatter.title} />
+          <hr />
+
+          <Comments slug={frontmatter.slug} title={frontmatter.title} />
+        </div>
       </article>
     </Layout>
   );

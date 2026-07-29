@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
-import SearchOverlay from './SearchOverlay';
+const SearchOverlay = React.lazy(() => import('./SearchOverlay'));
 
 interface SiteMetadata {
   site: {
@@ -202,10 +202,12 @@ const Header: React.FC = () => {
       </div>
     </header>
     
-    <SearchOverlay 
-      isOpen={isSearchOpen} 
-      onClose={() => setIsSearchOpen(false)} 
-    />
+    <Suspense fallback={null}>
+      <SearchOverlay
+        isOpen={isSearchOpen}
+        onClose={() => setIsSearchOpen(false)}
+      />
+    </Suspense>
     
     {/* Mobile Navigation Menu */}
     {isMobileMenuOpen && (

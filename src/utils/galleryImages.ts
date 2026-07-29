@@ -2,13 +2,13 @@
  * Gallery image responsive utilities.
  *
  * Pre-generated variants live alongside originals as:
- *   {base}_480w.jpg, {base}_480w.webp, {base}_768w.jpg, etc.
+ *   {base}_64w.jpg, {base}_64w.webp, {base}_80w.jpg, etc.
  *
  * These helpers build srcSet arrays for react-photo-album and
  * yet-another-react-lightbox, which expect structured image objects.
  */
 
-const WIDTHS = [480, 768, 1200, 1920];
+const WIDTHS = [64, 80, 160, 280, 320, 400, 600, 768, 850, 1200, 1920];
 
 interface ResponsiveImage {
   src: string;

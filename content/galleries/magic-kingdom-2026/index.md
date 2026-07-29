@@ -11,7 +11,7 @@ videos:
     alt: "Cinderella Castle lit in blue and purple projections as the nighttime show begins"
   - src: /images/galleries/magic-kingdom-2026/mk-fireworks-show-02.mp4
     alt: "Golden fireworks bursting over Cinderella Castle during Happily Ever After"
-  - src: /images/galleries/magic-kingdom-2026/mk-fireworks-show-03.mov
+  - src: /images/galleries/magic-kingdom-2026/mk-fireworks-show-03.mp4
     alt: "Fireworks over Cinderella Castle during Happily Ever After"
   - src: /images/galleries/magic-kingdom-2026/mk-fireworks-show-04.mp4
     alt: "Fireworks firing from both sides of Cinderella Castle with colorful projections"
@@ -21,7 +21,7 @@ videos:
     alt: "Sparkling fireworks over Cinderella Castle with blue and orange projections"
   - src: /images/galleries/magic-kingdom-2026/mk-fireworks-show-07.mp4
     alt: "Cinderella Castle glowing blue and teal with fireworks smoke in the sky"
-  - src: /images/galleries/magic-kingdom-2026/mk-buzz-lightyear-ride.mov
+  - src: /images/galleries/magic-kingdom-2026/mk-buzz-lightyear-ride.mp4
     alt: "Riding through an indoor attraction at Magic Kingdom"
 photos:
   # Daytime — arrival on the ferry

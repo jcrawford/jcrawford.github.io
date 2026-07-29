@@ -29,18 +29,12 @@ const HighlightedPost: React.FC<HighlightedPostProps> = ({
           <OptimizedImage 
             src={featuredImage} 
             alt={title}
-            loading="eager"
+            loading="lazy"
+            sizes="(max-width: 768px) 50vw, 280px"
             className="hm-fpw-img"
           />
         </div>
-        <div className="hm-fp-overlay">
-          <Link className="hm-fp-link-overlay" to={articlePath} aria-label={title} />
-        </div>
-        <div className="hmhp-content">
-          <div className="hmhp-details-container">
-            <h3 className="hmhp-title">{title}</h3>
-          </div>
-        </div>
+        <Link className="hm-fp-link-overlay" to={articlePath} aria-label={title} />
       </div>
     </div>
   );

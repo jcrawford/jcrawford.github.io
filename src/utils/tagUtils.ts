@@ -15,3 +15,12 @@ export const tagMatches = (tag: string, expected: string): boolean => {
 export const hasTag = (tags: string[] = [], expected: string): boolean => {
   return tags.some((tag) => tagMatches(tag, expected));
 };
+
+const SPECIAL_TAG_ROUTES: Record<string, string> = {
+  brewing: '/brewing',
+};
+
+export const getTagPath = (tag: string): string => {
+  const slug = normalizeTagSlug(tag);
+  return SPECIAL_TAG_ROUTES[slug] || `/tag/${slug}`;
+};

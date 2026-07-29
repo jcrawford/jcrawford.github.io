@@ -164,7 +164,7 @@ const GalleryCategoryTemplate: React.FC<PageProps<GalleryCategoryData, GalleryCa
             src={categoryCoverImage}
             alt={categoryTitle}
             loading="eager"
-            sizes="100vw"
+            sizes="(max-width: 768px) 100vw, 1200px"
           />
           <div className="hm-gallery-category-hero-overlay">
             {breadcrumb}

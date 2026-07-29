@@ -5,6 +5,7 @@ excerpt: "No buildup, no countdown, no planning posts. We just... went. A surpri
 featuredImage: /images/content/disney-vacation-2026/hero.jpg
 tags:
   - family
+  - vacation
 author: joseph-crawford
 publishedAt: "2026-07-02"
 draft: false
@@ -13,9 +14,9 @@ imageSpinners:
     images:
   - id: adults-night
     images:
-      - src: /images/content/disney-vacation-2026/adults-night-01.mp4
+      - src: /images/content/disney-vacation-2026/adults-night-01-optimized.mp4
         alt: "Joseph and Ashley at the Slingshot on Father's Day night"
-      - src: /images/content/disney-vacation-2026/adults-night-02.mp4
+      - src: /images/content/disney-vacation-2026/adults-night-02-optimized.mp4
         alt: "Joseph and Ashley at the Slingshot on Father's Day night"
 galleryEmbeds:
   - slug: magic-kingdom-2026-album
@@ -93,12 +94,12 @@ This was the first time Starfall had ever flown, and it went up as the sun was r
 
 I did manage to see it from the resort, though. Just barely. It was a thin bright streak climbing over the treeline for a few seconds, then gone. Underwhelming from that distance, honestly — nothing like being on the coast would have been. But still cool to say I watched a Falcon 9 go up on vacation, even if it was through half-open eyes from a hotel parking lot.
 
-<video controls muted style="width: 100%; max-width: 800px; margin: 1em auto; display: block;">
-  <source src="/images/content/disney-vacation-2026/falcon-9-launch.mov" type="video/mp4">
+<video controls muted style="width: 100%; max-width: 800px; margin: 1em auto; display: block;" aria-label="A thin bright streak from the Falcon 9 launch climbing over the resort treeline at dawn">
+  <source src="/images/content/disney-vacation-2026/falcon-9-launch.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
-## The Magic Kingdom
+## Magic Kingdom
 
 This was our one park day. Just Magic Kingdom. Over $1,200 just to walk through the gate — so no park hopping, no splitting our time across four parks in two days. One park, one day, full send.
 

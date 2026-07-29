@@ -6,9 +6,10 @@ interface OptimizedImageProps {
   className?: string;
   loading?: 'lazy' | 'eager';
   sizes?: string;
+  fetchpriority?: 'high' | 'low' | 'auto';
 }
 
-const SIZES = [480, 768, 1200, 1920];
+const SIZES = [64, 80, 160, 280, 320, 400, 600, 768, 850, 1200, 1920];
 const DEFAULT_SIZES_ATTR = '(max-width: 768px) 100vw, (max-width: 1200px) 65vw, 1200px';
 
 // Directories where pre-generated responsive variants exist
@@ -20,7 +21,7 @@ function hasVariants(src: string): boolean {
 
 /**
  * Generates srcset string for responsive images.
- * Looks for pre-generated variants (e.g. image_480w.webp, image_768w.jpg)
+ * Looks for pre-generated variants (e.g. image_64w.webp, image_768w.jpg)
  * alongside the original image.
  */
 function generateSrcSet(src: string, extension: string): string | null {
@@ -43,6 +44,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   className,
   loading = 'lazy',
   sizes,
+  fetchpriority,
 }) => {
   if (!src) return null;
   const dotIndex = src.lastIndexOf('.');
@@ -55,7 +57,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   if (hasVariants(src)) {
     const webpSrcSet = generateSrcSet(src, 'webp');
     const jpgSrcSet = generateSrcSet(src, 'jpg');
-    const imgFallback = `${base}_480w.jpg`;
+    const imgFallback = `${base}_64w.jpg`;
 
     return (
       <picture>
@@ -79,6 +81,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
           className={className}
           loading={loading}
           decoding="async"
+          {...(fetchpriority ? { fetchPriority: fetchpriority } : {})}
         />
       </picture>
     );
@@ -92,6 +95,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
       className={className}
       loading={loading}
       decoding="async"
+      {...(fetchpriority ? { fetchPriority: fetchpriority } : {})}
     />
   );
 };

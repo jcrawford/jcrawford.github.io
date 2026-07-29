@@ -8,8 +8,8 @@
  * rewriting the HTML before it's injected via dangerouslySetInnerHTML.
  */
 
-const SIZES = [480, 768, 1200, 1920];
-const SIZES_ATTR = '(max-width: 768px) 100vw, (max-width: 1200px) 65vw, 1200px';
+const SIZES = [64, 80, 160, 280, 320, 400, 600, 768, 850, 1200, 1920];
+const SIZES_ATTR = '(max-width: 768px) 100vw, 850px';
 
 function generateSrcSet(src: string, extension: string): string {
   const dotIndex = src.lastIndexOf('.');
@@ -49,7 +49,7 @@ function imgToPicture(imgTag: string): string {
   
   const webpSrcSet = generateSrcSet(src, 'webp');
   const jpgSrcSet = generateSrcSet(src, 'jpg');
-  const imgFallback = `${base}_480w.jpg`;
+  const imgFallback = `${base}_850w.jpg`;
   
   const titleAttr = title ? ` title="${title}"` : '';
   const classAttr = className ? ` class="${className}"` : '';

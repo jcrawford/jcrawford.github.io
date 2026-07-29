@@ -14,7 +14,7 @@ const CONFIG = {
   webpQuality: 80,
   pngToJpgThreshold: 500 * 1024, // 500KB
   maxWidth: 1920,
-  variants: [480, 768, 1200, 1920],
+  variants: [64, 80, 160, 280, 320, 400, 600, 768, 850, 1200, 1920],
 };
 
 const STATIC_DIR = path.join(__dirname, '..', 'static', 'images');
@@ -171,13 +171,57 @@ function generateVariants(imagePath) {
   }
 }
 
+function pruneOrphanVariants() {
+  log('Pruning orphaned / stale variants...');
+  let removed = 0;
+
+  const files = execSync(`find "${STATIC_DIR}" -type f`)
+    .toString()
+    .split('\n')
+    .filter(Boolean);
+
+  for (const file of files) {
+    const basename = path.basename(file);
+    const match = basename.match(/^(.*)_(\d+)w\.(jpg|jpeg|png|webp)$/);
+    if (!match) continue;
+
+    const width = Number(match[2]);
+    if (!CONFIG.variants.includes(width)) {
+      try {
+        fs.unlinkSync(file);
+        removed++;
+        continue;
+      } catch (error) {
+        log(`Error deleting stale variant ${file}: ${error.message}`);
+        stats.errors++;
+      }
+    }
+
+    const dir = path.dirname(file);
+    const base = match[1];
+    const exts = ['.jpg', '.jpeg', '.png', '.webp'];
+    const originalExists = exts.some(ext => fs.existsSync(path.join(dir, base + ext)));
+    if (!originalExists) {
+      try {
+        fs.unlinkSync(file);
+        removed++;
+      } catch (error) {
+        log(`Error deleting orphan variant ${file}: ${error.message}`);
+        stats.errors++;
+      }
+    }
+  }
+
+  log(`Removed ${removed} stale/orphan variants`);
+}
+
 function processContentImages() {
   const contentDir = path.join(STATIC_DIR, 'content');
   if (!fs.existsSync(contentDir)) return;
 
   log('Processing content images...');
 
-  const files = execSync(`find "${contentDir}" -type f \\( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" \\)`)
+  const files = execSync(`find "${contentDir}" -type f \\( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.webp" \\)`)
     .toString()
     .split('\n')
     .filter(Boolean);
@@ -220,7 +264,7 @@ function processGalleryImages() {
   let galleryCount = 0;
   for (const gallery of galleries) {
     const galleryPath = path.join(galleriesDir, gallery);
-    const files = execSync(`find "${galleryPath}" -type f \\( -name "*.jpg" -o -name "*.jpeg" \\)`)
+    const files = execSync(`find "${galleryPath}" -type f \\( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" -o -name "*.webp" \\)`)
       .toString()
       .split('\n')
       .filter(f => f && !isVariantFile(f));
@@ -253,6 +297,7 @@ function main() {
 
   const startTime = Date.now();
 
+  pruneOrphanVariants();
   processContentImages();
   processGalleryImages();
 

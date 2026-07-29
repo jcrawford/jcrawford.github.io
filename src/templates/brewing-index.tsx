@@ -36,6 +36,10 @@ const BrewingIndexTemplate: React.FC<PageProps<ListingData>> = ({
   data,
 }) => {
   const recipes = data.allMarkdownRemark.nodes;
+  const [activeBrewTab, setActiveBrewTab] = React.useState<'active' | 'completed'>('active');
+  const [activePage, setActivePage] = React.useState(1);
+  const [completedPage, setCompletedPage] = React.useState(1);
+  const BREWS_PER_PAGE = 6;
 
   // Split recipes into Active and Completed based on drinkingReadyDate
   const today = new Date().toISOString().split('T')[0];
@@ -51,21 +55,28 @@ const BrewingIndexTemplate: React.FC<PageProps<ListingData>> = ({
     recipe.frontmatter.brewData.drinkingReadyDate <= today
   );
 
+  const paginatedActiveBrews = activeBrews.slice((activePage - 1) * BREWS_PER_PAGE, activePage * BREWS_PER_PAGE);
+  const activeTotalPages = Math.ceil(activeBrews.length / BREWS_PER_PAGE);
+  const paginatedCompletedBrews = completedBrews.slice((completedPage - 1) * BREWS_PER_PAGE, completedPage * BREWS_PER_PAGE);
+  const completedTotalPages = Math.ceil(completedBrews.length / BREWS_PER_PAGE);
+
   const brewingPosts = recipes.filter(
-    (recipe) => recipe.frontmatter.type !== 'brewing-recipe' &&
-    recipe.frontmatter.tags?.some((tag: string) => tag.toLowerCase() === 'brewing')
+    (recipe) => recipe.frontmatter.type !== 'brewing-recipe'
   );
 
+  const hasBrews = activeBrews.length > 0 || completedBrews.length > 0;
+
+  const handleTabChange = (tab: 'active' | 'completed') => {
+    setActiveBrewTab(tab);
+    if (tab === 'active') setActivePage(1);
+    else setCompletedPage(1);
+  };
+
   const RecipeCardComponent: React.FC<{ recipe: RecipeCard }> = ({ recipe }) => {
-    const isBrewingRecipe = recipe.frontmatter.type === 'brewing-recipe';
-    const linkPath = isBrewingRecipe 
-      ? `/brewing/${recipe.frontmatter.slug}`
-      : `/posts/${recipe.frontmatter.slug}`;
-    
     return (
       <Link
         key={recipe.id}
-        to={linkPath}
+        to={`/brewing/${recipe.frontmatter.slug}`}
         className="brewing-recipe-card"
       >
         {recipe.frontmatter.featuredImage && (
@@ -105,38 +116,110 @@ const BrewingIndexTemplate: React.FC<PageProps<ListingData>> = ({
           <p>Homebrew recipes, fermentation logs, and brewing notes.</p>
         </header>
 
-        {/* Active Brews Section */}
-        {activeBrews.length > 0 && (
-          <section className="brewing-section">
+        {/* My Brews Tab Section */}
+        {hasBrews && (
+          <section className="brewing-section brewing-section--my-brews">
             <h2 className="brewing-section-title">
               <span className="section-icon">🍺</span>
-              Active Brews
+              My Brews
             </h2>
             <p className="brewing-section-description">
-              Currently fermenting or conditioning — not quite ready to drink yet.
+              Active batches in progress and completed brews ready to drink.
             </p>
-            <div className="brewing-recipe-grid">
-              {activeBrews.map((recipe) => (
-                <RecipeCardComponent key={recipe.id} recipe={recipe} />
-              ))}
-            </div>
-          </section>
-        )}
 
-        {/* Completed Brews Section */}
-        {completedBrews.length > 0 && (
-          <section className="brewing-section">
-            <h2 className="brewing-section-title">
-              <span className="section-icon">🍻</span>
-              Completed Brews
-            </h2>
-            <p className="brewing-section-description">
-              Ready to drink — bottles are conditioned and tasting notes are in.
-            </p>
-            <div className="brewing-recipe-grid">
-              {completedBrews.map((recipe) => (
-                <RecipeCardComponent key={recipe.id} recipe={recipe} />
-              ))}
+            <div className="brewing-tabs" role="tablist" aria-label="My Brews">
+              <button
+                id="tab-active"
+                role="tab"
+                aria-selected={activeBrewTab === 'active'}
+                aria-controls="panel-active"
+                className={`brewing-tab ${activeBrewTab === 'active' ? 'brewing-tab--active' : ''}`}
+                onClick={() => handleTabChange('active')}
+              >
+                <span className="brewing-tab-icon">🍺</span>
+                Active
+                <span className="brewing-tab-count">{activeBrews.length}</span>
+              </button>
+              <button
+                id="tab-completed"
+                role="tab"
+                aria-selected={activeBrewTab === 'completed'}
+                aria-controls="panel-completed"
+                className={`brewing-tab ${activeBrewTab === 'completed' ? 'brewing-tab--active' : ''}`}
+                onClick={() => handleTabChange('completed')}
+              >
+                <span className="brewing-tab-icon">🍻</span>
+                Completed
+                <span className="brewing-tab-count">{completedBrews.length}</span>
+              </button>
+            </div>
+
+            <div
+              id="panel-active"
+              role="tabpanel"
+              aria-labelledby="tab-active"
+              className={`brewing-tab-panel ${activeBrewTab === 'active' ? 'brewing-tab-panel--active' : ''}`}
+            >
+              {paginatedActiveBrews.length > 0 ? (
+                <>
+                  <div className="brewing-recipe-grid">
+                    {paginatedActiveBrews.map((recipe) => (
+                      <RecipeCardComponent key={recipe.id} recipe={recipe} />
+                    ))}
+                  </div>
+                  {activeTotalPages > 1 && (
+                    <div className="brewing-pagination">
+                      {Array.from({ length: activeTotalPages }, (_, i) => i + 1).map((page) => (
+                        <button
+                          key={page}
+                          className={`brewing-pagination-button ${page === activePage ? 'active' : ''}`}
+                          onClick={() => setActivePage(page)}
+                          aria-label={`Active brews page ${page}`}
+                          aria-current={page === activePage ? 'page' : undefined}
+                        >
+                          {page}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </>
+              ) : (
+                <p className="brewing-tab-empty">No active brews right now.</p>
+              )}
+            </div>
+
+            <div
+              id="panel-completed"
+              role="tabpanel"
+              aria-labelledby="tab-completed"
+              className={`brewing-tab-panel ${activeBrewTab === 'completed' ? 'brewing-tab-panel--active' : ''}`}
+            >
+              {paginatedCompletedBrews.length > 0 ? (
+                <>
+                  <div className="brewing-recipe-grid">
+                    {paginatedCompletedBrews.map((recipe) => (
+                      <RecipeCardComponent key={recipe.id} recipe={recipe} />
+                    ))}
+                  </div>
+                  {completedTotalPages > 1 && (
+                    <div className="brewing-pagination">
+                      {Array.from({ length: completedTotalPages }, (_, i) => i + 1).map((page) => (
+                        <button
+                          key={page}
+                          className={`brewing-pagination-button ${page === completedPage ? 'active' : ''}`}
+                          onClick={() => setCompletedPage(page)}
+                          aria-label={`Completed brews page ${page}`}
+                          aria-current={page === completedPage ? 'page' : undefined}
+                        >
+                          {page}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </>
+              ) : (
+                <p className="brewing-tab-empty">No completed brews yet.</p>
+              )}
             </div>
           </section>
         )}
@@ -187,7 +270,7 @@ export const query = graphql`
   query BrewingIndexQuery {
     allMarkdownRemark(
       filter: {
-        fileAbsolutePath: { regex: "/content/(brewing|posts)/" }
+        fileAbsolutePath: { regex: "/content/brewing/" }
         frontmatter: { slug: { ne: null }, draft: { ne: true } }
       }
       sort: { frontmatter: { publishedAt: DESC } }

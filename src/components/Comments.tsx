@@ -8,22 +8,23 @@ interface CommentsProps {
 /**
  * Client-only Giscus comments using the script tag approach.
  * This avoids importing @giscus/react entirely, which crashes Gatsby SSR.
+ * The script itself is loaded lazily via `data-loading="lazy"`, but we also
+ * delay injecting it until the comments section is near the viewport so it
+ * doesn't compete with above-fold assets.
  */
 const Comments: React.FC<CommentsProps> = ({ slug }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [theme, setTheme] = useState<'light' | 'dark' | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
 
   useEffect(() => {
-    // Read the site's actual theme
     const isDark = document.documentElement.classList.contains('hm-dark');
     setTheme(isDark ? 'dark' : 'light');
 
-    // Watch for theme changes so Giscus stays in sync
     const observer = new MutationObserver(() => {
       const isNowDark = document.documentElement.classList.contains('hm-dark');
-      const newTheme = isNowDark ? 'dark' : 'light';
-      setTheme(newTheme);
+      setTheme(isNowDark ? 'dark' : 'light');
     });
 
     observer.observe(document.documentElement, {
@@ -35,12 +36,28 @@ const Comments: React.FC<CommentsProps> = ({ slug }) => {
   }, []);
 
   useEffect(() => {
-    if (!theme || !containerRef.current) return;
+    if (!containerRef.current || typeof IntersectionObserver === 'undefined') return;
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: '400px' }
+    );
+
+    io.observe(containerRef.current);
+    return () => io.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!theme || !containerRef.current || !isVisible) return;
 
     const existingIframe = containerRef.current.querySelector('iframe.giscus-frame');
 
     if (existingIframe) {
-      // If the iframe already exists, update its theme via postMessage
       existingIframe.contentWindow?.postMessage(
         { giscus: { setConfig: { theme } } },
         'https://giscus.app'
@@ -48,7 +65,6 @@ const Comments: React.FC<CommentsProps> = ({ slug }) => {
       return;
     }
 
-    // First load — create the script
     const script = document.createElement('script');
     script.src = 'https://giscus.app/client.js';
     script.setAttribute('data-repo', 'jcrawford/jcrawford.github.io');
@@ -67,7 +83,7 @@ const Comments: React.FC<CommentsProps> = ({ slug }) => {
     script.async = true;
 
     containerRef.current.appendChild(script);
-  }, [theme]);
+  }, [theme, isVisible]);
 
   return (
     <div className="hm-comments" aria-label="Comments section">

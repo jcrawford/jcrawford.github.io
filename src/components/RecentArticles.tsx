@@ -142,11 +142,12 @@ const RecentArticles: React.FC = () => {
           <article key={article.id} className="hms-post">
             <div className="hms-thumb">
               <Link to={articlePath}>
-                <OptimizedImage
-                  src={article.frontmatter.featuredImage}
-                  alt={article.frontmatter.title}
-                  className="attachment-thumbnail size-thumbnail wp-post-image"
-                />
+              <OptimizedImage
+                src={article.frontmatter.featuredImage}
+                alt={article.frontmatter.title}
+                className="attachment-thumbnail size-thumbnail wp-post-image"
+                sizes="80px"
+              />
               </Link>
             </div>
             <div className="hms-details">

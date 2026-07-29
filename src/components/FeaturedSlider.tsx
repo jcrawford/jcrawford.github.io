@@ -43,7 +43,7 @@ const FeaturedSlider: React.FC<FeaturedSliderProps> = ({ articles }) => {
 
   const currentArticle = articles[currentSlide];
   const isReview = currentArticle.tags?.some(t => t.toLowerCase() === 'reviews') ?? false;
-  const isBrewing = currentArticle.type === 'brewing-recipe';
+  const isBrewing = currentArticle.type === 'brewing-recipe' || (currentArticle.tags?.some(t => t.toLowerCase() === 'brewing') ?? false);
   const articlePath = getArticlePath(currentArticle.slug, currentArticle.isSeries, isReview, isBrewing);
 
   return (
@@ -52,11 +52,12 @@ const FeaturedSlider: React.FC<FeaturedSliderProps> = ({ articles }) => {
         <div className="hm-swiper-slide">
           <div className="hm-slide-holder">
             <div className="hm-slide-image">
-              <img 
-                src={currentArticle.featuredImage} 
+              <OptimizedImage
+                src={currentArticle.featuredImage}
                 alt={currentArticle.title}
                 loading="eager"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 65vw, 1200px"
+                fetchpriority="high"
               />
             </div>
             <div className="hm-fp-overlay">

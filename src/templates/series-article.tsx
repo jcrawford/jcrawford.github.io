@@ -261,6 +261,7 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData, SeriesArticle
                     src={article.featuredImage} 
                     alt={article.title}
                     loading="eager"
+                    sizes="(max-width: 768px) 100vw, 850px"
                   />
                 </div>
               )}
@@ -278,24 +279,32 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData, SeriesArticle
 
               {renderContentWithSpinners()}
 
-              {article.tags?.length > 0 && (
-                <div className="hm-article-tags">
-                  <span className="hm-article-tags-label">Tags:</span>
-                  {article.tags?.map((tag) => (
-                    <span key={tag} className="hm-article-tag">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              )}
+              <div className="hm-article-footer">
+                <hr />
 
-              <ShareButtons
-                title={article.title}
-                url={shareUrl}
-                shareCounts={shareCounts}
-              />
+                {article.tags?.length > 0 && (
+                  <div className="hm-article-tags">
+                    <span className="hm-article-tags-label">Tags:</span>
+                    {article.tags?.map((tag) => (
+                      <span key={tag} className="hm-article-tag">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
 
-              <Comments slug={article.slug} title={article.title} />
+                {article.tags?.length > 0 && <hr />}
+
+                <ShareButtons
+                  title={article.title}
+                  url={shareUrl}
+                  shareCounts={shareCounts}
+                />
+
+                <hr />
+
+                <Comments slug={article.slug} title={article.title} />
+              </div>
             </article>
 
             {/* Series Navigation - Bottom */}

@@ -272,9 +272,18 @@ html.hm-dark .recipe-step-content p {
 /* Additional content */
 .recipe-additional-content {
   margin-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 0;
   line-height: 1.7;
   color: var(--hybridmag-color-text-main, #374151);
+}
+
+.recipe-additional-content > *:last-child {
+  margin-bottom: 0;
+}
+
+.recipe-footer {
+  padding: 0;
+  border-top: none;
 }
 
 html.hm-dark .recipe-additional-content {

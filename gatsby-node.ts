@@ -415,9 +415,11 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
     // Look up view/comment counts for this article path
     const metrics = metricsByPath.get(articlePath) || { views: 0, comments: 0, shares: { facebook: 0, linkedin: 0, copy: 0 } };
 
+    const isBrewingRecipe = isBrewing && article.frontmatter.type === 'brewing-recipe';
+
     createPage({
       path: articlePath,
-      component: isSeries ? seriesArticleTemplate : isBrewing ? brewingRecipeTemplate : articleTemplate,
+      component: isSeries ? seriesArticleTemplate : isBrewingRecipe ? brewingRecipeTemplate : articleTemplate,
       context: {
         slug: article.frontmatter.slug,
         author: article.frontmatter.author,

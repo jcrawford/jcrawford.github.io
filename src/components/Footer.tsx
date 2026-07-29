@@ -123,25 +123,26 @@ const Footer: React.FC = () => {
                   const articlePath = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name, isReview, isBrewing);
                   return (
                     <div key={article.id} className="hms-post clearfix">
-                      <div className="hms-thumb">
-                        <Link to={articlePath}>
-                          <OptimizedImage
-                            src={article.frontmatter.featuredImage}
-                            alt={article.frontmatter.title}
-                            className="attachment-thumbnail size-thumbnail wp-post-image"
-                          />
-                        </Link>
-                      </div>
-                      <div className="hms-details">
-                        <h3 className="hms-title">
-                          <Link to={articlePath}>{article.frontmatter.title}</Link>
-                        </h3>
-                      <div className="entry-meta">
-                        <time className="entry-date published" dateTime={article.frontmatter.publishedAt}>
-                          {formatDate(article.frontmatter.publishedAt)}
-                        </time>
-                      </div>
+                  <div className="hms-thumb">
+                    <Link to={articlePath}>
+                      <OptimizedImage
+                        src={article.frontmatter.featuredImage}
+                        alt={article.frontmatter.title}
+                        className="attachment-thumbnail size-thumbnail wp-post-image"
+                        sizes="64px"
+                      />
+                    </Link>
+                  </div>
+                  <div className="hms-details">
+                    <h3 className="hms-title">
+                      <Link to={articlePath}>{article.title}</Link>
+                    </h3>
+                    <div className="entry-meta">
+                      <time className="entry-date published" dateTime={article.frontmatter.publishedAt}>
+                        {formatDate(article.frontmatter.publishedAt)}
+                      </time>
                     </div>
+                  </div>
                   </div>
                   );
                 })}
@@ -160,25 +161,26 @@ const Footer: React.FC = () => {
                   const articlePath = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name, isReview, isBrewing);
                   return (
                     <div key={article.id} className="hms-post clearfix">
-                      <div className="hms-thumb">
-                        <Link to={articlePath}>
-                          <OptimizedImage 
-                            src={article.frontmatter.featuredImage} 
-                            alt={article.frontmatter.title}
-                            className="attachment-thumbnail size-thumbnail wp-post-image"
-                          />
-                        </Link>
-                      </div>
-                      <div className="hms-details">
-                        <h3 className="hms-title">
-                          <Link to={articlePath}>{article.frontmatter.title}</Link>
-                        </h3>
-                      <div className="entry-meta">
-                        <time className="entry-date published" dateTime={article.frontmatter.publishedAt}>
-                          {formatDate(article.frontmatter.publishedAt)}
-                        </time>
-                      </div>
+                  <div className="hms-thumb">
+                    <Link to={articlePath}>
+                      <OptimizedImage
+                        src={article.frontmatter.featuredImage}
+                        alt={article.frontmatter.title}
+                        className="attachment-thumbnail size-thumbnail wp-post-image"
+                        sizes="64px"
+                      />
+                    </Link>
+                  </div>
+                  <div className="hms-details">
+                    <h3 className="hms-title">
+                      <Link to={articlePath}>{article.title}</Link>
+                    </h3>
+                    <div className="entry-meta">
+                      <time className="entry-date published" dateTime={article.frontmatter.publishedAt}>
+                        {formatDate(article.frontmatter.publishedAt)}
+                      </time>
                     </div>
+                  </div>
                   </div>
                   );
                 })}
@@ -196,25 +198,26 @@ const Footer: React.FC = () => {
                   const articlePath = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name, isReview);
                   return (
                     <div key={article.id} className="hms-post clearfix">
-                      <div className="hms-thumb">
-                        <Link to={articlePath}>
-                          <OptimizedImage 
-                            src={article.frontmatter.featuredImage} 
-                            alt={article.frontmatter.title}
-                            className="attachment-thumbnail size-thumbnail wp-post-image"
-                          />
-                        </Link>
-                      </div>
-                      <div className="hms-details">
-                        <h3 className="hms-title">
-                          <Link to={articlePath}>{article.frontmatter.title}</Link>
-                        </h3>
-                      <div className="entry-meta">
-                        <time className="entry-date published" dateTime={article.frontmatter.publishedAt}>
-                          {formatDate(article.frontmatter.publishedAt)}
-                        </time>
-                      </div>
+                  <div className="hms-thumb">
+                    <Link to={articlePath}>
+                      <OptimizedImage
+                        src={article.frontmatter.featuredImage}
+                        alt={article.frontmatter.title}
+                        className="attachment-thumbnail size-thumbnail wp-post-image"
+                        sizes="64px"
+                      />
+                    </Link>
+                  </div>
+                  <div className="hms-details">
+                    <h3 className="hms-title">
+                      <Link to={articlePath}>{article.title}</Link>
+                    </h3>
+                    <div className="entry-meta">
+                      <time className="entry-date published" dateTime={article.frontmatter.publishedAt}>
+                        {formatDate(article.frontmatter.publishedAt)}
+                      </time>
                     </div>
+                  </div>
                   </div>
                   );
                 })}

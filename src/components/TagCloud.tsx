@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
-import { hasTag } from '../utils/tagUtils';
+import { hasTag, getTagPath } from '../utils/tagUtils';
 
 interface TagCloudItem {
   slug: string;
@@ -110,7 +110,7 @@ const TagCloud: React.FC = () => {
         {tagCloudItems.map((tag) => (
           <Link
             key={tag.slug}
-            to={`/tag/${tag.slug}`}
+            to={getTagPath(tag.slug)} 
             className={`tag-cloud-item tag-${tag.size} tag-color-${tag.color}`}
             aria-label={`${tag.name} (${tag.count} ${tag.count === 1 ? 'article' : 'articles'})`}
             title={`${tag.count} ${tag.count === 1 ? 'article' : 'articles'}`}

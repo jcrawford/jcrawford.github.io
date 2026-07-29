@@ -58,7 +58,8 @@ const ImageSpinner: React.FC<ImageSpinnerProps> = ({ images }) => {
                 <OptimizedImage
                   src={currentImage.src}
                   alt={currentImage.alt}
-                  loading="eager"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, 850px"
                 />
               )}
             </div>

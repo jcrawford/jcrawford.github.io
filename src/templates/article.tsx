@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { graphql, Link, PageProps, HeadFC } from 'gatsby';
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
@@ -11,13 +11,65 @@ import ImageSpinner from '../components/ImageSpinner';
 import GalleryEmbed from '../components/GalleryEmbed';
 import ShareButtons from '../components/ShareButtons';
 import { getArticlePath } from '../utils/articlePath';
-import { hasTag, normalizeTagSlug, tagMatches } from '../utils/tagUtils';
-import { postProcessImages, postProcessTables } from '../utils/postProcessImages';
+import { hasTag, getTagPath } from '../utils/tagUtils';
+import { postProcessImages } from '../utils/postProcessImages';
 import '../styles/review.css';
 import '../styles/tag-cloud.css';
 import '../styles/brewing-recipe.css';
 
-import FermentationProgress from '../components/FermentationProgress';
+const FermentationProgress = React.lazy(() => import('../components/FermentationProgress'));
+
+/**
+ * Split article HTML into segments and inline any matching gallery embeds
+ * at their `\u003c!-- gallery:slug --\u003e` markers.
+ */
+function renderContentWithInlineEmbeds(
+  html: string,
+  embedBySlug: Map<string, GalleryEmbedData>
+): React.ReactNode[] {
+  const nodes: React.ReactNode[] = [];
+  const placeholderRegex = /<div data-gallery-embed="([^"]+)"[^\u003e]*\u003e<\/div\u003e/g;
+  let lastIndex = 0;
+  let match;
+
+  while ((match = placeholderRegex.exec(html)) !== null) {
+    const before = html.slice(lastIndex, match.index);
+    if (before) {
+      nodes.push(
+        <div
+          key={`html-${lastIndex}`}
+          className="hm-article-content"
+          dangerouslySetInnerHTML={{ __html: before }}
+        />
+      );
+    }
+
+    const slug = match[1];
+    const embed = embedBySlug.get(slug);
+    if (embed) {
+      nodes.push(
+        <div key={`embed-${slug}`} className="hm-article-gallery-embeds">
+          <GalleryEmbed {...embed} />
+        </div>
+      );
+    }
+
+    lastIndex = placeholderRegex.lastIndex;
+  }
+
+  const trailing = html.slice(lastIndex);
+  if (trailing) {
+    nodes.push(
+      <div
+        key={`html-end`}
+        className="hm-article-content"
+        dangerouslySetInnerHTML={{ __html: trailing }}
+      />
+    );
+  }
+
+  return nodes;
+}
 
 interface SpinnerImage {
   src: string;
@@ -170,11 +222,29 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
   
   const shareUrl = typeof window !== 'undefined' ? window.location.href : `https://josephcrawford.com${getArticlePath(article.slug, !!article.series?.name, isReview)}`;
   
-  const processedContent = postProcessTables(
-    postProcessImages(data.markdownRemark.html || ''),
-    article.slug
+  const processedContent = postProcessImages(data.markdownRemark.html || '');
+
+  // Build a lookup of gallery embeds by slug and replace <!-- gallery:slug -->
+  // markers in the processed HTML with placeholders so React can render embeds
+  // inline inside their relevant sections instead of only at the end.
+  const galleryEmbedBySlug = new Map(
+    (article.galleryEmbeds || []).map((embed) => [embed.slug, embed])
   );
-  
+
+  const contentWithPlaceholders = processedContent.replace(
+    /<!--\s*gallery:([\w-]+)\s*-->/g,
+    (_match, slug) => {
+      if (galleryEmbedBySlug.has(slug)) {
+        return `<div data-gallery-embed="${slug}" aria-hidden="true"></div>`;
+      }
+      return '';
+    }
+  );
+
+  const unusedEmbeds = (article.galleryEmbeds || []).filter(
+    (embed) => !contentWithPlaceholders.includes(`data-gallery-embed="${embed.slug}"`)
+  );
+
   const previousArticle = data.previousArticle?.nodes?.[0] || null;
   const nextArticle = data.nextArticle?.nodes?.[0] || null;
 
@@ -245,14 +315,14 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
               {isReview ? (
                 <span className="hm-article-category">Review</span>
               ) : isBrewing ? (
-                <Link to="/tag/brewing/" className="hm-article-category">Brewing</Link>
+                <Link to="/brewing/" className="hm-article-category">Brewing</Link>
               ) : (
                 article.tags && article.tags.length > 0 && (
                   <div className="hm-article-categories">
                     {article.tags.filter(tag => tag !== 'reviews').slice(0, 3).map((tag, index) => (
                       <Link
                         key={index}
-                        to={`/tag/${normalizeTagSlug(tag)}/`}
+                        to={`${getTagPath(tag)}/`}
                         className="hm-article-category"
                       >
                         {tag}
@@ -308,14 +378,16 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
                   <OptimizedImage 
                     src={article.featuredImage} 
                     alt={article.title}
-                    loading="eager"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 850px"
                   />
                 </a>
               ) : (
                 <OptimizedImage 
                   src={article.featuredImage} 
                   alt={article.title}
-                  loading="eager"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, 850px"
                 />
               )}
             </div>
@@ -340,7 +412,9 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
 
           {isBrewing && article.brewData && (
             <>
-              <FermentationProgress brewData={article.brewData} />
+              <Suspense fallback={null}>
+                <FermentationProgress brewData={article.brewData} />
+              </Suspense>
               
               {article.ingredients && article.ingredients.length > 0 && (
                 <section className="recipe-ingredients">
@@ -382,27 +456,26 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
             </>
           )}
 
-          <div 
-            className="hm-article-content"
-            dangerouslySetInnerHTML={{ __html: processedContent }}
-          />
+          {renderContentWithInlineEmbeds(contentWithPlaceholders, galleryEmbedBySlug)}
 
-          {article.galleryEmbeds && article.galleryEmbeds.length > 0 && (
+          {unusedEmbeds.length > 0 && (
             <div className="hm-article-gallery-embeds">
-              {article.galleryEmbeds.map((embed) => (
-                <GalleryEmbed key={embed.slug} embed={embed} />
+              {unusedEmbeds.map((embed) => (
+                <GalleryEmbed key={embed.slug} {...embed} />
               ))}
             </div>
           )}
 
           <div className="hm-article-footer">
+            <hr />
+
             {article.tags && article.tags.length > 0 && (
               <div className="hm-article-tags">
                 <span className="hm-article-tags-label">Tags:</span>
                 {article.tags.map((tag, index) => (
                   <Link
                     key={index}
-                    to={`/tag/${normalizeTagSlug(tag)}/`}
+                    to={`${getTagPath(tag)}/`}
                     className="hm-article-tag"
                   >
                     {tag}
@@ -411,11 +484,15 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
               </div>
             )}
 
+            {article.tags && article.tags.length > 0 && <hr />}
+
             <ShareButtons
               title={article.title}
               url={shareUrl}
               shareCounts={shareCounts}
             />
+
+            <hr />
 
             <Comments slug={article.slug} title={article.title} />
           </div>

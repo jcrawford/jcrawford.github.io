@@ -1,17 +1,19 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, Suspense } from 'react';
 import { Link, graphql, PageProps } from 'gatsby';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import { RowsPhotoAlbum } from 'react-photo-album';
 import 'react-photo-album/rows.css';
-import Lightbox from 'yet-another-react-lightbox';
+
+const Lightbox = React.lazy(() => import('yet-another-react-lightbox'));
+const Thumbnails = React.lazy(() => import('yet-another-react-lightbox/plugins/thumbnails').then((m) => ({ default: m.default ?? m })));
+const Zoom = React.lazy(() => import('yet-another-react-lightbox/plugins/zoom').then((m) => ({ default: m.default ?? m })));
+const Captions = React.lazy(() => import('yet-another-react-lightbox/plugins/captions').then((m) => ({ default: m.default ?? m })));
+const Counter = React.lazy(() => import('yet-another-react-lightbox/plugins/counter').then((m) => ({ default: m.default ?? m })));
+
 import 'yet-another-react-lightbox/styles.css';
-import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
 import 'yet-another-react-lightbox/plugins/thumbnails.css';
-import Zoom from 'yet-another-react-lightbox/plugins/zoom';
-import Captions from 'yet-another-react-lightbox/plugins/captions';
 import 'yet-another-react-lightbox/plugins/captions.css';
-import Counter from 'yet-another-react-lightbox/plugins/counter';
 import 'yet-another-react-lightbox/plugins/counter.css';
 import type { GalleryPhoto, GalleryVideo } from '../types/gallery';
 import { buildSrcSetVariants, buildWebpSrcSetVariants, GALLERY_SIZES } from '../utils/galleryImages';
@@ -175,33 +177,37 @@ const GalleryAlbumTemplate: React.FC<PageProps<GalleryAlbumData, GalleryAlbumCon
           />
         </div>
 
-        <Lightbox
-          open={lightboxIndex >= 0}
-          close={closeLightbox}
-          index={lightboxIndex}
-          slides={lightboxSlides}
-          plugins={[Thumbnails, Zoom, Captions, Counter]}
-          animation={{ swipe: 300 }}
-          carousel={{ finite: false }}
-          styles={{
-            container: { backgroundColor: 'rgba(0, 0, 0, 0.92)' },
-          }}
-          render={{
-            slideFooter: () => {
-              const currentPhoto = lightboxIndex >= 0 ? photos[lightboxIndex] : null;
-              const viewCount = currentPhoto ? (photoViewCounts?.[currentPhoto.src] || 0) : 0;
-              return (
-                <div className="hm-photo-view-badge">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                    <circle cx="12" cy="12" r="3" />
-                  </svg>
-                  {viewCount} {viewCount === 1 ? 'view' : 'views'}
-                </div>
-              );
-            },
-          }}
-        />
+        {lightboxIndex >= 0 && (
+          <Suspense fallback={null}>
+            <Lightbox
+              open={lightboxIndex >= 0}
+              close={closeLightbox}
+              index={lightboxIndex}
+              slides={lightboxSlides}
+              plugins={[Thumbnails, Zoom, Captions, Counter]}
+              animation={{ swipe: 300 }}
+              carousel={{ finite: false }}
+              styles={{
+                container: { backgroundColor: 'rgba(0, 0, 0, 0.92)' },
+              }}
+              render={{
+                slideFooter: () => {
+                  const currentPhoto = lightboxIndex >= 0 ? photos[lightboxIndex] : null;
+                  const viewCount = currentPhoto ? (photoViewCounts?.[currentPhoto.src] || 0) : 0;
+                  return (
+                    <div className="hm-photo-view-badge">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                      {viewCount} {viewCount === 1 ? 'view' : 'views'}
+                    </div>
+                  );
+                },
+              }}
+            />
+          </Suspense>
+        )}
 
         <nav className="hm-gallery-back">
           {categoryPath && categoryTitle ? (

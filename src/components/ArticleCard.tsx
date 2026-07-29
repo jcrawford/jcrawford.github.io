@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import { formatDate } from '../utils/dateUtils';
 import { truncateText } from '../utils/textUtils';
 import { getArticlePath } from '../utils/articlePath';
-import { hasTag, normalizeTagSlug, tagMatches } from '../utils/tagUtils';
+import { hasTag, normalizeTagSlug, tagMatches, getTagPath } from '../utils/tagUtils';
 import OptimizedImage from './OptimizedImage';
 
 interface ArticleCardProps {
@@ -44,6 +44,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
             src={featuredImage} 
             alt={title}
             loading="lazy"
+            sizes="(max-width: 768px) 100vw, 400px"
           />
         </span>
       </Link>
@@ -51,7 +52,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
       <div className="hm-article-card-content">
         {primaryTag && (
           <Link 
-            to={`/tag/${normalizeTagSlug(primaryTag)}`}
+            to={getTagPath(primaryTag)}
             className="hm-article-card-category"
             target="_blank"
             rel="noopener noreferrer"

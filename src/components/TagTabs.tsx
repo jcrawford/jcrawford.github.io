@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import OptimizedImage from './OptimizedImage';
 import { formatDate } from '../utils/dateUtils';
 import { getArticlePath } from '../utils/articlePath';
-import { hasTag } from '../utils/tagUtils';
+import { hasTag, getTagPath } from '../utils/tagUtils';
 
 interface Article {
   id: string;
@@ -132,7 +132,7 @@ const TagTabs: React.FC<TagTabsProps> = ({ tags, articles, excludeSlugs = [] }) 
         </ul>
         {activeTag && (
           <Link 
-            to={`/tag/${activeTag.slug}`} 
+            to={getTagPath(activeTag.slug)} 
             className="hm-view-more-link"
           >
             View More
@@ -160,6 +160,7 @@ const TagTabs: React.FC<TagTabsProps> = ({ tags, articles, excludeSlugs = [] }) 
                           src={displayData.featuredImage} 
                           alt={displayData.title}
                           loading="lazy"
+                          sizes="(max-width: 600px) 100vw, (max-width: 767px) 50vw, 25vw"
                         />
                       </Link>
                     </div>
