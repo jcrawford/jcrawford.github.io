@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-29T12:59:44.721Z",
+  "generatedAt": "2026-07-29T14:33:20.154Z",
   "windowDays": 30,
   "entries": [
     {
@@ -146,6 +146,17 @@
       }
     },
     {
+      "id": "/brewing/small-batch-brewing-required-tools",
+      "views": 6,
+      "comments": 0,
+      "score": 6,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/posts/spacex-buys-cursor-60-billion",
       "views": 6,
       "comments": 0,
@@ -227,17 +238,6 @@
       "views": 3,
       "comments": 0,
       "score": 3,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/brewing/small-batch-brewing-required-tools",
-      "views": 2,
-      "comments": 0,
-      "score": 2,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
