@@ -17,6 +17,8 @@ brewData:
   finalGravity: 0.996
   startDate: '2026-05-19'
   primaryEndDate: '2026-05-30'
+  secondaryStartDate: '2026-05-30'
+  secondaryEndDate: '2026-07-22'
   bottlingDate: '2026-07-22'
   drinkingReadyDate: '2026-07-22'
   yeast: "Red Star Premier Côte"

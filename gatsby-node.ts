@@ -322,6 +322,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
             tags
             author
             publishedAt
+            type
             series {
               name
               order
