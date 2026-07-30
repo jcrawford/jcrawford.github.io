@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-29T19:45:42.914Z",
+  "generatedAt": "2026-07-30T03:30:52.318Z",
   "windowDays": 30,
   "entries": [
     {
@@ -190,6 +190,17 @@
       }
     },
     {
+      "id": "/brewing/dandelion-mead",
+      "views": 4,
+      "comments": 0,
+      "score": 4,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/posts/gpt-5-5-first-impressions",
       "views": 3,
       "comments": 0,
@@ -257,17 +268,6 @@
     },
     {
       "id": "/posts/openai-codex-expansion-developer-guide",
-      "views": 2,
-      "comments": 0,
-      "score": 2,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/posts/saferide-health",
       "views": 2,
       "comments": 0,
       "score": 2,
