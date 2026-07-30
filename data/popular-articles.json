@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-30T13:32:33.664Z",
+  "generatedAt": "2026-07-30T13:45:24.608Z",
   "windowDays": 30,
   "entries": [
     {
@@ -42,6 +42,28 @@
       "score": 65,
       "shares": {
         "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/brewing/strawberry-wine",
+      "views": 43,
+      "comments": 0,
+      "score": 43,
+      "shares": {
+        "facebook": 7,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/brewing/cherry-mead",
+      "views": 34,
+      "comments": 0,
+      "score": 34,
+      "shares": {
+        "facebook": 4,
         "linkedin": 0,
         "copy": 0
       }
@@ -249,28 +271,6 @@
       "views": 3,
       "comments": 0,
       "score": 3,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/posts/nasa-artemis-return-to-the-moon",
-      "views": 2,
-      "comments": 0,
-      "score": 2,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/posts/openai-codex-expansion-developer-guide",
-      "views": 2,
-      "comments": 0,
-      "score": 2,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
