@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-07-30T14:34:06.635Z",
+  "generatedAt": "2026-07-30T19:54:10.244Z",
   "windowDays": 30,
   "entries": [
     {
       "id": "/reviews/budget-auto-rental-process-review",
-      "views": 125,
+      "views": 128,
       "comments": 0,
-      "score": 125,
+      "score": 128,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -124,6 +124,17 @@
       }
     },
     {
+      "id": "/brewing/cherry-mead",
+      "views": 9,
+      "comments": 0,
+      "score": 9,
+      "shares": {
+        "facebook": 4,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/brewing/small-batch-brewing-required-tools",
       "views": 9,
       "comments": 0,
@@ -157,23 +168,23 @@
       }
     },
     {
-      "id": "/reviews/via-aquarium",
-      "views": 7,
-      "comments": 0,
-      "score": 7,
-      "shares": {
-        "facebook": 3,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
       "id": "/posts/spacex-buys-cursor-60-billion",
       "views": 6,
       "comments": 0,
       "score": 6,
       "shares": {
         "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/via-aquarium",
+      "views": 6,
+      "comments": 0,
+      "score": 6,
+      "shares": {
+        "facebook": 3,
         "linkedin": 0,
         "copy": 0
       }
@@ -190,23 +201,23 @@
       }
     },
     {
+      "id": "/brewing/strawberry-wine",
+      "views": 4,
+      "comments": 0,
+      "score": 4,
+      "shares": {
+        "facebook": 8,
+        "linkedin": 1,
+        "copy": 1
+      }
+    },
+    {
       "id": "/brewing/dandelion-mead",
       "views": 4,
       "comments": 0,
       "score": 4,
       "shares": {
         "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/brewing/cherry-mead",
-      "views": 3,
-      "comments": 0,
-      "score": 3,
-      "shares": {
-        "facebook": 4,
         "linkedin": 0,
         "copy": 0
       }
@@ -262,17 +273,6 @@
       "score": 3,
       "shares": {
         "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/brewing/strawberry-wine",
-      "views": 2,
-      "comments": 0,
-      "score": 2,
-      "shares": {
-        "facebook": 7,
         "linkedin": 0,
         "copy": 0
       }
