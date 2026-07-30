@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-30T12:28:44.694Z",
+  "generatedAt": "2026-07-30T14:34:06.635Z",
   "windowDays": 30,
   "entries": [
     {
@@ -201,6 +201,17 @@
       }
     },
     {
+      "id": "/brewing/cherry-mead",
+      "views": 3,
+      "comments": 0,
+      "score": 3,
+      "shares": {
+        "facebook": 4,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/posts/gpt-5-5-first-impressions",
       "views": 3,
       "comments": 0,
@@ -256,23 +267,12 @@
       }
     },
     {
-      "id": "/posts/nasa-artemis-return-to-the-moon",
+      "id": "/brewing/strawberry-wine",
       "views": 2,
       "comments": 0,
       "score": 2,
       "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/posts/openai-codex-expansion-developer-guide",
-      "views": 2,
-      "comments": 0,
-      "score": 2,
-      "shares": {
-        "facebook": 0,
+        "facebook": 7,
         "linkedin": 0,
         "copy": 0
       }
