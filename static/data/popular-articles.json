@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-07-31T12:54:33.037Z",
+  "generatedAt": "2026-07-31T14:37:15.887Z",
   "windowDays": 30,
   "entries": [
     {
       "id": "/reviews/budget-auto-rental-process-review",
-      "views": 128,
+      "views": 127,
       "comments": 0,
-      "score": 128,
+      "score": 127,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -102,6 +102,17 @@
       }
     },
     {
+      "id": "/brewing/cherry-mead",
+      "views": 12,
+      "comments": 0,
+      "score": 12,
+      "shares": {
+        "facebook": 5,
+        "linkedin": 1,
+        "copy": 1
+      }
+    },
+    {
       "id": "/reviews/huupe-mini-review",
       "views": 12,
       "comments": 0,
@@ -124,18 +135,7 @@
       }
     },
     {
-      "id": "/brewing/cherry-mead",
-      "views": 9,
-      "comments": 0,
-      "score": 9,
-      "shares": {
-        "facebook": 4,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/brewing/small-batch-brewing-required-tools",
+      "id": "/brewing/home-brewing-journey",
       "views": 9,
       "comments": 0,
       "score": 9,
@@ -146,10 +146,10 @@
       }
     },
     {
-      "id": "/brewing/home-brewing-journey",
-      "views": 8,
+      "id": "/brewing/small-batch-brewing-required-tools",
+      "views": 9,
       "comments": 0,
-      "score": 8,
+      "score": 9,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
