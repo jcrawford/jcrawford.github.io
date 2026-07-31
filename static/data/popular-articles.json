@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T03:51:40.606Z",
+  "generatedAt": "2026-07-31T09:18:53.226Z",
   "windowDays": 30,
   "entries": [
     {
@@ -81,9 +81,9 @@
     },
     {
       "id": "/reviews/total-typescript-pro-complete-review",
-      "views": 17,
+      "views": 16,
       "comments": 0,
-      "score": 17,
+      "score": 16,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -234,6 +234,17 @@
       }
     },
     {
+      "id": "/posts/things-you-didnt-know-about-mysql-indexes",
+      "views": 3,
+      "comments": 0,
+      "score": 3,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/posts/wordpress-plugin-supply-chain-attack-2026",
       "views": 3,
       "comments": 0,
@@ -257,17 +268,6 @@
     },
     {
       "id": "/reviews/fried-chicken-ice-cream-review",
-      "views": 3,
-      "comments": 0,
-      "score": 3,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/hilton-aqua-sol-resort-review",
       "views": 3,
       "comments": 0,
       "score": 3,
