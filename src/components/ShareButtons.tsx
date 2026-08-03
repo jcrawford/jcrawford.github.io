@@ -62,7 +62,8 @@ const ShareButtons: React.FC<ShareButtonsProps> = ({ title, url, variant = 'bott
   }, [url, trackShare]);
 
   const handleFacebookShare = useCallback(() => {
-    // Use Web Share API on mobile - opens native share sheet with proper app integration
+    // Use Web Share API - opens native share sheet where user can select Facebook
+    // This properly integrates with Facebook app's share extension on iOS/Android
     if (navigator.share) {
       navigator.share({
         title: title,
@@ -71,14 +72,19 @@ const ShareButtons: React.FC<ShareButtonsProps> = ({ title, url, variant = 'bott
       })
       .then(() => trackShare('facebook'))
       .catch((err) => {
-        // User cancelled or share failed - fallback to popup
+        // User cancelled or share failed
         console.log('Share cancelled or failed:', err);
       });
     } else {
-      // Desktop fallback - open sharer popup
-      openShareWindow(`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`, 'facebook');
+      // Desktop fallback - open sharer popup in new window
+      window.open(
+        `https://www.facebook.com/dialog/share?app_id=966242223397117&href=${encodeURIComponent(url)}&quote=${encodeURIComponent(title)}`,
+        'fb-share',
+        'width=600,height=400,scrollbars=no,toolbar=no,location=no'
+      );
+      trackShare('facebook');
     }
-  }, [title, url, encodedUrl, trackShare, openShareWindow]);
+  }, [title, url, trackShare]);
 
   const encodedUrl = encodeURIComponent(url);
 
