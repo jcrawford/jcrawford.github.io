@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T16:09:52.335Z",
+  "generatedAt": "2026-08-03T17:27:17.679Z",
   "windowDays": 30,
   "entries": [
     {
@@ -25,6 +25,17 @@
       }
     },
     {
+      "id": "/brewing/cherry-mead",
+      "views": 83,
+      "comments": 0,
+      "score": 83,
+      "shares": {
+        "facebook": 5,
+        "linkedin": 1,
+        "copy": 1
+      }
+    },
+    {
       "id": "/reviews/benq-rd320ua-monitor-review",
       "views": 69,
       "comments": 0,
@@ -33,17 +44,6 @@
         "facebook": 0,
         "linkedin": 0,
         "copy": 4
-      }
-    },
-    {
-      "id": "/brewing/cherry-mead",
-      "views": 66,
-      "comments": 0,
-      "score": 66,
-      "shares": {
-        "facebook": 5,
-        "linkedin": 1,
-        "copy": 1
       }
     },
     {
@@ -80,10 +80,10 @@
       }
     },
     {
-      "id": "/posts/lebanon-valley-speedway-2026",
-      "views": 26,
+      "id": "/brewing/blackberry-mead",
+      "views": 27,
       "comments": 0,
-      "score": 26,
+      "score": 27,
       "shares": {
         "facebook": 1,
         "linkedin": 0,
@@ -91,12 +91,12 @@
       }
     },
     {
-      "id": "/brewing/blackberry-mead",
-      "views": 21,
+      "id": "/posts/lebanon-valley-speedway-2026",
+      "views": 26,
       "comments": 0,
-      "score": 21,
+      "score": 26,
       "shares": {
-        "facebook": 0,
+        "facebook": 1,
         "linkedin": 0,
         "copy": 0
       }
