@@ -61,20 +61,6 @@ const ShareButtons: React.FC<ShareButtonsProps> = ({ title, url, variant = 'bott
     }
   }, [url, trackShare]);
 
-  const handleFacebookShare = useCallback(() => {
-    // Try Web Share API first (mobile native share)
-    if (navigator.share) {
-      navigator.share({ title, url })
-        .then(() => trackShare('facebook'))
-        .catch(() => {
-          // Fallback to sharer.php
-          openShareWindow(`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`, 'facebook');
-        });
-    } else {
-      openShareWindow(`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`, 'facebook');
-    }
-  }, [title, url, encodedUrl, trackShare, openShareWindow]);
-
   const encodedUrl = encodeURIComponent(url);
 
   const shareLinks = [
@@ -125,11 +111,7 @@ const ShareButtons: React.FC<ShareButtonsProps> = ({ title, url, variant = 'bott
               style={{ '--share-color': link.color } as React.CSSProperties}
               onClick={(e) => {
                 e.preventDefault();
-                if (link.method === 'facebook') {
-                  handleFacebookShare();
-                } else {
-                  openShareWindow(link.href, link.method);
-                }
+                openShareWindow(link.href, link.method);
               }}
               aria-label={`Share on ${link.name}`}
               title={`Share on ${link.name}`}
