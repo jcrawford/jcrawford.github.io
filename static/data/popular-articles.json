@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T15:18:15.369Z",
+  "generatedAt": "2026-08-03T19:58:52.477Z",
   "windowDays": 30,
   "entries": [
     {
@@ -25,6 +25,17 @@
       }
     },
     {
+      "id": "/brewing/cherry-mead",
+      "views": 94,
+      "comments": 0,
+      "score": 94,
+      "shares": {
+        "facebook": 5,
+        "linkedin": 1,
+        "copy": 1
+      }
+    },
+    {
       "id": "/reviews/benq-rd320ua-monitor-review",
       "views": 69,
       "comments": 0,
@@ -47,17 +58,6 @@
       }
     },
     {
-      "id": "/brewing/cherry-mead",
-      "views": 64,
-      "comments": 0,
-      "score": 64,
-      "shares": {
-        "facebook": 5,
-        "linkedin": 1,
-        "copy": 1
-      }
-    },
-    {
       "id": "/brewing/strawberry-wine",
       "views": 51,
       "comments": 0,
@@ -75,6 +75,17 @@
       "score": 32,
       "shares": {
         "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/brewing/blackberry-mead",
+      "views": 30,
+      "comments": 0,
+      "score": 30,
+      "shares": {
+        "facebook": 1,
         "linkedin": 0,
         "copy": 0
       }
@@ -257,17 +268,6 @@
     },
     {
       "id": "/posts/nasa-artemis-return-to-the-moon",
-      "views": 2,
-      "comments": 0,
-      "score": 2,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/posts/openai-codex-expansion-developer-guide",
       "views": 2,
       "comments": 0,
       "score": 2,
