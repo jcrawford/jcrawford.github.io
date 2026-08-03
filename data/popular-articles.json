@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-07-30T13:45:24.608Z",
+  "generatedAt": "2026-08-03T15:06:14.049Z",
   "windowDays": 30,
   "entries": [
     {
       "id": "/reviews/budget-auto-rental-process-review",
-      "views": 125,
+      "views": 127,
       "comments": 0,
-      "score": 125,
+      "score": 127,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -26,9 +26,9 @@
     },
     {
       "id": "/reviews/benq-rd320ua-monitor-review",
-      "views": 68,
+      "views": 69,
       "comments": 0,
-      "score": 68,
+      "score": 69,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -47,25 +47,25 @@
       }
     },
     {
-      "id": "/brewing/strawberry-wine",
-      "views": 43,
+      "id": "/brewing/cherry-mead",
+      "views": 63,
       "comments": 0,
-      "score": 43,
+      "score": 63,
       "shares": {
-        "facebook": 7,
-        "linkedin": 0,
-        "copy": 0
+        "facebook": 5,
+        "linkedin": 1,
+        "copy": 1
       }
     },
     {
-      "id": "/brewing/cherry-mead",
-      "views": 34,
+      "id": "/brewing/strawberry-wine",
+      "views": 51,
       "comments": 0,
-      "score": 34,
+      "score": 51,
       "shares": {
-        "facebook": 4,
-        "linkedin": 0,
-        "copy": 0
+        "facebook": 8,
+        "linkedin": 1,
+        "copy": 1
       }
     },
     {
@@ -102,10 +102,10 @@
       }
     },
     {
-      "id": "/reviews/total-typescript-pro-complete-review",
-      "views": 16,
+      "id": "/posts/grok-4-5-cursor-first-impressions",
+      "views": 15,
       "comments": 0,
-      "score": 16,
+      "score": 15,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -113,7 +113,7 @@
       }
     },
     {
-      "id": "/posts/grok-4-5-cursor-first-impressions",
+      "id": "/reviews/total-typescript-pro-complete-review",
       "views": 14,
       "comments": 0,
       "score": 14,
@@ -124,10 +124,10 @@
       }
     },
     {
-      "id": "/reviews/huupe-mini-review",
-      "views": 12,
+      "id": "/reviews/voyager-keyboard",
+      "views": 11,
       "comments": 0,
-      "score": 12,
+      "score": 11,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -135,10 +135,21 @@
       }
     },
     {
-      "id": "/reviews/voyager-keyboard",
-      "views": 12,
+      "id": "/reviews/huupe-mini-review",
+      "views": 10,
       "comments": 0,
-      "score": 12,
+      "score": 10,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/brewing/home-brewing-journey",
+      "views": 9,
+      "comments": 0,
+      "score": 9,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -157,34 +168,12 @@
       }
     },
     {
-      "id": "/brewing/home-brewing-journey",
-      "views": 8,
-      "comments": 0,
-      "score": 8,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
       "id": "/posts/long-running-ai-agents-adk",
       "views": 7,
       "comments": 0,
       "score": 7,
       "shares": {
         "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/via-aquarium",
-      "views": 7,
-      "comments": 0,
-      "score": 7,
-      "shares": {
-        "facebook": 3,
         "linkedin": 0,
         "copy": 0
       }
@@ -201,12 +190,12 @@
       }
     },
     {
-      "id": "/posts/saferide-health-cursor-ai-adoption",
-      "views": 5,
+      "id": "/reviews/via-aquarium",
+      "views": 6,
       "comments": 0,
-      "score": 5,
+      "score": 6,
       "shares": {
-        "facebook": 0,
+        "facebook": 3,
         "linkedin": 0,
         "copy": 0
       }
@@ -223,7 +212,7 @@
       }
     },
     {
-      "id": "/posts/gpt-5-5-first-impressions",
+      "id": "/posts/things-you-didnt-know-about-mysql-indexes",
       "views": 3,
       "comments": 0,
       "score": 3,
@@ -235,17 +224,6 @@
     },
     {
       "id": "/posts/wordpress-plugin-supply-chain-attack-2026",
-      "views": 3,
-      "comments": 0,
-      "score": 3,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/arcade1up-infinity-game-table-review",
       "views": 3,
       "comments": 0,
       "score": 3,
@@ -271,6 +249,28 @@
       "views": 3,
       "comments": 0,
       "score": 3,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/nasa-artemis-return-to-the-moon",
+      "views": 2,
+      "comments": 0,
+      "score": 2,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/openai-codex-expansion-developer-guide",
+      "views": 2,
+      "comments": 0,
+      "score": 2,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
