@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { graphql, HeadFC, PageProps } from 'gatsby';
+import { graphql, HeadFC, Link, PageProps } from 'gatsby';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import OptimizedImage from '../components/OptimizedImage';
@@ -11,7 +11,9 @@ import ArticleMeta from '../components/ArticleMeta';
 import RecipeIngredients from '../components/RecipeIngredients';
 import RecipeSteps from '../components/RecipeSteps';
 import { formatDate } from '../utils/dateUtils';
+import { getTagPath } from '../utils/tagUtils';
 import type { BrewData, RecipeStep, ShareCounts } from '../types/article';
+import { postProcessImages } from '../utils/postProcessImages';
 import '../styles/brewing-recipe.css';
 
 // Declare gtag for TypeScript
@@ -117,6 +119,21 @@ const BrewingRecipeTemplate: React.FC<PageProps<RecipeData, BrewingRecipePageCon
       <article className="brewing-recipe">
         {/* Header */}
         <header className="brewing-recipe-header">
+          {frontmatter.tags && frontmatter.tags.length > 0 && (
+            <div className="hm-article-categories">
+              {(frontmatter.tags || []).slice(0, 3).map((tag, index) => (
+                <span key={index}>
+                  <Link
+                    to={`${getTagPath(tag)}/`}
+                    className="hm-article-category"
+                  >
+                    {tag}
+                  </Link>
+                  {index < (frontmatter.tags || []).slice(0, 3).length - 1 && <span className="tag-separator">, </span>}
+                </span>
+              ))}
+            </div>
+          )}
           <h1>{frontmatter.title}</h1>
           <ArticleMeta
             publishedAt={frontmatter.publishedAt}
@@ -178,11 +195,30 @@ const BrewingRecipeTemplate: React.FC<PageProps<RecipeData, BrewingRecipePageCon
         {html && (
           <div
             className="recipe-additional-content"
-            dangerouslySetInnerHTML={{ __html: html }}
+            dangerouslySetInnerHTML={{ __html: postProcessImages(html) }}
           />
         )}
 
         <div className="recipe-footer">
+          <hr />
+
+          {frontmatter.tags && frontmatter.tags.length > 0 && (
+            <div className="hm-article-tags">
+              <span className="hm-article-tags-label">Tags:</span>
+              {frontmatter.tags.map((tag, index) => (
+                <span key={index}>
+                  <Link
+                    to={`${getTagPath(tag)}/`}
+                    className="hm-article-tag"
+                  >
+                    {tag}
+                  </Link>
+                  {index < frontmatter.tags.length - 1 && <span className="tag-separator">,</span>}
+                </span>
+              ))}
+            </div>
+          )}
+
           <hr />
 
           <ShareButtons

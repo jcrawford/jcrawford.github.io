@@ -2,7 +2,7 @@
 slug: small-batch-brewing-required-tools
 title: "Small Batch Brewing: The Tools You Actually Need"
 excerpt: "You don't need a garage full of stainless steel to brew your first small batch. Here are the tools that matter, what you can skip, and the few upgrades worth making after your first few batches."
-featuredImage: /images/content/brewing/small-batch-brewing-required-tools/featured.png
+featuredImage: /images/content/brewing/small-batch-brewing-required-tools/featured.jpg
 tags:
   - brewing
   - equipment

@@ -267,13 +267,15 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
                 article.tags && article.tags.length > 0 && (
                   <div className="hm-article-categories">
                     {article.tags.filter(tag => tag !== 'reviews').slice(0, 3).map((tag, index) => (
-                      <Link
-                        key={index}
-                        to={`${getTagPath(tag)}/`}
-                        className="hm-article-category"
-                      >
-                        {tag}
-                      </Link>
+                      <span key={index}>
+                        <Link
+                          to={`${getTagPath(tag)}/`}
+                          className="hm-article-category"
+                        >
+                          {tag}
+                        </Link>
+                        {index < article.tags.filter(tag => tag !== 'reviews').slice(0, 3).length - 1 && <span className="tag-separator">, </span>}
+                      </span>
                     ))}
                   </div>
                 )
@@ -375,13 +377,15 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
               <div className="hm-article-tags">
                 <span className="hm-article-tags-label">Tags:</span>
                 {article.tags.map((tag, index) => (
-                  <Link
-                    key={index}
-                    to={`${getTagPath(tag)}/`}
-                    className="hm-article-tag"
-                  >
-                    {tag}
-                  </Link>
+                  <span key={index}>
+                    <Link
+                      to={`${getTagPath(tag)}/`}
+                      className="hm-article-tag"
+                    >
+                      {tag}
+                    </Link>
+                    {index < article.tags.length - 1 && <span className="tag-separator">,</span>}
+                  </span>
                 ))}
               </div>
             )}

@@ -5,6 +5,7 @@ import { truncateText } from '../utils/textUtils';
 import { getArticlePath } from '../utils/articlePath';
 import { hasTag, normalizeTagSlug, tagMatches, getTagPath } from '../utils/tagUtils';
 import OptimizedImage from './OptimizedImage';
+import StarRating from './StarRating';
 
 interface ArticleCardProps {
   slug: string;
@@ -16,6 +17,7 @@ interface ArticleCardProps {
   author: string;
   authorName: string;
   isSeries?: boolean;
+  rating?: number;
 }
 
 const ArticleCard: React.FC<ArticleCardProps> = ({
@@ -28,6 +30,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
   author,
   authorName,
   isSeries,
+  rating,
 }) => {
   const isReview = hasTag(tags || [], 'reviews');
   const isBrewing = hasTag(tags || [], 'brewing');
@@ -70,6 +73,12 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
         <p className="hm-article-card-excerpt">
           {truncateText(excerpt, 150)}
         </p>
+
+        {isReview && rating != null && (
+          <div className="hm-article-card-rating">
+            <StarRating rating={rating} size={14} showScore={false} color="#FFC107" />
+          </div>
+        )}
         
         <div className="hm-article-card-meta">
           <span>{authorName}</span>

@@ -18,6 +18,10 @@ interface ArticleFrontmatter {
   author: string;
   publishedAt: string;
   updatedAt: string;
+  rating?: number;
+  review?: {
+    rating?: number;
+  };
   series?: {
     name: string;
     order?: number;
@@ -190,6 +194,7 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
                   author={article.frontmatter.author}
                   authorName={authors.find(a => a.slug === article.frontmatter.author)?.name || article.frontmatter.author}
                   isSeries={!!article.frontmatter.series?.name}
+                  rating={article.frontmatter.rating ?? article.frontmatter.review?.rating}
                 />
               ))}
             </div>
@@ -236,6 +241,10 @@ export const query = graphql`
           author
           publishedAt
           updatedAt
+          rating
+          review {
+            rating
+          }
           series {
             name
             order

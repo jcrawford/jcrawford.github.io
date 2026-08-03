@@ -9,6 +9,7 @@ import '../styles/brewing-index.css';
 
 interface RecipeCard {
   id: string;
+  fileAbsolutePath: string;
   frontmatter: {
     slug: string;
     title: string;
@@ -16,6 +17,9 @@ interface RecipeCard {
     featuredImage: string;
     publishedAt: string;
     rating?: number;
+    review?: {
+      rating?: number;
+    };
     type?: string;
     brewData?: {
       abv?: number;
@@ -73,10 +77,15 @@ const BrewingIndexTemplate: React.FC<PageProps<ListingData>> = ({
   };
 
   const RecipeCardComponent: React.FC<{ recipe: RecipeCard }> = ({ recipe }) => {
+    const isReview = recipe.fileAbsolutePath.includes('/content/reviews/');
+    const linkPath = isReview
+      ? `/reviews/${recipe.frontmatter.slug}`
+      : `/brewing/${recipe.frontmatter.slug}`;
+
     return (
       <Link
         key={recipe.id}
-        to={`/brewing/${recipe.frontmatter.slug}`}
+        to={linkPath}
         className="brewing-recipe-card"
       >
         {recipe.frontmatter.featuredImage && (
@@ -94,9 +103,9 @@ const BrewingIndexTemplate: React.FC<PageProps<ListingData>> = ({
           <p>{recipe.frontmatter.excerpt}</p>
           <div className="brewing-recipe-card-meta">
             <span>{formatDate(recipe.frontmatter.publishedAt)}</span>
-            {recipe.frontmatter.rating && (
+            {(recipe.frontmatter.rating ?? recipe.frontmatter.review?.rating) && (
               <span className="recipe-card-rating">
-                <StarRating rating={recipe.frontmatter.rating} size={14} showScore={false} color="#FFC107" />
+                <StarRating rating={recipe.frontmatter.rating ?? recipe.frontmatter.review?.rating} size={14} showScore={false} color="#FFC107" />
               </span>
             )}
             {recipe.frontmatter.brewData?.abv && (
@@ -270,13 +279,13 @@ export const query = graphql`
   query BrewingIndexQuery {
     allMarkdownRemark(
       filter: {
-        fileAbsolutePath: { regex: "/content/brewing/" }
-        frontmatter: { slug: { ne: null }, draft: { ne: true } }
+        frontmatter: { slug: { ne: null }, draft: { ne: true }, tags: { in: ["brewing"] } }
       }
       sort: { frontmatter: { publishedAt: DESC } }
     ) {
       nodes {
         id
+        fileAbsolutePath
         frontmatter {
           slug
           title
@@ -284,8 +293,10 @@ export const query = graphql`
           featuredImage
           publishedAt
           rating
+          review {
+            rating
+          }
           type
-          tags
           brewData {
             abv
             batchSize

@@ -2,7 +2,7 @@
 slug: huupe-mini-review
 title: "Huupe Mini Review: Smart Basketball Hoop with Big Promise, Mixed Execution"
 excerpt: "The Huupe Mini is an ambitious smart basketball hoop with AI shot tracking, HD display, and streaming built in. After weeks of use—and a full replacement cycle—here's my honest take on what works and what doesn't."
-featuredImage: /images/content/huupe-mini-review-hero.jpg
+featuredImage: /images/content/reviews/huupe-mini-review/featured.jpg
 tags: ["reviews", "gaming", "smart-home", "basketball", "sports"]
 author: joseph-crawford
 publishedAt: "2026-04-16T20:00:00-04:00"

@@ -376,5 +376,103 @@
     "name": "Brewing",
     "description": "Home brewing recipes, techniques, and fermentation experiments with beer, wine, and mead.",
     "featured": true
+  },
+  {
+    "id": "55",
+    "slug": "mead",
+    "name": "Mead",
+    "description": "Honey-based fermented beverages, recipes, and techniques.",
+    "featured": false
+  },
+  {
+    "id": "56",
+    "slug": "wine",
+    "name": "Wine",
+    "description": "Homemade wine recipes, fruit wines, and fermentation notes.",
+    "featured": false
+  },
+  {
+    "id": "57",
+    "slug": "dandelion",
+    "name": "Dandelion",
+    "description": "Dandelion wine, dandelion mead, and wildflower fermentations.",
+    "featured": false
+  },
+  {
+    "id": "58",
+    "slug": "wildflower",
+    "name": "Wildflower",
+    "description": "Wildflower honey, foraged ingredients, and floral fermentations.",
+    "featured": false
+  },
+  {
+    "id": "59",
+    "slug": "blackberry",
+    "name": "Blackberry",
+    "description": "Blackberry mead, wine, and fruit-forward brewing recipes.",
+    "featured": false
+  },
+  {
+    "id": "60",
+    "slug": "cherry",
+    "name": "Cherry",
+    "description": "Cherry mead, cherry wine, and stone-fruit brewing experiments.",
+    "featured": false
+  },
+  {
+    "id": "61",
+    "slug": "strawberry",
+    "name": "Strawberry",
+    "description": "Strawberry wine, strawberry mead, and summer fruit ferments.",
+    "featured": false
+  },
+  {
+    "id": "62",
+    "slug": "fruit-mead",
+    "name": "Fruit Mead",
+    "description": "Mead recipes made with fruit additions for flavor and character.",
+    "featured": false
+  },
+  {
+    "id": "63",
+    "slug": "fruit-wine",
+    "name": "Fruit Wine",
+    "description": "Wine made from strawberries, blackberries, cherries, and other fruits.",
+    "featured": false
+  },
+  {
+    "id": "64",
+    "slug": "equipment",
+    "name": "Equipment",
+    "description": "Brewing gear, tools, and equipment reviews for home fermentations.",
+    "featured": false
+  },
+  {
+    "id": "65",
+    "slug": "small-batch",
+    "name": "Small Batch",
+    "description": "Small-scale brewing recipes and techniques for one-gallon batches.",
+    "featured": false
+  },
+  {
+    "id": "66",
+    "slug": "llms",
+    "name": "LLMs",
+    "description": "Posts tagged with LLMs.",
+    "featured": false
+  },
+  {
+    "id": "67",
+    "slug": "vacation",
+    "name": "Vacation",
+    "description": "Posts tagged with Vacation.",
+    "featured": false
+  },
+  {
+    "id": "68",
+    "slug": "monitor",
+    "name": "Monitor",
+    "description": "Posts tagged with Monitor.",
+    "featured": false
   }
 ]

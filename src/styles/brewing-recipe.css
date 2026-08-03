@@ -237,15 +237,10 @@ html.hm-dark .recipe-step-content p {
 
 .recipe-step-image {
   width: 100%;
+  max-width: 760px;
   border-radius: 8px;
   overflow: hidden;
   margin-top: 0.75rem;
-}
-
-.recipe-step-image img {
-  width: 100%;
-  height: auto;
-  display: block;
 }
 
 .recipe-step-image picture {
@@ -253,9 +248,36 @@ html.hm-dark .recipe-step-content p {
   width: 100%;
 }
 
-/* Recipe Step Video - smaller than images */
+.recipe-step-image img {
+  width: 100%;
+  max-height: 600px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Shared post media cap for inline images */
+.post-media-image {
+  max-width: 760px;
+  max-height: 600px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.post-media-video {
+  max-width: 760px;
+  max-height: 500px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Recipe Step Video - same max width as images, capped height for vertical clips */
 .recipe-step-video {
-  max-width: 400px;
+  max-width: 760px;
+  max-height: 500px;
   margin-left: auto;
   margin-right: auto;
   border-radius: 8px;
@@ -266,6 +288,7 @@ html.hm-dark .recipe-step-content p {
 .recipe-step-video video {
   width: 100%;
   height: auto;
+  max-height: 500px;
   display: block;
 }
 
@@ -273,17 +296,44 @@ html.hm-dark .recipe-step-content p {
 .recipe-additional-content {
   margin-top: 2rem;
   margin-bottom: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--hybridmag-color-border, #e0e0e0);
   padding-bottom: 0;
   line-height: 1.7;
   color: var(--hybridmag-color-text-main, #374151);
 }
 
-.recipe-additional-content ul li {
-  margin-bottom: 0.75rem;
+html.hm-dark .recipe-additional-content {
+  border-color: var(--hybridmag-color-border, #333);
+  color: var(--hybridmag-color-text-main, #d1d5db);
 }
 
-.recipe-additional-content ul li:last-child {
+.recipe-additional-content ul,
+.recipe-additional-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.recipe-additional-content ul li,
+.recipe-additional-content ol li {
+  margin-bottom: 1.25rem;
+}
+
+.recipe-additional-content ul li:last-child,
+.recipe-additional-content ol li:last-child {
   margin-bottom: 0;
+}
+
+.recipe-additional-content p {
+  margin-bottom: 1.25rem;
+}
+
+.recipe-additional-content p:has(> strong:first-child) {
+  margin-top: 1.5rem;
+}
+
+.recipe-additional-content p:has(> strong:first-child) + p:has(> strong:first-child) {
+  margin-top: 2rem;
 }
 
 .recipe-footer {

@@ -8,53 +8,54 @@
  * rewriting the HTML before it's injected via dangerouslySetInnerHTML.
  */
 
-const SIZES = [64, 80, 160, 280, 320, 400, 600, 768, 850, 1200, 1920];
-const SIZES_ATTR = '(max-width: 768px) 100vw, 850px';
+const RESPONSIVE_SIZES = [64, 80, 160, 280, 320, 400, 600, 768, 850, 1200, 1920];
+const RESPONSIVE_SIZES_ATTR = '(max-width: 768px) 100vw, 850px';
+const POST_MEDIA_MAX_WIDTH = 760;
+const POST_MEDIA_MAX_HEIGHT = 600;
 
-function generateSrcSet(src: string, extension: string): string {
+function isFeaturedImage(src: string): boolean {
+  const filename = src.split('/').pop()?.toLowerCase() || '';
+  const base = filename.split('.')[0];
+  return base === 'featured' || base === 'hero';
+}
+
+function generateResponsiveSrcSet(src: string, extension: string): string {
   const dotIndex = src.lastIndexOf('.');
   if (dotIndex === -1) return '';
   const base = src.substring(0, dotIndex);
-  return SIZES.map(s => `${base}_${s}w.${extension} ${s}w`).join(', ');
+  return RESPONSIVE_SIZES.map(s => `${base}_${s}w.${extension} ${s}w`).join(', ');
 }
 
-/**
- * Converts an <img> tag to a <picture> element with responsive sources.
- * Only processes images with src starting with /images/content/
- */
 function imgToPicture(imgTag: string): string {
-  // Extract src
   const srcMatch = imgTag.match(/src=["']([^"']+)["']/);
   if (!srcMatch) return imgTag;
   const src = srcMatch[1];
-  
+
   // Only process content images
   if (!src.startsWith('/images/content/')) return imgTag;
-  
-  // Extract alt
+
   const altMatch = imgTag.match(/alt=["']([^"']*)["']/);
   const alt = altMatch ? altMatch[1] : '';
-  
-  // Extract title
   const titleMatch = imgTag.match(/title=["']([^"']*)["']/);
-  const title = titleMatch ? titleMatch[1] : '';
-  
-  // Extract other attributes (class, etc) but skip src, alt, title
+  const title = titleMatch ? ` title="${titleMatch[1]}"` : '';
   const classMatch = imgTag.match(/class=["']([^"']*)["']/);
   const className = classMatch ? classMatch[1] : '';
-  
+  const classAttr = className ? ` class="post-media-image${className ? ' ' + className : ''}"` : ' class="post-media-image"';
+
   const dotIndex = src.lastIndexOf('.');
   if (dotIndex === -1) return imgTag;
   const base = src.substring(0, dotIndex);
-  
-  const webpSrcSet = generateSrcSet(src, 'webp');
-  const jpgSrcSet = generateSrcSet(src, 'jpg');
-  const imgFallback = `${base}_850w.jpg`;
-  
-  const titleAttr = title ? ` title="${title}"` : '';
-  const classAttr = className ? ` class="${className}"` : '';
-  
-  return `<picture>${webpSrcSet ? `<source type="image/webp" srcset="${webpSrcSet}" sizes="${SIZES_ATTR}"/>` : ''}<source type="image/jpeg" srcset="${jpgSrcSet}" sizes="${SIZES_ATTR}"/><img src="${imgFallback}" alt="${alt}"${titleAttr}${classAttr} loading="lazy" decoding="async"/></picture>`;
+
+  // Featured/hero images get the full responsive treatment
+  if (isFeaturedImage(src)) {
+    const webpSrcSet = generateResponsiveSrcSet(src, 'webp');
+    const jpgSrcSet = generateResponsiveSrcSet(src, 'jpg');
+    const imgFallback = `${base}_850w.jpg`;
+    return `<picture>${webpSrcSet ? `<source type="image/webp" srcset="${webpSrcSet}" sizes="${RESPONSIVE_SIZES_ATTR}"/>` : ''}<source type="image/jpeg" srcset="${jpgSrcSet}" sizes="${RESPONSIVE_SIZES_ATTR}"/><img src="${imgFallback}" alt="${alt}"${title}${classAttr} loading="lazy" decoding="async"/></picture>`;
+  }
+
+  // Post body / inline images get the single 760w variant
+  return `<picture><source type="image/webp" srcset="${base}_760w.webp"/><img src="${base}_760w.jpg" alt="${alt}"${title}${classAttr} loading="lazy" decoding="async"/></picture>`;
 }
 
 /**

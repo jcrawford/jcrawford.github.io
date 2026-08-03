@@ -619,6 +619,11 @@ html.hm-dark .hm-article-card-image {
   overflow: hidden;
 }
 
+.hm-article-card-rating {
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+
 .hm-article-card-meta {
   display: flex;
   align-items: center;
@@ -869,8 +874,37 @@ html.hm-dark .hm-article {
   max-width: 100%;
 }
 
-.hm-article-content picture img {
-  max-width: 100%;
+.hm-article-content ul,
+.hm-article-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.hm-article-content ul li,
+.hm-article-content ol li {
+  margin-bottom: 1.25rem;
+}
+
+.hm-article-content ul li:last-child,
+.hm-article-content ol li:last-child {
+  margin-bottom: 0;
+}
+
+.hm-article-content picture img,
+.hm-article-content img.post-media-image {
+  max-width: 760px;
+  max-height: 600px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.hm-article-content video {
+  max-width: 760px;
+  max-height: 500px;
+  width: 100%;
   height: auto;
   display: block;
   margin: 0 auto;
@@ -1078,6 +1112,10 @@ html.hm-dark .hm-article-content tbody tr:hover {
   background: #3a3a3a;
   color: #ffffff;
   transform: translateY(-1px);
+}
+
+.tag-separator {
+  margin-right: 4px;
 }
 
 /* Share Buttons */

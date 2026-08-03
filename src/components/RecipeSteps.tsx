@@ -1,5 +1,5 @@
 import React from "react";
-import OptimizedImage from "./OptimizedImage";
+import PostMediaImage from "./PostMediaImage";
 import type { RecipeStep } from "../types/article";
 
 export interface RecipeStepsProps {
@@ -33,15 +33,7 @@ const RecipeSteps: React.FC<RecipeStepsProps> = ({ steps, variant = "article" })
             )}
             {step.image && (
               <div className="recipe-step-image">
-                {variant === "recipe" ? (
-                  <OptimizedImage
-                    src={step.image}
-                    alt={step.title}
-                    sizes="(max-width: 768px) 100vw, 850px"
-                  />
-                ) : (
-                  <OptimizedImage src={step.image} alt={step.title} />
-                )}
+                <PostMediaImage src={step.image} alt={step.title} />
               </div>
             )}
             {variant === "article" && step.video && (

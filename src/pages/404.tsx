@@ -15,6 +15,10 @@ interface Article {
     tags: string[];
     author: string;
     publishedAt: string;
+    rating?: number;
+    review?: {
+      rating?: number;
+    };
   };
 }
 
@@ -114,6 +118,7 @@ const NotFoundPage: React.FC<PageProps<NotFoundPageData>> = ({ data }) => {
                     publishedAt={article.frontmatter.publishedAt}
                     author={article.frontmatter.author}
                     authorName={getAuthorName(article.frontmatter.author)}
+                    rating={article.frontmatter.rating ?? article.frontmatter.review?.rating}
                   />
                 ))}
               </div>
@@ -152,6 +157,10 @@ export const query = graphql`
           tags
           author
           publishedAt
+          rating
+          review {
+            rating
+          }
         }
       }
     }

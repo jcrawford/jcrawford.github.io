@@ -1,4 +1,5 @@
 import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 
 interface OptimizedImageProps {
   src: string;
@@ -9,33 +10,26 @@ interface OptimizedImageProps {
   fetchpriority?: 'high' | 'low' | 'auto';
 }
 
-const SIZES = [64, 80, 160, 280, 320, 400, 600, 768, 850, 1200, 1920];
 const DEFAULT_SIZES_ATTR = '(max-width: 768px) 100vw, (max-width: 1200px) 65vw, 1200px';
 
-// Directories where pre-generated responsive variants exist
 const OPTIMIZED_PATHS = ['/images/content/', '/images/galleries/'];
 
 function hasVariants(src: string): boolean {
   return OPTIMIZED_PATHS.some((p) => src.startsWith(p));
 }
 
-/**
- * Generates srcset string for responsive images.
- * Looks for pre-generated variants (e.g. image_64w.webp, image_768w.jpg)
- * alongside the original image.
- */
-function generateSrcSet(src: string, extension: string): string | null {
+function generateSrcSet(src: string, extension: string, widths: number[]): string | null {
   const dotIndex = src.lastIndexOf('.');
   if (dotIndex === -1) return null;
 
   const base = src.substring(0, dotIndex);
   const variants: string[] = [];
 
-  for (const size of SIZES) {
+  for (const size of widths) {
     variants.push(`${base}_${size}w.${extension} ${size}w`);
   }
 
-  return variants.join(', ');
+  return variants.length > 0 ? variants.join(', ') : null;
 }
 
 const OptimizedImage: React.FC<OptimizedImageProps> = ({
@@ -51,52 +45,66 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   const base = dotIndex !== -1 ? src.substring(0, dotIndex) : src;
   const sizesAttr = sizes || DEFAULT_SIZES_ATTR;
 
-  // If variants exist for this path, use <picture> with responsive srcset
-  // and use the smallest JPG variant as the <img> fallback.
-  // If variants don't exist, use a plain <img> with the original src.
-  if (hasVariants(src)) {
-    const webpSrcSet = generateSrcSet(src, 'webp');
-    const jpgSrcSet = generateSrcSet(src, 'jpg');
-    const imgFallback = `${base}_64w.jpg`;
+  const data = useStaticQuery(graphql`
+    query ImageVariantManifest {
+      allImageVariantsJson {
+        nodes {
+          src
+          widths
+        }
+      }
+    }
+  `);
 
+  const entries = data?.allImageVariantsJson?.nodes || [];
+  const manifestEntry = entries.find(
+    (entry: { src: string; widths: number[] }) => entry.src === src
+  );
+  const availableWidths = manifestEntry?.widths;
+
+  if (!hasVariants(src) || !availableWidths || availableWidths.length === 0) {
     return (
-      <picture>
-        {webpSrcSet && (
-          <source
-            type="image/webp"
-            srcSet={webpSrcSet}
-            sizes={sizesAttr}
-          />
-        )}
-        {jpgSrcSet && (
-          <source
-            type="image/jpeg"
-            srcSet={jpgSrcSet}
-            sizes={sizesAttr}
-          />
-        )}
-        <img
-          src={imgFallback}
-          alt={alt}
-          className={className}
-          loading={loading}
-          decoding="async"
-          {...(fetchpriority ? { fetchPriority: fetchpriority } : {})}
-        />
-      </picture>
+      <img
+        src={src}
+        alt={alt}
+        className={className}
+        loading={loading}
+        decoding="async"
+        {...(fetchpriority ? { fetchpriority: fetchpriority } : {})}
+      />
     );
   }
 
-  // No variants — use plain <img> with original src
+  const webpSrcSet = generateSrcSet(src, 'webp', availableWidths);
+  const jpgSrcSet = generateSrcSet(src, 'jpg', availableWidths);
+  const imgFallback = `${base}_${availableWidths[0]}w.jpg`;
+  const cacheBust = `?v=${process.env.COMMIT_HASH || Date.now()}`;
+
   return (
-    <img
-      src={src}
-      alt={alt}
-      className={className}
-      loading={loading}
-      decoding="async"
-      {...(fetchpriority ? { fetchPriority: fetchpriority } : {})}
-    />
+    <picture>
+      {webpSrcSet && (
+        <source
+          type="image/webp"
+          srcSet={webpSrcSet}
+          sizes={sizesAttr}
+        />
+      )}
+      {jpgSrcSet && (
+        <source
+          type="image/jpeg"
+          srcSet={jpgSrcSet}
+          sizes={sizesAttr}
+        />
+      )}
+      <img
+        src={`${imgFallback}${cacheBust}`}
+        alt={alt}
+        className={className}
+        loading={loading}
+        decoding="async"
+        {...(fetchpriority ? { fetchpriority: fetchpriority } : {})}
+      />
+    </picture>
   );
 };
 

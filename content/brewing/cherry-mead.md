@@ -62,10 +62,8 @@ steps:
     video: /images/content/brewing/cherry-mead/primary-fermentation-2.mp4
 
   - title: "Remove the Cherry Bag (Day 12)"
-    description: "On August 2, 2026 — day 12 of fermentation — I pulled the cherry bag out of primary. The mead had already extracted plenty of color and flavor, and leaving fruit on the yeast cake much longer can pull harsh tannins from the pits and risk spoilage if the bag breaks the surface.\n\nI lifted the mesh bag carefully, let it drain back into the fermenter, and discarded the spent cherries. The must underneath was a deep garnet-red and still bubbling steadily, so the yeast still has plenty of work left to do. The plan is unchanged: a fresh batch of cherries will go into secondary for a second round of flavor and color without the violent CO2 blow-off of primary."
-
-  - title: "Secondary Fermentation"
-    description: "After the primary cherry bag was removed on day 12, the mead will transfer to a clean secondary fermenter for two weeks. This stage allows the mead to settle and clear as fermentation completes. The calmer environment in secondary also provides a better opportunity for adding a second batch of cherries for additional flavor and color without the vigorous CO2 blow-off that occurs during primary."
+    description: "Around day 12 of fermentation — projected for early August — I will pull the cherry bag out of primary. The mead should have extracted plenty of color and flavor by then, and leaving fruit on the yeast cake much longer can pull harsh tannins from the pits and risk spoilage if the bag breaks the surface. After the bag is out, I will lift it carefully, let it drain back into the fermenter, and discard the spent cherries. The must underneath is already a deep garnet-red and the yeast still has work left to do. Once the bag is removed, the plan is to allow this to finish the time in primary and then transfer the mead to secondary and add a fresh batch of cherries for a second round of flavor and color without the violent CO2 blow-off of primary."
+    image: /images/content/brewing/cherry-mead/step-11.jpg
 
 ---
 
@@ -75,6 +73,4 @@ This is a live batch — started on July 22, 2026. The original gravity came in 
 
 **Bottle Conditioning:** After bottling, this mead will undergo **6 months** of bottle conditioning to allow the flavors to settle and the carbonation to develop properly.
 
-**August 2, 2026 update:** I removed the cherry bag on day 12. The mead was already a deep garnet-red and still fermenting actively. The first cherry addition did its job — now the second addition in secondary will layer in more flavor without the aggressive CO2 blow-off of primary.\n\nThe two-stage cherry addition is a technique worth highlighting. Primary fermentation is vigorous — the yeast is reproducing rapidly, producing lots of CO2, and driving off volatile aromatics. This means a lot of the fresh cherry scent and delicate flavor compounds get blown off during primary. By adding a second dose of cherries in secondary fermentation, where the environment is much calmer, the fruit flavors and colors infuse into the mead without being stripped away. The result is a much more vibrant cherry character in the finished mead.
-
-**This post will be updated as the mead progresses through each stage.** Check back for updates on secondary fermentation, bottling, final gravity, ABV, and tasting notes once it's drinking ready.
+**This post will be updated as the mead progresses through each stage.** Check back for updates on the cherry bag removal, secondary fermentation, bottling, final gravity, ABV, and tasting notes once it's drinking ready.

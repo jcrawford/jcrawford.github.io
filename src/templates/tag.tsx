@@ -29,6 +29,10 @@ interface TagPageData {
         tags: string[];
         author: string;
         publishedAt: string;
+        rating?: number;
+        review?: {
+          rating?: number;
+        };
         series?: {
           name: string;
         };
@@ -103,6 +107,7 @@ const TagTemplate: React.FC<PageProps<TagPageData, TagPageContext>> = ({
                   author={article.frontmatter.author}
                   authorName={getAuthorName(article.frontmatter.author)}
                   isSeries={!!article.frontmatter.series?.name}
+                  rating={article.frontmatter.rating ?? article.frontmatter.review?.rating}
                 />
               ))}
             </div>
@@ -203,6 +208,10 @@ export const query = graphql`
           tags
           author
           publishedAt
+          rating
+          review {
+            rating
+          }
           series {
             name
           }

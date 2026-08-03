@@ -14,8 +14,21 @@ const CONFIG = {
   webpQuality: 80,
   pngToJpgThreshold: 500 * 1024, // 500KB
   maxWidth: 1920,
-  variants: [64, 80, 160, 280, 320, 400, 600, 768, 850, 1200, 1920],
+  // Full responsive set for featured/hero and gallery images
+  responsiveVariants: [64, 80, 160, 280, 320, 400, 600, 768, 850, 1200, 1920],
+  // Single size for post body / step media
+  postMediaWidth: 760,
+  postMediaMaxHeight: 600,
 };
+
+function isFeaturedImage(imagePath) {
+  const base = path.basename(imagePath, path.extname(imagePath)).toLowerCase();
+  return base === 'featured' || base === 'hero';
+}
+
+function isGalleryImage(imagePath) {
+  return imagePath.includes(path.sep + 'galleries' + path.sep);
+}
 
 const STATIC_DIR = path.join(__dirname, '..', 'static', 'images');
 
@@ -135,8 +148,13 @@ function generateVariants(imagePath) {
   // Get potentially updated dimensions
   const { width: finalWidth, height: finalHeight } = getDimensions(imagePath);
 
+  // Determine variant widths based on image type
+  const useResponsive = isFeaturedImage(imagePath) || isGalleryImage(imagePath);
+  const variantWidths = useResponsive ? CONFIG.responsiveVariants : [CONFIG.postMediaWidth];
+  const maxVariantWidth = Math.max(...variantWidths);
+
   // Generate variants for each width
-  for (const width of CONFIG.variants) {
+  for (const width of variantWidths) {
     if (width >= finalWidth) continue;
 
     const height = Math.round((finalHeight / finalWidth) * width);
@@ -169,11 +187,30 @@ function generateVariants(imagePath) {
       stats.errors++;
     }
   }
+  // For post media, also cap the source file at 760px width so that any
+  // direct reference to the source does not serve an oversized image.
+  if (!useResponsive && finalWidth > CONFIG.postMediaWidth) {
+    const targetHeight = Math.round((finalHeight / finalWidth) * CONFIG.postMediaWidth);
+    try {
+      const tempPath = `${imagePath}.resized`;
+      execSync(
+        `convert "${imagePath}" -resize "${CONFIG.postMediaWidth}x${targetHeight}>" -quality ${CONFIG.jpgQuality} -strip "${tempPath}"`,
+        { stdio: 'ignore' }
+      );
+      fs.renameSync(tempPath, imagePath);
+    } catch (error) {
+      log(`Error resizing post media ${imagePath}: ${error.message}`);
+      if (fs.existsSync(`${imagePath}.resized`)) fs.unlinkSync(`${imagePath}.resized`);
+    }
+  }
 }
 
 function pruneOrphanVariants() {
   log('Pruning orphaned / stale variants...');
   let removed = 0;
+
+  // Allowed widths: responsive set plus the post media width
+  const allowedWidths = new Set([...CONFIG.responsiveVariants, CONFIG.postMediaWidth]);
 
   const files = execSync(`find "${STATIC_DIR}" -type f`)
     .toString()
@@ -186,7 +223,7 @@ function pruneOrphanVariants() {
     if (!match) continue;
 
     const width = Number(match[2]);
-    if (!CONFIG.variants.includes(width)) {
+    if (!allowedWidths.has(width)) {
       try {
         fs.unlinkSync(file);
         removed++;
@@ -213,6 +250,55 @@ function pruneOrphanVariants() {
   }
 
   log(`Removed ${removed} stale/orphan variants`);
+}
+
+function writeVariantManifest() {
+  log('Writing variant manifest...');
+  const manifestDir = path.join(__dirname, '..', 'src', 'data');
+  if (!fs.existsSync(manifestDir)) {
+    fs.mkdirSync(manifestDir, { recursive: true });
+  }
+
+  const manifestPath = path.join(manifestDir, 'image-variants.json');
+  const staticRoot = path.join(__dirname, '..', 'static');
+  const manifest = [];
+
+  const files = execSync(`find "${STATIC_DIR}" -type f \\( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.webp" \\)`)
+    .toString()
+    .split('\n')
+    .filter(Boolean);
+
+  for (const file of files) {
+    if (isVariantFile(file)) continue;
+
+    const publicPath = '/' + path.relative(staticRoot, file).replace(/\\\\/g, '/');
+    const dir = path.dirname(file);
+    const baseName = path.basename(file, path.extname(file));
+    const escapedBaseName = baseName.replace(/([.*+?^${}()|[\]\\\\])/g, '\\\\$1');
+    const regex = new RegExp(`^${escapedBaseName}_(\\d+)w\\.(jpg|jpeg|png|webp)$`);
+    const widths = new Set();
+
+    try {
+      for (const entry of fs.readdirSync(dir)) {
+        const match = entry.match(regex);
+        if (match) widths.add(Number(match[1]));
+      }
+    } catch (error) {
+      log(`Error reading directory ${dir}: ${error.message}`);
+      stats.errors++;
+      continue;
+    }
+
+    if (widths.size > 0) {
+      manifest.push({
+        src: publicPath,
+        widths: Array.from(widths).sort((a, b) => a - b),
+      });
+    }
+  }
+
+  fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2));
+  log(`Wrote ${manifest.length} entries to ${manifestPath}`);
 }
 
 function processContentImages() {
@@ -300,6 +386,7 @@ function main() {
   pruneOrphanVariants();
   processContentImages();
   processGalleryImages();
+  writeVariantManifest();
 
   const duration = ((Date.now() - startTime) / 1000).toFixed(1);
 

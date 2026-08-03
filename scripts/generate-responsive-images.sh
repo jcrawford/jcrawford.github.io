@@ -1,12 +1,12 @@
 #!/bin/bash
 # Generate responsive image variants for featured images
-# Creates mobile (480w), tablet (768w), and desktop (1200w) variants
+# Creates all variants: 64w, 80w, 160w, 280w, 320w, 400w, 600w, 768w, 850w, 1200w, 1920w
 # Also converts to WebP for smaller file sizes
 
 set -e
 
 IMAGE_DIR="/home/jcrawford/Projects/jcrawford.github.io/static/images/content"
-SIZES=(480 768 1200 1920)
+SIZES=(64 80 160 280 320 400 600 768 850 1200 1920)
 
 find "$IMAGE_DIR" -type f \( -name '*.jpg' -o -name '*.png' -o -name '*.jpeg' \) | while read -r img; do
   # Skip if already has a size suffix (already processed)
@@ -34,6 +34,26 @@ find "$IMAGE_DIR" -type f \( -name '*.jpg' -o -name '*.png' -o -name '*.jpeg' \)
     # Generate JPG fallback
     convert "$img" -resize "${size}x" -quality 80 "$out_jpg" 2>/dev/null || true
   done
+done
+
+# Copy generated variants to public directory (Gatsby dev server serves from public/)
+echo "Copying variants to public/..."
+find "$IMAGE_DIR" -type d | while read -r dir; do
+  rel_path="${dir#$IMAGE_DIR/}"
+  target_dir="/home/jcrawford/Projects/jcrawford.github.io/public/images/content/$rel_path"
+  mkdir -p "$target_dir"
+  cp "$dir"/*_64w.jpg "$target_dir/" 2>/dev/null || true
+  cp "$dir"/*_80w.jpg "$target_dir/" 2>/dev/null || true
+  cp "$dir"/*_160w.jpg "$target_dir/" 2>/dev/null || true
+  cp "$dir"/*_280w.jpg "$target_dir/" 2>/dev/null || true
+  cp "$dir"/*_320w.jpg "$target_dir/" 2>/dev/null || true
+  cp "$dir"/*_400w.jpg "$target_dir/" 2>/dev/null || true
+  cp "$dir"/*_600w.jpg "$target_dir/" 2>/dev/null || true
+  cp "$dir"/*_768w.jpg "$target_dir/" 2>/dev/null || true
+  cp "$dir"/*_850w.jpg "$target_dir/" 2>/dev/null || true
+  cp "$dir"/*_1200w.jpg "$target_dir/" 2>/dev/null || true
+  cp "$dir"/*_1920w.jpg "$target_dir/" 2>/dev/null || true
+  cp "$dir"/*.webp "$target_dir/" 2>/dev/null || true
 done
 
 echo "Done generating responsive images"
