@@ -167,7 +167,7 @@ async function fetchGa4Views() {
     const views = Number.parseInt(rawViews || '0', 10);
 
     if (pagePath) {
-      viewsByPath.set(pagePath, views);
+      viewsByPath.set(pagePath, (viewsByPath.get(pagePath) || 0) + views);
     }
   }
 
