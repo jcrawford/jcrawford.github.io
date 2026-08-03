@@ -69,7 +69,7 @@ const ShareButtons: React.FC<ShareButtonsProps> = ({ title, url, variant = 'bott
     {
       name: 'Facebook',
       method: 'facebook',
-      href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}&display=popup`,
+      href: `https://www.facebook.com/dialog/share?app_id=966242223397117&href=${encodedUrl}&quote=${encodedQuote}`,
       color: '#1877F2',
       icon: (
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
