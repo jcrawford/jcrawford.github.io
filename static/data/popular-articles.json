@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T23:38:13.441Z",
+  "generatedAt": "2026-08-03T23:44:46.336Z",
   "windowDays": 30,
   "entries": [
     {
@@ -81,9 +81,9 @@
     },
     {
       "id": "/brewing/blackberry-mead",
-      "views": 30,
+      "views": 31,
       "comments": 0,
-      "score": 30,
+      "score": 31,
       "shares": {
         "facebook": 1,
         "linkedin": 0,
