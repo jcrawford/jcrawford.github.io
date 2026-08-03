@@ -2,7 +2,6 @@ import React, { Suspense } from 'react';
 import { graphql, Link, PageProps, HeadFC } from 'gatsby';
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
-import { formatDate } from '../utils/dateUtils';
 import OptimizedImage from '../components/OptimizedImage';
 import SEO from '../components/SEO';
 import ReviewBox from '../components/ReviewBox';
@@ -10,9 +9,13 @@ import Comments from '../components/Comments';
 import ImageSpinner from '../components/ImageSpinner';
 import GalleryEmbed from '../components/GalleryEmbed';
 import ShareButtons from '../components/ShareButtons';
+import ArticleMeta from '../components/ArticleMeta';
+import RecipeIngredients from '../components/RecipeIngredients';
+import RecipeSteps from '../components/RecipeSteps';
 import { getArticlePath } from '../utils/articlePath';
 import { hasTag, getTagPath } from '../utils/tagUtils';
 import { postProcessImages } from '../utils/postProcessImages';
+import type { SpinnerImage, NamedSpinner, GalleryEmbedData, BrewData, RecipeStep, ReviewData, ArticlePageContext } from '../types/article';
 import '../styles/review.css';
 import '../styles/tag-cloud.css';
 import '../styles/brewing-recipe.css';
@@ -71,27 +74,7 @@ function renderContentWithInlineEmbeds(
   return nodes;
 }
 
-interface SpinnerImage {
-  src: string;
-  alt: string;
-  caption?: string;
-}
-
-interface NamedSpinner {
-  id: string;
-  images: SpinnerImage[] | null;
-}
-
-interface GalleryEmbedData {
-  slug: string;
-  title: string;
-  path?: string;
-  coverImage: string;
-  description: string;
-  photoCount: number;
-  videoCount?: number;
-  date: string;
-}
+// SpinnerImage, NamedSpinner, GalleryEmbedData now imported from ../types/article
 
 interface ArticleData {
   site: {
@@ -121,40 +104,10 @@ interface ArticleData {
       series?: {
         name: string;
       };
-      review?: {
-        rating: number;
-        childRating?: number;
-        pros: string[];
-        cons: string[];
-        price?: string;
-        brand?: string;
-        productUrl?: string;
-        affiliateLink?: string;
-      };
-      brewData?: {
-        originalGravity?: number;
-        finalGravity?: number;
-        startDate?: string;
-        primaryEndDate?: string;
-        secondaryStartDate?: string;
-        secondaryEndDate?: string;
-        bottlingDate?: string;
-        drinkingReadyDate?: string;
-        bulkConditioningTime?: string;
-        bottleConditioningTime?: string;
-        abv?: number;
-        batchSize?: string;
-        yeast?: string;
-        fermentationTime?: string;
-        secondaryTime?: string;
-      };
+      review?: ReviewData;
+      brewData?: BrewData;
       ingredients?: string[];
-      steps?: Array<{
-        title: string;
-        description: string;
-        image?: string;
-        video?: string;
-      }>;
+      steps?: RecipeStep[];
     };
   };
   authorsJson: {
@@ -189,13 +142,7 @@ interface ArticleData {
   };
 }
 
-interface ArticlePageContext {
-  isReview: boolean;
-  isBrewing?: boolean;
-  viewCount: number;
-  commentCount: number;
-  shareCounts: { facebook: number; twitter: number; linkedin: number; copy: number };
-}
+// ArticlePageContext imported from ../types/article
 
 const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({ data, pageContext }) => {
   if (!data || !data.markdownRemark) {
@@ -332,29 +279,14 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
                 )
               )}
               <h1 className="hm-article-title">{article.title}</h1>
-              <div className="hm-article-meta">
-                <span className="hm-article-meta-by">By</span>
-                <span className="hm-article-author-name">{author?.name || 'Joseph Crawford'}</span>
-                <span className="hm-article-meta-separator">•</span>
-                <time className="hm-article-date" dateTime={article.publishedAt}>
-                  {formatDate(article.publishedAt)}
-                </time>
-                <span className="hm-article-meta-separator">•</span>
-                <span className="hm-article-views">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                    <circle cx="12" cy="12" r="3"></circle>
-                  </svg>
-                  {viewCount.toLocaleString()}
-                </span>
-                <span className="hm-article-meta-separator">•</span>
-                <span className="hm-article-comments">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                  </svg>
-                  {commentCount}
-                </span>
-              </div>
+              <ArticleMeta
+                authorName={author?.name || 'Joseph Crawford'}
+                publishedAt={article.publishedAt}
+                viewCount={viewCount}
+                commentCount={commentCount}
+                byText="By"
+                variant="article"
+              />
 
               <ShareButtons
                 title={article.title}
@@ -417,41 +349,11 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
               </Suspense>
               
               {article.ingredients && article.ingredients.length > 0 && (
-                <section className="recipe-ingredients">
-                  <h2>Ingredients</h2>
-                  <ul>
-                    {article.ingredients.map((ingredient, index) => (
-                      <li key={index}>{ingredient}</li>
-                    ))}
-                  </ul>
-                </section>
+                <RecipeIngredients ingredients={article.ingredients} />
               )}
               
               {article.steps && article.steps.length > 0 && (
-                <section className="recipe-steps">
-                  <h2>Instructions</h2>
-                  {article.steps.map((step, index) => (
-                    <div key={index} className="recipe-step watermark-step">
-                      <div className="watermark-number">{index + 1}</div>
-                      <div className="recipe-step-content">
-                        <h3>{step.title}</h3>
-                        <p>{step.description}</p>
-                        {step.image && (
-                          <div className="recipe-step-image">
-                            <OptimizedImage src={step.image} alt={step.title} />
-                          </div>
-                        )}
-                        {step.video && (
-                          <div className="recipe-step-video">
-                            <video controls preload="metadata">
-                              <source src={step.video} type="video/mp4" />
-                            </video>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  ))}
-                </section>
+                <RecipeSteps steps={article.steps} variant="article" />
               )}
             </>
           )}

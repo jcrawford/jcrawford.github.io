@@ -3,6 +3,7 @@ import { Link, graphql, PageProps } from 'gatsby';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import OptimizedImage from '../components/OptimizedImage';
+import AlbumCard from '../components/AlbumCard';
 import '../styles/gallery.css';
 
 interface GalleryCategoryData {
@@ -44,52 +45,6 @@ interface GalleryCategoryContext {
   isTopLevel: boolean;
   childCategories?: ChildCategoryMeta[];
   categoryChain: ChainEntry[];
-}
-
-function renderAlbumCard(
-  album: {
-    slug: string;
-    title: string;
-    date: string;
-    description: string;
-    coverImage: string;
-    photoCount: number;
-    videoCount: number;
-  },
-  parentPath: string
-) {
-  const formattedDate = new Date(album.date + 'T00:00:00').toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
-
-  return (
-    <Link
-      key={album.slug}
-      to={`${parentPath}/${album.slug}`}
-      className="hm-gallery-album-card"
-    >
-      <div className="hm-gallery-album-card-image">
-        <OptimizedImage
-          src={album.coverImage}
-          alt={album.title}
-          loading="lazy"
-          sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 320px"
-        />
-      </div>
-      <div className="hm-gallery-album-card-content">
-        <h2 className="hm-gallery-album-card-title">{album.title}</h2>
-        <p className="hm-gallery-album-card-date">{formattedDate}</p>
-        {album.description && (
-          <p className="hm-gallery-album-card-description">{album.description}</p>
-        )}
-        <span className="hm-gallery-album-card-count">
-          {album.photoCount} {album.photoCount === 1 ? 'photo' : 'photos'}{album.videoCount > 0 ? `, ${album.videoCount} ${album.videoCount === 1 ? 'video' : 'videos'}` : ''} — View album →
-        </span>
-      </div>
-    </Link>
-  );
 }
 
 const GalleryCategoryTemplate: React.FC<PageProps<GalleryCategoryData, GalleryCategoryContext>> = ({ data, pageContext }) => {
@@ -205,7 +160,20 @@ const GalleryCategoryTemplate: React.FC<PageProps<GalleryCategoryData, GalleryCa
               </Link>
             ))}
             {/* Albums */}
-            {albums.map((album) => renderAlbumCard(album, categoryPath))}
+            {albums.map((album) => (
+              <AlbumCard
+                key={album.slug}
+                slug={album.slug}
+                title={album.title}
+                date={album.date}
+                description={album.description}
+                coverImage={album.coverImage}
+                photoCount={album.photoCount}
+                videoCount={album.videoCount}
+                basePath={categoryPath}
+                showViewLink
+              />
+            ))}
           </div>
         ) : (
           <div className="hm-empty-state">

@@ -4,26 +4,17 @@ import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
 import SeriesPrevNext from '../components/SeriesPrevNext';
 import SeriesContext from '../components/SeriesContext';
-import { formatDate } from '../utils/dateUtils';
 import OptimizedImage from '../components/OptimizedImage';
 import SEO from '../components/SEO';
 import Comments from '../components/Comments';
 import ImageSpinner from '../components/ImageSpinner';
 import ShareButtons from '../components/ShareButtons';
+import ArticleMeta from '../components/ArticleMeta';
 import { normalizeTagSlug, tagMatches } from '../utils/tagUtils';
+import { getDisplayTitle } from '../utils/titleUtils';
 import { postProcessImages, postProcessTables } from '../utils/postProcessImages';
 import type { SeriesMetadata, SeriesArticle } from '../types';
-
-interface SpinnerImage {
-  src: string;
-  alt: string;
-  caption?: string;
-}
-
-interface NamedSpinner {
-  id: string;
-  images: SpinnerImage[] | null;
-}
+import type { SpinnerImage, NamedSpinner, ShareCounts } from '../types/article';
 
 interface SeriesArticleData {
   markdownRemark: {
@@ -60,6 +51,13 @@ interface SeriesArticleData {
     bio: string;
     avatar: string;
   };
+  site: {
+    siteMetadata: {
+      title: string;
+      description: string;
+      siteUrl: string;
+    };
+  };
   seriesArticles: {
     nodes: Array<{
       frontmatter: {
@@ -77,7 +75,7 @@ interface SeriesArticleData {
 interface SeriesArticlePageContext {
   viewCount: number;
   commentCount: number;
-  shareCounts: { facebook: number; twitter: number; linkedin: number; copy: number };
+  shareCounts: ShareCounts;
 }
 
 const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData, SeriesArticlePageContext>> = ({ data, pageContext }) => {
@@ -125,28 +123,7 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData, SeriesArticle
     ? sortedArticles[currentIndex + 1]
     : null;
 
-  // Strip series name from article title
-  const getDisplayTitle = (title: string): string => {
-    const seriesName = article.series.name;
-    const patterns = [
-      `${seriesName}: `,
-      `${seriesName} - `,
-      `${seriesName} – `,
-      `${seriesName}: `,
-    ];
-    
-    let cleanTitle = title;
-    for (const pattern of patterns) {
-      if (cleanTitle.startsWith(pattern)) {
-        cleanTitle = cleanTitle.substring(pattern.length);
-        break;
-      }
-    }
-    
-    return cleanTitle;
-  };
-
-  const displayTitle = getDisplayTitle(article.title);
+  const displayTitle = getDisplayTitle(article.title, article.series.name);
 
   // Process content with inline spinners
   const renderContentWithSpinners = (): React.ReactNode[] => {
@@ -223,29 +200,14 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData, SeriesArticle
                 
                 <h1 className="hm-article-title">{displayTitle}</h1>
                 
-                <div className="hm-article-meta">
-                  <span className="hm-article-meta-by">by</span>
-                  <span className="hm-article-author-name">{author.name}</span>
-                  <span className="hm-article-meta-separator">•</span>
-                  <time className="hm-article-date" dateTime={article.publishedAt}>
-                    {formatDate(article.publishedAt)}
-                  </time>
-                  <span className="hm-article-meta-separator">•</span>
-                  <span className="hm-article-views">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                      <circle cx="12" cy="12" r="3"></circle>
-                    </svg>
-                    {viewCount.toLocaleString()}
-                  </span>
-                  <span className="hm-article-meta-separator">•</span>
-                  <span className="hm-article-comments">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                    </svg>
-                    {commentCount}
-                  </span>
-                </div>
+                <ArticleMeta
+                  authorName={author.name}
+                  publishedAt={article.publishedAt}
+                  viewCount={viewCount}
+                  commentCount={commentCount}
+                  byText="by"
+                  variant="article"
+                />
 
                 <ShareButtons
                   title={article.title}
@@ -282,7 +244,7 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData, SeriesArticle
               <div className="hm-article-footer">
                 <hr />
 
-                {article.tags?.length > 0 && (
+                {(article.tags?.length ?? 0) > 0 && (
                   <div className="hm-article-tags">
                     <span className="hm-article-tags-label">Tags:</span>
                     {article.tags?.map((tag) => (
@@ -293,7 +255,7 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData, SeriesArticle
                   </div>
                 )}
 
-                {article.tags?.length > 0 && <hr />}
+                {(article.tags?.length ?? 0) > 0 && <hr />}
 
                 <ShareButtons
                   title={article.title}
@@ -383,6 +345,13 @@ export const query = graphql`
       bio
       avatar
     }
+    site {
+      siteMetadata {
+        title
+        description
+        siteUrl
+      }
+    }
     seriesArticles: allMarkdownRemark(
       filter: { frontmatter: { series: { name: { eq: $seriesName } }, draft: { ne: true } } }
       sort: [
@@ -407,28 +376,7 @@ export const query = graphql`
 export const Head: HeadFC<SeriesArticleData> = ({ data }) => {
   const frontmatter = data.markdownRemark.frontmatter;
   
-  // Strip series name from title for SEO
-  const getDisplayTitle = (title: string): string => {
-    const seriesName = frontmatter.series.name;
-    const patterns = [
-      `${seriesName}: `,
-      `${seriesName} - `,
-      `${seriesName} – `,
-      `${seriesName}: `,
-    ];
-    
-    let cleanTitle = title;
-    for (const pattern of patterns) {
-      if (cleanTitle.startsWith(pattern)) {
-        cleanTitle = cleanTitle.substring(pattern.length);
-        break;
-      }
-    }
-    
-    return cleanTitle;
-  };
-
-  const displayTitle = getDisplayTitle(frontmatter.title);
+  const displayTitle = getDisplayTitle(frontmatter.title, frontmatter.series.name);
   
   return (
     <SEO 
@@ -437,6 +385,7 @@ export const Head: HeadFC<SeriesArticleData> = ({ data }) => {
       image={frontmatter.featuredImage}
       article={true}
       pathname={`/series/${frontmatter.slug}`}
+      siteMetadata={data.site.siteMetadata}
     />
   );
 };

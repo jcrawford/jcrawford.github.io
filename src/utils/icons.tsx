@@ -94,6 +94,19 @@ export const InstagramIcon: React.FC<IconProps> = ({ size = 24, color = "current
   </svg>
 );
 
+export const EyeIcon: React.FC<IconProps> = ({ size = 24, color = "currentColor", className }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} className={className} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+    <circle cx="12" cy="12" r="3" />
+  </svg>
+);
+
+export const MessageIcon: React.FC<IconProps> = ({ size = 24, color = "currentColor", className }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} className={className} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+  </svg>
+);
+
 export const icons = {
   search: SearchIcon,
   moon: MoonIcon,
@@ -107,6 +120,8 @@ export const icons = {
   linkedin: LinkedInIcon,
   github: GithubIcon,
   instagram: InstagramIcon,
+  eye: EyeIcon,
+  message: MessageIcon,
 };
 
 export type IconName = keyof typeof icons;

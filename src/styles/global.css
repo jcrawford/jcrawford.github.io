@@ -817,21 +817,7 @@ html.hm-dark .hm-article {
   gap: 4px;
 }
 
-.hm-article-author-name {
-  font-weight: 600;
-  font-size: var(--hybridmag-font-size-md);
-  color: var(--hybridmag-color-text-headings);
-  text-decoration: none;
-}
-
-.hm-article-author-name:hover {
-  color: var(--hybridmag-color-primary);
-}
-
-.hm-article-date {
-  font-size: var(--hybridmag-font-size-xs);
-  color: var(--hybridmag-color-text-light);
-}
+/* .hm-article-author-name and .hm-article-date now defined in Article Header - Single Line Meta section below */
 
 .hm-article-featured-image {
   margin: 30px 0;

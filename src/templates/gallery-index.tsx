@@ -3,6 +3,7 @@ import { Link, graphql, PageProps } from 'gatsby';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import OptimizedImage from '../components/OptimizedImage';
+import AlbumCard from '../components/AlbumCard';
 import '../styles/gallery.css';
 
 interface GalleryAlbumCard {
@@ -43,41 +44,6 @@ interface GalleryIndexData {
 
 interface GalleryIndexContext {
   categories: CategoryMeta[];
-}
-
-function renderAlbumCard(album: GalleryAlbumCard, basePath: string) {
-  const formattedDate = new Date(album.date + 'T00:00:00').toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
-
-  return (
-    <Link
-      key={album.slug}
-      to={`${basePath}/${album.slug}`}
-      className="hm-gallery-album-card"
-    >
-      <div className="hm-gallery-album-card-image">
-        <OptimizedImage
-          src={album.coverImage}
-          alt={album.title}
-          loading="lazy"
-          sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 320px"
-        />
-      </div>
-      <div className="hm-gallery-album-card-content">
-        <h2 className="hm-gallery-album-card-title">{album.title}</h2>
-        <p className="hm-gallery-album-card-date">{formattedDate}</p>
-        {album.description && (
-          <p className="hm-gallery-album-card-description">{album.description}</p>
-        )}
-        <span className="hm-gallery-album-card-count">
-          {album.photoCount} {album.photoCount === 1 ? 'photo' : 'photos'}{album.videoCount > 0 ? `, ${album.videoCount} ${album.videoCount === 1 ? 'video' : 'videos'}` : ''}
-        </span>
-      </div>
-    </Link>
-  );
 }
 
 function renderCategoryCard(
@@ -253,7 +219,19 @@ const GalleryIndex: React.FC<PageProps<GalleryIndexData, GalleryIndexContext>> =
                   {hasCategories ? 'More Albums' : 'Albums'}
                 </h2>
                 <div className="hm-gallery-albums-grid">
-                  {standaloneAlbums.map((album) => renderAlbumCard(album, '/gallery'))}
+                  {standaloneAlbums.map((album) => (
+                    <AlbumCard
+                      key={album.slug}
+                      slug={album.slug}
+                      title={album.title}
+                      date={album.date}
+                      description={album.description}
+                      coverImage={album.coverImage}
+                      photoCount={album.photoCount}
+                      videoCount={album.videoCount}
+                      basePath="/gallery"
+                    />
+                  ))}
                 </div>
               </section>
             )}

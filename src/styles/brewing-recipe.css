@@ -272,18 +272,32 @@ html.hm-dark .recipe-step-content p {
 /* Additional content */
 .recipe-additional-content {
   margin-top: 2rem;
+  margin-bottom: 2rem;
   padding-bottom: 0;
   line-height: 1.7;
   color: var(--hybridmag-color-text-main, #374151);
 }
 
-.recipe-additional-content > *:last-child {
+.recipe-additional-content ul li {
+  margin-bottom: 0.75rem;
+}
+
+.recipe-additional-content ul li:last-child {
   margin-bottom: 0;
 }
 
 .recipe-footer {
+  margin-top: 2rem;
   padding: 0;
   border-top: none;
+}
+
+.recipe-footer hr:first-of-type {
+  margin: 0 0 2rem 0;
+}
+
+.recipe-footer .hm-share-buttons {
+  margin-bottom: 2rem;
 }
 
 html.hm-dark .recipe-additional-content {

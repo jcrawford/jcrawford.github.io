@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { graphql, HeadFC, PageProps } from 'gatsby';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
@@ -7,7 +7,11 @@ import StarRating from '../components/StarRating';
 import FermentationProgress from '../components/FermentationProgress';
 import Comments from '../components/Comments';
 import ShareButtons from '../components/ShareButtons';
+import ArticleMeta from '../components/ArticleMeta';
+import RecipeIngredients from '../components/RecipeIngredients';
+import RecipeSteps from '../components/RecipeSteps';
 import { formatDate } from '../utils/dateUtils';
+import type { BrewData, RecipeStep, ShareCounts } from '../types/article';
 import '../styles/brewing-recipe.css';
 
 // Declare gtag for TypeScript
@@ -32,31 +36,7 @@ function formatDuration(days: number): string {
   return `${months} month${months !== 1 ? 's' : ''}`;
 }
 
-interface BrewData {
-  originalGravity?: number;
-  finalGravity?: number;
-
-  startDate?: string;
-  primaryEndDate?: string;
-  secondaryStartDate?: string;
-  secondaryEndDate?: string;
-  bottlingDate?: string;
-  drinkingReadyDate?: string;
-  bulkConditioningTime?: string;
-  bottleConditioningTime?: string;
-  abv?: number;
-  batchSize?: string;
-  yeast?: string;
-  fermentationTime?: string;
-  secondaryTime?: string;
-}
-
-interface RecipeStep {
-  title: string;
-  description: string;
-  image?: string;
-  video?: string;
-}
+// BrewData and RecipeStep imported from ../types/article
 
 interface RecipeData {
   markdownRemark: {
@@ -82,7 +62,7 @@ interface RecipeData {
 interface BrewingRecipePageContext {
   viewCount: number;
   commentCount: number;
-  shareCounts: { facebook: number; twitter: number; linkedin: number; copy: number };
+  shareCounts: ShareCounts;
 }
 
 const BrewingRecipeTemplate: React.FC<PageProps<RecipeData, BrewingRecipePageContext>> = ({ data, pageContext }) => {
@@ -125,8 +105,8 @@ const BrewingRecipeTemplate: React.FC<PageProps<RecipeData, BrewingRecipePageCon
     { label: 'Batch Size', value: brewData?.batchSize },
     { label: 'Yeast', value: brewData?.yeast },
     { label: 'Fermentation Time', value: calculatedFermentationTime },
-    { label: 'Bulk Conditioning', value: brewData?.bulkConditioningTime },
-    { label: 'Bottle Conditioning', value: brewData?.bottleConditioningTime },
+    { label: 'Bulk Conditioning', value: brewData?.bulkConditioningTime && brewData.bulkConditioningTime !== '0 days' ? brewData.bulkConditioningTime : undefined },
+    { label: 'Bottle Conditioning', value: brewData?.bottleConditioningTime && brewData.bottleConditioningTime !== '0 days' ? brewData.bottleConditioningTime : undefined },
     { label: 'Start Date', value: brewData?.startDate ? formatDate(brewData.startDate) : undefined },
     { label: 'Secondary Start', value: brewData?.secondaryStartDate ? formatDate(brewData.secondaryStartDate) : undefined },
     { label: 'Bottling Date', value: brewData?.bottlingDate ? formatDate(brewData.bottlingDate) : undefined },
@@ -138,26 +118,12 @@ const BrewingRecipeTemplate: React.FC<PageProps<RecipeData, BrewingRecipePageCon
         {/* Header */}
         <header className="brewing-recipe-header">
           <h1>{frontmatter.title}</h1>
-          <div className="recipe-meta">
-            <time dateTime={frontmatter.publishedAt}>
-              {formatDate(frontmatter.publishedAt)}
-            </time>
-            <span className="recipe-meta-separator">•</span>
-            <span className="recipe-views">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                <circle cx="12" cy="12" r="3"></circle>
-              </svg>
-              {viewCount.toLocaleString()}
-            </span>
-            <span className="recipe-meta-separator">•</span>
-            <span className="recipe-comments">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-              </svg>
-              {commentCount}
-            </span>
-          </div>
+          <ArticleMeta
+            publishedAt={frontmatter.publishedAt}
+            viewCount={viewCount}
+            commentCount={commentCount}
+            variant="recipe"
+          />
           <ShareButtons
             title={frontmatter.title}
             url={shareUrl}
@@ -203,49 +169,10 @@ const BrewingRecipeTemplate: React.FC<PageProps<RecipeData, BrewingRecipePageCon
         )}
 
         {/* Ingredients */}
-        {ingredients.length > 0 && (
-          <section className="recipe-ingredients">
-            <h2>Ingredients</h2>
-            <ul>
-              {ingredients.map((ingredient, index) => (
-                <li key={index}>{ingredient}</li>
-              ))}
-            </ul>
-          </section>
-        )}
+        <RecipeIngredients ingredients={ingredients} />
 
         {/* Steps */}
-        {steps.length > 0 && (
-          <section className="recipe-steps">
-            <h2>Instructions</h2>
-            {steps.map((step, index) => (
-              <div key={index} className="recipe-step watermark-step">
-                <span className="watermark-number">{index + 1}</span>
-                <div className="recipe-step-content">
-                  <h3>{step.title}</h3>
-                  <p>{step.description}</p>
-                  {step.video && (
-                    <div className="recipe-step-video">
-                      <video controls playsInline muted loop>
-                        <source src={step.video} type="video/mp4" />
-                        Your browser does not support the video tag.
-                      </video>
-                    </div>
-                  )}
-                  {step.image && (
-                    <div className="recipe-step-image">
-                      <OptimizedImage
-                        src={step.image}
-                        alt={step.title}
-                        sizes="(max-width: 768px) 100vw, 850px"
-                      />
-                    </div>
-                  )}
-                </div>
-              </div>
-            ))}
-          </section>
-        )}
+        <RecipeSteps steps={steps} variant="recipe" />
 
         {/* Any additional markdown body content */}
         {html && (
@@ -256,6 +183,8 @@ const BrewingRecipeTemplate: React.FC<PageProps<RecipeData, BrewingRecipePageCon
         )}
 
         <div className="recipe-footer">
+          <hr />
+
           <ShareButtons
             title={frontmatter.title}
             url={shareUrl}
@@ -274,28 +203,21 @@ const BrewingRecipeTemplate: React.FC<PageProps<RecipeData, BrewingRecipePageCon
 export default BrewingRecipeTemplate;
 
 export const Head: HeadFC<RecipeData> = ({ data }) => {
-  const siteUrl = 'https://josephcrawford.com';
-  const imageUrl = data.markdownRemark.frontmatter.featuredImage?.startsWith('http') 
-    ? data.markdownRemark.frontmatter.featuredImage 
-    : `${siteUrl}${data.markdownRemark.frontmatter.featuredImage}`;
+  const frontmatter = data.markdownRemark.frontmatter;
   
   return (
-    <>
-      <title>{data.markdownRemark.frontmatter.title} | Joseph Crawford</title>
-      <meta name="description" content={data.markdownRemark.frontmatter.excerpt} />
-      <meta name="image" content={imageUrl} />
-      
-      <meta property="og:type" content="article" />
-      <meta property="og:title" content={data.markdownRemark.frontmatter.title} />
-      <meta property="og:description" content={data.markdownRemark.frontmatter.excerpt} />
-      <meta property="og:image" content={imageUrl} />
-      <meta property="og:url" content={`${siteUrl}/brewing/${data.markdownRemark.frontmatter.slug}`} />
-      
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={data.markdownRemark.frontmatter.title} />
-      <meta name="twitter:description" content={data.markdownRemark.frontmatter.excerpt} />
-      <meta name="twitter:image" content={imageUrl} />
-    </>
+    <SEO
+      title={frontmatter.title}
+      description={frontmatter.excerpt}
+      image={frontmatter.featuredImage}
+      article={true}
+      pathname={`/brewing/${frontmatter.slug}`}
+      siteMetadata={{
+        title: 'Joseph Crawford',
+        description: 'A blog relating to technical topics such as programming, web development, and software engineering.',
+        siteUrl: 'https://josephcrawford.com'
+      }}
+    />
   );
 };
 

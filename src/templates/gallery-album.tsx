@@ -17,6 +17,7 @@ import 'yet-another-react-lightbox/plugins/captions.css';
 import 'yet-another-react-lightbox/plugins/counter.css';
 import type { GalleryPhoto, GalleryVideo } from '../types/gallery';
 import { buildSrcSetVariants, buildWebpSrcSetVariants, GALLERY_SIZES } from '../utils/galleryImages';
+import { EyeIcon } from '../utils/icons';
 import '../styles/gallery.css';
 
 declare global {
@@ -196,10 +197,7 @@ const GalleryAlbumTemplate: React.FC<PageProps<GalleryAlbumData, GalleryAlbumCon
                   const viewCount = currentPhoto ? (photoViewCounts?.[currentPhoto.src] || 0) : 0;
                   return (
                     <div className="hm-photo-view-badge">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                        <circle cx="12" cy="12" r="3" />
-                      </svg>
+                      <EyeIcon size={14} />
                       {viewCount} {viewCount === 1 ? 'view' : 'views'}
                     </div>
                   );
