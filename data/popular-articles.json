@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T15:48:32.901Z",
+  "generatedAt": "2026-08-03T16:09:52.335Z",
   "windowDays": 30,
   "entries": [
     {
@@ -91,10 +91,10 @@
       }
     },
     {
-      "id": "/posts/home-brewing-journey",
-      "views": 18,
+      "id": "/brewing/blackberry-mead",
+      "views": 21,
       "comments": 0,
-      "score": 18,
+      "score": 21,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -102,10 +102,10 @@
       }
     },
     {
-      "id": "/brewing/blackberry-mead",
-      "views": 16,
+      "id": "/posts/home-brewing-journey",
+      "views": 18,
       "comments": 0,
-      "score": 16,
+      "score": 18,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
