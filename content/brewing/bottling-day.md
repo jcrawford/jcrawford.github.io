@@ -33,7 +33,7 @@ Before a single drop enters a bottle, you must ensure that fermentation is compl
 If you bottle while the yeast is still active and consuming sugars, you create a **bottle bomb**. This is exactly what it sounds like: the internal pressure builds until the glass fails, resulting in an explosion that sends shards of glass and sticky liquid throughout your storage area.
 
 To prevent this, I use two primary methods of stabilization:
-1. **Chemical Stabilization**: I add potassium metabisulfite (KMS) to kill off or dormantize the remaining yeast. For a standard one-gallon batch, I typically use approximately **1/4 teaspoon of KMS**, though I always double-check the specific concentration of the powder I'm using.
+1. **Chemical Stabilization**: I add a combination of **potassium metabisulfite (KMS)** and **potassium sorbate** to halt yeast activity. For a standard one-gallon batch, I use approximately **1/4 teaspoon of KMS** and **1/2 teaspoon of potassium sorbate**. The KMS acts as an antioxidant and antimicrobial, while the sorbate prevents the remaining yeast cells from reproducing and restarting fermentation. I always mix them in thoroughly and wait at least 24 hours before backsweetening or bottling, and I double-check the concentration on the specific products I have on hand.
 2. **Pasteurization**: Using heat to neutralize the yeast.
 
 ## Pasteurization Technique
