@@ -34,7 +34,7 @@ Once fermentation is confirmed complete, you need to stabilize the brew. I use t
 
 ## Chemical Stabilization
 
-I add a combination of **potassium metabisulfite** and **potassium sorbate** to stop the yeast from restarting fermentation. For a standard one-gallon batch, I use approximately **1/4 teaspoon of potassium metabisulfite** and **1/2 teaspoon of potassium sorbate**. The metabisulfite works as an antioxidant and antimicrobial, while the sorbate keeps any remaining yeast cells from multiplying. I mix them in thoroughly and wait at least 24 hours before adding more sugar or bottling, and I always double-check the concentration printed on the specific products I am using.
+I add a combination of **potassium metabisulfite** and **potassium sorbate** to stop the yeast from restarting fermentation. For a standard one-gallon batch, I use approximately **1/4 teaspoon of potassium metabisulfite** and **1/2 teaspoon of potassium sorbate**. The metabisulfite works as an antioxidant and antimicrobial, while the sorbate keeps any remaining yeast cells from multiplying. I mix them in thoroughly and wait at least 24 hours before adding more sugar or bottling.
 
 ## Pasteurization
 
