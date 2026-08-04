@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-04T14:41:19.978Z",
+  "generatedAt": "2026-08-04T15:46:47.498Z",
   "windowDays": 30,
   "entries": [
     {
@@ -179,6 +179,17 @@
       }
     },
     {
+      "id": "/reviews/plaato-airlock-review",
+      "views": 9,
+      "comments": 0,
+      "score": 9,
+      "shares": {
+        "facebook": 4,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/posts/long-running-ai-agents-adk",
       "views": 7,
       "comments": 0,
@@ -262,17 +273,6 @@
       "score": 3,
       "shares": {
         "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/plaato-airlock-review",
-      "views": 3,
-      "comments": 0,
-      "score": 3,
-      "shares": {
-        "facebook": 2,
         "linkedin": 0,
         "copy": 0
       }
