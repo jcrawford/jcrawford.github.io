@@ -50,11 +50,11 @@ If you find your brew is too dry for your taste and you need to back-sweeten, th
 
 **When using Potassium Sorbate + KMS:**
 The sequence must be: 
-Fermentation finishes $\rightarrow$ Rack off the lees $\rightarrow$ Add stabilizers $\rightarrow$ Wait 24–48 hours $\rightarrow$ Back-sweeten $\rightarrow$ Verify stability $\rightarrow$ Bottle.
+Fermentation finishes → Rack off the lees → Add stabilizers → Wait 24–48 hours → Back-sweeten → Verify stability → Bottle.
 
 **When using Pasteurization:**
 The sequence is different: 
-Fermentation finishes $\rightarrow$ Back-sweeten $\rightarrow$ Allow honey to fully dissolve and mix $\rightarrow$ Pasteurize $\rightarrow$ Cool $\rightarrow$ Bottle.
+Fermentation finishes → Back-sweeten → Allow honey to fully dissolve and mix → Pasteurize → Cool → Bottle.
 
 A critical distinction to remember: don't rely on potassium sorbate alone. Sulfite and sorbate work together, and neither is a substitute for ensuring fermentation has actually finished before you introduce more sugar.
 
