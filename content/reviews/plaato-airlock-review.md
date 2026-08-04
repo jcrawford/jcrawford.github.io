@@ -1,7 +1,7 @@
 ---
 slug: plaato-airlock-review
-title: \"PLAATO Airlock Review\"
-description: \"A cautionary tale of cloud-dependency. How a clever smart airlock became a $100 paperweight after the company abandoned homebrewers.\"
+title: "PLAATO Airlock Review"
+description: "A cautionary tale of cloud-dependency. How a clever smart airlock became a $100 paperweight after the company abandoned homebrewers."
 excerpt: >-
   The PLAATO Airlock promised smart fermentation tracking through a sleek bubbler. For a few months it worked. Then the company abandoned homebrewers, killed the app and API, and left every customer with useless hardware.
 
