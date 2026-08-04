@@ -481,5 +481,19 @@
     "name": "Guide",
     "description": "Posts tagged with Guide.",
     "featured": false
+  },
+  {
+    "id": "70",
+    "slug": "cider",
+    "name": "Cider",
+    "description": "Posts tagged with Cider.",
+    "featured": false
+  },
+  {
+    "id": "71",
+    "slug": "fruit-cider",
+    "name": "Fruit Cider",
+    "description": "Posts tagged with Fruit Cider.",
+    "featured": false
   }
 ]
