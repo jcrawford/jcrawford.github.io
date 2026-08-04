@@ -34,24 +34,23 @@ const ShareButtons: React.FC<ShareButtonsProps> = ({ title, url, variant = 'bott
   }, [url, title]);
 
   const openShareWindow = useCallback(async (shareUrl: string, method: string) => {
-    // On mobile, prefer Web Share API (navigator.share) — opens native share sheet,
-    // avoids Facebook m.facebook.com login redirect issue with sharer.php
     const isMobile = typeof window !== 'undefined' && (
       /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
       (window.matchMedia && window.matchMedia('(max-width: 768px)').matches)
     );
 
-    if (isMobile && typeof navigator !== 'undefined' && navigator.share) {
+    // Facebook on mobile: don't use Web Share API — it sends {title, url} but
+    // no image, and FB app posts a plain link without OG preview.
+    // Instead open sharer.php directly — iOS Universal Links route to FB app
+    // which shows OG image preview from scraping the URL.
+    if (isMobile && method !== 'facebook' && typeof navigator !== 'undefined' && navigator.share) {
       try {
-        await navigator.share({
-          title,
-          url,
-        });
+        await navigator.share({ title, url });
         trackShare(method);
         return;
       } catch (err) {
-        // User cancelled or share failed — fall through to window.open
-        if (err && err.name === 'AbortError') return;
+        const isAbort = err && typeof err === 'object' && 'name' in err && (err as { name: string }).name === 'AbortError';
+        if (isAbort) return;
       }
     }
 
