@@ -44,8 +44,6 @@ The most important rule here is that these temperatures must be the **internal t
 
 ## Bottle Carbonation with Crown Caps
 
-For those who prefer a more traditional "sparkling" finish, you can bottle carbonate using standard beer bottles and crown caps. 
-
-Unlike wine or mead, which are often bottled still, carbonation requires leaving a precise amount of residual sugar (priming sugar) in the liquid. The yeast then consumes this sugar inside the sealed bottle, producing CO2 that dissolves into the liquid. 
+For those who prefer a more traditional "sparkling" finish, you can bottle carbonate using standard beer bottles and crown caps. Carbonation requires leaving a precise amount of residual sugar (priming sugar) in the liquid. The yeast then consumes this sugar inside the sealed bottle, producing CO2 that dissolves into the liquid. 
 
 Using crown caps is the gold standard for this process because they provide a true airtight seal that can withstand the high pressures of carbonation. If you go this route, ensure your priming calculations are exact; too little and the brew is flat, too much and you're back to the "bottle bomb" scenario.
