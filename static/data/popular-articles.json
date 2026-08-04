@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-04T16:00:54.366Z",
+  "generatedAt": "2026-08-04T17:04:20.528Z",
   "windowDays": 30,
   "entries": [
     {
@@ -157,6 +157,17 @@
       }
     },
     {
+      "id": "/reviews/plaato-airlock-review",
+      "views": 10,
+      "comments": 0,
+      "score": 10,
+      "shares": {
+        "facebook": 5,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/brewing/home-brewing-journey",
       "views": 9,
       "comments": 0,
@@ -174,17 +185,6 @@
       "score": 9,
       "shares": {
         "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/plaato-airlock-review",
-      "views": 9,
-      "comments": 0,
-      "score": 9,
-      "shares": {
-        "facebook": 4,
         "linkedin": 0,
         "copy": 0
       }

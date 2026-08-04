@@ -1,4 +1,5 @@
 ---
+slug: tilt-hydrometer-review
 description: \"Real-time gravity tracking that's almost perfect—if you can ignore the janky software and krausen-induced inaccuracies. A 3/5 review of a premium tool.\"
 excerpt: >-
   The Tilt Hydrometer promises 24/7 gravity and temperature readings straight from your fermenter. I wanted to love it, and in some ways I do—but a few persistent flaws keep it from earning a permanent place in every batch.
