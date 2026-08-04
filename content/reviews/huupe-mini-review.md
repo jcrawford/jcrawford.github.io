@@ -1,6 +1,7 @@
 ---
 slug: huupe-mini-review
 title: "Huupe Mini Review: Smart Basketball Hoop with Big Promise, Mixed Execution"
+description: "AI shot tracking and smart gaming in a basketball hoop. Great for kids, but does the build quality justify the $499 price tag? A 3/5 review."
 excerpt: "The Huupe Mini is an ambitious smart basketball hoop with AI shot tracking, HD display, and streaming built in. After weeks of use—and a full replacement cycle—here's my honest take on what works and what doesn't."
 featuredImage: /images/content/reviews/huupe-mini-review/featured.jpg
 tags: ["reviews", "gaming", "smart-home", "basketball", "sports"]

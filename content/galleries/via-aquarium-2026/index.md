@@ -1,7 +1,7 @@
 ---
 title: "VIA Aquarium"
 slug: via-aquarium-2026-album
-category: 2026
+category: "2026"
 date: "2026-07-19"
 draft: false
 description: "Our visit to VIA Aquarium in Rotterdam, NY after the Adirondack Animal Land rainout."

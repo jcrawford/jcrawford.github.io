@@ -1,6 +1,7 @@
 ---
 slug: benq-rd320ua-monitor-review
 title: "BenQ RD320UA Monitor Review: A Developer's Daily Driver"
+description: "A developer's dream for eye care and text clarity, but does the built-in KVM hold up in complex setups? My honest take on the BenQ RD320UA."
 excerpt: >-
   A hands-on review of the BenQ RD320UA coding monitor after weeks of daily
   use — examining its eye-care features, text clarity, and the KVM limitations
