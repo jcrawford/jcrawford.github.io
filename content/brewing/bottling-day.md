@@ -54,7 +54,7 @@ Fermentation finishes → Rack off the lees → Add stabilizers → Wait 24–48
 
 Fermentation finishes → Back-sweeten → Allow honey to fully dissolve and mix → Pasteurize → Cool → Bottle.
 
-The critical distinction: do not rely on potassium sorbate by itself. The sorbate and metabisulfite work together, and neither replaces the need to confirm fermentation is truly finished before you add more sugar.
+The critical distinction: do not rely on potassium sorbate alone. The sorbate and metabisulfite work together, and neither replaces the need to confirm fermentation is truly finished before you add more sugar.
 
 ## Bottle Carbonation with Crown Caps
 
