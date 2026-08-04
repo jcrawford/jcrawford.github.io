@@ -43,7 +43,7 @@ const SEO: React.FC<SEOProps> = ({
   const seo = {
     title: title ? `${title} | ${siteMetadata.title}` : siteMetadata.title,
     description: description || siteMetadata.description,
-    url: `${siteMetadata.siteUrl}${pathname}`,
+    url: `${siteMetadata.siteUrl}${pathname.endsWith('/') ? pathname : `${pathname}/`}`,
     image: image?.startsWith('http') ? image : `${siteMetadata.siteUrl}${image || '/og-image.jpg'}`,
   };
 
