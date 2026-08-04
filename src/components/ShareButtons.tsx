@@ -1,4 +1,6 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
+
+const FB_APP_ID = '28298300393127149';
 
 interface ShareCounts {
   facebook?: number;
@@ -13,15 +15,60 @@ interface ShareButtonsProps {
   shareCounts?: ShareCounts;
 }
 
-// Declare gtag for TypeScript
+// Declare globals for TypeScript
 declare global {
   interface Window {
-    gtag?: (...args: any[]) => void;
+    FB?: any;
+    fbAsyncInit?: () => void;
   }
+}
+
+let fbSdkLoaded = false;
+let fbSdkLoading = false;
+
+function loadFbSdk(): Promise<void> {
+  return new Promise((resolve) => {
+    if (typeof window === 'undefined') return resolve();
+    if (fbSdkLoaded && window.FB) return resolve();
+
+    if (fbSdkLoading) {
+      // Already loading — wait for it
+      const check = setInterval(() => {
+        if (window.FB) {
+          clearInterval(check);
+          resolve();
+        }
+      }, 100);
+      return;
+    }
+
+    fbSdkLoading = true;
+    window.fbAsyncInit = () => {
+      window.FB.init({
+        appId: FB_APP_ID,
+        version: 'v18.0',
+      });
+      fbSdkLoaded = true;
+      fbSdkLoading = false;
+      resolve();
+    };
+
+    const script = document.createElement('script');
+    script.id = 'facebook-jssdk';
+    script.src = 'https://connect.facebook.net/en_US/sdk.js';
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
+  });
 }
 
 const ShareButtons: React.FC<ShareButtonsProps> = ({ title, url, variant = 'bottom', shareCounts = {} }) => {
   const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    // Preload FB SDK so share dialog opens fast
+    loadFbSdk();
+  }, []);
 
   const trackShare = useCallback((method: string) => {
     if (typeof window !== 'undefined' && window.gtag && window.location.hostname === 'josephcrawford.com') {
@@ -39,43 +86,40 @@ const ShareButtons: React.FC<ShareButtonsProps> = ({ title, url, variant = 'bott
       (window.matchMedia && window.matchMedia('(max-width: 768px)').matches)
     );
 
-    // On mobile, use Web Share API. For Facebook, fetch the OG image as a
-    // File and pass it via navigator.share({ files }) so the FB app
-    // receives the image directly — no reliance on OG tag scraping.
-    if (isMobile && typeof navigator !== 'undefined' && navigator.share) {
+    // Facebook: use FB SDK share dialog — shows OG image preview on all platforms
+    if (method === 'facebook') {
       try {
-        const shareData: ShareData = { title, url };
-
-        if (method === 'facebook') {
-          // Try to get OG image URL from meta tag
-          const ogImageMeta = document.querySelector('meta[property="og:image"]');
-          const ogImageSrc = ogImageMeta?.getAttribute('content');
-
-          if (ogImageSrc && navigator.canShare) {
-            try {
-              const response = await fetch(ogImageSrc);
-              const blob = await response.blob();
-              const file = new File([blob], 'featured.jpg', { type: blob.type || 'image/jpeg' });
-              if (navigator.canShare({ files: [file] })) {
-                shareData.files = [file];
-                shareData.text = title;
-              }
-            } catch {
-              // Image fetch failed — share without image, FB app will scrape OG tags
+        await loadFbSdk();
+        if (window.FB) {
+          window.FB.ui({
+            method: 'share',
+            href: url,
+          }, (response: any) => {
+            if (response && !response.error) {
+              trackShare(method);
             }
-          }
+          });
+          return;
         }
+      } catch {
+        // SDK failed — fall through to sharer.php
+      }
+    }
 
-        await navigator.share(shareData);
+    // Other platforms on mobile: use Web Share API
+    if (isMobile && method !== 'facebook' && typeof navigator !== 'undefined' && navigator.share) {
+      try {
+        await navigator.share({ title, url });
         trackShare(method);
         return;
       } catch (err) {
         const isAbort = err && typeof err === 'object' && 'name' in err && (err as { name: string }).name === 'AbortError';
         if (isAbort) return;
-        // Web Share failed — fall through to window.open below
+        // Fall through to window.open
       }
     }
 
+    // Desktop / fallback: open popup window
     if (isMobile) {
       window.open(shareUrl, '_blank', 'noopener,noreferrer');
     } else {

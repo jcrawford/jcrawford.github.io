@@ -65,6 +65,7 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:image:alt" content={title || siteMetadata.title} />
       <meta property="og:url" content={seo.url} />
       <meta property="og:site_name" content={siteMetadata.title} />
+      <meta property="fb:app_id" content="28298300393127149" />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={seo.title} />
