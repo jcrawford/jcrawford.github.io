@@ -32,9 +32,17 @@ Before a single drop enters a bottle, you must ensure that fermentation is compl
 
 If you bottle while the yeast is still active and consuming sugars, you create a **bottle bomb**. This is exactly what it sounds like: the internal pressure builds until the glass fails, resulting in an explosion that sends shards of glass and sticky liquid throughout your storage area.
 
-To prevent this, I use two primary methods of stabilization:
-1. **Chemical Stabilization**: I add a combination of **potassium metabisulfite (KMS)** and **potassium sorbate** to halt yeast activity. For a standard one-gallon batch, I use approximately **1/4 teaspoon of KMS** and **1/2 teaspoon of potassium sorbate**. The KMS acts as an antioxidant and antimicrobial, while the sorbate prevents the remaining yeast cells from reproducing and restarting fermentation. I always mix them in thoroughly and wait at least 24 hours before backsweetening or bottling, and I double-check the concentration on the specific products I have on hand.
-2. **Pasteurization**: Using heat to neutralize the yeast.
+To prevent this, I use two primary methods of stabilization: chemical stabilization and pasteurization. Both are effective, but they are not interchangeable, and the sequence of steps around back-sweetening is different for each.
+
+## Chemical Stabilization
+
+I add a combination of **potassium metabisulfite (KMS)** and **potassium sorbate** to halt yeast activity. For a standard one-gallon batch, I use approximately **1/4 teaspoon of KMS** and **1/2 teaspoon of potassium sorbate**. The KMS acts as an antioxidant and antimicrobial, while the sorbate prevents the remaining yeast cells from reproducing and restarting fermentation. I always mix them in thoroughly and wait at least 24 hours before backsweetening or bottling, and I double-check the concentration on the specific products I have on hand.
+
+## Pasteurization
+
+The other reliable method is pasteurization, which uses heat to neutralize the yeast. When I choose this route, I follow the most common industry standards: either holding the bottles at **140°F for 20 minutes** or **160°F for 1 minute**. 
+
+The most important rule here is that these temperatures must be the **internal temperature of the liquid**, not just the water in the pot. To manage this, I use my all-in-one Clawhammer supply system. I heat the water to 160°F and place the bottles inside my grain basket. This setup allows me to insert a thermometer into one of the bottles to monitor the internal temperature accurately, ensuring the yeast is fully neutralized without boiling the product.
 
 ## Back-sweetening
 
@@ -49,12 +57,6 @@ The sequence is different:
 Fermentation finishes $\rightarrow$ Back-sweeten $\rightarrow$ Allow honey to fully dissolve and mix $\rightarrow$ Pasteurize $\rightarrow$ Cool $\rightarrow$ Bottle.
 
 A critical distinction to remember: don't rely on potassium sorbate alone. Sulfite and sorbate work together, and neither is a substitute for ensuring fermentation has actually finished before you introduce more sugar.
-
-## Pasteurization Technique
-
-When I choose to pasteurize, I follow the most common industry standards: either holding the bottles at **140°F for 20 minutes** or **160°F for 1 minute**. 
-
-The most important rule here is that these temperatures must be the **internal temperature of the liquid**, not just the water in the pot. To manage this, I use my all-in-one Clawhammer supply system. I heat the water to 160°F and place the bottles inside my grain basket. This setup allows me to insert a thermometer into one of the bottles to monitor the internal temperature accurately, ensuring the yeast is fully neutralized without boiling the product.
 
 ## Bottle Carbonation with Crown Caps
 
