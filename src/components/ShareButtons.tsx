@@ -33,20 +33,35 @@ const ShareButtons: React.FC<ShareButtonsProps> = ({ title, url, variant = 'bott
     }
   }, [url, title]);
 
-  const openShareWindow = useCallback((shareUrl: string, method: string) => {
-    // On mobile, use _blank instead of popup window specs — popup specs are ignored
-    // and can cause the window to not open at all on iOS Safari
+  const openShareWindow = useCallback(async (shareUrl: string, method: string) => {
+    // On mobile, prefer Web Share API (navigator.share) — opens native share sheet,
+    // avoids Facebook m.facebook.com login redirect issue with sharer.php
     const isMobile = typeof window !== 'undefined' && (
       /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
       (window.matchMedia && window.matchMedia('(max-width: 768px)').matches)
     );
+
+    if (isMobile && typeof navigator !== 'undefined' && navigator.share) {
+      try {
+        await navigator.share({
+          title,
+          url,
+        });
+        trackShare(method);
+        return;
+      } catch (err) {
+        // User cancelled or share failed — fall through to window.open
+        if (err && err.name === 'AbortError') return;
+      }
+    }
+
     if (isMobile) {
       window.open(shareUrl, '_blank', 'noopener,noreferrer');
     } else {
       window.open(shareUrl, 'share-popup', 'width=600,height=400,scrollbars=no,toolbar=no,location=no');
     }
     trackShare(method);
-  }, [trackShare]);
+  }, [trackShare, title, url]);
 
   const handleCopyLink = useCallback(async () => {
     try {
