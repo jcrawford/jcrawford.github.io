@@ -39,18 +39,40 @@ const ShareButtons: React.FC<ShareButtonsProps> = ({ title, url, variant = 'bott
       (window.matchMedia && window.matchMedia('(max-width: 768px)').matches)
     );
 
-    // Facebook on mobile: don't use Web Share API — it sends {title, url} but
-    // no image, and FB app posts a plain link without OG preview.
-    // Instead open sharer.php directly — iOS Universal Links route to FB app
-    // which shows OG image preview from scraping the URL.
-    if (isMobile && method !== 'facebook' && typeof navigator !== 'undefined' && navigator.share) {
+    // On mobile, use Web Share API. For Facebook, fetch the OG image as a
+    // File and pass it via navigator.share({ files }) so the FB app
+    // receives the image directly — no reliance on OG tag scraping.
+    if (isMobile && typeof navigator !== 'undefined' && navigator.share) {
       try {
-        await navigator.share({ title, url });
+        const shareData: ShareData = { title, url };
+
+        if (method === 'facebook') {
+          // Try to get OG image URL from meta tag
+          const ogImageMeta = document.querySelector('meta[property="og:image"]');
+          const ogImageSrc = ogImageMeta?.getAttribute('content');
+
+          if (ogImageSrc && navigator.canShare) {
+            try {
+              const response = await fetch(ogImageSrc);
+              const blob = await response.blob();
+              const file = new File([blob], 'featured.jpg', { type: blob.type || 'image/jpeg' });
+              if (navigator.canShare({ files: [file] })) {
+                shareData.files = [file];
+                shareData.text = title;
+              }
+            } catch {
+              // Image fetch failed — share without image, FB app will scrape OG tags
+            }
+          }
+        }
+
+        await navigator.share(shareData);
         trackShare(method);
         return;
       } catch (err) {
         const isAbort = err && typeof err === 'object' && 'name' in err && (err as { name: string }).name === 'AbortError';
         if (isAbort) return;
+        // Web Share failed — fall through to window.open below
       }
     }
 
