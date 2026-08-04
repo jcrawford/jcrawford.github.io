@@ -4,6 +4,7 @@ import { getArticlePath } from '../utils/articlePath';
 import OptimizedImage from './OptimizedImage';
 import { formatDate } from '../utils/dateUtils';
 import { parsePopularArticles, POPULAR_ARTICLES_STORAGE_KEY } from '../utils/popularArticles';
+import DraftBadge from './DraftBadge';
 
 interface RecentArticle {
   id: string;
@@ -13,6 +14,7 @@ interface RecentArticle {
     featuredImage: string;
     tags: string[];
     publishedAt: string;
+    draft: boolean | null;
     series?: {
       name: string;
     };
@@ -27,12 +29,14 @@ interface RecentArticlesData {
 
 const FALLBACK_LIMIT = 5;
 
+const SHOW_DRAFTS = typeof process !== 'undefined' && process.env.GATSBY_SHOW_DRAFTS === 'true';
+
 const RecentArticles: React.FC = () => {
   const data = useStaticQuery<RecentArticlesData>(graphql`
     query RecentArticlesQuery {
       allArticles: allMarkdownRemark(
         sort: { frontmatter: { publishedAt: DESC } }
-        filter: { frontmatter: { slug: { ne: null }, draft: { ne: true } }, fileAbsolutePath: { regex: "//content/(posts|reviews|brewing)/" } }
+        filter: { frontmatter: { slug: { ne: null } }, fileAbsolutePath: { regex: "//content/(posts|reviews|brewing)/" } }
       ) {
         nodes {
           id
@@ -42,6 +46,7 @@ const RecentArticles: React.FC = () => {
             featuredImage
             tags
             publishedAt
+            draft
             series {
               name
             }
@@ -97,7 +102,9 @@ const RecentArticles: React.FC = () => {
   }, []);
 
   const articles = useMemo(() => {
-    const allArticles = data.allArticles.nodes;
+    const allArticles = data.allArticles.nodes.filter(
+      (article) => SHOW_DRAFTS || !article.frontmatter.draft
+    );
 
     if (popularOrder.size === 0) {
       return allArticles.slice(0, FALLBACK_LIMIT);
@@ -153,6 +160,7 @@ const RecentArticles: React.FC = () => {
             <div className="hms-details">
               <h4 className="hms-title">
                 <Link to={articlePath}>{article.frontmatter.title}</Link>
+                {article.frontmatter.draft && <DraftBadge />}
               </h4>
               <span className="hms-date">
                 {formatDate(article.frontmatter.publishedAt)}

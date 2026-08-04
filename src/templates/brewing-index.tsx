@@ -4,8 +4,11 @@ import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import OptimizedImage from '../components/OptimizedImage';
 import StarRating from '../components/StarRating';
+import DraftBadge from '../components/DraftBadge';
 import { formatDate } from '../utils/dateUtils';
 import '../styles/brewing-index.css';
+
+const SHOW_DRAFTS = typeof process !== 'undefined' && process.env.GATSBY_SHOW_DRAFTS === 'true';
 
 interface RecipeCard {
   id: string;
@@ -27,6 +30,7 @@ interface RecipeCard {
       drinkingReadyDate?: string;
       startDate?: string;
     };
+    draft?: boolean;
   };
 }
 
@@ -39,7 +43,8 @@ interface ListingData {
 const BrewingIndexTemplate: React.FC<PageProps<ListingData>> = ({
   data,
 }) => {
-  const recipes = data.allMarkdownRemark.nodes;
+  const recipesAll = data.allMarkdownRemark.nodes;
+  const recipes = SHOW_DRAFTS ? recipesAll : recipesAll.filter((recipe) => !recipe.frontmatter.draft);
   const [activeBrewTab, setActiveBrewTab] = React.useState<'active' | 'completed'>('active');
   const [activePage, setActivePage] = React.useState(1);
   const [completedPage, setCompletedPage] = React.useState(1);
@@ -100,6 +105,7 @@ const BrewingIndexTemplate: React.FC<PageProps<ListingData>> = ({
         )}
         <div className="brewing-recipe-card-body">
           <h2>{recipe.frontmatter.title}</h2>
+          {recipe.frontmatter.draft && <DraftBadge size="md" />}
           <p>{recipe.frontmatter.excerpt}</p>
           <div className="brewing-recipe-card-meta">
             <span>{formatDate(recipe.frontmatter.publishedAt)}</span>
@@ -279,7 +285,7 @@ export const query = graphql`
   query BrewingIndexQuery {
     allMarkdownRemark(
       filter: {
-        frontmatter: { slug: { ne: null }, draft: { ne: true }, tags: { in: ["brewing"] } }
+        frontmatter: { slug: { ne: null }, tags: { in: ["brewing"] } }
       }
       sort: { frontmatter: { publishedAt: DESC } }
     ) {
@@ -297,6 +303,7 @@ export const query = graphql`
             rating
           }
           type
+          draft
           brewData {
             abv
             batchSize

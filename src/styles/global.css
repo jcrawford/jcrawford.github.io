@@ -473,6 +473,56 @@ body {
 }
 
 
+/* Draft banner */
+.hm-draft-banner {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+  background: #ffcc00;
+  color: #1a1a1a;
+  text-align: center;
+  padding: 10px 16px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  border-bottom: 3px solid #d4a800;
+}
+
+.hm-draft-banner-text {
+  display: inline-block;
+}
+
+/* Draft badge */
+.hm-draft-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffcc00;
+  color: #1a1a1a;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  line-height: 1;
+}
+
+.hm-draft-badge-sm {
+  font-size: 0.65rem;
+  padding: 3px 6px;
+  margin-left: 8px;
+}
+
+.hm-draft-badge-md {
+  font-size: 0.75rem;
+  padding: 5px 8px;
+}
+
+.hm-article-card-title .hm-draft-badge,
+.hm-article-card-meta .hm-draft-badge {
+  vertical-align: middle;
+}
+
 /* Article Card Styles */
 .hm-article-card {
   display: flex;

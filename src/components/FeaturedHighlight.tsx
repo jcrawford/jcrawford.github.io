@@ -7,6 +7,7 @@ interface HighlightedArticle {
   featuredImage: string;
   tags: string[];
   isSeries: boolean;
+  isDraft?: boolean;
 }
 
 interface FeaturedHighlightProps {
@@ -24,6 +25,7 @@ const FeaturedHighlight: React.FC<FeaturedHighlightProps> = ({ articles }) => {
           featuredImage={article.featuredImage}
           tags={article.tags}
           isSeries={article.isSeries}
+          isDraft={article.isDraft}
         />
       ))}
     </div>

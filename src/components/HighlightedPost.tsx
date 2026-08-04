@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { getArticlePath } from '../utils/articlePath';
 import OptimizedImage from './OptimizedImage';
+import DraftBadge from './DraftBadge';
 
 interface HighlightedPostProps {
   slug: string;
@@ -9,6 +10,7 @@ interface HighlightedPostProps {
   featuredImage: string;
   tags: string[];
   isSeries?: boolean;
+  isDraft?: boolean;
 }
 
 const HighlightedPost: React.FC<HighlightedPostProps> = ({
@@ -17,6 +19,7 @@ const HighlightedPost: React.FC<HighlightedPostProps> = ({
   featuredImage,
   tags,
   isSeries,
+  isDraft,
 }) => {
   const isReview = tags.some(t => t.toLowerCase() === 'reviews');
   const isBrewing = tags.some(t => t.toLowerCase() === 'brewing');
@@ -25,6 +28,11 @@ const HighlightedPost: React.FC<HighlightedPostProps> = ({
   return (
     <div className="hm-highlighted-post">
       <div className="hmhp-inner">
+        {isDraft && (
+          <div className="hmhp-draft-badge">
+            <DraftBadge size="md" />
+          </div>
+        )}
         <div className="hmhp-thumb">
           <OptimizedImage 
             src={featuredImage} 

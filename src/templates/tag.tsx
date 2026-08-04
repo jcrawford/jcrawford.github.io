@@ -30,6 +30,7 @@ interface TagPageData {
         author: string;
         publishedAt: string;
         rating?: number;
+        draft?: boolean;
         review?: {
           rating?: number;
         };
@@ -68,7 +69,8 @@ const TagTemplate: React.FC<PageProps<TagPageData, TagPageContext>> = ({
   pageContext 
 }) => {
   const tag = data.tagsJson;
-  const articles = data.allMarkdownRemark.nodes;
+  const articlesAll = data.allMarkdownRemark.nodes;
+  const articles = articlesAll.filter((article) => SHOW_DRAFTS || !article.frontmatter.draft);
   const totalCount = data.allMarkdownRemark.totalCount;
   const tags = data.allTagsJson.nodes;
   const authors = data.allAuthorsJson.nodes;
@@ -108,6 +110,7 @@ const TagTemplate: React.FC<PageProps<TagPageData, TagPageContext>> = ({
                   authorName={getAuthorName(article.frontmatter.author)}
                   isSeries={!!article.frontmatter.series?.name}
                   rating={article.frontmatter.rating ?? article.frontmatter.review?.rating}
+                  isDraft={!!article.frontmatter.draft}
                 />
               ))}
             </div>
@@ -177,6 +180,8 @@ const TagTemplate: React.FC<PageProps<TagPageData, TagPageContext>> = ({
   );
 };
 
+const SHOW_DRAFTS = typeof process !== 'undefined' && process.env.GATSBY_SHOW_DRAFTS === 'true';
+
 export const query = graphql`
   query TagQuery($slug: String!, $articleSlugs: [String!]!, $limit: Int!, $skip: Int!) {
     site {
@@ -192,7 +197,7 @@ export const query = graphql`
       description
     }
     allMarkdownRemark(
-      filter: { frontmatter: { slug: { in: $articleSlugs }, draft: { ne: true } } }
+      filter: { frontmatter: { slug: { in: $articleSlugs } } }
       sort: { frontmatter: { publishedAt: DESC } }
       limit: $limit
       skip: $skip
@@ -209,6 +214,7 @@ export const query = graphql`
           author
           publishedAt
           rating
+          draft
           review {
             rating
           }

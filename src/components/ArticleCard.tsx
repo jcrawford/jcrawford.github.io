@@ -6,6 +6,7 @@ import { getArticlePath } from '../utils/articlePath';
 import { hasTag, normalizeTagSlug, tagMatches, getTagPath } from '../utils/tagUtils';
 import OptimizedImage from './OptimizedImage';
 import StarRating from './StarRating';
+import DraftBadge from './DraftBadge';
 
 interface ArticleCardProps {
   slug: string;
@@ -18,6 +19,7 @@ interface ArticleCardProps {
   authorName: string;
   isSeries?: boolean;
   rating?: number;
+  isDraft?: boolean;
 }
 
 const ArticleCard: React.FC<ArticleCardProps> = ({
@@ -31,6 +33,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
   authorName,
   isSeries,
   rating,
+  isDraft,
 }) => {
   const isReview = hasTag(tags || [], 'reviews');
   const isBrewing = hasTag(tags || [], 'brewing');
@@ -67,6 +70,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
         <h2 className="hm-article-card-title">
           <Link to={articlePath} target="_blank" rel="noopener noreferrer">
             {title}
+            {isDraft && <DraftBadge />}
           </Link>
         </h2>
         

@@ -11,6 +11,7 @@ interface SliderArticle {
   author: string;
   authorName: string;
   isSeries: boolean;
+  isDraft?: boolean;
 }
 
 interface HighlightedArticle {
@@ -18,6 +19,7 @@ interface HighlightedArticle {
   title: string;
   featuredImage: string;
   isSeries: boolean;
+  isDraft?: boolean;
 }
 
 interface FeaturedPostsProps {

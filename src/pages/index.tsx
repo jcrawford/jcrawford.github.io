@@ -8,6 +8,8 @@ import Sidebar from '../components/Sidebar';
 import SEO from '../components/SEO';
 import '../styles/empty-featured.css';
 
+const SHOW_DRAFTS = typeof process !== 'undefined' && process.env.GATSBY_SHOW_DRAFTS === 'true';
+
 interface ArticleFrontmatter {
   slug: string;
   title: string;
@@ -19,6 +21,7 @@ interface ArticleFrontmatter {
   publishedAt: string;
   updatedAt: string;
   rating?: number;
+  draft?: boolean;
   review?: {
     rating?: number;
   };
@@ -53,7 +56,7 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
   
   // All published posts and reviews
   const articles = data.allMarkdownRemark.nodes.filter(
-    article => article.frontmatter
+    article => article.frontmatter && (SHOW_DRAFTS || !article.frontmatter.draft)
   );
 
   // Group articles by series
@@ -136,6 +139,7 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
       author: mappedArticle.frontmatter.author,
       authorName: authors.find(a => a.slug === mappedArticle.frontmatter.author)?.name || mappedArticle.frontmatter.author,
       isSeries: !!mappedArticle.frontmatter.series?.name,
+      isDraft: !!mappedArticle.frontmatter.draft,
     };
   }) : [];
   
@@ -152,6 +156,7 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
       author: mappedArticle.frontmatter.author,
       authorName: authors.find(a => a.slug === mappedArticle.frontmatter.author)?.name || mappedArticle.frontmatter.author,
       isSeries: !!mappedArticle.frontmatter.series?.name,
+      isDraft: !!mappedArticle.frontmatter.draft,
     };
   }) : [];
   
@@ -195,6 +200,7 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
                   authorName={authors.find(a => a.slug === article.frontmatter.author)?.name || article.frontmatter.author}
                   isSeries={!!article.frontmatter.series?.name}
                   rating={article.frontmatter.rating ?? article.frontmatter.review?.rating}
+                  isDraft={!!article.frontmatter.draft}
                 />
               ))}
             </div>
@@ -226,7 +232,7 @@ export const query = graphql`
     allMarkdownRemark(
       sort: { frontmatter: { publishedAt: DESC } }
       limit: 150
-      filter: { frontmatter: { draft: { ne: true } }, fileAbsolutePath: { regex: "//content/(posts|reviews|brewing)/" } }
+      filter: { frontmatter: { slug: { ne: null } }, fileAbsolutePath: { regex: "//content/(posts|reviews|brewing)/" } }
     ) {
       nodes {
         id
@@ -242,6 +248,7 @@ export const query = graphql`
           publishedAt
           updatedAt
           rating
+          draft
           review {
             rating
           }

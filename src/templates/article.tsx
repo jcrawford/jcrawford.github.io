@@ -10,6 +10,7 @@ import ImageSpinner from '../components/ImageSpinner';
 import GalleryEmbed from '../components/GalleryEmbed';
 import ShareButtons from '../components/ShareButtons';
 import ArticleMeta from '../components/ArticleMeta';
+import DraftBanner from '../components/DraftBanner';
 import RecipeIngredients from '../components/RecipeIngredients';
 import RecipeSteps from '../components/RecipeSteps';
 import { getArticlePath } from '../utils/articlePath';
@@ -97,6 +98,7 @@ interface ArticleData {
       author: string;
       publishedAt: string;
       updatedAt: string;
+      draft?: boolean;
       type?: string;
       imageSpinner?: SpinnerImage[];
       imageSpinners?: NamedSpinner[];
@@ -251,6 +253,7 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
 
   return (
     <Layout>
+      {article.draft && <DraftBanner />}
       <script type="application/ld+json">
         {JSON.stringify(schema)}
       </script>
@@ -459,6 +462,7 @@ export const query = graphql`
         author
         publishedAt
         updatedAt
+        draft
         type
         imageSpinner {
           src

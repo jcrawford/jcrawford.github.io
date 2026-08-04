@@ -13,7 +13,9 @@ import { normalizeTagSlug } from './src/utils/tagUtils';
  * never evaluated in the server bundle. The real modules are loaded
  * client-only via dynamic import() or conditional require() in components.
  */
-export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({ stage, actions, getConfig }) => {
+const SHOW_DRAFTS = process.env.GATSBY_SHOW_DRAFTS === 'true';
+
+export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({ stage, actions }) => {
   if (stage === 'build-html' || stage === 'develop-html') {
     actions.setWebpackConfig({
       resolve: {
@@ -311,31 +313,13 @@ function validateSeriesMetadata(articles: Article[], reporter: any): boolean {
 export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
 
-  const result = await graphql<PagesQueryResult>(`
+  const queryWithoutDrafts = `
     query {
       allMarkdownRemark(filter: { frontmatter: { slug: { ne: null }, draft: { ne: true } }, fileAbsolutePath: { regex: "//content/(posts|reviews|brewing)/" } }) {
         nodes {
           id
           fileAbsolutePath
-          frontmatter {
-            slug
-            tags
-            author
-            publishedAt
-            type
-            series {
-              name
-              order
-              references {
-                url
-                title
-              }
-              attachments {
-                filename
-                title
-              }
-            }
-          }
+          frontmatter { slug tags author publishedAt type series { name order references { url title } attachments { filename title } } }
         }
       }
       allTagsJson {
@@ -346,7 +330,28 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
         }
       }
     }
-  `);
+  `;
+
+  const queryWithDrafts = `
+    query {
+      allMarkdownRemark(filter: { frontmatter: { slug: { ne: null } }, fileAbsolutePath: { regex: "//content/(posts|reviews|brewing)/" } }) {
+        nodes {
+          id
+          fileAbsolutePath
+          frontmatter { slug draft tags author publishedAt type series { name order references { url title } attachments { filename title } } }
+        }
+      }
+      allTagsJson {
+        nodes {
+          slug
+          name
+          featured
+        }
+      }
+    }
+  `;
+
+  const result = await graphql<PagesQueryResult>(SHOW_DRAFTS ? queryWithDrafts : queryWithoutDrafts);
 
   if (result.errors) {
     reporter.panicOnBuild('Error loading data for page creation', result.errors);

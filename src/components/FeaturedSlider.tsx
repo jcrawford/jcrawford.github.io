@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import { getArticlePath } from '../utils/articlePath';
 import OptimizedImage from './OptimizedImage';
+import DraftBadge from './DraftBadge';
 
 interface FeaturedArticle {
   slug: string;
@@ -14,6 +15,7 @@ interface FeaturedArticle {
   author: string;
   authorName: string;
   isSeries?: boolean;
+  isDraft?: boolean;
 }
 
 interface FeaturedSliderProps {
@@ -66,6 +68,7 @@ const FeaturedSlider: React.FC<FeaturedSliderProps> = ({ articles }) => {
                 to={articlePath}
                 aria-label={currentArticle.title}
               />
+              {currentArticle.isDraft && <DraftBadge size="md" />}
             </div>
 
           </div>
