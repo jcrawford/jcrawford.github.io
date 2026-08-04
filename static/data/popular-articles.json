@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-04T14:36:54.702Z",
+  "generatedAt": "2026-08-04T14:41:19.978Z",
   "windowDays": 30,
   "entries": [
     {
@@ -267,12 +267,12 @@
       }
     },
     {
-      "id": "/posts/nasa-artemis-return-to-the-moon",
-      "views": 2,
+      "id": "/reviews/plaato-airlock-review",
+      "views": 3,
       "comments": 0,
-      "score": 2,
+      "score": 3,
       "shares": {
-        "facebook": 0,
+        "facebook": 2,
         "linkedin": 0,
         "copy": 0
       }
