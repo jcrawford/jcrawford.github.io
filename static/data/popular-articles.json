@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-04T20:15:36.780Z",
+  "generatedAt": "2026-08-04T23:46:56.564Z",
   "windowDays": 30,
   "entries": [
     {
@@ -256,7 +256,7 @@
       }
     },
     {
-      "id": "/posts/things-you-didnt-know-about-mysql-indexes",
+      "id": "/brewing/bottling-day",
       "views": 3,
       "comments": 0,
       "score": 3,
@@ -267,7 +267,7 @@
       }
     },
     {
-      "id": "/posts/wordpress-plugin-supply-chain-attack-2026",
+      "id": "/posts/things-you-didnt-know-about-mysql-indexes",
       "views": 3,
       "comments": 0,
       "score": 3,
