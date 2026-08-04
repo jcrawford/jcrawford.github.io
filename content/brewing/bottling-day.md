@@ -36,7 +36,7 @@ To prevent this, I use two primary methods of stabilization: chemical stabilizat
 
 ## Chemical Stabilization
 
-I add a combination of **potassium metabisulfite (KMS)** and **potassium sorbate** to halt yeast activity. For a standard one-gallon batch, I use approximately **1/4 teaspoon of KMS** and **1/2 teaspoon of potassium sorbate**. The KMS acts as an antioxidant and antimicrobial, while the sorbate prevents the remaining yeast cells from reproducing and restarting fermentation. I always mix them in thoroughly and wait at least 24 hours before backsweetening or bottling, and I double-check the concentration on the specific products I have on hand.
+I add a combination of **potassium metabisulfite** and **potassium sorbate** to halt yeast activity. For a standard one-gallon batch, I use approximately **1/4 teaspoon of potassium metabisulfite** and **1/2 teaspoon of potassium sorbate**. The sulfite acts as an antioxidant and antimicrobial, while the sorbate prevents the remaining yeast cells from reproducing and restarting fermentation. I always mix them in thoroughly and wait at least 24 hours before backsweetening or bottling, and I double-check the concentration on the specific products I have on hand.
 
 ## Pasteurization
 
@@ -48,7 +48,7 @@ The most important rule here is that these temperatures must be the **internal t
 
 If you find your brew is too dry for your taste and you need to back-sweeten, the timing is critical and depends entirely on your stabilization method. If you add sugar without properly neutralizing the yeast, you risk restarting fermentation—leading straight back to the "bottle bomb" scenario.
 
-**When using Potassium Sorbate + KMS:**
+**When using Potassium Sorbate + Potassium Metabisulfite:**
 The sequence must be: 
 Fermentation finishes → Rack off the lees → Add stabilizers → Wait 24–48 hours → Back-sweeten → Verify stability → Bottle.
 
