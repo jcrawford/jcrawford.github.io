@@ -474,5 +474,12 @@
     "name": "Monitor",
     "description": "Posts tagged with Monitor.",
     "featured": false
+  },
+  {
+    "id": "69",
+    "slug": "guide",
+    "name": "Guide",
+    "description": "Posts tagged with Guide.",
+    "featured": false
   }
 ]
