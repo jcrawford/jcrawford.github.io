@@ -61,38 +61,15 @@ const ShareButtons: React.FC<ShareButtonsProps> = ({ title, url, variant = 'bott
     }
   }, [url, trackShare]);
 
-  const handleFacebookShare = useCallback(() => {
-    // Use Web Share API - opens native share sheet where user can select Facebook
-    // This properly integrates with Facebook app's share extension on iOS/Android
-    if (navigator.share) {
-      navigator.share({
-        title: title,
-        text: title,
-        url: url
-      })
-      .then(() => trackShare('facebook'))
-      .catch((err) => {
-        // User cancelled or share failed
-        console.log('Share cancelled or failed:', err);
-      });
-    } else {
-      // Desktop fallback - open sharer popup in new window
-      window.open(
-        `https://www.facebook.com/dialog/share?app_id=966242223397117&href=${encodeURIComponent(url)}&quote=${encodeURIComponent(title)}`,
-        'fb-share',
-        'width=600,height=400,scrollbars=no,toolbar=no,location=no'
-      );
-      trackShare('facebook');
-    }
-  }, [title, url, trackShare]);
-
   const encodedUrl = encodeURIComponent(url);
+  const encodedTitle = encodeURIComponent(title);
+  const encodedQuote = encodeURIComponent(`Check out this article: ${title}`);
 
   const shareLinks = [
     {
       name: 'Facebook',
       method: 'facebook',
-      href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
+      href: `https://www.facebook.com/dialog/share?app_id=966242223397117&href=${encodedUrl}&quote=${encodedQuote}`,
       color: '#1877F2',
       icon: (
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -136,11 +113,7 @@ const ShareButtons: React.FC<ShareButtonsProps> = ({ title, url, variant = 'bott
               style={{ '--share-color': link.color } as React.CSSProperties}
               onClick={(e) => {
                 e.preventDefault();
-                if (link.method === 'facebook') {
-                  handleFacebookShare();
-                } else {
-                  openShareWindow(link.href, link.method);
-                }
+                openShareWindow(link.href, link.method);
               }}
               aria-label={`Share on ${link.name}`}
               title={`Share on ${link.name}`}
