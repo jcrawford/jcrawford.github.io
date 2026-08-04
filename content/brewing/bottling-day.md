@@ -19,7 +19,7 @@ type: brewing-article
 There are several ways to approach bottling, and the "right" way usually depends on how much gear you have and how much you care about a sticky floor.
 
 ### The Spigot and Hose
-If you are using a fermenter with a built-in spigot, the process is straightforward. I connect a food-grade hose to the spigot and run it directly into the bottle. While this is the simplest method, it can get messy. Because the liquid doesn't stop flowing once the spigot is open, you often end up wasting a significant amount of product while moving the hose from one bottle to the next.
+If you are using a fermenter with a built-in spigot, the process is straightforward. I connect a food-grade hose to the spigot and run it directly into the bottle. While this is the simplest method, it can get messy. Because the liquid doesn't stop flowing once the spigot is open, you often end up wasting a significant amount of product while moving the hose from one bottle to the next. Technically, you can close the spigot and reopen it once the hose is moved to a new bottle. However, I have found that doing this tends to stir up the sediment at the bottom of the fermenter, since the spigot sits very close to it.
 
 ### The Auto-Siphon and Bottle Filler
 For a cleaner operation, I recommend an auto-siphon connected to a bottle filling wand. The wand is a game-changer for a budget setup. It features a small plastic tip at the bottom that acts as a valve; liquid only flows when the tip is pressed firmly against the bottom of the bottle. 
