@@ -1239,6 +1239,49 @@ html.hm-dark .hm-article-content tbody tr:hover {
   font-size: 10px;
 }
 
+/* Share Buttons — Mobile */
+@media (max-width: 768px) {
+  .hm-share-buttons {
+    gap: 8px;
+  }
+  .hm-share-buttons-list {
+    gap: 6px;
+  }
+  .hm-share-btn {
+    padding: 10px 14px;
+    font-size: 13px;
+    min-height: 44px;
+  }
+  .hm-share-top .hm-share-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+    min-height: 36px;
+  }
+  .hm-share-top .hm-share-btn-icon svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hm-share-btn {
+    padding: 10px 12px;
+    font-size: 12px;
+    min-height: 44px;
+  }
+  .hm-share-top .hm-share-btn {
+    min-height: 36px;
+    padding: 7px 10px;
+  }
+  .hm-share-top .hm-share-btn-name {
+    display: none;
+  }
+  .hm-share-top .hm-share-btn-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
 /* Post Navigation (Previous/Next) */
 .hm-post-navigation {
   display: flex;

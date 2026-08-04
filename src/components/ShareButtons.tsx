@@ -34,7 +34,17 @@ const ShareButtons: React.FC<ShareButtonsProps> = ({ title, url, variant = 'bott
   }, [url, title]);
 
   const openShareWindow = useCallback((shareUrl: string, method: string) => {
-    window.open(shareUrl, 'share-popup', 'width=600,height=400,scrollbars=no,toolbar=no,location=no');
+    // On mobile, use _blank instead of popup window specs — popup specs are ignored
+    // and can cause the window to not open at all on iOS Safari
+    const isMobile = typeof window !== 'undefined' && (
+      /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
+      (window.matchMedia && window.matchMedia('(max-width: 768px)').matches)
+    );
+    if (isMobile) {
+      window.open(shareUrl, '_blank', 'noopener,noreferrer');
+    } else {
+      window.open(shareUrl, 'share-popup', 'width=600,height=400,scrollbars=no,toolbar=no,location=no');
+    }
     trackShare(method);
   }, [trackShare]);
 
@@ -62,14 +72,13 @@ const ShareButtons: React.FC<ShareButtonsProps> = ({ title, url, variant = 'bott
   }, [url, trackShare]);
 
   const encodedUrl = encodeURIComponent(url);
-  const encodedTitle = encodeURIComponent(title);
   const encodedQuote = encodeURIComponent(`Check out this article: ${title}`);
 
   const shareLinks = [
     {
       name: 'Facebook',
       method: 'facebook',
-      href: `https://www.facebook.com/dialog/share?app_id=966242223397117&href=${encodedUrl}&quote=${encodedQuote}`,
+      href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}&quote=${encodedQuote}`,
       color: '#1877F2',
       icon: (
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
