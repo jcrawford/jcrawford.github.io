@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-05T12:52:08.918Z",
+  "generatedAt": "2026-08-05T14:35:20.185Z",
   "windowDays": 30,
   "entries": [
     {
@@ -135,23 +135,23 @@
       }
     },
     {
+      "id": "/reviews/plaato-airlock-review",
+      "views": 11,
+      "comments": 0,
+      "score": 11,
+      "shares": {
+        "facebook": 5,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/reviews/huupe-mini-review",
       "views": 10,
       "comments": 0,
       "score": 10,
       "shares": {
         "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/plaato-airlock-review",
-      "views": 10,
-      "comments": 0,
-      "score": 10,
-      "shares": {
-        "facebook": 5,
         "linkedin": 0,
         "copy": 0
       }
