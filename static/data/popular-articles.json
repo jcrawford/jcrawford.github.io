@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-05T03:35:00.429Z",
+  "generatedAt": "2026-08-05T09:07:36.164Z",
   "windowDays": 30,
   "entries": [
     {
@@ -135,17 +135,6 @@
       }
     },
     {
-      "id": "/reviews/voyager-keyboard",
-      "views": 11,
-      "comments": 0,
-      "score": 11,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
       "id": "/reviews/huupe-mini-review",
       "views": 10,
       "comments": 0,
@@ -163,6 +152,17 @@
       "score": 10,
       "shares": {
         "facebook": 5,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/voyager-keyboard",
+      "views": 10,
+      "comments": 0,
+      "score": 10,
+      "shares": {
+        "facebook": 0,
         "linkedin": 0,
         "copy": 0
       }
