@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-05T19:56:53.875Z",
+  "generatedAt": "2026-08-06T03:39:31.372Z",
   "windowDays": 30,
   "entries": [
     {
@@ -125,9 +125,9 @@
     },
     {
       "id": "/reviews/total-typescript-pro-complete-review",
-      "views": 14,
+      "views": 15,
       "comments": 0,
-      "score": 14,
+      "score": 15,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -136,9 +136,9 @@
     },
     {
       "id": "/reviews/plaato-airlock-review",
-      "views": 11,
+      "views": 12,
       "comments": 0,
-      "score": 11,
+      "score": 12,
       "shares": {
         "facebook": 5,
         "linkedin": 0,
@@ -147,6 +147,28 @@
     },
     {
       "id": "/reviews/huupe-mini-review",
+      "views": 10,
+      "comments": 0,
+      "score": 10,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/null",
+      "views": 10,
+      "comments": 0,
+      "score": 10,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/tilt-hydrometer-review",
       "views": 10,
       "comments": 0,
       "score": 10,
@@ -190,17 +212,6 @@
       }
     },
     {
-      "id": "/reviews/null",
-      "views": 9,
-      "comments": 0,
-      "score": 9,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
       "id": "/posts/long-running-ai-agents-adk",
       "views": 7,
       "comments": 0,
@@ -234,10 +245,10 @@
       }
     },
     {
-      "id": "/reviews/tilt-hydrometer-review",
-      "views": 6,
+      "id": "/brewing/bottling-day",
+      "views": 4,
       "comments": 0,
-      "score": 6,
+      "score": 4,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -256,21 +267,10 @@
       }
     },
     {
-      "id": "/brewing/bottling-day",
-      "views": 3,
+      "id": "/reviews/fried-chicken-ice-cream-review",
+      "views": 4,
       "comments": 0,
-      "score": 3,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/posts/things-you-didnt-know-about-mysql-indexes",
-      "views": 3,
-      "comments": 0,
-      "score": 3,
+      "score": 4,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
