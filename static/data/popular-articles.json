@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-06T03:39:31.372Z",
+  "generatedAt": "2026-08-06T09:08:06.321Z",
   "windowDays": 30,
   "entries": [
     {
@@ -48,9 +48,9 @@
     },
     {
       "id": "/posts/disney-vacation-2026",
-      "views": 65,
+      "views": 61,
       "comments": 0,
-      "score": 65,
+      "score": 61,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -146,17 +146,6 @@
       }
     },
     {
-      "id": "/reviews/huupe-mini-review",
-      "views": 10,
-      "comments": 0,
-      "score": 10,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
       "id": "/reviews/null",
       "views": 10,
       "comments": 0,
@@ -202,6 +191,17 @@
     },
     {
       "id": "/brewing/small-batch-brewing-required-tools",
+      "views": 9,
+      "comments": 0,
+      "score": 9,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/huupe-mini-review",
       "views": 9,
       "comments": 0,
       "score": 9,
