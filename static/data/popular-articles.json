@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-07T03:20:27.803Z",
+  "generatedAt": "2026-08-07T07:43:22.633Z",
   "windowDays": 30,
   "entries": [
     {
@@ -7,17 +7,6 @@
       "views": 127,
       "comments": 0,
       "score": 127,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/ford-transit-15-passenger-van-review",
-      "views": 97,
-      "comments": 0,
-      "score": 97,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -44,17 +33,6 @@
         "facebook": 0,
         "linkedin": 0,
         "copy": 4
-      }
-    },
-    {
-      "id": "/posts/disney-vacation-2026",
-      "views": 61,
-      "comments": 0,
-      "score": 61,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
       }
     },
     {
@@ -97,6 +75,17 @@
       "score": 26,
       "shares": {
         "facebook": 1,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/disney-vacation-2026",
+      "views": 23,
+      "comments": 0,
+      "score": 23,
+      "shares": {
+        "facebook": 0,
         "linkedin": 0,
         "copy": 0
       }
@@ -150,6 +139,17 @@
       "views": 11,
       "comments": 0,
       "score": 11,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/ford-transit-15-passenger-van-review",
+      "views": 10,
+      "comments": 0,
+      "score": 10,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
