@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-07T19:17:20.206Z",
+  "generatedAt": "2026-08-08T02:23:08.981Z",
   "windowDays": 30,
   "entries": [
     {
@@ -15,9 +15,9 @@
     },
     {
       "id": "/brewing/cherry-mead",
-      "views": 93,
+      "views": 96,
       "comments": 0,
-      "score": 93,
+      "score": 96,
       "shares": {
         "facebook": 5,
         "linkedin": 1,
@@ -234,7 +234,7 @@
       }
     },
     {
-      "id": "/posts/spacex-buys-cursor-60-billion",
+      "id": "/brewing/bottling-day",
       "views": 6,
       "comments": 0,
       "score": 6,
@@ -245,10 +245,10 @@
       }
     },
     {
-      "id": "/brewing/bottling-day",
-      "views": 5,
+      "id": "/posts/spacex-buys-cursor-60-billion",
+      "views": 6,
       "comments": 0,
-      "score": 5,
+      "score": 6,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
