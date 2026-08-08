@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T13:14:18.181Z",
+  "generatedAt": "2026-08-08T19:00:35.604Z",
   "windowDays": 30,
   "entries": [
     {
@@ -80,10 +80,10 @@
       }
     },
     {
-      "id": "/posts/disney-vacation-2026",
-      "views": 16,
+      "id": "/reviews/total-typescript-pro-complete-review",
+      "views": 17,
       "comments": 0,
-      "score": 16,
+      "score": 17,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -91,7 +91,7 @@
       }
     },
     {
-      "id": "/reviews/total-typescript-pro-complete-review",
+      "id": "/posts/disney-vacation-2026",
       "views": 16,
       "comments": 0,
       "score": 16,
