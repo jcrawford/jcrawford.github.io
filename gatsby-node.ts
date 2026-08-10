@@ -474,6 +474,33 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
   const seriesArticleTemplate = path.resolve('./src/templates/series-article.tsx');
   const brewingRecipeTemplate = path.resolve('./src/templates/brewing-recipe.tsx');
 
+  // Build a lookup of first-article path per series so all parts share metrics.
+  const seriesFirstArticlePath = new Map<string, string>();
+  const articlesBySeries = new Map<string, Article[]>();
+  articles.forEach((article) => {
+    if (article.frontmatter.series?.name) {
+      const seriesName = article.frontmatter.series.name;
+      if (!articlesBySeries.has(seriesName)) {
+        articlesBySeries.set(seriesName, []);
+      }
+      articlesBySeries.get(seriesName)!.push(article);
+    }
+  });
+  articlesBySeries.forEach((seriesArticles, seriesName) => {
+    const sortedArticles = [...seriesArticles].sort((a, b) => {
+      const orderA = a.frontmatter.series?.order ?? Infinity;
+      const orderB = b.frontmatter.series?.order ?? Infinity;
+      return orderA - orderB;
+    });
+    const firstArticle = sortedArticles[0];
+    if (firstArticle) {
+      seriesFirstArticlePath.set(
+        seriesName,
+        `/series/${slugifySeriesName(seriesName)}/${firstArticle.frontmatter.slug}`
+      );
+    }
+  });
+
   articles.forEach((article) => {
     const isSeries = !!article.frontmatter.series?.name;
     const isReview = article.fileAbsolutePath.includes('/content/reviews/');
@@ -491,8 +518,14 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
       articlePath = `/posts/${article.frontmatter.slug}`;
     }
 
+    // For series articles, track metrics against the first article's path so the
+    // whole series shares a single view/share/comment count.
+    const metricsKey = isSeries && article.frontmatter.series?.name
+      ? seriesFirstArticlePath.get(article.frontmatter.series.name) || articlePath
+      : articlePath;
+
     // Look up view/comment counts for this article path
-    const metrics = metricsByPath.get(articlePath) || { views: 0, comments: 0, shares: { facebook: 0, linkedin: 0, copy: 0 } };
+    const metrics = metricsByPath.get(metricsKey) || { views: 0, comments: 0, shares: { facebook: 0, linkedin: 0, copy: 0 } };
 
     const isBrewingRecipe = isBrewing && article.frontmatter.type === 'brewing-recipe';
 
