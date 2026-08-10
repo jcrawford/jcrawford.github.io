@@ -218,7 +218,7 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData, SeriesArticle
                 />
 
                 <ShareButtons
-                  title={article.title}
+                  title={article.series.name}
                   url={shareUrl}
                   variant="top"
                   shareCounts={shareCounts}
@@ -266,7 +266,7 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData, SeriesArticle
                 {(article.tags?.length ?? 0) > 0 && <hr />}
 
                 <ShareButtons
-                  title={article.title}
+                  title={article.series.name}
                   url={shareUrl}
                   shareCounts={shareCounts}
                 />
@@ -385,16 +385,24 @@ export const query = graphql`
 
 export const Head: HeadFC<SeriesArticleData> = ({ data }) => {
   const frontmatter = data.markdownRemark.frontmatter;
+  const seriesName = frontmatter.series.name;
 
-  const displayTitle = frontmatter.title;
+  const sortedSeriesArticles = [...data.seriesArticles.nodes].sort((a, b) => {
+    const orderA = a.frontmatter.series?.order ?? Infinity;
+    const orderB = b.frontmatter.series?.order ?? Infinity;
+    return orderA - orderB;
+  });
+  const firstArticle = sortedSeriesArticles[0]?.frontmatter;
+  const displayTitle = seriesName;
+  const displayImage = firstArticle?.featuredImage || frontmatter.featuredImage;
 
   return (
     <SEO
-      title={frontmatter.title}
+      title={displayTitle}
       description={frontmatter.excerpt}
-      image={frontmatter.featuredImage}
+      image={displayImage}
       article={true}
-      pathname={`/series/${slugifySeriesName(frontmatter.series.name)}/${frontmatter.slug}`}
+      pathname={`/series/${slugifySeriesName(seriesName)}/${firstArticle?.slug || frontmatter.slug}`}
       siteMetadata={data.site.siteMetadata}
     />
   );
