@@ -24,9 +24,8 @@ brewData:
   yeast: "Red Star Premier Cote Des Blancs"
   batchSize: "1 gallon"
   fermentationTime: "10 days"
-  secondaryTime: "10 days"
-  bulkConditioningTime: "20 days"
-  bottleConditioningTime: "0 days"
+  secondaryTime: "30 days"
+  bottleAgingTime: "0 days"
 
 ingredients:
   - "1.5 lbs honey"
@@ -43,13 +42,13 @@ steps:
     description: "Primary fermentation ran for 10 days with Red Star Premier Cote Des Blancs, the same yeast I have used on other fruit wines and meads. The must took on a vivid purple-red color almost immediately from the blackberries, and the yeast worked steadily through the honey sugars. This strain ferments cleanly and tends to finish dry, which made back-sweetening necessary later."
 
   - title: "Transfer to Secondary"
-    description: "After 10 days I racked the mead off the fruit and sediment into a clean secondary fermenter. It stayed there until April 4, 2026, then I transferred it again for bulk conditioning. The color had settled into a deep, opaque purple by this point."
+    description: "After 10 days I racked the mead off the fruit and sediment into a clean secondary fermenter. It stayed there in secondary fermentation from March 25, 2026 until April 24, 2026. The color had settled into a deep, opaque purple by this point."
 
-  - title: "Bulk Condition"
-    description: "Once fermentation was complete, I racked the mead off the sediment into a clean vessel and let it bulk condition from April 4, 2026 until April 24, 2026. Bulk conditioning gives the mead time to clear, settle, and mellow before bottling. The color had shifted to a deep, opaque purple and a small amount of sediment had dropped out by the time I was ready to bottle."
+  - title: "Secondary Fermentation"
+    description: "Once fermentation was complete, I racked the mead off the sediment into a clean vessel and let it continue secondary fermentation from April 4, 2026 until April 24, 2026. This long conditioning and aging step gives the mead time to clear, settle, and mellow before bottling. The color had shifted to a deep, opaque purple and a small amount of sediment had dropped out by the time I was ready to bottle."
 
   - title: "Back Sweeten"
-    description: "After bulk conditioning I tasted the mead. It was clean and drinkable, but it had fermented almost completely dry. I wanted to try making it more of a dessert-style mead, so I added honey and mixed it in. I thought the amount was small enough to add just a touch of sweetness, but in a 1-gallon batch even a little honey goes a long way. The second taste revealed the mead was now far sweeter than I had intended. I bottled it anyway and will let it sit on the shelf to see whether the sweetness mellows with age. If it does, I will keep the bottles. If it stays cloying, I will dump them and treat this batch as a lesson for the next one."
+    description: "After secondary fermentation I tasted the mead. It was clean and drinkable, but it had fermented almost completely dry. I wanted to try making it more of a dessert-style mead, so I added honey and mixed it in. I thought the amount was small enough to add just a touch of sweetness, but in a 1-gallon batch even a little honey goes a long way. The second taste revealed the mead was now far sweeter than I had intended. I bottled it anyway and will let it sit on the shelf to see whether the sweetness mellows with age. If it does, I will keep the bottles. If it stays cloying, I will dump them and treat this batch as a lesson for the next one."
 
   - title: "Bottle and Pasteurize"
     description: "I bottled the mead on April 24, 2026 and immediately pasteurized the bottles to stop any remaining yeast activity and stabilize the back-sweetening. Back-sweetening requires either pasteurization or chemical stabilization (potassium sorbate paired with potassium metabisulfite) to prevent the added sugar from restarting fermentation. I used my brewing kettle as a water bath, bringing the bottles to 140°F (60°C) and holding them there for 20 minutes to ensure the yeast was neutralized without cooking off the alcohol or delicate fruit flavors."

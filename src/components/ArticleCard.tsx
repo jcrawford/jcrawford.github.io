@@ -18,6 +18,7 @@ interface ArticleCardProps {
   author: string;
   authorName: string;
   isSeries?: boolean;
+  seriesName?: string;
   rating?: number;
   isDraft?: boolean;
 }
@@ -32,12 +33,13 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
   author,
   authorName,
   isSeries,
+  seriesName,
   rating,
   isDraft,
 }) => {
   const isReview = hasTag(tags || [], 'reviews');
   const isBrewing = hasTag(tags || [], 'brewing');
-  const articlePath = getArticlePath(slug, isSeries, isReview, isBrewing);
+  const articlePath = getArticlePath(slug, isSeries, isReview, isBrewing, seriesName);
   
   // Get the first tag that's not "family" or "featured" for display
   const primaryTag = (tags || []).find(tag => !tagMatches(tag, 'family') && !tagMatches(tag, 'featured')) || (tags || [])[0];

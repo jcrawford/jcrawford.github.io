@@ -10,6 +10,7 @@ interface HighlightedPostProps {
   featuredImage: string;
   tags: string[];
   isSeries?: boolean;
+  seriesName?: string;
   isDraft?: boolean;
 }
 
@@ -19,11 +20,12 @@ const HighlightedPost: React.FC<HighlightedPostProps> = ({
   featuredImage,
   tags,
   isSeries,
+  seriesName,
   isDraft,
 }) => {
   const isReview = tags.some(t => t.toLowerCase() === 'reviews');
   const isBrewing = tags.some(t => t.toLowerCase() === 'brewing');
-  const articlePath = getArticlePath(slug, isSeries, isReview, isBrewing);
+  const articlePath = getArticlePath(slug, isSeries, isReview, isBrewing, seriesName);
   
   return (
     <div className="hm-highlighted-post">

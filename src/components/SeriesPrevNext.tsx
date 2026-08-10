@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { Link } from 'gatsby';
-import { getArticlePath } from '../utils/articlePath';
+import { slugifySeriesName } from '../utils/articlePath';
 import '../styles/series-navigation.css';
 
 export interface SeriesPrevNextProps {
@@ -24,8 +24,8 @@ export interface SeriesPrevNextProps {
   /** Position of navigation (top or bottom) */
   position?: 'top' | 'bottom';
   
-  /** Series name (to strip from titles) */
-  seriesName?: string;
+  /** Series name (for building paths and stripping from titles) */
+  seriesName: string;
 }
 
 /**
@@ -78,7 +78,7 @@ export const SeriesPrevNext: React.FC<SeriesPrevNextProps> = ({
       {/* Previous Button */}
       {prevSlug && displayPrevTitle ? (
         <Link
-          to={getArticlePath(prevSlug, true)}
+          to={`/series/${slugifySeriesName(seriesName)}/${prevSlug}`}
           className="series-navigation__button series-navigation__prev"
         >
           <span className="series-navigation__content">
@@ -96,7 +96,7 @@ export const SeriesPrevNext: React.FC<SeriesPrevNextProps> = ({
       {/* Next Button */}
       {nextSlug && displayNextTitle ? (
         <Link
-          to={getArticlePath(nextSlug, true)}
+          to={`/series/${slugifySeriesName(seriesName)}/${nextSlug}`}
           className="series-navigation__button series-navigation__next"
         >
           <span className="series-navigation__content">

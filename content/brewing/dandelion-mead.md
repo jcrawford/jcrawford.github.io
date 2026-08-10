@@ -56,14 +56,14 @@ steps:
     description: "Transfer the mead to a clean secondary vessel for clarification. This phase lasted 53 days — longer than typical, but the extra time allowed the mead to develop complexity and drop perfectly clear. No additional fruit or flavorings were added in secondary."
   
   - title: "Bottling"
-    description: "On July 22nd, the mead was ready to bottle. There was no bulk conditioning phase for this batch — it went straight from secondary to bottles. The FG came in at 0.996, yielding an ABV of approximately 10.8%."
+    description: "On July 22nd, the mead was ready to bottle. There was no long secondary fermentation phase for this batch — it went straight from secondary to bottles. The FG came in at 0.996, yielding an ABV of approximately 10.8%."
     image: /images/content/brewing/dandelion-mead/bottling.jpg
 
 ---
 
 ## Notes
 
-This dandelion mead is ready to drink immediately after bottling — no bottle conditioning required.
+This dandelion mead is ready to drink immediately after bottling — no bottle aging required.
 
 The fermentation was remarkably straightforward. Red Star Premier Côte is a reliable yeast that ferments cleanly and flocculates well, leaving behind a mead that's bright and easy to drink.
 

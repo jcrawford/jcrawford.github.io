@@ -252,9 +252,9 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
   };
 
   return (
-    <Layout>
-      {article.draft && <DraftBanner />}
-      <script type="application/ld+json">
+  <Layout>
+    {article.draft && <DraftBanner />}
+    <script type="application/ld+json">
         {JSON.stringify(schema)}
       </script>
       <div className="hm-container">
@@ -497,13 +497,8 @@ export const query = graphql`
           secondaryEndDate
           bottlingDate
           drinkingReadyDate
-          bulkConditioningTime
-          bottleConditioningTime
-          abv
-          batchSize
-          yeast
-          fermentationTime
           secondaryTime
+          bottleAgingTime
         }
         ingredients
         steps {

@@ -10,9 +10,10 @@ import Comments from '../components/Comments';
 import ImageSpinner from '../components/ImageSpinner';
 import ShareButtons from '../components/ShareButtons';
 import ArticleMeta from '../components/ArticleMeta';
-import { normalizeTagSlug, tagMatches } from '../utils/tagUtils';
-import { getDisplayTitle } from '../utils/titleUtils';
+import DraftBanner from '../components/DraftBanner';
+import { tagMatches, getTagPath } from '../utils/tagUtils';
 import { postProcessImages, postProcessTables } from '../utils/postProcessImages';
+import { slugifySeriesName } from '../utils/articlePath';
 import type { SeriesMetadata, SeriesArticle } from '../types';
 import type { SpinnerImage, NamedSpinner, ShareCounts } from '../types/article';
 
@@ -43,6 +44,7 @@ interface SeriesArticleData {
           title?: string;
         }>;
       };
+      draft?: boolean;
     };
   };
   authorsJson: {
@@ -64,6 +66,7 @@ interface SeriesArticleData {
         slug: string;
         title: string;
         publishedAt: string;
+        featuredImage: string;
         series?: {
           order?: number;
         };
@@ -85,8 +88,7 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData, SeriesArticle
   const viewCount = pageContext.viewCount || 0;
   const commentCount = pageContext.commentCount || 0;
   const shareCounts = pageContext.shareCounts || { facebook: 0, twitter: 0, linkedin: 0, copy: 0 };
-  const shareUrl = `https://josephcrawford.com/series/${article.slug}`;
-  
+
   // Get the first tag that's not "family" or "featured" for display
   const primaryTag = article.tags?.find(tag => !tagMatches(tag, 'family') && !tagMatches(tag, 'featured')) || article.tags?.[0];
 
@@ -103,19 +105,23 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData, SeriesArticle
     slug: node.frontmatter.slug,
     title: node.frontmatter.title,
     publishedAt: node.frontmatter.publishedAt,
+    featuredImage: node.frontmatter.featuredImage,
     order: node.frontmatter.series?.order,
   }));
 
   // Sort articles by order and find prev/next based on position
-  const sortedArticles = [...seriesArticles].sort((a, b) => 
+  const sortedArticles = [...seriesArticles].sort((a, b) =>
     (a.order || 0) - (b.order || 0)
   );
+
+  const shareUrl = `https://josephcrawford.com/series/${slugifySeriesName(article.series.name)}/${sortedArticles[0]?.slug || article.slug}`;
+  const shareImage = sortedArticles[0]?.featuredImage || article.featuredImage;
 
   // Find current article index
   const currentIndex = sortedArticles.findIndex((a) => a.slug === article.slug);
 
   // Get prev/next based on position
-  const prevArticleData = currentIndex > 0 
+  const prevArticleData = currentIndex > 0
     ? sortedArticles[currentIndex - 1]
     : null;
 
@@ -123,7 +129,8 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData, SeriesArticle
     ? sortedArticles[currentIndex + 1]
     : null;
 
-  const displayTitle = getDisplayTitle(article.title, article.series.name);
+  const displayTitle = article.title;
+  const displayFeaturedImage = shareImage;
 
   // Process content with inline spinners
   const renderContentWithSpinners = (): React.ReactNode[] => {
@@ -172,6 +179,7 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData, SeriesArticle
 
   return (
     <Layout>
+      {article.draft && <DraftBanner />}
       <div className="hm-container">
         <div className="hm-content-sidebar-wrap">
           <main className="hm-primary-content">
@@ -190,16 +198,16 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData, SeriesArticle
             <article className="hm-article">
               <header className="hm-article-header">
                 {primaryTag && (
-                  <Link 
-                    to={`/tag/${normalizeTagSlug(primaryTag)}`}
+                  <Link
+                    to={`${getTagPath(primaryTag)}/`}
                     className="hm-article-category"
                   >
                     {primaryTag}
                   </Link>
                 )}
-                
+
                 <h1 className="hm-article-title">{displayTitle}</h1>
-                
+
                 <ArticleMeta
                   authorName={author.name}
                   publishedAt={article.publishedAt}
@@ -217,23 +225,23 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData, SeriesArticle
                 />
               </header>
 
-              {!(article.imageSpinner && article.imageSpinner.length > 0) && (
-                <div className="hm-article-featured-image">
-                  <OptimizedImage 
-                    src={article.featuredImage} 
-                    alt={article.title}
-                    loading="eager"
-                    sizes="(max-width: 768px) 100vw, 850px"
-                  />
-                </div>
-              )}
-
               {/* Series Context - Auto-generated */}
               <SeriesContext
                 seriesName={article.series.name}
                 currentOrder={article.series.order}
                 totalArticles={seriesArticles.length}
               />
+
+              {!(article.imageSpinner && article.imageSpinner.length > 0) && (
+                <div className="hm-article-featured-image">
+                  <OptimizedImage
+                    src={displayFeaturedImage}
+                    alt={article.title}
+                    loading="eager"
+                    sizes="(max-width: 768px) 100vw, 850px"
+                  />
+                </div>
+              )}
 
               {article.imageSpinner && article.imageSpinner.length > 0 && (
                 <ImageSpinner images={article.imageSpinner} />
@@ -283,7 +291,7 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData, SeriesArticle
           </main>
 
           {/* Sidebar - Only Series Widget */}
-          <Sidebar 
+          <Sidebar
             currentSlug={article.slug}
             series={seriesMetadata}
             seriesArticles={seriesArticles}
@@ -300,7 +308,7 @@ export const query = graphql`
     $author: String!
     $seriesName: String!
   ) {
-    markdownRemark(frontmatter: { slug: { eq: $slug } }, fileAbsolutePath: { regex: "/content/(posts|reviews)/" }) {
+    markdownRemark(frontmatter: { slug: { eq: $slug } }, fileAbsolutePath: { regex: "/content/(posts|reviews|brewing)/" }) {
       id
       html
       frontmatter {
@@ -311,6 +319,7 @@ export const query = graphql`
         tags
         author
         publishedAt
+        draft
         updatedAt
         imageSpinner {
           src
@@ -353,7 +362,7 @@ export const query = graphql`
       }
     }
     seriesArticles: allMarkdownRemark(
-      filter: { frontmatter: { series: { name: { eq: $seriesName } }, draft: { ne: true } } }
+      filter: { frontmatter: { series: { name: { eq: $seriesName } } } }
       sort: [
         { frontmatter: { series: { order: ASC } } }
         { frontmatter: { publishedAt: ASC } }
@@ -364,6 +373,7 @@ export const query = graphql`
           slug
           title
           publishedAt
+          featuredImage
           series {
             order
           }
@@ -375,20 +385,19 @@ export const query = graphql`
 
 export const Head: HeadFC<SeriesArticleData> = ({ data }) => {
   const frontmatter = data.markdownRemark.frontmatter;
-  
-  const displayTitle = getDisplayTitle(frontmatter.title, frontmatter.series.name);
-  
+
+  const displayTitle = frontmatter.title;
+
   return (
-    <SEO 
-      title={displayTitle}
+    <SEO
+      title={frontmatter.title}
       description={frontmatter.excerpt}
       image={frontmatter.featuredImage}
       article={true}
-      pathname={`/series/${frontmatter.slug}`}
+      pathname={`/series/${slugifySeriesName(frontmatter.series.name)}/${frontmatter.slug}`}
       siteMetadata={data.site.siteMetadata}
     />
   );
 };
 
 export default SeriesArticleTemplate;
-

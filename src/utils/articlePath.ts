@@ -7,7 +7,17 @@
  * @param isBrewing - Whether the article is a brewing recipe
  * @returns The full path to the article
  */
-export function getArticlePath(slug: string, isSeries?: boolean, isReview?: boolean, isBrewing?: boolean): string {
+export function slugifySeriesName(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+export function getArticlePath(slug: string, isSeries?: boolean, isReview?: boolean, isBrewing?: boolean, seriesName?: string): string {
+  if (isSeries && seriesName) {
+    return `/series/${slugifySeriesName(seriesName)}/${slug}`;
+  }
   if (isSeries) {
     return `/series/${slug}`;
   }

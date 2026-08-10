@@ -19,9 +19,8 @@ brewData:
   yeast: "Red Star Premier Blanc"
   batchSize: "1 gallon"
   fermentationTime: "3 weeks"
-  secondaryTime: "2 weeks"
-  bulkConditioningTime: "3 months"
-  bottleConditioningTime: "6 months"
+  secondaryTime: "3 months"
+  bottleAgingTime: "6 months"
 
 ingredients:
   - "3 lbs Maker's Mark Premium Wildflower Honey"
@@ -71,6 +70,6 @@ steps:
 
 This is a live batch — started on July 22, 2026. The original gravity came in at **1.090**, which should yield around 12% ABV if it ferments to dryness.
 
-**Bottle Conditioning:** After bottling, this mead will undergo **6 months** of bottle conditioning to allow the flavors to settle and the carbonation to develop properly.
+**Bottle Aging:** After bottling, this mead will undergo **6 months** of bottle aging to allow the flavors to settle and the carbonation to develop properly.
 
 **This post will be updated as the mead progresses through each stage.** Check back for updates on the cherry bag removal, secondary fermentation, bottling, final gravity, ABV, and tasting notes once it's drinking ready.

@@ -4,7 +4,7 @@ import { getArticlePath } from '../utils/articlePath';
 import OptimizedImage from './OptimizedImage';
 import DraftBadge from './DraftBadge';
 
-interface FeaturedArticle {
+export interface FeaturedArticle {
   slug: string;
   title: string;
   excerpt: string;
@@ -15,6 +15,7 @@ interface FeaturedArticle {
   author: string;
   authorName: string;
   isSeries?: boolean;
+  seriesName?: string;
   isDraft?: boolean;
 }
 
@@ -46,7 +47,7 @@ const FeaturedSlider: React.FC<FeaturedSliderProps> = ({ articles }) => {
   const currentArticle = articles[currentSlide];
   const isReview = currentArticle.tags?.some(t => t.toLowerCase() === 'reviews') ?? false;
   const isBrewing = currentArticle.type === 'brewing-recipe' || (currentArticle.tags?.some(t => t.toLowerCase() === 'brewing') ?? false);
-  const articlePath = getArticlePath(currentArticle.slug, currentArticle.isSeries, isReview, isBrewing);
+  const articlePath = getArticlePath(currentArticle.slug, currentArticle.isSeries, isReview, isBrewing, currentArticle.seriesName);
 
   return (
     <div className="hm-swiper hm-slider">

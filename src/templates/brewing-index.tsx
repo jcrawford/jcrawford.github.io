@@ -2,13 +2,10 @@ import React from 'react';
 import { graphql, Link, PageProps, HeadFC } from 'gatsby';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-import OptimizedImage from '../components/OptimizedImage';
 import StarRating from '../components/StarRating';
 import DraftBadge from '../components/DraftBadge';
 import { formatDate } from '../utils/dateUtils';
 import '../styles/brewing-index.css';
-
-const SHOW_DRAFTS = typeof process !== 'undefined' && process.env.GATSBY_SHOW_DRAFTS === 'true';
 
 interface RecipeCard {
   id: string;
@@ -31,7 +28,19 @@ interface RecipeCard {
       startDate?: string;
     };
     draft?: boolean;
+    series?: {
+      name: string;
+    };
   };
+}
+
+interface SeriesCard {
+  name: string;
+  slug: string;
+  description: string;
+  featuredImage: string;
+  publishedAt: string;
+  draft?: boolean;
 }
 
 interface ListingData {
@@ -40,11 +49,17 @@ interface ListingData {
   };
 }
 
-const BrewingIndexTemplate: React.FC<PageProps<ListingData>> = ({
+interface BrewingIndexPageContext {
+  draftFilter: (boolean | null)[];
+  seriesCards: SeriesCard[];
+}
+
+const BrewingIndexTemplate: React.FC<PageProps<ListingData, BrewingIndexPageContext>> = ({
   data,
+  pageContext,
 }) => {
-  const recipesAll = data.allMarkdownRemark.nodes;
-  const recipes = SHOW_DRAFTS ? recipesAll : recipesAll.filter((recipe) => !recipe.frontmatter.draft);
+  const recipes = data.allMarkdownRemark.nodes;
+  const seriesCards = pageContext.seriesCards || [];
   const [activeBrewTab, setActiveBrewTab] = React.useState<'active' | 'completed'>('active');
   const [activePage, setActivePage] = React.useState(1);
   const [completedPage, setCompletedPage] = React.useState(1);
@@ -69,8 +84,9 @@ const BrewingIndexTemplate: React.FC<PageProps<ListingData>> = ({
   const paginatedCompletedBrews = completedBrews.slice((completedPage - 1) * BREWS_PER_PAGE, completedPage * BREWS_PER_PAGE);
   const completedTotalPages = Math.ceil(completedBrews.length / BREWS_PER_PAGE);
 
-  const brewingPosts = recipes.filter(
-    (recipe) => recipe.frontmatter.type !== 'brewing-recipe'
+  // Standalone brewing posts only (no series articles). Series are rendered from pageContext.
+  const standaloneBrewingPosts = recipes.filter(
+    (recipe) => recipe.frontmatter.type !== 'brewing-recipe' && !recipe.frontmatter.series
   );
 
   const hasBrews = activeBrews.length > 0 || completedBrews.length > 0;
@@ -80,6 +96,33 @@ const BrewingIndexTemplate: React.FC<PageProps<ListingData>> = ({
     if (tab === 'active') setActivePage(1);
     else setCompletedPage(1);
   };
+
+  const SeriesCardComponent: React.FC<{ card: SeriesCard }> = ({ card }) => (
+    <Link
+      key={card.slug}
+      to={`/series/${card.slug}`}
+      className="brewing-recipe-card"
+    >
+      {card.featuredImage && (
+        <div className="brewing-recipe-card-image">
+          <img
+            src={card.featuredImage}
+            alt={card.name}
+            loading="lazy"
+            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+          />
+        </div>
+      )}
+      <div className="brewing-recipe-card-body">
+        <h2>{card.name}</h2>
+        {card.draft && <DraftBadge size="md" />}
+        <p>{card.description}</p>
+        <div className="brewing-recipe-card-meta">
+          <span>{formatDate(card.publishedAt)}</span>
+        </div>
+      </div>
+    </Link>
+  );
 
   const RecipeCardComponent: React.FC<{ recipe: RecipeCard }> = ({ recipe }) => {
     const isReview = recipe.fileAbsolutePath.includes('/content/reviews/');
@@ -111,7 +154,7 @@ const BrewingIndexTemplate: React.FC<PageProps<ListingData>> = ({
             <span>{formatDate(recipe.frontmatter.publishedAt)}</span>
             {(recipe.frontmatter.rating ?? recipe.frontmatter.review?.rating) && (
               <span className="recipe-card-rating">
-                <StarRating rating={recipe.frontmatter.rating ?? recipe.frontmatter.review?.rating} size={14} showScore={false} color="#FFC107" />
+                <StarRating rating={recipe.frontmatter.rating ?? recipe.frontmatter.review?.rating ?? 0} size={14} showScore={false} color="#FFC107" />
               </span>
             )}
             {recipe.frontmatter.brewData?.abv && (
@@ -240,7 +283,7 @@ const BrewingIndexTemplate: React.FC<PageProps<ListingData>> = ({
         )}
 
         {/* Brewing Articles Section */}
-        {brewingPosts.length > 0 && (
+        {(seriesCards.length > 0 || standaloneBrewingPosts.length > 0) && (
           <section className="brewing-section">
             <h2 className="brewing-section-title">
               <span className="section-icon">📝</span>
@@ -250,14 +293,17 @@ const BrewingIndexTemplate: React.FC<PageProps<ListingData>> = ({
               Articles and notes about brewing techniques, equipment, and experiments.
             </p>
             <div className="brewing-recipe-grid">
-              {brewingPosts.map((recipe) => (
+              {seriesCards.map((card) => (
+                <SeriesCardComponent key={card.slug} card={card} />
+              ))}
+              {standaloneBrewingPosts.map((recipe) => (
                 <RecipeCardComponent key={recipe.id} recipe={recipe} />
               ))}
             </div>
           </section>
         )}
 
-        {recipes.length === 0 && (
+        {recipes.length === 0 && seriesCards.length === 0 && (
           <div className="brewing-empty">
             <p>No recipes yet. Check back soon!</p>
           </div>
@@ -282,10 +328,12 @@ export const Head: HeadFC = () => (
 );
 
 export const query = graphql`
-  query BrewingIndexQuery {
+  query BrewingIndexQuery(
+    $draftFilter: [Boolean]
+  ) {
     allMarkdownRemark(
       filter: {
-        frontmatter: { slug: { ne: null }, tags: { in: ["brewing"] } }
+        frontmatter: { slug: { ne: null }, tags: { in: ["brewing"] }, draft: { in: $draftFilter }, series: { name: { eq: null } } }
       }
       sort: { frontmatter: { publishedAt: DESC } }
     ) {

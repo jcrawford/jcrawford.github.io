@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { Link } from 'gatsby';
-import { getArticlePath } from '../utils/articlePath';
+import { slugifySeriesName } from '../utils/articlePath';
 import type { SeriesMetadata, SeriesArticle } from '../types';
 import '../styles/series-widget.css';
 
@@ -92,7 +92,7 @@ export const SeriesWidget: React.FC<SeriesWidgetProps> = ({
                     </span>
                   ) : (
                     <Link
-                      to={getArticlePath(article.slug, true)}
+                      to={`/series/${slugifySeriesName(series.name)}/${article.slug}`}
                       className="series-widget__toc-link"
                     >
                       {displayTitle}

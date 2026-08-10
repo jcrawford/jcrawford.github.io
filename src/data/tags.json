@@ -495,5 +495,110 @@
     "name": "Fruit Cider",
     "description": "Posts tagged with Fruit Cider.",
     "featured": false
+  },
+  {
+    "id": "72",
+    "slug": "bochet",
+    "name": "Bochet",
+    "description": "Posts tagged with Bochet.",
+    "featured": false
+  },
+  {
+    "id": "73",
+    "slug": "apple",
+    "name": "Apple",
+    "description": "Posts tagged with Apple.",
+    "featured": false
+  },
+  {
+    "id": "74",
+    "slug": "cleaning",
+    "name": "Cleaning",
+    "description": "Posts tagged with Cleaning.",
+    "featured": false
+  },
+  {
+    "id": "75",
+    "slug": "sanitization",
+    "name": "Sanitization",
+    "description": "Posts tagged with Sanitization.",
+    "featured": false
+  },
+  {
+    "id": "76",
+    "slug": "ingredients",
+    "name": "Ingredients",
+    "description": "Posts tagged with Ingredients.",
+    "featured": false
+  },
+  {
+    "id": "77",
+    "slug": "honey",
+    "name": "Honey",
+    "description": "Posts tagged with Honey.",
+    "featured": false
+  },
+  {
+    "id": "78",
+    "slug": "yeast",
+    "name": "Yeast",
+    "description": "Posts tagged with Yeast.",
+    "featured": false
+  },
+  {
+    "id": "79",
+    "slug": "fermentation",
+    "name": "Fermentation",
+    "description": "Posts tagged with Fermentation.",
+    "featured": false
+  },
+  {
+    "id": "80",
+    "slug": "primary-fermentation",
+    "name": "Primary Fermentation",
+    "description": "Posts tagged with Primary Fermentation.",
+    "featured": false
+  },
+  {
+    "id": "81",
+    "slug": "styles",
+    "name": "Styles",
+    "description": "Posts tagged with Styles.",
+    "featured": false
+  },
+  {
+    "id": "82",
+    "slug": "beginner",
+    "name": "Beginner",
+    "description": "Posts tagged with Beginner.",
+    "featured": false
+  },
+  {
+    "id": "83",
+    "slug": "conditioning",
+    "name": "Conditioning",
+    "description": "Posts tagged with Conditioning.",
+    "featured": false
+  },
+  {
+    "id": "84",
+    "slug": "aging",
+    "name": "Aging",
+    "description": "Posts tagged with Aging.",
+    "featured": false
+  },
+  {
+    "id": "85",
+    "slug": "secondary-fermentation",
+    "name": "Secondary Fermentation",
+    "description": "Posts tagged with Secondary Fermentation.",
+    "featured": false
+  },
+  {
+    "id": "86",
+    "slug": "bottling",
+    "name": "Bottling",
+    "description": "Posts tagged with Bottling.",
+    "featured": false
   }
 ]

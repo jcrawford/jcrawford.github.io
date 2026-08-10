@@ -23,13 +23,12 @@ export interface BrewData {
   secondaryEndDate?: string
   bottlingDate?: string
   drinkingReadyDate?: string
-  bulkConditioningTime?: string
-  bottleConditioningTime?: string
+  secondaryTime?: string
+  bottleAgingTime?: string
   abv?: number
   batchSize?: string
   yeast?: string
   fermentationTime?: string
-  secondaryTime?: string
 }
 
 export interface RecipeStep {

@@ -4,6 +4,7 @@ import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import OptimizedImage from '../components/OptimizedImage';
 import StarRating from '../components/StarRating';
+import DraftBanner from '../components/DraftBanner';
 import FermentationProgress from '../components/FermentationProgress';
 import Comments from '../components/Comments';
 import ShareButtons from '../components/ShareButtons';
@@ -52,6 +53,7 @@ interface RecipeData {
       tags: string[] | null;
       author: string;
       publishedAt: string;
+      draft: boolean;
       type: string;
       rating?: number;
       brewData?: BrewData;
@@ -107,8 +109,8 @@ const BrewingRecipeTemplate: React.FC<PageProps<RecipeData, BrewingRecipePageCon
     { label: 'Batch Size', value: brewData?.batchSize },
     { label: 'Yeast', value: brewData?.yeast },
     { label: 'Fermentation Time', value: calculatedFermentationTime },
-    { label: 'Bulk Conditioning', value: brewData?.bulkConditioningTime && brewData.bulkConditioningTime !== '0 days' ? brewData.bulkConditioningTime : undefined },
-    { label: 'Bottle Conditioning', value: brewData?.bottleConditioningTime && brewData.bottleConditioningTime !== '0 days' ? brewData.bottleConditioningTime : undefined },
+    { label: 'Secondary Fermentation', value: brewData?.secondaryTime && brewData.secondaryTime !== '0 days' ? brewData.secondaryTime : undefined },
+    { label: 'Bottle Aging', value: brewData?.bottleAgingTime && brewData.bottleAgingTime !== '0 days' ? brewData.bottleAgingTime : undefined },
     { label: 'Start Date', value: brewData?.startDate ? formatDate(brewData.startDate) : undefined },
     { label: 'Secondary Start', value: brewData?.secondaryStartDate ? formatDate(brewData.secondaryStartDate) : undefined },
     { label: 'Bottling Date', value: brewData?.bottlingDate ? formatDate(brewData.bottlingDate) : undefined },
@@ -116,6 +118,7 @@ const BrewingRecipeTemplate: React.FC<PageProps<RecipeData, BrewingRecipePageCon
 
   return (
     <Layout>
+      {frontmatter.draft && <DraftBanner />}
       <article className="brewing-recipe">
         {/* Header */}
         <header className="brewing-recipe-header">
@@ -273,6 +276,7 @@ export const query = graphql`
         tags
         author
         publishedAt
+        draft
         type
         rating
         brewData {
@@ -290,8 +294,7 @@ export const query = graphql`
           yeast
           fermentationTime
           secondaryTime
-          bulkConditioningTime
-          bottleConditioningTime
+          bottleAgingTime
         }
         ingredients
         steps {

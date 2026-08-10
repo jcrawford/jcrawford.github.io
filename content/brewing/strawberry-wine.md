@@ -25,9 +25,8 @@ brewData:
   yeast: "Red Star Premier Cote Des Blancs"
   batchSize: "1 gallon"
   fermentationTime: "21 days"
-  secondaryTime: "1 month"
-  bulkConditioningTime: "3.5 months"
-  bottleConditioningTime: "1 year"
+  secondaryTime: "3.5 months"
+  bottleAgingTime: "1 year"
 
 ingredients:
   - "5.76 lbs fresh strawberries"
@@ -55,10 +54,10 @@ steps:
     description: "Allow primary fermentation to go for as long as necessary until there is no more activity in your airlock. Note that this tends to take between 2 to 3 weeks, but you can check with a triple scale hydrometer to ensure fermentation is complete. After two weeks, remove the strawberry purée bag from the must and allow fermentation to continue until complete. Starting OG was 1.080."
   
   - title: "Transfer to Secondary"
-    description: "My final gravity after primary was 0.994. Transfer the wine to secondary fermentation, leaving any sediment behind. Conditioning began after the secondary phase."
+    description: "My final gravity after primary was 0.994. Transfer the wine to secondary fermentation, leaving any sediment behind. This is the start of the long conditioning and aging phase."
   
-  - title: "Bulk Conditioning"
-    description: "After secondary fermentation completed, I let the wine condition in bulk for 3.5 months before bottling. During this time it cleared up drastically — what started as a cloudy, pink liquid settled into a beautifully clear, bright strawberry wine."
+  - title: "Secondary Fermentation"
+    description: "After secondary fermentation completed, I let the wine continue secondary fermentation for 3.5 months before bottling. This long conditioning and aging period is where it cleared up drastically — what started as a cloudy, pink liquid settled into a beautifully clear, bright strawberry wine."
   
   - title: "Bottling"
     description: "After four months of fermentation and aging, bottle the wine. The long secondary period allowed the wine to clear and develop complexity."

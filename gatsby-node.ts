@@ -2,6 +2,7 @@ import type { GatsbyNode } from 'gatsby';
 import path from 'path';
 import fs from 'fs';
 import { normalizeTagSlug } from './src/utils/tagUtils';
+import { slugifySeriesName } from './src/utils/articlePath';
 
 /**
  * @giscus/react uses Lit custom elements that call browser globals (window,
@@ -119,6 +120,8 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
     type SeriesFrontmatter {
       name: String
       order: Int
+      description: String
+      featuredImage: String
       prev: String
       next: String
       references: [SeriesReferenceFrontmatter]
@@ -185,6 +188,7 @@ interface Article {
     tags: string[];
     author: string;
     publishedAt: string;
+    type?: string;
     series?: SeriesMetadata;
   };
 }
@@ -197,7 +201,33 @@ interface Tag {
 
 interface PagesQueryResult {
   allMarkdownRemark: {
-    nodes: Article[];
+    nodes: Array<{
+      id: string;
+      fileAbsolutePath: string;
+      frontmatter: {
+        slug: string;
+        title: string;
+        excerpt: string;
+        featuredImage: string;
+        tags: string[];
+        author: string;
+        publishedAt: string;
+        type?: string;
+        draft?: boolean;
+        series?: {
+          name: string;
+          order?: number;
+          description?: string;
+          featuredImage?: string;
+        };
+        brewData?: {
+          abv?: number;
+          batchSize?: string;
+          drinkingReadyDate?: string;
+          startDate?: string;
+        };
+      };
+    }>;
   };
   allTagsJson: {
     nodes: Tag[];
@@ -319,7 +349,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
         nodes {
           id
           fileAbsolutePath
-          frontmatter { slug tags author publishedAt type series { name order references { url title } attachments { filename title } } }
+          frontmatter { slug title excerpt featuredImage tags author publishedAt type draft series { name order description featuredImage references { url title } attachments { filename title } } brewData { abv batchSize drinkingReadyDate startDate } }
         }
       }
       allTagsJson {
@@ -338,7 +368,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
         nodes {
           id
           fileAbsolutePath
-          frontmatter { slug draft tags author publishedAt type series { name order references { url title } attachments { filename title } } }
+          frontmatter { slug title excerpt featuredImage tags author publishedAt type draft series { name order description featuredImage references { url title } attachments { filename title } } brewData { abv batchSize drinkingReadyDate startDate } }
         }
       }
       allTagsJson {
@@ -365,6 +395,49 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
     reporter.warn('No articles found to create pages');
     return;
   }
+
+  // Build a single series card per brewing-tagged series.
+  // Each card uses the first-ordered article for its base metadata and links
+  // to /series/{series-slug}/{first-article-slug}/.
+  const seriesCardsMap = new Map<string, {
+    name: string;
+    slug: string;
+    description: string;
+    featuredImage: string;
+    publishedAt: string;
+    draft?: boolean;
+  }>();
+
+  articles.forEach((article) => {
+    const series = article.frontmatter.series;
+    if (!series?.name) return;
+    const tags = article.frontmatter.tags || [];
+    if (!tags.some((t) => normalizeTagSlug(t) === 'brewing')) return;
+
+    const existing = seriesCardsMap.get(series.name);
+    const order = series.order ?? Infinity;
+    const existingOrder = existing ? (articles.find(
+      (a) => a.frontmatter.series?.name === series.name && a.frontmatter.slug === existing.slug
+    )?.frontmatter.series?.order ?? Infinity) : Infinity;
+
+    if (!existing || order < existingOrder) {
+      const seriesSlug = slugifySeriesName(series.name);
+      const seriesDescription = series.description || article.frontmatter.excerpt;
+      const seriesImage = series.featuredImage || article.frontmatter.featuredImage || '/images/content/brewing/intro-to-making-mead/series-cover.png';
+      seriesCardsMap.set(series.name, {
+        name: series.name,
+        slug: `${seriesSlug}/${article.frontmatter.slug}`,
+        description: seriesDescription,
+        featuredImage: seriesImage,
+        publishedAt: article.frontmatter.publishedAt,
+        draft: article.frontmatter.draft,
+      });
+    }
+  });
+
+  const seriesCards = Array.from(seriesCardsMap.values()).sort(
+    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+  );
 
   // Load popular-articles.json (generated at deploy start by generate:popular script)
   // to inject view counts and comment counts at build time — no client-side pop-in.
@@ -408,8 +481,8 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
     
     // Determine the path based on article type
     let articlePath: string;
-    if (isSeries) {
-      articlePath = `/series/${article.frontmatter.slug}`;
+    if (isSeries && article.frontmatter.series?.name) {
+      articlePath = `/series/${slugifySeriesName(article.frontmatter.series.name)}/${article.frontmatter.slug}`;
     } else if (isReview) {
       articlePath = `/reviews/${article.frontmatter.slug}`;
     } else if (isBrewing) {
@@ -417,7 +490,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
     } else {
       articlePath = `/posts/${article.frontmatter.slug}`;
     }
-    
+
     // Look up view/comment counts for this article path
     const metrics = metricsByPath.get(articlePath) || { views: 0, comments: 0, shares: { facebook: 0, linkedin: 0, copy: 0 } };
 
@@ -442,13 +515,39 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
 
   reporter.info(`Created ${articles.length} article pages`);
 
+  // Create home page
+  const homeTemplate = path.resolve('./src/templates/index.tsx');
+  createPage({
+    path: '/',
+    component: homeTemplate,
+    context: {
+      draftFilter: SHOW_DRAFTS ? [false, true, null] : [false, null],
+    },
+  });
+  reporter.info('Created home page');
+
   // Create brewing index page
   const brewingIndexTemplate = path.resolve('./src/templates/brewing-index.tsx');
   createPage({
     path: '/brewing',
     component: brewingIndexTemplate,
+    context: {
+      draftFilter: SHOW_DRAFTS ? [false, true, null] : [false, null],
+      seriesCards,
+    },
   });
-  reporter.info('Created brewing index page: /brewing');
+  reporter.info(`Created brewing index page: /brewing with ${seriesCards.length} series card(s)`);
+
+  // Create series index page
+  const seriesIndexTemplate = path.resolve('./src/templates/series-index.tsx');
+  createPage({
+    path: '/series',
+    component: seriesIndexTemplate,
+    context: {
+      draftFilter: SHOW_DRAFTS ? [false, true, null] : [false, null],
+    },
+  });
+  reporter.info('Created series index page: /series');
 
   // Create tag pages with pagination
   const tagTemplate = path.resolve('./src/templates/tag.tsx');
@@ -458,20 +557,91 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
     const tagArticles = articles.filter((article) =>
       article.frontmatter.tags?.some((articleTag) => normalizeTagSlug(articleTag) === tag.slug)
     );
-    const numPages = Math.ceil(tagArticles.length / articlesPerPage);
+
+    // Build series cards for this tag (one per series that has a tagged article)
+    const tagSeriesMap = new Map<string, {
+      name: string;
+      slug: string;
+      description: string;
+      featuredImage: string;
+      publishedAt: string;
+      draft?: boolean;
+    }>();
+
+    tagArticles.forEach((article) => {
+      const series = article.frontmatter.series;
+      if (!series?.name) return;
+
+      const existing = tagSeriesMap.get(series.name);
+      const order = series.order ?? Infinity;
+      const existingOrder = existing
+        ? (tagArticles.find(
+            (a) => a.frontmatter.series?.name === series.name && a.frontmatter.slug === existing.slug
+          )?.frontmatter.series?.order ?? Infinity)
+        : Infinity;
+
+      if (!existing || order < existingOrder) {
+        const seriesSlug = slugifySeriesName(series.name);
+        tagSeriesMap.set(series.name, {
+          name: series.name,
+          slug: `${seriesSlug}/${article.frontmatter.slug}`,
+          description: series.description || article.frontmatter.excerpt,
+          featuredImage: series.featuredImage || article.frontmatter.featuredImage || '/images/content/brewing/intro-to-making-mead/series-cover.png',
+          publishedAt: article.frontmatter.publishedAt,
+          draft: article.frontmatter.draft,
+        });
+      }
+    });
+
+    const tagSeriesCards = Array.from(tagSeriesMap.values()).sort(
+      (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+    );
+
+    // Standalone articles for this tag (exclude series articles)
+    const standaloneTagArticles = tagArticles.filter(
+      (article) => !article.frontmatter.series?.name
+    );
+
+    const displayItems: Array<
+      | { kind: 'series'; name: string; slug: string; description: string; featuredImage: string; publishedAt: string; draft?: boolean }
+      | { kind: 'article'; slug: string; publishedAt: string }
+    > = [
+      ...tagSeriesCards.map((card) => ({ ...card, kind: 'series' as const })),
+      ...standaloneTagArticles.map((article) => ({
+        kind: 'article' as const,
+        slug: article.frontmatter.slug,
+        publishedAt: article.frontmatter.publishedAt,
+      })),
+    ].sort(
+      (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+    );
+
+    const numPages = Math.ceil(displayItems.length / articlesPerPage);
 
     Array.from({ length: numPages }).forEach((_, i) => {
       const currentPage = i + 1;
       const canonicalPagePath = currentPage === 1 
         ? `/tag/${tag.slug}` 
         : `/tag/${tag.slug}/${currentPage}`;
+      const pageItems = displayItems.slice(i * articlesPerPage, (i + 1) * articlesPerPage);
       const pageContext = {
         slug: tag.slug,
-        articleSlugs: tagArticles.map((article) => article.frontmatter.slug),
+        articleSlugs: pageItems.filter((item) => item.kind === 'article').map((item) => item.slug),
+        seriesCards: pageItems
+          .filter((item) => item.kind === 'series')
+          .map((item) => ({
+            name: item.name,
+            slug: item.slug,
+            description: item.description,
+            featuredImage: item.featuredImage,
+            publishedAt: item.publishedAt,
+            draft: item.draft,
+          })),
         limit: articlesPerPage,
         skip: i * articlesPerPage,
         numPages,
         currentPage,
+        totalCount: displayItems.length,
       };
 
       createPage({

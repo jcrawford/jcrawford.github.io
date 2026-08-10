@@ -2,7 +2,9 @@ import React from 'react';
 import { graphql, Link, PageProps, HeadFC } from 'gatsby';
 import Layout from '../components/Layout';
 import ArticleCard from '../components/ArticleCard';
+import DraftBadge from '../components/DraftBadge';
 import SEO from '../components/SEO';
+import { formatDate } from '../utils/dateUtils';
 
 interface TagPageData {
   site: {
@@ -58,10 +60,28 @@ interface TagPageData {
 interface TagPageContext {
   slug: string;
   articleSlugs: string[];
+  seriesCards: Array<{
+    name: string;
+    slug: string;
+    description: string;
+    featuredImage: string;
+    publishedAt: string;
+    draft?: boolean;
+  }>;
   limit: number;
   skip: number;
   numPages: number;
   currentPage: number;
+  totalCount: number;
+}
+
+interface SeriesCard {
+  name: string;
+  slug: string;
+  description: string;
+  featuredImage: string;
+  publishedAt: string;
+  draft?: boolean;
 }
 
 const TagTemplate: React.FC<PageProps<TagPageData, TagPageContext>> = ({ 
@@ -69,22 +89,41 @@ const TagTemplate: React.FC<PageProps<TagPageData, TagPageContext>> = ({
   pageContext 
 }) => {
   const tag = data.tagsJson;
-  const articlesAll = data.allMarkdownRemark.nodes;
-  const articles = articlesAll.filter((article) => SHOW_DRAFTS || !article.frontmatter.draft);
-  const totalCount = data.allMarkdownRemark.totalCount;
-  const tags = data.allTagsJson.nodes;
+  const articles = data.allMarkdownRemark.nodes;
   const authors = data.allAuthorsJson.nodes;
-  const { numPages, currentPage } = pageContext;
-
-  const getTagName = (slug: string) => {
-    const t = tags.find((t) => t.slug === slug);
-    return t?.name || slug;
-  };
+  const { numPages, currentPage, seriesCards } = pageContext;
 
   const getAuthorName = (slug: string) => {
     const author = authors.find((a) => a.slug === slug);
     return author?.name || slug;
   };
+
+  const SeriesCardComponent: React.FC<{ card: SeriesCard; tagSlug: string }> = ({ card, tagSlug }) => (
+    <Link
+      key={card.slug}
+      to={tagSlug === 'brewing' ? `/brewing` : `/series/${card.slug}`}
+      className="hm-article-card"
+    >
+      {card.featuredImage && (
+        <div className="hm-article-card-image">
+          <img
+            src={card.featuredImage}
+            alt={card.name}
+            loading="lazy"
+            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+          />
+        </div>
+      )}
+      <div className="hm-article-card-content">
+        <h2 className="hm-article-card-title">{card.name}</h2>
+        {card.draft && <DraftBadge size="md" />}
+        <p className="hm-article-card-excerpt">{card.description}</p>
+        <div className="hm-article-card-meta">
+          <span>{formatDate(card.publishedAt)}</span>
+        </div>
+      </div>
+    </Link>
+  );
 
   return (
     <Layout>
@@ -94,9 +133,16 @@ const TagTemplate: React.FC<PageProps<TagPageData, TagPageContext>> = ({
           <p className="hm-category-description">{tag.description}</p>
         </header>
 
-        {articles.length > 0 ? (
+        {(articles.length > 0 || seriesCards.length > 0) ? (
           <>
             <div className="hm-article-grid">
+              {seriesCards.map((card) => (
+                <SeriesCardComponent
+                  key={card.slug}
+                  card={card}
+                  tagSlug={tag.slug}
+                />
+              ))}
               {articles.map((article) => (
                 <ArticleCard
                   key={article.id}
@@ -179,8 +225,6 @@ const TagTemplate: React.FC<PageProps<TagPageData, TagPageContext>> = ({
     </Layout>
   );
 };
-
-const SHOW_DRAFTS = typeof process !== 'undefined' && process.env.GATSBY_SHOW_DRAFTS === 'true';
 
 export const query = graphql`
   query TagQuery($slug: String!, $articleSlugs: [String!]!, $limit: Int!, $skip: Int!) {

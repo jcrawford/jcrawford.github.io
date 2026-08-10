@@ -49,10 +49,11 @@ html.hm-dark .fermentation-progress-title {
   overflow: hidden;
 }
 
-/* Active segment needs overflow visible for tooltip */
+/* Active segment needs overflow visible for tooltip, no pointer cursor */
 .ferment-segment.active {
   overflow: visible;
-  cursor: pointer;
+  cursor: default;
+  position: relative;
 }
 
 /* Inner fill - no animation for active segments (progress shown by gradient) */
@@ -90,7 +91,7 @@ html.hm-dark .fermentation-progress-title {
 
 /* Tooltip for active segments - hover on desktop, tap on mobile */
 .ferment-segment.active {
-  cursor: pointer;
+  cursor: default;
   position: relative;
 }
 

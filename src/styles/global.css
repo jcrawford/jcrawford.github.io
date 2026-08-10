@@ -727,11 +727,16 @@ html.hm-dark .hm-article-card-image {
   line-height: 1;
   color: #222222;
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
   z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+}
+
+.hm-slider:hover .hm-slider-nav {
+  opacity: 1;
 }
 
 .hm-slider-nav:hover {
@@ -756,6 +761,12 @@ html.hm-dark .hm-article-card-image {
   display: flex;
   gap: 10px;
   z-index: 10;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.hm-slider:hover .hm-slider-pagination {
+  opacity: 1;
 }
 
 .hm-slider-dot {
@@ -2363,12 +2374,14 @@ li.hm-tab a {
 @media (min-width: 992px) {
   .hm-content-sidebar-wrap {
     grid-template-columns: 1fr 300px;
+    align-items: start;
   }
 }
 
 @media (min-width: 1200px) {
   .hm-content-sidebar-wrap {
     grid-template-columns: 1fr 350px;
+    align-items: start;
   }
 }
 

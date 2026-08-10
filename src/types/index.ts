@@ -358,6 +358,12 @@ export interface SeriesMetadata {
   /** Optional explicit ordering number */
   order?: number
   
+  /** Optional series-level overview excerpt */
+  description?: string
+  
+  /** Optional series-level header image path */
+  featuredImage?: string
+  
   /** Optional array of external reference links */
   references?: SeriesReference[]
   
@@ -380,5 +386,7 @@ export interface SeriesArticle {
   
   /** Publication date (fallback for ordering) */
   publishedAt: string
-}
 
+  /** Featured image path */
+  featuredImage?: string
+}

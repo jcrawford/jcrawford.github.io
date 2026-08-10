@@ -9,9 +9,8 @@ interface BrewData {
   bottlingDate?: string;
   drinkingReadyDate?: string;
   fermentationTime?: string;
-  bulkConditioningTime?: string;
-  bottleConditioningTime?: string;
   secondaryTime?: string;
+  bottleAgingTime?: string;
 }
 
 interface FermentationProgressProps {
@@ -95,37 +94,29 @@ const FermentationProgress: React.FC<FermentationProgressProps> = ({ brewData })
     ? addDaysToDate(secondaryStartDate || plannedPrimaryEndDate || todayStr, parseTimeToDays(brewData.secondaryTime))
     : undefined;
 
-  const bulkConditioningTimeDays = parseTimeToDays(brewData.bulkConditioningTime);
-  const bottleConditioningTimeDays = parseTimeToDays(brewData.bottleConditioningTime);
+  const bottleAgingTimeDays = parseTimeToDays(brewData.bottleAgingTime);
 
-  const plannedBulkConditioningEnd = (secondaryEndDate || secondaryStartDate || plannedSecondaryEndDate) && bulkConditioningTimeDays > 0
-    ? addDaysToDate(secondaryEndDate || plannedSecondaryEndDate || secondaryStartDate || todayStr, bulkConditioningTimeDays)
+  const plannedBottleAgingEnd = bottlingDate && bottleAgingTimeDays > 0
+    ? addDaysToDate(bottlingDate, bottleAgingTimeDays)
     : undefined;
 
-  const plannedBottleConditioningEnd = bottlingDate && bottleConditioningTimeDays > 0
-    ? addDaysToDate(bottlingDate, bottleConditioningTimeDays)
-    : undefined;
+  const calculatedDrinkingReadyDate = brewData.drinkingReadyDate || plannedBottleAgingEnd || bottlingDate;
 
-  const calculatedDrinkingReadyDate = brewData.drinkingReadyDate || plannedBottleConditioningEnd || bottlingDate;
-
-  // Stage completion status
-  const primaryCompleted = !!primaryEndDate || isDateReached(plannedPrimaryEndDate);
-  const secondaryCompleted = !!secondaryEndDate || isDateReached(plannedSecondaryEndDate) || !!bottlingDate;
-  const bulkConditioningCompleted = isDateReached(plannedBulkConditioningEnd) || !!bottlingDate;
-  const bottledCompleted = !!bottlingDate;
-  const bottleConditioningCompleted = !!calculatedDrinkingReadyDate && isDateReached(calculatedDrinkingReadyDate);
+  // Stage completion status — only true when the corresponding end date is today or in the past
+  const primaryCompleted = isDateReached(primaryEndDate || plannedPrimaryEndDate);
+  const secondaryCompleted = isDateReached(secondaryEndDate || plannedSecondaryEndDate) || isDateReached(bottlingDate);
+  const bottledCompleted = isDateReached(bottlingDate);
+  const bottleAgingCompleted = isDateReached(calculatedDrinkingReadyDate);
 
   // Active stage status
-  const primaryActive = !primaryCompleted && !!brewData.startDate;
+  const primaryActive = isDateReached(brewData.startDate) && !primaryCompleted;
   const secondaryActive = primaryCompleted && !secondaryCompleted;
-  const bulkConditioningActive = secondaryCompleted && !bulkConditioningCompleted && bulkConditioningTimeDays > 0;
-  const bottleConditioningActive = bottlingDate && !bottledCompleted && bottleConditioningTimeDays > 0 && !isDateReached(calculatedDrinkingReadyDate);
+  const bottleAgingActive = bottledCompleted && !bottleAgingCompleted && bottleAgingTimeDays > 0 && !isDateReached(calculatedDrinkingReadyDate);
 
   // Days for display
   const primaryDays = daysBetween(brewData.startDate, primaryEndDate || plannedPrimaryEndDate);
-  const secondaryDays = daysBetween(secondaryStartDate || plannedPrimaryEndDate, secondaryEndDate || plannedSecondaryEndDate || plannedBulkConditioningEnd);
-  const bulkConditioningDays = bulkConditioningTimeDays > 0 ? bulkConditioningTimeDays : null;
-  const bottleConditioningDays = bottleConditioningTimeDays > 0 ? bottleConditioningTimeDays : null;
+  const secondaryDays = daysBetween(secondaryStartDate || plannedPrimaryEndDate, secondaryEndDate || plannedSecondaryEndDate);
+  const bottleAgingDays = bottleAgingTimeDays > 0 ? bottleAgingTimeDays : null;
 
   // Calculate progress percentages for active stages AND elapsed days
   const primaryProgress = primaryActive
@@ -136,25 +127,18 @@ const FermentationProgress: React.FC<FermentationProgressProps> = ({ brewData })
     : primaryDays;
 
   const secondaryProgress = secondaryActive
-    ? calculateProgressPercent(secondaryStartDate, secondaryEndDate || plannedSecondaryEndDate || plannedBulkConditioningEnd)
+    ? calculateProgressPercent(secondaryStartDate, secondaryEndDate || plannedSecondaryEndDate)
     : 0;
   const secondaryElapsedDays = secondaryActive && (secondaryStartDate || plannedPrimaryEndDate)
     ? daysBetween(secondaryStartDate || plannedPrimaryEndDate || todayStr, todayStr)
     : secondaryDays;
 
-  const bulkConditioningProgress = bulkConditioningActive
-    ? calculateProgressPercent(secondaryEndDate || plannedSecondaryEndDate, plannedBulkConditioningEnd)
-    : 0;
-  const bulkConditioningElapsedDays = bulkConditioningActive && (secondaryEndDate || plannedSecondaryEndDate)
-    ? daysBetween(secondaryEndDate || plannedSecondaryEndDate || todayStr, todayStr)
-    : bulkConditioningDays;
-
-  const bottleConditioningProgress = bottleConditioningActive
+  const bottleAgingProgress = bottleAgingActive
     ? calculateProgressPercent(bottlingDate, calculatedDrinkingReadyDate)
     : 0;
-  const bottleConditioningElapsedDays = bottleConditioningActive && bottlingDate
+  const bottleAgingElapsedDays = bottleAgingActive && bottlingDate
     ? daysBetween(bottlingDate, todayStr)
-    : bottleConditioningDays;
+    : bottleAgingDays;
 
   // Build stages array with tooltip data
   const stages: Stage[] = [];
@@ -181,20 +165,7 @@ const FermentationProgress: React.FC<FermentationProgressProps> = ({ brewData })
       elapsedDays: secondaryActive ? secondaryElapsedDays || 0 : secondaryDays || 0,
       totalDays: secondaryDays || 0,
       startDate: secondaryStartDate || plannedPrimaryEndDate,
-      endDate: secondaryEndDate || plannedSecondaryEndDate || plannedBulkConditioningEnd,
-    });
-  }
-
-  if (bulkConditioningTimeDays > 0) {
-    stages.push({
-      label: 'Bulk Conditioning',
-      days: bulkConditioningDays || null,
-      completed: bulkConditioningCompleted,
-      active: bulkConditioningActive,
-      elapsedDays: bulkConditioningActive ? bulkConditioningElapsedDays || 0 : bulkConditioningDays || 0,
-      totalDays: bulkConditioningDays || 0,
-      startDate: secondaryEndDate || plannedSecondaryEndDate,
-      endDate: plannedBulkConditioningEnd,
+      endDate: secondaryEndDate || plannedSecondaryEndDate,
     });
   }
 
@@ -207,14 +178,14 @@ const FermentationProgress: React.FC<FermentationProgressProps> = ({ brewData })
     totalDays: 0,
   });
 
-  if (bottleConditioningTimeDays > 0) {
+  if (bottleAgingTimeDays > 0) {
     stages.push({
-      label: 'Bottle Conditioning',
-      days: bottleConditioningDays || null,
-      completed: bottleConditioningCompleted,
-      active: bottleConditioningActive,
-      elapsedDays: bottleConditioningActive ? bottleConditioningElapsedDays || 0 : bottleConditioningDays || 0,
-      totalDays: bottleConditioningDays || 0,
+      label: 'Bottle Aging',
+      days: bottleAgingDays || null,
+      completed: bottleAgingCompleted,
+      active: bottleAgingActive,
+      elapsedDays: bottleAgingActive ? bottleAgingElapsedDays || 0 : bottleAgingDays || 0,
+      totalDays: bottleAgingDays || 0,
       startDate: bottlingDate,
       endDate: calculatedDrinkingReadyDate,
     });
@@ -224,7 +195,7 @@ const FermentationProgress: React.FC<FermentationProgressProps> = ({ brewData })
     stages.push({
       label: 'Ready to Drink',
       days: null,
-      completed: bottleConditioningCompleted,
+      completed: bottleAgingCompleted,
       active: false,
       elapsedDays: 0,
       totalDays: 0,
@@ -252,8 +223,7 @@ const FermentationProgress: React.FC<FermentationProgressProps> = ({ brewData })
             if (isActive) {
               if (stage.label === 'Primary') segmentFill = `${primaryProgress}%`;
               else if (stage.label === 'Secondary') segmentFill = `${secondaryProgress}%`;
-              else if (stage.label === 'Bulk Conditioning') segmentFill = `${bulkConditioningProgress}%`;
-              else if (stage.label === 'Bottle Conditioning') segmentFill = `${bottleConditioningProgress}%`;
+              else if (stage.label === 'Bottle Aging') segmentFill = `${bottleAgingProgress}%`;
             }
 
             return (

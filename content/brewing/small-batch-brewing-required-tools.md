@@ -46,7 +46,7 @@ You also need a way to fill that test jar without making a mess. The best method
 
 You need to move liquid from the fermenter to bottles without dumping the yeast cake in. A simple auto-siphon is easier than trying to start a siphon with your mouth, and it gives you much more control over what you transfer.
 
-The <a href="https://www.amazon.com/Fermtech-Winemaking-Complete-Transfer-Fermentation/dp/B00SDLLZDY/" target="_blank" rel="noopener noreferrer">Fermtech Mini Auto-Siphon</a> is about $15.99 at the time of writing and is a game changer when moving brew from primary to secondary or secondary to conditioning. This one is sized for small batches. If you ever scale up to larger volumes you will want a larger siphon.
+The <a href="https://www.amazon.com/Fermtech-Winemaking-Complete-Transfer-Fermentation/dp/B00SDLLZDY/" target="_blank" rel="noopener noreferrer">Fermtech Mini Auto-Siphon</a> is about $15.99 at the time of writing and is a game changer when moving brew from primary to secondary fermentation. This one is sized for small batches. If you ever scale up to larger volumes you will want a larger siphon.
 
 ### A Bottling Bucket or Bottling Wand
 
@@ -82,13 +82,13 @@ For one-gallon all-grain or extract batches you can use a pot you already own, a
 
 Any kettle will work for small batches up to a few gallons. If you are thinking about making a five-gallon batch of beer, though, you should be looking at a brewing system rather than a stock pot. I personally use the <a href="https://www.clawhammersupply.com/collections/brewing-equipment/products/digital-electric-120v-homebrew-beer-system" target="_blank" rel="noopener noreferrer">Clawhammer Supply 10 gallon 120V electric brewing system</a> and have loved every moment of brewing with it. This article is about small batches, so I will not go too in depth on it here.
 
-### Secondary Fermentation and Conditioning Vessels
+### Secondary Fermentation and Aging Vessels
 
-For any brew that needs time to clear or age, you will want separate vessels for secondary fermentation and conditioning. I use one-gallon glass <a href="https://www.amazon.com/North-Mountain-Supply-Fermenting-Stopper/dp/B09KNYXB2D/" target="_blank" rel="noopener noreferrer">North Mountain Supply fermenting jars</a> for both. They are about $14.99 each at the time of writing.
+For any brew that needs time to clear or age, you will want separate vessels for secondary fermentation and aging. I use one-gallon glass <a href="https://www.amazon.com/North-Mountain-Supply-Fermenting-Stopper/dp/B09KNYXB2D/" target="_blank" rel="noopener noreferrer">North Mountain Supply fermenting jars</a> for both. They are about $14.99 each at the time of writing.
 
 Each of these jars needs its own airlock and drilled bung so gas can escape while the brew ages. I highly suggest looping a rubber band over the airlock and then around the handle on the neck of the jar to keep the airlock from working itself loose, especially when a jar sits untouched for months.
 
-If you plan to keep more than one batch going at once, you will need a lot of these. I currently have four on my shelf and plan to buy about eight more. Brews can sit in conditioning for several months, and some stay there for a year or more. Having enough jars lets you keep several brews conditioning while still having free vessels for secondary fermentations.
+If you plan to keep more than one batch going at once, you will need a lot of these. I currently have four on my shelf and plan to buy about eight more. Brews can sit in secondary fermentation for several months, and some stay there for a year or more. Having enough jars lets you keep several brews conditioning in secondary while still having free vessels for new primary fermentations.
 
 ## The Nice-to-Haves That Are Actually Worth It
 
@@ -114,7 +114,7 @@ A long spoon or paddle that reaches the bottom of your kettle is useful. A funne
 
 - **A kegging setup.** Bottling is tedious but free if you save bottles. Kegging is great, but it gets expensive fast. A five-gallon Cornelius keg runs about $100–$130 each, and on top of that you need a CO₂ tank, a regulator, tubing, taps, connectors for the kegs, a temperature controller if you convert a freezer into a keezer, and the freezer itself. Depending on whether you buy used or new, it can quickly add up to $1,000–$2,000. It is not required to make good brew.
 
-- **A dedicated fermentation fridge.** Temperature control matters for clean brew, but you can manage early batches by brewing styles that match your ambient temperature, or by using a swamp cooler setup with a tub of water and frozen bottles. I do not have this setup. I would love to turn a refrigerator into a temperature-controlled fermentation chamber, but I do not have the room in my apartment. I simply ferment primary on my kitchen counter at room temperature, which does fluctuate. Conditioning jars sit on the same counter, out of direct sunlight but still in ambient light. At some point I really do need to set up a fermentation station, but to do that I would need to get rid of my keezer, find a refrigerator to convert into a kegerator, and build some sort of temperature-controlled enclosure. I do not have the time or money for that right now, so it will stay a future project.
+- **A dedicated fermentation fridge.** Temperature control matters for clean brew, but you can manage early batches by brewing styles that match your ambient temperature, or by using a swamp cooler setup with a tub of water and frozen bottles. I do not have this setup. I would love to turn a refrigerator into a temperature-controlled fermentation chamber, but I do not have the room in my apartment. I simply ferment primary on my kitchen counter at room temperature, which does fluctuate. Secondary aging jars sit on the same counter, out of direct sunlight but still in ambient light. At some point I really do need to set up a fermentation station, but to do that I would need to get rid of my keezer, find a refrigerator to convert into a kegerator, and build some sort of temperature-controlled enclosure. I do not have the time or money for that right now, so it will stay a future project.
 
 - **A grain mill.** If you buy pre-crushed grain or stick to extract, you do not need one.
 
@@ -149,7 +149,7 @@ From there your path splits:
 
 **Option 2 — swing-top bottles:** the <a href="https://www.amazon.com/eispap-Bottles-Airtight-Stoppers-Kombucha/dp/B0DSJGL3N5/" target="_blank" rel="noopener noreferrer">eispap swing-top bottles</a> are about $23.99 per set and a one-gallon batch fills roughly four of them. If you want backups on hand, you will want several sets. Two sets adds about $48, pushing the starter total closer to **$200–$205**.
 
-**Secondary and conditioning vessels:** if you plan to age or clear your brew in separate jars, add the <a href="https://www.amazon.com/North-Mountain-Supply-Fermenting-Stopper/dp/B09KNYXB2D/" target="_blank" rel="noopener noreferrer">North Mountain Supply one-gallon glass jars</a> at ~$14.99 each. One or two is enough to start, but if you keep multiple batches going you will want several. Adding two jars brings the total to roughly **$185–$190** with saved bottles, or **$230–$235** with two sets of swing-tops.
+**Secondary and aging vessels:** if you plan to age or clear your brew in separate jars, add the <a href="https://www.amazon.com/North-Mountain-Supply-Fermenting-Stopper/dp/B09KNYXB2D/" target="_blank" rel="noopener noreferrer">North Mountain Supply one-gallon glass jars</a> at ~$14.99 each. One or two is enough to start, but if you keep multiple batches going you will want several. Adding two jars brings the total to roughly **$185–$190** with saved bottles, or **$230–$235** with two sets of swing-tops.
 
 Prices change, and you can almost always find lower-cost versions of each item by searching the web for deals rather than ordering from the links in this article.
 

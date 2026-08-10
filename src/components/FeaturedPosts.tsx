@@ -11,6 +11,7 @@ interface SliderArticle {
   author: string;
   authorName: string;
   isSeries: boolean;
+  seriesName?: string;
   isDraft?: boolean;
 }
 
