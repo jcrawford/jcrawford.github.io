@@ -16,6 +16,8 @@ type: post
 series:
   name: "Intro to Making Mead"
   order: 4
+  description: "A complete beginner's guide to making mead at home, from equipment and ingredients through fermentation, back-sweetening, pasteurization, and bottling."
+  featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.png
 ---
 
 At its simplest, mead is just honey, water, and yeast. Those three ingredients will ferment into alcohol on their own, but the choices you make within each category are what shape the final glass. In this fourth part of the **Intro to Making Mead** series I will walk through the ingredients I work with, the yeast strains I reach for, and the additions that can push a basic mead into something colorful and complex.

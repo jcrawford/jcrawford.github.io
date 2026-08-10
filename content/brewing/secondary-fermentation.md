@@ -16,6 +16,8 @@ type: post
 series:
   name: "Intro to Making Mead"
   order: 7
+  description: "A complete beginner's guide to making mead at home, from equipment and ingredients through fermentation, back-sweetening, pasteurization, and bottling."
+  featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.png
 ---
 
 Primary fermentation gets most of the attention because it is active, bubbly, and dramatic. But secondary fermentation is where a mead really starts to settle into something drinkable, and it is usually the longest phase of the whole process. In this seventh part of the **Intro to Making Mead** series I will explain what secondary fermentation is, why it lasts so long, and how I decide when a mead is ready to bottle.

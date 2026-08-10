@@ -16,6 +16,8 @@ type: post
 series:
   name: "Intro to Making Mead"
   order: 5
+  description: "A complete beginner's guide to making mead at home, from equipment and ingredients through fermentation, back-sweetening, pasteurization, and bottling."
+  featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.png
 ---
 
 Before the yeast take over, you have to create the environment they will live in. That mixture of honey, water, and anything else you add before fermentation is called the **must**. Preparing it well makes the rest of the batch easier, from the first bubble in the airlock to the final gravity reading.

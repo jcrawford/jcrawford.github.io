@@ -15,6 +15,8 @@ type: post
 series:
   name: "Intro to Making Mead"
   order: 1
+  description: "A complete beginner's guide to making mead at home, from equipment and ingredients through fermentation, back-sweetening, pasteurization, and bottling."
+  featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.png
 ---
 
 Before you mix your first must, it helps to know what kind of mead you are aiming for. Mead is much broader than "honey wine." Change the honey, add fruit, introduce smoke or chilies, or ferment the same recipe dry instead of sweet, and you end up with a different style entirely. In this first part of the **Intro to Making Mead** series I will walk through the main categories, what defines each one, and where I think a beginner should start.

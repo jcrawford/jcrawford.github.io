@@ -15,6 +15,8 @@ type: post
 series:
   name: "Intro to Making Mead"
   order: 2
+  description: "A complete beginner's guide to making mead at home, from equipment and ingredients through fermentation, back-sweetening, pasteurization, and bottling."
+  featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.png
 ---
 
 Mead is one of the easiest ways to start fermenting at home, but the equipment list can still feel overwhelming when you are staring at a catalog for the first time. This is the second part of a series that will walk through making your first mead from start to finish.

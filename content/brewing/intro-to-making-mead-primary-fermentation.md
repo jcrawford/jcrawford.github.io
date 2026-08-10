@@ -15,6 +15,8 @@ type: post
 series:
   name: "Intro to Making Mead"
   order: 6
+  description: "A complete beginner's guide to making mead at home, from equipment and ingredients through fermentation, back-sweetening, pasteurization, and bottling."
+  featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.png
 ---
 
 Primary fermentation is where the yeast turn honey water into mead. It is the busiest phase of the batch, and the decisions you make here will shape almost everything that follows. In this sixth part of the **Intro to Making Mead** series I will explain what primary fermentation actually is, when to add ingredients to the must, and how to avoid the most common mistake beginners make: moving on too soon.

@@ -35,6 +35,8 @@ interface SeriesArticleData {
       series: {
         name: string;
         order?: number;
+        description?: string;
+        featuredImage?: string;
         references?: Array<{
           url: string;
           title?: string;
@@ -337,6 +339,8 @@ export const query = graphql`
         series {
           name
           order
+          description
+          featuredImage
           references {
             url
             title
@@ -386,6 +390,8 @@ export const query = graphql`
 export const Head: HeadFC<SeriesArticleData> = ({ data }) => {
   const frontmatter = data.markdownRemark.frontmatter;
   const seriesName = frontmatter.series.name;
+  const seriesDescription = frontmatter.series.description;
+  const seriesImage = frontmatter.series.featuredImage;
 
   const sortedSeriesArticles = [...data.seriesArticles.nodes].sort((a, b) => {
     const orderA = a.frontmatter.series?.order ?? Infinity;
@@ -393,13 +399,15 @@ export const Head: HeadFC<SeriesArticleData> = ({ data }) => {
     return orderA - orderB;
   });
   const firstArticle = sortedSeriesArticles[0]?.frontmatter;
+
   const displayTitle = seriesName;
-  const displayImage = firstArticle?.featuredImage || frontmatter.featuredImage;
+  const displayDescription = seriesDescription || frontmatter.excerpt;
+  const displayImage = seriesImage || firstArticle?.featuredImage || frontmatter.featuredImage;
 
   return (
     <SEO
       title={displayTitle}
-      description={frontmatter.excerpt}
+      description={displayDescription}
       image={displayImage}
       article={true}
       pathname={`/series/${slugifySeriesName(seriesName)}/${firstArticle?.slug || frontmatter.slug}`}
