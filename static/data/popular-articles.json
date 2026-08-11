@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-11T13:44:50.413Z",
+  "generatedAt": "2026-08-11T19:22:06.876Z",
   "windowDays": 30,
   "entries": [
     {
@@ -124,6 +124,17 @@
       }
     },
     {
+      "id": "/series/intro-to-making-mead/types-of-mead",
+      "views": 11,
+      "comments": 0,
+      "score": 11,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/reviews/null",
       "views": 10,
       "comments": 0,
@@ -158,17 +169,6 @@
     },
     {
       "id": "/brewing/small-batch-brewing-required-tools",
-      "views": 9,
-      "comments": 0,
-      "score": 9,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/series/intro-to-making-mead/types-of-mead",
       "views": 9,
       "comments": 0,
       "score": 9,
