@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-10T20:23:24.778Z",
+  "generatedAt": "2026-08-11T02:29:43.589Z",
   "windowDays": 30,
   "entries": [
     {
       "id": "/brewing/cherry-mead",
-      "views": 96,
+      "views": 99,
       "comments": 0,
-      "score": 96,
+      "score": 99,
       "shares": {
         "facebook": 5,
         "linkedin": 1,
@@ -168,6 +168,17 @@
       }
     },
     {
+      "id": "/series/intro-to-making-mead/types-of-mead",
+      "views": 9,
+      "comments": 0,
+      "score": 9,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/brewing/bottling-day",
       "views": 8,
       "comments": 0,
@@ -262,17 +273,6 @@
       "score": 3,
       "shares": {
         "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/posts/vision-capabilities-php-ai-agents",
-      "views": 3,
-      "comments": 0,
-      "score": 3,
-      "shares": {
-        "facebook": 1,
         "linkedin": 0,
         "copy": 0
       }
