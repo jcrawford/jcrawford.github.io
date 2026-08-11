@@ -34,25 +34,19 @@ interface ArticleFrontmatter {
 interface Article {
   id: string;
   html: string;
+  fields: {
+    readingTime: number;
+  };
   frontmatter: ArticleFrontmatter;
-}
-
-interface Author {
-  slug: string;
-  name: string;
 }
 
 interface IndexPageData {
   allMarkdownRemark: {
     nodes: Article[];
   };
-  allAuthorsJson: {
-    nodes: Author[];
-  };
 }
 
 const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
-  const authors = data.allAuthorsJson.nodes;
   
   // All published posts and reviews
   const articles = data.allMarkdownRemark.nodes;
@@ -141,8 +135,7 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
       tags: mappedArticle.frontmatter.tags,
       type: mappedArticle.frontmatter.type,
       publishedAt: mappedArticle.frontmatter.publishedAt,
-      author: mappedArticle.frontmatter.author,
-      authorName: authors.find(a => a.slug === mappedArticle.frontmatter.author)?.name || mappedArticle.frontmatter.author,
+      readingTime: mappedArticle.fields?.readingTime || 0,
       isSeries: !!mappedArticle.frontmatter.series?.name,
       seriesName: mappedArticle.frontmatter.series?.name,
       isDraft: !!mappedArticle.frontmatter.draft,
@@ -159,8 +152,7 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
       tags: mappedArticle.frontmatter.tags,
       type: mappedArticle.frontmatter.type,
       publishedAt: mappedArticle.frontmatter.publishedAt,
-      author: mappedArticle.frontmatter.author,
-      authorName: authors.find(a => a.slug === mappedArticle.frontmatter.author)?.name || mappedArticle.frontmatter.author,
+      readingTime: mappedArticle.fields?.readingTime || 0,
       isSeries: !!mappedArticle.frontmatter.series?.name,
       seriesName: mappedArticle.frontmatter.series?.name,
       isDraft: !!mappedArticle.frontmatter.draft,
@@ -203,8 +195,7 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
                   featuredImage={article.frontmatter.featuredImage}
                   tags={article.frontmatter.tags || []}
                   publishedAt={article.frontmatter.publishedAt}
-                  author={article.frontmatter.author}
-                  authorName={authors.find(a => a.slug === article.frontmatter.author)?.name || article.frontmatter.author}
+                  readingTime={article.fields?.readingTime || 0}
                   isSeries={!!article.frontmatter.series?.name}
                   seriesName={article.frontmatter.series?.name}
                   rating={article.frontmatter.rating ?? article.frontmatter.review?.rating}
@@ -247,6 +238,9 @@ export const query = graphql`
       nodes {
         id
         html
+        fields {
+          readingTime
+        }
         frontmatter {
           slug
           title
@@ -269,12 +263,6 @@ export const query = graphql`
             featuredImage
           }
         }
-      }
-    }
-    allAuthorsJson {
-      nodes {
-        slug
-        name
       }
     }
   }

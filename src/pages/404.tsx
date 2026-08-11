@@ -7,13 +7,15 @@ import SEO from '../components/SEO';
 interface Article {
   id: string;
   html: string;
+  fields: {
+    readingTime: number;
+  };
   frontmatter: {
     slug: string;
     title: string;
     excerpt: string;
     featuredImage: string;
     tags: string[];
-    author: string;
     publishedAt: string;
     rating?: number;
     review?: {
@@ -27,11 +29,6 @@ interface Category {
   name: string;
 }
 
-interface Author {
-  slug: string;
-  name: string;
-}
-
 interface NotFoundPageData {
   allMarkdownRemark: {
     nodes: Article[];
@@ -39,25 +36,10 @@ interface NotFoundPageData {
   allTagsJson: {
     nodes: Category[];
   };
-  allAuthorsJson: {
-    nodes: Author[];
-  };
 }
 
 const NotFoundPage: React.FC<PageProps<NotFoundPageData>> = ({ data }) => {
   const articles = data.allMarkdownRemark.nodes;
-  const tags = data.allTagsJson.nodes;
-  const authors = data.allAuthorsJson.nodes;
-
-  const getTagName = (slug: string) => {
-    const tag = tags.find((t) => t.slug === slug);
-    return tag?.name || slug;
-  };
-
-  const getAuthorName = (slug: string) => {
-    const author = authors.find((auth) => auth.slug === slug);
-    return author?.name || slug;
-  };
 
   return (
     <Layout>
@@ -108,7 +90,7 @@ const NotFoundPage: React.FC<PageProps<NotFoundPageData>> = ({ data }) => {
               <h3 className="hm-404-articles-title">Recent Articles</h3>
               <div className="hm-article-grid">
                 {articles.map((article) => (
-                  <ArticleCard
+                <ArticleCard
                     key={article.id}
                     slug={article.frontmatter.slug}
                     title={article.frontmatter.title}
@@ -116,8 +98,7 @@ const NotFoundPage: React.FC<PageProps<NotFoundPageData>> = ({ data }) => {
                     featuredImage={article.frontmatter.featuredImage}
                     tags={article.frontmatter.tags || []}
                     publishedAt={article.frontmatter.publishedAt}
-                    author={article.frontmatter.author}
-                    authorName={getAuthorName(article.frontmatter.author)}
+                    readingTime={article.fields?.readingTime || 0}
                     rating={article.frontmatter.rating ?? article.frontmatter.review?.rating}
                   />
                 ))}

@@ -600,5 +600,61 @@
     "name": "Bottling",
     "description": "Posts tagged with Bottling.",
     "featured": false
+  },
+  {
+    "id": "87",
+    "slug": "back-sweetening",
+    "name": "Back Sweetening",
+    "description": "Posts tagged with Back Sweetening.",
+    "featured": false
+  },
+  {
+    "id": "88",
+    "slug": "sweetening",
+    "name": "Sweetening",
+    "description": "Posts tagged with Sweetening.",
+    "featured": false
+  },
+  {
+    "id": "89",
+    "slug": "tasting",
+    "name": "Tasting",
+    "description": "Posts tagged with Tasting.",
+    "featured": false
+  },
+  {
+    "id": "90",
+    "slug": "pasteurization",
+    "name": "Pasteurization",
+    "description": "Posts tagged with Pasteurization.",
+    "featured": false
+  },
+  {
+    "id": "91",
+    "slug": "stabilization",
+    "name": "Stabilization",
+    "description": "Posts tagged with Stabilization.",
+    "featured": false
+  },
+  {
+    "id": "92",
+    "slug": "must",
+    "name": "Must",
+    "description": "Posts tagged with Must.",
+    "featured": false
+  },
+  {
+    "id": "93",
+    "slug": "hydrometer",
+    "name": "Hydrometer",
+    "description": "Posts tagged with Hydrometer.",
+    "featured": false
+  },
+  {
+    "id": "94",
+    "slug": "gravity",
+    "name": "Gravity",
+    "description": "Posts tagged with Gravity.",
+    "featured": false
   }
 ]

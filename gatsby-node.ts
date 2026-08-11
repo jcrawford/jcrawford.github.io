@@ -3,6 +3,7 @@ import path from 'path';
 import fs from 'fs';
 import { normalizeTagSlug } from './src/utils/tagUtils';
 import { slugifySeriesName } from './src/utils/articlePath';
+import { calculateReadingTime } from './src/utils/readingTime';
 
 /**
  * @giscus/react uses Lit custom elements that call browser globals (window,
@@ -56,10 +57,17 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
       steps: [BrewingStep]
     }
 
+    type MarkdownRemarkFields {
+      readingTime: Int
+    }
+
+    type MarkdownRemark implements Node {
+      fields: MarkdownRemarkFields
+    }
+
     type BrewingBrewData {
       originalGravity: Float
       finalGravity: Float
-
       startDate: Date
       primaryEndDate: Date
       secondaryStartDate: Date
@@ -164,33 +172,30 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
   `);
 };
 
+/**
+ * Compute reading time at build time and attach it to each MarkdownRemark node.
+ */
+export const onCreateNode: GatsbyNode['onCreateNode'] = ({ node, actions }) => {
+  const { createNodeField } = actions;
+  const markdownNode = node as any;
+  if (markdownNode.internal.type === 'MarkdownRemark' && markdownNode.fileAbsolutePath && /content\/(posts|reviews|brewing)\//.test(markdownNode.fileAbsolutePath)) {
+    const readingTime = calculateReadingTime(markdownNode.rawMarkdownBody || '');
+    createNodeField({
+      node,
+      name: 'readingTime',
+      value: readingTime,
+    });
+  }
+};
 
-interface SeriesMetadata {
-  name?: string;
-  order?: number;
-  prev?: string;
-  next?: string;
-  references?: Array<{
-    url: string;
-    title?: string;
-  }>;
-  attachments?: Array<{
-    filename: string;
-    title?: string;
-  }>;
-}
-
-interface Article {
-  id: string;
-  fileAbsolutePath: string;
-  frontmatter: {
-    slug: string;
-    tags: string[];
-    author: string;
-    publishedAt: string;
-    type?: string;
-    series?: SeriesMetadata;
-  };
+interface SeriesCard {
+  name: string;
+  slug: string;
+  description: string;
+  featuredImage: string;
+  publishedAt: string;
+  draft?: boolean;
+  readingTime: number;
 }
 
 interface Tag {
@@ -204,6 +209,10 @@ interface PagesQueryResult {
     nodes: Array<{
       id: string;
       fileAbsolutePath: string;
+      rawMarkdownBody: string;
+      fields: {
+        readingTime: number;
+      };
       frontmatter: {
         slug: string;
         title: string;
@@ -219,6 +228,8 @@ interface PagesQueryResult {
           order?: number;
           description?: string;
           featuredImage?: string;
+          references?: Array<{ url: string; title?: string }>;
+          attachments?: Array<{ filename: string; title?: string }>;
         };
         brewData?: {
           abv?: number;
@@ -241,7 +252,7 @@ interface PagesQueryResult {
  * T006: Validate prev/next references exist
  * T007: Detect circular references
  */
-function validateSeriesMetadata(articles: Article[], reporter: any): boolean {
+function validateSeriesMetadata(articles: PagesQueryResult['allMarkdownRemark']['nodes'], reporter: any): boolean {
   let hasErrors = false;
   
   // T005: Create article slug lookup map
@@ -349,6 +360,8 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
         nodes {
           id
           fileAbsolutePath
+          rawMarkdownBody
+          fields { readingTime }
           frontmatter { slug title excerpt featuredImage tags author publishedAt type draft series { name order description featuredImage references { url title } attachments { filename title } } brewData { abv batchSize drinkingReadyDate startDate } }
         }
       }
@@ -368,6 +381,8 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
         nodes {
           id
           fileAbsolutePath
+          rawMarkdownBody
+          fields { readingTime }
           frontmatter { slug title excerpt featuredImage tags author publishedAt type draft series { name order description featuredImage references { url title } attachments { filename title } } brewData { abv batchSize drinkingReadyDate startDate } }
         }
       }
@@ -399,14 +414,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
   // Build a single series card per brewing-tagged series.
   // Each card uses the first-ordered article for its base metadata and links
   // to /series/{series-slug}/{first-article-slug}/.
-  const seriesCardsMap = new Map<string, {
-    name: string;
-    slug: string;
-    description: string;
-    featuredImage: string;
-    publishedAt: string;
-    draft?: boolean;
-  }>();
+  const seriesCardsMap = new Map<string, SeriesCard>();
 
   articles.forEach((article) => {
     const series = article.frontmatter.series;
@@ -424,6 +432,8 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
       const seriesSlug = slugifySeriesName(series.name);
       const seriesDescription = series.description || article.frontmatter.excerpt;
       const seriesImage = series.featuredImage || article.frontmatter.featuredImage || '/images/content/brewing/intro-to-making-mead/series-cover.png';
+      const seriesArticles = articles.filter((a) => a.frontmatter.series?.name === series.name);
+      const totalReadingTime = seriesArticles.reduce((sum, a) => sum + (a.fields?.readingTime || 0), 0);
       seriesCardsMap.set(series.name, {
         name: series.name,
         slug: `${seriesSlug}/${article.frontmatter.slug}`,
@@ -431,6 +441,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
         featuredImage: seriesImage,
         publishedAt: article.frontmatter.publishedAt,
         draft: article.frontmatter.draft,
+        readingTime: totalReadingTime,
       });
     }
   });
@@ -476,7 +487,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
 
   // Build a lookup of first-article path per series so all parts share metrics.
   const seriesFirstArticlePath = new Map<string, string>();
-  const articlesBySeries = new Map<string, Article[]>();
+  const articlesBySeries = new Map<string, PagesQueryResult['allMarkdownRemark']['nodes']>();
   articles.forEach((article) => {
     if (article.frontmatter.series?.name) {
       const seriesName = article.frontmatter.series.name;
@@ -528,6 +539,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
     const metrics = metricsByPath.get(metricsKey) || { views: 0, comments: 0, shares: { facebook: 0, linkedin: 0, copy: 0 } };
 
     const isBrewingRecipe = isBrewing && article.frontmatter.type === 'brewing-recipe';
+    const readingTime = calculateReadingTime(article.rawMarkdownBody || '');
 
     createPage({
       path: articlePath,
@@ -542,6 +554,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
         viewCount: metrics.views,
         commentCount: metrics.comments,
         shareCounts: metrics.shares || { facebook: 0, linkedin: 0, copy: 0 },
+        readingTime,
       },
     });
   });
@@ -592,14 +605,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
     );
 
     // Build series cards for this tag (one per series that has a tagged article)
-    const tagSeriesMap = new Map<string, {
-      name: string;
-      slug: string;
-      description: string;
-      featuredImage: string;
-      publishedAt: string;
-      draft?: boolean;
-    }>();
+    const tagSeriesMap = new Map<string, SeriesCard>();
 
     tagArticles.forEach((article) => {
       const series = article.frontmatter.series;
@@ -615,6 +621,8 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
 
       if (!existing || order < existingOrder) {
         const seriesSlug = slugifySeriesName(series.name);
+        const seriesArticles = articles.filter((a) => a.frontmatter.series?.name === series.name);
+        const totalReadingTime = seriesArticles.reduce((sum, a) => sum + (a.fields?.readingTime || 0), 0);
         tagSeriesMap.set(series.name, {
           name: series.name,
           slug: `${seriesSlug}/${article.frontmatter.slug}`,
@@ -622,6 +630,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
           featuredImage: series.featuredImage || article.frontmatter.featuredImage || '/images/content/brewing/intro-to-making-mead/series-cover.png',
           publishedAt: article.frontmatter.publishedAt,
           draft: article.frontmatter.draft,
+          readingTime: totalReadingTime,
         });
       }
     });
@@ -636,14 +645,15 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
     );
 
     const displayItems: Array<
-      | { kind: 'series'; name: string; slug: string; description: string; featuredImage: string; publishedAt: string; draft?: boolean }
-      | { kind: 'article'; slug: string; publishedAt: string }
+      | { kind: 'series'; name: string; slug: string; description: string; featuredImage: string; publishedAt: string; draft?: boolean; readingTime: number }
+      | { kind: 'article'; slug: string; publishedAt: string; readingTime: number }
     > = [
       ...tagSeriesCards.map((card) => ({ ...card, kind: 'series' as const })),
       ...standaloneTagArticles.map((article) => ({
         kind: 'article' as const,
         slug: article.frontmatter.slug,
         publishedAt: article.frontmatter.publishedAt,
+        readingTime: article.fields?.readingTime || 0,
       })),
     ].sort(
       (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
@@ -669,6 +679,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
             featuredImage: item.featuredImage,
             publishedAt: item.publishedAt,
             draft: item.draft,
+            readingTime: item.readingTime,
           })),
         limit: articlesPerPage,
         skip: i * articlesPerPage,

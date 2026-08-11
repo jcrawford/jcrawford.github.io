@@ -5,11 +5,15 @@ import SEO from '../components/SEO';
 import StarRating from '../components/StarRating';
 import DraftBadge from '../components/DraftBadge';
 import { formatDate } from '../utils/dateUtils';
+import { ClockIcon } from '../utils/icons';
 import '../styles/brewing-index.css';
 
 interface RecipeCard {
   id: string;
   fileAbsolutePath: string;
+  fields: {
+    readingTime: number;
+  };
   frontmatter: {
     slug: string;
     title: string;
@@ -41,6 +45,7 @@ interface SeriesCard {
   featuredImage: string;
   publishedAt: string;
   draft?: boolean;
+  readingTime: number;
 }
 
 interface ListingData {
@@ -119,6 +124,11 @@ const BrewingIndexTemplate: React.FC<PageProps<ListingData, BrewingIndexPageCont
         <p>{card.description}</p>
         <div className="brewing-recipe-card-meta">
           <span>{formatDate(card.publishedAt)}</span>
+          <span>•</span>
+          <span className="hm-article-card-reading-time">
+            <ClockIcon size={14} />
+            {card.readingTime} min
+          </span>
         </div>
       </div>
     </Link>
@@ -152,6 +162,11 @@ const BrewingIndexTemplate: React.FC<PageProps<ListingData, BrewingIndexPageCont
           <p>{recipe.frontmatter.excerpt}</p>
           <div className="brewing-recipe-card-meta">
             <span>{formatDate(recipe.frontmatter.publishedAt)}</span>
+            <span>•</span>
+            <span className="hm-article-card-reading-time">
+              <ClockIcon size={14} />
+              {recipe.fields?.readingTime || 0} min
+            </span>
             {(recipe.frontmatter.rating ?? recipe.frontmatter.review?.rating) && (
               <span className="recipe-card-rating">
                 <StarRating rating={recipe.frontmatter.rating ?? recipe.frontmatter.review?.rating ?? 0} size={14} showScore={false} color="#FFC107" />
@@ -340,6 +355,9 @@ export const query = graphql`
       nodes {
         id
         fileAbsolutePath
+        fields {
+          readingTime
+        }
         frontmatter {
           slug
           title

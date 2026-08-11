@@ -3,10 +3,11 @@ import { Link } from 'gatsby';
 import { formatDate } from '../utils/dateUtils';
 import { truncateText } from '../utils/textUtils';
 import { getArticlePath } from '../utils/articlePath';
-import { hasTag, normalizeTagSlug, tagMatches, getTagPath } from '../utils/tagUtils';
+import { hasTag, tagMatches, getTagPath } from '../utils/tagUtils';
 import OptimizedImage from './OptimizedImage';
 import StarRating from './StarRating';
 import DraftBadge from './DraftBadge';
+import { ClockIcon } from '../utils/icons';
 
 interface ArticleCardProps {
   slug: string;
@@ -15,8 +16,7 @@ interface ArticleCardProps {
   featuredImage: string;
   tags: string[] | null;
   publishedAt: string;
-  author: string;
-  authorName: string;
+  readingTime: number;
   isSeries?: boolean;
   seriesName?: string;
   rating?: number;
@@ -30,8 +30,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
   featuredImage,
   tags,
   publishedAt,
-  author,
-  authorName,
+  readingTime,
   isSeries,
   seriesName,
   rating,
@@ -77,7 +76,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
         </h2>
         
         <p className="hm-article-card-excerpt">
-          {truncateText(excerpt, 150)}
+          {truncateText(excerpt || '', 150)}
         </p>
 
         {isReview && rating != null && (
@@ -87,12 +86,15 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
         )}
         
         <div className="hm-article-card-meta">
-          <span>{authorName}</span>
-          <span>•</span>
           <span>
             <time dateTime={publishedAt}>
               {formatDate(publishedAt)}
             </time>
+          </span>
+          <span>•</span>
+          <span className="hm-article-card-reading-time">
+            <ClockIcon size={14} />
+            {readingTime} min
           </span>
         </div>
       </div>

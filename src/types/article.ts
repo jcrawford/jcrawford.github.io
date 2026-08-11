@@ -72,5 +72,6 @@ export interface ArticlePageContext {
   isBrewing?: boolean
   viewCount: number
   commentCount: number
+  readingTime: number
   shareCounts: ShareCounts
 }

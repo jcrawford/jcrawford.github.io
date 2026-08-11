@@ -66,6 +66,7 @@ interface RecipeData {
 interface BrewingRecipePageContext {
   viewCount: number;
   commentCount: number;
+  readingTime: number;
   shareCounts: ShareCounts;
 }
 
@@ -74,6 +75,7 @@ const BrewingRecipeTemplate: React.FC<PageProps<RecipeData, BrewingRecipePageCon
   const { frontmatter, html } = recipe;
   const viewCount = pageContext.viewCount || 0;
   const commentCount = pageContext.commentCount || 0;
+  const readingTime = pageContext.readingTime || 0;
   const shareCounts = pageContext.shareCounts || { facebook: 0, twitter: 0, linkedin: 0, copy: 0 };
   const shareUrl = `https://josephcrawford.com/brewing/${frontmatter.slug}`;
 
@@ -142,6 +144,7 @@ const BrewingRecipeTemplate: React.FC<PageProps<RecipeData, BrewingRecipePageCon
             publishedAt={frontmatter.publishedAt}
             viewCount={viewCount}
             commentCount={commentCount}
+            readingTime={readingTime}
             variant="recipe"
           />
           <ShareButtons

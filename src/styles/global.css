@@ -2567,6 +2567,17 @@ body .hm-cl-sep #secondary .widget {
   vertical-align: middle;
 }
 
+.hm-article-reading-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--hybridmag-color-text-light);
+}
+
+.hm-article-reading-time svg {
+  vertical-align: middle;
+}
+
 /* Remove old meta styles */
 .hm-article-author-info,
 .hm-article-author-avatar,

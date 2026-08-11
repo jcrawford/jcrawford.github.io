@@ -94,6 +94,13 @@ export const InstagramIcon: React.FC<IconProps> = ({ size = 24, color = "current
   </svg>
 );
 
+export const ClockIcon: React.FC<IconProps> = ({ size = 24, color = "currentColor", className }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} className={className} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10" />
+    <polyline points="12 6 12 12 16 14" />
+  </svg>
+);
+
 export const EyeIcon: React.FC<IconProps> = ({ size = 24, color = "currentColor", className }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} className={className} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />

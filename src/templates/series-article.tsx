@@ -80,6 +80,7 @@ interface SeriesArticleData {
 interface SeriesArticlePageContext {
   viewCount: number;
   commentCount: number;
+  readingTime: number;
   shareCounts: ShareCounts;
 }
 
@@ -89,6 +90,7 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData, SeriesArticle
   const author = data.authorsJson;
   const viewCount = pageContext.viewCount || 0;
   const commentCount = pageContext.commentCount || 0;
+  const readingTime = pageContext.readingTime || 0;
   const shareCounts = pageContext.shareCounts || { facebook: 0, twitter: 0, linkedin: 0, copy: 0 };
 
   // Get the first tag that's not "family" or "featured" for display
@@ -215,6 +217,7 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData, SeriesArticle
                   publishedAt={article.publishedAt}
                   viewCount={viewCount}
                   commentCount={commentCount}
+                  readingTime={readingTime}
                   byText="by"
                   variant="article"
                 />

@@ -84,10 +84,22 @@
 
 .brewing-recipe-card-meta {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
   margin-top: 0.75rem;
   font-size: 0.8rem;
   color: var(--hm-text-muted, #888);
+}
+
+.brewing-recipe-card-meta .hm-article-card-reading-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.brewing-recipe-card-meta .hm-article-card-reading-time svg {
+  vertical-align: middle;
 }
 
 .brewing-empty {

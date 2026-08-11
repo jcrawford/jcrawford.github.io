@@ -1,12 +1,16 @@
 import React from 'react';
 import HighlightedPost from './HighlightedPost';
 
-interface HighlightedArticle {
+export interface HighlightedArticle {
   slug: string;
   title: string;
+  excerpt?: string;
   featuredImage: string;
   tags: string[];
-  isSeries: boolean;
+  type?: string;
+  publishedAt?: string;
+  readingTime?: number;
+  isSeries?: boolean;
   seriesName?: string;
   isDraft?: boolean;
 }
@@ -35,4 +39,3 @@ const FeaturedHighlight: React.FC<FeaturedHighlightProps> = ({ articles }) => {
 };
 
 export default FeaturedHighlight;
-

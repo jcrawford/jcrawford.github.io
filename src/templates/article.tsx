@@ -167,7 +167,7 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
   const author = data.authorsJson;
   const isReview = pageContext.isReview;
   const isBrewing = pageContext.isBrewing ?? false;
-  const { viewCount, commentCount, shareCounts } = pageContext;
+  const { viewCount, commentCount, shareCounts, readingTime } = pageContext;
   
   const shareUrl = typeof window !== 'undefined' ? window.location.href : `https://josephcrawford.com${getArticlePath(article.slug, !!article.series?.name, isReview)}`;
   
@@ -289,6 +289,7 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
                 publishedAt={article.publishedAt}
                 viewCount={viewCount}
                 commentCount={commentCount}
+                readingTime={readingTime}
                 byText="By"
                 variant="article"
               />

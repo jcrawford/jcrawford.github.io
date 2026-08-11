@@ -9,6 +9,9 @@ import '../styles/brewing-index.css';
 
 interface SeriesCard {
   id: string;
+  fields: {
+    readingTime: number;
+  };
   frontmatter: {
     slug: string;
     title: string;
@@ -55,6 +58,7 @@ const SeriesIndexTemplate: React.FC<PageProps<SeriesIndexData>> = ({ data }) => 
     const firstArticle = sorted[0];
     const seriesSlug = slugifySeriesName(name);
     const firstSlug = `${seriesSlug}/${firstArticle.frontmatter.slug}`;
+    const totalReadingTime = sorted.reduce((sum, a) => sum + (a.fields?.readingTime || 0), 0);
     return {
       ...firstArticle,
       frontmatter: {
@@ -63,6 +67,9 @@ const SeriesIndexTemplate: React.FC<PageProps<SeriesIndexData>> = ({ data }) => 
         title: name,
         excerpt: firstArticle.frontmatter.series?.description || `A series covering ${name.toLowerCase()}.`,
         featuredImage: firstArticle.frontmatter.series?.featuredImage || firstArticle.frontmatter.featuredImage || '/images/content/brewing/intro-to-making-mead/series-cover.png',
+      },
+      fields: {
+        readingTime: totalReadingTime,
       },
     };
   });
@@ -100,6 +107,10 @@ const SeriesIndexTemplate: React.FC<PageProps<SeriesIndexData>> = ({ data }) => 
                     <p>{series.frontmatter.excerpt}</p>
                     <div className="brewing-recipe-card-meta">
                       <span>{formatDate(series.frontmatter.publishedAt)}</span>
+                      <span>•</span>
+                      <span className="hm-article-card-reading-time">
+                        {series.fields?.readingTime || 0} min
+                      </span>
                     </div>
                   </div>
                 </Link>
@@ -142,6 +153,9 @@ export const query = graphql`
     ) {
       nodes {
         id
+        fields {
+          readingTime
+        }
         frontmatter {
           slug
           title

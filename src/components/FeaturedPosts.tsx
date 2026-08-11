@@ -1,30 +1,9 @@
 import React from 'react';
-import FeaturedSlider from './FeaturedSlider';
-import FeaturedHighlight from './FeaturedHighlight';
-
-interface SliderArticle {
-  slug: string;
-  title: string;
-  excerpt: string;
-  featuredImage: string;
-  publishedAt: string;
-  author: string;
-  authorName: string;
-  isSeries: boolean;
-  seriesName?: string;
-  isDraft?: boolean;
-}
-
-interface HighlightedArticle {
-  slug: string;
-  title: string;
-  featuredImage: string;
-  isSeries: boolean;
-  isDraft?: boolean;
-}
+import FeaturedSlider, { FeaturedArticle } from './FeaturedSlider';
+import FeaturedHighlight, { HighlightedArticle } from './FeaturedHighlight';
 
 interface FeaturedPostsProps {
-  sliderArticles: SliderArticle[];
+  sliderArticles: FeaturedArticle[];
   highlightedArticles: HighlightedArticle[];
 }
 
@@ -45,4 +24,3 @@ const FeaturedPosts: React.FC<FeaturedPostsProps> = ({
 };
 
 export default FeaturedPosts;
-

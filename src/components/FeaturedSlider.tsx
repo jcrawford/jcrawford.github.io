@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'gatsby';
 import { getArticlePath } from '../utils/articlePath';
 import OptimizedImage from './OptimizedImage';
@@ -12,8 +12,7 @@ export interface FeaturedArticle {
   tags: string[];
   type?: string;
   publishedAt: string;
-  author: string;
-  authorName: string;
+  readingTime?: number;
   isSeries?: boolean;
   seriesName?: string;
   isDraft?: boolean;
@@ -24,14 +23,14 @@ interface FeaturedSliderProps {
 }
 
 const FeaturedSlider: React.FC<FeaturedSliderProps> = ({ articles }) => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentSlide, setCurrentSlide] = React.useState(0);
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
   };
 
   const goToPrevious = () => {
-    setCurrentSlide((prev) => 
+    setCurrentSlide((prev) =>
       prev === 0 ? articles.length - 1 : prev - 1
     );
   };
@@ -64,8 +63,8 @@ const FeaturedSlider: React.FC<FeaturedSliderProps> = ({ articles }) => {
               />
             </div>
             <div className="hm-fp-overlay">
-              <Link 
-                className="hm-fp-link-overlay" 
+              <Link
+                className="hm-fp-link-overlay"
                 to={articlePath}
                 aria-label={currentArticle.title}
               />
@@ -85,7 +84,7 @@ const FeaturedSlider: React.FC<FeaturedSliderProps> = ({ articles }) => {
           >
             ‹
           </button>
-          
+
           <button
             onClick={goToNext}
             className="hm-slider-nav hm-slider-next"
@@ -93,7 +92,7 @@ const FeaturedSlider: React.FC<FeaturedSliderProps> = ({ articles }) => {
           >
             ›
           </button>
-          
+
           <div className="hm-slider-pagination">
             {articles.map((_, index) => (
               <button
@@ -113,4 +112,3 @@ const FeaturedSlider: React.FC<FeaturedSliderProps> = ({ articles }) => {
 };
 
 export default FeaturedSlider;
-

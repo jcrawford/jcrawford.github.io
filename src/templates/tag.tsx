@@ -5,6 +5,7 @@ import ArticleCard from '../components/ArticleCard';
 import DraftBadge from '../components/DraftBadge';
 import SEO from '../components/SEO';
 import { formatDate } from '../utils/dateUtils';
+import { ClockIcon } from '../utils/icons';
 
 interface TagPageData {
   site: {
@@ -23,6 +24,9 @@ interface TagPageData {
     nodes: Array<{
       id: string;
       html: string;
+      fields: {
+        readingTime: number;
+      };
       frontmatter: {
         slug: string;
         title: string;
@@ -60,14 +64,7 @@ interface TagPageData {
 interface TagPageContext {
   slug: string;
   articleSlugs: string[];
-  seriesCards: Array<{
-    name: string;
-    slug: string;
-    description: string;
-    featuredImage: string;
-    publishedAt: string;
-    draft?: boolean;
-  }>;
+  seriesCards: SeriesCard[];
   limit: number;
   skip: number;
   numPages: number;
@@ -82,6 +79,7 @@ interface SeriesCard {
   featuredImage: string;
   publishedAt: string;
   draft?: boolean;
+  readingTime: number;
 }
 
 const TagTemplate: React.FC<PageProps<TagPageData, TagPageContext>> = ({ 
@@ -90,13 +88,7 @@ const TagTemplate: React.FC<PageProps<TagPageData, TagPageContext>> = ({
 }) => {
   const tag = data.tagsJson;
   const articles = data.allMarkdownRemark.nodes;
-  const authors = data.allAuthorsJson.nodes;
   const { numPages, currentPage, seriesCards } = pageContext;
-
-  const getAuthorName = (slug: string) => {
-    const author = authors.find((a) => a.slug === slug);
-    return author?.name || slug;
-  };
 
   const SeriesCardComponent: React.FC<{ card: SeriesCard; tagSlug: string }> = ({ card, tagSlug }) => (
     <Link
@@ -120,6 +112,8 @@ const TagTemplate: React.FC<PageProps<TagPageData, TagPageContext>> = ({
         <p className="hm-article-card-excerpt">{card.description}</p>
         <div className="hm-article-card-meta">
           <span>{formatDate(card.publishedAt)}</span>
+          <span>•</span>
+          <span className="hm-article-card-reading-time"><ClockIcon size={14} /> {card.readingTime} min</span>
         </div>
       </div>
     </Link>
@@ -152,8 +146,7 @@ const TagTemplate: React.FC<PageProps<TagPageData, TagPageContext>> = ({
                   featuredImage={article.frontmatter.featuredImage}
                   tags={article.frontmatter.tags || []}
                   publishedAt={article.frontmatter.publishedAt}
-                  author={article.frontmatter.author}
-                  authorName={getAuthorName(article.frontmatter.author)}
+                  readingTime={article.fields?.readingTime || 0}
                   isSeries={!!article.frontmatter.series?.name}
                   rating={article.frontmatter.rating ?? article.frontmatter.review?.rating}
                   isDraft={!!article.frontmatter.draft}
@@ -249,6 +242,9 @@ export const query = graphql`
       nodes {
         id
         html
+        fields {
+          readingTime
+        }
         frontmatter {
           slug
           title
@@ -281,8 +277,7 @@ export const query = graphql`
         name
       }
     }
-  }
-`;
+    }`;
 
 export const Head: HeadFC<TagPageData> = ({ data }) => (
   <SEO 
