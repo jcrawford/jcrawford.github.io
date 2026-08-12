@@ -41,7 +41,6 @@ const SupportFlyout: React.FC = () => {
   const location = useLocation();
   const pathname = location.pathname || '';
 
-  // Determine context from URL
   const getContext = (): keyof typeof supportConfigs => {
     if (pathname.includes('/brewing/')) return 'brewing';
     if (pathname.includes('/reviews/')) return 'reviews';
@@ -52,52 +51,27 @@ const SupportFlyout: React.FC = () => {
   const context = getContext();
   const config = supportConfigs[context] || supportConfigs.default;
 
-  // Close on Escape key
-  useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setIsOpen(false);
-    };
-    document.addEventListener('keydown', handleEscape);
-    return () => document.removeEventListener('keydown', handleEscape);
-  }, []);
-
   return (
     <>
-      {/* Tab Trigger */}
       <button
         className={`support-flyout-tab ${isOpen ? 'support-flyout-tab--open' : ''}`}
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Support this site"
-        aria-expanded={isOpen}
       >
         <span className="support-flyout-tab-icon">{config.icon}</span>
-        <span className="support-flyout-tab-text">Support</span>
       </button>
 
-      {/* Overlay */}
-      {isOpen && (
-        <div
-          className="support-flyout-overlay"
-          onClick={() => setIsOpen(false)}
-          aria-hidden="true"
-        />
-      )}
-
-      {/* Flyout Panel */}
-      <div className={`support-flyout-panel ${isOpen ? 'support-flyout-panel--open' : ''}`}>
+      <div className={`support-flyout-window ${isOpen ? 'support-flyout-window--open' : ''}`}>
         <div className="support-flyout-content">
           <button
             className="support-flyout-close"
             onClick={() => setIsOpen(false)}
-            aria-label="Close support panel"
           >
             ✕
           </button>
           
           <div className="support-flyout-icon">{config.icon}</div>
-          
           <h3 className="support-flyout-heading">{config.heading}</h3>
-          
           <p className="support-flyout-description">{config.description}</p>
           
           <a
@@ -105,6 +79,7 @@ const SupportFlyout: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="support-flyout-button"
+            onClick={() => setIsOpen(false)}
           >
             {config.cta} →
           </a>
