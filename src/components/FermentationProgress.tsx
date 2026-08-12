@@ -108,9 +108,9 @@ const FermentationProgress: React.FC<FermentationProgressProps> = ({ brewData })
   const bottledCompleted = isDateReached(bottlingDate);
   const bottleAgingCompleted = isDateReached(calculatedDrinkingReadyDate);
 
-  // Active stage status
+  // Active stage status — a stage is active when previous is complete AND this stage's end date is NOT yet reached
   const primaryActive = isDateReached(brewData.startDate) && !primaryCompleted;
-  const secondaryActive = primaryCompleted && !secondaryCompleted;
+  const secondaryActive = primaryCompleted && !secondaryCompleted && !isDateReached(bottlingDate);
   const bottleAgingActive = bottledCompleted && !bottleAgingCompleted && bottleAgingTimeDays > 0 && !isDateReached(calculatedDrinkingReadyDate);
 
   // Days for display
@@ -126,11 +126,11 @@ const FermentationProgress: React.FC<FermentationProgressProps> = ({ brewData })
     ? daysBetween(brewData.startDate, todayStr)
     : primaryDays;
 
-  const secondaryProgress = secondaryActive
-    ? calculateProgressPercent(secondaryStartDate, secondaryEndDate || plannedSecondaryEndDate)
+  const secondaryProgress = secondaryActive && (secondaryStartDate || plannedPrimaryEndDate)
+    ? calculateProgressPercent(secondaryStartDate || plannedPrimaryEndDate || todayStr, secondaryEndDate || plannedSecondaryEndDate)
     : 0;
   const secondaryElapsedDays = secondaryActive && (secondaryStartDate || plannedPrimaryEndDate)
-    ? daysBetween(secondaryStartDate || plannedPrimaryEndDate || todayStr, todayStr)
+    ? Math.max(1, daysBetween(secondaryStartDate || plannedPrimaryEndDate || todayStr, todayStr) || 0)
     : secondaryDays;
 
   const bottleAgingProgress = bottleAgingActive

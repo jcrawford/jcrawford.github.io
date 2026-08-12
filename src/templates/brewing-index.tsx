@@ -66,9 +66,6 @@ const BrewingIndexTemplate: React.FC<PageProps<ListingData, BrewingIndexPageCont
   const recipes = data.allMarkdownRemark.nodes;
   const seriesCards = pageContext.seriesCards || [];
   const [activeBrewTab, setActiveBrewTab] = React.useState<'active' | 'completed'>('active');
-  const [activePage, setActivePage] = React.useState(1);
-  const [completedPage, setCompletedPage] = React.useState(1);
-  const BREWS_PER_PAGE = 6;
 
   // Split recipes into Active and Completed based on drinkingReadyDate
   const today = new Date().toISOString().split('T')[0];
@@ -84,22 +81,24 @@ const BrewingIndexTemplate: React.FC<PageProps<ListingData, BrewingIndexPageCont
     recipe.frontmatter.brewData.drinkingReadyDate <= today
   );
 
-  const paginatedActiveBrews = activeBrews.slice((activePage - 1) * BREWS_PER_PAGE, activePage * BREWS_PER_PAGE);
-  const activeTotalPages = Math.ceil(activeBrews.length / BREWS_PER_PAGE);
-  const paginatedCompletedBrews = completedBrews.slice((completedPage - 1) * BREWS_PER_PAGE, completedPage * BREWS_PER_PAGE);
-  const completedTotalPages = Math.ceil(completedBrews.length / BREWS_PER_PAGE);
+  // Show only the latest 3 on the index page
+  const PREVIEW_COUNT = 3;
+  const previewActiveBrews = activeBrews.slice(0, PREVIEW_COUNT);
+  const previewCompletedBrews = completedBrews.slice(0, PREVIEW_COUNT);
 
-  // Standalone brewing posts only (no series articles). Series are rendered from pageContext.
+  // Standalone brewing posts only (no series articles).
+  // Include both standard brewing posts AND reviews that are tagged with 'brewing'
   const standaloneBrewingPosts = recipes.filter(
     (recipe) => recipe.frontmatter.type !== 'brewing-recipe' && !recipe.frontmatter.series
   );
+  // Calculate remaining slots after series cards
+  const remainingSlots = Math.max(0, PREVIEW_COUNT - seriesCards.length);
+  const previewStandalonePosts = standaloneBrewingPosts.slice(0, remainingSlots);
 
   const hasBrews = activeBrews.length > 0 || completedBrews.length > 0;
 
   const handleTabChange = (tab: 'active' | 'completed') => {
     setActiveBrewTab(tab);
-    if (tab === 'active') setActivePage(1);
-    else setCompletedPage(1);
   };
 
   const SeriesCardComponent: React.FC<{ card: SeriesCard }> = ({ card }) => (
@@ -233,26 +232,16 @@ const BrewingIndexTemplate: React.FC<PageProps<ListingData, BrewingIndexPageCont
               aria-labelledby="tab-active"
               className={`brewing-tab-panel ${activeBrewTab === 'active' ? 'brewing-tab-panel--active' : ''}`}
             >
-              {paginatedActiveBrews.length > 0 ? (
+              {previewActiveBrews.length > 0 ? (
                 <>
                   <div className="brewing-recipe-grid">
-                    {paginatedActiveBrews.map((recipe) => (
+                    {previewActiveBrews.map((recipe) => (
                       <RecipeCardComponent key={recipe.id} recipe={recipe} />
                     ))}
                   </div>
-                  {activeTotalPages > 1 && (
-                    <div className="brewing-pagination">
-                      {Array.from({ length: activeTotalPages }, (_, i) => i + 1).map((page) => (
-                        <button
-                          key={page}
-                          className={`brewing-pagination-button ${page === activePage ? 'active' : ''}`}
-                          onClick={() => setActivePage(page)}
-                          aria-label={`Active brews page ${page}`}
-                          aria-current={page === activePage ? 'page' : undefined}
-                        >
-                          {page}
-                        </button>
-                      ))}
+                  {activeBrews.length > PREVIEW_COUNT && (
+                    <div className="brewing-view-all">
+                      <Link to="/brewing/active">View All Active Brews ({activeBrews.length}) →</Link>
                     </div>
                   )}
                 </>
@@ -267,26 +256,16 @@ const BrewingIndexTemplate: React.FC<PageProps<ListingData, BrewingIndexPageCont
               aria-labelledby="tab-completed"
               className={`brewing-tab-panel ${activeBrewTab === 'completed' ? 'brewing-tab-panel--active' : ''}`}
             >
-              {paginatedCompletedBrews.length > 0 ? (
+              {previewCompletedBrews.length > 0 ? (
                 <>
                   <div className="brewing-recipe-grid">
-                    {paginatedCompletedBrews.map((recipe) => (
+                    {previewCompletedBrews.map((recipe) => (
                       <RecipeCardComponent key={recipe.id} recipe={recipe} />
                     ))}
                   </div>
-                  {completedTotalPages > 1 && (
-                    <div className="brewing-pagination">
-                      {Array.from({ length: completedTotalPages }, (_, i) => i + 1).map((page) => (
-                        <button
-                          key={page}
-                          className={`brewing-pagination-button ${page === completedPage ? 'active' : ''}`}
-                          onClick={() => setCompletedPage(page)}
-                          aria-label={`Completed brews page ${page}`}
-                          aria-current={page === completedPage ? 'page' : undefined}
-                        >
-                          {page}
-                        </button>
-                      ))}
+                  {completedBrews.length > PREVIEW_COUNT && (
+                    <div className="brewing-view-all">
+                      <Link to="/brewing/completed">View All Completed Brews ({completedBrews.length}) →</Link>
                     </div>
                   )}
                 </>
@@ -311,10 +290,15 @@ const BrewingIndexTemplate: React.FC<PageProps<ListingData, BrewingIndexPageCont
               {seriesCards.map((card) => (
                 <SeriesCardComponent key={card.slug} card={card} />
               ))}
-              {standaloneBrewingPosts.map((recipe) => (
+              {previewStandalonePosts.map((recipe) => (
                 <RecipeCardComponent key={recipe.id} recipe={recipe} />
               ))}
             </div>
+            {(seriesCards.length + standaloneBrewingPosts.length > PREVIEW_COUNT) && (
+              <div className="brewing-view-all">
+                <Link to="/brewing/articles">View All Brewing Articles →</Link>
+              </div>
+            )}
           </section>
         )}
 

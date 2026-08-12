@@ -584,6 +584,65 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
   });
   reporter.info(`Created brewing index page: /brewing with ${seriesCards.length} series card(s)`);
 
+  // Create paginated brewing list pages (/brewing/active, /brewing/completed, /brewing/articles)
+  const brewingListTemplate = path.resolve('./src/templates/brewing-list.tsx');
+  const brewingItemsPerPage = 21;
+  const brewStatuses: ('active' | 'completed' | 'articles')[] = ['active', 'completed', 'articles'];
+
+  brewStatuses.forEach((status) => {
+    const filteredArticles = articles.filter((article) => {
+      if (article.frontmatter.draft && !SHOW_DRAFTS) return false;
+      if (status === 'articles') {
+        return (article.fileAbsolutePath.includes('/content/brewing/') || article.fileAbsolutePath.includes('/content/reviews/')) && 
+               article.frontmatter.tags?.some(t => normalizeTagSlug(t) === 'brewing') && 
+               article.frontmatter.type !== 'brewing-recipe';
+      }
+      if (status === 'active') {
+        return article.frontmatter.type === 'brewing-recipe' && 
+               (!article.frontmatter.brewData?.drinkingReadyDate || article.frontmatter.brewData.drinkingReadyDate > new Date().toISOString().split('T')[0]);
+      }
+      if (status === 'completed') {
+        return article.frontmatter.type === 'brewing-recipe' && 
+               article.frontmatter.brewData?.drinkingReadyDate && 
+               article.frontmatter.brewData.drinkingReadyDate <= new Date().toISOString().split('T')[0];
+      }
+      return false;
+    });
+
+    // Also include relevant series cards for the 'articles' list
+    const statusSeriesCards = status === 'articles' 
+      ? seriesCards.filter(card => card.draft === undefined || card.draft === false || SHOW_DRAFTS)
+      : [];
+
+    const allItems = [
+      ...statusSeriesCards.map(card => ({ slug: card.slug, publishedAt: card.publishedAt })),
+      ...filteredArticles.map(article => ({ slug: article.frontmatter.slug, publishedAt: article.frontmatter.publishedAt }))
+    ].sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
+
+    const numPages = Math.ceil(allItems.length / brewingItemsPerPage);
+
+    Array.from({ length: numPages }).forEach((_, i) => {
+      const currentPage = i + 1;
+      const pageItems = allItems.slice(i * brewingItemsPerPage, (i + 1) * brewingItemsPerPage);
+      
+      createPage({
+        path: currentPage === 1 ? `/brewing/${status}` : `/brewing/${status}/${currentPage}`,
+        component: brewingListTemplate,
+        context: {
+          brewStatus: status,
+          currentPage,
+          numPages,
+          limit: brewingItemsPerPage,
+          skip: i * brewingItemsPerPage,
+          totalCount: allItems.length,
+          articleSlugs: pageItems.map(item => item.slug),
+          seriesCards: statusSeriesCards, // pass all relevant series cards for the template's custom logic
+        },
+      });
+    });
+    reporter.info(`Created ${numPages} page(s) for /brewing/${status}`);
+  });
+
   // Create series index page
   const seriesIndexTemplate = path.resolve('./src/templates/series-index.tsx');
   createPage({

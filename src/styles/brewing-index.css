@@ -253,6 +253,50 @@
   border-color: var(--hm-accent, #48b490);
 }
 
+/* View All link */
+.brewing-view-all {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.brewing-view-all a {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--hm-accent, #48b490);
+  background: transparent;
+  border: 1px solid var(--hm-accent, #48b490);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.brewing-view-all a:hover {
+  background: var(--hm-accent, #48b490);
+  color: white;
+}
+
+/* 3-column grid for brewing list pages */
+.brewing-recipe-grid--3col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.brewing-list-back {
+  margin-bottom: 1.5rem;
+}
+
+.brewing-list-back a {
+  font-size: 0.9rem;
+  color: var(--hm-text-muted, #888);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.brewing-list-back a:hover {
+  color: var(--hm-accent, #48b490);
+}
+
 @media (max-width: 480px) {
   .brewing-tabs {
     gap: 0.25rem;
@@ -270,6 +314,10 @@
 
 @media (max-width: 768px) {
   .brewing-recipe-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .brewing-recipe-grid--3col {
     grid-template-columns: 1fr;
   }
 
