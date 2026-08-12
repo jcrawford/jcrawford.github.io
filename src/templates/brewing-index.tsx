@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { graphql, Link, PageProps, HeadFC } from 'gatsby';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
@@ -312,7 +312,17 @@ const BrewingIndexTemplate: React.FC<PageProps<ListingData, BrewingIndexPageCont
   );
 };
 
-export default BrewingIndexTemplate;
+// Announce brewing context to SupportBar
+const BrewingIndexWithAnnouncement: React.FC = () => {
+  useEffect(() => {
+    const event = new CustomEvent('support-context', { detail: { context: 'brewing' } });
+    window.dispatchEvent(event);
+  }, []);
+  
+  return <BrewingIndexTemplate />;
+};
+
+export default BrewingIndexWithAnnouncement;
 
 export const Head: HeadFC = () => (
   <SEO

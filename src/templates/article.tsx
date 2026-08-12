@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { graphql, Link, PageProps, HeadFC } from 'gatsby';
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
@@ -168,6 +168,19 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
   const isReview = pageContext.isReview;
   const isBrewing = pageContext.isBrewing ?? false;
   const { viewCount, commentCount, shareCounts, readingTime } = pageContext;
+  
+  // Announce context to SupportBar component
+  useEffect(() => {
+    let context: 'brewing' | 'reviews' | 'tech' = 'tech';
+    if (isBrewing || (article.tags && article.tags.some(t => t.toLowerCase().includes('brewing')))) {
+      context = 'brewing';
+    } else if (isReview) {
+      context = 'reviews';
+    }
+    
+    const event = new CustomEvent('support-context', { detail: { context } });
+    window.dispatchEvent(event);
+  }, [isBrewing, isReview, article.tags]);
   
   const shareUrl = typeof window !== 'undefined' ? window.location.href : `https://josephcrawford.com${getArticlePath(article.slug, !!article.series?.name, isReview)}`;
   

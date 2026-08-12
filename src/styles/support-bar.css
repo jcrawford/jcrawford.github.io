@@ -11,6 +11,12 @@
   top: 0;
   z-index: 1000;
   border-bottom: 1px solid var(--hybridmag-color-border);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.support-bar--visible {
+  opacity: 1;
 }
 
 .support-bar-left {

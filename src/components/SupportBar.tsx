@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from '@reach/router';
 import '../styles/support-bar.css';
 
 interface SupportConfig {
@@ -28,8 +27,8 @@ const supportConfigs: Record<string, SupportConfig> = {
 
 const SupportBar: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const location = useLocation();
-  const pathname = location.pathname || '';
+  const [context, setContext] = useState<keyof typeof supportConfigs>('default');
+  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
     const dismissedUntil = localStorage.getItem('support-bar-dismissed');
@@ -38,26 +37,30 @@ const SupportBar: React.FC = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const handleContextChange = (event: CustomEvent<{ context: keyof typeof supportConfigs }>) => {
+      if (event.detail?.context) {
+        setContext(event.detail.context);
+        setIsReady(true);
+      }
+    };
+
+    window.addEventListener('support-context' as any, handleContextChange as any);
+    return () => window.removeEventListener('support-context' as any, handleContextChange as any);
+  }, []);
+
   const handleDismiss = () => {
     const expiry = Date.now() + 24 * 60 * 60 * 1000;
     localStorage.setItem('support-bar-dismissed', expiry.toString());
     setIsVisible(false);
   };
 
-  const getContext = (): keyof typeof supportConfigs => {
-    if (pathname.includes('/brewing/') || pathname.includes('/series/')) return 'brewing';
-    if (pathname.includes('/reviews/')) return 'reviews';
-    if (pathname.includes('/posts/') || pathname.includes('/tag/')) return 'tech';
-    return 'default';
-  };
+  if (!isVisible || !isReady) return null;
 
-  if (!isVisible) return null;
-
-  const context = getContext();
   const config = supportConfigs[context] || supportConfigs.default;
 
   return (
-    <div className="support-bar">
+    <div className="support-bar support-bar--visible">
       <div className="support-bar-left">
         <span className="support-bar-icon">{config.icon}</span>
         <span className="support-bar-text">{config.cta}</span>
