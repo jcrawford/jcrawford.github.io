@@ -3,6 +3,7 @@ slug: supporting-the-brew
 title: "Fueling the Fermentation: Supporting the Brewing Journey"
 publishedAt: 2026-08-12
 featuredImage: "/images/content/brewing/supporting-the-brew.png"
+author: "Joseph Crawford"
 tags: ["brewing", "journey", "community"]
 ---
 
