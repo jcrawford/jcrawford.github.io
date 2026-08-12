@@ -46,6 +46,7 @@ const SupportBar: React.FC = () => {
   };
 
   const getContext = (): keyof typeof supportConfigs => {
+    console.log('SupportBar pathname:', pathname);
     if (pathname.includes('/brewing/')) return 'brewing';
     if (pathname.includes('/reviews/')) return 'reviews';
     if (pathname.includes('/posts/') || pathname.includes('/tag/')) return 'tech';

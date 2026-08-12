@@ -1,7 +1,7 @@
-/* Support Bar - Muted and Professional */
+/* Support Bar - Matches HybridMag Design */
 .support-bar {
-  background: #fcfcfc;
-  color: #444;
+  background: #ffffff;
+  color: var(--hybridmag-color-text-main);
   padding: 0.5rem 1.25rem;
   display: flex;
   align-items: center;
@@ -10,7 +10,7 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--hybridmag-color-border);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
@@ -27,7 +27,7 @@
 
 .support-bar-text {
   font-weight: 500;
-  color: #666;
+  color: var(--hybridmag-color-text-light);
 }
 
 .support-bar-right {
@@ -37,10 +37,10 @@
 }
 
 .support-bar-link {
-  background: #f6821f;
+  background: var(--hybridmag-color-primary);
   color: white;
   padding: 0.3rem 0.75rem;
-  border-radius: 4px;
+  border-radius: var(--hybridmag-global-border-radius);
   text-decoration: none;
   font-weight: 600;
   font-size: 0.8rem;
@@ -48,7 +48,7 @@
 }
 
 .support-bar-link:hover {
-  background: #f57a15;
+  background: var(--hybridmag-color-button-hover-background);
   transform: translateY(-1px);
   text-decoration: none;
   color: white;
@@ -57,7 +57,7 @@
 .support-bar-close {
   background: transparent;
   border: none;
-  color: #aaa;
+  color: var(--hybridmag-color-text-light);
   cursor: pointer;
   font-size: 0.9rem;
   padding: 0.2rem;
@@ -66,7 +66,7 @@
 }
 
 .support-bar-close:hover {
-  color: #666;
+  color: var(--hybridmag-color-text-main);
 }
 
 @media (max-width: 640px) {
