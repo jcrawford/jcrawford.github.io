@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-11T19:22:06.876Z",
+  "generatedAt": "2026-08-12T02:46:37.987Z",
   "windowDays": 30,
   "entries": [
     {
@@ -234,10 +234,10 @@
       }
     },
     {
-      "id": "/brewing/dandelion-mead",
-      "views": 4,
+      "id": "/reviews/fried-chicken-ice-cream-review",
+      "views": 5,
       "comments": 0,
-      "score": 4,
+      "score": 5,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -245,7 +245,7 @@
       }
     },
     {
-      "id": "/reviews/fried-chicken-ice-cream-review",
+      "id": "/brewing/dandelion-mead",
       "views": 4,
       "comments": 0,
       "score": 4,
