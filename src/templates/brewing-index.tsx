@@ -4,7 +4,6 @@ import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import StarRating from '../components/StarRating';
 import DraftBadge from '../components/DraftBadge';
-import SupportComponent from '../components/SupportComponent';
 import { formatDate } from '../utils/dateUtils';
 import { ClockIcon } from '../utils/icons';
 import '../styles/brewing-index.css';
@@ -308,8 +307,6 @@ const BrewingIndexTemplate: React.FC<PageProps<ListingData, BrewingIndexPageCont
             <p>No recipes yet. Check back soon!</p>
           </div>
         )}
-
-        <SupportComponent context="brewing" variant="full" />
       </div>
     </Layout>
   );

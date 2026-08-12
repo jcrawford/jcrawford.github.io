@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import SupportFlyout from './SupportFlyout';
 import '../styles/variables.css';
 import '../styles/reset.css';
 import '../styles/global.css';
@@ -26,6 +27,8 @@ const Layout: React.FC<LayoutProps> = ({ children, className, hideFooter }) => {
       </div>
 
       {!hideFooter && <Footer />}
+      
+      <SupportFlyout />
     </div>
   );
 };
