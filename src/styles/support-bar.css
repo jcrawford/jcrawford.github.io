@@ -1,7 +1,7 @@
-/* Support Bar - High Contrast Integration */
+/* Support Bar - Theme Aware Design */
 .support-bar {
-  background: #eeeeee;
-  color: #000000;
+  background: #f5f5f5;
+  color: #222;
   padding: 0.5rem 1.25rem;
   display: flex;
   align-items: center;
@@ -10,7 +10,8 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 2px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .support-bar-left {
@@ -26,7 +27,7 @@
 
 .support-bar-text {
   font-weight: 800;
-  color: #000000 !important;
+  color: #000 !important;
 }
 
 .support-bar-right {
@@ -66,6 +67,25 @@
 
 .support-bar-close:hover {
   color: #000;
+}
+
+/* DARK MODE OVERRIDES */
+html.hm-dark .support-bar {
+  background: #2a2a2a;
+  color: #eee;
+  border-bottom: 1px solid #444;
+}
+
+html.hm-dark .support-bar-text {
+  color: #ffffff !important;
+}
+
+html.hm-dark .support-bar-close {
+  color: #aaa;
+}
+
+html.hm-dark .support-bar-close:hover {
+  color: #fff;
 }
 
 @media (max-width: 640px) {
