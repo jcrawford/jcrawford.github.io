@@ -2,6 +2,7 @@ import React from 'react';
 import SeriesWidget from './SeriesWidget';
 import TagCloud from './TagCloud';
 import RecentArticles from './RecentArticles';
+import SupportComponent from './SupportComponent';
 import type { SeriesMetadata, SeriesArticle } from '../types';
 import '../styles/sidebar.css';
 
@@ -37,6 +38,7 @@ const Sidebar: React.FC<SidebarProps> = ({
   // Otherwise, show regular sidebar widgets
   return (
     <aside id="secondary" className="hm-sidebar">
+      <SupportComponent context="default" variant="compact" />
       <RecentArticles />
       <TagCloud />
     </aside>
