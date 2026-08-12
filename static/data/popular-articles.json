@@ -1,12 +1,23 @@
 {
-  "generatedAt": "2026-08-12T15:17:05.265Z",
+  "generatedAt": "2026-08-12T18:44:03.223Z",
   "windowDays": 30,
   "entries": [
     {
-      "id": "/brewing/cherry-mead",
-      "views": 102,
+      "id": "/reviews/budget-auto-rental-process-review",
+      "views": 116,
       "comments": 0,
-      "score": 102,
+      "score": 116,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/brewing/cherry-mead",
+      "views": 110,
+      "comments": 0,
+      "score": 110,
       "shares": {
         "facebook": 5,
         "linkedin": 1,
@@ -15,9 +26,9 @@
     },
     {
       "id": "/reviews/benq-rd320ua-monitor-review",
-      "views": 69,
+      "views": 71,
       "comments": 0,
-      "score": 69,
+      "score": 71,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -25,21 +36,10 @@
       }
     },
     {
-      "id": "/reviews/budget-auto-rental-process-review",
-      "views": 53,
-      "comments": 0,
-      "score": 53,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
       "id": "/brewing/strawberry-wine",
-      "views": 53,
+      "views": 54,
       "comments": 0,
-      "score": 53,
+      "score": 54,
       "shares": {
         "facebook": 8,
         "linkedin": 1,
@@ -69,10 +69,10 @@
       }
     },
     {
-      "id": "/posts/home-brewing-journey",
-      "views": 18,
+      "id": "/reviews/total-typescript-pro-complete-review",
+      "views": 19,
       "comments": 0,
-      "score": 18,
+      "score": 19,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -80,7 +80,7 @@
       }
     },
     {
-      "id": "/reviews/total-typescript-pro-complete-review",
+      "id": "/posts/home-brewing-journey",
       "views": 18,
       "comments": 0,
       "score": 18,
@@ -125,9 +125,9 @@
     },
     {
       "id": "/series/intro-to-making-mead/types-of-mead",
-      "views": 11,
+      "views": 12,
       "comments": 0,
-      "score": 11,
+      "score": 12,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -223,10 +223,10 @@
       }
     },
     {
-      "id": "/posts/spacex-buys-cursor-60-billion",
-      "views": 6,
+      "id": "/brewing/dandelion-mead",
+      "views": 7,
       "comments": 0,
-      "score": 6,
+      "score": 7,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -234,10 +234,10 @@
       }
     },
     {
-      "id": "/brewing/dandelion-mead",
-      "views": 5,
+      "id": "/posts/spacex-buys-cursor-60-billion",
+      "views": 6,
       "comments": 0,
-      "score": 5,
+      "score": 6,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
