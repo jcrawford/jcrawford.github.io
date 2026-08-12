@@ -140,10 +140,20 @@ Looking back at the pattern here: none of the agents could give me a real, consi
 
 I'm still waiting to hear back from this "special department" to see if they're going to come up with yet another reason for the charge. At this point, I wouldn't be surprised.
 
+## Update: Resolution
+
+After weeks of back-and-forth, the "special department" finally came through. They were able to issue a full refund for the $205.01 charge — the one that no agent could ever consistently explain. It took multiple phone calls, a claim escalation, and a lot of persistence on my end, but Budget ultimately dropped the extra charges they were never able to justify.
+
+To be clear: the refund didn't happen because Budget's process worked the way it should. It happened because I refused to let it go. I called back every few days. I kept my claim number. I pushed through dropped calls and contradictory explanations. If I had simply accepted the first answer — the refuel charge that was provably false — I would have been out $205 for nothing.
+
+The $165.99 e-toll charge, on the other hand, was legitimate. We did go through tolls on our trip, and I expected to pay for them. My issue was never with being charged for tolls — it was with being charged $205 for something that three different agents described three different ways, none of which held up to scrutiny.
+
+So the final tally: the mystery charge was refunded, the toll charge was legitimate, and I learned that the only way to get Budget to do the right thing is to make enough noise that doing the right thing becomes easier than continuing to ignore you.
+
 ## Final Thoughts
 
 The van was good. The process of getting it was one of the worst customer service experiences I've had.
 
 From a confusing website that locked us into a single pickup location, to a closed counter with no signage, to a three-hour line where our prepaid reservation meant nothing — every step of this process was built to wear you down. The deposit policy contradicted what customer service had explicitly confirmed by phone. The vehicle wasn't ready at the reserved time. And when they finally handed us a van, it wasn't even the class we booked. The manager did step up when I pushed back, and I'm grateful for that. But I shouldn't have had to push back at all — not after three hours in line, not after a denied deposit, not after being told to wait another three hours. That tells you everything you need to know about how this process is designed to work. It's not designed for the customer. It's designed to be cheap, and you get exactly what you pay for.
 
-If you're renting from Budget for a family trip, especially one where you need a specific vehicle type, here's my advice: call ahead, confirm everything in writing, bring a major credit card even if they tell you a debit card is fine, and show up expecting to wait.
+If you're renting from Budget for a family trip, especially one where you need a specific vehicle type, here's my advice: call ahead, confirm everything in writing, bring a major credit card even if they tell you a debit card is fine, show up expecting to wait — and if they charge you something you can't explain, fight it. Don't accept the first answer. Don't accept the second one either. Keep calling, keep your claim number, and don't let them wear you down.
