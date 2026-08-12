@@ -50,7 +50,6 @@ const SupportBar: React.FC = () => {
     return () => window.removeEventListener('support-context' as any, handleContextChange as any);
   }, []);
 
-  // Small delay before fade-in to make the animation perceptible
   useEffect(() => {
     if (isReady) {
       const timer = setTimeout(() => {
@@ -60,7 +59,9 @@ const SupportBar: React.FC = () => {
     }
   }, [isReady]);
 
-  const handleDismiss = () => {
+  const handleDismiss = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
     setShouldFadeIn(false);
     const expiry = Date.now() + 24 * 60 * 60 * 1000;
     localStorage.setItem('support-bar-dismissed', expiry.toString());
@@ -72,21 +73,20 @@ const SupportBar: React.FC = () => {
   const config = supportConfigs[context] || supportConfigs.default;
 
   return (
-    <div className={`support-bar ${shouldFadeIn ? 'support-bar--visible' : ''}`}>
+    <a
+      href="https://ko-fi.com/jcrawford"
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`support-bar ${shouldFadeIn ? 'support-bar--visible' : ''}`}
+      style={{ textDecoration: 'none' }}
+    >
       <div className="support-bar-left">
         <span className="support-bar-icon">{config.icon}</span>
         <span className="support-bar-text">{config.cta}</span>
       </div>
       
       <div className="support-bar-right">
-        <a
-          href="https://ko-fi.com/jcrawford"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="support-bar-link"
-        >
-          Support →
-        </a>
+        <span className="support-bar-link">Support →</span>
         <button 
           className="support-bar-close" 
           onClick={handleDismiss} 
@@ -95,7 +95,7 @@ const SupportBar: React.FC = () => {
           ✕
         </button>
       </div>
-    </div>
+    </a>
   );
 };
 

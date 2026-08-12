@@ -33,8 +33,8 @@
 }
 
 .support-bar-text {
-  font-weight: 500;
-  color: var(--hybridmag-color-text-light);
+  font-weight: 700;
+  color: var(--hybridmag-color-text-main);
 }
 
 .support-bar-right {
