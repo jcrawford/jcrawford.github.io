@@ -13,9 +13,9 @@
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.08);
-  z-index: 9999;
+  z-index: 10002;
 }
 
 .support-flyout-tab:hover {
@@ -24,9 +24,16 @@
 }
 
 .support-flyout-tab--open {
+  right: 360px;
   background: #f6821f;
   border-color: #f63;
   color: white;
+  border-radius: 8px;
+  border-right: 1px solid #f63;
+}
+
+.support-flyout-tab--open:hover {
+  background: #f57a15;
 }
 
 .support-flyout-tab--open:hover {
