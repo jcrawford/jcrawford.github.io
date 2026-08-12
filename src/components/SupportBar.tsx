@@ -2,32 +2,77 @@ import React, { useState, useEffect } from 'react';
 import '../styles/support-bar.css';
 
 interface SupportConfig {
-  cta: string;
+  phrases: string[];
   icon: string;
 }
 
 const supportConfigs: Record<string, SupportConfig> = {
   brewing: {
-    cta: 'Sponsor the next batch',
     icon: '🍯',
+    phrases: [
+      'Sponsor the next batch',
+      'Help me buy some honey',
+      'Keep the fermenters running',
+      'Support the brewing journey',
+      'Fuel the next experiment',
+      'Buy me a brewing ingredient',
+      'Support the craft of mead',
+      'Keep the bubbles going',
+      'Support homebrewing research',
+      'Fuel the next brew day',
+    ],
   },
   reviews: {
-    cta: 'Support honest reviews',
     icon: '🔍',
+    phrases: [
+      'Support honest reviews',
+      'Help me test more gear',
+      'Support unbiased research',
+      'Fuel honest consumer guides',
+      'Keep the reviews coming',
+      'Support independent testing',
+      'Fuel more product deep-dives',
+      'Help me find the best gear',
+      'Support honest consumer advocacy',
+      'Fuel the quest for quality',
+    ],
   },
   tech: {
-    cta: 'Buy me a coffee',
     icon: '☕',
+    phrases: [
+      'Buy me a coffee',
+      'Support the codebase',
+      'Fuel the late-night coding',
+      'Support technical writing',
+      'Buy me a caffeine fix',
+      'Fuel more deep-dives',
+      'Support the dev journey',
+      'Keep the tutorials flowing',
+      'Support open-source learning',
+      'Fuel the next project',
+    ],
   },
   default: {
-    cta: 'Support my work',
     icon: '✨',
+    phrases: [
+      'Support my work',
+      'Buy me a coffee',
+      'Fuel the content creation',
+      'Support the blog',
+      'Keep the site running',
+      'Support independent writing',
+      'Fuel my curiosity',
+      'Buy me a treat',
+      'Support the creative process',
+      'Keep the updates coming',
+    ],
   },
 };
 
 const SupportBar: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [context, setContext] = useState<keyof typeof supportConfigs>('default');
+  const [phrase, setPhrase] = useState('');
   const [isReady, setIsReady] = useState(false);
   const [shouldFadeIn, setShouldFadeIn] = useState(false);
 
@@ -41,7 +86,14 @@ const SupportBar: React.FC = () => {
   useEffect(() => {
     const handleContextChange = (event: CustomEvent<{ context: keyof typeof supportConfigs }>) => {
       if (event.detail?.context) {
-        setContext(event.detail.context);
+        const newContext = event.detail.context;
+        setContext(newContext);
+        
+        // Pick a random phrase from the new context
+        const phrases = supportConfigs[newContext].phrases;
+        const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+        setPhrase(randomPhrase);
+        
         setIsReady(true);
       }
     };
@@ -82,7 +134,7 @@ const SupportBar: React.FC = () => {
     >
       <div className="support-bar-left">
         <span className="support-bar-icon">{config.icon}</span>
-        <span className="support-bar-text">{config.cta}</span>
+        <span className="support-bar-text">{phrase || config.phrases[0]}</span>
       </div>
       
       <div className="support-bar-right">
