@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { graphql, Link, PageProps, HeadFC } from 'gatsby';
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
@@ -82,6 +82,8 @@ interface SeriesArticlePageContext {
   commentCount: number;
   readingTime: number;
   shareCounts: ShareCounts;
+  isBrewing?: boolean;
+  isReview?: boolean;
 }
 
 const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData, SeriesArticlePageContext>> = ({ data, pageContext }) => {
@@ -92,7 +94,21 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData, SeriesArticle
   const commentCount = pageContext.commentCount || 0;
   const readingTime = pageContext.readingTime || 0;
   const shareCounts = pageContext.shareCounts || { facebook: 0, twitter: 0, linkedin: 0, copy: 0 };
-
+  
+  // Announce context to SupportBar component
+  useEffect(() => {
+    let context: 'brewing' | 'reviews' | 'tech' = 'tech';
+    const isBrewing = pageContext.isBrewing ?? false;
+    if (isBrewing || (article.tags && article.tags.some(t => t.toLowerCase().includes('brewing')))) {
+      context = 'brewing';
+    } else if (pageContext.isReview) {
+      context = 'reviews';
+    }
+    
+    const event = new CustomEvent('support-context', { detail: { context } });
+    window.dispatchEvent(event);
+  }, [pageContext.isBrewing, pageContext.isReview, article.tags]);
+  
   // Get the first tag that's not "family" or "featured" for display
   const primaryTag = article.tags?.find(tag => !tagMatches(tag, 'family') && !tagMatches(tag, 'featured')) || article.tags?.[0];
 
