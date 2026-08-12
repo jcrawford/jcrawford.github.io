@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import SupportFlyout from './SupportFlyout';
+import SupportBar from './SupportBar';
 import '../styles/variables.css';
 import '../styles/reset.css';
 import '../styles/global.css';
@@ -17,6 +17,8 @@ const Layout: React.FC<LayoutProps> = ({ children, className, hideFooter }) => {
     <div id="page" className="site hm-cl-sep">
       <Header />
       
+      <SupportBar />
+      
       <div id="content" className="site-content">
         <main 
           id="primary" 
@@ -27,8 +29,6 @@ const Layout: React.FC<LayoutProps> = ({ children, className, hideFooter }) => {
       </div>
 
       {!hideFooter && <Footer />}
-      
-      <SupportFlyout />
     </div>
   );
 };
