@@ -73,7 +73,6 @@ const SupportBar: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [context, setContext] = useState<keyof typeof supportConfigs>('default');
   const [phrase, setPhrase] = useState('');
-  const [isReady, setIsReady] = useState(false);
   const [shouldFadeIn, setShouldFadeIn] = useState(false);
 
   useEffect(() => {
@@ -84,17 +83,18 @@ const SupportBar: React.FC = () => {
   }, []);
 
   useEffect(() => {
+    // Set initial random phrase for default context
+    const defaultPhrases = supportConfigs.default.phrases;
+    setPhrase(defaultPhrases[Math.floor(Math.random() * defaultPhrases.length)]);
+
     const handleContextChange = (event: CustomEvent<{ context: keyof typeof supportConfigs }>) => {
       if (event.detail?.context) {
         const newContext = event.detail.context;
         setContext(newContext);
         
-        // Pick a random phrase from the new context
         const phrases = supportConfigs[newContext].phrases;
         const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
         setPhrase(randomPhrase);
-        
-        setIsReady(true);
       }
     };
 
@@ -103,13 +103,13 @@ const SupportBar: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (isReady) {
+    if (isVisible) {
       const timer = setTimeout(() => {
         setShouldFadeIn(true);
       }, 150);
       return () => clearTimeout(timer);
     }
-  }, [isReady]);
+  }, [isVisible]);
 
   const handleDismiss = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -120,7 +120,7 @@ const SupportBar: React.FC = () => {
     setTimeout(() => setIsVisible(false), 300);
   };
 
-  if (!isVisible || !isReady) return null;
+  if (!isVisible) return null;
 
   const config = supportConfigs[context] || supportConfigs.default;
 
