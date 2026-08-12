@@ -29,6 +29,7 @@ const SupportBar: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [context, setContext] = useState<keyof typeof supportConfigs>('default');
   const [isReady, setIsReady] = useState(false);
+  const [shouldFadeIn, setShouldFadeIn] = useState(false);
 
   useEffect(() => {
     const dismissedUntil = localStorage.getItem('support-bar-dismissed');
@@ -49,10 +50,20 @@ const SupportBar: React.FC = () => {
     return () => window.removeEventListener('support-context' as any, handleContextChange as any);
   }, []);
 
+  // Trigger fade-in after the bar is rendered (ready)
+  useEffect(() => {
+    if (isReady) {
+      requestAnimationFrame(() => {
+        setShouldFadeIn(true);
+      });
+    }
+  }, [isReady]);
+
   const handleDismiss = () => {
+    setShouldFadeIn(false);
     const expiry = Date.now() + 24 * 60 * 60 * 1000;
     localStorage.setItem('support-bar-dismissed', expiry.toString());
-    setIsVisible(false);
+    setTimeout(() => setIsVisible(false), 300);
   };
 
   if (!isVisible || !isReady) return null;
@@ -60,7 +71,7 @@ const SupportBar: React.FC = () => {
   const config = supportConfigs[context] || supportConfigs.default;
 
   return (
-    <div className="support-bar support-bar--visible">
+    <div className={`support-bar ${shouldFadeIn ? 'support-bar--visible' : ''}`}>
       <div className="support-bar-left">
         <span className="support-bar-icon">{config.icon}</span>
         <span className="support-bar-text">{config.cta}</span>
