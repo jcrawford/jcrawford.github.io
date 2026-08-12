@@ -12,7 +12,7 @@ tags:
 author: joseph-crawford
 publishedAt: '2026-07-10'
 review:
-  rating: 2
+  rating: 1
   pros:
     - Manager eventually found us a vehicle when we pushed back on the wait
     - Removable seats in the Transit gave us the cargo room we needed
