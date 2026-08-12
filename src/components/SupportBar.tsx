@@ -32,7 +32,6 @@ const SupportBar: React.FC = () => {
   const pathname = location.pathname || '';
 
   useEffect(() => {
-    // Check if user has dismissed the bar in the last 24 hours
     const dismissedUntil = localStorage.getItem('support-bar-dismissed');
     if (!dismissedUntil || Date.now() > parseInt(dismissedUntil)) {
       setIsVisible(true);
@@ -40,14 +39,13 @@ const SupportBar: React.FC = () => {
   }, []);
 
   const handleDismiss = () => {
-    const expiry = Date.now() + 24 * 60 * 60 * 1000; // 24 hours from now
+    const expiry = Date.now() + 24 * 60 * 60 * 1000;
     localStorage.setItem('support-bar-dismissed', expiry.toString());
     setIsVisible(false);
   };
 
   const getContext = (): keyof typeof supportConfigs => {
-    console.log('SupportBar pathname:', pathname);
-    if (pathname.includes('/brewing/')) return 'brewing';
+    if (pathname.includes('/brewing/') || pathname.includes('/series/')) return 'brewing';
     if (pathname.includes('/reviews/')) return 'reviews';
     if (pathname.includes('/posts/') || pathname.includes('/tag/')) return 'tech';
     return 'default';
