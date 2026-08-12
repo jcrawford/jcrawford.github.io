@@ -1,6 +1,6 @@
-/* Support Bar - Matches HybridMag Design */
+/* Support Bar - Integrated Design */
 .support-bar {
-  background: #ffffff;
+  background: transparent;
   color: var(--hybridmag-color-text-main);
   padding: 0.5rem 1.25rem;
   display: flex;
@@ -11,7 +11,6 @@
   top: 0;
   z-index: 1000;
   border-bottom: 1px solid var(--hybridmag-color-border);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .support-bar-left {
@@ -37,21 +36,22 @@
 }
 
 .support-bar-link {
-  background: var(--hybridmag-color-primary);
-  color: white;
-  padding: 0.3rem 0.75rem;
-  border-radius: var(--hybridmag-global-border-radius);
+  background: transparent;
+  color: var(--hybridmag-color-primary);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.8rem;
   transition: all 0.2s ease;
+  border: 1px solid var(--hybridmag-color-primary);
 }
 
 .support-bar-link:hover {
-  background: var(--hybridmag-color-button-hover-background);
+  background: var(--hybridmag-color-primary);
+  color: white;
   transform: translateY(-1px);
   text-decoration: none;
-  color: white;
 }
 
 .support-bar-close {
