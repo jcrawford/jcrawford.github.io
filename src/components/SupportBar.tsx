@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from '@reach/router';
 import '../styles/support-bar.css';
 
 interface SupportConfig {
@@ -70,36 +71,28 @@ const supportConfigs: Record<string, SupportConfig> = {
 };
 
 const SupportBar: React.FC = () => {
+  const location = useLocation();
+  const pathname = location.pathname || '';
   const [isVisible, setIsVisible] = useState(false);
-  const [context, setContext] = useState<keyof typeof supportConfigs>('default');
-  const [phrase, setPhrase] = useState('');
   const [shouldFadeIn, setShouldFadeIn] = useState(false);
+
+  // Determine context synchronously based on URL to prevent flashing
+  const getContext = (): keyof typeof supportConfigs => {
+    if (pathname.includes('/brewing/')) return 'brewing';
+    if (pathname.includes('/reviews/')) return 'reviews';
+    if (pathname.includes('/posts/') || pathname.includes('/tag/')) return 'tech';
+    return 'default';
+  };
+
+  const context = getContext();
+  const config = supportConfigs[context];
+  const phrase = config.phrases[Math.floor(Math.random() * config.phrases.length)];
 
   useEffect(() => {
     const dismissedUntil = localStorage.getItem('support-bar-dismissed');
     if (!dismissedUntil || Date.now() > parseInt(dismissedUntil)) {
       setIsVisible(true);
     }
-  }, []);
-
-  useEffect(() => {
-    // Set initial random phrase for default context
-    const defaultPhrases = supportConfigs.default.phrases;
-    setPhrase(defaultPhrases[Math.floor(Math.random() * defaultPhrases.length)]);
-
-    const handleContextChange = (event: CustomEvent<{ context: keyof typeof supportConfigs }>) => {
-      if (event.detail?.context) {
-        const newContext = event.detail.context;
-        setContext(newContext);
-        
-        const phrases = supportConfigs[newContext].phrases;
-        const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
-        setPhrase(randomPhrase);
-      }
-    };
-
-    window.addEventListener('support-context' as any, handleContextChange as any);
-    return () => window.removeEventListener('support-context' as any, handleContextChange as any);
   }, []);
 
   useEffect(() => {
@@ -122,8 +115,6 @@ const SupportBar: React.FC = () => {
 
   if (!isVisible) return null;
 
-  const config = supportConfigs[context] || supportConfigs.default;
-
   return (
     <a
       href="https://ko-fi.com/jcrawford"
@@ -134,7 +125,7 @@ const SupportBar: React.FC = () => {
     >
       <div className="support-bar-left">
         <span className="support-bar-icon">{config.icon}</span>
-        <span className="support-bar-text">{phrase || config.phrases[0]}</span>
+        <span className="support-bar-text">{phrase}</span>
       </div>
       
       <div className="support-bar-right">
