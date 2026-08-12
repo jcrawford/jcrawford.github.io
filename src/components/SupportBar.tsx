@@ -54,6 +54,7 @@ const SupportBar: React.FC = () => {
     if (isReady) {
       const timer = setTimeout(() => {
         setShouldFadeIn(true);
+        document.body.classList.add('support-bar-active');
       }, 150);
       return () => clearTimeout(timer);
     }
@@ -63,6 +64,7 @@ const SupportBar: React.FC = () => {
     e.preventDefault();
     e.stopPropagation();
     setShouldFadeIn(false);
+    document.body.classList.remove('support-bar-active');
     const expiry = Date.now() + 24 * 60 * 60 * 1000;
     localStorage.setItem('support-bar-dismissed', expiry.toString());
     setTimeout(() => setIsVisible(false), 300);

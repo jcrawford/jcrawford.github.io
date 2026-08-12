@@ -24,6 +24,11 @@ html.hm-dark .series-widget {
     position: sticky;
     top: 20px;
     align-self: start;
+    transition: top 0.3s ease;
+  }
+  
+  body.support-bar-active .hm-sidebar {
+    top: 64px; /* 44px (bar height) + 20px (original offset) */
   }
 
   .series-widget {
