@@ -76,9 +76,9 @@ const SupportBar: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [shouldFadeIn, setShouldFadeIn] = useState(false);
 
-  // Determine context synchronously based on URL to prevent flashing
+  // Determine context synchronously based on URL
   const getContext = (): keyof typeof supportConfigs => {
-    if (pathname.includes('/brewing/')) return 'brewing';
+    if (pathname.includes('/brewing/') || pathname.includes('/series/')) return 'brewing';
     if (pathname.includes('/reviews/')) return 'reviews';
     if (pathname.includes('/posts/') || pathname.includes('/tag/')) return 'tech';
     return 'default';
