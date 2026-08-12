@@ -50,12 +50,13 @@ const SupportBar: React.FC = () => {
     return () => window.removeEventListener('support-context' as any, handleContextChange as any);
   }, []);
 
-  // Trigger fade-in after the bar is rendered (ready)
+  // Small delay before fade-in to make the animation perceptible
   useEffect(() => {
     if (isReady) {
-      requestAnimationFrame(() => {
+      const timer = setTimeout(() => {
         setShouldFadeIn(true);
-      });
+      }, 150);
+      return () => clearTimeout(timer);
     }
   }, [isReady]);
 

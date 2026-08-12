@@ -1,6 +1,6 @@
-/* Support Bar - Subtle Integrated Design */
+/* Support Bar - Subtle Medium Grey */
 .support-bar {
-  background: #f9f9f9;
+  background: #e8e8e8;
   color: var(--hybridmag-color-text-main);
   padding: 0.5rem 1.25rem;
   display: flex;
@@ -12,11 +12,13 @@
   z-index: 1000;
   border-bottom: 1px solid var(--hybridmag-color-border);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transform: translateY(-100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .support-bar--visible {
   opacity: 1;
+  transform: translateY(0);
 }
 
 .support-bar-left {
