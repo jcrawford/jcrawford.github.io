@@ -568,15 +568,18 @@ export const query = graphql`
 `;
 
 export const Head: HeadFC<ArticleData> = ({ data }) => {
-  const isReview = hasTag(data.markdownRemark.frontmatter.tags || [], 'reviews');
-  const isBrewing = data.markdownRemark.frontmatter.type === 'brewing-recipe';
+  const frontmatter = data.markdownRemark?.frontmatter;
+  if (!frontmatter) return <></>;
+  
+  const isReview = hasTag(frontmatter.tags || [], 'reviews');
+  const isBrewing = frontmatter.type === 'brewing-recipe';
   return (
     <SEO 
-      title={data.markdownRemark.frontmatter.title}
-      description={data.markdownRemark.frontmatter.excerpt}
-      image={data.markdownRemark.frontmatter.featuredImage}
+      title={frontmatter.title}
+      description={frontmatter.excerpt}
+      image={frontmatter.featuredImage}
       article={true}
-      pathname={getArticlePath(data.markdownRemark.frontmatter.slug, !!data.markdownRemark.frontmatter.series?.name, isReview, isBrewing)}
+      pathname={getArticlePath(frontmatter.slug, !!frontmatter.series?.name, isReview, isBrewing)}
       siteMetadata={data.site.siteMetadata}
     />
   );
