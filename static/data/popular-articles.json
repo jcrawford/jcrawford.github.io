@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-13T02:49:19.068Z",
+  "generatedAt": "2026-08-13T07:55:14.922Z",
   "windowDays": 30,
   "entries": [
     {
       "id": "/reviews/budget-auto-rental-process-review",
-      "views": 121,
+      "views": 117,
       "comments": 0,
-      "score": 121,
+      "score": 117,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -59,22 +59,11 @@
     },
     {
       "id": "/posts/lebanon-valley-speedway-2026",
-      "views": 26,
+      "views": 23,
       "comments": 0,
-      "score": 26,
+      "score": 23,
       "shares": {
         "facebook": 1,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/total-typescript-pro-complete-review",
-      "views": 19,
-      "comments": 0,
-      "score": 19,
-      "shares": {
-        "facebook": 0,
         "linkedin": 0,
         "copy": 0
       }
@@ -91,10 +80,10 @@
       }
     },
     {
-      "id": "/posts/disney-vacation-2026",
-      "views": 14,
+      "id": "/reviews/total-typescript-pro-complete-review",
+      "views": 18,
       "comments": 0,
-      "score": 14,
+      "score": 18,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -102,10 +91,10 @@
       }
     },
     {
-      "id": "/posts/grok-4-5-cursor-first-impressions",
-      "views": 13,
+      "id": "/posts/disney-vacation-2026",
+      "views": 14,
       "comments": 0,
-      "score": 13,
+      "score": 14,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -190,28 +179,6 @@
       }
     },
     {
-      "id": "/reviews/ford-transit-15-passenger-van-review",
-      "views": 8,
-      "comments": 0,
-      "score": 8,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/voyager-keyboard",
-      "views": 8,
-      "comments": 0,
-      "score": 8,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
       "id": "/reviews/via-aquarium",
       "views": 7,
       "comments": 0,
@@ -234,7 +201,7 @@
       }
     },
     {
-      "id": "/posts/spacex-buys-cursor-60-billion",
+      "id": "/reviews/ford-transit-15-passenger-van-review",
       "views": 6,
       "comments": 0,
       "score": 6,
@@ -245,7 +212,40 @@
       }
     },
     {
+      "id": "/posts/grok-4-5-cursor-first-impressions",
+      "views": 5,
+      "comments": 0,
+      "score": 5,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/spacex-buys-cursor-60-billion",
+      "views": 5,
+      "comments": 0,
+      "score": 5,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/reviews/fried-chicken-ice-cream-review",
+      "views": 5,
+      "comments": 0,
+      "score": 5,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/voyager-keyboard",
       "views": 5,
       "comments": 0,
       "score": 5,
