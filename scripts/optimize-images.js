@@ -212,7 +212,7 @@ function pruneOrphanVariants() {
   // Allowed widths: responsive set plus the post media width
   const allowedWidths = new Set([...CONFIG.responsiveVariants, CONFIG.postMediaWidth]);
 
-  const files = execSync(`find "${STATIC_DIR}" -type f`)
+  const files = execSync(`find "${STATIC_DIR}" -type f`, { maxBuffer: 50 * 1024 * 1024 })
     .toString()
     .split('\n')
     .filter(Boolean);
@@ -263,7 +263,7 @@ function writeVariantManifest() {
   const staticRoot = path.join(__dirname, '..', 'static');
   const manifest = [];
 
-  const files = execSync(`find "${STATIC_DIR}" -type f \\( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.webp" \\)`)
+  const files = execSync(`find "${STATIC_DIR}" -type f \\( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.webp" \\)`, { maxBuffer: 50 * 1024 * 1024 })
     .toString()
     .split('\n')
     .filter(Boolean);
@@ -307,7 +307,7 @@ function processContentImages() {
 
   log('Processing content images...');
 
-  const files = execSync(`find "${contentDir}" -type f \\( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.webp" \\)`)
+  const files = execSync(`find "${contentDir}" -type f \\( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.webp" \\)`, { maxBuffer: 50 * 1024 * 1024 })
     .toString()
     .split('\n')
     .filter(Boolean);
@@ -350,7 +350,7 @@ function processGalleryImages() {
   let galleryCount = 0;
   for (const gallery of galleries) {
     const galleryPath = path.join(galleriesDir, gallery);
-    const files = execSync(`find "${galleryPath}" -type f \\( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" -o -name "*.webp" \\)`)
+    const files = execSync(`find "${galleryPath}" -type f \\( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" -o -name "*.webp" \\)`, { maxBuffer: 50 * 1024 * 1024 })
       .toString()
       .split('\n')
       .filter(f => f && !isVariantFile(f));

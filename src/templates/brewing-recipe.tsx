@@ -297,6 +297,7 @@ export const query = graphql`
           yeast
           fermentationTime
           secondaryTime
+          bulkConditioningTime
           bottleAgingTime
         }
         ingredients

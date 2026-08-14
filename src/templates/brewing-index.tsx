@@ -63,22 +63,33 @@ const BrewingIndexTemplate: React.FC<PageProps<ListingData, BrewingIndexPageCont
   data,
   pageContext,
 }) => {
-  const recipes = data.allMarkdownRemark.nodes;
-  const seriesCards = pageContext.seriesCards || [];
+  const recipes = data?.allMarkdownRemark?.nodes || [];
+  const seriesCards = pageContext?.seriesCards || [];
   const [activeBrewTab, setActiveBrewTab] = React.useState<'active' | 'completed'>('active');
 
   // Split recipes into Active and Completed based on drinkingReadyDate
   const today = new Date().toISOString().split('T')[0];
   
   const activeBrews = recipes.filter(
-    (recipe) => recipe.frontmatter.type === 'brewing-recipe' && 
-    (!recipe.frontmatter.brewData?.drinkingReadyDate || recipe.frontmatter.brewData.drinkingReadyDate > today)
+    (recipe) => {
+      const type = recipe.frontmatter.type;
+      if (type !== 'brewing-recipe') return false;
+      const drd = recipe.frontmatter.brewData?.drinkingReadyDate;
+      // No drinkingReadyDate = still active
+      if (!drd) return true;
+      // Compare dates as strings (YYYY-MM-DD format)
+      return drd > today;
+    }
   );
   
   const completedBrews = recipes.filter(
-    (recipe) => recipe.frontmatter.type === 'brewing-recipe' && 
-    recipe.frontmatter.brewData?.drinkingReadyDate && 
-    recipe.frontmatter.brewData.drinkingReadyDate <= today
+    (recipe) => {
+      const type = recipe.frontmatter.type;
+      if (type !== 'brewing-recipe') return false;
+      const drd = recipe.frontmatter.brewData?.drinkingReadyDate;
+      if (!drd) return false;
+      return drd <= today;
+    }
   );
 
   // Show only the latest 3 on the index page
@@ -313,13 +324,15 @@ const BrewingIndexTemplate: React.FC<PageProps<ListingData, BrewingIndexPageCont
 };
 
 // Announce brewing context to SupportBar
-const BrewingIndexWithAnnouncement: React.FC = () => {
+const BrewingIndexWithAnnouncement: React.FC<PageProps<ListingData, BrewingIndexPageContext>> = (
+  props
+) => {
   useEffect(() => {
     const event = new CustomEvent('support-context', { detail: { context: 'brewing' } });
     window.dispatchEvent(event);
   }, []);
   
-  return <BrewingIndexTemplate />;
+  return <BrewingIndexTemplate {...props} />;
 };
 
 export default BrewingIndexWithAnnouncement;
@@ -364,6 +377,7 @@ export const query = graphql`
           }
           type
           draft
+          tags
           brewData {
             abv
             batchSize

@@ -43,6 +43,7 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
       description: String
       coverImage: String
       category: String
+      tags: [String]
       series: SeriesFrontmatter
       review: MarkdownRemarkFrontmatterReview
       photos: [GalleryPhoto]
