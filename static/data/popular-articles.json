@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T18:24:34.195Z",
+  "generatedAt": "2026-08-14T19:16:10.920Z",
   "windowDays": 30,
   "entries": [
     {
@@ -15,9 +15,9 @@
     },
     {
       "id": "/brewing/cherry-mead",
-      "views": 123,
+      "views": 124,
       "comments": 0,
-      "score": 123,
+      "score": 124,
       "shares": {
         "facebook": 5,
         "linkedin": 1,
@@ -106,6 +106,17 @@
       "views": 14,
       "comments": 0,
       "score": 14,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/clickfunnels-review",
+      "views": 13,
+      "comments": 0,
+      "score": 13,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -257,17 +268,6 @@
     },
     {
       "id": "/posts/long-running-ai-agents-adk",
-      "views": 3,
-      "comments": 0,
-      "score": 3,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/posts/saferide-health",
       "views": 3,
       "comments": 0,
       "score": 3,
