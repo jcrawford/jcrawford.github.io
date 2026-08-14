@@ -169,6 +169,13 @@ const config: GatsbyConfig = {
         excerpt_separator: `<!-- end-excerpt -->`,
         plugins: [
           {
+            resolve: 'gatsby-remark-external-links',
+            options: {
+              target: '_blank',
+              rel: 'noopener noreferrer',
+            },
+          },
+          {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 1200,
