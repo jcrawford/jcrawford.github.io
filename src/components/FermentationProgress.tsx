@@ -272,16 +272,20 @@ const FermentationProgress: React.FC<FermentationProgressProps> = ({ brewData })
         {/* Labels */}
         <div className="fermentation-progress-labels">
           {stages.map((stage, index) => {
-            const elapsed = stage.active ? (stage.elapsedDays || 0) : (stage.completed ? (stage.totalDays || 0) : 0);
             const total = stage.totalDays || stage.days || 0;
-            const showDays = stage.label !== 'Bottled' && stage.label !== 'Ready to Drink';
+            const showDays = stage.label !== 'Bottled' && stage.label !== 'Ready to Drink' && total > 0;
+
+            // Active: "X / Y days", Completed: "Y days", Pending: "Y days" (no "0 /")
+            const daysDisplay = stage.active
+              ? `${stage.elapsedDays || 0} / ${total} days`
+              : `${total} days`;
 
             return (
-              <div key={index} className={`ferment-label${stage.completed ? ' completed' : ''}${stage.active ? ' active' : ''}`}>
+              <div key={index} className={`ferment-label${stage.completed ? ' completed' : ''}${stage.active ? ' active' : ''}${!stage.completed && !stage.active ? ' pending' : ''}`}>
                 <div className="ferment-label-text">{stage.label}</div>
                 {showDays && (
                   <div className="ferment-label-days">
-                    {elapsed} / {total} days
+                    {daysDisplay}
                   </div>
                 )}
               </div>

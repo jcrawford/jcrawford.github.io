@@ -351,9 +351,10 @@ html.hm-dark .fermentation-progress-total-value {
     color: var(--hybridmag-color-text-light, #9ca3af);
   }
 
-  /* Hide days for future stages on mobile */
-  .ferment-label:not(.completed):not(.active) .ferment-label-days {
-    display: none;
+  /* Show days for pending stages that have a known duration */
+  .ferment-label.pending .ferment-label-days {
+    display: block;
+    opacity: 0.7;
   }
 
   .fermentation-progress-total {
