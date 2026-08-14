@@ -361,6 +361,12 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
             />
           )}
 
+          {article.review?.affiliateLink && (
+            <p className="affiliate-disclosure">
+              Disclosure: This post contains affiliate links. If you click through and make a purchase, I may earn a commission at no additional cost to you. I only recommend products I have researched and believe provide value.
+            </p>
+          )}
+
           {isBrewing && article.brewData && (
             <>
               <Suspense fallback={null}>

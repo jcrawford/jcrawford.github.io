@@ -656,5 +656,33 @@
     "name": "Gravity",
     "description": "Posts tagged with Gravity.",
     "featured": false
+  },
+  {
+    "id": "95",
+    "slug": "marketing",
+    "name": "Marketing",
+    "description": "Posts tagged with Marketing.",
+    "featured": false
+  },
+  {
+    "id": "96",
+    "slug": "saas",
+    "name": "Saas",
+    "description": "Posts tagged with Saas.",
+    "featured": false
+  },
+  {
+    "id": "97",
+    "slug": "sales-funnels",
+    "name": "Sales Funnels",
+    "description": "Posts tagged with Sales Funnels.",
+    "featured": false
+  },
+  {
+    "id": "98",
+    "slug": "affiliate",
+    "name": "Affiliate",
+    "description": "Posts tagged with Affiliate.",
+    "featured": false
   }
 ]
