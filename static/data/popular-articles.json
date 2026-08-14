@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T18:00:37.416Z",
+  "generatedAt": "2026-08-14T18:24:34.195Z",
   "windowDays": 30,
   "entries": [
     {
@@ -15,9 +15,9 @@
     },
     {
       "id": "/brewing/cherry-mead",
-      "views": 122,
+      "views": 123,
       "comments": 0,
-      "score": 122,
+      "score": 123,
       "shares": {
         "facebook": 5,
         "linkedin": 1,
