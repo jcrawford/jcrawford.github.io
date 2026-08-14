@@ -212,7 +212,7 @@ const FermentationProgress: React.FC<FermentationProgressProps> = ({ brewData })
 
   if (bottleAgingTimeDays > 0) {
     stages.push({
-      label: 'Bottle Aging',
+      label: 'Bottle Conditioning',
       days: bottleAgingDays || null,
       completed: bottleAgingCompleted,
       active: bottleAgingActive,
@@ -256,7 +256,7 @@ const FermentationProgress: React.FC<FermentationProgressProps> = ({ brewData })
               if (stage.label === 'Primary') segmentFill = `${primaryProgress}%`;
               else if (stage.label === 'Secondary') segmentFill = `${secondaryProgress}%`;
               else if (stage.label === 'Bulk Conditioning') segmentFill = `${bulkConditioningProgress}%`;
-              else if (stage.label === 'Bottle Aging') segmentFill = `${bottleAgingProgress}%`;
+              else if (stage.label === 'Bottle Conditioning') segmentFill = `${bottleAgingProgress}%`;
             }
 
             return (

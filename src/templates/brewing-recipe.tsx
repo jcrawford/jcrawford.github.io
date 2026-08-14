@@ -112,7 +112,7 @@ const BrewingRecipeTemplate: React.FC<PageProps<RecipeData, BrewingRecipePageCon
     { label: 'Yeast', value: brewData?.yeast },
     { label: 'Fermentation Time', value: calculatedFermentationTime },
     { label: 'Secondary Fermentation', value: brewData?.secondaryTime && brewData.secondaryTime !== '0 days' ? brewData.secondaryTime : undefined },
-    { label: 'Bottle Aging', value: brewData?.bottleAgingTime && brewData.bottleAgingTime !== '0 days' ? brewData.bottleAgingTime : undefined },
+    { label: 'Bottle Conditioning', value: brewData?.bottleAgingTime && brewData.bottleAgingTime !== '0 days' ? brewData.bottleAgingTime : undefined },
     { label: 'Start Date', value: brewData?.startDate ? formatDate(brewData.startDate) : undefined },
     { label: 'Secondary Start', value: brewData?.secondaryStartDate ? formatDate(brewData.secondaryStartDate) : undefined },
     { label: 'Bottling Date', value: brewData?.bottlingDate ? formatDate(brewData.bottlingDate) : undefined },
