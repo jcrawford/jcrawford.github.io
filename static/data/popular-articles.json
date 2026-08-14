@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-13T19:23:02.596Z",
+  "generatedAt": "2026-08-14T02:47:57.424Z",
   "windowDays": 30,
   "entries": [
     {
@@ -212,6 +212,17 @@
       }
     },
     {
+      "id": "/reviews/fried-chicken-ice-cream-review",
+      "views": 6,
+      "comments": 0,
+      "score": 6,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/posts/grok-4-5-cursor-first-impressions",
       "views": 5,
       "comments": 0,
@@ -224,17 +235,6 @@
     },
     {
       "id": "/posts/spacex-buys-cursor-60-billion",
-      "views": 5,
-      "comments": 0,
-      "score": 5,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/fried-chicken-ice-cream-review",
       "views": 5,
       "comments": 0,
       "score": 5,
