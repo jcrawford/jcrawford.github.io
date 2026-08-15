@@ -12,7 +12,7 @@ import ShareButtons from '../components/ShareButtons';
 import ArticleMeta from '../components/ArticleMeta';
 import DraftBanner from '../components/DraftBanner';
 import { tagMatches, getTagPath } from '../utils/tagUtils';
-import { postProcessImages, postProcessTables } from '../utils/postProcessImages';
+import { postProcessImages, postProcessTables, postProcessAffiliateLinks } from '../utils/postProcessImages';
 import { slugifySeriesName } from '../utils/articlePath';
 import type { SeriesMetadata, SeriesArticle } from '../types';
 import type { SpinnerImage, NamedSpinner, ShareCounts } from '../types/article';
@@ -88,7 +88,7 @@ interface SeriesArticlePageContext {
 
 const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData, SeriesArticlePageContext>> = ({ data, pageContext }) => {
   const article = data.markdownRemark.frontmatter;
-  const articleHtml = postProcessTables(postProcessImages(data.markdownRemark.html));
+  const articleHtml = postProcessAffiliateLinks(postProcessTables(postProcessImages(data.markdownRemark.html)));
   const author = data.authorsJson;
   const viewCount = pageContext.viewCount || 0;
   const commentCount = pageContext.commentCount || 0;

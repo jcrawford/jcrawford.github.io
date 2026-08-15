@@ -15,7 +15,7 @@ import RecipeIngredients from '../components/RecipeIngredients';
 import RecipeSteps from '../components/RecipeSteps';
 import { getArticlePath } from '../utils/articlePath';
 import { hasTag, getTagPath } from '../utils/tagUtils';
-import { postProcessImages } from '../utils/postProcessImages';
+import { postProcessImages, postProcessAffiliateLinks } from '../utils/postProcessImages';
 import type { SpinnerImage, NamedSpinner, GalleryEmbedData, BrewData, RecipeStep, ReviewData, ArticlePageContext } from '../types/article';
 import '../styles/review.css';
 import '../styles/tag-cloud.css';
@@ -184,7 +184,7 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
   
   const shareUrl = typeof window !== 'undefined' ? window.location.href : `https://josephcrawford.com${getArticlePath(article.slug, !!article.series?.name, isReview)}`;
   
-  const processedContent = postProcessImages(data.markdownRemark.html || '');
+  const processedContent = postProcessAffiliateLinks(postProcessImages(data.markdownRemark.html || ''));
 
   // Build a lookup of gallery embeds by slug and replace <!-- gallery:slug -->
   // markers in the processed HTML with placeholders so React can render embeds

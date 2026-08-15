@@ -5,13 +5,11 @@
  * into responsive <picture> elements with WebP + JPG srcset.
  * 
  * This handles markdown images (which bypass OptimizedImage component) by
- * rewriting the HTML before it's injected via dangerouslySetInnerHTML.
+ * rewriting the HTML before it's dangerouslySetInnerHTML.
  */
 
 const RESPONSIVE_SIZES = [64, 80, 160, 280, 320, 400, 600, 768, 850, 1200, 1920];
 const RESPONSIVE_SIZES_ATTR = '(max-width: 768px) 100vw, 850px';
-const POST_MEDIA_MAX_WIDTH = 760;
-const POST_MEDIA_MAX_HEIGHT = 600;
 
 function isFeaturedImage(src: string): boolean {
   const filename = src.split('/').pop()?.toLowerCase() || '';
@@ -67,6 +65,20 @@ export function postProcessImages(html: string): string {
     const srcMatch = match.match(/src=["']([^"']+)["']/);
     if (srcMatch && srcMatch[1].startsWith('/images/content/')) {
       return imgToPicture(match);
+    }
+    return match;
+  });
+}
+
+/**
+ * Post-processes HTML to add target="_blank" and rel="noopener noreferrer"
+ * to affiliate links (/go/* paths). These are internal redirect paths that
+ * point to external affiliate URLs, so they should open in new windows.
+ */
+export function postProcessAffiliateLinks(html: string): string {
+  return html.replace(/<a\s+href=["']\/go\/[^"']+["']/gi, (match) => {
+    if (!match.includes('target=')) {
+      return match.replace('>', ' target="_blank" rel="noopener noreferrer">');
     }
     return match;
   });
