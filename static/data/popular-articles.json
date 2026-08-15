@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-15T13:01:30.889Z",
+  "generatedAt": "2026-08-15T18:05:06.206Z",
   "windowDays": 30,
   "entries": [
     {
@@ -58,6 +58,17 @@
       }
     },
     {
+      "id": "/reviews/clickfunnels-review",
+      "views": 23,
+      "comments": 0,
+      "score": 23,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/reviews/benq-rd320ua-monitor-review",
       "views": 22,
       "comments": 0,
@@ -66,17 +77,6 @@
         "facebook": 0,
         "linkedin": 0,
         "copy": 4
-      }
-    },
-    {
-      "id": "/reviews/clickfunnels-review",
-      "views": 21,
-      "comments": 0,
-      "score": 21,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
       }
     },
     {
