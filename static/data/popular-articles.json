@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T19:16:10.920Z",
+  "generatedAt": "2026-08-15T01:51:31.424Z",
   "windowDays": 30,
   "entries": [
     {
@@ -69,6 +69,17 @@
       }
     },
     {
+      "id": "/reviews/clickfunnels-review",
+      "views": 21,
+      "comments": 0,
+      "score": 21,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/reviews/total-typescript-pro-complete-review",
       "views": 20,
       "comments": 0,
@@ -106,17 +117,6 @@
       "views": 14,
       "comments": 0,
       "score": 14,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/clickfunnels-review",
-      "views": 13,
-      "comments": 0,
-      "score": 13,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
