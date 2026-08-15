@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-15T01:51:31.424Z",
+  "generatedAt": "2026-08-15T06:59:49.472Z",
   "windowDays": 30,
   "entries": [
     {
       "id": "/reviews/budget-auto-rental-process-review",
-      "views": 132,
+      "views": 130,
       "comments": 0,
-      "score": 132,
+      "score": 130,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -22,17 +22,6 @@
         "facebook": 5,
         "linkedin": 1,
         "copy": 1
-      }
-    },
-    {
-      "id": "/reviews/benq-rd320ua-monitor-review",
-      "views": 71,
-      "comments": 0,
-      "score": 71,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 4
       }
     },
     {
@@ -66,6 +55,17 @@
         "facebook": 1,
         "linkedin": 0,
         "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/benq-rd320ua-monitor-review",
+      "views": 22,
+      "comments": 0,
+      "score": 22,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 4
       }
     },
     {
@@ -212,17 +212,6 @@
       }
     },
     {
-      "id": "/reviews/ford-transit-15-passenger-van-review",
-      "views": 6,
-      "comments": 0,
-      "score": 6,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
       "id": "/reviews/fried-chicken-ice-cream-review",
       "views": 6,
       "comments": 0,
@@ -245,21 +234,10 @@
       }
     },
     {
-      "id": "/posts/spacex-buys-cursor-60-billion",
-      "views": 5,
+      "id": "/reviews/ford-transit-15-passenger-van-review",
+      "views": 4,
       "comments": 0,
-      "score": 5,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/voyager-keyboard",
-      "views": 5,
-      "comments": 0,
-      "score": 5,
+      "score": 4,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -268,6 +246,28 @@
     },
     {
       "id": "/posts/long-running-ai-agents-adk",
+      "views": 3,
+      "comments": 0,
+      "score": 3,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/vision-capabilities-php-ai-agents",
+      "views": 3,
+      "comments": 0,
+      "score": 3,
+      "shares": {
+        "facebook": 1,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/voyager-keyboard",
       "views": 3,
       "comments": 0,
       "score": 3,
