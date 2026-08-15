@@ -1,23 +1,12 @@
 {
-  "generatedAt": "2026-08-03T23:58:11.900Z",
+  "generatedAt": "2026-08-15T18:32:05.205Z",
   "windowDays": 30,
   "entries": [
     {
       "id": "/reviews/budget-auto-rental-process-review",
-      "views": 127,
+      "views": 130,
       "comments": 0,
-      "score": 127,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/ford-transit-15-passenger-van-review",
-      "views": 97,
-      "comments": 0,
-      "score": 97,
+      "score": 130,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -26,9 +15,9 @@
     },
     {
       "id": "/brewing/cherry-mead",
-      "views": 94,
+      "views": 124,
       "comments": 0,
-      "score": 94,
+      "score": 124,
       "shares": {
         "facebook": 5,
         "linkedin": 1,
@@ -36,32 +25,10 @@
       }
     },
     {
-      "id": "/reviews/benq-rd320ua-monitor-review",
-      "views": 69,
-      "comments": 0,
-      "score": 69,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 4
-      }
-    },
-    {
-      "id": "/posts/disney-vacation-2026",
-      "views": 65,
-      "comments": 0,
-      "score": 65,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
       "id": "/brewing/strawberry-wine",
-      "views": 51,
+      "views": 57,
       "comments": 0,
-      "score": 51,
+      "score": 57,
       "shares": {
         "facebook": 8,
         "linkedin": 1,
@@ -69,21 +36,10 @@
       }
     },
     {
-      "id": "/posts/saferide-health-how-i-use-ai-as-an-engineer",
-      "views": 32,
-      "comments": 0,
-      "score": 32,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
       "id": "/brewing/blackberry-mead",
-      "views": 31,
+      "views": 37,
       "comments": 0,
-      "score": 31,
+      "score": 37,
       "shares": {
         "facebook": 1,
         "linkedin": 0,
@@ -102,6 +58,39 @@
       }
     },
     {
+      "id": "/reviews/clickfunnels-review",
+      "views": 23,
+      "comments": 0,
+      "score": 23,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/benq-rd320ua-monitor-review",
+      "views": 22,
+      "comments": 0,
+      "score": 22,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 4
+      }
+    },
+    {
+      "id": "/reviews/total-typescript-pro-complete-review",
+      "views": 20,
+      "comments": 0,
+      "score": 20,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/posts/home-brewing-journey",
       "views": 18,
       "comments": 0,
@@ -113,7 +102,7 @@
       }
     },
     {
-      "id": "/posts/grok-4-5-cursor-first-impressions",
+      "id": "/series/intro-to-making-mead/types-of-mead",
       "views": 15,
       "comments": 0,
       "score": 15,
@@ -124,7 +113,7 @@
       }
     },
     {
-      "id": "/reviews/total-typescript-pro-complete-review",
+      "id": "/posts/disney-vacation-2026",
       "views": 14,
       "comments": 0,
       "score": 14,
@@ -135,10 +124,21 @@
       }
     },
     {
-      "id": "/reviews/voyager-keyboard",
-      "views": 11,
+      "id": "/reviews/plaato-airlock-review",
+      "views": 12,
       "comments": 0,
-      "score": 11,
+      "score": 12,
+      "shares": {
+        "facebook": 5,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/null",
+      "views": 10,
+      "comments": 0,
+      "score": 10,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -146,7 +146,7 @@
       }
     },
     {
-      "id": "/reviews/huupe-mini-review",
+      "id": "/reviews/tilt-hydrometer-review",
       "views": 10,
       "comments": 0,
       "score": 10,
@@ -179,7 +179,29 @@
       }
     },
     {
-      "id": "/posts/long-running-ai-agents-adk",
+      "id": "/brewing/bottling-day",
+      "views": 8,
+      "comments": 0,
+      "score": 8,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/via-aquarium",
+      "views": 7,
+      "comments": 0,
+      "score": 7,
+      "shares": {
+        "facebook": 3,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/brewing/dandelion-mead",
       "views": 7,
       "comments": 0,
       "score": 7,
@@ -190,7 +212,7 @@
       }
     },
     {
-      "id": "/posts/spacex-buys-cursor-60-billion",
+      "id": "/reviews/fried-chicken-ice-cream-review",
       "views": 6,
       "comments": 0,
       "score": 6,
@@ -201,18 +223,18 @@
       }
     },
     {
-      "id": "/reviews/via-aquarium",
-      "views": 6,
+      "id": "/posts/grok-4-5-cursor-first-impressions",
+      "views": 5,
       "comments": 0,
-      "score": 6,
+      "score": 5,
       "shares": {
-        "facebook": 3,
+        "facebook": 0,
         "linkedin": 0,
         "copy": 0
       }
     },
     {
-      "id": "/brewing/dandelion-mead",
+      "id": "/reviews/ford-transit-15-passenger-van-review",
       "views": 4,
       "comments": 0,
       "score": 4,
@@ -223,7 +245,7 @@
       }
     },
     {
-      "id": "/posts/things-you-didnt-know-about-mysql-indexes",
+      "id": "/posts/long-running-ai-agents-adk",
       "views": 3,
       "comments": 0,
       "score": 3,
@@ -234,43 +256,21 @@
       }
     },
     {
-      "id": "/posts/wordpress-plugin-supply-chain-attack-2026",
+      "id": "/posts/vision-capabilities-php-ai-agents",
       "views": 3,
       "comments": 0,
       "score": 3,
       "shares": {
-        "facebook": 0,
+        "facebook": 1,
         "linkedin": 0,
         "copy": 0
       }
     },
     {
-      "id": "/reviews/fried-chicken-ice-cream-review",
+      "id": "/reviews/voyager-keyboard",
       "views": 3,
       "comments": 0,
       "score": 3,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/hilton-aqua-sol-resort-review",
-      "views": 3,
-      "comments": 0,
-      "score": 3,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/posts/nasa-artemis-return-to-the-moon",
-      "views": 2,
-      "comments": 0,
-      "score": 2,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
