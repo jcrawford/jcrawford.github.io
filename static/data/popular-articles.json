@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-16T07:01:31.583Z",
+  "generatedAt": "2026-08-16T11:17:06.756Z",
   "windowDays": 30,
   "entries": [
     {
@@ -59,9 +59,9 @@
     },
     {
       "id": "/reviews/total-typescript-pro-complete-review",
-      "views": 20,
+      "views": 21,
       "comments": 0,
-      "score": 20,
+      "score": 21,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -179,6 +179,17 @@
       }
     },
     {
+      "id": "/reviews/fried-chicken-ice-cream-review",
+      "views": 7,
+      "comments": 0,
+      "score": 7,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/reviews/via-aquarium",
       "views": 7,
       "comments": 0,
@@ -202,17 +213,6 @@
     },
     {
       "id": "/posts/lebanon-valley-speedway-2026",
-      "views": 6,
-      "comments": 0,
-      "score": 6,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/fried-chicken-ice-cream-review",
       "views": 6,
       "comments": 0,
       "score": 6,
