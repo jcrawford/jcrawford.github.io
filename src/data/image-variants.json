@@ -497,6 +497,22 @@
     ]
   },
   {
+    "src": "/images/content/reviews/clickfunnels-review/featured.jpg",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200,
+      1920
+    ]
+  },
+  {
     "src": "/images/content/reviews/total-typescript-pro-complete-review/featured.jpg",
     "widths": [
       64,
@@ -1683,7 +1699,18 @@
   {
     "src": "/images/content/brewing/supporting-the-brew.jpg",
     "widths": [
-      760
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      760,
+      768,
+      850,
+      1200,
+      1920
     ]
   },
   {
@@ -1907,31 +1934,86 @@
   {
     "src": "/images/content/brewing/supporting-the-brew.webp",
     "widths": [
-      760
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      760,
+      768,
+      850,
+      1200,
+      1920
     ]
   },
   {
     "src": "/images/content/brewing/supporting-the-brew.png",
     "widths": [
-      760
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      760,
+      768,
+      850,
+      1200,
+      1920
     ]
   },
   {
     "src": "/images/content/brewing/intro-to-making-mead/series-cover.png",
     "widths": [
-      760
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      760,
+      768,
+      850,
+      1200,
+      1920
     ]
   },
   {
     "src": "/images/content/brewing/intro-to-making-mead/series-cover.webp",
     "widths": [
-      760
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      760,
+      768,
+      850,
+      1200,
+      1920
     ]
   },
   {
     "src": "/images/content/brewing/intro-to-making-mead/series-cover.jpg",
     "widths": [
-      760
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      760,
+      768,
+      850,
+      1200,
+      1920
     ]
   },
   {
@@ -1994,7 +2076,8 @@
       600,
       768,
       850,
-      1200
+      1200,
+      1920
     ]
   },
   {
@@ -2009,7 +2092,8 @@
       600,
       768,
       850,
-      1200
+      1200,
+      1920
     ]
   },
   {
@@ -2024,7 +2108,8 @@
       600,
       768,
       850,
-      1200
+      1200,
+      1920
     ]
   },
   {
@@ -2974,7 +3059,8 @@
       600,
       768,
       850,
-      1200
+      1200,
+      1920
     ]
   },
   {
