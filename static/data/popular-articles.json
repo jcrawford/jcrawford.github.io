@@ -1,27 +1,27 @@
 {
-  "generatedAt": "2026-08-17T01:57:16.759Z",
+  "generatedAt": "2026-08-17T07:18:20.414Z",
   "windowDays": 30,
   "entries": [
     {
-      "id": "/reviews/budget-auto-rental-process-review",
-      "views": 130,
-      "comments": 0,
-      "score": 130,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
       "id": "/brewing/cherry-mead",
-      "views": 127,
+      "views": 128,
       "comments": 0,
-      "score": 127,
+      "score": 128,
       "shares": {
         "facebook": 5,
         "linkedin": 1,
         "copy": 1
+      }
+    },
+    {
+      "id": "/reviews/budget-auto-rental-process-review",
+      "views": 114,
+      "comments": 0,
+      "score": 114,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
       }
     },
     {
@@ -59,9 +59,9 @@
     },
     {
       "id": "/reviews/total-typescript-pro-complete-review",
-      "views": 21,
+      "views": 19,
       "comments": 0,
-      "score": 21,
+      "score": 19,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -91,23 +91,23 @@
       }
     },
     {
-      "id": "/posts/disney-vacation-2026",
-      "views": 14,
-      "comments": 0,
-      "score": 14,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
       "id": "/reviews/plaato-airlock-review",
       "views": 12,
       "comments": 0,
       "score": 12,
       "shares": {
         "facebook": 5,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/disney-vacation-2026",
+      "views": 10,
+      "comments": 0,
+      "score": 10,
+      "shares": {
+        "facebook": 0,
         "linkedin": 0,
         "copy": 0
       }
@@ -157,10 +157,10 @@
       }
     },
     {
-      "id": "/reviews/benq-rd320ua-monitor-review",
-      "views": 9,
+      "id": "/brewing/bottling-day",
+      "views": 8,
       "comments": 0,
-      "score": 9,
+      "score": 8,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -168,10 +168,10 @@
       }
     },
     {
-      "id": "/brewing/bottling-day",
-      "views": 8,
+      "id": "/reviews/benq-rd320ua-monitor-review",
+      "views": 7,
       "comments": 0,
-      "score": 8,
+      "score": 7,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -212,7 +212,7 @@
       }
     },
     {
-      "id": "/posts/lebanon-valley-speedway-2026",
+      "id": "/posts/grok-4-5-cursor-first-impressions",
       "views": 6,
       "comments": 0,
       "score": 6,
@@ -223,21 +223,10 @@
       }
     },
     {
-      "id": "/posts/grok-4-5-cursor-first-impressions",
-      "views": 5,
+      "id": "/posts/lebanon-valley-speedway-2026",
+      "views": 6,
       "comments": 0,
-      "score": 5,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/ford-transit-15-passenger-van-review",
-      "views": 4,
-      "comments": 0,
-      "score": 4,
+      "score": 6,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -267,10 +256,21 @@
       }
     },
     {
-      "id": "/reviews/voyager-keyboard",
+      "id": "/series/intro-to-making-mead/equipment",
       "views": 3,
       "comments": 0,
       "score": 3,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/brewing/articles",
+      "views": 2,
+      "comments": 0,
+      "score": 2,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
