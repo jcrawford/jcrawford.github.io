@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-18T01:52:49.716Z",
+  "generatedAt": "2026-08-18T07:06:08.421Z",
   "windowDays": 30,
   "entries": [
     {
@@ -168,6 +168,17 @@
       }
     },
     {
+      "id": "/reviews/fried-chicken-ice-cream-review",
+      "views": 8,
+      "comments": 0,
+      "score": 8,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/posts/lebanon-valley-speedway-2026",
       "views": 7,
       "comments": 0,
@@ -180,17 +191,6 @@
     },
     {
       "id": "/reviews/benq-rd320ua-monitor-review",
-      "views": 7,
-      "comments": 0,
-      "score": 7,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/fried-chicken-ice-cream-review",
       "views": 7,
       "comments": 0,
       "score": 7,
