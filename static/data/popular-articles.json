@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-19T15:39:44.457Z",
+  "generatedAt": "2026-08-19T18:54:54.256Z",
   "windowDays": 30,
   "entries": [
     {
@@ -102,6 +102,17 @@
       }
     },
     {
+      "id": "/series/mead-water-chemistry/water-chemistry-basics",
+      "views": 12,
+      "comments": 0,
+      "score": 12,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/posts/disney-vacation-2026",
       "views": 10,
       "comments": 0,
@@ -157,10 +168,10 @@
       }
     },
     {
-      "id": "/brewing/bottling-day",
-      "views": 8,
+      "id": "/reviews/fried-chicken-ice-cream-review",
+      "views": 9,
       "comments": 0,
-      "score": 8,
+      "score": 9,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -168,7 +179,7 @@
       }
     },
     {
-      "id": "/reviews/fried-chicken-ice-cream-review",
+      "id": "/brewing/bottling-day",
       "views": 8,
       "comments": 0,
       "score": 8,
@@ -257,17 +268,6 @@
     },
     {
       "id": "/reviews/ford-transit-15-passenger-van-review",
-      "views": 3,
-      "comments": 0,
-      "score": 3,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/series/intro-to-making-mead/equipment",
       "views": 3,
       "comments": 0,
       "score": 3,
