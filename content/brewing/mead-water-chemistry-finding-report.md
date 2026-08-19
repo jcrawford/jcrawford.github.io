@@ -9,7 +9,7 @@ tags:
   - water chemistry
 author: joseph-crawford
 publishedAt: '2026-08-17'
-draft: true
+draft: false
 type: post
 series:
   name: "Mead Water Chemistry"
@@ -19,6 +19,8 @@ series:
 ---
 
 ## Why You Need a Water Report
+
+**Note:** This article is for more advanced brewers who want to use their tap water as a base. If you're just starting out, I highly recommend using distilled water — it's a blank canvas with zero minerals, and it eliminates the guesswork entirely. You don't need a water report if you're starting from distilled.
 
 Before you can adjust your water, you need to know what's already in it. Your starting point determines what minerals to add — or whether to start from scratch with distilled water.
 
@@ -57,12 +59,14 @@ The report will list contaminants and minerals in **mg/L** (milligrams per liter
 
 **Pitfall:** Some reports list "Total Alkalinity as CaCO3" instead of bicarbonate. Convert with this formula:
 ```
-Bicarbonate (ppm) = Total Alkalinity (ppm as CaCO3) × 0.82
+Bicarbonate (ppm) = Total Alkalinity (ppm as CaCO3) × 1.22
 ```
 
 ### My Experience
 
-I searched "North Bennington VT water quality report" and found my utility's annual CCR within two clicks. The report was a PDF with a full mineral breakdown. I copied the values into a note and referenced them every brew day.
+I searched "North Bennington VT water quality report" and found my village's annual CCR. The report was a 3-page PDF covering exactly what the EPA requires: chlorine residual, nitrate, disinfection byproducts (HAA5, TTHM), copper, and lead. All within safe limits. All completely irrelevant to brewing.
+
+Not a single brewing mineral was listed — no calcium, no magnesium, no sodium, no chloride, no sulfate, no bicarbonate, no alkalinity, no hardness. The CCR is designed to prove your water is safe to drink, not to help you build a mead profile.
 
 But here's the catch: **municipal water changes**. Sources shift between groundwater, surface water, and reservoirs seasonally. Your January report might differ from your July water. The CCR is an annual average — useful, but not real-time.
 
@@ -84,6 +88,10 @@ If you're on well water, live in a rural area, or your municipality doesn't publ
 
 **What you get:**
 A detailed breakdown of all major ions, pH, hardness, alkalinity, and even trace elements like iron and copper. This is the gold standard for brewing water analysis.
+
+I haven't gone the lab test route myself. Once I realized my local CCR had no mineral data and my tap water had trace iron, I switched to distilled water and never looked back. That said, I plan to invest in an under-sink RO system at some point — I've found that I love brewing and it's a hobby I'm committed to long-term.
+
+I don't recommend dropping the money on an RO system unless you know you'll stick with brewing. They're expensive ($150–300+), and if you're just starting out, you might find the hobby isn't for you. Distilled water from the grocery store is cheap insurance while you figure out if brewing is your thing. Once you know you're in it for the long haul, an RO system pays for itself in convenience.
 
 ### When to Use Ward Lab vs. Municipal Reports
 
@@ -127,6 +135,9 @@ Some water sources are unsuitable for brewing, even with adjustments:
 1. **Distilled water** — buy at the grocery store (~$1/gallon). Zero minerals, perfect blank canvas. This is what I use now.
 2. **RO (reverse osmosis) system** — under-sink units cost $150–300, produce neutral water on demand. Worth it if you brew often.
 3. **Carbon filtration** — removes chlorine/chloramine but leaves minerals. Good if your mineral profile is already decent.
+4. **Campden tablets (potassium metabisulfite)** — removes chlorine and chloramine. Dosage: ¼ tablet per 5 gallons for chlorine only, ½ tablet per 5 gallons for chloramine (or if unsure). Crush, stir in, and wait 24 hours before pitching yeast. The metabisulfite needs that time to dissipate completely. Cheap, effective, and standard practice for tap water brewers.
+
+I had some batches come out good while others didn't, and I couldn't figure out the pattern. That's when I started looking at my water profile. My local CCR didn't list any brewing minerals — just contaminants — so I had no baseline to work from.
 
 I switched to distilled water after my third batch tasted metallic. Turns out my tap water had 0.5 ppm iron — below EPA safety limits, but enough to ruin flavor. Now I build my profile from zero, every time. Consistent water = consistent mead.
 
@@ -148,7 +159,7 @@ Water reports use several different unit conventions. Knowing how they relate sa
 
 **The key rule:** mg/L and ppm are the same thing. Don't convert between them. If your report says 45 mg/L calcium, that's 45 ppm calcium — the number you use directly in your brewing calculations.
 
-**Grains per gallon (gpg)** shows up on some older reports and water softener documentation. Multiply by 17.1 to convert to ppm. A report saying "10.5 gpg total hardness" means 180 ppm — which matches the example below.
+**Grains per gallon (gpg)** shows up on some older reports and water softener documentation. Multiply by 17.1 to convert to ppm. A report saying "9.5 gpg total hardness" means 162 ppm — which matches the example below.
 
 ### Finding the Right Numbers
 
@@ -177,9 +188,9 @@ Not every report lists all six brewing ions. Here's how to fill the gaps:
 
 **If bicarbonate isn't listed:** Look for "Total Alkalinity" (usually reported as mg/L CaCO₃). Convert it:
 ```
-Bicarbonate (ppm) = Total Alkalinity (ppm as CaCO₃) × 0.82
+Bicarbonate (ppm) = Total Alkalinity (ppm as CaCO₃) × 1.22
 ```
-Example: Total Alkalinity of 120 mg/L CaCO₃ → 120 × 0.82 = 98 ppm bicarbonate.
+Example: Total Alkalinity of 120 mg/L CaCO₃ → 120 × 1.22 = 146 ppm bicarbonate.
 
 **If calcium and magnesium aren't listed separately:** Look for "Total Hardness" (as CaCO₃) and "Calcium Hardness" (as CaCO₃). You can derive both ions:
 ```
@@ -229,9 +240,9 @@ Magnesium:      12 mg/L
 Sodium:         25 mg/L
 Chloride:       30 mg/L
 Sulfate:        80 mg/L
-Bicarbonate:    150 mg/L (calculated from alkalinity of 183 mg/L CaCO₃)
+Bicarbonate:    150 mg/L (calculated from alkalinity of 123 mg/L CaCO₃)
 pH:             7.4
-Total Hardness: 180 mg/L as CaCO3
+Total Hardness: 162 mg/L as CaCO3
 ```
 
 **Step-by-step analysis:**
@@ -243,7 +254,7 @@ Total Hardness: 180 mg/L as CaCO3
 5. **Sulfate (80 ppm):** Moderate. Good for a balanced profile. Skip gypsum unless I want a drier character.
 6. **Bicarbonate (150 ppm):** High. Above my 80 ppm ceiling. This water will push the starting pH up. Two options: dilute with distilled water, or add acid to compensate.
 7. **pH (7.4):** Neutral, as expected for municipal water. Will drop during fermentation. The high bicarbonate means it won't drop as fast as I'd like.
-8. **Total Hardness (180 ppm as CaCO₃):** Cross-check — 45 ppm Ca × 2.5 + 12 ppm Mg × 4.1 = 112.5 + 49.2 = 162 ppm. Close to 180; the difference likely reflects rounding in the report. The numbers are consistent.
+8. **Total Hardness (162 ppm as CaCO₃):** Cross-check — 45 ppm Ca × 2.5 + 12 ppm Mg × 4.1 = 112.5 + 49.2 = 162 ppm. Matches exactly — the numbers are consistent.
 
 **Adjustments for a balanced traditional mead:**
 - Add calcium chloride to boost Ca and Cl simultaneously
@@ -255,7 +266,7 @@ Total Hardness: 180 mg/L as CaCO3
 
 **Adjustments if starting from distilled instead:**
 - Skip all the tap water calculations entirely
-- Build the full profile from zero using the target values from the first article
+- Build the full profile from zero using the target values from the Building Your Water Profile article
 - Simpler, more consistent, and no guesswork about seasonal variation
 
 ### Should You Use This Water or Start from Distilled?
@@ -285,4 +296,6 @@ In the example above, the 150 ppm bicarbonate is the dealbreaker. It's easier to
 3. If your water has problematic minerals (iron, high TDS, chloramine), switch to distilled/RO
 4. Keep a copy of your report in your brewing notes — reference it every batch
 
-Water chemistry seems intimidating until you have the data. Once you know your starting point, the adjustments are straightforward math. The next articles in this series cover each mineral individually — what it does, when to use it, and exactly how much to add.
+Honestly, though, my overall suggestion for anyone just starting out is simple: **just use distilled water.** It only adds about a dollar to the cost of your ingredients, and it eliminates the single biggest variable in mead making. You don't need to find your water report, you don't need to order a lab test, and you don't need to worry about seasonal variation. You start with a blank canvas every time.
+
+Water chemistry seems intimidating until you have the data. Once you know your starting point, the adjustments are straightforward math.

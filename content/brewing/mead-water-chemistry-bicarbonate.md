@@ -9,7 +9,7 @@ tags:
   - water chemistry
 author: joseph-crawford
 publishedAt: '2026-08-17'
-draft: true
+draft: false
 type: post
 series:
   name: "Mead Water Chemistry"
@@ -26,7 +26,7 @@ Bicarbonate is the pH guardian. It doesn't contribute flavor directly — its jo
 
 **Fermentation stability.** A stable pH means consistent fermentation. When pH crashes, yeast goes into stress mode — producing off-flavors, higher alcohols, and undesirable esters. Bicarbonate prevents this crash, giving yeast a stable environment to work in.
 
-**Alkalinity.** Bicarbonate is the primary contributor to water's "alkalinity" — its resistance to pH changes. Your water report may list "Total Alkalinity as CaCO₃" rather than bicarbonate directly. Convert with: `Bicarbonate (ppm) = Total Alkalinity (ppm as CaCO₃) × 0.82`.
+**Alkalinity.** Bicarbonate is the primary contributor to water's "alkalinity" — its resistance to pH changes. Your water report may list "Total Alkalinity as CaCO₃" rather than bicarbonate directly. Convert with: `Bicarbonate (ppm) = Total Alkalinity (ppm as CaCO₃) × 1.22`.
 
 ## When to Use It
 
@@ -64,16 +64,16 @@ I target **50 ppm** as my default. For high-acid fruit meads (strawberry, cherry
 - **Adds:** Bicarbonate + Sodium
 - **Best for:** Most situations — cheap, available, effective
 - **Effect:** pH buffering + slight sweetness enhancement
-- **Dosage:** 1 gram per gallon adds ~86 ppm bicarbonate and ~72 ppm sodium
+- **Dosage:** 1 gram per gallon adds ~192 ppm bicarbonate and ~72 ppm sodium
 
-**Account for the sodium.** At 50 ppm bicarbonate, you're also adding ~42 ppm sodium. That's within range but close to the ceiling. If you're already adding sodium via table salt, adjust accordingly.
+**Account for the sodium.** At 50 ppm bicarbonate, you're also adding ~19 ppm sodium. That's within range but worth tracking. If you're already adding sodium via table salt, adjust accordingly.
 
 ### Chalk (Calcium Carbonate, CaCO₃)
 
 - **Adds:** Bicarbonate (indirectly) + Calcium
 - **Best for:** When you want buffering without sodium
 - **Effect:** pH buffering + calcium boost
-- **Dosage:** 1 gram per gallon adds ~160 ppm bicarbonate equivalent and ~160 ppm calcium
+- **Dosage:** 1 gram per gallon adds ~161 ppm bicarbonate equivalent and ~106 ppm calcium
 
 **Important:** Chalk doesn't dissolve easily in water. It requires an acidic environment to go into solution. In practice, chalk is less effective than baking soda for pH adjustment in mead must because honey must isn't acidic enough at the start to dissolve it fully. I prefer baking soda.
 
@@ -82,25 +82,9 @@ I target **50 ppm** as my default. For high-acid fruit meads (strawberry, cherry
 - **Adds:** Bicarbonate + Potassium
 - **Best for:** When you want buffering without sodium or calcium
 - **Effect:** Pure pH buffering
-- **Dosage:** 1 gram per gallon adds ~100 ppm bicarbonate and ~39 ppm potassium
+- **Dosage:** 1 gram per gallon adds ~161 ppm bicarbonate and ~103 ppm potassium
 
 Potassium bicarbonate is the cleanest option — no sodium, no calcium, just buffering. It's available at homebrew shops and online. Potassium doesn't affect flavor at these concentrations.
-
-## My Approach
-
-For a 1-gallon batch targeting 50 ppm bicarbonate:
-
-**Using baking soda (also adds sodium):**
-- 0.58g baking soda → ~50 ppm HCO₃, ~42 ppm Na
-- The sodium contribution is within range but significant — don't add more sodium from other sources
-
-**Using potassium bicarbonate (no sodium):**
-- 0.5g potassium bicarbonate → ~50 ppm HCO₃, ~20 ppm K
-- My preferred method when I want buffering without the sodium
-
-**Using chalk (also adds calcium):**
-- 0.32g chalk → ~50 ppm HCO₃ equiv, ~50 ppm Ca
-- Less reliable dissolution — I only use it when I also need a calcium boost and don't mind uneven results
 
 ## pH Management During Fermentation
 

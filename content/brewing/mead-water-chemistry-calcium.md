@@ -9,7 +9,7 @@ tags:
   - water chemistry
 author: joseph-crawford
 publishedAt: '2026-08-17'
-draft: true
+draft: false
 type: post
 series:
   name: "Mead Water Chemistry"
@@ -42,7 +42,7 @@ Calcium is the workhorse ion in mead making. It doesn't directly flavor your mea
 
 **50–100 ppm** for most mead styles.
 
-I aim for **75 ppm** as my default. That's enough for robust yeast health without over-mineralizing the must. For fruit meads with high pectin content, I push to **100 ppm** to help with clarification.
+I aim for **75 ppm** as my default. That's enough for robust yeast health without over-mineralizing the must. For fruit meads with high pectin content, I push to **100 ppm** to help with clarification. Note: calcium can bind with pectin to cause haze in some cases, so if you're making a fruit mead and notice persistent cloudiness, try reducing calcium to 50-60 ppm and relying on pectic enzyme instead.
 
 ## How to Add Calcium
 
@@ -62,28 +62,7 @@ Two primary salts:
 - **Effect:** Boosts calcium while also increasing sulfate (dryness, crispness)
 - **Dosage:** 1 gram per gallon adds ~61 ppm calcium and ~147 ppm sulfate
 
-**Choosing between them:** The decision is really about the chloride-to-sulfate ratio. If you want a fuller, sweeter mead, use calcium chloride. If you want a drier, crisper mead, use gypsum. Many mead makers use a combination of both to hit their target calcium without pushing either chloride or sulfate too high.
-
-## My Approach
-
-For a 1-gallon batch targeting 75 ppm calcium:
-
-**Balanced profile (1:1 Cl:SO₄):**
-- 0.6g calcium chloride → ~43 ppm Ca, ~76 ppm Cl
-- 0.4g gypsum → ~24 ppm Ca, ~59 ppm SO₄
-- **Total:** ~67 ppm Ca, 76 ppm Cl, 59 ppm SO₄
-
-**Full/sweet profile (2:1 Cl:SO₄):**
-- 0.8g calcium chloride → ~58 ppm Ca, ~101 ppm Cl
-- 0.3g gypsum → ~18 ppm Ca, ~44 ppm SO₄
-- **Total:** ~76 ppm Ca, 101 ppm Cl, 44 ppm SO₄
-
-**Dry/crisp profile (1:2 Cl:SO₄):**
-- 0.3g calcium chloride → ~22 ppm Ca, ~38 ppm Cl
-- 0.8g gypsum → ~49 ppm Ca, ~117 ppm SO₄
-- **Total:** ~71 ppm Ca, 38 ppm Cl, 117 ppm SO₄
-
-These are starting points. Adjust based on your starting water and taste preferences.
+**Choosing between them:** The decision is really about the chloride-to-sulfate ratio (covered in Part 1). If you want a fuller, sweeter mead, use calcium chloride. If you want a drier, crisper mead, use gypsum. Many mead makers use a combination of both to hit their target calcium without pushing either chloride or sulfate too high.
 
 ## Common Mistakes
 

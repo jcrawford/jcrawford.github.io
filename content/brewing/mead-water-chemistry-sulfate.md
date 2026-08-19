@@ -9,7 +9,7 @@ tags:
   - water chemistry
 author: joseph-crawford
 publishedAt: '2026-08-17'
-draft: true
+draft: false
 type: post
 series:
   name: "Mead Water Chemistry"
@@ -25,6 +25,8 @@ Sulfate is the "crispness" ion. It does the opposite of chloride — it dries ou
 **Dryness perception.** Sulfate enhances the perception of dryness without actually reducing sugar. It creates a crisp, clean finish that makes a semi-dry mead taste fully dry, and a dry mead taste bone-dry. This is why dry traditional meads benefit from higher sulfate.
 
 **Flavor clarity.** Sulfate acts like a magnifying glass for delicate flavors. Floral notes in a traditional mead become more distinct. Fruit character in a melomel becomes brighter and more defined. The overall effect is "clarity" — flavors separate and shine rather than blending together.
+
+**Not sulfite.** Don't confuse sulfate (SO₄²⁻) with sulfite (SO₂). Sulfate is a mineral ion that affects flavor perception. Sulfite is a preservative added via Campden tablets to kill wild microbes or stabilize finished mead. They're completely different compounds with different purposes.
 
 **Hop analogy.** In beer brewing, sulfate is associated with the crisp, dry character of pale ales and IPAs. In mead, the effect is similar but subtler — there are no hops to bitter, but sulfate still dries and sharpens the honey character.
 
@@ -73,37 +75,13 @@ Gypsum is the primary sulfate source for mead makers. It's cheap, widely availab
 - **Adds:** Sulfate + Magnesium
 - **Best for:** When calcium is already on target but you need more sulfate
 - **Effect:** Dryness/crispness + yeast nutrient
-- **Dosage:** 1 gram per gallon adds ~257 ppm sulfate and ~98 ppm magnesium
+- **Dosage:** 1 gram per gallon adds ~103 ppm sulfate and ~26 ppm magnesium
 
-Epsom salt is very concentrated — use it in small amounts. At the doses needed for magnesium (0.1–0.2g/gallon), the sulfate contribution is 25–50 ppm, which can be a useful supplement to gypsum.
-
-## My Approach
-
-For a 1-gallon batch targeting 100 ppm sulfate:
-
-**Using gypsum (also boosts calcium):**
-- 0.7g gypsum → ~103 ppm SO₄, ~43 ppm Ca
-- This is my go-to for dry traditional meads
-
-**Splitting with Epsom salt for magnesium:**
-- 0.6g gypsum → ~88 ppm SO₄, ~37 ppm Ca
-- 0.1g Epsom salt → ~26 ppm SO₄, ~10 ppm Mg
-- **Total:** ~114 ppm SO₄, ~37 ppm Ca, ~10 ppm Mg
-- This hits sulfate and magnesium targets simultaneously
+Epsom salt is very concentrated — use it in small amounts. At the doses needed for magnesium (0.2–0.4g/gallon), the sulfate contribution is 20–40 ppm, which can be a useful supplement to gypsum.
 
 ## The Sulfate-to-Chloride Ratio
 
-As covered in the chloride article, the ratio between these two ions defines your mead's character:
-
-| Ratio (Cl⁻:SO₄²⁻) | Character |
-|-------------------|-----------|
-| 1:2 | Dry, crisp — high sulfate |
-| 1:1 | Balanced |
-| 2:1 | Full, sweet — high chloride |
-
-**When increasing sulfate, consider decreasing chloride** to maintain your target ratio. Adding sulfate without reducing chloride pushes the ratio toward drier/crisper.
-
-For a bone-dry show mead, I aim for 50 ppm chloride and 150 ppm sulfate (1:3 ratio). For a balanced semi-dry, I use 75 ppm of each (1:1). The ratio is the steering wheel; the absolute values are the speed.
+As covered in Part 1, the ratio between sulfate and chloride defines your mead's character. When increasing sulfate, consider decreasing chloride to maintain your target ratio. For a bone-dry show mead, I aim for 50 ppm chloride and 150 ppm sulfate (1:3 ratio). For a balanced semi-dry, I use 75 ppm of each (1:1).
 
 ## Common Mistakes
 

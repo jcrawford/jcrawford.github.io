@@ -9,7 +9,7 @@ tags:
   - water chemistry
 author: joseph-crawford
 publishedAt: '2026-08-17'
-draft: true
+draft: false
 type: post
 series:
   name: "Mead Water Chemistry"
@@ -64,23 +64,9 @@ I target **10 ppm** as my standard. For dessert meads, I push to **15 ppm**. I n
 - **Adds:** Sodium + Bicarbonate
 - **Best for:** When you want sodium without chloride (or need to raise pH)
 - **Effect:** Enhances sweetness while buffering pH
-- **Dosage:** 1 gram per gallon adds ~72 ppm sodium and ~86 ppm bicarbonate
+- **Dosage:** 1 gram per gallon adds ~192 ppm bicarbonate and ~72 ppm sodium
 
 Use baking soda when your chloride is already on target but you still want sodium's sweetness enhancement. It also raises pH — useful if your must is too acidic.
-
-## My Approach
-
-For a 1-gallon batch targeting 10 ppm sodium:
-
-**Using table salt (also boosts chloride):**
-- 0.1g non-iodized table salt → ~10 ppm Na, ~16 ppm Cl
-- The chloride contribution is minimal — easily factored into your overall profile
-
-**Using baking soda (also boosts bicarbonate):**
-- 0.14g baking soda → ~10 ppm Na, ~12 ppm HCO₃
-- Useful when you want sodium and a slight pH buffer boost
-
-I use table salt for sweet meads where I also want a chloride bump. For balanced meads where I just want the sweetness enhancement, I use baking soda.
 
 ## Common Mistakes
 

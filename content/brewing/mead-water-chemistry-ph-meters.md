@@ -9,7 +9,7 @@ tags:
   - water chemistry
 author: joseph-crawford
 publishedAt: '2026-08-17'
-draft: true
+draft: false
 type: post
 series:
   name: "Mead Water Chemistry"
@@ -20,7 +20,7 @@ series:
 
 ## Why You Need a pH Meter
 
-In the first article, I mentioned that target pH for mead must be between **3.2 and 4.2**. But how do you actually know where you stand?
+In Part 1, I mentioned that target pH for mead must be between **3.2 and 4.2**. But how do you actually know where you stand?
 
 You can't taste pH. You can't see it. And while test strips give you a ballpark figure, they are too imprecise for managing a fermentation. A difference of 0.2 pH can be the difference between a healthy fermentation and a stalled one. 
 
@@ -42,8 +42,8 @@ If you just take a pH meter out of the box and dip it in your must, you are prob
 pH probes drift. Temperature changes, storage conditions, and the chemistry of the liquids they touch all cause the sensor to shift. Calibration is the process of telling the meter: *"This specific liquid is exactly pH 4.01, and this one is exactly 6.86."*
 
 **How I calibrate:**
-1. I use standard calibration buffer powders (usually included with the meter).
-2. I dissolve them in distilled water to create precise 4.01 and 6.86 solutions.
+1. I use standard calibration buffer liquids (usually included with the meter).
+2. I pour them into small cups to create precise 4.01 and 6.86 solutions.
 3. I calibrate the meter at the start of every brewing session or at least once a month.
 
 If you skip calibration, you're just guessing. I've seen meters drift by as much as 0.5 pH in a few weeks. In a world where 0.2 pH matters, that's a disaster.
@@ -53,7 +53,7 @@ If you skip calibration, you're just guessing. I've seen meters drift by as much
 A pH probe is a delicate piece of glass. If you treat it like a thermometer, it will die in three months. If you treat it like a lab instrument, it will last years.
 
 **1. Never let the probe dry out.**
-The glass bulb must stay hydrated to function. Always store the probe in the designated storage cap filled with **pH 3 or pH 4 storage solution (KCL)**. Never store it in distilled water—distilled water will actually leach the ions out of the probe and kill it.
+The glass bulb must stay hydrated to function. Always store the probe in the designated storage cap filled with **KCl (potassium chloride) storage solution** (typically 3M KCl). Never store it in distilled water—distilled water will actually leach the ions out of the probe and kill it.
 
 **2. Rinse between every dip.**
 Always rinse the probe with distilled water before and after measuring. If you dip a probe into a must with 15% honey and then dip it into a calibration solution, you've contaminated your solution and potentially fouled your probe.

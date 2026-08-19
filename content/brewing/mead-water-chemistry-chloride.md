@@ -9,7 +9,7 @@ tags:
   - water chemistry
 author: joseph-crawford
 publishedAt: '2026-08-17'
-draft: true
+draft: false
 type: post
 series:
   name: "Mead Water Chemistry"
@@ -71,9 +71,9 @@ I target **100 ppm** as my default for semi-sweet traditional meads. For fruit m
 - **Adds:** Chloride + Magnesium
 - **Best for:** When calcium is already on target but you need more chloride
 - **Effect:** Fullness + yeast nutrient boost
-- **Dosage:** 1 gram per gallon adds ~349 ppm chloride and ~120 ppm magnesium
+- **Dosage:** 1 gram per gallon adds ~92 ppm chloride and ~32 ppm magnesium
 
-**Note:** Magnesium chloride is very concentrated. At the low doses needed for magnesium (0.1–0.2g/gallon), the chloride contribution is small. Don't use it as your primary chloride source — use calcium chloride instead.
+**Note:** Magnesium chloride is very concentrated. At the low doses needed for magnesium (0.2–0.4g/gallon), the chloride contribution is 18–37 ppm. Don't use it as your primary chloride source — use calcium chloride instead.
 
 ### Non-Iodized Table Salt (NaCl)
 
@@ -84,32 +84,9 @@ I target **100 ppm** as my default for semi-sweet traditional meads. For fruit m
 
 Use table salt sparingly — it adds a lot of sodium alongside chloride. Only use it when both are needed.
 
-## My Approach
-
-For a 1-gallon batch targeting 100 ppm chloride:
-
-**Using calcium chloride (also boosts calcium):**
-- 0.7g calcium chloride → ~89 ppm Cl, ~50 ppm Ca
-- If I need more chloride, add 0.1g more → ~102 ppm Cl, ~58 ppm Ca
-- This is my primary method — calcium chloride hits two targets at once
-
-**Splitting with table salt for sweet meads:**
-- 0.6g calcium chloride → ~76 ppm Cl, ~43 ppm Ca
-- 0.16g table salt → ~26 ppm Cl, ~17 ppm Na
-- **Total:** ~102 ppm Cl, ~43 ppm Ca, ~17 ppm Na
-- The sodium adds sweetness enhancement on top of the chloride fullness
-
 ## The Chloride-to-Sulfate Ratio
 
-Chloride doesn't work in isolation — its effect is always relative to sulfate. The ratio between the two determines the overall character of your mead:
-
-| Ratio (Cl⁻:SO₄²⁻) | Character | Best For |
-|-------------------|-----------|----------|
-| 2:1 or higher | Full, sweet, soft | Sweet meads, melomels, dessert meads |
-| 1:1 | Balanced | Semi-sweet traditional, session meads |
-| 1:2 or lower | Dry, crisp, sharp | Dry traditional, show meads |
-
-**When increasing chloride, consider decreasing sulfate** to maintain your target ratio. Adding chloride without adjusting sulfate pushes the ratio toward fuller/sweeter — which may or may not be what you want.
+Chloride doesn't work in isolation — its effect is always relative to sulfate. The ratio between the two determines your mead's character (covered in detail in Part 1). When increasing chloride, consider decreasing sulfate to maintain your target ratio.
 
 ## Common Mistakes
 
