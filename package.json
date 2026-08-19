@@ -37,6 +37,7 @@
     "gatsby-plugin-meta-redirect": "^1.1.1",
     "gatsby-plugin-sharp": "^5.13.0",
     "gatsby-plugin-sitemap": "^6.15.0",
+    "gatsby-remark-external-links": "^0.0.4",
     "gatsby-remark-images": "^7.15.0",
     "gatsby-remark-shiki-twoslash": "^3.0.38",
     "gatsby-source-filesystem": "^5.13.0",
