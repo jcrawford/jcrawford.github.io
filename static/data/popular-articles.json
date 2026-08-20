@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-20T13:13:13.848Z",
+  "generatedAt": "2026-08-20T19:00:42.264Z",
   "windowDays": 30,
   "entries": [
     {
@@ -58,6 +58,28 @@
       }
     },
     {
+      "id": "/series/mead-water-chemistry/water-chemistry-basics",
+      "views": 25,
+      "comments": 0,
+      "score": 25,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/series/intro-to-making-mead/types-of-mead",
+      "views": 23,
+      "comments": 0,
+      "score": 23,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/reviews/total-typescript-pro-complete-review",
       "views": 21,
       "comments": 0,
@@ -73,28 +95,6 @@
       "views": 18,
       "comments": 0,
       "score": 18,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/series/mead-water-chemistry/water-chemistry-basics",
-      "views": 16,
-      "comments": 0,
-      "score": 16,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/series/intro-to-making-mead/types-of-mead",
-      "views": 15,
-      "comments": 0,
-      "score": 15,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -234,6 +234,28 @@
       }
     },
     {
+      "id": "/series/intro-to-making-mead/cleaning-and-sanitization",
+      "views": 6,
+      "comments": 0,
+      "score": 6,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/series/intro-to-making-mead/equipment",
+      "views": 6,
+      "comments": 0,
+      "score": 6,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/reviews/benq-rd320ua-monitor-review",
       "views": 5,
       "comments": 0,
@@ -245,34 +267,12 @@
       }
     },
     {
-      "id": "/posts/long-running-ai-agents-adk",
-      "views": 3,
+      "id": "/series/intro-to-making-mead/preparing-your-must",
+      "views": 5,
       "comments": 0,
-      "score": 3,
+      "score": 5,
       "shares": {
         "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/posts/things-you-didnt-know-about-mysql-indexes",
-      "views": 3,
-      "comments": 0,
-      "score": 3,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/posts/vision-capabilities-php-ai-agents",
-      "views": 3,
-      "comments": 0,
-      "score": 3,
-      "shares": {
-        "facebook": 1,
         "linkedin": 0,
         "copy": 0
       }
