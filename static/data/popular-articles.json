@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-20T01:53:18.692Z",
+  "generatedAt": "2026-08-20T07:09:32.799Z",
   "windowDays": 30,
   "entries": [
     {
@@ -15,9 +15,9 @@
     },
     {
       "id": "/reviews/budget-auto-rental-process-review",
-      "views": 114,
+      "views": 87,
       "comments": 0,
-      "score": 114,
+      "score": 87,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -59,9 +59,9 @@
     },
     {
       "id": "/reviews/total-typescript-pro-complete-review",
-      "views": 20,
+      "views": 21,
       "comments": 0,
-      "score": 20,
+      "score": 21,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -235,9 +235,9 @@
     },
     {
       "id": "/reviews/benq-rd320ua-monitor-review",
-      "views": 6,
+      "views": 5,
       "comments": 0,
-      "score": 6,
+      "score": 5,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -256,23 +256,23 @@
       }
     },
     {
+      "id": "/posts/things-you-didnt-know-about-mysql-indexes",
+      "views": 3,
+      "comments": 0,
+      "score": 3,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/posts/vision-capabilities-php-ai-agents",
       "views": 3,
       "comments": 0,
       "score": 3,
       "shares": {
         "facebook": 1,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/ford-transit-15-passenger-van-review",
-      "views": 3,
-      "comments": 0,
-      "score": 3,
-      "shares": {
-        "facebook": 0,
         "linkedin": 0,
         "copy": 0
       }
