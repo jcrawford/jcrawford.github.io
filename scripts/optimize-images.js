@@ -23,7 +23,22 @@ const CONFIG = {
 
 function isFeaturedImage(imagePath) {
   const base = path.basename(imagePath, path.extname(imagePath)).toLowerCase();
-  return base === 'featured' || base === 'hero';
+  // Match featured, hero, series-cover, and named content images (e.g. mysql-indexes-featured)
+  if (base === 'featured' || base === 'hero' || base === 'series-cover') return true;
+  if (base.includes('-hero') || base.includes('-featured')) return true;
+  // Any image directly in a content subdirectory (not a step- or body image)
+  // e.g. /images/content/brewing/supporting-the-brew.jpg
+  const dir = path.dirname(imagePath);
+  const contentDir = path.join(STATIC_DIR, 'content');
+  if (dir === contentDir || dir === path.join(contentDir, 'brewing')) return true;
+  // Named images in review/post subdirectories (not step-N.jpg or similar)
+  if (dir.startsWith(path.join(contentDir, 'reviews') + path.sep) ||
+      dir.startsWith(path.join(contentDir, 'posts') + path.sep)) {
+    // Skip step images and inline body images that use postMediaWidth
+    if (/^step[-_]\d/i.test(base)) return false;
+    return true;
+  }
+  return false;
 }
 
 function isGalleryImage(imagePath) {
@@ -155,7 +170,7 @@ function generateVariants(imagePath) {
 
   // Generate variants for each width
   for (const width of variantWidths) {
-    if (width >= finalWidth) continue;
+    if (width > finalWidth) continue;
 
     const height = Math.round((finalHeight / finalWidth) * width);
     const variantJpg = path.join(dir, `${base}_${width}w.jpg`);

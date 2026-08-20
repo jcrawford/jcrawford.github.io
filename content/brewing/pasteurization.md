@@ -2,7 +2,7 @@
 slug: pasteurization
 title: "Pasteurization"
 excerpt: "Stopping fermentation with heat so you can bottle a sweet or carbonated mead without chemical stabilizers."
-featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.png
+featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.jpg
 tags:
   - brewing
   - mead
@@ -17,7 +17,7 @@ series:
   name: "Intro to Making Mead"
   order: 9
   description: "A complete beginner's guide to making mead at home, from equipment and ingredients through fermentation, back-sweetening, pasteurization, and bottling."
-  featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.png
+  featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.jpg
 ---
 
 Pasteurization is one way to stop fermentation without adding potassium metabisulfite or potassium sorbate. The idea is simple: after you back sweeten or bottle condition, you gently heat the mead until the yeast are killed, then cool it quickly. Once the yeast are dead, the sweetness and carbonation level are locked in.

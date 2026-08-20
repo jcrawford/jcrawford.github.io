@@ -2,7 +2,7 @@
 slug: bottling
 title: "Bottling"
 excerpt: "Choosing bottles, deciding between still and carbonated mead, and handling sediment so your finished mead pours clean."
-featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.png
+featuredImage: /images/content/brewing/intro-to-making-mead/bottling/featured.jpg
 tags:
   - brewing
   - mead
@@ -15,7 +15,7 @@ series:
   name: "Intro to Making Mead"
   order: 10
   description: "A complete beginner's guide to making mead at home, from equipment and ingredients through fermentation, back-sweetening, pasteurization, and bottling."
-  featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.png
+  featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.jpg
 ---
 
 Bottling is the last step before you can actually drink what you made. It is also the step where a few small choices — bottle type, still versus carbonated, how carefully you transfer — make a noticeable difference in the final experience. In this tenth and final part of the **Intro to Making Mead** series I will walk through how I bottle my meads, the bottles I use, and how to handle sediment when it shows up.

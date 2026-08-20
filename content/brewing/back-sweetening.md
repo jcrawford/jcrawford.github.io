@@ -2,7 +2,7 @@
 slug: back-sweetening
 title: "Back Sweetening"
 excerpt: "How to sweeten a finished mead to taste by adding honey a little at a time, tasting between each addition until the balance is right."
-featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.png
+featuredImage: /images/content/brewing/intro-to-making-mead/back-sweetening/featured.jpg
 tags:
   - brewing
   - mead
@@ -17,7 +17,7 @@ series:
   name: "Intro to Making Mead"
   order: 8
   description: "A complete beginner's guide to making mead at home, from equipment and ingredients through fermentation, back-sweetening, pasteurization, and bottling."
-  featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.png
+  featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.jpg
 ---
 
 Most meads ferment almost completely dry unless you intentionally stop the yeast early. A dry mead is not bad, but a lot of beginners expect something a little sweeter and are surprised when their first batch tastes sharp or thin. Back sweetening is the fix: you add a sweetener, usually honey, after fermentation is finished, and you do it slowly enough that you can taste the change between additions.

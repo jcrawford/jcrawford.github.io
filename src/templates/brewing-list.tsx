@@ -6,6 +6,7 @@ import StarRating from '../components/StarRating';
 import DraftBadge from '../components/DraftBadge';
 import { formatDate } from '../utils/dateUtils';
 import { ClockIcon } from '../utils/icons';
+import { slugifySeriesName } from '../utils/articlePath';
 import '../styles/brewing-index.css';
 
 type BrewStatus = 'active' | 'completed' | 'articles';
@@ -135,10 +136,11 @@ const BrewingListTemplate: React.FC<PageProps<BrewingListPageData, BrewingListPa
   const RecipeCardComponent: React.FC<{ recipe: RecipeCard }> = ({ recipe }) => {
     const isReview = recipe.fileAbsolutePath.includes('/content/reviews/');
     const isSeries = !!recipe.frontmatter.series?.name;
+    const seriesName = recipe.frontmatter.series?.name;
     const linkPath = isReview
       ? `/reviews/${recipe.frontmatter.slug}`
-      : isSeries
-        ? `/series/${recipe.frontmatter.slug}`
+      : isSeries && seriesName
+        ? `/series/${slugifySeriesName(seriesName)}/${recipe.frontmatter.slug}`
         : `/brewing/${recipe.frontmatter.slug}`;
 
     return (

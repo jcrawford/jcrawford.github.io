@@ -2,7 +2,7 @@
 slug: equipment
 title: "Equipment You Need"
 excerpt: "A guide to the basic equipment for your first mead batch, from fermenters and airlocks to the few tools worth buying before you start."
-featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.png
+featuredImage: /images/content/brewing/intro-to-making-mead/equipment/featured.jpg
 tags:
   - brewing
   - mead
@@ -16,7 +16,7 @@ series:
   name: "Intro to Making Mead"
   order: 2
   description: "A complete beginner's guide to making mead at home, from equipment and ingredients through fermentation, back-sweetening, pasteurization, and bottling."
-  featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.png
+  featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.jpg
 ---
 
 Mead is one of the easiest ways to start fermenting at home. At its most basic, all you need is honey, water, and yeast. A one-gallon juice jug with a piece of paper towel held over the top by a rubber band will make perfectly drinkable mead.

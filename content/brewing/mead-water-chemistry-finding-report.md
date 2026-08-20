@@ -2,7 +2,7 @@
 slug: finding-your-water-report
 title: "How to Get Your Water Quality Report"
 excerpt: "Learn how to find your local water quality report or order a lab test when municipal data isn't available."
-featuredImage: /images/content/brewing/mead-water-chemistry/series-cover.png
+featuredImage: /images/content/brewing/mead-water-chemistry/series-cover.jpg
 tags:
   - brewing
   - mead
@@ -15,7 +15,7 @@ series:
   name: "Mead Water Chemistry"
   order: 2
   description: "A comprehensive guide to water chemistry for mead makers — from ion fundamentals to building custom water profiles for different mead styles."
-  featuredImage: /images/content/brewing/mead-water-chemistry/series-cover.png
+  featuredImage: /images/content/brewing/mead-water-chemistry/series-cover.jpg
 ---
 
 ## Why You Need a Water Report

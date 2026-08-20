@@ -2,7 +2,7 @@
 slug: building-your-water-profile
 title: "Building Your Water Profile"
 excerpt: "Put it all together — learn how to build a complete water profile from distilled water for any mead style, with step-by-step calculations for 1-gallon batches."
-featuredImage: /images/content/brewing/mead-water-chemistry/series-cover.png
+featuredImage: /images/content/brewing/mead-water-chemistry/series-cover.jpg
 tags:
   - brewing
   - mead
@@ -15,7 +15,7 @@ series:
   name: "Mead Water Chemistry"
   order: 10
   description: "A comprehensive guide to water chemistry for mead makers — from ion fundamentals to building custom water profiles for different mead styles."
-  featuredImage: /images/content/brewing/mead-water-chemistry/series-cover.png
+  featuredImage: /images/content/brewing/mead-water-chemistry/series-cover.jpg
 ---
 
 ## Why Distilled Water?

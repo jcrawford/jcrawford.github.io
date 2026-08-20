@@ -2,7 +2,7 @@
 slug: preparing-your-must
 title: "Preparing Your Must"
 excerpt: "How to mix honey and water, make sure all ingredients are well combined, and take an accurate original gravity reading with a hydrometer."
-featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.png
+featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.jpg
 tags:
   - brewing
   - mead
@@ -17,7 +17,7 @@ series:
   name: "Intro to Making Mead"
   order: 5
   description: "A complete beginner's guide to making mead at home, from equipment and ingredients through fermentation, back-sweetening, pasteurization, and bottling."
-  featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.png
+  featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.jpg
 ---
 
 Before the yeast take over, you have to create the environment they will live in. That mixture of honey, water, and anything else you add before fermentation is called the **must**. Preparing it well makes the rest of the batch easier, from the first bubble in the airlock to the final gravity reading.

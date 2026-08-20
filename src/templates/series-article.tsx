@@ -150,7 +150,7 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData, SeriesArticle
     : null;
 
   const displayTitle = article.title;
-  const displayFeaturedImage = shareImage;
+  const displayFeaturedImage = article.featuredImage || shareImage;
 
   // Process content with inline spinners
   const renderContentWithSpinners = (): React.ReactNode[] => {
@@ -421,7 +421,7 @@ export const Head: HeadFC<SeriesArticleData> = ({ data }) => {
 
   const displayTitle = seriesName;
   const displayDescription = seriesDescription || frontmatter.excerpt;
-  const displayImage = seriesImage || firstArticle?.featuredImage || frontmatter.featuredImage;
+  const displayImage = frontmatter.featuredImage || seriesImage || firstArticle?.featuredImage;
 
   return (
     <SEO

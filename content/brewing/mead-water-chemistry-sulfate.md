@@ -2,7 +2,7 @@
 slug: sulfate
 title: "Sulfate: Dryness and Crispness"
 excerpt: "Sulfate accentuates dryness, crispness, and fruit character. Learn how to use it for clean, bright meads."
-featuredImage: /images/content/brewing/mead-water-chemistry/series-cover.png
+featuredImage: /images/content/brewing/mead-water-chemistry/series-cover.jpg
 tags:
   - brewing
   - mead
@@ -15,7 +15,7 @@ series:
   name: "Mead Water Chemistry"
   order: 8
   description: "A comprehensive guide to water chemistry for mead makers — from ion fundamentals to building custom water profiles for different mead styles."
-  featuredImage: /images/content/brewing/mead-water-chemistry/series-cover.png
+  featuredImage: /images/content/brewing/mead-water-chemistry/series-cover.jpg
 ---
 
 ## What Sulfate Does

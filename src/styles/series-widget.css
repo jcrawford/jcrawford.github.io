@@ -78,6 +78,16 @@ html.hm-dark .series-widget {
   line-height: 1.4;
 }
 
+.series-widget__series-name a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.series-widget__series-name a:hover {
+  color: var(--hybridmag-color-primary);
+}
+
 /* Table of Contents */
 .series-widget__toc {
   margin-bottom: 1.5rem;

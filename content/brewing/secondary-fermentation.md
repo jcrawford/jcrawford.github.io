@@ -2,7 +2,7 @@
 slug: secondary-fermentation
 title: "Secondary Fermentation"
 excerpt: "Why mead gets racked into secondary, what happens during the long clearing and aging phase, and how to know when it is ready for bottling."
-featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.png
+featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.jpg
 tags:
   - brewing
   - mead
@@ -17,7 +17,7 @@ series:
   name: "Intro to Making Mead"
   order: 7
   description: "A complete beginner's guide to making mead at home, from equipment and ingredients through fermentation, back-sweetening, pasteurization, and bottling."
-  featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.png
+  featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.jpg
 ---
 
 Primary fermentation gets most of the attention because it is active, bubbly, and dramatic. But secondary fermentation is where a mead really starts to settle into something drinkable, and it is usually the longest phase of the whole process. In this seventh part of the **Intro to Making Mead** series I will explain what secondary fermentation is, why it lasts so long, and how I decide when a mead is ready to bottle.

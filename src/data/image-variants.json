@@ -1,21 +1,5 @@
 [
   {
-    "src": "/images/content/the-perfect-food-preservation-recipe-63/featured.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
     "src": "/images/content/gpt-5-5-first-impressions-hero.jpg",
     "widths": [
       64,
@@ -26,9 +10,7 @@
       400,
       600,
       760,
-      768,
       850,
-      1200,
       1920
     ]
   },
@@ -43,30 +25,12 @@
       400,
       600,
       760,
-      768,
       850,
-      1200,
       1920
     ]
   },
   {
     "src": "/images/content/reviews/walmart-online-grocery-ordering-process/featured.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/reviews/macbook-pro-m3-review/featured.jpg",
     "widths": [
       64,
       80,
@@ -91,9 +55,7 @@
       320,
       400,
       600,
-      768,
       850,
-      1200,
       1920
     ]
   },
@@ -110,56 +72,6 @@
       760,
       768,
       850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/reviews/tilt-hydrometer-review/tilt-chassis-concept.png",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/reviews/tilt-hydrometer-review/featured.webp",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/reviews/tilt-hydrometer-review/featured.png",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
       1920
     ]
   },
@@ -197,7 +109,7 @@
     ]
   },
   {
-    "src": "/images/content/reviews/patrick-adair-designs-review/logo.png",
+    "src": "/images/content/reviews/patrick-adair-designs-review/stardust-ring-product.webp",
     "widths": [
       64,
       80,
@@ -208,93 +120,6 @@
       600,
       760,
       768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/reviews/patrick-adair-designs-review/featured.webp",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/reviews/patrick-adair-designs-review/stardust-ring-product.webp",
-    "widths": [
-      760
-    ]
-  },
-  {
-    "src": "/images/content/reviews/keychron-k8-pro-review/featured.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/reviews/github-copilot-review/featured.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/reviews/postman-review/featured.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/reviews/iphone-15-pro-review/featured.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
       1200,
       1920
     ]
@@ -366,38 +191,6 @@
     ]
   },
   {
-    "src": "/images/content/reviews/sony-wh1000xm5-review/featured.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/reviews/notion-review/featured.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
     "src": "/images/content/reviews/hilton-aqua-sol-review/featured.jpg",
     "widths": [
       64,
@@ -440,112 +233,12 @@
       400,
       600,
       760,
-      768,
       850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/reviews/plaato-airlock-review/featured.webp",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/reviews/plaato-airlock-review/featured.png",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/reviews/samsung-odyssey-g9-review/featured.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
       1920
     ]
   },
   {
     "src": "/images/content/reviews/clickfunnels-review/featured.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/reviews/total-typescript-pro-complete-review/featured.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/reviews/figma-review/featured.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/reviews/vercel-hosting-review/featured.jpg",
     "widths": [
       64,
       80,
@@ -627,40 +320,6 @@
     ]
   },
   {
-    "src": "/images/content/reviews/arcade1up-infinity-game-table-review/featured-v3.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/reviews/arcade1up-infinity-game-table-review/featured-v2.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
     "src": "/images/content/reviews/arcade1up-infinity-game-table-review/game-library.jpg",
     "widths": [
       64,
@@ -671,55 +330,6 @@
       400,
       600,
       760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/reviews/arcade1up-infinity-game-table-review/featured.webp",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/reviews/arcade1up-infinity-game-table-review/featured-v1.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/reviews/visual-studio-code-review/featured.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
       768,
       850,
       1200,
@@ -909,54 +519,6 @@
     ]
   },
   {
-    "src": "/images/content/reviews/docker-desktop-review/featured.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/reviews/anker-powerbank-review/featured.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/reviews/jetbrains-webstorm-review/featured.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
     "src": "/images/content/reviews/logitech-mx-master-3s-review/featured.jpg",
     "widths": [
       64,
@@ -990,22 +552,6 @@
     ]
   },
   {
-    "src": "/images/content/winning-starts-with-beginning/featured.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
     "src": "/images/content/disney-vacation-2026/hero.jpg",
     "widths": [
       64,
@@ -1015,159 +561,6 @@
       320,
       400,
       600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/disney-vacation-2026/refuge-04.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/disney-vacation-2026/photo-05.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/disney-vacation-2026/refuge-17.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/disney-vacation-2026/refuge-18.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/disney-vacation-2026/photo-03.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/disney-vacation-2026/photo-01.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/disney-vacation-2026/refuge-09.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/disney-vacation-2026/photo-04.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/disney-vacation-2026/refuge-08.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
       768,
       850,
       1200,
@@ -1193,227 +586,6 @@
   },
   {
     "src": "/images/content/disney-vacation-2026/route-map.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/disney-vacation-2026/refuge-06.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/disney-vacation-2026/photo-06.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/disney-vacation-2026/dc-route.webp",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/disney-vacation-2026/refuge-03.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/disney-vacation-2026/refuge-01.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/disney-vacation-2026/refuge-05.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/disney-vacation-2026/refuge-16.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/disney-vacation-2026/refuge-14.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/disney-vacation-2026/refuge-15.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/disney-vacation-2026/refuge-07.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/disney-vacation-2026/refuge-02.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/disney-vacation-2026/dc-route.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/disney-vacation-2026/photo-02.jpg",
     "widths": [
       64,
       80,
@@ -1464,55 +636,6 @@
     ]
   },
   {
-    "src": "/images/content/the-journey-not-the-arrival-matters/featured.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/costa-rica-off-the-beaten-path-24/featured.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/qwen3-6-27b-hero.webp",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
     "src": "/images/content/qwen3-6-27b-hero.jpg",
     "widths": [
       64,
@@ -1523,98 +646,12 @@
       400,
       600,
       760,
-      768,
       850,
-      1200,
       1920
     ]
   },
   {
     "src": "/images/content/codex-2026-update/codex-2026-update.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/codex-2026-update/codex-2026-update.webp",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/mysql-indexes-featured.webp",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/claude-opus-4-7-hero.webp",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/hard-work-beats-talent/featured.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/huupe-mini-review-screen-debris.jpg",
     "widths": [
       64,
       80,
@@ -1647,39 +684,6 @@
     ]
   },
   {
-    "src": "/images/content/gemini-3-1-flash-tts-hero.webp",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/budget-rental-experience/hero.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
     "src": "/images/content/huupe-mini-review-wall-mount.jpg",
     "widths": [
       64,
@@ -1697,7 +701,7 @@
     ]
   },
   {
-    "src": "/images/content/brewing/supporting-the-brew.jpg",
+    "src": "/images/content/brewing/mead-water-chemistry/series-cover.png",
     "widths": [
       64,
       80,
@@ -1708,13 +712,12 @@
       600,
       760,
       768,
-      850,
       1200,
       1920
     ]
   },
   {
-    "src": "/images/content/brewing/home-brewing-journey/featured.jpg",
+    "src": "/images/content/brewing/mead-water-chemistry/series-cover.webp",
     "widths": [
       64,
       80,
@@ -1723,14 +726,45 @@
       320,
       400,
       600,
+      760,
       768,
-      850,
       1200,
       1920
     ]
   },
   {
-    "src": "/images/content/brewing/home-brewing-journey/featured.webp",
+    "src": "/images/content/brewing/mead-water-chemistry/series-cover.jpg",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      760,
+      768,
+      1200,
+      1920
+    ]
+  },
+  {
+    "src": "/images/content/brewing/supporting-the-brew.jpg",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      760,
+      850,
+      1920
+    ]
+  },
+  {
+    "src": "/images/content/brewing/home-brewing-journey/featured.jpg",
     "widths": [
       64,
       80,
@@ -1813,23 +847,6 @@
     ]
   },
   {
-    "src": "/images/content/brewing/cherry-mead/step-2.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
     "src": "/images/content/brewing/cherry-mead/step-4.jpg",
     "widths": [
       64,
@@ -1848,23 +865,6 @@
   },
   {
     "src": "/images/content/brewing/cherry-mead/step-10.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/brewing/cherry-mead/secondary-gravity.jpg",
     "widths": [
       64,
       80,
@@ -1942,9 +942,7 @@
       400,
       600,
       760,
-      768,
       850,
-      1200,
       1920
     ]
   },
@@ -1959,6 +957,148 @@
       400,
       600,
       760,
+      850,
+      1920
+    ]
+  },
+  {
+    "src": "/images/content/brewing/intro-to-making-mead/back-sweetening/featured.jpg",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200,
+      1920
+    ]
+  },
+  {
+    "src": "/images/content/brewing/intro-to-making-mead/back-sweetening/featured.webp",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200,
+      1920
+    ]
+  },
+  {
+    "src": "/images/content/brewing/intro-to-making-mead/back-sweetening/featured.png",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200,
+      1920
+    ]
+  },
+  {
+    "src": "/images/content/brewing/intro-to-making-mead/types-of-mead/featured.jpg",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200,
+      1920
+    ]
+  },
+  {
+    "src": "/images/content/brewing/intro-to-making-mead/types-of-mead/featured.webp",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200,
+      1920
+    ]
+  },
+  {
+    "src": "/images/content/brewing/intro-to-making-mead/types-of-mead/featured.png",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200,
+      1920
+    ]
+  },
+  {
+    "src": "/images/content/brewing/intro-to-making-mead/bottling/featured.jpg",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200,
+      1920
+    ]
+  },
+  {
+    "src": "/images/content/brewing/intro-to-making-mead/bottling/featured.webp",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200,
+      1920
+    ]
+  },
+  {
+    "src": "/images/content/brewing/intro-to-making-mead/bottling/featured.png",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
       768,
       850,
       1200,
@@ -1976,9 +1116,7 @@
       400,
       600,
       760,
-      768,
       850,
-      1200,
       1920
     ]
   },
@@ -1993,9 +1131,7 @@
       400,
       600,
       760,
-      768,
       850,
-      1200,
       1920
     ]
   },
@@ -2010,6 +1146,148 @@
       400,
       600,
       760,
+      850,
+      1920
+    ]
+  },
+  {
+    "src": "/images/content/brewing/intro-to-making-mead/mead-ingredients/featured.jpg",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200,
+      1920
+    ]
+  },
+  {
+    "src": "/images/content/brewing/intro-to-making-mead/mead-ingredients/featured.webp",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200,
+      1920
+    ]
+  },
+  {
+    "src": "/images/content/brewing/intro-to-making-mead/mead-ingredients/featured.png",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200,
+      1920
+    ]
+  },
+  {
+    "src": "/images/content/brewing/intro-to-making-mead/cleaning-and-sanitization/featured.jpg",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200,
+      1920
+    ]
+  },
+  {
+    "src": "/images/content/brewing/intro-to-making-mead/cleaning-and-sanitization/featured.webp",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200,
+      1920
+    ]
+  },
+  {
+    "src": "/images/content/brewing/intro-to-making-mead/cleaning-and-sanitization/featured.png",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200,
+      1920
+    ]
+  },
+  {
+    "src": "/images/content/brewing/intro-to-making-mead/equipment/featured.jpg",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200,
+      1920
+    ]
+  },
+  {
+    "src": "/images/content/brewing/intro-to-making-mead/equipment/featured.webp",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200,
+      1920
+    ]
+  },
+  {
+    "src": "/images/content/brewing/intro-to-making-mead/equipment/featured.png",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
       768,
       850,
       1200,
@@ -2033,71 +1311,7 @@
     ]
   },
   {
-    "src": "/images/content/brewing/blackberry-mead/featured.webp",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/brewing/blackberry-mead/featured.png",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
     "src": "/images/content/brewing/bottling-day/featured.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/brewing/bottling-day/featured.webp",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/brewing/bottling-day/featured.png",
     "widths": [
       64,
       80,
@@ -2146,22 +1360,6 @@
     ]
   },
   {
-    "src": "/images/content/brewing/dandelion-mead/featured.webp",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
     "src": "/images/content/brewing/strawberry-wine/featured.jpg",
     "widths": [
       64,
@@ -2188,22 +1386,6 @@
       400,
       600,
       760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/brewing/strawberry-wine/featured.webp",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
       768,
       850,
       1200,
@@ -2255,9 +1437,7 @@
       400,
       600,
       760,
-      768,
       850,
-      1200,
       1920
     ]
   },
@@ -2295,22 +1475,6 @@
     ]
   },
   {
-    "src": "/images/content/spacex-cursor-60b-acquisition/featured.webp",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
     "src": "/images/content/long-running-agents-adk/featured.jpg",
     "widths": [
       64,
@@ -2327,74 +1491,7 @@
     ]
   },
   {
-    "src": "/images/content/long-running-agents-adk/featured.webp",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/gpt-5-5-first-impressions-hero.webp",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/huupe-mini-review-hero.webp",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
     "src": "/images/content/posts/2026/04/artemis-mission/nasa/earthrise.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/posts/2026/04/artemis-mission/nasa/glover-orion.jpg",
     "widths": [
       64,
       80,
@@ -2513,23 +1610,6 @@
     ]
   },
   {
-    "src": "/images/content/posts/2026/04/artemis-mission/nasa/moon-and-earth.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
     "src": "/images/content/posts/2026/04/nasa-artemis-return-to-the-moon/featured.jpg",
     "widths": [
       64,
@@ -2546,40 +1626,6 @@
     ]
   },
   {
-    "src": "/images/content/posts/2026/04/saferide-health-cursor-ai-adoption/featured-v11.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/posts/2026/04/saferide-health-cursor-ai-adoption/featured-v7.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
     "src": "/images/content/posts/2026/04/saferide-health-cursor-ai-adoption/featured.jpg",
     "widths": [
       64,
@@ -2589,278 +1635,6 @@
       320,
       400,
       600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/posts/2026/04/saferide-health-cursor-ai-adoption/featured-v17.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/posts/2026/04/saferide-health-cursor-ai-adoption/featured-v14.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/posts/2026/04/saferide-health-cursor-ai-adoption/featured-v4.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/posts/2026/04/saferide-health-cursor-ai-adoption/featured-v6.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/posts/2026/04/saferide-health-cursor-ai-adoption/featured-v5.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/posts/2026/04/saferide-health-cursor-ai-adoption/featured-v19.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/posts/2026/04/saferide-health-cursor-ai-adoption/featured-v8.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/posts/2026/04/saferide-health-cursor-ai-adoption/featured-v15.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/posts/2026/04/saferide-health-cursor-ai-adoption/featured-v20.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/posts/2026/04/saferide-health-cursor-ai-adoption/featured-v21.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/posts/2026/04/saferide-health-cursor-ai-adoption/featured-v9.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/posts/2026/04/saferide-health-cursor-ai-adoption/featured-v18.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/posts/2026/04/saferide-health-cursor-ai-adoption/featured-v13.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/posts/2026/04/saferide-health-cursor-ai-adoption/featured-v16.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/posts/2026/04/saferide-health-cursor-ai-adoption/featured-v10.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/posts/2026/04/saferide-health-cursor-ai-adoption/featured-v12.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
       768,
       850,
       1200,
@@ -2918,22 +1692,6 @@
     ]
   },
   {
-    "src": "/images/content/posts/fried-chicken-ice-cream/featured.webp",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
     "src": "/images/content/posts/fried-chicken-ice-cream/unwrapped.jpeg",
     "widths": [
       64,
@@ -2983,22 +1741,6 @@
     ]
   },
   {
-    "src": "/images/content/posts/via-aquarium/featured.webp",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
     "src": "/images/content/huupe-mini-review-overnight.jpg",
     "widths": [
       64,
@@ -3032,55 +1774,7 @@
     ]
   },
   {
-    "src": "/images/content/typescript-7-beta-go-rewrite/featured.webp",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/intro-to-making-mead/featured.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
     "src": "/images/content/grok-4-5-cursor-first-impressions/hero.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/travel-is-the-only-thing/featured.jpg",
     "widths": [
       64,
       80,
@@ -3112,23 +1806,6 @@
     ]
   },
   {
-    "src": "/images/content/total-typescript-review-v1.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
     "src": "/images/content/vision-capabilities-php-ai-agents/featured.jpg",
     "widths": [
       64,
@@ -3138,71 +1815,6 @@
       320,
       400,
       600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/vision-capabilities-php-ai-agents/featured.webp",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/discovering-hidden-gems-in-iceland-69/featured.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/adventure-awaits/featured.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/total-typescript-review-v3.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
       768,
       850,
       1200,
@@ -3243,74 +1855,6 @@
     ]
   },
   {
-    "src": "/images/content/building-better-websites/planning-architecture-featured.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/building-better-websites/deployment-maintenance-featured.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/building-better-websites/implementation-development-featured.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/building-better-websites/series-cover.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
     "src": "/images/content/huupe-mini-review-assembly.jpg",
     "widths": [
       64,
@@ -3328,73 +1872,7 @@
     ]
   },
   {
-    "src": "/images/content/total-typescript-review-v2.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
     "src": "/images/content/running-this-blog-with-an-ai-team/featured.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/huupe-mini-review-hero.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      760,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/saferide-health-ai-engineering/featured.jpg",
-    "widths": [
-      64,
-      80,
-      160,
-      280,
-      320,
-      400,
-      600,
-      768,
-      850,
-      1200,
-      1920
-    ]
-  },
-  {
-    "src": "/images/content/pain-is-temporary/featured.jpg",
     "widths": [
       64,
       80,
@@ -3437,9 +1915,7 @@
       400,
       600,
       760,
-      768,
       850,
-      1200,
       1920
     ]
   },

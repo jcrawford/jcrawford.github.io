@@ -437,7 +437,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
       const totalReadingTime = seriesArticles.reduce((sum, a) => sum + (a.fields?.readingTime || 0), 0);
       seriesCardsMap.set(series.name, {
         name: series.name,
-        slug: `${seriesSlug}/${article.frontmatter.slug}`,
+        slug: seriesSlug,
         description: seriesDescription,
         featuredImage: seriesImage,
         publishedAt: article.frontmatter.publishedAt,
@@ -481,11 +481,6 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
     return;
   }
 
-  // Create article pages - use different templates for series vs standalone articles
-  const articleTemplate = path.resolve('./src/templates/article.tsx');
-  const seriesArticleTemplate = path.resolve('./src/templates/series-article.tsx');
-  const brewingRecipeTemplate = path.resolve('./src/templates/brewing-recipe.tsx');
-
   // Build a lookup of first-article path per series so all parts share metrics.
   const seriesFirstArticlePath = new Map<string, string>();
   const articlesBySeries = new Map<string, PagesQueryResult['allMarkdownRemark']['nodes']>();
@@ -506,12 +501,28 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
     });
     const firstArticle = sortedArticles[0];
     if (firstArticle) {
+      const seriesSlug = slugifySeriesName(seriesName);
       seriesFirstArticlePath.set(
         seriesName,
-        `/series/${slugifySeriesName(seriesName)}/${firstArticle.frontmatter.slug}`
+        `/series/${seriesSlug}/${firstArticle.frontmatter.slug}`
       );
     }
   });
+
+  // Add series landing page metrics (copy from first article of each series)
+  articlesBySeries.forEach((_, seriesName) => {
+    const seriesSlug = slugifySeriesName(seriesName);
+    const landingPath = `/series/${seriesSlug}/`;
+    const metrics = metricsByPath.get(seriesFirstArticlePath.get(seriesName)!);
+    if (metrics) {
+      metricsByPath.set(landingPath, metrics);
+    }
+  });
+
+  // Create article pages - use different templates for series vs standalone articles
+  const articleTemplate = path.resolve('./src/templates/article.tsx');
+  const seriesArticleTemplate = path.resolve('./src/templates/series-article.tsx');
+  const brewingRecipeTemplate = path.resolve('./src/templates/brewing-recipe.tsx');
 
   articles.forEach((article) => {
     const isSeries = !!article.frontmatter.series?.name;
@@ -654,6 +665,44 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
     },
   });
   reporter.info('Created series index page: /series');
+
+  // Create per-series landing pages
+  const seriesLandingTemplate = path.resolve('./src/templates/series-landing.tsx');
+  const draftFilter = SHOW_DRAFTS ? [false, true, null] : [false, null];
+  articlesBySeries.forEach((seriesArticles, seriesName) => {
+    const sorted = [...seriesArticles].sort((a, b) => {
+      const orderA = a.frontmatter.series?.order ?? Infinity;
+      const orderB = b.frontmatter.series?.order ?? Infinity;
+      return orderA - orderB;
+    });
+    const firstArticle = sorted[0];
+    if (!firstArticle) return;
+
+    const seriesSlug = slugifySeriesName(seriesName);
+    const seriesMeta = firstArticle.frontmatter.series;
+    const description = seriesMeta?.description || firstArticle.frontmatter.excerpt;
+    const featuredImage = seriesMeta?.featuredImage || firstArticle.frontmatter.featuredImage;
+
+    // Get metrics from the landing path (already populated in metricsByMap)
+    const landingPath = `/series/${seriesSlug}/`;
+    const metrics = metricsByPath.get(landingPath) || { views: 0, comments: 0, shares: { facebook: 0, linkedin: 0, copy: 0 } };
+
+    createPage({
+      path: `/series/${seriesSlug}/`,
+      component: seriesLandingTemplate,
+      context: {
+        seriesName,
+        seriesSlug,
+        description,
+        featuredImage,
+        draftFilter,
+        viewCount: metrics.views,
+        commentCount: metrics.comments,
+        shareCounts: metrics.shares || { facebook: 0, linkedin: 0, copy: 0 },
+      },
+    });
+  });
+  reporter.info(`Created ${articlesBySeries.size} series landing pages`);
 
   // Create tag pages with pagination
   const tagTemplate = path.resolve('./src/templates/tag.tsx');

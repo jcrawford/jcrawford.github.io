@@ -68,7 +68,11 @@ export const SeriesWidget: React.FC<SeriesWidgetProps> = ({
       {/* Header */}
       <header className="series-widget__header">
         <h2 className="series-widget__title">Part of a Series</h2>
-        <p className="series-widget__series-name">{series.name}</p>
+        <p className="series-widget__series-name">
+          <Link to={`/series/${slugifySeriesName(series.name)}/`}>
+            {series.name}
+          </Link>
+        </p>
       </header>
 
       {/* Table of Contents */}

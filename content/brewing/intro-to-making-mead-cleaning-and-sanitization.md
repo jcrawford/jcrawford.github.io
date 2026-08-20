@@ -2,7 +2,7 @@
 slug: cleaning-and-sanitization
 title: "Cleaning and Sanitization"
 excerpt: "Why cleaning and sanitization matter in mead making, the difference between a cleaner and a sanitizer, and the process I use on brew day."
-featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.png
+featuredImage: /images/content/brewing/intro-to-making-mead/cleaning-and-sanitization/featured.jpg
 tags:
   - brewing
   - mead
@@ -16,7 +16,7 @@ series:
   name: "Intro to Making Mead"
   order: 3
   description: "A complete beginner's guide to making mead at home, from equipment and ingredients through fermentation, back-sweetening, pasteurization, and bottling."
-  featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.png
+  featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.jpg
 ---
 
 Brewing is 80% cleaning. That joke gets repeated because it is true — the time you spend washing, scrubbing, and sanitizing will dwarf the time you spend pouring honey into water. In this third part of the **Intro to Making Mead** series I will explain why that work matters, how cleaning and sanitizing are different, and the routine I follow on brew day.
