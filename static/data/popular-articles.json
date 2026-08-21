@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T14:58:20.545Z",
+  "generatedAt": "2026-08-21T18:57:57.759Z",
   "windowDays": 30,
   "entries": [
     {
@@ -59,9 +59,9 @@
     },
     {
       "id": "/series/mead-water-chemistry/water-chemistry-basics",
-      "views": 29,
+      "views": 31,
       "comments": 0,
-      "score": 29,
+      "score": 31,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -70,9 +70,9 @@
     },
     {
       "id": "/series/intro-to-making-mead/types-of-mead",
-      "views": 25,
+      "views": 27,
       "comments": 0,
-      "score": 25,
+      "score": 27,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -201,6 +201,17 @@
       }
     },
     {
+      "id": "/series/intro-to-making-mead/equipment",
+      "views": 7,
+      "comments": 0,
+      "score": 7,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/series/intro-to-making-mead/preparing-your-must",
       "views": 7,
       "comments": 0,
@@ -234,7 +245,7 @@
       }
     },
     {
-      "id": "/series/intro-to-making-mead/equipment",
+      "id": "/series/intro-to-making-mead",
       "views": 6,
       "comments": 0,
       "score": 6,
@@ -262,17 +273,6 @@
       "score": 4,
       "shares": {
         "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/posts/vision-capabilities-php-ai-agents",
-      "views": 4,
-      "comments": 0,
-      "score": 4,
-      "shares": {
-        "facebook": 1,
         "linkedin": 0,
         "copy": 0
       }
