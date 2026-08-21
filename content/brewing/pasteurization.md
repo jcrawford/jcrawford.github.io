@@ -2,7 +2,7 @@
 slug: pasteurization
 title: "Pasteurization"
 excerpt: "Stopping fermentation with heat so you can bottle a sweet or carbonated mead without chemical stabilizers."
-featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.jpg
+featuredImage: /images/content/brewing/intro-to-making-mead/pasteurization/featured.png
 tags:
   - brewing
   - mead
