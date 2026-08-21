@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T01:59:23.267Z",
+  "generatedAt": "2026-08-21T07:09:55.439Z",
   "windowDays": 30,
   "entries": [
     {
@@ -81,9 +81,9 @@
     },
     {
       "id": "/reviews/total-typescript-pro-complete-review",
-      "views": 21,
+      "views": 20,
       "comments": 0,
-      "score": 21,
+      "score": 20,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -190,28 +190,6 @@
       }
     },
     {
-      "id": "/posts/lebanon-valley-speedway-2026",
-      "views": 7,
-      "comments": 0,
-      "score": 7,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/via-aquarium",
-      "views": 7,
-      "comments": 0,
-      "score": 7,
-      "shares": {
-        "facebook": 3,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
       "id": "/series/intro-to-making-mead/cleaning-and-sanitization",
       "views": 7,
       "comments": 0,
@@ -271,6 +249,28 @@
       "views": 5,
       "comments": 0,
       "score": 5,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/lebanon-valley-speedway-2026",
+      "views": 4,
+      "comments": 0,
+      "score": 4,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/series/mead-water-chemistry/finding-your-water-report",
+      "views": 4,
+      "comments": 0,
+      "score": 4,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
