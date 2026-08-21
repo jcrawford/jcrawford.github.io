@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T13:12:50.362Z",
+  "generatedAt": "2026-08-21T14:58:20.545Z",
   "windowDays": 30,
   "entries": [
     {
@@ -70,9 +70,9 @@
     },
     {
       "id": "/series/intro-to-making-mead/types-of-mead",
-      "views": 23,
+      "views": 25,
       "comments": 0,
-      "score": 23,
+      "score": 25,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -201,6 +201,17 @@
       }
     },
     {
+      "id": "/series/intro-to-making-mead/preparing-your-must",
+      "views": 7,
+      "comments": 0,
+      "score": 7,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/brewing/dandelion-mead",
       "views": 7,
       "comments": 0,
@@ -245,17 +256,6 @@
       }
     },
     {
-      "id": "/series/intro-to-making-mead/preparing-your-must",
-      "views": 5,
-      "comments": 0,
-      "score": 5,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
       "id": "/posts/lebanon-valley-speedway-2026",
       "views": 4,
       "comments": 0,
@@ -267,12 +267,12 @@
       }
     },
     {
-      "id": "/series/mead-water-chemistry/finding-your-water-report",
+      "id": "/posts/vision-capabilities-php-ai-agents",
       "views": 4,
       "comments": 0,
       "score": 4,
       "shares": {
-        "facebook": 0,
+        "facebook": 1,
         "linkedin": 0,
         "copy": 0
       }
