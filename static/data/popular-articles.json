@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-20T22:46:52.700Z",
+  "generatedAt": "2026-08-21T01:59:23.267Z",
   "windowDays": 30,
   "entries": [
     {
       "id": "/brewing/cherry-mead",
-      "views": 128,
+      "views": 131,
       "comments": 0,
-      "score": 128,
+      "score": 131,
       "shares": {
         "facebook": 5,
         "linkedin": 1,
@@ -59,9 +59,9 @@
     },
     {
       "id": "/series/mead-water-chemistry/water-chemistry-basics",
-      "views": 25,
+      "views": 29,
       "comments": 0,
-      "score": 25,
+      "score": 29,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -212,6 +212,17 @@
       }
     },
     {
+      "id": "/series/intro-to-making-mead/cleaning-and-sanitization",
+      "views": 7,
+      "comments": 0,
+      "score": 7,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/brewing/dandelion-mead",
       "views": 7,
       "comments": 0,
@@ -224,17 +235,6 @@
     },
     {
       "id": "/posts/grok-4-5-cursor-first-impressions",
-      "views": 6,
-      "comments": 0,
-      "score": 6,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/series/intro-to-making-mead/cleaning-and-sanitization",
       "views": 6,
       "comments": 0,
       "score": 6,
