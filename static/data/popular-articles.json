@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-21T18:57:57.759Z",
+  "generatedAt": "2026-08-22T01:51:25.520Z",
   "windowDays": 30,
   "entries": [
     {
       "id": "/brewing/cherry-mead",
-      "views": 131,
+      "views": 136,
       "comments": 0,
-      "score": 131,
+      "score": 136,
       "shares": {
         "facebook": 5,
         "linkedin": 1,
@@ -190,6 +190,17 @@
       }
     },
     {
+      "id": "/series/intro-to-making-mead",
+      "views": 7,
+      "comments": 0,
+      "score": 7,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/series/intro-to-making-mead/cleaning-and-sanitization",
       "views": 7,
       "comments": 0,
@@ -235,17 +246,6 @@
     },
     {
       "id": "/posts/grok-4-5-cursor-first-impressions",
-      "views": 6,
-      "comments": 0,
-      "score": 6,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/series/intro-to-making-mead",
       "views": 6,
       "comments": 0,
       "score": 6,
