@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T01:51:25.520Z",
+  "generatedAt": "2026-08-22T07:01:14.040Z",
   "windowDays": 30,
   "entries": [
     {
@@ -81,9 +81,9 @@
     },
     {
       "id": "/reviews/total-typescript-pro-complete-review",
-      "views": 20,
+      "views": 19,
       "comments": 0,
-      "score": 20,
+      "score": 19,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -168,17 +168,6 @@
       }
     },
     {
-      "id": "/reviews/fried-chicken-ice-cream-review",
-      "views": 9,
-      "comments": 0,
-      "score": 9,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
       "id": "/brewing/bottling-day",
       "views": 8,
       "comments": 0,
@@ -246,6 +235,17 @@
     },
     {
       "id": "/posts/grok-4-5-cursor-first-impressions",
+      "views": 6,
+      "comments": 0,
+      "score": 6,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/fried-chicken-ice-cream-review",
       "views": 6,
       "comments": 0,
       "score": 6,
