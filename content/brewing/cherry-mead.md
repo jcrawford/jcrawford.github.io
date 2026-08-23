@@ -14,9 +14,9 @@ type: brewing-recipe
 
 
 brewData:
-  originalGravity: 1.092
+  originalGravity: 1.099
   finalGravity: 1.000
-  abv: 13.0
+  abv: 13.9
   startDate: '2026-07-22'
   yeast: "Red Star Premier Blanc"
   batchSize: "1 gallon"
@@ -74,11 +74,11 @@ steps:
     image: /images/content/brewing/cherry-mead/primary-complete-gravity.jpg
 
   - title: "Secondary Fermentation"
-    description: "With primary complete, I racked the mead off the yeast cake into a clean secondary fermenter and added another 1.5 lbs of fresh frozen cherries (still with pits). This second addition is all about boosting the cherry aroma and flavor that can get blown off during the vigorous primary fermentation. The transformation was immediate — the mead went from a light, clear reddish liquid to a deep, dark red that looks almost opaque in the fermenter. The cherries also contribute additional sugar. Based on the sugar content of sweet cherries, that 1.5 lbs should add roughly 71g of sugar. Dissolved in 1 gallon, that raises the specific gravity by approximately 0.007, putting the mead at an estimated 1.007 (up from 1.000 after primary). If the yeast ferments that sugar back down to 1.000, the additional ABV from secondary would be roughly 0.9%, bringing the total estimated ABV to around 13.0%. I will take another gravity reading after secondary to confirm. The cherries stayed in for 10 days before I removed them and transferred the mead to a conditioning fermenter for 90 days of bulk aging."
+    description: "With primary complete, I racked the mead off the yeast cake into a clean secondary fermenter and added another 1.5 lbs of fresh frozen cherries (still with pits). This second addition is all about boosting the cherry aroma and flavor that can get blown off during the vigorous primary fermentation. The transformation was immediate — the mead went from a light, clear reddish liquid to a deep, dark red that looks almost opaque in the fermenter. The cherries also contribute additional sugar. Based on the sugar content of sweet cherries, that 1.5 lbs should add roughly 71g of sugar. Dissolved in 1 gallon, that raises the specific gravity by approximately 0.007, putting the mead at an estimated 1.007 (up from 1.000 after primary). If the yeast ferments that sugar back down to 1.000, the additional ABV from secondary would be roughly 0.9%, bringing the total estimated ABV to around 13.9%. I will take another gravity reading after secondary to confirm. The cherries stayed in for 10 days before I removed them and transferred the mead to a conditioning fermenter for 90 days of bulk aging."
     image: /images/content/brewing/cherry-mead/secondary-fermenter.jpg
 
   - title: "Remove Cherries"
-    description: "After 10 days in secondary, I removed the cherries. The mead had extracted plenty of color and flavor from the second addition — the liquid was already a deep, dark red. I lifted the cherries out carefully, let them drain back into the fermenter, and discarded the spent fruit. With the cherries gone, I took a final gravity reading to see where things stood. The hydrometer settled at 1.000, confirming the yeast had fermented all available sugars from both the honey and the secondary cherry addition. With an original gravity of 1.092 and the additional sugar from the secondary cherries (estimated +0.007 SG), the total estimated ABV is 13.0%."
+    description: "After 10 days in secondary, I removed the cherries. The mead had extracted plenty of color and flavor from the second addition — the liquid was already a deep, dark red. I lifted the cherries out carefully, let them drain back into the fermenter, and discarded the spent fruit. With the cherries gone, I took a final gravity reading to see where things stood. The hydrometer settled at 1.000, confirming the yeast had fermented all available sugars. The ABV calculation breaks down like this: the original 1.092 gravity was the honey must alone. The 1.5 lbs of cherries added in primary contributed roughly 0.007 SG of additional sugar, bringing the true starting gravity to approximately 1.099. That primary fermentation contributed (1.099 - 1.000) × 131.25 = 13.0%. The secondary addition of another 1.5 lbs of cherries added roughly 0.007 SG worth of sugar, contributing another 0.007 × 131.25 = 0.9%. Total estimated ABV: 13.9%."
     image: /images/content/brewing/cherry-mead/final-gravity-reading.jpg
 
   - title: "Transfer to Conditioning"
