@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T02:01:57.291Z",
+  "generatedAt": "2026-08-23T07:02:56.909Z",
   "windowDays": 30,
   "entries": [
     {
@@ -80,10 +80,10 @@
       }
     },
     {
-      "id": "/reviews/total-typescript-pro-complete-review",
-      "views": 19,
+      "id": "/posts/home-brewing-journey",
+      "views": 18,
       "comments": 0,
-      "score": 19,
+      "score": 18,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -91,10 +91,10 @@
       }
     },
     {
-      "id": "/posts/home-brewing-journey",
-      "views": 18,
+      "id": "/reviews/total-typescript-pro-complete-review",
+      "views": 14,
       "comments": 0,
-      "score": 18,
+      "score": 14,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
