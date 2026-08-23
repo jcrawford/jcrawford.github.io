@@ -8,9 +8,9 @@ interface PostMediaImageProps {
 
 /**
  * Single-size image component for post media.
- * Post images are displayed in one context only, so we generate and serve
- * exactly one 760px variant (WebP with JPG fallback) instead of a full
- * responsive srcset.
+ * Post images are displayed in one context only, so we serve
+ * the 768w variant from the standard OptimizedImage size set
+ * (WebP with JPG fallback) instead of generating separate variants.
  */
 const PostMediaImage: React.FC<PostMediaImageProps> = ({ src, alt, className }) => {
   if (!src) return null;
@@ -20,8 +20,8 @@ const PostMediaImage: React.FC<PostMediaImageProps> = ({ src, alt, className }) 
   const lastDot = base.lastIndexOf('.');
   const variantBase = lastDot > 0 ? base.slice(0, lastDot) : base;
 
-  const webpSrc = `${variantBase}_760w.webp`;
-  const jpgSrc = `${variantBase}_760w.jpg`;
+  const webpSrc = `${variantBase}_768w.webp`;
+  const jpgSrc = `${variantBase}_768w.jpg`;
 
   return (
     <picture className={className}>

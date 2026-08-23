@@ -2,7 +2,7 @@
 slug: secondary-fermentation
 title: "Secondary Fermentation"
 excerpt: "Why mead gets racked into secondary, what happens during the long clearing and aging phase, and how to know when it is ready for bottling."
-featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.jpg
+featuredImage: /images/content/brewing/intro-to-making-mead/secondary-fermentation/featured.png
 tags:
   - brewing
   - mead

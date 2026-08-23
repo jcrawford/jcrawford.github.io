@@ -16,13 +16,14 @@ type: brewing-recipe
 brewData:
   originalGravity: 1.092
   finalGravity: 1.000
-  abv: 12.1
+  abv: 13.0
   startDate: '2026-07-22'
   yeast: "Red Star Premier Blanc"
   batchSize: "1 gallon"
   fermentationTime: "3 weeks"
   secondaryStartDate: '2026-08-13'
-  secondaryTime: "2 weeks"
+  secondaryEndDate: '2026-08-23'
+  secondaryTime: "10 days"
   bulkConditioningTime: "90 days"
   bottleAgingTime: "6 months"
 
@@ -48,7 +49,7 @@ steps:
     description: "Pour the three pounds of Maker's Mark Premium Wildflower Honey directly into the fermenter. The quality of your honey matters a lot in meadmaking — it's the primary fermentable sugar and the dominant flavor component. Maker's Mark Premium Wildflower Honey has a rich, floral character that pairs beautifully with cherries. If the honey is thick and hard to pour, you can warm the jar in a water bath to make it flow more easily, but avoid heating it too much — excessive heat can drive off delicate aromatics."
     image: /images/content/brewing/cherry-mead/step-7.jpg
   - title: "Add Water and Mix the Must"
-    description: "Add distilled water to the fermenter, leaving enough headspace for fermentation activity. Mix thoroughly to dissolve the honey completely. This mixture of honey and water is called the must. Stir vigorously to ensure the honey is fully incorporated — undissolved honey at the bottom of the fermenter won't ferment properly and can cause issues later."
+    description: "Add tapwater to the fermenter, leaving enough headspace for fermentation activity. Mix thoroughly to dissolve the honey completely. This mixture of honey and water is called the must. Stir vigorously to ensure the honey is fully incorporated — undissolved honey at the bottom of the fermenter won't ferment properly and can cause issues later. This batch used straight tapwater — no brewing salts, no Campden tablet for chlorine removal. Just tapwater, honey, fruit, and yeast. Sometimes the simplest approach is the best teacher."
   - title: "Check Original Gravity"
     description: "Before aerating and pitching the yeast, take a gravity reading with a triple scale hydrometer. Draw a sample of the must into a test jar, float the hydrometer, and read where the liquid surface crosses the scale. This first reading is your original gravity (OG) — it tells you how much sugar is in the must and lets you calculate the potential alcohol content. For this batch, the OG came in at 1.092, which should yield around 12% ABV if it ferments to dryness. Take note of this number — you'll compare it to your final gravity reading later to determine the actual ABV. Make sure the must is well-mixed before taking the sample, otherwise you might get an inaccurate reading from honey that settled to the bottom."
     image: /images/content/brewing/cherry-mead/step-9.jpg
@@ -73,8 +74,16 @@ steps:
     image: /images/content/brewing/cherry-mead/primary-complete-gravity.jpg
 
   - title: "Secondary Fermentation"
-    description: "With primary complete, I racked the mead off the yeast cake into a clean secondary fermenter and added another 1.5 lbs of fresh frozen cherries (still with pits). This second addition is all about boosting the cherry aroma and flavor that can get blown off during the vigorous primary fermentation. The transformation was immediate — the mead went from a light, clear reddish liquid to a deep, dark red that looks almost opaque in the fermenter. The cherries also contribute additional sugar. Based on the sugar content of sweet cherries, that 1.5 lbs should add roughly 71g of sugar. Dissolved in 1 gallon, that raises the specific gravity by approximately 0.007, putting the mead at an estimated 1.007 (up from 1.000 after primary). If the yeast ferments that sugar back down to 1.000, the additional ABV from secondary would be roughly 0.9%, bringing the total estimated ABV to around 13.0%. I will take another gravity reading after secondary to confirm. The cherries will stay in for about two weeks before I remove them, at which point I will transfer the mead once again to a conditioning fermenter for 90 days of bulk aging. The mead is now sitting in secondary, looking deep ruby-red and ready to condition."
+    description: "With primary complete, I racked the mead off the yeast cake into a clean secondary fermenter and added another 1.5 lbs of fresh frozen cherries (still with pits). This second addition is all about boosting the cherry aroma and flavor that can get blown off during the vigorous primary fermentation. The transformation was immediate — the mead went from a light, clear reddish liquid to a deep, dark red that looks almost opaque in the fermenter. The cherries also contribute additional sugar. Based on the sugar content of sweet cherries, that 1.5 lbs should add roughly 71g of sugar. Dissolved in 1 gallon, that raises the specific gravity by approximately 0.007, putting the mead at an estimated 1.007 (up from 1.000 after primary). If the yeast ferments that sugar back down to 1.000, the additional ABV from secondary would be roughly 0.9%, bringing the total estimated ABV to around 13.0%. I will take another gravity reading after secondary to confirm. The cherries stayed in for 10 days before I removed them and transferred the mead to a conditioning fermenter for 90 days of bulk aging."
     image: /images/content/brewing/cherry-mead/secondary-fermenter.jpg
+
+  - title: "Remove Cherries and Transfer to Conditioning"
+    description: "After 10 days in secondary, I removed the cherries and racked the mead into a clean conditioning fermenter. The final gravity reading came in at 1.000, confirming the yeast fermented all available sugars from both the honey and the secondary cherry addition. With an original gravity of 1.092 and the additional sugar from the secondary cherries (estimated +0.007 SG), the total estimated ABV is 13.0%. The mead is now in bulk conditioning for 90 days to clear and mature before bottling. The color is a deep, deep dark red — so dark it looks almost opaque in the fermenter. It's not cloudy at all, just intensely colored from all the fresh cherries. Hopefully some aging will clarify it a bit, but for now it's a beautiful dark ruby-black."
+    image: /images/content/brewing/cherry-mead/conditioning-transfer.jpg
+
+  - title: "Initial Taste Test"
+    description: "I pulled a sample for an initial taste test. The mead hits with an extremely heavy punch of cherry — bold and forward. You can definitely taste the youth of this mead in the alcohol heat, but it also gives off lovely floral notes from the Maker's Mark Premium Wildflower Honey. The clarity is still developing; it's not cloudy, but there's some haze that should drop out with more time. With some age and maybe a little back sweetening to balance the dryness, this is going to be really, really good. The foundation is solid — it just needs patience."
+    image: /images/content/brewing/cherry-mead/midlife-taste-test.jpg
 
 ---
 
