@@ -33,7 +33,7 @@ ingredients:
   - "1.5 lbs whole frozen cherries (with pits) — secondary"
   - "1 packet Red Star Premier Blanc yeast"
   - "¼ tablespoon FermAid K (yeast nutrient)"
-  - "Distilled water to volume"
+  - "Distilled water to volume (used straight tapwater for this batch)"
 
 steps:
   - title: "Gather Equipment and Ingredients"
@@ -51,7 +51,7 @@ steps:
   - title: "Add Water and Mix the Must"
     description: "Add tapwater to the fermenter, leaving enough headspace for fermentation activity. Mix thoroughly to dissolve the honey completely. This mixture of honey and water is called the must. Stir vigorously to ensure the honey is fully incorporated — undissolved honey at the bottom of the fermenter won't ferment properly and can cause issues later. This batch used straight tapwater — no brewing salts, no Campden tablet for chlorine removal. Just tapwater, honey, fruit, and yeast. Sometimes the simplest approach is the best teacher."
   - title: "Check Original Gravity"
-    description: "Before aerating and pitching the yeast, take a gravity reading with a triple scale hydrometer. Draw a sample of the must into a test jar, float the hydrometer, and read where the liquid surface crosses the scale. This first reading is your original gravity (OG) — it tells you how much sugar is in the must and lets you calculate the potential alcohol content. For this batch, the OG came in at 1.092, which should yield around 12% ABV if it ferments to dryness. Take note of this number — you'll compare it to your final gravity reading later to determine the actual ABV. Make sure the must is well-mixed before taking the sample, otherwise you might get an inaccurate reading from honey that settled to the bottom."
+    description: "Before aerating and pitching the yeast, take a gravity reading with a triple scale hydrometer. Draw a sample of the must into a test jar, float the hydrometer, and read where the liquid surface crosses the scale. This first reading is your original gravity (OG) — it tells you how much sugar is in the must and lets you calculate the potential alcohol content. For this batch, the OG came in at 1.092, which should yield around 12% ABV if it ferments to dryness. Take note of this number — you'll compare it to your final gravity reading later to determine the actual ABV. Make sure the must is well-mixed before taking the sample, otherwise you might get an inaccurate reading from honey that settled to the bottom. Note: This reading was taken before adding the 1.5 lbs of frozen cherries to primary. The cherries were still frozen solid when added, so they contributed minimal sugar to the must at this point — you can see in the photo that only a tiny bit of color had leached out. The full sugar contribution from those cherries (roughly 0.007 SG) would come later as they thawed and fermented, bringing the true starting gravity to approximately 1.099."
     image: /images/content/brewing/cherry-mead/step-9.jpg
   - title: "Aerate the Must"
     description: "Once the gravity is recorded, aerate the must by shaking the fermenter vigorously. This is a critical step — yeast needs oxygen to reproduce and build healthy cell walls during the early stages of fermentation. Shake the fermenter for several minutes, periodically removing the cap to let fresh air in, then shaking again. The more oxygen you introduce now, the healthier your fermentation will be. This is the only time you want oxygen in the mead — after fermentation begins, oxygen becomes your enemy."
@@ -70,7 +70,7 @@ steps:
     image: /images/content/brewing/cherry-mead/step-11.jpg
 
   - title: "Primary Fermentation Completed"
-    description: "After letting the mead finish its full three weeks in primary, I took a final gravity reading to confirm fermentation was complete. The hydrometer settled at 1.000, which tells me the yeast has consumed virtually all the fermentable sugars from the honey. With an original gravity of 1.092 and a final gravity of 1.000, the estimated ABV comes to approximately 12.1% using the standard calculation: (1.092 - 1.000) x 131.25. This is a textbook dry finish for a traditional mead, and it's exactly what I want to see before moving to secondary. The deep ruby color from the cherries is already stunning, and now it's ready for the next phase."
+    description: "After letting the mead finish its full three weeks in primary, I took a final gravity reading to confirm fermentation was complete. The hydrometer settled at 1.000, which tells me the yeast has consumed virtually all the fermentable sugars from both the honey and the primary cherry addition. The original gravity reading of 1.092 was taken before adding the frozen cherries — once those cherries thawed and contributed their sugars (roughly 0.007 SG), the true starting gravity was approximately 1.099. With that corrected OG and a final gravity of 1.000, the primary fermentation contributed approximately 13.0% ABV using the standard calculation: (1.099 - 1.000) x 131.25. This is a textbook dry finish for a traditional mead, and it's exactly what I want to see before moving to secondary. The deep ruby color from the cherries is already stunning, and now it's ready for the next phase."
     image: /images/content/brewing/cherry-mead/primary-complete-gravity.jpg
 
   - title: "Secondary Fermentation"
