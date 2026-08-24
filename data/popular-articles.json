@@ -1,5 +1,281 @@
 {
-  "generatedAt": "2026-07-11T19:00:24.909Z",
+  "generatedAt": "2026-08-24T18:06:23.619Z",
   "windowDays": 30,
-  "entries": []
+  "entries": [
+    {
+      "id": "/brewing/cherry-mead",
+      "views": 150,
+      "comments": 0,
+      "score": 150,
+      "shares": {
+        "facebook": 1,
+        "linkedin": 1,
+        "copy": 1
+      }
+    },
+    {
+      "id": "/reviews/budget-auto-rental-process-review",
+      "views": 85,
+      "comments": 0,
+      "score": 85,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/brewing/blackberry-mead",
+      "views": 37,
+      "comments": 0,
+      "score": 37,
+      "shares": {
+        "facebook": 1,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/clickfunnels-review",
+      "views": 31,
+      "comments": 0,
+      "score": 31,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/series/mead-water-chemistry/water-chemistry-basics",
+      "views": 31,
+      "comments": 0,
+      "score": 31,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/brewing/strawberry-wine",
+      "views": 30,
+      "comments": 0,
+      "score": 30,
+      "shares": {
+        "facebook": 1,
+        "linkedin": 1,
+        "copy": 1
+      }
+    },
+    {
+      "id": "/series/intro-to-making-mead/types-of-mead",
+      "views": 28,
+      "comments": 0,
+      "score": 28,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/series/intro-to-making-mead",
+      "views": 17,
+      "comments": 0,
+      "score": 17,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/total-typescript-pro-complete-review",
+      "views": 14,
+      "comments": 0,
+      "score": 14,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/plaato-airlock-review",
+      "views": 12,
+      "comments": 0,
+      "score": 12,
+      "shares": {
+        "facebook": 5,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/disney-vacation-2026",
+      "views": 10,
+      "comments": 0,
+      "score": 10,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/null",
+      "views": 10,
+      "comments": 0,
+      "score": 10,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/tilt-hydrometer-review",
+      "views": 10,
+      "comments": 0,
+      "score": 10,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/brewing/small-batch-brewing-required-tools",
+      "views": 9,
+      "comments": 0,
+      "score": 9,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/series/intro-to-making-mead/preparing-your-must",
+      "views": 9,
+      "comments": 0,
+      "score": 9,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/brewing/bottling-day",
+      "views": 8,
+      "comments": 0,
+      "score": 8,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/series/intro-to-making-mead/cleaning-and-sanitization",
+      "views": 7,
+      "comments": 0,
+      "score": 7,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/series/intro-to-making-mead/equipment",
+      "views": 7,
+      "comments": 0,
+      "score": 7,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/brewing/dandelion-mead",
+      "views": 7,
+      "comments": 0,
+      "score": 7,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/grok-4-5-cursor-first-impressions",
+      "views": 6,
+      "comments": 0,
+      "score": 6,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/fried-chicken-ice-cream-review",
+      "views": 6,
+      "comments": 0,
+      "score": 6,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/benq-rd320ua-monitor-review",
+      "views": 5,
+      "comments": 0,
+      "score": 5,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/series/intro-to-making-mead/mead-ingredients",
+      "views": 5,
+      "comments": 0,
+      "score": 5,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/lebanon-valley-speedway-2026",
+      "views": 4,
+      "comments": 0,
+      "score": 4,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/saferide-health",
+      "views": 4,
+      "comments": 0,
+      "score": 4,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    }
+  ]
 }
