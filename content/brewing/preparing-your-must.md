@@ -2,7 +2,7 @@
 slug: preparing-your-must
 title: "Preparing Your Must"
 excerpt: "How to mix honey and water, make sure all ingredients are well combined, and take an accurate original gravity reading with a hydrometer."
-featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.jpg
+featuredImage: /images/content/brewing/intro-to-making-mead/preparing-your-must/featured.png
 tags:
   - brewing
   - mead

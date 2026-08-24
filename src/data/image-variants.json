@@ -205,7 +205,8 @@
       600,
       768,
       850,
-      1200
+      1200,
+      1920
     ]
   },
   {
@@ -658,6 +659,96 @@
     ]
   },
   {
+    "src": "/images/content/brewing/mead-water-chemistry/calcium/featured.jpg",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/mead-water-chemistry/calcium/featured.webp",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/mead-water-chemistry/calcium/featured.png",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/mead-water-chemistry/building-profile/featured.jpg",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/mead-water-chemistry/building-profile/featured.webp",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/mead-water-chemistry/building-profile/featured.png",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
     "src": "/images/content/brewing/mead-water-chemistry/series-cover.png",
     "widths": [
       64,
@@ -669,6 +760,96 @@
       600,
       760,
       768,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/mead-water-chemistry/bicarbonate/featured.jpg",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/mead-water-chemistry/bicarbonate/featured.webp",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/mead-water-chemistry/bicarbonate/featured.png",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/mead-water-chemistry/sulfate/featured.jpg",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/mead-water-chemistry/sulfate/featured.webp",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/mead-water-chemistry/sulfate/featured.png",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
       1200
     ]
   },
@@ -688,6 +869,51 @@
     ]
   },
   {
+    "src": "/images/content/brewing/mead-water-chemistry/finding-your-water-report/featured.jpg",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/mead-water-chemistry/finding-your-water-report/featured.webp",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/mead-water-chemistry/finding-your-water-report/featured.png",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
     "src": "/images/content/brewing/mead-water-chemistry/series-cover.jpg",
     "widths": [
       64,
@@ -699,6 +925,231 @@
       600,
       760,
       768,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/mead-water-chemistry/ph-meters/featured.jpg",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/mead-water-chemistry/ph-meters/featured.webp",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/mead-water-chemistry/ph-meters/featured.png",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/mead-water-chemistry/chloride/featured.jpg",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/mead-water-chemistry/chloride/featured.webp",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/mead-water-chemistry/chloride/featured.png",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/mead-water-chemistry/water-chemistry-basics/featured.jpg",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/mead-water-chemistry/water-chemistry-basics/featured.webp",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/mead-water-chemistry/water-chemistry-basics/featured.png",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/mead-water-chemistry/magnesium/featured.jpg",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/mead-water-chemistry/magnesium/featured.webp",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/mead-water-chemistry/magnesium/featured.png",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/mead-water-chemistry/sodium/featured.jpg",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/mead-water-chemistry/sodium/featured.webp",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/mead-water-chemistry/sodium/featured.png",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
       1200
     ]
   },
@@ -748,6 +1199,39 @@
     ]
   },
   {
+    "src": "/images/content/brewing/cherry-mead/midlife-taste-test.jpg",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      760,
+      768,
+      850,
+      1200,
+      1920
+    ]
+  },
+  {
+    "src": "/images/content/brewing/cherry-mead/final-gravity-reading.jpg",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      760,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
     "src": "/images/content/brewing/cherry-mead/featured.jpg",
     "widths": [
       64,
@@ -759,7 +1243,8 @@
       600,
       768,
       850,
-      1200
+      1200,
+      1920
     ]
   },
   {
@@ -808,6 +1293,23 @@
       768,
       850,
       1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/cherry-mead/conditioning-transfer.jpg",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      760,
+      768,
+      850,
+      1200,
+      1920
     ]
   },
   {
@@ -903,6 +1405,51 @@
     ]
   },
   {
+    "src": "/images/content/brewing/intro-to-making-mead/preparing-your-must/featured.jpg",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/intro-to-making-mead/preparing-your-must/featured.webp",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/intro-to-making-mead/preparing-your-must/featured.png",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
     "src": "/images/content/brewing/intro-to-making-mead/back-sweetening/featured.jpg",
     "widths": [
       64,
@@ -934,6 +1481,51 @@
   },
   {
     "src": "/images/content/brewing/intro-to-making-mead/back-sweetening/featured.png",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/intro-to-making-mead/secondary-fermentation/featured.jpg",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/intro-to-making-mead/secondary-fermentation/featured.webp",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/intro-to-making-mead/secondary-fermentation/featured.png",
     "widths": [
       64,
       80,
@@ -1049,6 +1641,96 @@
       600,
       760,
       850
+    ]
+  },
+  {
+    "src": "/images/content/brewing/intro-to-making-mead/primary-fermentation/featured.jpg",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/intro-to-making-mead/primary-fermentation/featured.webp",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/intro-to-making-mead/primary-fermentation/featured.png",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/intro-to-making-mead/pasteurization/featured.jpg",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/intro-to-making-mead/pasteurization/featured.webp",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/brewing/intro-to-making-mead/pasteurization/featured.png",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
     ]
   },
   {
@@ -1522,7 +2204,8 @@
       600,
       768,
       850,
-      1200
+      1200,
+      1920
     ]
   },
   {

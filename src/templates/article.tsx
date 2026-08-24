@@ -518,6 +518,8 @@ export const query = graphql`
           bottlingDate
           drinkingReadyDate
           secondaryTime
+          fermentationTime
+          bulkConditioningTime
           bottleAgingTime
         }
         ingredients

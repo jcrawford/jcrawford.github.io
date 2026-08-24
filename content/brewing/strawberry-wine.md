@@ -24,7 +24,7 @@ brewData:
   drinkingReadyDate: '2027-07-22'
   yeast: "Red Star Premier Cote Des Blancs"
   batchSize: "1 gallon"
-  fermentationTime: "21 days"
+  fermentationTime: "6 days"
   secondaryTime: "3.5 months"
   bottleAgingTime: "1 year"
 

@@ -317,6 +317,11 @@ body {
    RESPONSIVE SYSTEM
    ========================================================================== */
 
+/* Mobile menu toggle - hidden on desktop, shown on mobile */
+.hm-mobile-menu-toggle {
+  display: none;
+}
+
 /* Tier 1: Tablets & Small Desktops (up to 1100px) */
 @media (max-width: 1100px) {
 .hm-mobile-menu-toggle {

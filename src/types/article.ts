@@ -24,6 +24,7 @@ export interface BrewData {
   bottlingDate?: string
   drinkingReadyDate?: string
   secondaryTime?: string
+  bulkConditioningTime?: string
   bottleAgingTime?: string
   abv?: number
   batchSize?: string

@@ -81,7 +81,7 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
       fermentationTime: String
       secondaryTime: String
       bulkConditioningTime: String
-      bottleConditioningTime: String
+      bottleAgingTime: String
     }
 
     type BrewingStep {
@@ -481,8 +481,9 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
     return;
   }
 
-  // Build a lookup of first-article path per series so all parts share metrics.
-  const seriesFirstArticlePath = new Map<string, string>();
+  // Build a lookup of the series landing page path per series so all parts
+  // share metrics under a single canonical URL (the landing page).
+  const seriesLandingPath = new Map<string, string>();
   const articlesBySeries = new Map<string, PagesQueryResult['allMarkdownRemark']['nodes']>();
   articles.forEach((article) => {
     if (article.frontmatter.series?.name) {
@@ -502,21 +503,59 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
     const firstArticle = sortedArticles[0];
     if (firstArticle) {
       const seriesSlug = slugifySeriesName(seriesName);
-      seriesFirstArticlePath.set(
+      seriesLandingPath.set(
         seriesName,
-        `/series/${seriesSlug}/${firstArticle.frontmatter.slug}`
+        `/series/${seriesSlug}/`
       );
     }
   });
 
-  // Add series landing page metrics (copy from first article of each series)
-  articlesBySeries.forEach((_, seriesName) => {
+  // Migrate per-article view counts to the series landing page path.
+  // Use the MAX article view count as a proxy for unique series viewers —
+  // reading multiple articles in a series should increment the series count
+  // by 1, not 1 per article. The first article typically has the most views
+  // since it's the series entry point.
+  articlesBySeries.forEach((seriesArticles, seriesName) => {
     const seriesSlug = slugifySeriesName(seriesName);
     const landingPath = `/series/${seriesSlug}/`;
-    const metrics = metricsByPath.get(seriesFirstArticlePath.get(seriesName)!);
-    if (metrics) {
-      metricsByPath.set(landingPath, metrics);
+
+    // Use the max article view count (proxy for unique viewers)
+    let maxViews = 0;
+    let maxComments = 0;
+    const totalShares = { facebook: 0, linkedin: 0, copy: 0 };
+
+    seriesArticles.forEach((article) => {
+      const articlePath = `/series/${seriesSlug}/${article.frontmatter.slug}`;
+      const m = metricsByPath.get(articlePath);
+      if (m) {
+        maxViews = Math.max(maxViews, m.views || 0);
+        maxComments = Math.max(maxComments, m.comments || 0);
+        if (m.shares) {
+          totalShares.facebook = Math.max(totalShares.facebook, m.shares.facebook || 0);
+          totalShares.linkedin = Math.max(totalShares.linkedin, m.shares.linkedin || 0);
+          totalShares.copy = Math.max(totalShares.copy, m.shares.copy || 0);
+        }
+      }
+    });
+
+    // Also check the landing path itself (if already tracked there)
+    const existingLandingMetrics = metricsByPath.get(landingPath);
+    if (existingLandingMetrics) {
+      maxViews = Math.max(maxViews, existingLandingMetrics.views || 0);
+      maxComments = Math.max(maxComments, existingLandingMetrics.comments || 0);
+      if (existingLandingMetrics.shares) {
+        totalShares.facebook = Math.max(totalShares.facebook, existingLandingMetrics.shares.facebook || 0);
+        totalShares.linkedin = Math.max(totalShares.linkedin, existingLandingMetrics.shares.linkedin || 0);
+        totalShares.copy = Math.max(totalShares.copy, existingLandingMetrics.shares.copy || 0);
+      }
     }
+
+    // Store metrics under the landing path
+    metricsByPath.set(landingPath, {
+      views: maxViews,
+      comments: maxComments,
+      shares: totalShares,
+    });
   });
 
   // Create article pages - use different templates for series vs standalone articles
@@ -541,10 +580,10 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
       articlePath = `/posts/${article.frontmatter.slug}`;
     }
 
-    // For series articles, track metrics against the first article's path so the
+    // For series articles, track metrics against the series landing page path so the
     // whole series shares a single view/share/comment count.
     const metricsKey = isSeries && article.frontmatter.series?.name
-      ? seriesFirstArticlePath.get(article.frontmatter.series.name) || articlePath
+      ? seriesLandingPath.get(article.frontmatter.series.name) || articlePath
       : articlePath;
 
     // Look up view/comment counts for this article path
@@ -734,7 +773,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
         const totalReadingTime = seriesArticles.reduce((sum, a) => sum + (a.fields?.readingTime || 0), 0);
         tagSeriesMap.set(series.name, {
           name: series.name,
-          slug: `${seriesSlug}/${article.frontmatter.slug}`,
+          slug: seriesSlug,
           description: series.description || article.frontmatter.excerpt,
           featuredImage: series.featuredImage || article.frontmatter.featuredImage || '/images/content/brewing/intro-to-making-mead/series-cover.png',
           publishedAt: article.frontmatter.publishedAt,

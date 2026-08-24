@@ -20,7 +20,7 @@ brewData:
   startDate: '2026-07-22'
   yeast: "Red Star Premier Blanc"
   batchSize: "1 gallon"
-  fermentationTime: "3 weeks"
+  fermentationTime: "22 days"
   secondaryStartDate: '2026-08-13'
   secondaryEndDate: '2026-08-23'
   secondaryTime: "10 days"
@@ -82,7 +82,7 @@ steps:
     image: /images/content/brewing/cherry-mead/final-gravity-reading.jpg
 
   - title: "Transfer to Conditioning"
-    description: "With the cherries removed and the gravity confirmed at 1.000, I racked the mead into a clean conditioning fermenter for 90 days of bulk aging. The color is a deep, deep dark red — so dark it looks almost opaque in the fermenter. It's not cloudy at all, just intensely colored from all the fresh cherries. Hopefully some aging will clarify it a bit, but for now it's a beautiful dark ruby-black. The mead needs time to clear and mature before bottling."
+    description: "With the cherries removed and the gravity confirmed at 1.000, I racked the mead into a clean conditioning fermenter for 90 days of bulk aging. The color is a deep, deep dark red — so dark it looks almost opaque in the fermenter. It's not cloudy at all, just intensely colored from all the fresh cherries. Hopefully some aging will clarify it a bit, but for now it's a beautiful dark ruby-black. The mead needs time to clear and mature before bottling.\n\nThat said, I'm not sure how much this will actually clear up. There was 3 lbs of cherries in this brew and I didn't use any pectic enzyme. Without it to break down the fruit pectin, there's a real chance this mead may remain hazy — there's no guarantee it will clarify at all. Time will tell."
     image: /images/content/brewing/cherry-mead/conditioning-transfer.jpg
 
   - title: "Initial Taste Test"

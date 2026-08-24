@@ -2,7 +2,7 @@
 slug: sodium
 title: "Sodium: The Sweetness Enhancer"
 excerpt: "Sodium enhances perceived sweetness and roundness — but too much ruins a mead. Learn the narrow window where it works."
-featuredImage: /images/content/brewing/mead-water-chemistry/series-cover.jpg
+featuredImage: /images/content/brewing/mead-water-chemistry/sodium/featured.png
 tags:
   - brewing
   - mead

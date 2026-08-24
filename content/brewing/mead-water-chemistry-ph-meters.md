@@ -2,7 +2,7 @@
 slug: ph-meters-and-calibration
 title: "Measuring pH: Meters and Calibration"
 excerpt: "Understanding pH is critical for mead stability. Learn how to use a digital pH meter and why calibration is non-negotiable."
-featuredImage: /images/content/brewing/mead-water-chemistry/series-cover.jpg
+featuredImage: /images/content/brewing/mead-water-chemistry/ph-meters/featured.png
 tags:
   - brewing
   - mead

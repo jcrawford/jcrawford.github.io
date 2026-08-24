@@ -2,7 +2,7 @@
 slug: bicarbonate
 title: "Bicarbonate: The pH Buffer"
 excerpt: "Bicarbonate keeps your must from crashing too acidic during fermentation. Learn how to manage pH stability."
-featuredImage: /images/content/brewing/mead-water-chemistry/series-cover.jpg
+featuredImage: /images/content/brewing/mead-water-chemistry/bicarbonate/featured.png
 tags:
   - brewing
   - mead

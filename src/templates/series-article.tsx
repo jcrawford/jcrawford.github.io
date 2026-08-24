@@ -134,7 +134,7 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData, SeriesArticle
     (a.order || 0) - (b.order || 0)
   );
 
-  const shareUrl = `https://josephcrawford.com/series/${slugifySeriesName(article.series.name)}/${sortedArticles[0]?.slug || article.slug}`;
+  const shareUrl = `https://josephcrawford.com/series/${slugifySeriesName(article.series.name)}/`;
   const shareImage = sortedArticles[0]?.featuredImage || article.featuredImage;
 
   // Find current article index
@@ -429,7 +429,7 @@ export const Head: HeadFC<SeriesArticleData> = ({ data }) => {
       description={displayDescription}
       image={displayImage}
       article={true}
-      pathname={`/series/${slugifySeriesName(seriesName)}/${firstArticle?.slug || frontmatter.slug}`}
+      pathname={`/series/${slugifySeriesName(seriesName)}/`}
       siteMetadata={data.site.siteMetadata}
     />
   );

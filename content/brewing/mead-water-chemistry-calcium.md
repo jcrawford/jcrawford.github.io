@@ -2,7 +2,7 @@
 slug: calcium
 title: "Calcium: The Backbone Ion"
 excerpt: "Calcium drives yeast health, clarity, and structural mouthfeel. Learn when and how to add it to your mead must."
-featuredImage: /images/content/brewing/mead-water-chemistry/series-cover.jpg
+featuredImage: /images/content/brewing/mead-water-chemistry/calcium/featured.png
 tags:
   - brewing
   - mead

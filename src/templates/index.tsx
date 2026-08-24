@@ -6,6 +6,7 @@ import EmptyFeaturedState from '../components/EmptyFeaturedState';
 import ArticleCard from '../components/ArticleCard';
 import Sidebar from '../components/Sidebar';
 import SEO from '../components/SEO';
+import { slugifySeriesName } from '../utils/articlePath';
 import '../styles/empty-featured.css';
 
 interface ArticleFrontmatter {
@@ -109,7 +110,7 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
         ...firstArticle,
         frontmatter: {
           ...firstArticle.frontmatter,
-          slug: firstArticle.frontmatter.slug,
+          slug: slugifySeriesName(seriesName),
           title: seriesName,
           excerpt: firstArticle.frontmatter.series?.description || `A comprehensive series covering ${seriesName.toLowerCase()}.`,
           featuredImage: firstArticle.frontmatter.series?.featuredImage || firstArticle.frontmatter.featuredImage || `/images/content/brewing/intro-to-making-mead/series-cover.png`,
@@ -127,6 +128,7 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
   // Ensure we have data to map
   const featuredArticles = latestArticles.length > 0 ? latestArticles.slice(0, Math.min(5, latestArticles.length)).map(article => {
     const mappedArticle = mapArticleForSlider(article, articles);
+    const isSeries = !!mappedArticle.frontmatter.series?.name;
     return {
       slug: mappedArticle.frontmatter.slug,
       title: mappedArticle.frontmatter.title,
@@ -136,14 +138,17 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
       type: mappedArticle.frontmatter.type,
       publishedAt: mappedArticle.frontmatter.publishedAt,
       readingTime: mappedArticle.fields?.readingTime || 0,
-      isSeries: !!mappedArticle.frontmatter.series?.name,
-      seriesName: mappedArticle.frontmatter.series?.name,
+      isSeries,
+      // Don't pass seriesName for series cards — the slug is already the
+      // series slug, and getArticlePath produces /series/{slug} (landing page)
+      seriesName: isSeries ? undefined : mappedArticle.frontmatter.series?.name,
       isDraft: !!mappedArticle.frontmatter.draft,
     };
   }) : [];
   
   const highlightedArticles = latestArticles.length > 5 ? latestArticles.slice(5, 7).map(article => {
     const mappedArticle = mapArticleForSlider(article, articles);
+    const isSeries = !!mappedArticle.frontmatter.series?.name;
     return {
       slug: mappedArticle.frontmatter.slug,
       title: mappedArticle.frontmatter.title,
@@ -153,8 +158,8 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
       type: mappedArticle.frontmatter.type,
       publishedAt: mappedArticle.frontmatter.publishedAt,
       readingTime: mappedArticle.fields?.readingTime || 0,
-      isSeries: !!mappedArticle.frontmatter.series?.name,
-      seriesName: mappedArticle.frontmatter.series?.name,
+      isSeries,
+      seriesName: isSeries ? undefined : mappedArticle.frontmatter.series?.name,
       isDraft: !!mappedArticle.frontmatter.draft,
     };
   }) : [];
@@ -186,7 +191,9 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
         <div className="hm-content-sidebar-wrap">
           <main className="hm-primary-content">
             <div className="hm-article-grid">
-              {recentArticles.map((article) => (
+              {recentArticles.map((article) => {
+                const isSeries = !!article.frontmatter.series?.name;
+                return (
                 <ArticleCard
                   key={article.id}
                   slug={article.frontmatter.slug}
@@ -196,12 +203,13 @@ const IndexPage: React.FC<PageProps<IndexPageData>> = ({ data }) => {
                   tags={article.frontmatter.tags || []}
                   publishedAt={article.frontmatter.publishedAt}
                   readingTime={article.fields?.readingTime || 0}
-                  isSeries={!!article.frontmatter.series?.name}
-                  seriesName={article.frontmatter.series?.name}
+                  isSeries={isSeries}
+                  seriesName={isSeries ? undefined : article.frontmatter.series?.name}
                   rating={article.frontmatter.rating ?? article.frontmatter.review?.rating}
                   isDraft={!!article.frontmatter.draft}
                 />
-              ))}
+                );
+              })}
             </div>
           </main>
           <aside className="hm-sidebar-desktop">

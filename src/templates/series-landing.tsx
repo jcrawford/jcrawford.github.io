@@ -4,6 +4,8 @@ import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import OptimizedImage from '../components/OptimizedImage';
 import DraftBadge from '../components/DraftBadge';
+import ShareButtons from '../components/ShareButtons';
+import { EyeIcon } from '../utils/icons';
 import { formatDate } from '../utils/dateUtils';
 import '../styles/series-landing.css';
 
@@ -60,7 +62,9 @@ const SeriesLandingTemplate: React.FC<PageProps<SeriesLandingData, SeriesLanding
     return orderA - orderB;
   });
   const totalReadingTime = sortedArticles.reduce((sum, a) => sum + (a.fields?.readingTime || 0), 0);
-  const { seriesName, seriesSlug, description, featuredImage } = pageContext;
+  const { seriesName, seriesSlug, description, featuredImage, viewCount, shareCounts } = pageContext;
+  const shareUrl = `https://josephcrawford.com/series/${seriesSlug}/`;
+  const shareCountsData = shareCounts || { facebook: 0, linkedin: 0, copy: 0 };
 
   return (
     <Layout>
@@ -85,9 +89,26 @@ const SeriesLandingTemplate: React.FC<PageProps<SeriesLandingData, SeriesLanding
                 <span className="series-landing-stat-value">{totalReadingTime}</span>
                 <span className="series-landing-stat-label">Min Total</span>
               </div>
+              <div className="series-landing-stat-divider" />
+              <div className="series-landing-stat">
+                <span className="series-landing-stat-value series-landing-stat-views">
+                  <EyeIcon size={18} />
+                  {(viewCount || 0).toLocaleString()}
+                </span>
+                <span className="series-landing-stat-label">Views</span>
+              </div>
             </div>
           </div>
         </header>
+
+        {/* Share buttons */}
+        <div className="series-landing-share">
+          <ShareButtons
+            title={seriesName}
+            url={shareUrl}
+            shareCounts={shareCountsData}
+          />
+        </div>
 
         {/* Intro description + divider */}
         <div className="series-landing-intro">

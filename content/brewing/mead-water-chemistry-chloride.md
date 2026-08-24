@@ -2,7 +2,7 @@
 slug: chloride
 title: "Chloride: Fullness and Roundness"
 excerpt: "Chloride adds body, sweetness perception, and a soft mouthfeel. Learn how to use it for full-bodied meads."
-featuredImage: /images/content/brewing/mead-water-chemistry/series-cover.jpg
+featuredImage: /images/content/brewing/mead-water-chemistry/chloride/featured.png
 tags:
   - brewing
   - mead

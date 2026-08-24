@@ -2,7 +2,7 @@
 slug: mead-ingredients
 title: "Mead Ingredients"
 excerpt: "The building blocks of mead: honey, yeast, water, and the additions that turn a simple ferment into something colorful and complex."
-featuredImage: /images/content/brewing/intro-to-making-mead/mead-ingredients/featured.jpg
+featuredImage: /images/content/brewing/intro-to-making-mead/mead-ingredients/featured.png
 tags:
   - brewing
   - mead

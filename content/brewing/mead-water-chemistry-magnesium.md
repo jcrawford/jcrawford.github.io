@@ -2,7 +2,7 @@
 slug: magnesium
 title: "Magnesium: The Quiet Enabler"
 excerpt: "Magnesium is essential for yeast metabolism in small doses. Learn how to use it without overdoing it."
-featuredImage: /images/content/brewing/mead-water-chemistry/series-cover.jpg
+featuredImage: /images/content/brewing/mead-water-chemistry/magnesium/featured.png
 tags:
   - brewing
   - mead

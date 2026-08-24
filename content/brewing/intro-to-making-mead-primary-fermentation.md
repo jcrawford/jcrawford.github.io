@@ -2,7 +2,7 @@
 slug: primary-fermentation
 title: "Primary Fermentation"
 excerpt: "What happens during primary fermentation, when to add fruit or other additions, and how to know the yeast are actually finished before moving on."
-featuredImage: /images/content/brewing/intro-to-making-mead/series-cover.jpg
+featuredImage: /images/content/brewing/intro-to-making-mead/primary-fermentation/featured.png
 tags:
   - brewing
   - mead
