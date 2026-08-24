@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-24T13:15:19.501Z",
+  "generatedAt": "2026-08-24T19:01:18.349Z",
   "windowDays": 30,
   "entries": [
     {
       "id": "/brewing/cherry-mead",
-      "views": 144,
+      "views": 150,
       "comments": 0,
-      "score": 144,
+      "score": 150,
       "shares": {
         "facebook": 1,
         "linkedin": 1,
@@ -70,9 +70,20 @@
     },
     {
       "id": "/series/intro-to-making-mead/types-of-mead",
-      "views": 27,
+      "views": 28,
       "comments": 0,
-      "score": 27,
+      "score": 28,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/series/intro-to-making-mead",
+      "views": 17,
+      "comments": 0,
+      "score": 17,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -146,10 +157,10 @@
       }
     },
     {
-      "id": "/brewing/bottling-day",
-      "views": 8,
+      "id": "/series/intro-to-making-mead/preparing-your-must",
+      "views": 9,
       "comments": 0,
-      "score": 8,
+      "score": 9,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -157,7 +168,7 @@
       }
     },
     {
-      "id": "/series/intro-to-making-mead",
+      "id": "/brewing/bottling-day",
       "views": 8,
       "comments": 0,
       "score": 8,
@@ -180,17 +191,6 @@
     },
     {
       "id": "/series/intro-to-making-mead/equipment",
-      "views": 7,
-      "comments": 0,
-      "score": 7,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/series/intro-to-making-mead/preparing-your-must",
       "views": 7,
       "comments": 0,
       "score": 7,
@@ -245,6 +245,17 @@
       }
     },
     {
+      "id": "/series/intro-to-making-mead/mead-ingredients",
+      "views": 5,
+      "comments": 0,
+      "score": 5,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/posts/lebanon-valley-speedway-2026",
       "views": 4,
       "comments": 0,
@@ -257,17 +268,6 @@
     },
     {
       "id": "/posts/saferide-health",
-      "views": 4,
-      "comments": 0,
-      "score": 4,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/voyager-keyboard",
       "views": 4,
       "comments": 0,
       "score": 4,
