@@ -1,38 +1,27 @@
 {
-  "generatedAt": "2026-08-24T01:59:32.606Z",
+  "generatedAt": "2026-08-24T07:30:27.028Z",
   "windowDays": 30,
   "entries": [
     {
       "id": "/brewing/cherry-mead",
-      "views": 163,
+      "views": 144,
       "comments": 0,
-      "score": 163,
+      "score": 144,
       "shares": {
-        "facebook": 5,
+        "facebook": 1,
         "linkedin": 1,
         "copy": 1
       }
     },
     {
       "id": "/reviews/budget-auto-rental-process-review",
-      "views": 87,
+      "views": 85,
       "comments": 0,
-      "score": 87,
+      "score": 85,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
         "copy": 0
-      }
-    },
-    {
-      "id": "/brewing/strawberry-wine",
-      "views": 57,
-      "comments": 0,
-      "score": 57,
-      "shares": {
-        "facebook": 8,
-        "linkedin": 1,
-        "copy": 1
       }
     },
     {
@@ -69,21 +58,21 @@
       }
     },
     {
+      "id": "/brewing/strawberry-wine",
+      "views": 30,
+      "comments": 0,
+      "score": 30,
+      "shares": {
+        "facebook": 1,
+        "linkedin": 1,
+        "copy": 1
+      }
+    },
+    {
       "id": "/series/intro-to-making-mead/types-of-mead",
       "views": 27,
       "comments": 0,
       "score": 27,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/posts/home-brewing-journey",
-      "views": 18,
-      "comments": 0,
-      "score": 18,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -139,17 +128,6 @@
       "views": 10,
       "comments": 0,
       "score": 10,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/brewing/home-brewing-journey",
-      "views": 9,
-      "comments": 0,
-      "score": 9,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -268,6 +246,28 @@
     },
     {
       "id": "/posts/lebanon-valley-speedway-2026",
+      "views": 4,
+      "comments": 0,
+      "score": 4,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/saferide-health",
+      "views": 4,
+      "comments": 0,
+      "score": 4,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/voyager-keyboard",
       "views": 4,
       "comments": 0,
       "score": 4,
