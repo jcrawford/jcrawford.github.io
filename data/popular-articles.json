@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-25T14:15:51.602Z",
+  "generatedAt": "2026-08-25T20:29:31.401Z",
   "windowDays": 30,
   "entries": [
     {
       "id": "/brewing/cherry-mead",
-      "views": 149,
+      "views": 157,
       "comments": 0,
-      "score": 149,
+      "score": 157,
       "shares": {
         "facebook": 1,
         "linkedin": 1,
@@ -25,6 +25,17 @@
       }
     },
     {
+      "id": "/series/mead-water-chemistry/water-chemistry-basics",
+      "views": 37,
+      "comments": 0,
+      "score": 37,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/brewing/blackberry-mead",
       "views": 37,
       "comments": 0,
@@ -36,10 +47,10 @@
       }
     },
     {
-      "id": "/series/mead-water-chemistry/water-chemistry-basics",
-      "views": 32,
+      "id": "/series/intro-to-making-mead",
+      "views": 34,
       "comments": 0,
-      "score": 32,
+      "score": 34,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -70,9 +81,9 @@
     },
     {
       "id": "/series/intro-to-making-mead/types-of-mead",
-      "views": 28,
+      "views": 29,
       "comments": 0,
-      "score": 28,
+      "score": 29,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -80,10 +91,10 @@
       }
     },
     {
-      "id": "/series/intro-to-making-mead",
-      "views": 19,
+      "id": "/series/mead-water-chemistry",
+      "views": 16,
       "comments": 0,
-      "score": 19,
+      "score": 16,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -179,6 +190,17 @@
       }
     },
     {
+      "id": "/series/mead-water-chemistry/finding-your-water-report",
+      "views": 8,
+      "comments": 0,
+      "score": 8,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/series/intro-to-making-mead/cleaning-and-sanitization",
       "views": 7,
       "comments": 0,
@@ -223,6 +245,17 @@
       }
     },
     {
+      "id": "/posts/saferide-health",
+      "views": 5,
+      "comments": 0,
+      "score": 5,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/reviews/benq-rd320ua-monitor-review",
       "views": 5,
       "comments": 0,
@@ -238,39 +271,6 @@
       "views": 5,
       "comments": 0,
       "score": 5,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/series/mead-water-chemistry",
-      "views": 5,
-      "comments": 0,
-      "score": 5,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/posts/lebanon-valley-speedway-2026",
-      "views": 4,
-      "comments": 0,
-      "score": 4,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/posts/saferide-health",
-      "views": 4,
-      "comments": 0,
-      "score": 4,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
