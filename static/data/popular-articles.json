@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-25T01:54:15.723Z",
+  "generatedAt": "2026-08-25T07:09:46.130Z",
   "windowDays": 30,
   "entries": [
     {
       "id": "/brewing/cherry-mead",
-      "views": 150,
+      "views": 149,
       "comments": 0,
-      "score": 150,
+      "score": 149,
       "shares": {
         "facebook": 1,
         "linkedin": 1,
@@ -212,17 +212,6 @@
       }
     },
     {
-      "id": "/posts/grok-4-5-cursor-first-impressions",
-      "views": 6,
-      "comments": 0,
-      "score": 6,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
       "id": "/reviews/fried-chicken-ice-cream-review",
       "views": 6,
       "comments": 0,
@@ -268,6 +257,17 @@
     },
     {
       "id": "/posts/saferide-health",
+      "views": 4,
+      "comments": 0,
+      "score": 4,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/voyager-keyboard",
       "views": 4,
       "comments": 0,
       "score": 4,
