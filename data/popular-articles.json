@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T13:11:41.968Z",
+  "generatedAt": "2026-08-25T14:15:51.602Z",
   "windowDays": 30,
   "entries": [
     {
@@ -36,10 +36,10 @@
       }
     },
     {
-      "id": "/reviews/clickfunnels-review",
-      "views": 31,
+      "id": "/series/mead-water-chemistry/water-chemistry-basics",
+      "views": 32,
       "comments": 0,
-      "score": 31,
+      "score": 32,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -47,7 +47,7 @@
       }
     },
     {
-      "id": "/series/mead-water-chemistry/water-chemistry-basics",
+      "id": "/reviews/clickfunnels-review",
       "views": 31,
       "comments": 0,
       "score": 31,
@@ -81,9 +81,9 @@
     },
     {
       "id": "/series/intro-to-making-mead",
-      "views": 17,
+      "views": 19,
       "comments": 0,
-      "score": 17,
+      "score": 19,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -245,6 +245,17 @@
       }
     },
     {
+      "id": "/series/mead-water-chemistry",
+      "views": 5,
+      "comments": 0,
+      "score": 5,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/posts/lebanon-valley-speedway-2026",
       "views": 4,
       "comments": 0,
@@ -257,17 +268,6 @@
     },
     {
       "id": "/posts/saferide-health",
-      "views": 4,
-      "comments": 0,
-      "score": 4,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/voyager-keyboard",
       "views": 4,
       "comments": 0,
       "score": 4,
