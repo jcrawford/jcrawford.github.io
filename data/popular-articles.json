@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T20:29:31.401Z",
+  "generatedAt": "2026-08-26T19:07:19.150Z",
   "windowDays": 30,
   "entries": [
     {
@@ -234,7 +234,7 @@
       }
     },
     {
-      "id": "/reviews/fried-chicken-ice-cream-review",
+      "id": "/posts/saferide-health",
       "views": 6,
       "comments": 0,
       "score": 6,
@@ -245,10 +245,10 @@
       }
     },
     {
-      "id": "/posts/saferide-health",
-      "views": 5,
+      "id": "/reviews/fried-chicken-ice-cream-review",
+      "views": 6,
       "comments": 0,
-      "score": 5,
+      "score": 6,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
