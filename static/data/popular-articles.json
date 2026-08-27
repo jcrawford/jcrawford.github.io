@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27T09:51:56.391Z",
+  "generatedAt": "2026-08-27T20:54:41.834Z",
   "windowDays": 30,
   "entries": [
     {
@@ -48,9 +48,9 @@
     },
     {
       "id": "/series/intro-to-making-mead",
-      "views": 34,
+      "views": 35,
       "comments": 0,
-      "score": 34,
+      "score": 35,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -256,7 +256,7 @@
       }
     },
     {
-      "id": "/series/intro-to-making-mead/mead-ingredients",
+      "id": "/reviews/voyager-keyboard",
       "views": 5,
       "comments": 0,
       "score": 5,
@@ -267,7 +267,7 @@
       }
     },
     {
-      "id": "/series/mead-water-chemistry/building-your-water-profile",
+      "id": "/series/intro-to-making-mead/mead-ingredients",
       "views": 5,
       "comments": 0,
       "score": 5,
