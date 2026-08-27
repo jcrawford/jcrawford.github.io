@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-26T20:04:49.465Z",
+  "generatedAt": "2026-08-27T09:51:56.391Z",
   "windowDays": 30,
   "entries": [
     {
       "id": "/brewing/cherry-mead",
-      "views": 157,
+      "views": 144,
       "comments": 0,
-      "score": 157,
+      "score": 144,
       "shares": {
         "facebook": 1,
         "linkedin": 1,
@@ -69,17 +69,6 @@
       }
     },
     {
-      "id": "/brewing/strawberry-wine",
-      "views": 30,
-      "comments": 0,
-      "score": 30,
-      "shares": {
-        "facebook": 1,
-        "linkedin": 1,
-        "copy": 1
-      }
-    },
-    {
       "id": "/series/intro-to-making-mead/types-of-mead",
       "views": 29,
       "comments": 0,
@@ -102,10 +91,21 @@
       }
     },
     {
-      "id": "/reviews/total-typescript-pro-complete-review",
-      "views": 14,
+      "id": "/brewing/strawberry-wine",
+      "views": 16,
       "comments": 0,
-      "score": 14,
+      "score": 16,
+      "shares": {
+        "facebook": 1,
+        "linkedin": 1,
+        "copy": 1
+      }
+    },
+    {
+      "id": "/reviews/total-typescript-pro-complete-review",
+      "views": 13,
+      "comments": 0,
+      "score": 13,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -119,17 +119,6 @@
       "score": 12,
       "shares": {
         "facebook": 5,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/posts/disney-vacation-2026",
-      "views": 10,
-      "comments": 0,
-      "score": 10,
-      "shares": {
-        "facebook": 0,
         "linkedin": 0,
         "copy": 0
       }
@@ -158,6 +147,17 @@
     },
     {
       "id": "/brewing/small-batch-brewing-required-tools",
+      "views": 9,
+      "comments": 0,
+      "score": 9,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/disney-vacation-2026",
       "views": 9,
       "comments": 0,
       "score": 9,
@@ -256,7 +256,7 @@
       }
     },
     {
-      "id": "/reviews/benq-rd320ua-monitor-review",
+      "id": "/series/intro-to-making-mead/mead-ingredients",
       "views": 5,
       "comments": 0,
       "score": 5,
@@ -267,7 +267,7 @@
       }
     },
     {
-      "id": "/series/intro-to-making-mead/mead-ingredients",
+      "id": "/series/mead-water-chemistry/building-your-water-profile",
       "views": 5,
       "comments": 0,
       "score": 5,
