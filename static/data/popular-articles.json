@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-28T11:26:18.728Z",
+  "generatedAt": "2026-08-28T21:39:53.870Z",
   "windowDays": 30,
   "entries": [
     {
@@ -25,23 +25,23 @@
       }
     },
     {
+      "id": "/brewing/blackberry-mead",
+      "views": 41,
+      "comments": 0,
+      "score": 41,
+      "shares": {
+        "facebook": 1,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/series/mead-water-chemistry/water-chemistry-basics",
       "views": 37,
       "comments": 0,
       "score": 37,
       "shares": {
         "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/brewing/blackberry-mead",
-      "views": 37,
-      "comments": 0,
-      "score": 37,
-      "shares": {
-        "facebook": 1,
         "linkedin": 0,
         "copy": 0
       }
@@ -59,9 +59,9 @@
     },
     {
       "id": "/reviews/clickfunnels-review",
-      "views": 31,
+      "views": 33,
       "comments": 0,
-      "score": 31,
+      "score": 33,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -99,6 +99,17 @@
         "facebook": 1,
         "linkedin": 1,
         "copy": 1
+      }
+    },
+    {
+      "id": "/posts/saferide-health",
+      "views": 13,
+      "comments": 0,
+      "score": 13,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
       }
     },
     {
@@ -216,17 +227,6 @@
       "views": 7,
       "comments": 0,
       "score": 7,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/posts/saferide-health",
-      "views": 6,
-      "comments": 0,
-      "score": 6,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
