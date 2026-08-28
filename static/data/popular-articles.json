@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27T22:18:28.649Z",
+  "generatedAt": "2026-08-28T11:26:18.728Z",
   "windowDays": 30,
   "entries": [
     {
@@ -102,23 +102,23 @@
       }
     },
     {
-      "id": "/reviews/total-typescript-pro-complete-review",
-      "views": 13,
-      "comments": 0,
-      "score": 13,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
       "id": "/reviews/plaato-airlock-review",
       "views": 12,
       "comments": 0,
       "score": 12,
       "shares": {
         "facebook": 5,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/total-typescript-pro-complete-review",
+      "views": 11,
+      "comments": 0,
+      "score": 11,
+      "shares": {
+        "facebook": 0,
         "linkedin": 0,
         "copy": 0
       }
@@ -139,28 +139,6 @@
       "views": 10,
       "comments": 0,
       "score": 10,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/brewing/small-batch-brewing-required-tools",
-      "views": 9,
-      "comments": 0,
-      "score": 9,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/posts/disney-vacation-2026",
-      "views": 9,
-      "comments": 0,
-      "score": 9,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -194,6 +172,17 @@
       "views": 8,
       "comments": 0,
       "score": 8,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/brewing/small-batch-brewing-required-tools",
+      "views": 7,
+      "comments": 0,
+      "score": 7,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -256,7 +245,7 @@
       }
     },
     {
-      "id": "/reviews/voyager-keyboard",
+      "id": "/series/intro-to-making-mead/mead-ingredients",
       "views": 5,
       "comments": 0,
       "score": 5,
@@ -267,10 +256,21 @@
       }
     },
     {
-      "id": "/series/intro-to-making-mead/mead-ingredients",
+      "id": "/series/mead-water-chemistry/building-your-water-profile",
       "views": 5,
       "comments": 0,
       "score": 5,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/lebanon-valley-speedway-2026",
+      "views": 4,
+      "comments": 0,
+      "score": 4,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
