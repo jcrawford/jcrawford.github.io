@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-30T05:26:43.921Z",
+  "generatedAt": "2026-08-30T11:57:05.707Z",
   "windowDays": 30,
   "entries": [
     {
@@ -168,7 +168,7 @@
       }
     },
     {
-      "id": "/series/mead-water-chemistry/finding-your-water-report",
+      "id": "/reviews/fried-chicken-ice-cream-review",
       "views": 8,
       "comments": 0,
       "score": 8,
@@ -179,10 +179,10 @@
       }
     },
     {
-      "id": "/reviews/fried-chicken-ice-cream-review",
-      "views": 7,
+      "id": "/series/mead-water-chemistry/finding-your-water-report",
+      "views": 8,
       "comments": 0,
-      "score": 7,
+      "score": 8,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
