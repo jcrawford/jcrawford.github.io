@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-08-29T20:57:51.807Z",
+  "generatedAt": "2026-08-30T05:26:43.921Z",
   "windowDays": 30,
   "entries": [
     {
       "id": "/brewing/cherry-mead",
-      "views": 144,
+      "views": 117,
       "comments": 0,
-      "score": 144,
+      "score": 117,
       "shares": {
-        "facebook": 1,
-        "linkedin": 1,
-        "copy": 1
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
       }
     },
     {
       "id": "/reviews/budget-auto-rental-process-review",
-      "views": 85,
+      "views": 83,
       "comments": 0,
-      "score": 85,
+      "score": 83,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -91,17 +91,6 @@
       }
     },
     {
-      "id": "/brewing/strawberry-wine",
-      "views": 16,
-      "comments": 0,
-      "score": 16,
-      "shares": {
-        "facebook": 1,
-        "linkedin": 1,
-        "copy": 1
-      }
-    },
-    {
       "id": "/posts/saferide-health",
       "views": 15,
       "comments": 0,
@@ -124,17 +113,6 @@
       }
     },
     {
-      "id": "/reviews/total-typescript-pro-complete-review",
-      "views": 11,
-      "comments": 0,
-      "score": 11,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
       "id": "/reviews/null",
       "views": 10,
       "comments": 0,
@@ -147,6 +125,17 @@
     },
     {
       "id": "/reviews/tilt-hydrometer-review",
+      "views": 10,
+      "comments": 0,
+      "score": 10,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/total-typescript-pro-complete-review",
       "views": 10,
       "comments": 0,
       "score": 10,
@@ -190,6 +179,17 @@
       }
     },
     {
+      "id": "/reviews/fried-chicken-ice-cream-review",
+      "views": 7,
+      "comments": 0,
+      "score": 7,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/series/intro-to-making-mead/cleaning-and-sanitization",
       "views": 7,
       "comments": 0,
@@ -212,7 +212,7 @@
       }
     },
     {
-      "id": "/reviews/fried-chicken-ice-cream-review",
+      "id": "/brewing/strawberry-wine",
       "views": 6,
       "comments": 0,
       "score": 6,
