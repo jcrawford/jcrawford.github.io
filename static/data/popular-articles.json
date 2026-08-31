@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-30T21:08:41.403Z",
+  "generatedAt": "2026-08-31T05:38:07.826Z",
   "windowDays": 30,
   "entries": [
     {
       "id": "/brewing/cherry-mead",
-      "views": 117,
+      "views": 114,
       "comments": 0,
-      "score": 117,
+      "score": 114,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -256,7 +256,7 @@
       }
     },
     {
-      "id": "/posts/things-you-didnt-know-about-mysql-indexes",
+      "id": "/posts/voyager-keyboard",
       "views": 4,
       "comments": 0,
       "score": 4,
@@ -267,7 +267,7 @@
       }
     },
     {
-      "id": "/posts/voyager-keyboard",
+      "id": "/reviews/patrick-adair-designs-review",
       "views": 4,
       "comments": 0,
       "score": 4,
