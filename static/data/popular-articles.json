@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T21:04:51.912Z",
+  "generatedAt": "2026-09-02T04:37:14.786Z",
   "windowDays": 30,
   "entries": [
     {
@@ -81,9 +81,9 @@
     },
     {
       "id": "/posts/saferide-health",
-      "views": 17,
+      "views": 18,
       "comments": 0,
-      "score": 17,
+      "score": 18,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -108,6 +108,17 @@
       "score": 12,
       "shares": {
         "facebook": 5,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/fried-chicken-ice-cream-review",
+      "views": 10,
+      "comments": 0,
+      "score": 10,
+      "shares": {
+        "facebook": 0,
         "linkedin": 0,
         "copy": 0
       }
@@ -158,17 +169,6 @@
     },
     {
       "id": "/brewing/bottling-day",
-      "views": 8,
-      "comments": 0,
-      "score": 8,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/fried-chicken-ice-cream-review",
       "views": 8,
       "comments": 0,
       "score": 8,
