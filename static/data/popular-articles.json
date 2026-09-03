@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-02T21:06:18.689Z",
+  "generatedAt": "2026-09-03T04:36:21.742Z",
   "windowDays": 30,
   "entries": [
     {
       "id": "/brewing/cherry-mead",
-      "views": 114,
+      "views": 84,
       "comments": 0,
-      "score": 114,
+      "score": 84,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -20,17 +20,6 @@
       "score": 83,
       "shares": {
         "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/brewing/blackberry-mead",
-      "views": 41,
-      "comments": 0,
-      "score": 41,
-      "shares": {
-        "facebook": 1,
         "linkedin": 0,
         "copy": 0
       }
@@ -202,6 +191,17 @@
     },
     {
       "id": "/series/intro-to-making-mead/equipment",
+      "views": 7,
+      "comments": 0,
+      "score": 7,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/brewing/blackberry-mead",
       "views": 7,
       "comments": 0,
       "score": 7,
