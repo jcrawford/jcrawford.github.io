@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-03T21:04:23.342Z",
+  "generatedAt": "2026-09-04T04:37:43.196Z",
   "windowDays": 30,
   "entries": [
     {
       "id": "/brewing/cherry-mead",
-      "views": 84,
+      "views": 85,
       "comments": 0,
-      "score": 84,
+      "score": 85,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -91,40 +91,7 @@
       }
     },
     {
-      "id": "/reviews/plaato-airlock-review",
-      "views": 12,
-      "comments": 0,
-      "score": 12,
-      "shares": {
-        "facebook": 5,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
       "id": "/reviews/fried-chicken-ice-cream-review",
-      "views": 11,
-      "comments": 0,
-      "score": 11,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/null",
-      "views": 10,
-      "comments": 0,
-      "score": 10,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/tilt-hydrometer-review",
       "views": 10,
       "comments": 0,
       "score": 10,
@@ -136,9 +103,9 @@
     },
     {
       "id": "/reviews/total-typescript-pro-complete-review",
-      "views": 10,
+      "views": 9,
       "comments": 0,
-      "score": 10,
+      "score": 9,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -150,17 +117,6 @@
       "views": 9,
       "comments": 0,
       "score": 9,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/brewing/bottling-day",
-      "views": 8,
-      "comments": 0,
-      "score": 8,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -212,6 +168,17 @@
       }
     },
     {
+      "id": "/brewing/dandelion-mead",
+      "views": 6,
+      "comments": 0,
+      "score": 6,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/brewing/strawberry-wine",
       "views": 6,
       "comments": 0,
@@ -245,6 +212,17 @@
       }
     },
     {
+      "id": "/brewing/bottling-day",
+      "views": 4,
+      "comments": 0,
+      "score": 4,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/posts/lebanon-valley-speedway-2026",
       "views": 4,
       "comments": 0,
@@ -268,6 +246,28 @@
     },
     {
       "id": "/reviews/patrick-adair-designs-review",
+      "views": 4,
+      "comments": 0,
+      "score": 4,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/voyager-keyboard",
+      "views": 4,
+      "comments": 0,
+      "score": 4,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/series/intro-to-making-mead/back-sweetening",
       "views": 4,
       "comments": 0,
       "score": 4,
