@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-08-26T19:07:19.150Z",
+  "generatedAt": "2026-09-06T18:16:28.215Z",
   "windowDays": 30,
   "entries": [
     {
       "id": "/brewing/cherry-mead",
-      "views": 157,
+      "views": 90,
       "comments": 0,
-      "score": 157,
+      "score": 90,
       "shares": {
-        "facebook": 1,
-        "linkedin": 1,
-        "copy": 1
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
       }
     },
     {
       "id": "/reviews/budget-auto-rental-process-review",
-      "views": 85,
+      "views": 83,
       "comments": 0,
-      "score": 85,
+      "score": 83,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -36,21 +36,10 @@
       }
     },
     {
-      "id": "/brewing/blackberry-mead",
-      "views": 37,
-      "comments": 0,
-      "score": 37,
-      "shares": {
-        "facebook": 1,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
       "id": "/series/intro-to-making-mead",
-      "views": 34,
+      "views": 35,
       "comments": 0,
-      "score": 34,
+      "score": 35,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -59,9 +48,9 @@
     },
     {
       "id": "/reviews/clickfunnels-review",
-      "views": 31,
+      "views": 33,
       "comments": 0,
-      "score": 31,
+      "score": 33,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -69,21 +58,21 @@
       }
     },
     {
-      "id": "/brewing/strawberry-wine",
-      "views": 30,
-      "comments": 0,
-      "score": 30,
-      "shares": {
-        "facebook": 1,
-        "linkedin": 1,
-        "copy": 1
-      }
-    },
-    {
       "id": "/series/intro-to-making-mead/types-of-mead",
       "views": 29,
       "comments": 0,
       "score": 29,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/saferide-health",
+      "views": 17,
+      "comments": 0,
+      "score": 17,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -102,62 +91,18 @@
       }
     },
     {
+      "id": "/reviews/fried-chicken-ice-cream-review",
+      "views": 10,
+      "comments": 0,
+      "score": 10,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/reviews/total-typescript-pro-complete-review",
-      "views": 14,
-      "comments": 0,
-      "score": 14,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/plaato-airlock-review",
-      "views": 12,
-      "comments": 0,
-      "score": 12,
-      "shares": {
-        "facebook": 5,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/posts/disney-vacation-2026",
-      "views": 10,
-      "comments": 0,
-      "score": 10,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/null",
-      "views": 10,
-      "comments": 0,
-      "score": 10,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/tilt-hydrometer-review",
-      "views": 10,
-      "comments": 0,
-      "score": 10,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/brewing/small-batch-brewing-required-tools",
       "views": 9,
       "comments": 0,
       "score": 9,
@@ -172,17 +117,6 @@
       "views": 9,
       "comments": 0,
       "score": 9,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/brewing/bottling-day",
-      "views": 8,
-      "comments": 0,
-      "score": 8,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -223,7 +157,7 @@
       }
     },
     {
-      "id": "/brewing/dandelion-mead",
+      "id": "/brewing/blackberry-mead",
       "views": 7,
       "comments": 0,
       "score": 7,
@@ -234,7 +168,7 @@
       }
     },
     {
-      "id": "/posts/saferide-health",
+      "id": "/posts/lebanon-valley-speedway-2026",
       "views": 6,
       "comments": 0,
       "score": 6,
@@ -245,7 +179,7 @@
       }
     },
     {
-      "id": "/reviews/fried-chicken-ice-cream-review",
+      "id": "/brewing/dandelion-mead",
       "views": 6,
       "comments": 0,
       "score": 6,
@@ -256,7 +190,18 @@
       }
     },
     {
-      "id": "/reviews/benq-rd320ua-monitor-review",
+      "id": "/brewing/strawberry-wine",
+      "views": 6,
+      "comments": 0,
+      "score": 6,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/long-running-ai-agents-adk",
       "views": 5,
       "comments": 0,
       "score": 5,
@@ -271,6 +216,61 @@
       "views": 5,
       "comments": 0,
       "score": 5,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/series/mead-water-chemistry/building-your-water-profile",
+      "views": 5,
+      "comments": 0,
+      "score": 5,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/brewing/bottling-day",
+      "views": 4,
+      "comments": 0,
+      "score": 4,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/voyager-keyboard",
+      "views": 4,
+      "comments": 0,
+      "score": 4,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/patrick-adair-designs-review",
+      "views": 4,
+      "comments": 0,
+      "score": 4,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/series/intro-to-making-mead/back-sweetening",
+      "views": 4,
+      "comments": 0,
+      "score": 4,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
