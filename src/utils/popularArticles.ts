@@ -13,12 +13,11 @@ export interface PopularArticleEntry {
 }
 
 export const POPULAR_ARTICLES_STORAGE_KEY = 'hm-popular-articles';
-const DAYS_TO_TRACK = 30;
 const COMMENT_WEIGHT = 25;
 
 interface StoredPopularArticles {
   generatedAt: string;
-  windowDays: number;
+  windowDays: number | string;
   entries: PopularArticleEntry[];
 }
 
@@ -55,11 +54,11 @@ export function buildPopularArticlesPayload(metrics: PopularArticleMetrics[]): s
 
   return JSON.stringify({
     generatedAt: new Date().toISOString(),
-    windowDays: DAYS_TO_TRACK,
+    windowDays: 'lifetime',
     entries,
   });
 }
 
-export function getPopularArticlesWindowDays(): number {
-  return DAYS_TO_TRACK;
+export function getPopularArticlesWindowDays(): number | string {
+  return 'lifetime';
 }

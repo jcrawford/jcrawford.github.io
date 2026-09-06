@@ -10,7 +10,7 @@ const crypto = require('crypto');
 const SITE_URL = 'https://josephcrawford.com';
 const OUTPUT_PATH = path.resolve(__dirname, '../static/data/popular-articles.json');
 const PHOTO_VIEWS_PATH = path.resolve(__dirname, '../static/data/photo-view-counts.json');
-const DAYS_TO_TRACK = 30;
+const DATA_START_DATE = '2020-01-01';
 const COMMENT_WEIGHT = 25;
 
 const {
@@ -142,7 +142,7 @@ async function fetchGa4Views() {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      dateRanges: [{ startDate: `${DAYS_TO_TRACK}daysAgo`, endDate: 'today' }],
+      dateRanges: [{ startDate: DATA_START_DATE, endDate: 'today' }],
       dimensions: [{ name: 'pagePath' }],
       metrics: [{ name: 'screenPageViews' }],
       dimensionFilter: {
@@ -155,7 +155,7 @@ async function fetchGa4Views() {
         },
       },
       orderBys: [{ metric: { metricName: 'screenPageViews' }, desc: true }],
-      limit: 100,
+      limit: 500,
     }),
   });
 
@@ -195,7 +195,7 @@ async function fetchGa4ShareCounts() {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      dateRanges: [{ startDate: `${DAYS_TO_TRACK}daysAgo`, endDate: 'today' }],
+      dateRanges: [{ startDate: DATA_START_DATE, endDate: 'today' }],
       dimensions: [
         { name: 'pagePath' },
         { name: 'customEvent:method' },
@@ -268,7 +268,7 @@ async function fetchGa4PhotoViewCounts() {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      dateRanges: [{ startDate: `${DAYS_TO_TRACK}daysAgo`, endDate: 'today' }],
+      dateRanges: [{ startDate: DATA_START_DATE, endDate: 'today' }],
       dimensions: [
         { name: 'customEvent:photo_url' },
       ],
@@ -423,7 +423,7 @@ async function main() {
   await fs.mkdir(path.dirname(OUTPUT_PATH), { recursive: true });
   await fs.writeFile(OUTPUT_PATH, JSON.stringify({
     generatedAt: new Date().toISOString(),
-    windowDays: DAYS_TO_TRACK,
+    windowDays: 'lifetime',
     entries: popularArticles.map((article) => ({
       id: article.path,
       views: article.views,
@@ -439,7 +439,7 @@ async function main() {
   const photoViewEntries = Object.fromEntries(photoViewsBySrc);
   await fs.writeFile(PHOTO_VIEWS_PATH, JSON.stringify({
     generatedAt: new Date().toISOString(),
-    windowDays: DAYS_TO_TRACK,
+    windowDays: 'lifetime',
     counts: photoViewEntries,
   }, null, 2) + '\n');
 
