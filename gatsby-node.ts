@@ -451,29 +451,6 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
     (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
   );
 
-  // Load popular-articles.json (generated at deploy start by generate:popular script)
-  // to inject view counts and comment counts at build time — no client-side pop-in.
-  const popularDataPath = path.resolve('./static/data/popular-articles.json');
-  const metricsByPath = new Map<string, { views: number; comments: number; shares?: { facebook: number; linkedin: number; copy: number } }>();
-  try {
-    const rawJson = fs.readFileSync(popularDataPath, 'utf-8');
-    const parsed = JSON.parse(rawJson);
-    if (parsed?.entries && Array.isArray(parsed.entries)) {
-      for (const entry of parsed.entries) {
-        if (entry.id) {
-          metricsByPath.set(entry.id, {
-            views: entry.views || 0,
-            comments: entry.comments || 0,
-            shares: entry.shares || { facebook: 0, linkedin: 0, copy: 0 },
-          });
-        }
-      }
-    }
-    reporter.info(`Loaded ${metricsByPath.size} article metrics from popular-articles.json`);
-  } catch {
-    reporter.warn('No popular-articles.json found or invalid — view counts will default to 0');
-  }
-
   // Validate series metadata before creating pages
   const seriesValidationPassed = validateSeriesMetadata(articles, reporter);
   if (!seriesValidationPassed) {
@@ -481,9 +458,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
     return;
   }
 
-  // Build a lookup of the series landing page path per series so all parts
-  // share metrics under a single canonical URL (the landing page).
-  const seriesLandingPath = new Map<string, string>();
+  // Build a lookup of series articles for landing page creation
   const articlesBySeries = new Map<string, PagesQueryResult['allMarkdownRemark']['nodes']>();
   articles.forEach((article) => {
     if (article.frontmatter.series?.name) {
@@ -493,69 +468,6 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
       }
       articlesBySeries.get(seriesName)!.push(article);
     }
-  });
-  articlesBySeries.forEach((seriesArticles, seriesName) => {
-    const sortedArticles = [...seriesArticles].sort((a, b) => {
-      const orderA = a.frontmatter.series?.order ?? Infinity;
-      const orderB = b.frontmatter.series?.order ?? Infinity;
-      return orderA - orderB;
-    });
-    const firstArticle = sortedArticles[0];
-    if (firstArticle) {
-      const seriesSlug = slugifySeriesName(seriesName);
-      seriesLandingPath.set(
-        seriesName,
-        `/series/${seriesSlug}/`
-      );
-    }
-  });
-
-  // Migrate per-article view counts to the series landing page path.
-  // Use the MAX article view count as a proxy for unique series viewers —
-  // reading multiple articles in a series should increment the series count
-  // by 1, not 1 per article. The first article typically has the most views
-  // since it's the series entry point.
-  articlesBySeries.forEach((seriesArticles, seriesName) => {
-    const seriesSlug = slugifySeriesName(seriesName);
-    const landingPath = `/series/${seriesSlug}/`;
-
-    // Use the max article view count (proxy for unique viewers)
-    let maxViews = 0;
-    let maxComments = 0;
-    const totalShares = { facebook: 0, linkedin: 0, copy: 0 };
-
-    seriesArticles.forEach((article) => {
-      const articlePath = `/series/${seriesSlug}/${article.frontmatter.slug}`;
-      const m = metricsByPath.get(articlePath);
-      if (m) {
-        maxViews = Math.max(maxViews, m.views || 0);
-        maxComments = Math.max(maxComments, m.comments || 0);
-        if (m.shares) {
-          totalShares.facebook = Math.max(totalShares.facebook, m.shares.facebook || 0);
-          totalShares.linkedin = Math.max(totalShares.linkedin, m.shares.linkedin || 0);
-          totalShares.copy = Math.max(totalShares.copy, m.shares.copy || 0);
-        }
-      }
-    });
-
-    // Also check the landing path itself (if already tracked there)
-    const existingLandingMetrics = metricsByPath.get(landingPath);
-    if (existingLandingMetrics) {
-      maxViews = Math.max(maxViews, existingLandingMetrics.views || 0);
-      maxComments = Math.max(maxComments, existingLandingMetrics.comments || 0);
-      if (existingLandingMetrics.shares) {
-        totalShares.facebook = Math.max(totalShares.facebook, existingLandingMetrics.shares.facebook || 0);
-        totalShares.linkedin = Math.max(totalShares.linkedin, existingLandingMetrics.shares.linkedin || 0);
-        totalShares.copy = Math.max(totalShares.copy, existingLandingMetrics.shares.copy || 0);
-      }
-    }
-
-    // Store metrics under the landing path
-    metricsByPath.set(landingPath, {
-      views: maxViews,
-      comments: maxComments,
-      shares: totalShares,
-    });
   });
 
   // Create article pages - use different templates for series vs standalone articles
@@ -580,15 +492,6 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
       articlePath = `/posts/${article.frontmatter.slug}`;
     }
 
-    // For series articles, track metrics against the series landing page path so the
-    // whole series shares a single view/share/comment count.
-    const metricsKey = isSeries && article.frontmatter.series?.name
-      ? seriesLandingPath.get(article.frontmatter.series.name) || articlePath
-      : articlePath;
-
-    // Look up view/comment counts for this article path
-    const metrics = metricsByPath.get(metricsKey) || { views: 0, comments: 0, shares: { facebook: 0, linkedin: 0, copy: 0 } };
-
     const isBrewingRecipe = isBrewing && article.frontmatter.type === 'brewing-recipe';
     const readingTime = calculateReadingTime(article.rawMarkdownBody || '');
 
@@ -602,9 +505,6 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
         seriesName: article.frontmatter.series?.name || null,
         isReview,
         isBrewing,
-        viewCount: metrics.views,
-        commentCount: metrics.comments,
-        shareCounts: metrics.shares || { facebook: 0, linkedin: 0, copy: 0 },
         readingTime,
       },
     });
@@ -722,10 +622,6 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
     const description = seriesMeta?.description || firstArticle.frontmatter.excerpt;
     const featuredImage = seriesMeta?.featuredImage || firstArticle.frontmatter.featuredImage;
 
-    // Get metrics from the landing path (already populated in metricsByMap)
-    const landingPath = `/series/${seriesSlug}/`;
-    const metrics = metricsByPath.get(landingPath) || { views: 0, comments: 0, shares: { facebook: 0, linkedin: 0, copy: 0 } };
-
     createPage({
       path: `/series/${seriesSlug}/`,
       component: seriesLandingTemplate,
@@ -735,9 +631,6 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
         description,
         featuredImage,
         draftFilter,
-        viewCount: metrics.views,
-        commentCount: metrics.comments,
-        shareCounts: metrics.shares || { facebook: 0, linkedin: 0, copy: 0 },
       },
     });
   });

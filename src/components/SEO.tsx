@@ -15,6 +15,7 @@ interface SEOProps {
   article?: boolean;
   pathname?: string;
   siteMetadata: SEOData['siteMetadata'];
+  children?: React.ReactNode;
 }
 
 /**
@@ -39,6 +40,7 @@ const SEO: React.FC<SEOProps> = ({
   article = false,
   pathname = '/',
   siteMetadata,
+  children,
 }) => {
   const seo = {
     title: title ? `${title} | ${siteMetadata.title}` : siteMetadata.title,
@@ -75,6 +77,8 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
       <link rel="canonical" href={seo.url} />
+      <link rel="alternate" type="application/rss+xml" title="Joseph Crawford RSS Feed" href="https://josephcrawford.com/rss.xml" />
+      {children}
     </>
   );
 };

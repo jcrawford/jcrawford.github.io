@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { graphql, HeadFC, Link, PageProps } from 'gatsby';
+import { useArticleMetrics } from '../hooks/useArticleMetrics';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import OptimizedImage from '../components/OptimizedImage';
@@ -13,7 +14,7 @@ import RecipeIngredients from '../components/RecipeIngredients';
 import RecipeSteps from '../components/RecipeSteps';
 import { formatDate } from '../utils/dateUtils';
 import { getTagPath } from '../utils/tagUtils';
-import type { BrewData, RecipeStep, ShareCounts } from '../types/article';
+import type { BrewData, RecipeStep } from '../types/article';
 import { postProcessImages } from '../utils/postProcessImages';
 import '../styles/brewing-recipe.css';
 
@@ -64,20 +65,16 @@ interface RecipeData {
 }
 
 interface BrewingRecipePageContext {
-  viewCount: number;
-  commentCount: number;
   readingTime: number;
-  shareCounts: ShareCounts;
 }
 
 const BrewingRecipeTemplate: React.FC<PageProps<RecipeData, BrewingRecipePageContext>> = ({ data, pageContext }) => {
   const recipe = data.markdownRemark;
   const { frontmatter, html } = recipe;
-  const viewCount = pageContext.viewCount || 0;
-  const commentCount = pageContext.commentCount || 0;
   const readingTime = pageContext.readingTime || 0;
-  const shareCounts = pageContext.shareCounts || { facebook: 0, twitter: 0, linkedin: 0, copy: 0 };
   const shareUrl = `https://josephcrawford.com/brewing/${frontmatter.slug}`;
+  const metricsPath = `/brewing/${frontmatter.slug}`;
+  const { metrics, loading } = useArticleMetrics(metricsPath);
 
   const brewData = frontmatter.brewData;
   const ingredients = frontmatter.ingredients || [];
@@ -118,6 +115,18 @@ const BrewingRecipeTemplate: React.FC<PageProps<RecipeData, BrewingRecipePageCon
     { label: 'Bottling Date', value: brewData?.bottlingDate ? formatDate(brewData.bottlingDate) : undefined },
   ].filter(item => item.value !== undefined && item.value !== '' && item.value !== null);
 
+  if (loading) {
+    return (
+      <Layout>
+        <div className="hm-container">
+          <main className="hm-primary-content">
+            <div className="hm-article-loading" aria-busy="true" />
+          </main>
+        </div>
+      </Layout>
+    );
+  }
+
   return (
     <Layout>
       {frontmatter.draft && <DraftBanner />}
@@ -142,8 +151,8 @@ const BrewingRecipeTemplate: React.FC<PageProps<RecipeData, BrewingRecipePageCon
           <h1>{frontmatter.title}</h1>
           <ArticleMeta
             publishedAt={frontmatter.publishedAt}
-            viewCount={viewCount}
-            commentCount={commentCount}
+            viewCount={metrics.views}
+            commentCount={metrics.comments}
             readingTime={readingTime}
             variant="recipe"
           />
@@ -151,7 +160,7 @@ const BrewingRecipeTemplate: React.FC<PageProps<RecipeData, BrewingRecipePageCon
             title={frontmatter.title}
             url={shareUrl}
             variant="top"
-            shareCounts={shareCounts}
+            shareCounts={metrics.shares}
           />
           {frontmatter.rating && (
             <div className="recipe-rating">
@@ -230,7 +239,7 @@ const BrewingRecipeTemplate: React.FC<PageProps<RecipeData, BrewingRecipePageCon
           <ShareButtons
             title={frontmatter.title}
             url={shareUrl}
-            shareCounts={shareCounts}
+            shareCounts={metrics.shares}
           />
 
           <hr />

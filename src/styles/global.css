@@ -3172,3 +3172,30 @@ html.hm-dark .hm-comments {
   line-height: 1.4;
   text-align: center;
 }
+
+/* ============================================
+   Article Loading Placeholder (metrics fetch)
+   ============================================ */
+
+.hm-article-loading {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hm-article-loading::before {
+  content: '';
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--border-color, #e0e0e0);
+  border-top-color: var(--accent-color, #2563eb);
+  border-radius: 50%;
+  animation: hm-loading-spin 0.8s linear infinite;
+}
+
+@keyframes hm-loading-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

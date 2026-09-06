@@ -110,7 +110,7 @@ const RecentArticles: React.FC = () => {
       allArticles.map((article) => {
         const isReview = article.frontmatter.tags?.some((tag) => tag.toLowerCase() === 'reviews') ?? false;
         const isBrewing = article.frontmatter.tags?.some((tag) => tag.toLowerCase() === 'brewing') ?? false;
-        const path = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name, isReview, isBrewing);
+        const path = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name, isReview, isBrewing, article.frontmatter.series?.name);
         return [path, article] as const;
       })
     );
@@ -140,7 +140,7 @@ const RecentArticles: React.FC = () => {
       {isLoading ? null : articles.map((article) => {
         const isReview = article.frontmatter.tags?.some((t) => t.toLowerCase() === 'reviews') ?? false;
         const isBrewing = article.frontmatter.tags?.some((t) => t.toLowerCase() === 'brewing') ?? false;
-        const articlePath = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name, isReview, isBrewing);
+        const articlePath = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name, isReview, isBrewing, article.frontmatter.series?.name);
         return (
           <article key={article.id} className="hms-post">
             <div className="hms-thumb">

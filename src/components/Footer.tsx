@@ -120,7 +120,7 @@ const Footer: React.FC = () => {
                 {aiArticles.map((article) => {
                   const isReview = article.frontmatter.tags?.some(t => t.toLowerCase() === 'reviews');
                   const isBrewing = article.frontmatter.tags?.some(t => t.toLowerCase() === 'brewing');
-                  const articlePath = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name, isReview, isBrewing);
+                  const articlePath = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name, isReview, isBrewing, article.frontmatter.series?.name);
                   return (
                     <div key={article.id} className="hms-post clearfix">
                   <div className="hms-thumb">
@@ -135,7 +135,7 @@ const Footer: React.FC = () => {
                   </div>
                   <div className="hms-details">
                     <h3 className="hms-title">
-                      <Link to={articlePath}>{article.title}</Link>
+                      <Link to={articlePath}>{article.frontmatter.title}</Link>
                     </h3>
                     <div className="entry-meta">
                       <time className="entry-date published" dateTime={article.frontmatter.publishedAt}>
@@ -158,7 +158,7 @@ const Footer: React.FC = () => {
                 {workArticles.map((article) => {
                   const isReview = article.frontmatter.tags?.some(t => t.toLowerCase() === 'reviews');
                   const isBrewing = article.frontmatter.tags?.some(t => t.toLowerCase() === 'brewing');
-                  const articlePath = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name, isReview, isBrewing);
+                  const articlePath = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name, isReview, isBrewing, article.frontmatter.series?.name);
                   return (
                     <div key={article.id} className="hms-post clearfix">
                   <div className="hms-thumb">
@@ -173,7 +173,7 @@ const Footer: React.FC = () => {
                   </div>
                   <div className="hms-details">
                     <h3 className="hms-title">
-                      <Link to={articlePath}>{article.title}</Link>
+                      <Link to={articlePath}>{article.frontmatter.title}</Link>
                     </h3>
                     <div className="entry-meta">
                       <time className="entry-date published" dateTime={article.frontmatter.publishedAt}>
@@ -195,7 +195,7 @@ const Footer: React.FC = () => {
                 <h2 className="widget-title">Family</h2>
                 {familyArticles.map((article) => {
                   const isReview = article.frontmatter.tags?.some(t => t.toLowerCase() === 'reviews');
-                  const articlePath = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name, isReview);
+                  const articlePath = getArticlePath(article.frontmatter.slug, !!article.frontmatter.series?.name, isReview, false, article.frontmatter.series?.name);
                   return (
                     <div key={article.id} className="hms-post clearfix">
                   <div className="hms-thumb">
@@ -210,7 +210,7 @@ const Footer: React.FC = () => {
                   </div>
                   <div className="hms-details">
                     <h3 className="hms-title">
-                      <Link to={articlePath}>{article.title}</Link>
+                      <Link to={articlePath}>{article.frontmatter.title}</Link>
                     </h3>
                     <div className="entry-meta">
                       <time className="entry-date published" dateTime={article.frontmatter.publishedAt}>

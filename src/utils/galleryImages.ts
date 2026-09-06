@@ -8,7 +8,7 @@
  * yet-another-react-lightbox, which expect structured image objects.
  */
 
-const WIDTHS = [64, 80, 160, 280, 320, 400, 600, 768, 850, 1200, 1920];
+const WIDTHS = [64, 80, 160, 280, 320, 400, 600, 768, 850, 1200];
 
 interface ResponsiveImage {
   src: string;

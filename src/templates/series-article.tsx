@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { graphql, Link, PageProps, HeadFC } from 'gatsby';
+import { useArticleMetrics } from '../hooks/useArticleMetrics';
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
 import SeriesPrevNext from '../components/SeriesPrevNext';
@@ -15,7 +16,7 @@ import { tagMatches, getTagPath } from '../utils/tagUtils';
 import { postProcessImages, postProcessTables, postProcessAffiliateLinks } from '../utils/postProcessImages';
 import { slugifySeriesName } from '../utils/articlePath';
 import type { SeriesMetadata, SeriesArticle } from '../types';
-import type { SpinnerImage, NamedSpinner, ShareCounts } from '../types/article';
+import type { SpinnerImage, NamedSpinner } from '../types/article';
 
 interface SeriesArticleData {
   markdownRemark: {
@@ -78,10 +79,7 @@ interface SeriesArticleData {
 }
 
 interface SeriesArticlePageContext {
-  viewCount: number;
-  commentCount: number;
   readingTime: number;
-  shareCounts: ShareCounts;
   isBrewing?: boolean;
   isReview?: boolean;
 }
@@ -90,10 +88,10 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData, SeriesArticle
   const article = data.markdownRemark.frontmatter;
   const articleHtml = postProcessAffiliateLinks(postProcessTables(postProcessImages(data.markdownRemark.html)));
   const author = data.authorsJson;
-  const viewCount = pageContext.viewCount || 0;
-  const commentCount = pageContext.commentCount || 0;
   const readingTime = pageContext.readingTime || 0;
-  const shareCounts = pageContext.shareCounts || { facebook: 0, twitter: 0, linkedin: 0, copy: 0 };
+  const seriesSlug = slugifySeriesName(article.series.name);
+  const metricsPath = `/series/${seriesSlug}/`;
+  const { metrics, loading } = useArticleMetrics(metricsPath);
   
   // Announce context to SupportBar component
   useEffect(() => {
@@ -197,6 +195,21 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData, SeriesArticle
     return parts;
   };
 
+  if (loading) {
+    return (
+      <Layout>
+        <div className="hm-container">
+          <div className="hm-content-sidebar-wrap">
+            <main className="hm-primary-content">
+              <div className="hm-article-loading" aria-busy="true" />
+            </main>
+            <Sidebar />
+          </div>
+        </div>
+      </Layout>
+    );
+  }
+
   return (
     <Layout>
       {article.draft && <DraftBanner />}
@@ -231,8 +244,8 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData, SeriesArticle
                 <ArticleMeta
                   authorName={author.name}
                   publishedAt={article.publishedAt}
-                  viewCount={viewCount}
-                  commentCount={commentCount}
+                  viewCount={metrics.views}
+                  commentCount={metrics.comments}
                   readingTime={readingTime}
                   byText="by"
                   variant="article"
@@ -242,7 +255,7 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData, SeriesArticle
                   title={article.series.name}
                   url={shareUrl}
                   variant="top"
-                  shareCounts={shareCounts}
+                  shareCounts={metrics.shares}
                 />
               </header>
 
@@ -289,7 +302,7 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData, SeriesArticle
                 <ShareButtons
                   title={article.series.name}
                   url={shareUrl}
-                  shareCounts={shareCounts}
+                  shareCounts={metrics.shares}
                 />
 
                 <hr />
@@ -423,15 +436,32 @@ export const Head: HeadFC<SeriesArticleData> = ({ data }) => {
   const displayDescription = seriesDescription || frontmatter.excerpt;
   const displayImage = frontmatter.featuredImage || seriesImage || firstArticle?.featuredImage;
 
+  const seriesSlug = slugifySeriesName(seriesName);
+  const siteUrl = data.site.siteMetadata.siteUrl;
+  const landingUrl = `${siteUrl}/series/${seriesSlug}/`;
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": siteUrl },
+      { "@type": "ListItem", "position": 2, "name": "Series", "item": `${siteUrl}/series/` },
+      { "@type": "ListItem", "position": 3, "name": seriesName, "item": landingUrl },
+      { "@type": "ListItem", "position": 4, "name": frontmatter.title, "item": `${siteUrl}/series/${seriesSlug}/${frontmatter.slug}/` },
+    ],
+  };
+
   return (
     <SEO
       title={displayTitle}
       description={displayDescription}
       image={displayImage}
       article={true}
-      pathname={`/series/${slugifySeriesName(seriesName)}/`}
+      pathname={`/series/${seriesSlug}/`}
       siteMetadata={data.site.siteMetadata}
-    />
+    >
+      <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+    </SEO>
   );
 };
 

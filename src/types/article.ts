@@ -71,8 +71,5 @@ export interface ShareCounts {
 export interface ArticlePageContext {
   isReview: boolean
   isBrewing?: boolean
-  viewCount: number
-  commentCount: number
   readingTime: number
-  shareCounts: ShareCounts
 }

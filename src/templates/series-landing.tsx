@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql, Link, PageProps, HeadFC } from 'gatsby';
+import { useArticleMetrics } from '../hooks/useArticleMetrics';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import OptimizedImage from '../components/OptimizedImage';
@@ -46,9 +47,6 @@ interface SeriesLandingPageContext {
   description: string;
   featuredImage: string;
   draftFilter: boolean[];
-  viewCount: number;
-  commentCount: number;
-  shareCounts: { facebook: number; linkedin: number; copy: number };
 }
 
 const SeriesLandingTemplate: React.FC<PageProps<SeriesLandingData, SeriesLandingPageContext>> = ({
@@ -62,9 +60,20 @@ const SeriesLandingTemplate: React.FC<PageProps<SeriesLandingData, SeriesLanding
     return orderA - orderB;
   });
   const totalReadingTime = sortedArticles.reduce((sum, a) => sum + (a.fields?.readingTime || 0), 0);
-  const { seriesName, seriesSlug, description, featuredImage, viewCount, shareCounts } = pageContext;
+  const { seriesName, seriesSlug, description, featuredImage } = pageContext;
   const shareUrl = `https://josephcrawford.com/series/${seriesSlug}/`;
-  const shareCountsData = shareCounts || { facebook: 0, linkedin: 0, copy: 0 };
+  const metricsPath = `/series/${seriesSlug}/`;
+  const { metrics, loading } = useArticleMetrics(metricsPath);
+
+  if (loading) {
+    return (
+      <Layout>
+        <div className="series-landing">
+          <div className="hm-article-loading" aria-busy="true" />
+        </div>
+      </Layout>
+    );
+  }
 
   return (
     <Layout>
@@ -93,7 +102,7 @@ const SeriesLandingTemplate: React.FC<PageProps<SeriesLandingData, SeriesLanding
               <div className="series-landing-stat">
                 <span className="series-landing-stat-value series-landing-stat-views">
                   <EyeIcon size={18} />
-                  {(viewCount || 0).toLocaleString()}
+                  {(metrics.views || 0).toLocaleString()}
                 </span>
                 <span className="series-landing-stat-label">Views</span>
               </div>
@@ -106,7 +115,7 @@ const SeriesLandingTemplate: React.FC<PageProps<SeriesLandingData, SeriesLanding
           <ShareButtons
             title={seriesName}
             url={shareUrl}
-            shareCounts={shareCountsData}
+            shareCounts={metrics.shares}
           />
         </div>
 
@@ -166,20 +175,68 @@ const SeriesLandingTemplate: React.FC<PageProps<SeriesLandingData, SeriesLanding
 
 export default SeriesLandingTemplate;
 
-export const Head: HeadFC<SeriesLandingData, SeriesLandingPageContext> = ({ pageContext }) => (
-  <SEO
-    title={pageContext.seriesName}
-    description={pageContext.description}
-    image={pageContext.featuredImage}
-    pathname={`/series/${pageContext.seriesSlug}/`}
-    article={true}
-    siteMetadata={{
-      title: 'Joseph Crawford',
-      description: 'A blog relating to technical topics such as programming, web development, and software engineering.',
-      siteUrl: 'https://josephcrawford.com',
-    }}
-  />
-);
+export const Head: HeadFC<SeriesLandingData, SeriesLandingPageContext> = ({ pageContext, data }) => {
+  const { seriesName, seriesSlug, description, featuredImage } = pageContext;
+  const siteUrl = data?.site?.siteMetadata?.siteUrl || 'https://josephcrawford.com';
+  const landingUrl = `${siteUrl}/series/${seriesSlug}/`;
+  const imageUrl = featuredImage?.startsWith('http')
+    ? featuredImage
+    : `${siteUrl}${featuredImage}`;
+
+  const collectionSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": seriesName,
+    "description": description,
+    "url": landingUrl,
+    "image": imageUrl,
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Joseph Crawford",
+      "url": siteUrl,
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": siteUrl,
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Series",
+          "item": `${siteUrl}/series/`,
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": seriesName,
+          "item": landingUrl,
+        },
+      ],
+    },
+  };
+
+  return (
+    <SEO
+      title={seriesName}
+      description={description}
+      image={featuredImage}
+      pathname={`/series/${seriesSlug}/`}
+      article={true}
+      siteMetadata={{
+        title: 'Joseph Crawford',
+        description: 'A blog relating to technical topics such as programming, web development, and software engineering.',
+        siteUrl: 'https://josephcrawford.com',
+      }}
+    >
+      <script type="application/ld+json">{JSON.stringify(collectionSchema)}</script>
+    </SEO>
+  );
+};
 
 export const query = graphql`
   query SeriesLandingQuery($seriesName: String!, $draftFilter: [Boolean]) {

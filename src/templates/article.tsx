@@ -1,5 +1,6 @@
 import React, { Suspense, useEffect } from 'react';
 import { graphql, Link, PageProps, HeadFC } from 'gatsby';
+import { useArticleMetrics } from '../hooks/useArticleMetrics';
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
 import OptimizedImage from '../components/OptimizedImage';
@@ -167,7 +168,9 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
   const author = data.authorsJson;
   const isReview = pageContext.isReview;
   const isBrewing = pageContext.isBrewing ?? false;
-  const { viewCount, commentCount, shareCounts, readingTime } = pageContext;
+  const readingTime = pageContext.readingTime;
+  const articlePath = getArticlePath(article.slug, !!article.series?.name, isReview, isBrewing);
+  const { metrics, loading } = useArticleMetrics(articlePath);
   
   // Announce context to SupportBar component
   useEffect(() => {
@@ -182,7 +185,7 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
     window.dispatchEvent(event);
   }, [isBrewing, isReview, article.tags]);
   
-  const shareUrl = typeof window !== 'undefined' ? window.location.href : `https://josephcrawford.com${getArticlePath(article.slug, !!article.series?.name, isReview)}`;
+  const shareUrl = typeof window !== 'undefined' ? window.location.href : `https://josephcrawford.com${getArticlePath(article.slug, !!article.series?.name, isReview, isBrewing)}`;
   
   const processedContent = postProcessAffiliateLinks(postProcessImages(data.markdownRemark.html || ''));
 
@@ -264,6 +267,22 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
     }
   };
 
+  // Block render until metrics loaded — prevents flash of default values
+  if (loading) {
+    return (
+      <Layout>
+        <div className="hm-container">
+          <main className="hm-primary-content">
+            <article className="hm-article">
+              <div className="hm-article-loading" aria-busy="true" />
+            </article>
+          </main>
+          <Sidebar />
+        </div>
+      </Layout>
+    );
+  }
+
   return (
   <Layout>
     {article.draft && <DraftBanner />}
@@ -300,8 +319,8 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
               <ArticleMeta
                 authorName={author?.name || 'Joseph Crawford'}
                 publishedAt={article.publishedAt}
-                viewCount={viewCount}
-                commentCount={commentCount}
+                viewCount={metrics.views}
+                commentCount={metrics.comments}
                 readingTime={readingTime}
                 byText="By"
                 variant="article"
@@ -311,7 +330,7 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
                 title={article.title}
                 url={shareUrl}
                 variant="top"
-                shareCounts={shareCounts}
+                shareCounts={metrics.shares}
               />
             </header>
 
@@ -418,7 +437,7 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
             <ShareButtons
               title={article.title}
               url={shareUrl}
-              shareCounts={shareCounts}
+              shareCounts={metrics.shares}
             />
 
             <hr />
@@ -432,7 +451,7 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
                 {previousArticle && (
                   <div className="hm-nav-previous">
                     <span className="hm-nav-label">{isReview ? 'Previous Review' : 'Previous Article'}</span>
-                    <Link to={getArticlePath(previousArticle.frontmatter.slug, !!previousArticle.frontmatter.series?.name, hasTag(previousArticle.frontmatter.tags || [], 'reviews'))} className="hm-nav-title">
+                    <Link to={getArticlePath(previousArticle.frontmatter.slug, !!previousArticle.frontmatter.series?.name, hasTag(previousArticle.frontmatter.tags || [], 'reviews'), hasTag(previousArticle.frontmatter.tags || [], 'brewing'), previousArticle.frontmatter.series?.name)} className="hm-nav-title">
                       {previousArticle.frontmatter.title}
                     </Link>
                   </div>
@@ -440,7 +459,7 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
                 {nextArticle && (
                   <div className="hm-nav-next">
                     <span className="hm-nav-label">{isReview ? 'Next Review' : 'Next Article'}</span>
-                    <Link to={getArticlePath(nextArticle.frontmatter.slug, !!nextArticle.frontmatter.series?.name, hasTag(nextArticle.frontmatter.tags || [], 'reviews'))} className="hm-nav-title">
+                    <Link to={getArticlePath(nextArticle.frontmatter.slug, !!nextArticle.frontmatter.series?.name, hasTag(nextArticle.frontmatter.tags || [], 'reviews'), hasTag(nextArticle.frontmatter.tags || [], 'brewing'), nextArticle.frontmatter.series?.name)} className="hm-nav-title">
                       {nextArticle.frontmatter.title}
                     </Link>
                   </div>
@@ -581,15 +600,90 @@ export const Head: HeadFC<ArticleData> = ({ data }) => {
   
   const isReview = hasTag(frontmatter.tags || [], 'reviews');
   const isBrewing = frontmatter.type === 'brewing-recipe';
+  const isSeries = !!frontmatter.series?.name;
+  const articlePath = getArticlePath(frontmatter.slug, isSeries, isReview, isBrewing);
+  const siteUrl = data.site.siteMetadata.siteUrl;
+
+  // Build breadcrumb items based on article type
+  const breadcrumbItems: any[] = [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": siteUrl },
+  ];
+
+  if (isSeries && frontmatter.series?.name) {
+    const seriesSlug = frontmatter.series.name
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-|-$/g, '');
+    breadcrumbItems.push({
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Series",
+      "item": `${siteUrl}/series/`,
+    });
+    breadcrumbItems.push({
+      "@type": "ListItem",
+      "position": 3,
+      "name": frontmatter.series.name,
+      "item": `${siteUrl}/series/${seriesSlug}/`,
+    });
+    breadcrumbItems.push({
+      "@type": "ListItem",
+      "position": 4,
+      "name": frontmatter.title,
+      "item": `${siteUrl}${articlePath}`,
+    });
+  } else if (isReview) {
+    breadcrumbItems.push({
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Reviews",
+      "item": `${siteUrl}/tag/reviews/`,
+    });
+    breadcrumbItems.push({
+      "@type": "ListItem",
+      "position": 3,
+      "name": frontmatter.title,
+      "item": `${siteUrl}${articlePath}`,
+    });
+  } else if (isBrewing) {
+    breadcrumbItems.push({
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Brewing",
+      "item": `${siteUrl}/brewing/`,
+    });
+    breadcrumbItems.push({
+      "@type": "ListItem",
+      "position": 3,
+      "name": frontmatter.title,
+      "item": `${siteUrl}${articlePath}`,
+    });
+  } else {
+    breadcrumbItems.push({
+      "@type": "ListItem",
+      "position": 2,
+      "name": frontmatter.title,
+      "item": `${siteUrl}${articlePath}`,
+    });
+  }
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": breadcrumbItems,
+  };
+
   return (
     <SEO 
       title={frontmatter.title}
       description={frontmatter.excerpt}
       image={frontmatter.featuredImage}
       article={true}
-      pathname={getArticlePath(frontmatter.slug, !!frontmatter.series?.name, isReview, isBrewing)}
+      pathname={articlePath}
       siteMetadata={data.site.siteMetadata}
-    />
+    >
+      <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+    </SEO>
   );
 };
 

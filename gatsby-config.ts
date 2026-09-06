@@ -4,7 +4,7 @@ import type { GatsbyConfig } from 'gatsby';
 const config: GatsbyConfig = {
   siteMetadata: {
     title: 'Joseph Crawford',
-    description: 'A blog relating to technical topics such as programming, web development, and software engineering.',
+    description: 'Software engineering, AI tools, and homebrewing — written by Joseph Crawford, a developer building web applications and making mead in Vermont.',
     siteUrl: 'https://josephcrawford.com',
     socialLinks: {
       github: 'https://github.com/jcrawford',
@@ -24,14 +24,14 @@ const config: GatsbyConfig = {
         title: 'About This Site',
         type: 'text',
         content: {
-          text: 'This may be a good place to introduce yourself and your site or include some credits.',
+          text: 'Joseph Crawford is a software engineer and homebrewer writing about web development, AI tools, and mead making. This blog covers programming, gear reviews, and brewing experiments from North Bennington, VT.',
           address: {
-            street: '123 Main Street',
-            city: 'New York, NY 10001',
+            street: 'North Bennington, VT',
+            city: '',
           },
           hours: {
-            weekday: 'Monday–Friday: 9:00AM–5:00PM',
-            weekend: 'Saturday & Sunday: 11:00AM–3:00PM',
+            weekday: '',
+            weekend: '',
           },
         },
       },
@@ -199,6 +199,81 @@ const config: GatsbyConfig = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
+      resolve: 'gatsby-plugin-feed',
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }: any) => {
+              return allMarkdownRemark.nodes.map((node: any) => {
+                const fm = node.frontmatter;
+                const isReview = (node.fileAbsolutePath || '').includes('/content/reviews/');
+                const isBrewing = (node.fileAbsolutePath || '').includes('/content/brewing/');
+                const isSeries = !!fm.series?.name;
+                const seriesSlug = isSeries
+                  ? fm.series.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+                  : '';
+                let url = site.siteMetadata.siteUrl;
+                if (isSeries) {
+                  url += `/series/${seriesSlug}/${fm.slug}/`;
+                } else if (isReview) {
+                  url += `/reviews/${fm.slug}/`;
+                } else if (isBrewing) {
+                  url += `/brewing/${fm.slug}/`;
+                } else {
+                  url += `/posts/${fm.slug}/`;
+                }
+                return {
+                  title: fm.title,
+                  description: fm.excerpt,
+                  date: fm.publishedAt,
+                  url,
+                  guid: url,
+                  custom_elements: [
+                    { 'content:encoded': node.html },
+                  ],
+                };
+              });
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  filter: { frontmatter: { slug: { ne: null }, draft: { ne: true } }, fileAbsolutePath: { regex: "//content/(posts|reviews|brewing)/" } }
+                  sort: { frontmatter: { publishedAt: DESC } }
+                  limit: 20
+                ) {
+                  nodes {
+                    frontmatter {
+                      slug
+                      title
+                      excerpt
+                      publishedAt
+                      series { name }
+                    }
+                    fileAbsolutePath
+                    html
+                  }
+                }
+              }
+            `,
+            output: '/rss.xml',
+            title: 'Joseph Crawford — RSS Feed',
+          },
+        ],
+      },
+    },
+    {
       resolve: 'gatsby-plugin-gatsby-cloud',
       options: {
         headers: {},
@@ -238,16 +313,88 @@ const config: GatsbyConfig = {
           '/404.html',
           '/offline-plugin-app-shell-fallback/',
         ],
+        query: `
+          {
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+            allSitePage {
+              nodes {
+                path
+              }
+            }
+            allMarkdownRemark(
+              filter: { frontmatter: { slug: { ne: null }, publishedAt: { ne: null } } }
+            ) {
+              nodes {
+                frontmatter {
+                  slug
+                  updatedAt
+                  publishedAt
+                  series { name }
+                }
+                fileAbsolutePath
+              }
+            }
+          }
+        `,
+        resolvePages: (data: any) => {
+          // Build a map of page path → lastmod date from markdown nodes
+          const pathToDate = new Map<string, string>();
+          const slugify = (s: string) =>
+            s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+          for (const node of data.allMarkdownRemark?.nodes || []) {
+            const fm = node.frontmatter;
+            if (!fm?.slug) continue;
+            const isReview = (node.fileAbsolutePath || '').includes('/content/reviews/');
+            const isBrewing = (node.fileAbsolutePath || '').includes('/content/brewing/');
+            const isSeries = !!fm.series?.name;
+            const seriesSlug = isSeries ? slugify(fm.series.name) : '';
+
+            let pagePath: string;
+            if (isSeries) {
+              pagePath = `/series/${seriesSlug}/${fm.slug}/`;
+            } else if (isReview) {
+              pagePath = `/reviews/${fm.slug}/`;
+            } else if (isBrewing) {
+              pagePath = `/brewing/${fm.slug}/`;
+            } else {
+              pagePath = `/posts/${fm.slug}/`;
+            }
+            pathToDate.set(pagePath, fm.updatedAt || fm.publishedAt);
+
+            // Also map series landing page to first article's date
+            if (isSeries && seriesSlug) {
+              const landingPath = `/series/${seriesSlug}/`;
+              const existing = pathToDate.get(landingPath);
+              const candidate = fm.updatedAt || fm.publishedAt;
+              if (!existing || candidate > existing) {
+                pathToDate.set(landingPath, candidate);
+              }
+            }
+          }
+
+          return (data.allSitePage?.nodes || []).map((node: any) => ({
+            ...node,
+            lastmod: pathToDate.get(node.path) || undefined,
+          }));
+        },
         serialize: (page: any) => {
-          const { path } = page;
+          const { path, lastmod } = page;
           let priority = 0.5;
           let changefreq = 'monthly';
-          
+
           if (path === '/') {
             priority = 1.0;
             changefreq = 'daily';
           } else if (path.startsWith('/posts/') || path.startsWith('/series/')) {
             priority = 0.8;
+            changefreq = 'monthly';
+          } else if (path.startsWith('/reviews/')) {
+            priority = 0.7;
             changefreq = 'monthly';
           } else if (path.startsWith('/brewing/')) {
             priority = 0.6;
@@ -259,11 +406,12 @@ const config: GatsbyConfig = {
             priority = 0.5;
             changefreq = 'yearly';
           }
-          
+
           return {
             url: path,
             changefreq,
             priority,
+            ...(lastmod ? { lastmod } : {}),
           };
         },
       },

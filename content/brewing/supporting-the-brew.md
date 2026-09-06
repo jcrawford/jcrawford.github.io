@@ -4,7 +4,7 @@ title: "Fueling the Fermentation: Supporting the Brewing Journey"
 publishedAt: 2026-08-12
 featuredImage: /images/content/brewing/supporting-the-brew.jpg
 author: "Joseph Crawford"
-tags: ["brewing", "journey", "community"]
+tags: ["brewing"]
 ---
 
 For as long as I've been brewing, the process has always been a mix of equal parts science, patience, and a fair bit of trial and error. It's a rewarding journey, but as the experiments get more ambitious and the batches more frequent, the costs of quality ingredients—honey, yeast, grains, and fruits—start to add up.

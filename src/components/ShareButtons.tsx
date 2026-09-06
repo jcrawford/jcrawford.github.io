@@ -91,13 +91,15 @@ const ShareButtons: React.FC<ShareButtonsProps> = ({ title, url, variant = 'bott
       try {
         await loadFbSdk();
         if (window.FB) {
+          // Track share intent when dialog opens — FB.ui callback is unreliable
+          // (returns undefined on success, only fires post_id in some cases)
+          trackShare(method);
           window.FB.ui({
             method: 'share',
             href: url,
-          }, (response: any) => {
-            if (response && !response.error) {
-              trackShare(method);
-            }
+          }, () => {
+            // Callback intentionally not used for tracking —
+            // FB returns undefined on success in most cases
           });
           return;
         }
