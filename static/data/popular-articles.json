@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-05T20:23:36.292Z",
+  "generatedAt": "2026-09-06T04:41:53.170Z",
   "windowDays": 30,
   "entries": [
     {
@@ -70,9 +70,9 @@
     },
     {
       "id": "/posts/saferide-health",
-      "views": 18,
+      "views": 17,
       "comments": 0,
-      "score": 18,
+      "score": 17,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -168,6 +168,17 @@
       }
     },
     {
+      "id": "/posts/lebanon-valley-speedway-2026",
+      "views": 6,
+      "comments": 0,
+      "score": 6,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/brewing/dandelion-mead",
       "views": 6,
       "comments": 0,
@@ -190,7 +201,7 @@
       }
     },
     {
-      "id": "/posts/lebanon-valley-speedway-2026",
+      "id": "/posts/long-running-ai-agents-adk",
       "views": 5,
       "comments": 0,
       "score": 5,
@@ -234,17 +245,6 @@
       }
     },
     {
-      "id": "/posts/long-running-ai-agents-adk",
-      "views": 4,
-      "comments": 0,
-      "score": 4,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
       "id": "/posts/voyager-keyboard",
       "views": 4,
       "comments": 0,
@@ -267,7 +267,7 @@
       }
     },
     {
-      "id": "/reviews/voyager-keyboard",
+      "id": "/series/intro-to-making-mead/back-sweetening",
       "views": 4,
       "comments": 0,
       "score": 4,
