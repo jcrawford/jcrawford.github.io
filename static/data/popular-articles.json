@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T00:47:43.321Z",
+  "generatedAt": "2026-09-07T16:17:32.597Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -15,9 +15,9 @@
     },
     {
       "id": "/brewing/cherry-mead",
-      "views": 196,
+      "views": 200,
       "comments": 0,
-      "score": 196,
+      "score": 200,
       "shares": {
         "facebook": 5,
         "linkedin": 1,
@@ -37,9 +37,9 @@
     },
     {
       "id": "/brewing/strawberry-wine",
-      "views": 78,
+      "views": 80,
       "comments": 0,
-      "score": 78,
+      "score": 80,
       "shares": {
         "facebook": 8,
         "linkedin": 1,
@@ -102,23 +102,23 @@
       }
     },
     {
+      "id": "/series/mead-water-chemistry",
+      "views": 36,
+      "comments": 0,
+      "score": 36,
+      "shares": {
+        "facebook": 1,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/reviews/clickfunnels-review",
       "views": 33,
       "comments": 0,
       "score": 33,
       "shares": {
         "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/series/mead-water-chemistry",
-      "views": 33,
-      "comments": 0,
-      "score": 33,
-      "shares": {
-        "facebook": 1,
         "linkedin": 0,
         "copy": 0
       }
