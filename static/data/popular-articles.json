@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-06T18:25:47.609Z",
+  "generatedAt": "2026-09-07T00:47:43.321Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -15,9 +15,9 @@
     },
     {
       "id": "/brewing/cherry-mead",
-      "views": 183,
+      "views": 196,
       "comments": 0,
-      "score": 183,
+      "score": 196,
       "shares": {
         "facebook": 5,
         "linkedin": 1,
@@ -33,6 +33,17 @@
         "facebook": 0,
         "linkedin": 0,
         "copy": 0
+      }
+    },
+    {
+      "id": "/brewing/strawberry-wine",
+      "views": 78,
+      "comments": 0,
+      "score": 78,
+      "shares": {
+        "facebook": 8,
+        "linkedin": 1,
+        "copy": 1
       }
     },
     {
@@ -58,14 +69,14 @@
       }
     },
     {
-      "id": "/brewing/strawberry-wine",
-      "views": 57,
+      "id": "/series/mead-water-chemistry/water-chemistry-basics",
+      "views": 43,
       "comments": 0,
-      "score": 57,
+      "score": 43,
       "shares": {
-        "facebook": 8,
-        "linkedin": 1,
-        "copy": 1
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
       }
     },
     {
@@ -80,21 +91,10 @@
       }
     },
     {
-      "id": "/series/mead-water-chemistry/water-chemistry-basics",
+      "id": "/series/intro-to-making-mead",
       "views": 37,
       "comments": 0,
       "score": 37,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/series/intro-to-making-mead",
-      "views": 35,
-      "comments": 0,
-      "score": 35,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -108,6 +108,17 @@
       "score": 33,
       "shares": {
         "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/series/mead-water-chemistry",
+      "views": 33,
+      "comments": 0,
+      "score": 33,
+      "shares": {
+        "facebook": 1,
         "linkedin": 0,
         "copy": 0
       }
@@ -205,17 +216,6 @@
       "views": 17,
       "comments": 0,
       "score": 17,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/series/mead-water-chemistry",
-      "views": 16,
-      "comments": 0,
-      "score": 16,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
