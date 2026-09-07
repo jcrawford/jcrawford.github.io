@@ -1,25 +1,80 @@
 {
-  "generatedAt": "2026-08-26T19:07:19.150Z",
-  "windowDays": 30,
+  "generatedAt": "2026-09-06T18:27:32.105Z",
+  "windowDays": "lifetime",
   "entries": [
     {
-      "id": "/brewing/cherry-mead",
-      "views": 157,
+      "id": "/reviews/budget-auto-rental-process-review",
+      "views": 210,
       "comments": 0,
-      "score": 157,
+      "score": 210,
       "shares": {
-        "facebook": 1,
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/brewing/cherry-mead",
+      "views": 183,
+      "comments": 0,
+      "score": 183,
+      "shares": {
+        "facebook": 5,
         "linkedin": 1,
         "copy": 1
       }
     },
     {
-      "id": "/reviews/budget-auto-rental-process-review",
-      "views": 85,
+      "id": "/reviews/ford-transit-15-passenger-van-review",
+      "views": 100,
       "comments": 0,
-      "score": 85,
+      "score": 100,
       "shares": {
         "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/benq-rd320ua-monitor-review",
+      "views": 71,
+      "comments": 0,
+      "score": 71,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 4
+      }
+    },
+    {
+      "id": "/posts/disney-vacation-2026",
+      "views": 65,
+      "comments": 0,
+      "score": 65,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/brewing/strawberry-wine",
+      "views": 57,
+      "comments": 0,
+      "score": 57,
+      "shares": {
+        "facebook": 8,
+        "linkedin": 1,
+        "copy": 1
+      }
+    },
+    {
+      "id": "/brewing/blackberry-mead",
+      "views": 41,
+      "comments": 0,
+      "score": 41,
+      "shares": {
+        "facebook": 1,
         "linkedin": 0,
         "copy": 0
       }
@@ -36,21 +91,10 @@
       }
     },
     {
-      "id": "/brewing/blackberry-mead",
-      "views": 37,
-      "comments": 0,
-      "score": 37,
-      "shares": {
-        "facebook": 1,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
       "id": "/series/intro-to-making-mead",
-      "views": 34,
+      "views": 35,
       "comments": 0,
-      "score": 34,
+      "score": 35,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -59,9 +103,9 @@
     },
     {
       "id": "/reviews/clickfunnels-review",
-      "views": 31,
+      "views": 33,
       "comments": 0,
-      "score": 31,
+      "score": 33,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -69,14 +113,36 @@
       }
     },
     {
-      "id": "/brewing/strawberry-wine",
-      "views": 30,
+      "id": "/posts/lebanon-valley-speedway-2026",
+      "views": 32,
       "comments": 0,
-      "score": 30,
+      "score": 32,
       "shares": {
         "facebook": 1,
-        "linkedin": 1,
-        "copy": 1
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/saferide-health-how-i-use-ai-as-an-engineer",
+      "views": 32,
+      "comments": 0,
+      "score": 32,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/total-typescript-pro-complete-review",
+      "views": 29,
+      "comments": 0,
+      "score": 29,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
       }
     },
     {
@@ -84,6 +150,61 @@
       "views": 29,
       "comments": 0,
       "score": 29,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/huupe-mini-review",
+      "views": 28,
+      "comments": 0,
+      "score": 28,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/saferide-health",
+      "views": 21,
+      "comments": 0,
+      "score": 21,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/voyager-keyboard",
+      "views": 20,
+      "comments": 0,
+      "score": 20,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/home-brewing-journey",
+      "views": 18,
+      "comments": 0,
+      "score": 18,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/grok-4-5-cursor-first-impressions",
+      "views": 17,
+      "comments": 0,
+      "score": 17,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -102,7 +223,29 @@
       }
     },
     {
-      "id": "/reviews/total-typescript-pro-complete-review",
+      "id": "/posts/long-running-ai-agents-adk",
+      "views": 14,
+      "comments": 0,
+      "score": 14,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/things-you-didnt-know-about-mysql-indexes",
+      "views": 14,
+      "comments": 0,
+      "score": 14,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/fried-chicken-ice-cream-review",
       "views": 14,
       "comments": 0,
       "score": 14,
@@ -124,153 +267,10 @@
       }
     },
     {
-      "id": "/posts/disney-vacation-2026",
-      "views": 10,
-      "comments": 0,
-      "score": 10,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/null",
-      "views": 10,
-      "comments": 0,
-      "score": 10,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
       "id": "/reviews/tilt-hydrometer-review",
-      "views": 10,
+      "views": 11,
       "comments": 0,
-      "score": 10,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/brewing/small-batch-brewing-required-tools",
-      "views": 9,
-      "comments": 0,
-      "score": 9,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/series/intro-to-making-mead/preparing-your-must",
-      "views": 9,
-      "comments": 0,
-      "score": 9,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/brewing/bottling-day",
-      "views": 8,
-      "comments": 0,
-      "score": 8,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/series/mead-water-chemistry/finding-your-water-report",
-      "views": 8,
-      "comments": 0,
-      "score": 8,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/series/intro-to-making-mead/cleaning-and-sanitization",
-      "views": 7,
-      "comments": 0,
-      "score": 7,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/series/intro-to-making-mead/equipment",
-      "views": 7,
-      "comments": 0,
-      "score": 7,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/brewing/dandelion-mead",
-      "views": 7,
-      "comments": 0,
-      "score": 7,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/posts/saferide-health",
-      "views": 6,
-      "comments": 0,
-      "score": 6,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/fried-chicken-ice-cream-review",
-      "views": 6,
-      "comments": 0,
-      "score": 6,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/benq-rd320ua-monitor-review",
-      "views": 5,
-      "comments": 0,
-      "score": 5,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/series/intro-to-making-mead/mead-ingredients",
-      "views": 5,
-      "comments": 0,
-      "score": 5,
+      "score": 11,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
