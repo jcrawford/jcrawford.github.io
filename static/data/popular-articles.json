@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-10T00:57:01.878Z",
+  "generatedAt": "2026-09-10T14:46:00.951Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -252,7 +252,7 @@
       "shares": {
         "facebook": 0,
         "linkedin": 0,
-        "copy": 0
+        "copy": 1
       }
     },
     {
