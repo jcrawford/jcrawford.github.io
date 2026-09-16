@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-16T01:12:45.857Z",
+  "generatedAt": "2026-09-16T15:19:01.069Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -26,9 +26,9 @@
     },
     {
       "id": "/reviews/ford-transit-15-passenger-van-review",
-      "views": 101,
+      "views": 102,
       "comments": 0,
-      "score": 101,
+      "score": 102,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -147,9 +147,9 @@
     },
     {
       "id": "/reviews/total-typescript-pro-complete-review",
-      "views": 29,
+      "views": 32,
       "comments": 0,
-      "score": 29,
+      "score": 32,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -267,12 +267,12 @@
       }
     },
     {
-      "id": "/reviews/tilt-hydrometer-review",
+      "id": "/posts/vision-capabilities-php-ai-agents",
       "views": 12,
       "comments": 0,
       "score": 12,
       "shares": {
-        "facebook": 0,
+        "facebook": 1,
         "linkedin": 0,
         "copy": 0
       }
