@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-16T15:23:42.827Z",
+  "generatedAt": "2026-09-17T01:12:36.115Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -15,9 +15,9 @@
     },
     {
       "id": "/brewing/cherry-mead",
-      "views": 202,
+      "views": 206,
       "comments": 0,
-      "score": 202,
+      "score": 206,
       "shares": {
         "facebook": 5,
         "linkedin": 1,
@@ -124,6 +124,17 @@
       }
     },
     {
+      "id": "/reviews/total-typescript-pro-complete-review",
+      "views": 33,
+      "comments": 0,
+      "score": 33,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/posts/lebanon-valley-speedway-2026",
       "views": 32,
       "comments": 0,
@@ -136,17 +147,6 @@
     },
     {
       "id": "/posts/saferide-health-how-i-use-ai-as-an-engineer",
-      "views": 32,
-      "comments": 0,
-      "score": 32,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/total-typescript-pro-complete-review",
       "views": 32,
       "comments": 0,
       "score": 32,
@@ -234,6 +234,17 @@
       }
     },
     {
+      "id": "/reviews/plaato-airlock-review",
+      "views": 15,
+      "comments": 0,
+      "score": 15,
+      "shares": {
+        "facebook": 5,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/posts/long-running-ai-agents-adk",
       "views": 14,
       "comments": 0,
@@ -256,21 +267,10 @@
       }
     },
     {
-      "id": "/reviews/plaato-airlock-review",
+      "id": "/posts/vision-capabilities-php-ai-agents",
       "views": 13,
       "comments": 0,
       "score": 13,
-      "shares": {
-        "facebook": 5,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/posts/vision-capabilities-php-ai-agents",
-      "views": 12,
-      "comments": 0,
-      "score": 12,
       "shares": {
         "facebook": 1,
         "linkedin": 0,
