@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-17T15:32:01.663Z",
+  "generatedAt": "2026-09-18T01:09:36.942Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -26,9 +26,9 @@
     },
     {
       "id": "/reviews/ford-transit-15-passenger-van-review",
-      "views": 102,
+      "views": 103,
       "comments": 0,
-      "score": 102,
+      "score": 103,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -268,9 +268,9 @@
     },
     {
       "id": "/posts/vision-capabilities-php-ai-agents",
-      "views": 13,
+      "views": 14,
       "comments": 0,
-      "score": 13,
+      "score": 14,
       "shares": {
         "facebook": 1,
         "linkedin": 0,
