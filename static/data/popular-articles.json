@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-18T14:51:53.534Z",
+  "generatedAt": "2026-09-19T01:03:59.182Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -70,9 +70,9 @@
     },
     {
       "id": "/series/mead-water-chemistry/water-chemistry-basics",
-      "views": 43,
+      "views": 45,
       "comments": 0,
-      "score": 43,
+      "score": 45,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -103,9 +103,9 @@
     },
     {
       "id": "/series/mead-water-chemistry",
-      "views": 36,
+      "views": 37,
       "comments": 0,
-      "score": 36,
+      "score": 37,
       "shares": {
         "facebook": 1,
         "linkedin": 0,
@@ -234,6 +234,17 @@
       }
     },
     {
+      "id": "/posts/vision-capabilities-php-ai-agents",
+      "views": 15,
+      "comments": 0,
+      "score": 15,
+      "shares": {
+        "facebook": 1,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/reviews/plaato-airlock-review",
       "views": 15,
       "comments": 0,
@@ -262,17 +273,6 @@
       "score": 14,
       "shares": {
         "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/posts/vision-capabilities-php-ai-agents",
-      "views": 14,
-      "comments": 0,
-      "score": 14,
-      "shares": {
-        "facebook": 1,
         "linkedin": 0,
         "copy": 0
       }
