@@ -1,10 +1,7 @@
 ---
 slug: hilton-aqua-sol-resort-review
 title: 'Hilton Aqua Sol Resort Review: The Best Place to Stay in Florida'
-excerpt: >-
-  We've stayed at the Hilton Aqua Sol in Winter Garden, Florida multiple times —
-  including for our wedding in August 2024. Affordable pricing, an incredible
-  waterpark, and a staff that genuinely cares.
+excerpt: "A Hilton Aqua Sol Resort review in Winter Garden, Florida — affordable pricing, an incredible waterpark, and staff that genuinely cares. Our go-to Orlando stay."
 featuredImage: /images/content/reviews/hilton-aqua-sol-review/featured.jpg
 tags:
   - reviews

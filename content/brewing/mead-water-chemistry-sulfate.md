@@ -1,7 +1,7 @@
 ---
 slug: sulfate
 title: "Sulfate: Dryness and Crispness"
-excerpt: "Sulfate accentuates dryness, crispness, and fruit character. Learn how to use it for clean, bright meads."
+excerpt: "Sulfate is the crispness ion that dries the palate and sharpens fruit notes in mead. Learn target ranges of 50-150 ppm and when to use it for dry show meads."
 featuredImage: /images/content/brewing/mead-water-chemistry/sulfate/featured.png
 tags:
   - brewing

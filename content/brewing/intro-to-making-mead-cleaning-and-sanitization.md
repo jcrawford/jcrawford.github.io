@@ -1,7 +1,7 @@
 ---
 slug: cleaning-and-sanitization
 title: "Cleaning and Sanitization"
-excerpt: "Why cleaning and sanitization matter in mead making, the difference between a cleaner and a sanitizer, and the process I use on brew day."
+excerpt: "Cleaning and sanitizing are different jobs and both matter for mead. Learn why brewing is 80 percent cleaning and the routine I follow every brew day."
 featuredImage: /images/content/brewing/intro-to-making-mead/cleaning-and-sanitization/featured.jpg
 tags:
   - brewing

@@ -1,7 +1,7 @@
 ---
 slug: total-typescript-pro-complete-review
 title: "From Beginner to Intermediate in Under 6 Months: My Total TypeScript Pro Complete Review"
-excerpt: "An honest, in-depth look at Matt Pocock's Total TypeScript Pro Complete package — the exercise-driven course that took me from struggling with type errors to confidently writing production TypeScript. Here's why it's worth every penny."
+excerpt: "A Total TypeScript Pro Complete review — Matt Pocock's exercise-driven course that took me from type errors to confident production TypeScript in six months."
 featuredImage: /images/content/total-typescript-review.jpg
 featuredImageLink: "https://www.totaltypescript.com/workshops"
 tags:

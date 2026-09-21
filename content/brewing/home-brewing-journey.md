@@ -1,7 +1,7 @@
 ---
 slug: home-brewing-journey
 title: "My Home Brewing Journey: From Mead to Beer on Tap"
-excerpt: "How I started home brewing in 2022 with a 1-gallon mead kit and ended up with a full keezer setup in my kitchen thanks to a chance encounter at a Honda dealership."
+excerpt: "How I went from a 1-gallon Northern Brewer mead kit to a keezer with beer on tap. My homebrew journey covers YouTube research and gear upgrades over time."
 featuredImage: /images/content/brewing/home-brewing-journey/featured.jpg
 tags:
   - brewing

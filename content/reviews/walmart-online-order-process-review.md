@@ -1,7 +1,7 @@
 ---
 slug: walmart-online-grocery-ordering-process
 title: 'Walmart: The online grocery order process.'
-excerpt: How does walmarts online grocery ordering stack up?
+excerpt: "A Walmart online grocery ordering review — convenient pickup when it works, but a cancelled order and held funds showed how risky the process is for big orders."
 featuredImage: /images/content/reviews/walmart-online-grocery-ordering-process/featured.jpg
 tags:
   - reviews

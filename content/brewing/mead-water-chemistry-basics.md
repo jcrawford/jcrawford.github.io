@@ -1,7 +1,7 @@
 ---
 slug: water-chemistry-basics
 title: "Why Water Chemistry Matters for Mead"
-excerpt: "Understanding water chemistry is the key to consistent, delicious mead. Learn what ions do and why they matter."
+excerpt: "Water chemistry is the key to consistent, balanced mead. Learn how dissolved minerals affect yeast health, must pH, perceived sweetness, and the Cl-SO4 ratio."
 featuredImage: /images/content/brewing/mead-water-chemistry/water-chemistry-basics/featured.png
 tags:
   - brewing

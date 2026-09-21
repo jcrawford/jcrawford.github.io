@@ -2,7 +2,7 @@
 slug: voyager-keyboard
 title: "ZSA Voyager Keyboard Review: Two Years of Daily Use"
 description: "Two years of daily professional use with the ZSA Voyager. A deep dive into ergonomics, the steep learning curve, and why comfort beats speed."
-excerpt: An in-depth analysis of the ZSA Voyager split ergonomic keyboard after two years of daily professional use, covering build quality, customization, learning curve, and long-term reliability.
+excerpt: "A ZSA Voyager split keyboard review after two years of daily coding — ergonomics, QMK customization, the learning curve, and why comfort beats raw typing speed."
 featuredImage: /images/content/reviews/voyager-keyboard/featured.jpg
 tags:
   - reviews

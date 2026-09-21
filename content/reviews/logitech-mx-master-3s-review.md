@@ -2,9 +2,7 @@
 slug: logitech-mx-master-3s
 title: "Logitech MX Master 3S Review: The Productivity Gold Standard"
 description: "The gold standard for productivity. A comprehensive look at the MX Master 3S, from MagSpeed scrolling to multi-device magic. A must-have for pros."
-excerpt: >-
-  A comprehensive review of the Logitech MX Master 3S, examining why this
-  premium mouse has become the go-to choice for professionals and power users.
+excerpt: "A Logitech MX Master 3S review after six months — MagSpeed scrolling, silent clicks, multi-device connectivity, and why it is the productivity mouse to beat."
 featuredImage: /images/content/reviews/logitech-mx-master-3s-review/featured.jpg
 tags:
   - reviews

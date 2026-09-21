@@ -134,7 +134,7 @@ export const Head: HeadFC = () => (
     description="Collections of related articles organized from start to finish."
     siteMetadata={{
       title: 'Joseph Crawford',
-      description: 'A blog relating to technical topics such as programming, web development, and software engineering.',
+      description: 'Software engineering, AI tools, and homebrewing — written by Joseph Crawford, a developer building web applications and making mead in Vermont.',
       siteUrl: 'https://josephcrawford.com'
     }}
   />

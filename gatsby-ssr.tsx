@@ -1,9 +1,11 @@
 import React from 'react';
 
 export const onRenderBody = ({ setHeadComponents, setPostBodyComponents, setHtmlAttributes }: any) => {
-  setHtmlAttributes({ className: 'hm-dark' });
+  setHtmlAttributes({ lang: 'en', className: 'hm-dark' });
 
   setHeadComponents([
+    // Google Search Console verification — replace YOUR_VERIFICATION_CODE with actual code from Search Console
+    // <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" /> — added once verified
     <link
       key="llms-txt"
       rel="llms-txt"

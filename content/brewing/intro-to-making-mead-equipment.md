@@ -1,7 +1,7 @@
 ---
 slug: equipment
 title: "Equipment You Need"
-excerpt: "A guide to the basic equipment for your first mead batch, from fermenters and airlocks to the few tools worth buying before you start."
+excerpt: "A practical guide to mead brewing gear for your first one-gallon batch: fermenters, airlocks, auto-siphons, hydrometers, and the few tools worth buying first."
 featuredImage: /images/content/brewing/intro-to-making-mead/equipment/featured.jpg
 tags:
   - brewing

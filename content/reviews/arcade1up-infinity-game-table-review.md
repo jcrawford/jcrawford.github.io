@@ -3,11 +3,7 @@ slug: arcade1up-infinity-game-table-review
 title: >-
   Arcade1Up Infinity Game Table (32-inch) Review: Cool Concept, Compromised
   Reality After 5 Years
-excerpt: >-
-  After five years of ownership, here's an honest look at the Arcade1Up Infinity
-  Game Table. It's a conversation starter with animated tablecloth themes and
-  solid build quality, but touch lag, a locked ecosystem, and questions about
-  long-term value keep this from being the dream digital game table I hoped for.
+excerpt: "After five years of ownership, an honest Arcade1Up Infinity Game Table review covering build quality, touch lag, the locked ecosystem, and long-term value."
 featuredImage: /images/content/reviews/arcade1up-infinity-game-table-review/featured.jpg
 tags:
   - reviews

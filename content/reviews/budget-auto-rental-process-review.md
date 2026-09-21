@@ -1,10 +1,7 @@
 ---
 slug: budget-auto-rental-process-review
 title: 'Budget Auto Rental: The Rental Process From Start to Finish'
-excerpt: >-
-  Booking a 12-passenger van from Budget sounded straightforward. It wasn't.
-  From a confusing website to a three-hour line, a denied deposit, and a vehicle
-  that wasn't ready — here's how the whole experience played out.
+excerpt: "Booking a 12-passenger van from Budget sounded simple. A confusing website, three-hour line, denied deposit, and unready vehicle made it a rental nightmare."
 featuredImage: /images/content/reviews/budget-auto-rental-process/featured.jpg
 tags:
   - reviews

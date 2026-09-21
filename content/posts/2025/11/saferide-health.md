@@ -1,10 +1,7 @@
 ---
 slug: saferide-health
 title: 'SafeRide Health: Building the Future of Healthcare Transportation'
-excerpt: >-
-  SafeRide Health takes non-emergency medical transportation (NEMT) further with
-  leading technology and a digitized network that gets patients to the right
-  care at the right time.
+excerpt: "My three-year journey at SafeRide Health: building NEMT healthcare transportation with TypeScript, Deno microservices, and AI-powered virtual representative."
 featuredImage: /images/content/saferide-health/featured.jpg
 tags:
   - work

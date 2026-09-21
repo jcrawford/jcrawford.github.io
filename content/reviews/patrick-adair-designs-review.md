@@ -1,10 +1,7 @@
 ---
 slug: patrick-adair-designs-review
 title: 'Patrick Adair Designs Stardust Ring Review: Beautiful Design, Bumpy Road, Happy Ending'
-excerpt: >-
-  A detailed look at the Patrick Adair Designs Stardust ring with carbon fiber
-  and meteorite inlay. I love the design and comfort, and while there were some
-  bumps along the way, the company ultimately made things right.
+excerpt: "A Patrick Adair Designs Stardust ring review — meteorite inlay, carbon fiber, stunning design, a splintering issue, and a company that ultimately made it right."
 featuredImage: /images/content/reviews/patrick-adair-designs-review/featured.jpg
 tags:
   - reviews

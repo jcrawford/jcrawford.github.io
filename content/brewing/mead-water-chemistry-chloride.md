@@ -1,7 +1,7 @@
 ---
 slug: chloride
 title: "Chloride: Fullness and Roundness"
-excerpt: "Chloride adds body, sweetness perception, and a soft mouthfeel. Learn how to use it for full-bodied meads."
+excerpt: "Chloride is the fullness ion that adds body, rounds harsh edges, and enhances perceived sweetness in mead. Learn target ranges of 50-150 ppm and when to use it."
 featuredImage: /images/content/brewing/mead-water-chemistry/chloride/featured.png
 tags:
   - brewing

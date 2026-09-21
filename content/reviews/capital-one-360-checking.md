@@ -1,7 +1,7 @@
 ---
 slug: capital-one-360-checking 
 title: 'Capital One: 360 Checking'
-excerpt: What are my thoughts on Capital One 360 Checking accounts?
+excerpt: "A Capital One 360 Checking review after two years — solid mobile app and no overdraft fees, but rigid policies and weak support pushed me to look elsewhere."
 featuredImage: /images/content/reviews/capital-one-360-checking/featured.jpg
 tags:
   - reviews

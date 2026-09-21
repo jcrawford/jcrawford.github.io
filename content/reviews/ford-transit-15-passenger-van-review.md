@@ -1,9 +1,7 @@
 ---
 slug: ford-transit-15-passenger-van-review
 title: '2026 Ford Transit 15-Passenger Van Review: 3,000 Miles to Disney and Back'
-excerpt: >-
-  A family road trip to Disney World put the 2026 Ford Transit through its paces.
-  Over 3,000 miles, 11 passengers, and 65 hours behind the wheel — here's how it held up.
+excerpt: "A 2026 Ford Transit 15-passenger van review after 3,000 miles to Disney World — ride comfort, gas mileage, cargo space, and how it handled 11 passengers."
 featuredImage: /images/content/reviews/ford-transit-15-passenger-van-review/featured.jpg
 tags:
   - reviews

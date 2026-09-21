@@ -1,7 +1,7 @@
 ---
 slug: lebanon-valley-speedway-2026
 title: "Saturday Night at Lebanon Valley Speedway"
-excerpt: "Our first time at a dirt track race — 800 horsepower Modifieds, Twin 20s, and a fireworks show that lit up the whole sky over West Lebanon, New York."
+excerpt: "Saturday night at Lebanon Valley Speedway—800hp Big Block Modifieds, Twin 20s, dirt track racing, and a fireworks show over the West Lebanon grandstands."
 featuredImage: /images/content/lebanon-valley-speedway-2026/hero.jpg
 tags:
   - family

@@ -1,7 +1,7 @@
 ---
 slug: back-sweetening
 title: "Back Sweetening"
-excerpt: "How to sweeten a finished mead to taste by adding honey a little at a time, tasting between each addition until the balance is right."
+excerpt: "Back sweetening mead means adding honey after fermentation to balance sweetness. Learn to stabilize yeast first, then taste-test to a honey-forward finish."
 featuredImage: /images/content/brewing/intro-to-making-mead/back-sweetening/featured.jpg
 tags:
   - brewing

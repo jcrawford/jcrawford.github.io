@@ -1,7 +1,7 @@
 ---
 slug: spacex-buys-cursor-60-billion
 title: "SpaceX Is Buying Cursor for $60 Billion — and I Can't Wait to See What Comes Next"
-excerpt: "SpaceX just made it official: it's acquiring the AI coding startup behind Cursor in a $60 billion all-stock deal. Here's why the pairing could unlock something genuinely new for developers — and what features I'm most excited about."
+excerpt: "SpaceX acquires Cursor for $60 billion in all-stock deal. Grok Build meets Cursor's UX with unlimited compute—what features could emerge for developers."
 featuredImage: /images/content/spacex-cursor-60b-acquisition/featured.jpg
 tags:
   - ai

@@ -1,7 +1,7 @@
 ---
 slug: dandelion-mead
 title: "Dandelion Mead"
-excerpt: "A bright, floral mead made with foraged dandelion flowers and Ambrosia honey. The dandelion tea brings a subtle herbal quality that pairs beautifully with the honey's sweetness."
+excerpt: "A bright floral mead brewed with foraged dandelion petals and Ambrosia honey. Red Star Premier Cote ferments clean, leaving herbal tea notes in a golden pour."
 featuredImage: /images/content/brewing/dandelion-mead/featured.jpg
 tags:
   - brewing

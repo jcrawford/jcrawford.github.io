@@ -1,7 +1,7 @@
 ---
 slug: things-you-didnt-know-about-mysql-indexes
 title: "MySQL Indexes: The Stuff Nobody Explains Until Your Query Is 30 Seconds Slow"
-excerpt: "You added an index. It's still slow. Here's what actually matters when MySQL decides whether to use your index—and the gotchas that catch everyone at least once."
+excerpt: "MySQL indexes aren't magic. Leftmost prefix rule, functions killing indexes, covering indexes, EXPLAIN analysis—the gotchas that catch everyone at least once."
 featuredImage: /images/content/mysql-indexes-featured.jpg
 tags:
   - mysql

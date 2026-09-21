@@ -2,12 +2,7 @@
 draft: true
 slug: saferide-health-cursor-ai-adoption
 title: "How SafeRide Health Adopted AI in Engineering: Velocity Gains, Budget Lessons, and a Veteran Engineer's Perspective"
-excerpt: >-
-  After adopting Cursor across our engineering team at SafeRide Health, we saw
-  major velocity improvements—but also burned through a third of our yearly AI
-  budget in the first month. Here's what we learned about model selection, cost
-  management, agentic workflows, and how a 20+ year veteran engineer is adapting
-  to the AI era.
+excerpt: "SafeRide Health adopted Cursor AI for engineering: major velocity gains, budget burn lessons, model selection standards, and agentic dev platform setup."
 featuredImage: /images/content/posts/2026/04/saferide-health-cursor-ai-adoption/featured.jpg
 tags:
   - ai

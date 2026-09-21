@@ -1,7 +1,7 @@
 ---
 slug: claude-opus-4-7-whats-new
 title: "Claude Opus 4.7: What's New and Why Developers Should Care"
-excerpt: "Anthropic's latest flagship model brings meaningful improvements in coding autonomy, vision, and safety. Here's what changed between 4.6 and 4.7—and whether it's worth upgrading your workflows."
+excerpt: "Claude Opus 4.7 ships with better autonomous coding, vision upgrades, and cybersecurity safeguards. Same pricing as 4.6—here's what actually changed for devs."
 featuredImage: /images/content/claude-opus-4-7-hero.jpg
 tags:
   - ai

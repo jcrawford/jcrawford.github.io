@@ -1,7 +1,7 @@
 ---
 slug: magnesium
 title: "Magnesium: The Quiet Enabler"
-excerpt: "Magnesium is essential for yeast metabolism in small doses. Learn how to use it without overdoing it."
+excerpt: "Magnesium is a required yeast nutrient cofactor powering ATP production during fermentation. Learn the narrow 5-20 ppm window and adding it with Epsom salts."
 featuredImage: /images/content/brewing/mead-water-chemistry/magnesium/featured.png
 tags:
   - brewing

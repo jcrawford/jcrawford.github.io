@@ -1,7 +1,7 @@
 ---
 slug: cherry-mead
 title: "Cherry Mead"
-excerpt: "A sweet cherry mead made with Maker's Mark Premium Wildflower Honey, whole frozen cherries, and Red Star Premier Blanc yeast. Primary fermentation with fruit in a mesh bag, then a second cherry addition in secondary for flavor and color."
+excerpt: "A sweet cherry melomel recipe using wildflower honey, frozen cherries in a mesh bag, and Red Star Premier Blanc yeast with double fruit addition for flavor."
 featuredImage: /images/content/brewing/cherry-mead/featured.jpg
 tags:
   - brewing

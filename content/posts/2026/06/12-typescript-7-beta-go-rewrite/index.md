@@ -1,7 +1,7 @@
 ---
 slug: typescript-7-beta-go-rewrite
 title: "TypeScript 7.0 Beta: The Compiler Rewritten in Go and What It Means for Your Projects"
-excerpt: "TypeScript 7.0 Beta swaps the bootstrapped TypeScript compiler for a native Go port—and claims roughly 10× faster builds. But the real story is more nuanced than the headline. Here's what changed, what hasn't, and when it actually makes sense to try it."
+excerpt: "TypeScript 7.0 Beta rewrites the compiler in Go for 10x faster builds. What changed, what's missing, and when to try the beta in your production projects."
 featuredImage: /images/content/typescript-7-beta-go-rewrite/featured.jpg
 tags:
   - development

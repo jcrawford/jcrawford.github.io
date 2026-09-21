@@ -1,7 +1,7 @@
 ---
 slug: wordpress-plugin-supply-chain-attack-2026
 title: "How 30 WordPress Plugins Were Weaponized Overnight"
-excerpt: "A legitimate 8-year plugin business was sold on Flippa. Eight months later, the new owner activated backdoors in 30+ plugins. Here's what happened, how to check if you're affected, and how to audit your own plugin risk."
+excerpt: "30 WordPress plugins weaponized after a Flippa sale. New owner planted backdoors dormant for 8 months. Here's how to check your site and audit plugin risk."
 featuredImage: "/images/content/wp-supply-chain-2026.jpg"
 tags: ["wordpress", "security", "supply-chain", "open-source"]
 author: joseph-crawford

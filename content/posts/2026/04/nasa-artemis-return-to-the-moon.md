@@ -1,12 +1,7 @@
 ---
 slug: nasa-artemis-return-to-the-moon
 title: "Artemis Rising: Why NASA's Return to the Moon Is Worth Every Penny and Every Delay"
-excerpt: >-
-  NASA's Artemis program is years behind schedule and billions over budget. It's
-  also the most ambitious human spaceflight endeavor since Apollo — and Artemis II
-  just proved it works. Here's why the delays, the costs, and the sheer difficulty
-  are exactly what make this mission matter — for the U.S., for humanity, and for
-  our future on Mars.
+excerpt: "NASA's Artemis program is behind schedule and over budget—but it's our bridge to living on the Moon and reaching Mars. Artemis II proved the mission works."
 featuredImage: /images/content/posts/2026/04/nasa-artemis-return-to-the-moon/featured.jpg
 tags:
   - space

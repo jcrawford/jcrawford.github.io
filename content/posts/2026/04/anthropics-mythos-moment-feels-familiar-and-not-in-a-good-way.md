@@ -1,7 +1,7 @@
 ---
 slug: "anthropics-mythos-moment-feels-familiar-and-not-in-a-good-way"
 title: "Anthropic’s Mythos Moment Feels Familiar, and Not in a Good Way"
-excerpt: "Anthropic’s Project Glasswing and Mythos Preview may point to real advances in AI-assisted security work, but for developers and tool builders the louder story is how ‘too powerful’ narratives can blur into marketing while access, integrations, and product decisions remain the issues that actually shape day-to-day use."
+excerpt: "Anthropic's Project Glasswing and Mythos Preview echo GPT-2's too-dangerous-to-release hype. Developers need stable API access, not safety theater marketing."
 featuredImage: /images/content/anthropics-mythos-moment-feels-familiar-and-not-in-a-good-way/featured.jpg
 tags:
   - ai

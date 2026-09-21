@@ -1,7 +1,7 @@
 ---
 slug: vision-capabilities-php-ai-agents
 title: "PHP Can See Now: Vision Capabilities for AI Agents Are Here"
-excerpt: "The Neuron AI framework just added image understanding to PHP agents. That's not a small thing—PHP powers over half the web, and until now, building vision-capable AI in PHP meant bolting on Python microservices. Here's what changed, how it works, and what you can actually build with it."
+excerpt: "Neuron AI framework adds vision capabilities to PHP agents—image understanding without Python microservices. Build vision-enabled AI in Laravel or Symfony."
 featuredImage: /images/content/vision-capabilities-php-ai-agents/featured.jpg
 tags:
   - ai

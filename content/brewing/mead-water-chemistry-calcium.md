@@ -1,7 +1,7 @@
 ---
 slug: calcium
 title: "Calcium: The Backbone Ion"
-excerpt: "Calcium drives yeast health, clarity, and structural mouthfeel. Learn when and how to add it to your mead must."
+excerpt: "Calcium is the workhorse ion in mead, driving yeast health, flocculation, clarity, and mouthfeel. Learn why every batch needs 50-100 ppm and how to add it."
 featuredImage: /images/content/brewing/mead-water-chemistry/calcium/featured.png
 tags:
   - brewing

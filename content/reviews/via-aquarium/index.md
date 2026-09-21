@@ -1,9 +1,7 @@
 ---
 slug: via-aquarium
 title: 'VIA Aquarium Review: A Rainy Day Surprise'
-excerpt: >-
-  Sometimes the best-laid plans get washed away. A trip to Adirondack Animal Land
-  that ended before it began — and the aquarium that saved the day.
+excerpt: "A VIA Aquarium review in Schenectady — a rainy-day family surprise with a shark tunnel, kid-friendly size, and honest takes on pricing and the mall location."
 featuredImage: /images/content/posts/via-aquarium/featured.jpg
 tags:
   - reviews

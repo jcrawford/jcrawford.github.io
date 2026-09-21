@@ -1,7 +1,7 @@
 ---
 slug: bottling
 title: "Bottling"
-excerpt: "Choosing bottles, deciding between still and carbonated mead, and handling sediment so your finished mead pours clean."
+excerpt: "Bottling is the final step before drinking your mead. Learn to pick swing-top or crown-cap bottles, still versus carbonated, priming, and sediment handling."
 featuredImage: /images/content/brewing/intro-to-making-mead/bottling/featured.jpg
 tags:
   - brewing

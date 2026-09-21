@@ -1,6 +1,7 @@
 ---
 slug: supporting-the-brew
 title: "Fueling the Fermentation: Supporting the Brewing Journey"
+excerpt: "Support my brewing experiments via Ko-fi. Contributions fund quality honey, specialized yeast, and rare fruit additions for detailed mead-making findings."
 publishedAt: 2026-08-12
 featuredImage: /images/content/brewing/supporting-the-brew.jpg
 author: "Joseph Crawford"

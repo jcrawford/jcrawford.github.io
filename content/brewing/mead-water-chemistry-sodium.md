@@ -1,7 +1,7 @@
 ---
 slug: sodium
 title: "Sodium: The Sweetness Enhancer"
-excerpt: "Sodium enhances perceived sweetness and roundness — but too much ruins a mead. Learn the narrow window where it works."
+excerpt: "Sodium enhances perceived sweetness and rounds mouthfeel in mead, much like salt in caramel. Learn the tight 5-25 ppm target and when to skip it for dry meads."
 featuredImage: /images/content/brewing/mead-water-chemistry/sodium/featured.png
 tags:
   - brewing

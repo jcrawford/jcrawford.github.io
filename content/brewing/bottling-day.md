@@ -1,7 +1,7 @@
 ---
 slug: bottling-day
 title: "Bottling Day: The Final Stretch"
-excerpt: "From siphon setups to pasteurization and the danger of bottle bombs, here is my guide to successfully bottling a 1-gallon batch."
+excerpt: "Bottling day is the most rewarding and stressful part of homebrewing. Learn my siphon setup, stabilization, pasteurization, and how to avoid bottle bombs."
 featuredImage: /images/content/brewing/bottling-day/featured.jpg
 tags:
   - brewing

@@ -1,7 +1,7 @@
 ---
 slug: strawberry-wine
 title: "Strawberry Wine"
-excerpt: "A fresh strawberry wine made with pureed strawberries and a unique Camden tablet treatment to eliminate wild yeast before fermentation."
+excerpt: "A fresh strawberry wine recipe using pureed fruit, a Camden tablet to kill wild yeast, and Red Star Cote Des Blancs. One-gallon batch ages a year at 11.3% ABV."
 featuredImage: /images/content/brewing/strawberry-wine/featured.jpg
 tags:
   - brewing

@@ -1,10 +1,7 @@
 ---
 slug: fried-chicken-ice-cream-review
 title: 'Fried Chicken Ice Cream Review: The Viral Sensation That Had My Kids Begging'
-excerpt: >-
-  When your family sends you to Price Chopper at 8pm for fried chicken ice cream,
-  you know something's gone viral. Icenova's bizarre creation is exactly what it sounds like
-  — and somehow, it works.
+excerpt: "An Icenova fried chicken ice cream review — the viral TikTok treat that looks like real fried chicken. Does the novelty hold up, or is it just a gimmick?"
 publishedAt: 2026-07-20
 author: joseph-crawford
 featuredImage: /images/content/posts/fried-chicken-ice-cream/featured.jpg

@@ -1,7 +1,7 @@
 ---
 slug: ph-meters-and-calibration
 title: "Measuring pH: Meters and Calibration"
-excerpt: "Understanding pH is critical for mead stability. Learn how to use a digital pH meter and why calibration is non-negotiable."
+excerpt: "A digital pH meter is essential for mead fermentation stability between 3.2 and 4.2. Learn how to calibrate with buffers and which budget meters are worth it."
 featuredImage: /images/content/brewing/mead-water-chemistry/ph-meters/featured.png
 tags:
   - brewing

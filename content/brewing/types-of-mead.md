@@ -1,7 +1,7 @@
 ---
 slug: types-of-mead
 title: "Types of Mead"
-excerpt: "A tour of mead styles from the simplest traditional mead to fruit, spiced, smoked, and chili variations — and what makes each one what it is."
+excerpt: "A beginner-friendly tour of mead styles from traditional and melomel to metheglin, braggot, and bochet — learn what makes each style unique before you brew."
 featuredImage: /images/content/brewing/intro-to-making-mead/types-of-mead/featured.jpg
 tags:
   - brewing

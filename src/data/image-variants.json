@@ -2302,6 +2302,21 @@
     ]
   },
   {
+    "src": "/images/content/posts/mcp-bad-idea/featured.jpg",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
     "src": "/images/content/posts/via-aquarium/featured.jpg",
     "widths": [
       64,

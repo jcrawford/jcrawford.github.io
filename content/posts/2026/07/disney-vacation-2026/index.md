@@ -1,7 +1,7 @@
 ---
 slug: disney-vacation-2026
 title: "Our 2026 Disney World Vacation"
-excerpt: "No buildup, no countdown, no planning posts. We just... went. A surprise family trip to Magic Kingdom, staying at the Hilton Aqua Sol in Winter Garden, and the kind of memories you don't see coming."
+excerpt: "Surprise family trip to Disney World 2026—Magic Kingdom, Hilton Aqua Sol in Winter Garden, Falcon 9 launch, and Savannah Wildlife Refuge on the drive."
 featuredImage: /images/content/disney-vacation-2026/hero.jpg
 tags:
   - family

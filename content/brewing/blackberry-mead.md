@@ -1,7 +1,7 @@
 ---
 slug: blackberry-mead
 title: "Blackberry Mead"
-excerpt: "A deep purple blackberry mead started without an original gravity reading, fermented to dryness, then sweetened back and bottle-pasteurized. Lessons learned from a first attempt."
+excerpt: "A deep purple blackberry melomel fermented dry then back-sweetened and bottle-pasteurized. Lessons from a first attempt: take gravity readings and weigh honey."
 featuredImage: /images/content/brewing/blackberry-mead/featured.jpg
 tags:
   - brewing

@@ -2,10 +2,7 @@
 slug: clickfunnels-review
 title: "ClickFunnels Review 2026: Is It Worth the Hype?"
 description: "An honest look at ClickFunnels in 2026 — what it does well, where it falls short, and whether the pricing makes sense for your business."
-excerpt: >-
-  I spent weeks researching and testing ClickFunnels to see if it lives up to
-  the marketing. Here is my honest take on the features, pricing, and whether
-  it is worth your money in 2026.
+excerpt: "An honest ClickFunnels review for 2026 — testing the funnel builder, templates, email automation, and whether the pricing makes sense for your business."
 featuredImage: /images/content/reviews/clickfunnels-review/featured.jpg
 tags:
   - reviews

@@ -4,7 +4,7 @@ publishedAt: "2026-07-20"
 slug: "temporal-api-trauma"
 draft: false
 author: "joseph-crawford"
-excerpt: "A vent session on why the JavaScript Date object was a disaster and why the Temporal API is the relief we've been waiting for."
+excerpt: "JavaScript Date object is broken—mutability, zero-indexed months, timezone chaos. The Temporal API fixes it with PlainDate, PlainTime, and ZonedDateTime."
 tags: ["javascript"]
 featuredImage: "/images/content/posts/temporal-api-trauma/featured.jpg"
 updatedAt: "2026-07-20"

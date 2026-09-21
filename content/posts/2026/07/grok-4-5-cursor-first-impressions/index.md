@@ -1,7 +1,7 @@
 ---
 slug: grok-4-5-cursor-first-impressions
 title: "Grok 4.5 in Cursor: First Impressions of the New Frontier Coding Model"
-excerpt: "SpaceXAI and Cursor shipped Grok 4.5 — a jointly-trained model priced at a fraction of the competition. After a few days of real work, here's how it holds up against the frontier models I've been using."
+excerpt: "Grok 4.5 in Cursor: jointly trained with SpaceXAI at $2/$6 per million tokens. First impressions on code quality, speed, and cost vs frontier coding models."
 featuredImage: /images/content/grok-4-5-cursor-first-impressions/hero.jpg
 tags:
   - ai
