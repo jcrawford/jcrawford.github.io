@@ -12,7 +12,7 @@ updatedAt: "2026-09-21"
 
 I've been watching the Model Context Protocol ecosystem grow for nearly two years now, and I keep coming back to the same uncomfortable question: what problem does this actually solve that a CLI and a shell don't already solve better?
 
-A recent article by Maharshi Patel argued that MCP was always a bad idea — that the models have gotten smart enough to replace most MCP servers with direct API calls and CLI tools. I agree with the conclusion, but I think the argument is even stronger when you look at the actual numbers. So I ran the experiments myself, using the GitHub MCP server and the `gh` CLI as a real-world comparison.
+A [recent article by Maharshi Patel](https://maharship.com/blog/why-mcp-was-always-a-bad-idea/) argued that MCP was always a bad idea — that the models have gotten smart enough to replace most MCP servers with direct API calls and CLI tools. I agree with the conclusion, but I think the argument is even stronger when you look at the actual numbers. So I ran the experiments myself, using the GitHub MCP server and the `gh` CLI as a real-world comparison.
 
 The results are worse than I expected.
 
