@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-22T01:32:04.438Z",
+  "generatedAt": "2026-09-22T15:23:08.211Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -48,9 +48,9 @@
     },
     {
       "id": "/reviews/benq-rd320ua-monitor-review",
-      "views": 72,
+      "views": 73,
       "comments": 0,
-      "score": 72,
+      "score": 73,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -81,9 +81,9 @@
     },
     {
       "id": "/brewing/blackberry-mead",
-      "views": 41,
+      "views": 42,
       "comments": 0,
-      "score": 41,
+      "score": 42,
       "shares": {
         "facebook": 1,
         "linkedin": 0,
@@ -114,11 +114,22 @@
     },
     {
       "id": "/reviews/total-typescript-pro-complete-review",
-      "views": 34,
+      "views": 35,
       "comments": 0,
-      "score": 34,
+      "score": 35,
       "shares": {
         "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/posts/lebanon-valley-speedway-2026",
+      "views": 33,
+      "comments": 0,
+      "score": 33,
+      "shares": {
+        "facebook": 1,
         "linkedin": 0,
         "copy": 0
       }
@@ -130,17 +141,6 @@
       "score": 33,
       "shares": {
         "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/posts/lebanon-valley-speedway-2026",
-      "views": 32,
-      "comments": 0,
-      "score": 32,
-      "shares": {
-        "facebook": 1,
         "linkedin": 0,
         "copy": 0
       }
@@ -201,6 +201,17 @@
       }
     },
     {
+      "id": "/posts/grok-4-5-cursor-first-impressions",
+      "views": 18,
+      "comments": 0,
+      "score": 18,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/posts/home-brewing-journey",
       "views": 18,
       "comments": 0,
@@ -212,21 +223,10 @@
       }
     },
     {
-      "id": "/posts/grok-4-5-cursor-first-impressions",
-      "views": 17,
-      "comments": 0,
-      "score": 17,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
       "id": "/reviews/fried-chicken-ice-cream-review",
-      "views": 17,
+      "views": 18,
       "comments": 0,
-      "score": 17,
+      "score": 18,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
