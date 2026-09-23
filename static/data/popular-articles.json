@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-22T15:29:13.790Z",
+  "generatedAt": "2026-09-23T01:21:55.607Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -201,6 +201,17 @@
       }
     },
     {
+      "id": "/reviews/fried-chicken-ice-cream-review",
+      "views": 19,
+      "comments": 0,
+      "score": 19,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 1
+      }
+    },
+    {
       "id": "/posts/grok-4-5-cursor-first-impressions",
       "views": 18,
       "comments": 0,
@@ -220,17 +231,6 @@
         "facebook": 0,
         "linkedin": 0,
         "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/fried-chicken-ice-cream-review",
-      "views": 18,
-      "comments": 0,
-      "score": 18,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 1
       }
     },
     {
