@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-23T01:21:55.607Z",
+  "generatedAt": "2026-09-23T15:17:35.885Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -15,9 +15,9 @@
     },
     {
       "id": "/brewing/cherry-mead",
-      "views": 207,
+      "views": 208,
       "comments": 0,
-      "score": 207,
+      "score": 208,
       "shares": {
         "facebook": 5,
         "linkedin": 1,
@@ -81,9 +81,9 @@
     },
     {
       "id": "/brewing/blackberry-mead",
-      "views": 42,
+      "views": 44,
       "comments": 0,
-      "score": 42,
+      "score": 44,
       "shares": {
         "facebook": 1,
         "linkedin": 0,
@@ -157,7 +157,7 @@
       }
     },
     {
-      "id": "/series/intro-to-making-mead/types-of-mead",
+      "id": "/reviews/huupe-mini-review",
       "views": 29,
       "comments": 0,
       "score": 29,
@@ -168,10 +168,10 @@
       }
     },
     {
-      "id": "/reviews/huupe-mini-review",
-      "views": 28,
+      "id": "/series/intro-to-making-mead/types-of-mead",
+      "views": 29,
       "comments": 0,
-      "score": 28,
+      "score": 29,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -202,9 +202,9 @@
     },
     {
       "id": "/reviews/fried-chicken-ice-cream-review",
-      "views": 19,
+      "views": 20,
       "comments": 0,
-      "score": 19,
+      "score": 20,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
