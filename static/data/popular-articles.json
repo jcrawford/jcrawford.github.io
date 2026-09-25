@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-24T15:47:34.040Z",
+  "generatedAt": "2026-09-25T01:17:14.815Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -70,9 +70,9 @@
     },
     {
       "id": "/series/mead-water-chemistry/water-chemistry-basics",
-      "views": 45,
+      "views": 46,
       "comments": 0,
-      "score": 45,
+      "score": 46,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -234,6 +234,17 @@
       }
     },
     {
+      "id": "/posts/long-running-ai-agents-adk",
+      "views": 15,
+      "comments": 0,
+      "score": 15,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/posts/vision-capabilities-php-ai-agents",
       "views": 15,
       "comments": 0,
@@ -251,17 +262,6 @@
       "score": 15,
       "shares": {
         "facebook": 5,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/posts/long-running-ai-agents-adk",
-      "views": 14,
-      "comments": 0,
-      "score": 14,
-      "shares": {
-        "facebook": 0,
         "linkedin": 0,
         "copy": 0
       }
