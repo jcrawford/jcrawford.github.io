@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T01:54:45.920Z",
+  "generatedAt": "2026-10-01T17:20:43.171Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -114,9 +114,9 @@
     },
     {
       "id": "/reviews/total-typescript-pro-complete-review",
-      "views": 35,
+      "views": 36,
       "comments": 0,
-      "score": 35,
+      "score": 36,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
