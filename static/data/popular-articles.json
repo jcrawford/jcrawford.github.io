@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T17:20:43.171Z",
+  "generatedAt": "2026-10-02T02:05:47.235Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -91,6 +91,17 @@
       }
     },
     {
+      "id": "/reviews/total-typescript-pro-complete-review",
+      "views": 37,
+      "comments": 0,
+      "score": 37,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/series/intro-to-making-mead",
       "views": 37,
       "comments": 0,
@@ -108,17 +119,6 @@
       "score": 37,
       "shares": {
         "facebook": 1,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/total-typescript-pro-complete-review",
-      "views": 36,
-      "comments": 0,
-      "score": 36,
-      "shares": {
-        "facebook": 0,
         "linkedin": 0,
         "copy": 0
       }
