@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T17:25:12.544Z",
+  "generatedAt": "2026-10-10T02:13:44.659Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -157,6 +157,17 @@
       }
     },
     {
+      "id": "/reviews/fried-chicken-ice-cream-review",
+      "views": 29,
+      "comments": 0,
+      "score": 29,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 1
+      }
+    },
+    {
       "id": "/reviews/huupe-mini-review",
       "views": 29,
       "comments": 0,
@@ -176,17 +187,6 @@
         "facebook": 0,
         "linkedin": 0,
         "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/fried-chicken-ice-cream-review",
-      "views": 28,
-      "comments": 0,
-      "score": 28,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 1
       }
     },
     {
@@ -235,9 +235,9 @@
     },
     {
       "id": "/posts/long-running-ai-agents-adk",
-      "views": 15,
+      "views": 16,
       "comments": 0,
-      "score": 15,
+      "score": 16,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
