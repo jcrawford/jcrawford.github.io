@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T02:12:58.509Z",
+  "generatedAt": "2026-10-12T20:06:53.582Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -158,9 +158,9 @@
     },
     {
       "id": "/reviews/fried-chicken-ice-cream-review",
-      "views": 30,
+      "views": 31,
       "comments": 0,
-      "score": 30,
+      "score": 31,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
