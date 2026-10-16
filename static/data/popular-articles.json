@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T15:33:44.858Z",
+  "generatedAt": "2026-10-16T01:06:31.188Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -146,6 +146,17 @@
       }
     },
     {
+      "id": "/reviews/fried-chicken-ice-cream-review",
+      "views": 33,
+      "comments": 0,
+      "score": 33,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 1
+      }
+    },
+    {
       "id": "/posts/saferide-health-how-i-use-ai-as-an-engineer",
       "views": 32,
       "comments": 0,
@@ -154,17 +165,6 @@
         "facebook": 0,
         "linkedin": 0,
         "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/fried-chicken-ice-cream-review",
-      "views": 31,
-      "comments": 0,
-      "score": 31,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 1
       }
     },
     {
