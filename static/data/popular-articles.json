@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T01:12:50.659Z",
+  "generatedAt": "2026-10-17T14:03:55.505Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -26,9 +26,9 @@
     },
     {
       "id": "/reviews/ford-transit-15-passenger-van-review",
-      "views": 107,
+      "views": 108,
       "comments": 0,
-      "score": 107,
+      "score": 108,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -245,6 +245,17 @@
       }
     },
     {
+      "id": "/reviews/capital-one-360-checking",
+      "views": 16,
+      "comments": 0,
+      "score": 16,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/posts/things-you-didnt-know-about-mysql-indexes",
       "views": 15,
       "comments": 0,
@@ -262,17 +273,6 @@
       "score": 15,
       "shares": {
         "facebook": 1,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/capital-one-360-checking",
-      "views": 15,
-      "comments": 0,
-      "score": 15,
-      "shares": {
-        "facebook": 0,
         "linkedin": 0,
         "copy": 0
       }
