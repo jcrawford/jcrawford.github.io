@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T01:41:09.602Z",
+  "generatedAt": "2026-10-20T15:34:49.651Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -135,6 +135,17 @@
       }
     },
     {
+      "id": "/reviews/fried-chicken-ice-cream-review",
+      "views": 34,
+      "comments": 0,
+      "score": 34,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 1
+      }
+    },
+    {
       "id": "/posts/lebanon-valley-speedway-2026",
       "views": 33,
       "comments": 0,
@@ -143,17 +154,6 @@
         "facebook": 1,
         "linkedin": 0,
         "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/fried-chicken-ice-cream-review",
-      "views": 33,
-      "comments": 0,
-      "score": 33,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 1
       }
     },
     {
@@ -212,6 +212,17 @@
       }
     },
     {
+      "id": "/reviews/capital-one-360-checking",
+      "views": 19,
+      "comments": 0,
+      "score": 19,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/posts/grok-4-5-cursor-first-impressions",
       "views": 18,
       "comments": 0,
@@ -235,17 +246,6 @@
     },
     {
       "id": "/posts/long-running-ai-agents-adk",
-      "views": 18,
-      "comments": 0,
-      "score": 18,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/capital-one-360-checking",
       "views": 18,
       "comments": 0,
       "score": 18,
