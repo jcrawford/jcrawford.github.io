@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T15:54:12.255Z",
+  "generatedAt": "2026-10-22T01:24:06.772Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -135,6 +135,17 @@
       }
     },
     {
+      "id": "/reviews/fried-chicken-ice-cream-review",
+      "views": 35,
+      "comments": 0,
+      "score": 35,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 1
+      }
+    },
+    {
       "id": "/reviews/clickfunnels-review",
       "views": 34,
       "comments": 0,
@@ -143,17 +154,6 @@
         "facebook": 0,
         "linkedin": 0,
         "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/fried-chicken-ice-cream-review",
-      "views": 34,
-      "comments": 0,
-      "score": 34,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 1
       }
     },
     {
@@ -201,7 +201,7 @@
       }
     },
     {
-      "id": "/reviews/voyager-keyboard",
+      "id": "/reviews/capital-one-360-checking",
       "views": 21,
       "comments": 0,
       "score": 21,
@@ -212,10 +212,10 @@
       }
     },
     {
-      "id": "/reviews/capital-one-360-checking",
-      "views": 20,
+      "id": "/reviews/voyager-keyboard",
+      "views": 21,
       "comments": 0,
-      "score": 20,
+      "score": 21,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
