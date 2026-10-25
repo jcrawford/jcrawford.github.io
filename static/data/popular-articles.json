@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T14:22:22.198Z",
+  "generatedAt": "2026-10-25T00:56:48.522Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -190,10 +190,10 @@
       }
     },
     {
-      "id": "/posts/saferide-health",
-      "views": 23,
+      "id": "/reviews/capital-one-360-checking",
+      "views": 24,
       "comments": 0,
-      "score": 23,
+      "score": 24,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -201,7 +201,7 @@
       }
     },
     {
-      "id": "/reviews/capital-one-360-checking",
+      "id": "/posts/saferide-health",
       "views": 23,
       "comments": 0,
       "score": 23,
