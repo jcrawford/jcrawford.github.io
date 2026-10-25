@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T00:56:48.522Z",
+  "generatedAt": "2026-10-25T14:45:04.577Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -102,6 +102,17 @@
       }
     },
     {
+      "id": "/reviews/fried-chicken-ice-cream-review",
+      "views": 37,
+      "comments": 0,
+      "score": 37,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 1
+      }
+    },
+    {
       "id": "/series/intro-to-making-mead",
       "views": 37,
       "comments": 0,
@@ -132,17 +143,6 @@
         "facebook": 1,
         "linkedin": 0,
         "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/fried-chicken-ice-cream-review",
-      "views": 35,
-      "comments": 0,
-      "score": 35,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 1
       }
     },
     {
