@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T01:04:08.530Z",
+  "generatedAt": "2026-10-26T17:07:50.708Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -191,9 +191,9 @@
     },
     {
       "id": "/reviews/capital-one-360-checking",
-      "views": 25,
+      "views": 26,
       "comments": 0,
-      "score": 25,
+      "score": 26,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
