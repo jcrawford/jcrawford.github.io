@@ -1,7 +1,18 @@
 {
-  "generatedAt": "2026-09-06T18:27:32.105Z",
+  "generatedAt": "2026-10-26T14:53:04.556Z",
   "windowDays": "lifetime",
   "entries": [
+    {
+      "id": "/brewing/cherry-mead",
+      "views": 216,
+      "comments": 0,
+      "score": 216,
+      "shares": {
+        "facebook": 5,
+        "linkedin": 1,
+        "copy": 1
+      }
+    },
     {
       "id": "/reviews/budget-auto-rental-process-review",
       "views": 210,
@@ -14,21 +25,10 @@
       }
     },
     {
-      "id": "/brewing/cherry-mead",
-      "views": 183,
-      "comments": 0,
-      "score": 183,
-      "shares": {
-        "facebook": 5,
-        "linkedin": 1,
-        "copy": 1
-      }
-    },
-    {
       "id": "/reviews/ford-transit-15-passenger-van-review",
-      "views": 100,
+      "views": 113,
       "comments": 0,
-      "score": 100,
+      "score": 113,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -36,10 +36,21 @@
       }
     },
     {
-      "id": "/reviews/benq-rd320ua-monitor-review",
-      "views": 71,
+      "id": "/brewing/strawberry-wine",
+      "views": 87,
       "comments": 0,
-      "score": 71,
+      "score": 87,
+      "shares": {
+        "facebook": 8,
+        "linkedin": 1,
+        "copy": 1
+      }
+    },
+    {
+      "id": "/reviews/benq-rd320ua-monitor-review",
+      "views": 76,
+      "comments": 0,
+      "score": 76,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -58,21 +69,21 @@
       }
     },
     {
-      "id": "/brewing/strawberry-wine",
-      "views": 57,
+      "id": "/series/mead-water-chemistry/water-chemistry-basics",
+      "views": 49,
       "comments": 0,
-      "score": 57,
+      "score": 49,
       "shares": {
-        "facebook": 8,
-        "linkedin": 1,
-        "copy": 1
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
       }
     },
     {
       "id": "/brewing/blackberry-mead",
-      "views": 41,
+      "views": 44,
       "comments": 0,
-      "score": 41,
+      "score": 44,
       "shares": {
         "facebook": 1,
         "linkedin": 0,
@@ -80,7 +91,29 @@
       }
     },
     {
-      "id": "/series/mead-water-chemistry/water-chemistry-basics",
+      "id": "/reviews/total-typescript-pro-complete-review",
+      "views": 40,
+      "comments": 0,
+      "score": 40,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/fried-chicken-ice-cream-review",
+      "views": 38,
+      "comments": 0,
+      "score": 38,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 1
+      }
+    },
+    {
+      "id": "/series/intro-to-making-mead",
       "views": 37,
       "comments": 0,
       "score": 37,
@@ -91,34 +124,34 @@
       }
     },
     {
-      "id": "/series/intro-to-making-mead",
-      "views": 35,
+      "id": "/series/mead-water-chemistry",
+      "views": 37,
       "comments": 0,
-      "score": 35,
+      "score": 37,
       "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/clickfunnels-review",
-      "views": 33,
-      "comments": 0,
-      "score": 33,
-      "shares": {
-        "facebook": 0,
+        "facebook": 1,
         "linkedin": 0,
         "copy": 0
       }
     },
     {
       "id": "/posts/lebanon-valley-speedway-2026",
-      "views": 32,
+      "views": 35,
       "comments": 0,
-      "score": 32,
+      "score": 35,
       "shares": {
         "facebook": 1,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/clickfunnels-review",
+      "views": 34,
+      "comments": 0,
+      "score": 34,
+      "shares": {
+        "facebook": 0,
         "linkedin": 0,
         "copy": 0
       }
@@ -135,10 +168,10 @@
       }
     },
     {
-      "id": "/reviews/total-typescript-pro-complete-review",
-      "views": 29,
+      "id": "/reviews/huupe-mini-review",
+      "views": 31,
       "comments": 0,
-      "score": 29,
+      "score": 31,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -157,10 +190,10 @@
       }
     },
     {
-      "id": "/reviews/huupe-mini-review",
-      "views": 28,
+      "id": "/reviews/capital-one-360-checking",
+      "views": 26,
       "comments": 0,
-      "score": 28,
+      "score": 26,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -169,6 +202,17 @@
     },
     {
       "id": "/posts/saferide-health",
+      "views": 23,
+      "comments": 0,
+      "score": 23,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/voyager-keyboard",
       "views": 21,
       "comments": 0,
       "score": 21,
@@ -179,10 +223,10 @@
       }
     },
     {
-      "id": "/reviews/voyager-keyboard",
-      "views": 20,
+      "id": "/posts/grok-4-5-cursor-first-impressions",
+      "views": 18,
       "comments": 0,
-      "score": 20,
+      "score": 18,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -201,32 +245,10 @@
       }
     },
     {
-      "id": "/posts/grok-4-5-cursor-first-impressions",
-      "views": 17,
-      "comments": 0,
-      "score": 17,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/series/mead-water-chemistry",
-      "views": 16,
-      "comments": 0,
-      "score": 16,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
       "id": "/posts/long-running-ai-agents-adk",
-      "views": 14,
+      "views": 18,
       "comments": 0,
-      "score": 14,
+      "score": 18,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -235,9 +257,9 @@
     },
     {
       "id": "/posts/things-you-didnt-know-about-mysql-indexes",
-      "views": 14,
+      "views": 15,
       "comments": 0,
-      "score": 14,
+      "score": 15,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -245,34 +267,12 @@
       }
     },
     {
-      "id": "/reviews/fried-chicken-ice-cream-review",
-      "views": 14,
+      "id": "/posts/vision-capabilities-php-ai-agents",
+      "views": 15,
       "comments": 0,
-      "score": 14,
+      "score": 15,
       "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/plaato-airlock-review",
-      "views": 12,
-      "comments": 0,
-      "score": 12,
-      "shares": {
-        "facebook": 5,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/tilt-hydrometer-review",
-      "views": 11,
-      "comments": 0,
-      "score": 11,
-      "shares": {
-        "facebook": 0,
+        "facebook": 1,
         "linkedin": 0,
         "copy": 0
       }
