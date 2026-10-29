@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-28T17:04:49.125Z",
+  "generatedAt": "2026-10-29T02:15:44.525Z",
   "windowDays": "lifetime",
   "entries": [
     {
       "id": "/brewing/cherry-mead",
-      "views": 222,
+      "views": 225,
       "comments": 0,
-      "score": 222,
+      "score": 225,
       "shares": {
         "facebook": 5,
         "linkedin": 1,
@@ -92,9 +92,9 @@
     },
     {
       "id": "/reviews/total-typescript-pro-complete-review",
-      "views": 41,
+      "views": 42,
       "comments": 0,
-      "score": 41,
+      "score": 42,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -103,9 +103,9 @@
     },
     {
       "id": "/reviews/fried-chicken-ice-cream-review",
-      "views": 38,
+      "views": 39,
       "comments": 0,
-      "score": 38,
+      "score": 39,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -256,10 +256,10 @@
       }
     },
     {
-      "id": "/posts/things-you-didnt-know-about-mysql-indexes",
-      "views": 15,
+      "id": "/brewing/dandelion-mead",
+      "views": 16,
       "comments": 0,
-      "score": 15,
+      "score": 16,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -267,12 +267,12 @@
       }
     },
     {
-      "id": "/posts/vision-capabilities-php-ai-agents",
+      "id": "/posts/things-you-didnt-know-about-mysql-indexes",
       "views": 15,
       "comments": 0,
       "score": 15,
       "shares": {
-        "facebook": 1,
+        "facebook": 0,
         "linkedin": 0,
         "copy": 0
       }
