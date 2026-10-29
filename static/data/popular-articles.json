@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T02:15:44.525Z",
+  "generatedAt": "2026-10-29T17:18:22.997Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -179,7 +179,7 @@
       }
     },
     {
-      "id": "/series/intro-to-making-mead/types-of-mead",
+      "id": "/reviews/capital-one-360-checking",
       "views": 29,
       "comments": 0,
       "score": 29,
@@ -190,10 +190,10 @@
       }
     },
     {
-      "id": "/reviews/capital-one-360-checking",
-      "views": 28,
+      "id": "/series/intro-to-making-mead/types-of-mead",
+      "views": 29,
       "comments": 0,
-      "score": 28,
+      "score": 29,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
