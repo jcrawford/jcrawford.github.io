@@ -1168,6 +1168,56 @@
     ]
   },
   {
+    "src": "/images/content/brewing/caramel-apple-bochet/featured.jpg",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200,
+      1920
+    ]
+  },
+  {
+    "src": "/images/content/brewing/caramel-apple-bochet/step-3-check-og.jpg",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      760,
+      768,
+      850,
+      1200,
+      1920
+    ]
+  },
+  {
+    "src": "/images/content/brewing/caramel-apple-bochet/step-2-mix-must.jpg",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      760,
+      768,
+      850,
+      1200,
+      1920
+    ]
+  },
+  {
     "src": "/images/content/brewing/home-brewing-journey/featured.jpg",
     "widths": [
       64,
@@ -1958,6 +2008,22 @@
     ]
   },
   {
+    "src": "/images/content/brewing/ipa/featured.jpg",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200,
+      1920
+    ]
+  },
+  {
     "src": "/images/content/brewing/strawberry-wine/featured.jpg",
     "widths": [
       64,
@@ -2296,6 +2362,53 @@
       320,
       400,
       600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/posts/grok-4.7-vs-opus-5.5/featured.jpg",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/posts/grok-4.7-vs-opus-5.5/cost-comparison.png",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      760,
+      768,
+      850,
+      1200
+    ]
+  },
+  {
+    "src": "/images/content/posts/grok-4.7-vs-opus-5.5/cost-comparison.jpg",
+    "widths": [
+      64,
+      80,
+      160,
+      280,
+      320,
+      400,
+      600,
+      760,
       768,
       850,
       1200

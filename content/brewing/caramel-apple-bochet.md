@@ -1,0 +1,132 @@
+---
+slug: caramel-apple-bochet
+title: "Caramel-Apple Bochet"
+excerpt: "A layered 1-gallon bochet that starts with a clean traditional primary, adds caramelized honey for a second stage of primary, then finishes with oven-baked apples and reserved caramel honey for backsweetening after pasteurization. This batch finished at about half a gallon — see the yield note."
+featuredImage: /images/content/brewing/caramel-apple-bochet/featured.jpg
+tags:
+  - brewing
+  - mead
+  - bochet
+  - apple
+  - small-batch
+author: joseph-crawford
+publishedAt: '2026-09-28'
+draft: false
+type: brewing-recipe
+
+brewData:
+  originalGravity: 1.080
+  finalGravity: 1.000
+  abv: 13.5
+  startDate: '2026-09-28'
+  primaryEndDate: '2026-10-04'
+  secondaryStartDate: '2026-10-08'
+  secondaryEndDate: '2026-10-24'
+  bottlingDate: null
+  drinkingReadyDate: null
+  yeast: "Red Star Premier Blanc"
+  batchSize: "1 gallon"
+  fermentationTime: "6 days"
+  secondaryTime: "9 days"
+  bulkConditioningTime: "90 days"
+  bottleAgingTime: "0 days"
+
+ingredients:
+  - "3 lbs Maker's Mark Wildflower Honey (1.5 lbs raw for primary, 1.5 lbs caramelized: 1 lb into the must, 0.5 lb reserved for backsweetening)"
+  - "2 lbs apples (70% Granny Smith, 30% Honeycrisp) — baked with peels on"
+  - "1 packet (5 g) Red Star Premier Blanc yeast, plus an additional 3 g pitched on October 5 when the second stage of primary started slowly"
+  - "1.0 g Fermaid K yeast nutrient"
+  - "0.35 g calcium chloride dihydrate"
+  - "0.24 g gypsum"
+  - "80 oz distilled water for primary must"
+
+steps:
+  - title: "Prepare the Water"
+    description: "Since I'm starting with distilled water, there are no minerals to work with. For this mead I want the water soft and subtle so it doesn't compete with the honey, caramel, or baked apple flavors. I added 0.35 grams of calcium chloride dihydrate and 0.24 grams of gypsum to 80 ounces of distilled water. That puts the calcium around 40 ppm, chloride around 45 ppm, and sulfate around 35 ppm, with essentially no magnesium. You need a scale that can measure down to 0.01 grams for this. These amounts are for the water alone, not the finished must."
+
+  - title: "Mix the Primary Must"
+    description: "I poured 1.5 pounds of raw Maker's Mark Wildflower Honey into my sanitized fermenter, then added 80 ounces of mineralized distilled water on top and mixed thoroughly until the honey was completely incorporated. That gives me 104 ounces in primary. For the second stage of fermentation I will add 1 pound of caramelized honey to the must, bringing the fermenting batch to 120 ounces. The remaining 0.5 pound of caramelized honey is reserved for backsweetening after pasteurization. There is no need to heat the honey for this step. This is the traditional mead portion of the recipe, and I did not caramelize, boil, or add anything else to it. No apples, no sugar, just honey and water."
+    image: /images/content/brewing/caramel-apple-bochet/step-2-mix-must.jpg
+
+  - title: "Check Original Gravity"
+    description: "After the honey was fully mixed in, I took a hydrometer reading. The original gravity came in at 1.080. That is higher than you would see from 1.5 pounds of honey in a full gallon, and the reason is that this is only 104 ounces right now, not the full batch volume. The same amount of honey dissolved in less water gives a more concentrated must, so the gravity reads high at this stage. The remaining volume will come from the 16 ounces of caramelized honey added to the must for the second stage, which will also raise the gravity further since it brings fermentable sugar. I recorded 1.080 because I need it to calculate the one-third sugar depletion point for the Fermaid K addition, and later to work out the final ABV once I have the finished volume and final gravity."
+    image: /images/content/brewing/caramel-apple-bochet/step-3-check-og.jpg
+
+  - title: "Aerate the Must"
+    description: "Before pitching the yeast, I oxygenated the must by shaking the fermenter vigorously for several minutes. Yeast needs oxygen to reproduce and build healthy cell walls during the early stage of fermentation. This is the only time I want oxygen in the mead. Once fermentation is underway, oxygen becomes a problem."
+
+  - title: "Pitch the Yeast"
+    description: "I pitched one packet of Red Star Premier Blanc according to the manufacturer's directions and installed the airlock. I am keeping the fermentation temperature stable between 64 and 66 degrees Fahrenheit. Premier Blanc is a clean fermenter that lets the honey character come through, which is exactly what I want for this base. The caramelized honey comes later, in the second stage of primary, and the baked apples go in during secondary, so the first stage needs to be a clean, dry wildflower mead that can carry those flavors."
+
+  - title: "Add Fermaid K at One-Third Sugar Depletion"
+    description: "The Fermaid K label for this product says to use 1 gram per gallon, rehydrated in distilled water, and added after one-third sugar depletion. That means I need to calculate where one-third of my fermentable sugar has been consumed. My original gravity was 1.080, which is 80 gravity points. One-third of 80 is approximately 27, so 80 minus 27 equals 53. That means my one-third depletion target is approximately 1.053. I will take hydrometer readings every couple of days once fermentation slows, and when the gravity hits around 1.053, I will rehydrate 1.0 gram of Fermaid K in a small amount of distilled water and add it to the fermenter. After that, no more nutrient additions."
+
+  - title: "First Stage of Primary Fermentation"
+    description: "Primary fermentation kicked off within hours of pitching the yeast. I am using my keezer as a temperature-controlled fermentation chamber to hold the temperature steady at 66 degrees Fahrenheit. The keezer gives me precise, stable temperature control without the fluctuations you get from room-temperature fermentation, which is especially important for a clean first stage that will carry caramelized honey and baked apple flavors later. The airlock was bubbling steadily within the first day, and the must is actively fermenting."
+    video: /images/content/brewing/caramel-apple-bochet/primary-fermentation.mp4
+
+  - title: "Finish the First Stage of Primary"
+    description: "I let the traditional mead ferment until it was actually finished, using the hydrometer rather than the airlock as my guide. The process is simple: take a reading, wait several days, take another reading, and when the gravity is unchanged between two readings the stage is done. The first stage of primary wrapped up on October 4, six days after I pitched the yeast, leaving me a dry traditional wildflower mead base. That is exactly the canvas I wanted for the next stages."
+
+  - title: "Caramelize the Honey"
+    description: "With primary finished I caramelized the remaining 1.5 pounds of raw wildflower honey. I put it in a heavy-bottomed stainless steel saucepan over medium-low heat. No water, no sugar, no butter or oil. Just honey. I stayed with it the entire time, because hot honey expands and can boil over violently. The honey thinned out, began bubbling, darkened, and developed caramel and toffee aromas. For this recipe I wanted a deep amber to mahogany color, not black. I was looking for caramel, toffee, toasted honey, and marshmallow notes rather than burnt, acrid, or bitter ones. I pulled it off the heat when the color and smell were right, keeping in mind that residual heat keeps cooking it for a little while after removal. No water is added to the caramelized honey at any point. This 1.5 pounds splits into 1 pound for the fermenting batch and 0.5 pound reserved for backsweetening."
+    video: /images/content/brewing/caramel-apple-bochet/caramelize-honey.mp4
+
+  - title: "Divide the Caramelized Honey"
+    description: "After pulling the pan off the heat and letting the caramelized honey cool, I weighed it and divided it into two portions: 1 pound that went straight into the fermenter and 0.5 pound reserved for final backsweetening. Caramelizing drives off moisture from the honey, so I split the finished honey by proportion rather than chasing the exact starting weight, with roughly two-thirds going into the batch and one-third reserved. The reserved portion went into a sanitized, sealed container. No water is added at any point."
+
+  - title: "Add the Bochet Honey for the Second Stage of Primary"
+    description: "With the first stage finished on October 4, I caramelized the 1.5 pounds of honey and added 1 pound of it straight into the must, reserving the other 0.5 pound for backsweetening. This brings the fermenting batch to 120 ounces and starts the second stage of primary fermentation. I added the honey without mixing it into the must, and the next morning I could see why that was a mistake. Caramelized honey is much denser and more viscous than the mead around it, so instead of dissolving it settled into a layer at the bottom of the fermenter. The airlock was still bubbling, but slowly, because only the thin band where honey met must was really fermenting. On October 5 I pitched an additional 3 grams of Red Star Premier Blanc and swirled the fermenter to work the caramelized honey back into suspension. I want to see whether the yeast chews through that sugar on its own before I do anything more aggressive. The bochet character comes from fermenting the caramelized honey as part of the mead, not from stirring caramel syrup into a finished product. I am holding the batch at 64 to 66 degrees Fahrenheit and will let this stage run until the gravity is stable again."
+
+  - title: "Prepare and Bake the Apples"
+    description: "My family went apple picking on October 4 and brought home the varieties I wanted for this batch. I went with a 70/30 mix of Granny Smith and Honeycrisp, 2 pounds total. The Granny Smith brings tartness and structure while the Honeycrisp adds sweetness and aroma. I washed them thoroughly, cored them, and left the skins on for tannin and color. I sliced them into quarter to half-inch pieces to get enough surface area for browning. No white sugar on the apples. The honey is already providing plenty of sugar, and I want baked apple flavor, not candied apples. I arranged the slices in a single layer on a baking sheet and baked at 375 degrees Fahrenheit for approximately 25 to 40 minutes, until they were softened with golden-brown edges and a strong baked-apple aroma. I let them cool completely before adding them to the mead."
+
+  - title: "Secondary Fermentation"
+    description: "On October 8 I added the 2 pounds of baked apple slices, peels on, straight into the same fermenter the mead has been in since the start. I had not transferred this batch to another vessel at any point — primary, the second stage of primary, and now the apple contact all happened in one fermenter. The fruit-contact phase is where the baked apple character comes from, and it sits on top of the bochet honey that was already fermenting in the must. The apples stayed in contact for 9 days, from October 8 to October 17, with the fermenter held at 64 to 66 degrees Fahrenheit."
+
+  - title: "Remove the Apples"
+    description: "I pulled the apples on Saturday, October 17, 9 days after they went in and a few days earlier than the two weeks I had planned. Flavor made the call rather than the calendar: the baked apple character was already where I wanted it, and I did not want the peels sitting in the mead long enough to give up harsh tannin. I only removed the fruit. I did not rack the mead, so the batch is still in the same fermenter it has been in since September 28, now sitting on the yeast and apple sediment with the apples gone."
+
+  - title: "Bulk Aging"
+    description: "Fruit contact ended on October 17, so that is where I start counting conditioning. On October 24 I racked the mead off the yeast and spent apple sediment into a sanitized secondary vessel for bulk aging. Gravity had been sitting steady at 1.000 across multiple readings before I moved it, which tells me fermentation is done rather than stalled. I will let it settle and clear on its own for about 90 days, which puts the end of conditioning around mid-January 2027. I will keep checking the same way I always do: take a gravity reading, wait several days, take another. If it holds at 1.000 in the new vessel, nothing is creeping along and I can move on to pasteurization and backsweetening. This is where the caramel and baked apple characters have time to knit together."
+
+  - title: "Pasteurize the Mead"
+    description: "Before backsweetening, I need to make sure fermentation is completely stopped. Instead of chemical stabilizers, I will pasteurize the mead by gently heating it to 140 degrees Fahrenheit and holding it there for 20 minutes. This kills the yeast so it cannot restart fermentation when I add the reserved caramelized honey. Without pasteurization, the yeast would simply start fermenting that honey again and I would lose the sweetness I am trying to add."
+
+  - title: "Backsweeten with Reserved Caramel Honey"
+    description: "I will take the reserved portion of caramelized honey and add it gradually. Not all at once. I will add some, mix it in, taste, and repeat until the balance between baked apple, wildflower honey, and caramel is where I want it. I may use the entire reserved portion, or I may not. The point of reserving it rather than committing it all to fermentation is to have control over the final sweetness."
+
+  - title: "Rest and Taste"
+    description: "Once I am happy with the sweetness level, I will let the mead rest for at least 4 to 6 weeks before making any serious judgments. For this particular combination of caramelized honey and baked apple, 2 to 3 months or longer should give the flavors more time to integrate. I will update this post with tasting notes once the mead has had time to come together."
+
+---
+
+## Notes
+
+This is a live batch that started on September 28, 2026. I recorded an original gravity of 1.080 after mixing 1.5 pounds of raw wildflower honey with 80 ounces of mineralized distilled water, for 104 ounces total in the first stage. The first stage of primary finished on October 4, 2026, six days after pitching. I caramelized the remaining 1.5 pounds of wildflower honey that same day and split it into 1 pound added to the must for the second stage of primary and 0.5 pound reserved for backsweetening, bringing the fermenting batch to 120 ounces.
+
+My family picked the Honeycrisp and Granny Smith apples on October 4. I baked 2 pounds of apple slices with the peels on and added them to the mead on October 8. I pulled the apples on Saturday, October 17, after 9 days of fruit contact. I did not rack the mead that day — it stayed in the same fermenter it started in. Primary, the second stage of primary with the bochet honey, and the apple contact all happened in that one vessel. On October 24 I racked it into a secondary vessel for bulk aging, with gravity steady at 1.000. The second stage of primary ran with the bochet honey in the must. The caramelized honey sat unmixed at the bottom of the fermenter overnight and fermentation was sluggish the next morning, so on October 5 I pitched an additional 3 grams of yeast and swirled the fermenter to bring the honey back into suspension.
+
+## ABV
+
+Final gravity held at 1.000, so the batch is dry and every point of fermentable sugar it started with became alcohol. The catch is that the 1.080 I recorded on day one was the gravity of the first-stage must, not the gravity of the finished batch, and I added two more sugar sources after that reading: 1 pound of caramelized honey for the second stage of primary and 2 pounds of baked apples in secondary. So the honest number has to be built from everything that went in.
+
+Only 2.5 of the 3 pounds of honey ever fermented. The remaining 0.5 pound is the reserved caramelized portion for backsweetening, which gets added after pasteurization, so it contributes sweetness and gravity but no alcohol. The apples contribute sugar too: 2 pounds of dessert apples at roughly 12 percent sugar is about a quarter pound of fermentable sugar, or 11 gravity points in a one-gallon batch.
+
+Put together, that is about 92 gravity points from the fermented honey and 11 from the apples, spread across roughly a gallon of must at its peak with the fruit in. That works out to an effective original gravity near 1.103, and 1.103 down to 1.000 is about 13.5 percent alcohol by volume using the standard 131.25 multiplier. Depending on how much extract the wildflower honey and the apples actually carried, the real figure sits somewhere between 13 and 14 percent, so I am publishing 13.5.
+
+One honest caveat: the 104 ounces I recorded for the first-stage must and the 1.080 reading cannot both be exactly right. At 104 ounces, 1.5 pounds of honey would have to be about 43 gravity points per pound to read 1.080, which is richer than honey normally runs. The volume was probably closer to 90 ounces once the honey's own volume is counted, which brings the honey back to normal extract and leaves the reading sound. It does not change the ABV much, but it is the reason I am quoting a range instead of a single confident decimal.
+
+## Yield
+
+This batch finished at about half a gallon, and that surprised me until I ran the numbers. The starting arithmetic was the first problem: 3 pounds of honey is only about 32 fluid ounces, because a gallon of honey weighs roughly 12 pounds. So 80 ounces of water plus 3 pounds of honey comes to 112 ounces, or seven-eighths of a gallon, not the 128 ounces I had in my head. Reaching a full gallon would have taken 4.5 pounds of honey.
+
+It was also never all in the fermenter at once. Half a pound of the honey stayed reserved for backsweetening, and caramelizing the other portion drove off water, so the must itself was about 105 ounces. The apples added around 23 ounces of juice and water while they were in, which is the only reason the batch ever approached a gallon.
+
+The rest is normal racking loss, and in a one-gallon batch it is brutal because every ounce is a large percentage. The 2 pounds of pulled apples carried off somewhere between 8 and 14 ounces of mead. The lees — yeast, apple pectin, honey proteins — held another 10 to 18 ounces. Hydrometer samples cost 10 to 20 ounces across five to eight draws. Caramelized honey stuck in the pan and the reserved container took a few more. Add it up and a batch that peaked at 0.96 gallons lands between 0.51 and 0.72 gallons, so half a gallon is the high-loss end of perfectly normal.
+
+None of that changes the ABV. Alcohol is a concentration, not a total, so racking off mead removes alcohol and water in the same proportion and leaves the strength where it was. A smaller yield is not a stronger mead.
+
+For the next batch I will build in the loss instead of discovering it: start with a 1.25-gallon must so a gallon survives the racking, use a fermenter with enough headspace for the fruit, and record the actual volume at every step so the ABV math has real numbers behind it.
+
+This post will be updated with photos as the batch progresses through each stage, including the caramelization, the apples going in and coming out, pasteurization, backsweetening, and tasting notes.

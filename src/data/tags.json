@@ -740,5 +740,40 @@
     "name": "Water Chemistry",
     "description": "Posts tagged with Water Chemistry.",
     "featured": false
+  },
+  {
+    "id": "107",
+    "slug": "beer",
+    "name": "Beer",
+    "description": "Posts tagged with Beer.",
+    "featured": false
+  },
+  {
+    "id": "108",
+    "slug": "ipa",
+    "name": "Ipa",
+    "description": "Posts tagged with Ipa.",
+    "featured": false
+  },
+  {
+    "id": "109",
+    "slug": "capsicumel",
+    "name": "Capsicumel",
+    "description": "Posts tagged with Capsicumel.",
+    "featured": false
+  },
+  {
+    "id": "110",
+    "slug": "chile",
+    "name": "Chile",
+    "description": "Posts tagged with Chile.",
+    "featured": false
+  },
+  {
+    "id": "111",
+    "slug": "traditional",
+    "name": "Traditional",
+    "description": "Posts tagged with Traditional.",
+    "featured": false
   }
 ]
