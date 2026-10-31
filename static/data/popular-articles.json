@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T02:10:02.272Z",
+  "generatedAt": "2026-10-31T15:58:37.742Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -168,7 +168,7 @@
       }
     },
     {
-      "id": "/reviews/huupe-mini-review",
+      "id": "/reviews/capital-one-360-checking",
       "views": 31,
       "comments": 0,
       "score": 31,
@@ -179,10 +179,10 @@
       }
     },
     {
-      "id": "/reviews/capital-one-360-checking",
-      "views": 30,
+      "id": "/reviews/huupe-mini-review",
+      "views": 31,
       "comments": 0,
-      "score": 30,
+      "score": 31,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -256,21 +256,21 @@
       }
     },
     {
-      "id": "/brewing/dandelion-mead",
+      "id": "/reviews/plaato-airlock-review",
       "views": 16,
       "comments": 0,
       "score": 16,
       "shares": {
-        "facebook": 0,
+        "facebook": 5,
         "linkedin": 0,
         "copy": 0
       }
     },
     {
-      "id": "/posts/things-you-didnt-know-about-mysql-indexes",
-      "views": 15,
+      "id": "/brewing/dandelion-mead",
+      "views": 16,
       "comments": 0,
-      "score": 15,
+      "score": 16,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
