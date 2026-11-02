@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T02:13:29.933Z",
+  "generatedAt": "2026-11-02T20:38:43.998Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -157,10 +157,10 @@
       }
     },
     {
-      "id": "/posts/saferide-health-how-i-use-ai-as-an-engineer",
-      "views": 32,
+      "id": "/reviews/capital-one-360-checking",
+      "views": 33,
       "comments": 0,
-      "score": 32,
+      "score": 33,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -168,7 +168,7 @@
       }
     },
     {
-      "id": "/reviews/capital-one-360-checking",
+      "id": "/posts/saferide-health-how-i-use-ai-as-an-engineer",
       "views": 32,
       "comments": 0,
       "score": 32,
