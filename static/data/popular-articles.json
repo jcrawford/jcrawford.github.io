@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T20:41:59.486Z",
+  "generatedAt": "2026-11-03T03:54:18.422Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -168,10 +168,10 @@
       }
     },
     {
-      "id": "/posts/saferide-health-how-i-use-ai-as-an-engineer",
-      "views": 32,
+      "id": "/reviews/huupe-mini-review",
+      "views": 33,
       "comments": 0,
-      "score": 32,
+      "score": 33,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -179,10 +179,10 @@
       }
     },
     {
-      "id": "/reviews/huupe-mini-review",
-      "views": 31,
+      "id": "/posts/saferide-health-how-i-use-ai-as-an-engineer",
+      "views": 32,
       "comments": 0,
-      "score": 31,
+      "score": 32,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
