@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T18:23:43.063Z",
+  "generatedAt": "2026-11-04T02:59:03.090Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -91,6 +91,17 @@
       }
     },
     {
+      "id": "/reviews/fried-chicken-ice-cream-review",
+      "views": 43,
+      "comments": 0,
+      "score": 43,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 1
+      }
+    },
+    {
       "id": "/reviews/total-typescript-pro-complete-review",
       "views": 42,
       "comments": 0,
@@ -99,17 +110,6 @@
         "facebook": 0,
         "linkedin": 0,
         "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/fried-chicken-ice-cream-review",
-      "views": 41,
-      "comments": 0,
-      "score": 41,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 1
       }
     },
     {
@@ -157,10 +157,10 @@
       }
     },
     {
-      "id": "/reviews/capital-one-360-checking",
-      "views": 33,
+      "id": "/reviews/huupe-mini-review",
+      "views": 34,
       "comments": 0,
-      "score": 33,
+      "score": 34,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -168,7 +168,7 @@
       }
     },
     {
-      "id": "/reviews/huupe-mini-review",
+      "id": "/reviews/capital-one-360-checking",
       "views": 33,
       "comments": 0,
       "score": 33,
