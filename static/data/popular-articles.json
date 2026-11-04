@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T02:59:03.090Z",
+  "generatedAt": "2026-11-04T18:24:33.372Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -26,9 +26,9 @@
     },
     {
       "id": "/reviews/ford-transit-15-passenger-van-review",
-      "views": 113,
+      "views": 114,
       "comments": 0,
-      "score": 113,
+      "score": 114,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -146,6 +146,17 @@
       }
     },
     {
+      "id": "/reviews/capital-one-360-checking",
+      "views": 34,
+      "comments": 0,
+      "score": 34,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/reviews/clickfunnels-review",
       "views": 34,
       "comments": 0,
@@ -161,17 +172,6 @@
       "views": 34,
       "comments": 0,
       "score": 34,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/capital-one-360-checking",
-      "views": 33,
-      "comments": 0,
-      "score": 33,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
