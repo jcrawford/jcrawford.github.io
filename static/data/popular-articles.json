@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T03:20:44.781Z",
+  "generatedAt": "2026-11-05T18:29:23.167Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -26,9 +26,9 @@
     },
     {
       "id": "/reviews/ford-transit-15-passenger-van-review",
-      "views": 114,
+      "views": 116,
       "comments": 0,
-      "score": 114,
+      "score": 116,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -135,23 +135,23 @@
       }
     },
     {
+      "id": "/reviews/capital-one-360-checking",
+      "views": 36,
+      "comments": 0,
+      "score": 36,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/posts/lebanon-valley-speedway-2026",
       "views": 35,
       "comments": 0,
       "score": 35,
       "shares": {
         "facebook": 1,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/capital-one-360-checking",
-      "views": 35,
-      "comments": 0,
-      "score": 35,
-      "shares": {
-        "facebook": 0,
         "linkedin": 0,
         "copy": 0
       }
