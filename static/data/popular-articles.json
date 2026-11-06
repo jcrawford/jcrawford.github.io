@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T18:36:36.960Z",
+  "generatedAt": "2026-11-06T03:19:29.286Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -113,6 +113,17 @@
       }
     },
     {
+      "id": "/reviews/capital-one-360-checking",
+      "views": 37,
+      "comments": 0,
+      "score": 37,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/series/intro-to-making-mead",
       "views": 37,
       "comments": 0,
@@ -130,17 +141,6 @@
       "score": 37,
       "shares": {
         "facebook": 1,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/capital-one-360-checking",
-      "views": 36,
-      "comments": 0,
-      "score": 36,
-      "shares": {
-        "facebook": 0,
         "linkedin": 0,
         "copy": 0
       }
