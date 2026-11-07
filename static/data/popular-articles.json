@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-07T02:39:27.763Z",
+  "generatedAt": "2026-11-07T16:44:10.529Z",
   "windowDays": "lifetime",
   "entries": [
     {
       "id": "/brewing/cherry-mead",
-      "views": 227,
+      "views": 229,
       "comments": 0,
-      "score": 227,
+      "score": 229,
       "shares": {
         "facebook": 5,
         "linkedin": 1,
@@ -15,9 +15,9 @@
     },
     {
       "id": "/reviews/budget-auto-rental-process-review",
-      "views": 210,
+      "views": 211,
       "comments": 0,
-      "score": 210,
+      "score": 211,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -26,9 +26,9 @@
     },
     {
       "id": "/reviews/ford-transit-15-passenger-van-review",
-      "views": 116,
+      "views": 117,
       "comments": 0,
-      "score": 116,
+      "score": 117,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -114,9 +114,9 @@
     },
     {
       "id": "/reviews/capital-one-360-checking",
-      "views": 37,
+      "views": 38,
       "comments": 0,
-      "score": 37,
+      "score": 38,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -202,9 +202,9 @@
     },
     {
       "id": "/posts/saferide-health",
-      "views": 23,
+      "views": 24,
       "comments": 0,
-      "score": 23,
+      "score": 24,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -256,23 +256,23 @@
       }
     },
     {
+      "id": "/posts/things-you-didnt-know-about-mysql-indexes",
+      "views": 16,
+      "comments": 0,
+      "score": 16,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/reviews/plaato-airlock-review",
       "views": 16,
       "comments": 0,
       "score": 16,
       "shares": {
         "facebook": 5,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/brewing/dandelion-mead",
-      "views": 16,
-      "comments": 0,
-      "score": 16,
-      "shares": {
-        "facebook": 0,
         "linkedin": 0,
         "copy": 0
       }
