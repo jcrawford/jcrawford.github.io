@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T04:32:51.472Z",
+  "generatedAt": "2026-11-10T18:27:54.029Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -256,10 +256,10 @@
       }
     },
     {
-      "id": "/posts/things-you-didnt-know-about-mysql-indexes",
-      "views": 16,
+      "id": "/brewing/dandelion-mead",
+      "views": 18,
       "comments": 0,
-      "score": 16,
+      "score": 18,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -267,12 +267,12 @@
       }
     },
     {
-      "id": "/reviews/plaato-airlock-review",
+      "id": "/posts/things-you-didnt-know-about-mysql-indexes",
       "views": 16,
       "comments": 0,
       "score": 16,
       "shares": {
-        "facebook": 5,
+        "facebook": 0,
         "linkedin": 0,
         "copy": 0
       }
