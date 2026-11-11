@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T18:32:47.613Z",
+  "generatedAt": "2026-11-11T02:39:54.473Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -114,9 +114,9 @@
     },
     {
       "id": "/reviews/capital-one-360-checking",
-      "views": 41,
+      "views": 42,
       "comments": 0,
-      "score": 41,
+      "score": 42,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -223,6 +223,17 @@
       }
     },
     {
+      "id": "/brewing/dandelion-mead",
+      "views": 19,
+      "comments": 0,
+      "score": 19,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/posts/grok-4-5-cursor-first-impressions",
       "views": 18,
       "comments": 0,
@@ -246,17 +257,6 @@
     },
     {
       "id": "/posts/long-running-ai-agents-adk",
-      "views": 18,
-      "comments": 0,
-      "score": 18,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/brewing/dandelion-mead",
       "views": 18,
       "comments": 0,
       "score": 18,
