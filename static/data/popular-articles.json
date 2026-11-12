@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T18:30:18.755Z",
+  "generatedAt": "2026-11-12T03:42:15.125Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -80,12 +80,34 @@
       }
     },
     {
+      "id": "/reviews/total-typescript-pro-complete-review",
+      "views": 44,
+      "comments": 0,
+      "score": 44,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/brewing/blackberry-mead",
       "views": 44,
       "comments": 0,
       "score": 44,
       "shares": {
         "facebook": 1,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/capital-one-360-checking",
+      "views": 43,
+      "comments": 0,
+      "score": 43,
+      "shares": {
+        "facebook": 0,
         "linkedin": 0,
         "copy": 0
       }
@@ -99,28 +121,6 @@
         "facebook": 0,
         "linkedin": 0,
         "copy": 1
-      }
-    },
-    {
-      "id": "/reviews/total-typescript-pro-complete-review",
-      "views": 43,
-      "comments": 0,
-      "score": 43,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/capital-one-360-checking",
-      "views": 42,
-      "comments": 0,
-      "score": 42,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
       }
     },
     {
