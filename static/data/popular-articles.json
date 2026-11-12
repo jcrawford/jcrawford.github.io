@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-12T03:42:15.125Z",
+  "generatedAt": "2026-11-12T18:42:09.904Z",
   "windowDays": "lifetime",
   "entries": [
     {
       "id": "/brewing/cherry-mead",
-      "views": 229,
+      "views": 231,
       "comments": 0,
-      "score": 229,
+      "score": 231,
       "shares": {
         "facebook": 5,
         "linkedin": 1,
@@ -26,9 +26,9 @@
     },
     {
       "id": "/reviews/ford-transit-15-passenger-van-review",
-      "views": 118,
+      "views": 121,
       "comments": 0,
-      "score": 118,
+      "score": 121,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -59,9 +59,9 @@
     },
     {
       "id": "/posts/disney-vacation-2026",
-      "views": 65,
+      "views": 66,
       "comments": 0,
-      "score": 65,
+      "score": 66,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -157,10 +157,10 @@
       }
     },
     {
-      "id": "/reviews/clickfunnels-review",
-      "views": 34,
+      "id": "/reviews/huupe-mini-review",
+      "views": 35,
       "comments": 0,
-      "score": 34,
+      "score": 35,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -168,7 +168,7 @@
       }
     },
     {
-      "id": "/reviews/huupe-mini-review",
+      "id": "/reviews/clickfunnels-review",
       "views": 34,
       "comments": 0,
       "score": 34,
