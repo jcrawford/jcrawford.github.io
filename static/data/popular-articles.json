@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-14T02:58:53.630Z",
+  "generatedAt": "2026-11-14T16:51:15.093Z",
   "windowDays": "lifetime",
   "entries": [
     {
       "id": "/brewing/cherry-mead",
-      "views": 231,
+      "views": 229,
       "comments": 0,
-      "score": 231,
+      "score": 229,
       "shares": {
         "facebook": 5,
         "linkedin": 1,
@@ -26,9 +26,9 @@
     },
     {
       "id": "/reviews/ford-transit-15-passenger-van-review",
-      "views": 121,
+      "views": 118,
       "comments": 0,
-      "score": 121,
+      "score": 118,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -59,9 +59,9 @@
     },
     {
       "id": "/posts/disney-vacation-2026",
-      "views": 66,
+      "views": 65,
       "comments": 0,
-      "score": 66,
+      "score": 65,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -70,9 +70,9 @@
     },
     {
       "id": "/series/mead-water-chemistry/water-chemistry-basics",
-      "views": 49,
+      "views": 50,
       "comments": 0,
-      "score": 49,
+      "score": 50,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -81,17 +81,6 @@
     },
     {
       "id": "/reviews/capital-one-360-checking",
-      "views": 45,
-      "comments": 0,
-      "score": 45,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/total-typescript-pro-complete-review",
       "views": 44,
       "comments": 0,
       "score": 44,
@@ -124,6 +113,17 @@
       }
     },
     {
+      "id": "/reviews/total-typescript-pro-complete-review",
+      "views": 43,
+      "comments": 0,
+      "score": 43,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/series/intro-to-making-mead",
       "views": 37,
       "comments": 0,
@@ -146,7 +146,7 @@
       }
     },
     {
-      "id": "/reviews/huupe-mini-review",
+      "id": "/reviews/clickfunnels-review",
       "views": 36,
       "comments": 0,
       "score": 36,
@@ -168,10 +168,10 @@
       }
     },
     {
-      "id": "/reviews/clickfunnels-review",
-      "views": 34,
+      "id": "/reviews/huupe-mini-review",
+      "views": 35,
       "comments": 0,
-      "score": 34,
+      "score": 35,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
