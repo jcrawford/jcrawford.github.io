@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T05:00:36.341Z",
+  "generatedAt": "2026-11-17T19:33:11.141Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -48,9 +48,9 @@
     },
     {
       "id": "/reviews/benq-rd320ua-monitor-review",
-      "views": 78,
+      "views": 79,
       "comments": 0,
-      "score": 78,
+      "score": 79,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -81,9 +81,9 @@
     },
     {
       "id": "/reviews/capital-one-360-checking",
-      "views": 48,
+      "views": 49,
       "comments": 0,
-      "score": 48,
+      "score": 49,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -92,13 +92,24 @@
     },
     {
       "id": "/reviews/total-typescript-pro-complete-review",
+      "views": 46,
+      "comments": 0,
+      "score": 46,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/fried-chicken-ice-cream-review",
       "views": 45,
       "comments": 0,
       "score": 45,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
-        "copy": 0
+        "copy": 1
       }
     },
     {
@@ -110,17 +121,6 @@
         "facebook": 1,
         "linkedin": 0,
         "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/fried-chicken-ice-cream-review",
-      "views": 43,
-      "comments": 0,
-      "score": 43,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 1
       }
     },
     {
