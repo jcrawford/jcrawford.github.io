@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-17T19:41:56.473Z",
+  "generatedAt": "2026-11-18T04:06:17.079Z",
   "windowDays": "lifetime",
   "entries": [
     {
       "id": "/brewing/cherry-mead",
-      "views": 232,
+      "views": 234,
       "comments": 0,
-      "score": 232,
+      "score": 234,
       "shares": {
         "facebook": 5,
         "linkedin": 1,
@@ -26,9 +26,9 @@
     },
     {
       "id": "/reviews/ford-transit-15-passenger-van-review",
-      "views": 122,
+      "views": 123,
       "comments": 0,
-      "score": 122,
+      "score": 123,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -234,6 +234,17 @@
       }
     },
     {
+      "id": "/reviews/via-aquarium",
+      "views": 19,
+      "comments": 0,
+      "score": 19,
+      "shares": {
+        "facebook": 3,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/posts/home-brewing-journey",
       "views": 19,
       "comments": 0,
@@ -260,17 +271,6 @@
       "views": 18,
       "comments": 0,
       "score": 18,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/posts/things-you-didnt-know-about-mysql-indexes",
-      "views": 16,
-      "comments": 0,
-      "score": 16,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
