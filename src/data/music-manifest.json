@@ -1,7 +1,33 @@
 {
-  "generatedAt": "2026-11-18T16:28:13.483Z",
+  "generatedAt": "2026-11-18T16:32:19.712Z",
   "baseUrl": "https://pub-8756a8dd5c654be6b426503a223749bc.r2.dev",
   "tracks": [
+    {
+      "slug": "bitingchart9669-don-t-let-the-green-fool-you",
+      "title": "Don't Let the Green Fool You",
+      "artist": "bitingchart9669",
+      "album": "Singles",
+      "albumSlug": "singles",
+      "year": null,
+      "trackNumber": null,
+      "duration": 214,
+      "src": "https://pub-8756a8dd5c654be6b426503a223749bc.r2.dev/Don't%20Let%20the%20Green%20Fool%20You.mp3",
+      "file": "Don't Let the Green Fool You.mp3",
+      "covers": {
+        "160": {
+          "jpg": "/images/music/bitingchart9669-don-t-let-the-green-fool-you/cover_160w.jpg",
+          "webp": "/images/music/bitingchart9669-don-t-let-the-green-fool-you/cover_160w.webp"
+        },
+        "400": {
+          "jpg": "/images/music/bitingchart9669-don-t-let-the-green-fool-you/cover_400w.jpg",
+          "webp": "/images/music/bitingchart9669-don-t-let-the-green-fool-you/cover_400w.webp"
+        },
+        "800": {
+          "jpg": "/images/music/bitingchart9669-don-t-let-the-green-fool-you/cover_800w.jpg",
+          "webp": "/images/music/bitingchart9669-don-t-let-the-green-fool-you/cover_800w.webp"
+        }
+      }
+    },
     {
       "slug": "bitingchart9669-she-s-my-wife",
       "title": "She's My Wife",
@@ -37,19 +63,20 @@
       "year": null,
       "cover": {
         "160": {
-          "jpg": "/images/music/bitingchart9669-she-s-my-wife/cover_160w.jpg",
-          "webp": "/images/music/bitingchart9669-she-s-my-wife/cover_160w.webp"
+          "jpg": "/images/music/bitingchart9669-don-t-let-the-green-fool-you/cover_160w.jpg",
+          "webp": "/images/music/bitingchart9669-don-t-let-the-green-fool-you/cover_160w.webp"
         },
         "400": {
-          "jpg": "/images/music/bitingchart9669-she-s-my-wife/cover_400w.jpg",
-          "webp": "/images/music/bitingchart9669-she-s-my-wife/cover_400w.webp"
+          "jpg": "/images/music/bitingchart9669-don-t-let-the-green-fool-you/cover_400w.jpg",
+          "webp": "/images/music/bitingchart9669-don-t-let-the-green-fool-you/cover_400w.webp"
         },
         "800": {
-          "jpg": "/images/music/bitingchart9669-she-s-my-wife/cover_800w.jpg",
-          "webp": "/images/music/bitingchart9669-she-s-my-wife/cover_800w.webp"
+          "jpg": "/images/music/bitingchart9669-don-t-let-the-green-fool-you/cover_800w.jpg",
+          "webp": "/images/music/bitingchart9669-don-t-let-the-green-fool-you/cover_800w.webp"
         }
       },
       "trackSlugs": [
+        "bitingchart9669-don-t-let-the-green-fool-you",
         "bitingchart9669-she-s-my-wife"
       ]
     }
