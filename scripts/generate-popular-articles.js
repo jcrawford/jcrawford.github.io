@@ -328,7 +328,7 @@ async function fetchGa4TrackPlayCounts() {
   const response = await requestJson(`https://analyticsdata.googleapis.com/v1beta/properties/${GA4_PROPERTY_ID}:runReport`, {
     method: 'POST',
     headers: {
-      Authorization: *** ${accessToken}`,
+      Authorization: `Bearer ${accessToken}`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
@@ -397,7 +397,7 @@ async function fetchDiscussionCommentCounts() {
   const response = await requestJson('https://api.github.com/graphql', {
     method: 'POST',
     headers: {
-      Authorization: `bearer ${token}`,
+      Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',
       'User-Agent': 'popular-articles-generator',
     },
