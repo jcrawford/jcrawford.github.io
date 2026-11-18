@@ -2,9 +2,11 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import SupportBar from './SupportBar';
+import MusicPlayerBar from './MusicPlayerBar';
 import '../styles/variables.css';
 import '../styles/reset.css';
 import '../styles/global.css';
+import '../styles/music.css';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -20,8 +22,8 @@ const Layout: React.FC<LayoutProps> = ({ children, className, hideFooter }) => {
       <SupportBar />
       
       <div id="content" className="site-content">
-        <main 
-          id="primary" 
+        <main
+          id="primary"
           className={`site-main ${className || ''}`}
         >
           {children}
@@ -29,6 +31,7 @@ const Layout: React.FC<LayoutProps> = ({ children, className, hideFooter }) => {
       </div>
 
       {!hideFooter && <Footer />}
+      <MusicPlayerBar />
     </div>
   );
 };

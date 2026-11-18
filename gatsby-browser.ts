@@ -1,4 +1,6 @@
 import type { GatsbyBrowser } from 'gatsby';
+import React from 'react';
+import { MusicPlayerProvider } from './src/components/MusicPlayerProvider';
 import './src/styles/global.css';
 
 /**
@@ -63,3 +65,11 @@ export const onClientEntry: GatsbyBrowser['onClientEntry'] = () => {
     true
   );
 };
+
+/**
+ * Mount the music player provider at the root so a single <audio> element
+ * survives client-side route changes — music keeps playing while the reader
+ * navigates. Must match gatsby-ssr.tsx to avoid hydration mismatch.
+ */
+export const wrapRootElement: GatsbyBrowser['wrapRootElement'] = ({ element }) =>
+  React.createElement(MusicPlayerProvider, null, element);

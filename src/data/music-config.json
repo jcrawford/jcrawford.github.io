@@ -1,0 +1,4 @@
+{
+  "baseUrl": "https://pub-8756a8dd5c654be6b426503a223749bc.r2.dev",
+  "note": "Public R2 bucket base URL. Audio streams from here; the site only stores the manifest and cover art."
+}

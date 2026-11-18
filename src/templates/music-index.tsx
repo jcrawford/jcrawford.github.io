@@ -1,0 +1,112 @@
+import React from 'react';
+import { Link } from 'gatsby';
+import Layout from '../components/Layout';
+import SEO from '../components/SEO';
+import { musicAlbums, musicTracks, useMusicPlayer, type MusicTrack } from '../components/MusicPlayerProvider';
+import '../styles/music.css';
+
+const formatDuration = (seconds: number): string => {
+  if (!Number.isFinite(seconds) || seconds <= 0) return '';
+  const mins = Math.floor(seconds / 60);
+  const secs = Math.round(seconds % 60);
+  return `${mins}:${secs.toString().padStart(2, '0')}`;
+};
+
+const TrackRow: React.FC<{ track: MusicTrack; index: number }> = ({ track, index }) => {
+  const { play, currentTrack, isPlaying } = useMusicPlayer();
+  const isCurrent = currentTrack?.slug === track.slug;
+
+  return (
+    <li className={`hm-music-track${isCurrent ? ' is-current' : ''}`}>
+      <button
+        type="button"
+        className="hm-music-track-play"
+        onClick={() => play(track.slug)}
+        aria-label={`Play ${track.title}`}
+      >
+        {isCurrent && isPlaying ? '❚❚' : '▶'}
+      </button>
+      <span className="hm-music-track-index">{String(index + 1).padStart(2, '0')}</span>
+      <Link to={`/music/${track.slug}/`} className="hm-music-track-title">
+        {track.title}
+      </Link>
+      <span className="hm-music-track-duration">{formatDuration(track.duration)}</span>
+    </li>
+  );
+};
+
+const MusicIndexPage: React.FC = () => {
+  const totalTracks = musicTracks.length;
+  const totalMinutes = Math.round(musicTracks.reduce((sum, track) => sum + (track.duration || 0), 0) / 60);
+
+  return (
+    <Layout>
+      <div className="hm-container hm-music">
+        <header className="hm-music-header">
+          <h1 className="hm-music-title">Music</h1>
+          <p className="hm-music-intro">
+            {totalTracks} {totalTracks === 1 ? 'track' : 'tracks'}
+            {totalMinutes > 0 ? ` · about ${totalMinutes} minutes` : ''}. Press play on anything — nothing
+            starts on its own, and the player keeps going while you browse the rest of the site.
+          </p>
+        </header>
+
+        {totalTracks === 0 && (
+          <p className="hm-music-empty">No tracks published yet.</p>
+        )}
+
+        {musicAlbums.map((album) => {
+          const albumTracks = album.trackSlugs
+            .map((slug) => musicTracks.find((track) => track.slug === slug))
+            .filter((track): track is MusicTrack => Boolean(track));
+
+          return (
+            <section key={album.slug} className="hm-music-album">
+              <div className="hm-music-album-head">
+                <img
+                  className="hm-music-album-cover"
+                  src={album.cover?.['400']?.jpg || albumTracks[0]?.covers?.['400']?.jpg || ''}
+                  alt={`${album.title} cover`}
+                  width={160}
+                  height={160}
+                  loading="lazy"
+                />
+                <div className="hm-music-album-meta">
+                  <h2 className="hm-music-album-title">{album.title}</h2>
+                  <p className="hm-music-album-sub">
+                    {album.artist}
+                    {album.year ? ` · ${album.year}` : ''} · {albumTracks.length}{' '}
+                    {albumTracks.length === 1 ? 'track' : 'tracks'}
+                  </p>
+                </div>
+              </div>
+              <ol className="hm-music-tracklist">
+                {albumTracks.map((track, index) => (
+                  <TrackRow key={track.slug} track={track} index={index} />
+                ))}
+              </ol>
+            </section>
+          );
+        })}
+      </div>
+    </Layout>
+  );
+};
+
+export default MusicIndexPage;
+
+import { HeadFC } from 'gatsby';
+
+export const Head: HeadFC = () => (
+  <SEO
+    title="Music"
+    description="Songs written and recorded by Joseph Crawford. Stream them here — nothing autoplays."
+    pathname="/music/"
+    siteMetadata={{
+      title: 'Joseph Crawford',
+      description:
+        'Software engineering, AI tools, and homebrewing — written by Joseph Crawford, a developer building web applications and making mead in Vermont.',
+      siteUrl: 'https://josephcrawford.com',
+    }}
+  />
+);

@@ -1,4 +1,5 @@
 import React from 'react';
+import { MusicPlayerProvider } from './src/components/MusicPlayerProvider';
 
 export const onRenderBody = ({ setHeadComponents, setPostBodyComponents, setHtmlAttributes }: any) => {
   setHtmlAttributes({ lang: 'en', className: 'hm-dark' });
@@ -54,3 +55,11 @@ export const onRenderBody = ({ setHeadComponents, setPostBodyComponents, setHtml
     />,
   ]);
 };
+/**
+ * SSR counterpart of gatsby-browser's wrapRootElement. Renders the same provider
+ * tree so hydration matches; the provider is SSR-safe (no window access at module
+ * scope, audio element renders with preload="none").
+ */
+export const wrapRootElement = ({ element }: any) => (
+  <MusicPlayerProvider>{element}</MusicPlayerProvider>
+);
