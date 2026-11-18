@@ -20,6 +20,7 @@ const MusicTrackPage: React.FC<PageProps<Record<string, never>, MusicTrackContex
   const track: MusicTrack | undefined = trackBySlug(pageContext.slug);
   const { cue, play, currentTrack, isPlaying } = useMusicPlayer();
   const [linkCopied, setLinkCopied] = useState(false);
+
   // Deep links (typed URL, shared link, browser reload) try to autoplay since
   // the visitor asked for this song specifically. If the browser blocks
   // autonomous playback, fall back to cueing paused. In-site clicks only cue.
@@ -108,10 +109,6 @@ const MusicTrackPage: React.FC<PageProps<Record<string, never>, MusicTrackContex
                 {linkCopied ? 'Link copied ✓' : 'Copy link'}
               </button>
             </div>
-            <p className="hm-music-single-hint">
-              Loads paused — nothing starts until you press play. The player dock stays at the bottom of every
-              page while the song keeps playing.
-            </p>
           </div>
         </header>
 
