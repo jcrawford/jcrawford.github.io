@@ -276,61 +276,56 @@
   filter: brightness(1.08);
 }
 
-/* Long dashed trail flowing down the page */
+/* Curved, looping trail flowing down the page */
 
 .hm-music-hint-trail {
   flex: 1 1 auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  width: 48px;
-  min-height: 90px;
-  margin-top: 0.4rem;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  min-height: 120px;
+  margin-top: 0.35rem;
+  overflow: visible;
 }
 
-.hm-music-hint-line {
-  flex: 1 1 auto;
-  width: 3px;
-  border-radius: 2px;
-  background-image: repeating-linear-gradient(
-    to bottom,
-    var(--hm-accent, #7cc4ff) 0 9px,
-    rgba(124, 196, 255, 0.12) 9px 20px
-  );
-  animation: hm-music-hint-flow 0.8s linear infinite;
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25), #000 25%, #000 100%);
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25), #000 25%, #000 100%);
+.hm-music-hint-swirl {
+  width: 100%;
+  height: 100%;
+  color: var(--hm-accent, #7cc4ff);
+  overflow: visible;
+  filter: drop-shadow(0 0 6px rgba(124, 196, 255, 0.45));
 }
 
-@keyframes hm-music-hint-flow {
+.hm-music-hint-swirl-path {
+  stroke-dasharray: 11 13;
+  animation: hm-music-hint-swirl-flow 1.1s linear infinite;
+}
+
+@keyframes hm-music-hint-swirl-flow {
   from {
-    background-position-y: 0;
+    stroke-dashoffset: 0;
   }
   to {
-    background-position-y: 20px;
+    stroke-dashoffset: -48;
   }
 }
 
-.hm-music-hint-chevron {
-  width: 30px;
-  height: 17px;
-  margin-top: 0.15rem;
-  color: var(--hm-accent, #7cc4ff);
-  animation: hm-music-hint-cascade 1.3s ease-in-out infinite;
+.hm-music-hint-arrowhead {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: hm-music-hint-arrow-pulse 1.5s ease-in-out infinite;
 }
 
-@keyframes hm-music-hint-cascade {
-  0% {
-    opacity: 0.15;
-    transform: translateY(-4px);
-  }
-  40% {
-    opacity: 1;
-  }
+@keyframes hm-music-hint-arrow-pulse {
+  0%,
   100% {
-    opacity: 0.15;
-    transform: translateY(5px);
+    opacity: 0.75;
+    transform: translateY(-2px) scale(0.94);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(2px) scale(1.06);
   }
 }
 
@@ -352,8 +347,8 @@
 
 @media (prefers-reduced-motion: reduce) {
   .hm-music-hint-card,
-  .hm-music-hint-line,
-  .hm-music-hint-chevron {
+  .hm-music-hint-swirl-path,
+  .hm-music-hint-arrowhead {
     animation: none;
   }
 }

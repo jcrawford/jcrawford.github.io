@@ -102,25 +102,35 @@ const MusicPlayerBar: React.FC = () => {
             </button>
           </div>
           <div className="hm-music-hint-trail" aria-hidden="true">
-            <span className="hm-music-hint-line" />
-            <svg className="hm-music-hint-chevron" viewBox="0 0 32 18" focusable="false">
-              <path d="M2 2 L16 15 L30 2" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
             <svg
-              className="hm-music-hint-chevron"
-              viewBox="0 0 32 18"
+              className="hm-music-hint-swirl"
+              viewBox="0 0 300 700"
+              preserveAspectRatio="xMidYMid meet"
               focusable="false"
-              style={{ animationDelay: '0.22s' }}
             >
-              <path d="M2 2 L16 15 L30 2" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            <svg
-              className="hm-music-hint-chevron"
-              viewBox="0 0 32 18"
-              focusable="false"
-              style={{ animationDelay: '0.44s' }}
-            >
-              <path d="M2 2 L16 15 L30 2" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+              <path
+                className="hm-music-hint-swirl-path"
+                d="M 150 12
+                   C 150 62, 248 72, 248 124
+                   C 248 176, 52 170, 52 222
+                   C 52 274, 248 266, 248 318
+                   C 248 356, 172 350, 163 378
+                   C 154 406, 92 404, 92 448
+                   C 92 498, 208 494, 208 538
+                   C 208 578, 152 586, 150 648"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                vectorEffect="non-scaling-stroke"
+              />
+              <path
+                className="hm-music-hint-arrowhead"
+                d="M 150 692 L 127 645 L 173 645 Z"
+                fill="currentColor"
+                stroke="none"
+              />
             </svg>
           </div>
         </div>
