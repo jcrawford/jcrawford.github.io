@@ -5,7 +5,8 @@ import SEO from '../components/SEO';
 import { trackBySlug, useMusicPlayer, type MusicTrack } from '../components/MusicPlayerProvider';
 import SyncedLyrics from '../components/SyncedLyrics';
 import lyricsIndex from '../data/music-lyrics.json';
-import { activeLineIndex, parseLrc } from '../utils/lrc';
+import wordLyricsIndex from '../data/music-word-lyrics.json';
+import { activeLineIndex, parseLrc, type LyricLine } from '../utils/lrc';
 import '../styles/music.css';
 
 interface MusicTrackContext {
@@ -25,10 +26,14 @@ const MusicTrackPage: React.FC<PageProps<Record<string, never>, MusicTrackContex
   const [linkCopied, setLinkCopied] = useState(false);
 
   const lrcTracks = (lyricsIndex as { tracks?: Record<string, string> }).tracks || {};
-  const timedLines = useMemo(
-    () => parseLrc(track ? lrcTracks[track.slug] : undefined),
-    [track, lrcTracks]
-  );
+  const wordTracks = (wordLyricsIndex as { tracks?: Record<string, LyricLine[]> }).tracks || {};
+  // Word-level timings win; plain LRC is the fallback; the ID3 lyrics tag is last.
+  const timedLines = useMemo<LyricLine[]>(() => {
+    if (!track) return [];
+    const wordLines = wordTracks[track.slug];
+    if (wordLines && wordLines.length > 0) return wordLines;
+    return parseLrc(lrcTracks[track.slug]);
+  }, [track, lrcTracks, wordTracks]);
 
   // Song pages load the track paused. The page's Play/Pause button and the
   // persistent player bar take it from there — no autonomous playback.
@@ -171,6 +176,7 @@ const MusicTrackPage: React.FC<PageProps<Record<string, never>, MusicTrackContex
             <SyncedLyrics
               lines={timedLines}
               activeIndex={isCurrent ? activeIndex : -1}
+              currentTime={isCurrent ? currentTime : -1}
               isActive={isCurrent}
               onSeek={seek}
               onPlay={() => {

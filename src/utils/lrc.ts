@@ -9,10 +9,21 @@
  * Non-numeric tags ([ti:], [ar:], [al:]) are ignored.
  */
 
+export interface LyricWord {
+  /** The word as sung, punctuation attached. */
+  w: string;
+  /** Start time in seconds. */
+  start: number;
+  /** End time in seconds. */
+  end: number;
+}
+
 export interface LyricLine {
   /** Seconds from the start of the track. */
   time: number;
   text: string;
+  /** Word-level timings when available (karaoke highlight within the line). */
+  words?: LyricWord[];
 }
 
 const TIMESTAMP = /\[(\d{1,3}):(\d{2})(?:[.:](\d{1,3}))?\]/g;

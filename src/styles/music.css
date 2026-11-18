@@ -271,14 +271,24 @@
 /* Active line: the karaoke highlight */
 
 .hm-lyric-line.is-current {
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.55);
   font-weight: 700;
   transform: translateX(2px);
-  text-shadow: 0 0 18px rgba(130, 190, 255, 0.45);
 }
 
-.hm-lyrics-panel.is-live .hm-lyric-line.is-current {
-  color: #cfe6ff;
+/* Words already sung within the active line */
+
+.hm-lyric-word {
+  transition: color 0.12s ease, text-shadow 0.12s ease;
+}
+
+.hm-lyric-line.is-current .hm-lyric-word.is-sung {
+  color: #ffffff;
+  text-shadow: 0 0 16px rgba(130, 190, 255, 0.5);
+}
+
+.hm-lyrics-panel.is-live .hm-lyric-line.is-current .hm-lyric-word.is-sung {
+  color: #d6ebff;
 }
 
 .hm-music-single-lyrics .hm-music-details-title {

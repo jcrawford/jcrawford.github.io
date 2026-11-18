@@ -5,6 +5,8 @@ interface SyncedLyricsProps {
   lines: LyricLine[];
   /** Index of the line to highlight, or -1 when the track isn't the one playing. */
   activeIndex: number;
+  /** Playhead position in seconds, used for word-level fill. */
+  currentTime: number;
   /** True when this song is loaded in the player (highlighting is live). */
   isActive: boolean;
   /** Jump the player to a timestamp in seconds. */
@@ -16,6 +18,7 @@ interface SyncedLyricsProps {
 const SyncedLyrics: React.FC<SyncedLyricsProps> = ({
   lines,
   activeIndex,
+  currentTime,
   isActive,
   onSeek,
   onPlay,
@@ -54,7 +57,22 @@ const SyncedLyrics: React.FC<SyncedLyricsProps> = ({
             }}
             title="Jump to this line"
           >
-            {line.text.trim() === '' ? '♪' : line.text}
+            {line.words && line.words.length > 0 ? (
+              // Word-level timings: each word fills in as it is sung.
+              line.words.map((word, wordIndex) => {
+                const isSung = isCurrent && currentTime >= word.start;
+                return (
+                  <React.Fragment key={`${word.start}-${wordIndex}`}>
+                    {wordIndex > 0 ? ' ' : null}
+                    <span className={`hm-lyric-word${isSung ? ' is-sung' : ''}`}>{word.w}</span>
+                  </React.Fragment>
+                );
+              })
+            ) : line.text.trim() === '' ? (
+              '♪'
+            ) : (
+              line.text
+            )}
           </button>
         );
       })}
