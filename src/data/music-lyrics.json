@@ -1,0 +1,4 @@
+{
+  "_readme": "Timed (karaoke) lyrics keyed by track slug. Value is LRC text: '[mm:ss.xx]line'. Rendered by src/components/SyncedLyrics.tsx. Tracks without an entry fall back to the plain lyrics tag on the song page.",
+  "tracks": {}
+}

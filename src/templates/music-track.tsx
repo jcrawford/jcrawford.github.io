@@ -1,8 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, PageProps } from 'gatsby';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-import { canAutoplay, trackBySlug, useMusicPlayer, type MusicTrack } from '../components/MusicPlayerProvider';
+import { trackBySlug, useMusicPlayer, type MusicTrack } from '../components/MusicPlayerProvider';
+import SyncedLyrics from '../components/SyncedLyrics';
+import lyricsIndex from '../data/music-lyrics.json';
+import { activeLineIndex, parseLrc } from '../utils/lrc';
 import '../styles/music.css';
 
 interface MusicTrackContext {
@@ -18,29 +21,23 @@ const formatDuration = (seconds: number): string => {
 
 const MusicTrackPage: React.FC<PageProps<Record<string, never>, MusicTrackContext>> = ({ pageContext }) => {
   const track: MusicTrack | undefined = trackBySlug(pageContext.slug);
-  const { cue, play, currentTrack, isPlaying } = useMusicPlayer();
+  const { cue, play, toggle, seek, currentTime, currentTrack, isPlaying } = useMusicPlayer();
   const [linkCopied, setLinkCopied] = useState(false);
 
-  // Deep links (typed URL, shared link, browser reload) try to autoplay since
-  // the visitor asked for this song specifically. If the browser blocks
-  // autonomous playback, fall back to cueing paused. In-site clicks only cue.
+  const lrcTracks = (lyricsIndex as { tracks?: Record<string, string> }).tracks || {};
+  const timedLines = useMemo(
+    () => parseLrc(track ? lrcTracks[track.slug] : undefined),
+    [track, lrcTracks]
+  );
+
+  // Song pages load the track paused. The page's Play/Pause button and the
+  // persistent player bar take it from there — no autonomous playback.
   const startedRef = useRef(false);
   useEffect(() => {
     if (!track || startedRef.current) return;
     startedRef.current = true;
-    const isDeepLink =
-      typeof window !== 'undefined' &&
-      !window.sessionStorage.getItem('hm-nav-internal') &&
-      !(document.referrer && document.referrer.startsWith(window.location.origin + '/'));
-    if (!isDeepLink) {
-      cue(track.slug);
-      return;
-    }
-    canAutoplay().then((allowed) => {
-      if (allowed) play(track.slug);
-      else cue(track.slug);
-    });
-  }, [track, cue, play]);
+    cue(track.slug);
+  }, [track, cue]);
 
   if (!track) {
     return (
@@ -56,6 +53,7 @@ const MusicTrackPage: React.FC<PageProps<Record<string, never>, MusicTrackContex
   }
 
   const isCurrent = currentTrack?.slug === track.slug;
+  const activeIndex = isCurrent ? activeLineIndex(timedLines, currentTime) : -1;
 
   return (
     <Layout>
@@ -88,7 +86,10 @@ const MusicTrackPage: React.FC<PageProps<Record<string, never>, MusicTrackContex
               <button
                 type="button"
                 className="hm-cta-btn hm-music-single-play"
-                onClick={() => play(track.slug)}
+                onClick={() => {
+                  if (isCurrent) toggle();
+                  else play(track.slug, 'song-page');
+                }}
               >
                 {isCurrent && isPlaying ? '❚❚ Pause' : '▶ Play'}
               </button>
@@ -164,11 +165,27 @@ const MusicTrackPage: React.FC<PageProps<Record<string, never>, MusicTrackContex
           </dl>
         </section>
 
-        {track.lyrics && (
+        {timedLines.length > 0 ? (
           <section className="hm-music-single-lyrics" aria-label="Lyrics">
             <h2 className="hm-music-details-title">Lyrics</h2>
-            <pre className="hm-music-lyrics-text">{track.lyrics}</pre>
+            <SyncedLyrics
+              lines={timedLines}
+              activeIndex={isCurrent ? activeIndex : -1}
+              isActive={isCurrent}
+              onSeek={seek}
+              onPlay={() => {
+                if (!isCurrent) play(track.slug, 'song-page');
+                else if (!isPlaying) toggle();
+              }}
+            />
           </section>
+        ) : (
+          track.lyrics && (
+            <section className="hm-music-single-lyrics" aria-label="Lyrics">
+              <h2 className="hm-music-details-title">Lyrics</h2>
+              <pre className="hm-music-lyrics-text">{track.lyrics}</pre>
+            </section>
+          )
         )}
 
         <p className="hm-music-back">

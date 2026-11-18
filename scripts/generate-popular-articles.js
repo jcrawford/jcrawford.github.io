@@ -309,6 +309,70 @@ async function fetchGa4PhotoViewCounts() {
   return photoViewsBySrc;
 }
 
+const MUSIC_TRACK_PLAYS_PATH = path.resolve(__dirname, '../static/data/music-track-plays.json');
+
+async function fetchGa4TrackPlayCounts() {
+  let accessToken;
+
+  try {
+    accessToken = await getGoogleAccessToken();
+  } catch (error) {
+    console.warn(`Skipping GA4 track play counts: ${error.message || error}`);
+    return new Map();
+  }
+
+  if (!accessToken || !GA4_PROPERTY_ID) {
+    return new Map();
+  }
+
+  const response = await requestJson(`https://analyticsdata.googleapis.com/v1beta/properties/${GA4_PROPERTY_ID}:runReport`, {
+    method: 'POST',
+    headers: {
+      Authorization: *** ${accessToken}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      dateRanges: [{ startDate: DATA_START_DATE, endDate: 'today' }],
+      dimensions: [
+        { name: 'customEvent:track_slug' },
+      ],
+      metrics: [{ name: 'eventCount' }],
+      dimensionFilter: {
+        filter: {
+          fieldName: 'eventName',
+          stringFilter: {
+            matchType: 'EXACT',
+            value: 'track_play',
+          },
+        },
+      },
+      orderBys: [{ metric: { metricName: 'eventCount' }, desc: true }],
+      limit: 500,
+    }),
+  }).catch((error) => {
+    // customEvent dimensions require registration in GA4 admin — return empty if not registered yet
+    if (error.message && error.message.includes('customEvent:track_slug')) {
+      console.warn('GA4 custom dimension track_slug not registered yet — returning empty track play counts');
+      return { rows: [] };
+    }
+    throw error;
+  });
+
+  // Map: track_slug → play count
+  const playsBySlug = new Map();
+  for (const row of response.rows || []) {
+    const rawSlug = row.dimensionValues?.[0]?.value;
+    const rawCount = row.metricValues?.[0]?.value;
+    const count = Number.parseInt(rawCount || '0', 10);
+
+    if (rawSlug && count > 0) {
+      playsBySlug.set(rawSlug, count);
+    }
+  }
+
+  return playsBySlug;
+}
+
 async function fetchDiscussionCommentCounts() {
   const token = GITHUB_TOKEN || GH_TOKEN;
   if (!token) {

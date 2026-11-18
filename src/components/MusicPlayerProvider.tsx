@@ -66,6 +66,9 @@ const REPEAT_KEY = 'hm-music-repeat';
 
 export type RepeatMode = 'off' | 'all' | 'one';
 
+/** Where a play() came from, for analytics attribution. */
+export type PlaySource = 'song-page' | 'bar' | 'list' | 'deep-link' | 'auto';
+
 interface MusicPlayerContextValue {
   tracks: MusicTrack[];
   /** Queue in play order (slugs). */
@@ -79,7 +82,7 @@ interface MusicPlayerContextValue {
   shuffle: boolean;
   repeat: RepeatMode;
   /** Play a track now, queueing the full catalog around it. */
-  play: (slug: string) => void;
+  play: (slug: string, source?: PlaySource) => void;
   /** Play a track now with an explicit queue (album, playlist). */
   playFromList: (listSlugs: string[], slug: string) => void;
   /** Load a track paused. Never makes a sound on its own. */
@@ -182,6 +185,23 @@ export const MusicPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
     [currentSlug]
   );
 
+  // Fire a GA4 track_play event via gtag when a track actually starts playing
+  // (silently no-ops when GA is absent, e.g. dev, DNT, local).
+  const currentTrackRef = useRef(currentTrack);
+  currentTrackRef.current = currentTrack;
+  const firePlayEvent = useCallback((source: PlaySource) => {
+    if (typeof window === 'undefined' || !window.gtag) return;
+    const track = currentTrackRef.current;
+    if (!track) return;
+    window.gtag('event', 'track_play', {
+      track_slug: track.slug,
+      track_title: track.title,
+      artist: track.artist,
+      play_source: source,
+      value: 1,
+    });
+  }, []);
+
   // Keep refs in sync during render (cheap, avoids effect ordering issues).
   queueRef.current = queue;
   currentSlugRef.current = currentSlug;
@@ -238,6 +258,8 @@ export const MusicPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
 
   // Attach the source whenever the selected track changes. preload="none" means
   // no bytes move until the user presses play.
+  const playSourceRef = useRef<PlaySource>('bar');
+
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -340,11 +362,12 @@ export const MusicPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
   }, []);
 
   const play = useCallback(
-    (slug: string) => {
+    (slug: string, source: PlaySource = 'bar') => {
       const track = musicTracks.find((item) => item.slug === slug);
       if (!track) return;
       const audio = audioRef.current;
       if (!audio) return;
+      playSourceRef.current = source;
       setCurrentSlug(slug);
       loadTrack(track);
       audio.play().then(
@@ -402,6 +425,7 @@ export const MusicPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
     if (!audio) return;
     if (repeatRef.current === 'one') {
       audio.currentTime = 0;
+      playSourceRef.current = 'auto';
       audio.play().catch(() => setIsPlaying(false));
       return;
     }
@@ -583,9 +607,23 @@ export const MusicPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
             }
           }
         }}
-        onPlay={() => setIsPlaying(true)}
+        onPlay={(event) => {
+          setIsPlaying(true);
+          // Fires only when sound actually starts — autoplay-blocked cues stay
+          // paused and never count. Debounced so pause→resume on the same track
+          // doesn't double-count.
+          const audio = event.currentTarget;
+          if (audio.dataset.hmPlayCounted !== currentTrackRef.current?.slug) {
+            audio.dataset.hmPlayCounted = currentTrackRef.current?.slug || '';
+            firePlayEvent(playSourceRef.current);
+          }
+        }}
         onPause={() => setIsPlaying(false)}
-        onEnded={handleEnded}
+        onEnded={(event) => {
+          delete (event.currentTarget as HTMLAudioElement & { dataset: { hmPlayCounted?: string } }).dataset
+            .hmPlayCounted;
+          handleEnded();
+        }}
       />
     </MusicPlayerContext.Provider>
   );

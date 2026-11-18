@@ -212,6 +212,85 @@
   color: rgba(255, 255, 255, 0.92);
 }
 
+/* Karaoke / timed lyrics */
+
+.hm-lyrics-panel {
+  position: relative;
+  max-height: 22rem;
+  overflow-y: auto;
+  padding: 1.25rem 0.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.22) transparent;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    #000 2.5rem,
+    #000 calc(100% - 2.5rem),
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    #000 2.5rem,
+    #000 calc(100% - 2.5rem),
+    transparent 100%
+  );
+}
+
+.hm-lyric-line {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  padding: 0.32rem 0.5rem;
+  margin: 0;
+  font-family: inherit;
+  font-size: 1.02rem;
+  line-height: 1.55;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.38);
+  cursor: pointer;
+  border-radius: 6px;
+  transition: color 0.18s ease, opacity 0.18s ease, transform 0.18s ease;
+}
+
+.hm-lyric-line:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.hm-lyric-line.is-past {
+  color: rgba(255, 255, 255, 0.26);
+}
+
+.hm-lyric-line.is-break {
+  color: rgba(255, 255, 255, 0.18);
+  font-size: 0.9rem;
+}
+
+/* Active line: the karaoke highlight */
+
+.hm-lyric-line.is-current {
+  color: #ffffff;
+  font-weight: 700;
+  transform: translateX(2px);
+  text-shadow: 0 0 18px rgba(130, 190, 255, 0.45);
+}
+
+.hm-lyrics-panel.is-live .hm-lyric-line.is-current {
+  color: #cfe6ff;
+}
+
+.hm-music-single-lyrics .hm-music-details-title {
+  margin-bottom: 0.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hm-lyric-line {
+    transition: none;
+  }
+}
+
 @media (max-width: 640px) {
   .hm-music-details-grid {
     grid-template-columns: 1fr;

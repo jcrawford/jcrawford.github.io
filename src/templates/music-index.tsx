@@ -21,7 +21,7 @@ const TrackRow: React.FC<{ track: MusicTrack; index: number }> = ({ track, index
       <button
         type="button"
         className="hm-music-track-play"
-        onClick={() => play(track.slug)}
+        onClick={() => play(track.slug, 'list')}
         aria-label={`Play ${track.title}`}
       >
         {isCurrent && isPlaying ? '❚❚' : '▶'}
