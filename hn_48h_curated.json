@@ -1,0 +1,12 @@
+{
+  "generated_utc": "2026-11-07T15:01:06+00:00",
+  "window_hours": 48,
+  "cutoff_epoch": 1793890863,
+  "min_points": 25,
+  "total_stories": 146,
+  "categories": {
+    "AI/ML": [],
+    "SWE": [],
+    "DevTools": []
+  }
+}

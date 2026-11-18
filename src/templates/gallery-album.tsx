@@ -6,10 +6,10 @@ import { RowsPhotoAlbum } from 'react-photo-album';
 import 'react-photo-album/rows.css';
 
 const Lightbox = React.lazy(() => import('yet-another-react-lightbox'));
-const Thumbnails = React.lazy(() => import('yet-another-react-lightbox/plugins/thumbnails').then((m) => ({ default: m.default ?? m })));
-const Zoom = React.lazy(() => import('yet-another-react-lightbox/plugins/zoom').then((m) => ({ default: m.default ?? m })));
-const Captions = React.lazy(() => import('yet-another-react-lightbox/plugins/captions').then((m) => ({ default: m.default ?? m })));
-const Counter = React.lazy(() => import('yet-another-react-lightbox/plugins/counter').then((m) => ({ default: m.default ?? m })));
+import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
+import Zoom from 'yet-another-react-lightbox/plugins/zoom';
+import Captions from 'yet-another-react-lightbox/plugins/captions';
+import Counter from 'yet-another-react-lightbox/plugins/counter';
 
 import 'yet-another-react-lightbox/styles.css';
 import 'yet-another-react-lightbox/plugins/thumbnails.css';

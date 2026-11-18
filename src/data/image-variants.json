@@ -3,13 +3,9 @@
     "src": "/images/content/gpt-5-5-first-impressions-hero.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
       850
     ]
   },
@@ -17,13 +13,9 @@
     "src": "/images/content/gemini-3-1-flash-tts-hero.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
       850
     ]
   },
@@ -31,13 +23,9 @@
     "src": "/images/content/reviews/walmart-online-grocery-ordering-process/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -46,10 +34,7 @@
     "src": "/images/content/reviews/tilt-hydrometer-review/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
       850
@@ -59,14 +44,9 @@
     "src": "/images/content/reviews/tilt-hydrometer-review/tilt-chassis-concept.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       850
     ]
   },
@@ -74,14 +54,9 @@
     "src": "/images/content/reviews/patrick-adair-designs-review/stardust-ring-splinter.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       850,
       1200
     ]
@@ -90,13 +65,9 @@
     "src": "/images/content/reviews/patrick-adair-designs-review/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -105,14 +76,9 @@
     "src": "/images/content/reviews/patrick-adair-designs-review/stardust-ring-product.webp",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       1200
     ]
   },
@@ -120,13 +86,9 @@
     "src": "/images/content/reviews/benq-rd320ua-monitor-review/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -135,14 +97,9 @@
     "src": "/images/content/reviews/benq-rd320ua-monitor-review/dell-text-clarity.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       850,
       1200
     ]
@@ -151,14 +108,9 @@
     "src": "/images/content/reviews/benq-rd320ua-monitor-review/benq-text-clarity.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       850,
       1200
     ]
@@ -167,13 +119,9 @@
     "src": "/images/content/reviews/huupe-mini-review/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -182,13 +130,9 @@
     "src": "/images/content/reviews/hilton-aqua-sol-review/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -197,13 +141,9 @@
     "src": "/images/content/reviews/capital-one-360-checking/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200,
       1920
@@ -213,13 +153,9 @@
     "src": "/images/content/reviews/plaato-airlock-review/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
       850
     ]
   },
@@ -227,13 +163,9 @@
     "src": "/images/content/reviews/clickfunnels-review/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -242,13 +174,9 @@
     "src": "/images/content/reviews/budget-auto-rental-process/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -257,14 +185,9 @@
     "src": "/images/content/reviews/budget-auto-rental-process/fuel-gauge.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       850,
       1200
     ]
@@ -273,13 +196,9 @@
     "src": "/images/content/reviews/arcade1up-infinity-game-table-review/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -288,14 +207,9 @@
     "src": "/images/content/reviews/arcade1up-infinity-game-table-review/tablecloth-cafe-theme.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       850,
       1200
     ]
@@ -304,14 +218,9 @@
     "src": "/images/content/reviews/arcade1up-infinity-game-table-review/game-library.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       850,
       1200
     ]
@@ -320,13 +229,9 @@
     "src": "/images/content/reviews/ford-transit-15-passenger-van-review/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -335,14 +240,9 @@
     "src": "/images/content/reviews/ford-transit-15-passenger-van-review/route-map-home.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       850,
       1200
     ]
@@ -351,14 +251,9 @@
     "src": "/images/content/reviews/ford-transit-15-passenger-van-review/route-map.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       850,
       1200
     ]
@@ -367,14 +262,9 @@
     "src": "/images/content/reviews/ford-transit-15-passenger-van-review/dashboard-mpg.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       850,
       1200
     ]
@@ -383,13 +273,9 @@
     "src": "/images/content/reviews/flexispot-e7-plus/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -398,14 +284,9 @@
     "src": "/images/content/reviews/flexispot-e7-plus/top-damage.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       850,
       1200
     ]
@@ -414,14 +295,9 @@
     "src": "/images/content/reviews/flexispot-e7-plus/box-damage.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       850,
       1200
     ]
@@ -430,13 +306,9 @@
     "src": "/images/content/reviews/flexispot-e7-plus/featured.webp",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -445,13 +317,9 @@
     "src": "/images/content/reviews/voyager-keyboard/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -460,13 +328,9 @@
     "src": "/images/content/reviews/voyager-keyboard/featured.webp",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -475,14 +339,9 @@
     "src": "/images/content/reviews/voyager-keyboard/typing-tests.png",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       850,
       1200
     ]
@@ -491,13 +350,9 @@
     "src": "/images/content/reviews/logitech-mx-master-3s-review/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -506,14 +361,9 @@
     "src": "/images/content/huupe-mini-review-cable.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       850,
       1200
     ]
@@ -522,13 +372,9 @@
     "src": "/images/content/disney-vacation-2026/hero.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -537,14 +383,10 @@
     "src": "/images/content/disney-vacation-2026/route-map-home.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
       760,
-      768,
       850,
       1200
     ]
@@ -553,14 +395,10 @@
     "src": "/images/content/disney-vacation-2026/route-map.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
       760,
-      768,
       850,
       1200
     ]
@@ -569,14 +407,10 @@
     "src": "/images/content/disney-vacation-2026/savannah-refuge-drive.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
       760,
-      768,
       850,
       1200
     ]
@@ -585,14 +419,10 @@
     "src": "/images/content/disney-vacation-2026/dc-route.png",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
       760,
-      768,
       850,
       1200
     ]
@@ -601,13 +431,9 @@
     "src": "/images/content/qwen3-6-27b-hero.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
       850
     ]
   },
@@ -615,14 +441,10 @@
     "src": "/images/content/codex-2026-update/codex-2026-update.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
       760,
-      768,
       850,
       1200
     ]
@@ -631,13 +453,9 @@
     "src": "/images/content/anthropics-mythos-moment-feels-familiar-and-not-in-a-good-way/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -646,14 +464,9 @@
     "src": "/images/content/huupe-mini-review-wall-mount.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       850,
       1200
     ]
@@ -662,13 +475,9 @@
     "src": "/images/content/brewing/mead-water-chemistry/calcium/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -677,13 +486,9 @@
     "src": "/images/content/brewing/mead-water-chemistry/calcium/featured.webp",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -692,13 +497,9 @@
     "src": "/images/content/brewing/mead-water-chemistry/calcium/featured.png",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -707,13 +508,9 @@
     "src": "/images/content/brewing/mead-water-chemistry/building-profile/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -722,13 +519,9 @@
     "src": "/images/content/brewing/mead-water-chemistry/building-profile/featured.webp",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -737,13 +530,9 @@
     "src": "/images/content/brewing/mead-water-chemistry/building-profile/featured.png",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -752,14 +541,9 @@
     "src": "/images/content/brewing/mead-water-chemistry/series-cover.png",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       1200
     ]
   },
@@ -767,13 +551,9 @@
     "src": "/images/content/brewing/mead-water-chemistry/bicarbonate/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -782,13 +562,9 @@
     "src": "/images/content/brewing/mead-water-chemistry/bicarbonate/featured.webp",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -797,13 +573,9 @@
     "src": "/images/content/brewing/mead-water-chemistry/bicarbonate/featured.png",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -812,13 +584,9 @@
     "src": "/images/content/brewing/mead-water-chemistry/sulfate/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -827,13 +595,9 @@
     "src": "/images/content/brewing/mead-water-chemistry/sulfate/featured.webp",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -842,13 +606,9 @@
     "src": "/images/content/brewing/mead-water-chemistry/sulfate/featured.png",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -857,14 +617,9 @@
     "src": "/images/content/brewing/mead-water-chemistry/series-cover.webp",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       1200
     ]
   },
@@ -872,13 +627,9 @@
     "src": "/images/content/brewing/mead-water-chemistry/finding-your-water-report/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -887,13 +638,9 @@
     "src": "/images/content/brewing/mead-water-chemistry/finding-your-water-report/featured.webp",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -902,13 +649,9 @@
     "src": "/images/content/brewing/mead-water-chemistry/finding-your-water-report/featured.png",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -917,14 +660,9 @@
     "src": "/images/content/brewing/mead-water-chemistry/series-cover.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       1200
     ]
   },
@@ -932,13 +670,9 @@
     "src": "/images/content/brewing/mead-water-chemistry/ph-meters/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -947,13 +681,9 @@
     "src": "/images/content/brewing/mead-water-chemistry/ph-meters/featured.webp",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -962,13 +692,9 @@
     "src": "/images/content/brewing/mead-water-chemistry/ph-meters/featured.png",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -977,13 +703,9 @@
     "src": "/images/content/brewing/mead-water-chemistry/chloride/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -992,13 +714,9 @@
     "src": "/images/content/brewing/mead-water-chemistry/chloride/featured.webp",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1007,13 +725,9 @@
     "src": "/images/content/brewing/mead-water-chemistry/chloride/featured.png",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1022,13 +736,9 @@
     "src": "/images/content/brewing/mead-water-chemistry/water-chemistry-basics/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1037,13 +747,9 @@
     "src": "/images/content/brewing/mead-water-chemistry/water-chemistry-basics/featured.webp",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1052,13 +758,9 @@
     "src": "/images/content/brewing/mead-water-chemistry/water-chemistry-basics/featured.png",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1067,13 +769,9 @@
     "src": "/images/content/brewing/mead-water-chemistry/magnesium/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1082,13 +780,9 @@
     "src": "/images/content/brewing/mead-water-chemistry/magnesium/featured.webp",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1097,13 +791,9 @@
     "src": "/images/content/brewing/mead-water-chemistry/magnesium/featured.png",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1112,13 +802,9 @@
     "src": "/images/content/brewing/mead-water-chemistry/sodium/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1127,13 +813,9 @@
     "src": "/images/content/brewing/mead-water-chemistry/sodium/featured.webp",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1142,13 +824,9 @@
     "src": "/images/content/brewing/mead-water-chemistry/sodium/featured.png",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1157,13 +835,9 @@
     "src": "/images/content/brewing/supporting-the-brew.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
       850
     ]
   },
@@ -1171,13 +845,9 @@
     "src": "/images/content/brewing/caramel-apple-bochet/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200,
       1920
@@ -1187,14 +857,10 @@
     "src": "/images/content/brewing/caramel-apple-bochet/step-3-check-og.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
       760,
-      768,
       850,
       1200,
       1920
@@ -1204,14 +870,10 @@
     "src": "/images/content/brewing/caramel-apple-bochet/step-2-mix-must.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
       760,
-      768,
       850,
       1200,
       1920
@@ -1221,13 +883,9 @@
     "src": "/images/content/brewing/home-brewing-journey/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1236,14 +894,10 @@
     "src": "/images/content/brewing/cherry-mead/primary-complete-gravity.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
       760,
-      768,
       850,
       1200
     ]
@@ -1252,14 +906,10 @@
     "src": "/images/content/brewing/cherry-mead/midlife-taste-test.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
       760,
-      768,
       850,
       1200,
       1920
@@ -1269,14 +919,10 @@
     "src": "/images/content/brewing/cherry-mead/final-gravity-reading.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
       760,
-      768,
       850,
       1200
     ]
@@ -1285,13 +931,9 @@
     "src": "/images/content/brewing/cherry-mead/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200,
       1920
@@ -1301,14 +943,10 @@
     "src": "/images/content/brewing/cherry-mead/step-1.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
       760,
-      768,
       850,
       1200
     ]
@@ -1317,14 +955,10 @@
     "src": "/images/content/brewing/cherry-mead/step-9.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
       760,
-      768,
       850,
       1200
     ]
@@ -1333,14 +967,10 @@
     "src": "/images/content/brewing/cherry-mead/step-4.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
       760,
-      768,
       850,
       1200
     ]
@@ -1349,14 +979,10 @@
     "src": "/images/content/brewing/cherry-mead/conditioning-transfer.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
       760,
-      768,
       850,
       1200,
       1920
@@ -1366,14 +992,10 @@
     "src": "/images/content/brewing/cherry-mead/step-10.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
       760,
-      768,
       850,
       1200
     ]
@@ -1382,14 +1004,10 @@
     "src": "/images/content/brewing/cherry-mead/secondary-fermenter.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
       760,
-      768,
       850,
       1200
     ]
@@ -1398,14 +1016,10 @@
     "src": "/images/content/brewing/cherry-mead/step-11.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
       760,
-      768,
       850,
       1200
     ]
@@ -1414,14 +1028,10 @@
     "src": "/images/content/brewing/cherry-mead/step-7.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
       760,
-      768,
       850,
       1200
     ]
@@ -1430,13 +1040,9 @@
     "src": "/images/content/brewing/supporting-the-brew.webp",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
       850
     ]
   },
@@ -1444,27 +1050,31 @@
     "src": "/images/content/brewing/supporting-the-brew.png",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
       850
+    ]
+  },
+  {
+    "src": "/images/content/brewing/apple-bochet/featured.jpg",
+    "widths": [
+      64,
+      160,
+      400,
+      600,
+      850,
+      1200,
+      1920
     ]
   },
   {
     "src": "/images/content/brewing/intro-to-making-mead/preparing-your-must/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1473,13 +1083,9 @@
     "src": "/images/content/brewing/intro-to-making-mead/preparing-your-must/featured.webp",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1488,13 +1094,9 @@
     "src": "/images/content/brewing/intro-to-making-mead/preparing-your-must/featured.png",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1503,13 +1105,9 @@
     "src": "/images/content/brewing/intro-to-making-mead/back-sweetening/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1518,13 +1116,9 @@
     "src": "/images/content/brewing/intro-to-making-mead/back-sweetening/featured.webp",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1533,13 +1127,9 @@
     "src": "/images/content/brewing/intro-to-making-mead/back-sweetening/featured.png",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1548,13 +1138,9 @@
     "src": "/images/content/brewing/intro-to-making-mead/secondary-fermentation/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1563,13 +1149,9 @@
     "src": "/images/content/brewing/intro-to-making-mead/secondary-fermentation/featured.webp",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1578,13 +1160,9 @@
     "src": "/images/content/brewing/intro-to-making-mead/secondary-fermentation/featured.png",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1593,13 +1171,9 @@
     "src": "/images/content/brewing/intro-to-making-mead/types-of-mead/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1608,13 +1182,9 @@
     "src": "/images/content/brewing/intro-to-making-mead/types-of-mead/featured.webp",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1623,13 +1193,9 @@
     "src": "/images/content/brewing/intro-to-making-mead/types-of-mead/featured.png",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1638,13 +1204,9 @@
     "src": "/images/content/brewing/intro-to-making-mead/bottling/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1653,13 +1215,9 @@
     "src": "/images/content/brewing/intro-to-making-mead/bottling/featured.webp",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1668,13 +1226,9 @@
     "src": "/images/content/brewing/intro-to-making-mead/bottling/featured.png",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1683,13 +1237,9 @@
     "src": "/images/content/brewing/intro-to-making-mead/series-cover.png",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
       850
     ]
   },
@@ -1697,13 +1247,9 @@
     "src": "/images/content/brewing/intro-to-making-mead/primary-fermentation/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1712,13 +1258,9 @@
     "src": "/images/content/brewing/intro-to-making-mead/primary-fermentation/featured.webp",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1727,13 +1269,9 @@
     "src": "/images/content/brewing/intro-to-making-mead/primary-fermentation/featured.png",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1742,13 +1280,9 @@
     "src": "/images/content/brewing/intro-to-making-mead/pasteurization/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1757,13 +1291,9 @@
     "src": "/images/content/brewing/intro-to-making-mead/pasteurization/featured.webp",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1772,13 +1302,9 @@
     "src": "/images/content/brewing/intro-to-making-mead/pasteurization/featured.png",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1787,13 +1313,9 @@
     "src": "/images/content/brewing/intro-to-making-mead/series-cover.webp",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
       850
     ]
   },
@@ -1801,13 +1323,9 @@
     "src": "/images/content/brewing/intro-to-making-mead/series-cover.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
       850
     ]
   },
@@ -1815,13 +1333,9 @@
     "src": "/images/content/brewing/intro-to-making-mead/mead-ingredients/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1830,13 +1344,9 @@
     "src": "/images/content/brewing/intro-to-making-mead/mead-ingredients/featured.webp",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1845,13 +1355,9 @@
     "src": "/images/content/brewing/intro-to-making-mead/mead-ingredients/featured.png",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1860,13 +1366,9 @@
     "src": "/images/content/brewing/intro-to-making-mead/cleaning-and-sanitization/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1875,13 +1377,9 @@
     "src": "/images/content/brewing/intro-to-making-mead/cleaning-and-sanitization/featured.webp",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1890,13 +1388,9 @@
     "src": "/images/content/brewing/intro-to-making-mead/cleaning-and-sanitization/featured.png",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1905,13 +1399,9 @@
     "src": "/images/content/brewing/intro-to-making-mead/equipment/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1920,13 +1410,9 @@
     "src": "/images/content/brewing/intro-to-making-mead/equipment/featured.webp",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1935,13 +1421,9 @@
     "src": "/images/content/brewing/intro-to-making-mead/equipment/featured.png",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1950,13 +1432,9 @@
     "src": "/images/content/brewing/blackberry-mead/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1965,13 +1443,9 @@
     "src": "/images/content/brewing/bottling-day/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1980,13 +1454,9 @@
     "src": "/images/content/brewing/dandelion-mead/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -1995,14 +1465,10 @@
     "src": "/images/content/brewing/dandelion-mead/bottling.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
       760,
-      768,
       850,
       1200
     ]
@@ -2011,13 +1477,9 @@
     "src": "/images/content/brewing/ipa/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200,
       1920
@@ -2027,13 +1489,9 @@
     "src": "/images/content/brewing/strawberry-wine/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2042,14 +1500,10 @@
     "src": "/images/content/brewing/strawberry-wine/step-1.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
       760,
-      768,
       850,
       1200
     ]
@@ -2058,14 +1512,10 @@
     "src": "/images/content/brewing/strawberry-wine/step-bottling.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
       760,
-      768,
       850,
       1200
     ]
@@ -2074,14 +1524,10 @@
     "src": "/images/content/brewing/strawberry-wine/step-3.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
       760,
-      768,
       850,
       1200
     ]
@@ -2090,13 +1536,9 @@
     "src": "/images/content/mysql-indexes-featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
       850
     ]
   },
@@ -2104,14 +1546,9 @@
     "src": "/images/content/total-typescript-review.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       850,
       1200
     ]
@@ -2120,13 +1557,9 @@
     "src": "/images/content/spacex-cursor-60b-acquisition/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2135,13 +1568,9 @@
     "src": "/images/content/long-running-agents-adk/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2150,14 +1579,9 @@
     "src": "/images/content/posts/2026/04/artemis-mission/nasa/earthrise.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       850,
       1200
     ]
@@ -2166,14 +1590,9 @@
     "src": "/images/content/posts/2026/04/artemis-mission/nasa/crescent-earth.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       850,
       1200
     ]
@@ -2182,14 +1601,9 @@
     "src": "/images/content/posts/2026/04/artemis-mission/nasa/earthset.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       850,
       1200
     ]
@@ -2198,14 +1612,9 @@
     "src": "/images/content/posts/2026/04/artemis-mission/nasa/lunar-crescent-return.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       850,
       1200
     ]
@@ -2214,14 +1623,9 @@
     "src": "/images/content/posts/2026/04/artemis-mission/nasa/solar-eclipse.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       850,
       1200
     ]
@@ -2230,14 +1634,9 @@
     "src": "/images/content/posts/2026/04/artemis-mission/nasa/koch-earth.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       850,
       1200
     ]
@@ -2246,14 +1645,9 @@
     "src": "/images/content/posts/2026/04/artemis-mission/nasa/crew-selfie.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       850,
       1200
     ]
@@ -2262,13 +1656,9 @@
     "src": "/images/content/posts/2026/04/nasa-artemis-return-to-the-moon/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200,
       1920
@@ -2278,13 +1668,9 @@
     "src": "/images/content/posts/2026/04/saferide-health-cursor-ai-adoption/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2293,13 +1679,9 @@
     "src": "/images/content/posts/fried-chicken-ice-cream/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2308,14 +1690,9 @@
     "src": "/images/content/posts/fried-chicken-ice-cream/bitten.jpeg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       850,
       1200
     ]
@@ -2324,14 +1701,9 @@
     "src": "/images/content/posts/fried-chicken-ice-cream/package.jpeg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       850,
       1200
     ]
@@ -2340,14 +1712,9 @@
     "src": "/images/content/posts/fried-chicken-ice-cream/unwrapped.jpeg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       850,
       1200
     ]
@@ -2356,13 +1723,9 @@
     "src": "/images/content/posts/temporal-api-trauma/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2371,13 +1734,9 @@
     "src": "/images/content/posts/grok-4.7-vs-opus-5.5/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2386,14 +1745,9 @@
     "src": "/images/content/posts/grok-4.7-vs-opus-5.5/cost-comparison.png",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       850,
       1200
     ]
@@ -2402,14 +1756,9 @@
     "src": "/images/content/posts/grok-4.7-vs-opus-5.5/cost-comparison.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       850,
       1200
     ]
@@ -2418,13 +1767,9 @@
     "src": "/images/content/posts/mcp-bad-idea/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2433,13 +1778,9 @@
     "src": "/images/content/posts/via-aquarium/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2448,14 +1789,9 @@
     "src": "/images/content/huupe-mini-review-overnight.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       850,
       1200
     ]
@@ -2464,13 +1800,9 @@
     "src": "/images/content/typescript-7-beta-go-rewrite/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2479,13 +1811,9 @@
     "src": "/images/content/grok-4-5-cursor-first-impressions/hero.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2494,13 +1822,9 @@
     "src": "/images/content/saferide-health/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2509,13 +1833,9 @@
     "src": "/images/content/vision-capabilities-php-ai-agents/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2524,14 +1844,9 @@
     "src": "/images/content/huupe-arcade-system.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       850,
       1200
     ]
@@ -2540,13 +1855,9 @@
     "src": "/images/content/lebanon-valley-speedway-2026/hero.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2555,14 +1866,9 @@
     "src": "/images/content/huupe-mini-review-assembly.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       850,
       1200
     ]
@@ -2571,13 +1877,9 @@
     "src": "/images/content/running-this-blog-with-an-ai-team/featured.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2586,14 +1888,9 @@
     "src": "/images/content/wp-supply-chain-2026.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
-      768,
       850,
       1200
     ]
@@ -2602,13 +1899,9 @@
     "src": "/images/content/claude-opus-4-7-hero.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      760,
       850
     ]
   },
@@ -2616,13 +1909,9 @@
     "src": "/images/galleries/lebanon-valley-2026/lvs-hero-original.png",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2631,13 +1920,9 @@
     "src": "/images/galleries/lebanon-valley-2026/lvs-hero.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2646,13 +1931,9 @@
     "src": "/images/galleries/lebanon-valley-2026/lvs-photo-05.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2661,13 +1942,9 @@
     "src": "/images/galleries/lebanon-valley-2026/lvs-photo-03.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2676,13 +1953,9 @@
     "src": "/images/galleries/lebanon-valley-2026/lvs-photo-04.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2691,13 +1964,9 @@
     "src": "/images/galleries/lebanon-valley-2026/lvs-photo-01.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2706,13 +1975,9 @@
     "src": "/images/galleries/lebanon-valley-2026/lvs-photo-02.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2721,13 +1986,9 @@
     "src": "/images/galleries/lebanon-valley-2026/lvs-photo-06.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2736,13 +1997,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium-album/07-boy-giant-crab.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2751,13 +2008,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium-album/12-clownfish.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2766,13 +2019,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium-album/03-kids-tank.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2781,13 +2030,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium-album/10-shark-cage-2.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2796,13 +2041,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium-album/11-shark-cage-3.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2811,13 +2052,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium-album/13-tropical-fish.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2826,13 +2063,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium-album/04-siblings-tank.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2841,13 +2074,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium-album/05-colorful-fish.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2856,13 +2085,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium-album/09-shark-cage-1.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2871,13 +2096,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium-album/01-frog.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2886,13 +2107,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium-album/02-aquarium-kid.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2901,13 +2118,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium-album/06-boy-fish.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2916,13 +2129,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium-album/08-boy-shark-tank.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2931,13 +2140,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/17-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2946,13 +2151,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/07-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2961,13 +2162,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/59-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2976,13 +2173,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/42-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -2991,13 +2184,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/77-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3006,13 +2195,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/39-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3021,13 +2206,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/43-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3036,13 +2217,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/62-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3051,13 +2228,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/94-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3066,13 +2239,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/51-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3081,13 +2250,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/75-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3096,13 +2261,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/23-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3111,13 +2272,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/31-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3126,13 +2283,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/36-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3141,13 +2294,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/81-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3156,13 +2305,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/35-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3171,13 +2316,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/34-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3186,13 +2327,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/61-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3201,13 +2338,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/89-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3216,13 +2349,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/99-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3231,13 +2360,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/24-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3246,13 +2371,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/15-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3261,13 +2382,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/65-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3276,13 +2393,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/44-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3291,13 +2404,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/97-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3306,13 +2415,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/85-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3321,13 +2426,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/05-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3336,13 +2437,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/33-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3351,13 +2448,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/74-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3366,13 +2459,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/08-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3381,13 +2470,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/69-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3396,13 +2481,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/66-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3411,13 +2492,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/19-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3426,13 +2503,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/96-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3441,13 +2514,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/16-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3456,13 +2525,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/41-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3471,13 +2536,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/92-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3486,13 +2547,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/06-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3501,13 +2558,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/50-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3516,13 +2569,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/93-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3531,13 +2580,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/01-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3546,13 +2591,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/13-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3561,13 +2602,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/46-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3576,13 +2613,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/52-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3591,13 +2624,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/100-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3606,13 +2635,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/30-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3621,13 +2646,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/54-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3636,13 +2657,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/78-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3651,13 +2668,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/87-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3666,13 +2679,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/72-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3681,13 +2690,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/11-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3696,13 +2701,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/73-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3711,13 +2712,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/68-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3726,13 +2723,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/37-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3741,13 +2734,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/53-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3756,13 +2745,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/60-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3771,13 +2756,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/70-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3786,13 +2767,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/25-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3801,13 +2778,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/26-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3816,13 +2789,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/21-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3831,13 +2800,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/67-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3846,13 +2811,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/91-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3861,13 +2822,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/09-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3876,13 +2833,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/12-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3891,13 +2844,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/71-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3906,13 +2855,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/27-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3921,13 +2866,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/86-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3936,13 +2877,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/18-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3951,13 +2888,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/57-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3966,13 +2899,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/98-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3981,13 +2910,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/79-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -3996,13 +2921,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/88-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4011,13 +2932,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/04-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4026,13 +2943,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/40-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4041,13 +2954,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/14-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4056,13 +2965,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/95-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4071,13 +2976,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/83-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4086,13 +2987,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/48-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4101,13 +2998,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/49-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4116,13 +3009,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/84-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4131,13 +3020,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/55-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4146,13 +3031,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/20-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4161,13 +3042,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/45-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4176,13 +3053,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/02-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4191,13 +3064,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/38-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4206,13 +3075,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/64-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4221,13 +3086,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/03-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4236,13 +3097,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/32-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4251,13 +3108,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/63-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4266,13 +3119,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/82-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4281,13 +3130,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/28-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4296,13 +3141,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/76-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4311,13 +3152,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/29-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4326,13 +3163,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/56-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4341,13 +3174,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/47-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4356,13 +3185,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/22-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4371,13 +3196,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/10-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4386,13 +3207,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/90-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4401,13 +3218,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/58-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4416,13 +3229,9 @@
     "src": "/images/galleries/family-trips/2026/via-aquarium/80-aquarium.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4431,13 +3240,9 @@
     "src": "/images/galleries/hilton-aqua-sol-2026/aqua-pool-daytime-01.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4446,13 +3251,9 @@
     "src": "/images/galleries/hilton-aqua-sol-2026/aqua-poolside-hug.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4461,13 +3262,9 @@
     "src": "/images/galleries/hilton-aqua-sol-2026/aqua-ice-cream-boy-02.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4476,13 +3273,9 @@
     "src": "/images/galleries/hilton-aqua-sol-2026/aqua-ice-cream-girl.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4491,13 +3284,9 @@
     "src": "/images/galleries/hilton-aqua-sol-2026/aqua-poolside-night-hug-02.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4506,13 +3295,9 @@
     "src": "/images/galleries/hilton-aqua-sol-2026/aqua-pool-beach-ball-02.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       1200
     ]
   },
@@ -4520,13 +3305,9 @@
     "src": "/images/galleries/hilton-aqua-sol-2026/aqua-smores-night.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4535,13 +3316,9 @@
     "src": "/images/galleries/hilton-aqua-sol-2026/aqua-ice-cream-boy-01.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4550,13 +3327,9 @@
     "src": "/images/galleries/hilton-aqua-sol-2026/aqua-poolside-silly-face.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4565,13 +3338,9 @@
     "src": "/images/galleries/hilton-aqua-sol-2026/aqua-boy-marshmallow-pool.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4580,13 +3349,9 @@
     "src": "/images/galleries/hilton-aqua-sol-2026/aqua-pool-swimming.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       1200
     ]
   },
@@ -4594,13 +3359,9 @@
     "src": "/images/galleries/hilton-aqua-sol-2026/aqua-pool-daytime-02.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4609,13 +3370,9 @@
     "src": "/images/galleries/hilton-aqua-sol-2026/aqua-pool-beach-ball-01.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       1200
     ]
   },
@@ -4623,13 +3380,9 @@
     "src": "/images/galleries/hilton-aqua-sol-2026/aqua-poolside-night-hug.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4638,13 +3391,9 @@
     "src": "/images/galleries/hilton-aqua-sol-2026/aqua-girl-skewers.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       1200
     ]
   },
@@ -4652,13 +3401,9 @@
     "src": "/images/galleries/hilton-aqua-sol-2026/aqua-scooter-resort.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4667,13 +3412,9 @@
     "src": "/images/galleries/hilton-aqua-sol-2026/aqua-girl-skewers-02.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4682,13 +3423,9 @@
     "src": "/images/galleries/hilton-aqua-sol-2026/aqua-marshmallow-toasting.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4697,13 +3434,9 @@
     "src": "/images/galleries/hilton-aqua-sol-2026/aqua-ice-cream-kids.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       1200
     ]
   },
@@ -4711,13 +3444,9 @@
     "src": "/images/galleries/hilton-aqua-sol-2026/aqua-ice-cream-closeup.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       1200
     ]
   },
@@ -4725,13 +3454,9 @@
     "src": "/images/galleries/hilton-aqua-sol-2026/aqua-smores-grill-night.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4740,13 +3465,9 @@
     "src": "/images/galleries/hilton-aqua-sol-2026/aqua-smores-girl-seated.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4755,13 +3476,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-04.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4770,13 +3487,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-17.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4785,13 +3498,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-oak-tunnel-road.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4800,13 +3509,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-gator-head-water-01.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4815,13 +3520,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-group-sign-02.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4830,13 +3531,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-gator-head-close.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4845,13 +3542,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-group-sign-05.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4860,13 +3553,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-gator-log-basking-01.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4875,13 +3564,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-gator-water-01.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4890,13 +3575,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-spanish-moss-drive.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4905,13 +3586,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-group-sign-07.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4920,13 +3597,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-13.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4935,13 +3608,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-09.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4950,13 +3619,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-gator-log-low.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4965,13 +3630,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-gator-swimming.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4980,13 +3641,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-08.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -4995,13 +3652,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-gator-water-03.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5010,13 +3663,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-group-sign-08.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5025,13 +3674,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-group-sign-06.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5040,13 +3685,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-06.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5055,13 +3696,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-group-sign-01.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5070,13 +3707,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-gator-bank.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5085,13 +3718,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-wetland-gator-wide.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5100,13 +3729,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-03.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5115,13 +3740,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-01.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5130,13 +3751,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-group-sign-10.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5145,13 +3762,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-05.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5160,13 +3773,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-wetland-gator-wide-02.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5175,13 +3784,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-16.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5190,13 +3795,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-14.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5205,13 +3806,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-gator-mouth-open-03.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5220,13 +3817,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-15.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5235,13 +3828,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-group-sign-11.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5250,13 +3839,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-gator-water-02.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5265,13 +3850,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-07.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5280,13 +3861,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-group-sign-09.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5295,13 +3872,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-02.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5310,13 +3883,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-10.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5325,13 +3894,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-marsh-water-close.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5340,13 +3905,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-group-sign-04.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5355,13 +3916,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-group-sign-12.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5370,13 +3927,9 @@
     "src": "/images/galleries/savannah-wildlife-refuge-2026/refuge-group-sign-03.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5385,13 +3938,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-stroller-mickey-balloon-01.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5400,13 +3949,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-fireworks-golden-cascade.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5415,13 +3960,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-fireworks-castle.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5430,13 +3971,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-buzz-lightyear-ride-02.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5445,12 +3982,8 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-fireworks-castle-colorful.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
-      768,
       1200
     ]
   },
@@ -5458,13 +3991,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-family-ferry-04.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5473,13 +4002,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-mickey-meet-greet-02.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5488,13 +4013,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-family-castle-group-02.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       1200
     ]
   },
@@ -5502,13 +4023,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-ice-cream-first-visit-01.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5517,13 +4034,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-laugh-floor-01.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5532,13 +4045,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-laugh-floor-03.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5547,13 +4056,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-stroller-mickey-balloon-03.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       1200
     ]
   },
@@ -5561,13 +4066,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-buzz-lightyear-ride-07.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5576,13 +4077,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-family-ferry-01.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5591,13 +4088,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-mickey-meet-greet-01.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5606,13 +4099,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-family-ferry-02.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5621,13 +4110,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-buzz-lightyear-ride-03.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5636,13 +4121,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-fireworks-burst.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5651,13 +4132,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-fireworks-golden-willow.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5666,13 +4143,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-fireworks-projections.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5681,13 +4154,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-dumbo-area-selfie-03.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5696,13 +4165,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-ice-cream-stroller-01.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5711,13 +4176,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-dumbo-area-selfie-02.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5726,13 +4187,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-ferry-girl-minnie-ears.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       1200
     ]
   },
@@ -5740,13 +4197,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-family-castle-group-01.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5755,13 +4208,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-laugh-floor-05.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5770,13 +4219,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-family-ferry-03.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5785,13 +4230,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-ice-cream-stroller-02.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5800,13 +4241,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-family-ferry-05.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       1200
     ]
   },
@@ -5814,13 +4251,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-crowd-nighttime-show.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5829,13 +4262,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-dumbo-area-selfie-01.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5844,13 +4273,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-boy-ice-cream.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       1200
     ]
   },
@@ -5858,13 +4283,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-stroller-mickey-balloon-02.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5873,13 +4294,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-fireworks-golden-canopy.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5888,13 +4305,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-mickey-meet-greet-03.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5903,13 +4316,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-buzz-lightyear-ride-01.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5918,13 +4327,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-main-street-castle-view.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       1200
     ]
   },
@@ -5932,13 +4337,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-fireworks-close-view.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5947,13 +4348,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-laugh-floor-04.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]
@@ -5962,13 +4359,9 @@
     "src": "/images/galleries/magic-kingdom-2026/mk-laugh-floor-02.jpg",
     "widths": [
       64,
-      80,
       160,
-      280,
-      320,
       400,
       600,
-      768,
       850,
       1200
     ]

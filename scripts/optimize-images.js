@@ -15,7 +15,7 @@ const CONFIG = {
   pngToJpgThreshold: 500 * 1024, // 500KB
   maxWidth: 1920,
   // Full responsive set for featured/hero and gallery images
-  responsiveVariants: [64, 80, 160, 280, 320, 400, 600, 768, 850, 1200, 1920],
+  responsiveVariants: [64, 160, 400, 600, 850, 1200, 1920],
   // Single size for post body / step media
   postMediaWidth: 760,
   postMediaMaxHeight: 600,

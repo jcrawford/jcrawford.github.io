@@ -1,0 +1,1751 @@
+{
+  "generated_utc": "2026-11-07T15:01:06+00:00",
+  "window_hours": 48,
+  "cutoff_epoch": 1793890863,
+  "min_points": 25,
+  "total_stories": 146,
+  "stories": [
+    {
+      "id": "50385272",
+      "title": "Claude Code sends your email address to websites",
+      "url": "https://github.com/anthropics/claude-code/issues/107757",
+      "source": "github.com",
+      "upvotes": 1581,
+      "comments": 506,
+      "posted_utc": "2026-11-05T22:17:15Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50385272",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50391456",
+      "title": "Tesla to wind down Cybertruck production",
+      "url": "https://www.nbcnews.com/tech/tech-news/tesla-wind-cybertruck-production-years-poor-sales-markets-rcna607817",
+      "source": "nbcnews.com",
+      "upvotes": 1076,
+      "comments": 1931,
+      "posted_utc": "2026-11-06T12:13:51Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50391456",
+      "tags": []
+    },
+    {
+      "id": "50399933",
+      "title": "Libghostty 1.0",
+      "url": "https://mitchellh.com/writing/libghostty-1-0",
+      "source": "mitchellh.com",
+      "upvotes": 825,
+      "comments": 135,
+      "posted_utc": "2026-11-06T23:30:52Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50399933",
+      "tags": []
+    },
+    {
+      "id": "50383740",
+      "title": "Search for everyone",
+      "url": "https://kagi.com/changelog#11820",
+      "source": "kagi.com",
+      "upvotes": 749,
+      "comments": 409,
+      "posted_utc": "2026-11-05T20:03:34Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50383740",
+      "tags": []
+    },
+    {
+      "id": "50384233",
+      "title": "MS Paint Remote Code Execution Vulnerability",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2026-83844",
+      "source": "cve.org",
+      "upvotes": 709,
+      "comments": 281,
+      "posted_utc": "2026-11-05T20:43:42Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50384233",
+      "tags": []
+    },
+    {
+      "id": "50389333",
+      "title": "Blender's UI and Runtime: Much Faster Than GPUI",
+      "url": "https://github.com/ppmpreetham/BUI",
+      "source": "github.com",
+      "upvotes": 703,
+      "comments": 284,
+      "posted_utc": "2026-11-06T07:40:35Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50389333",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50383739",
+      "title": "Goodbye from Salon",
+      "url": "https://www.salon.com/2026/11/05/goodbye-from-salon/",
+      "source": "salon.com",
+      "upvotes": 644,
+      "comments": 264,
+      "posted_utc": "2026-11-05T20:03:29Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50383739",
+      "tags": []
+    },
+    {
+      "id": "50390124",
+      "title": "Dutch 'idealist' bank ASN blocks non-Google Android, including GrapheneOS",
+      "url": "https://github.com/PrivSec-dev/banking-apps-compat-report/issues/105",
+      "source": "github.com",
+      "upvotes": 637,
+      "comments": 418,
+      "posted_utc": "2026-11-06T09:27:12Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50390124",
+      "tags": [
+        "DevTools"
+      ]
+    },
+    {
+      "id": "50389222",
+      "title": "Britain to make salary disclosure in job ads mandatory",
+      "url": "https://www.reuters.com/business/world-at-work/britain-make-salary-disclosure-job-ads-mandatory-2026-11-05/",
+      "source": "reuters.com",
+      "upvotes": 592,
+      "comments": 448,
+      "posted_utc": "2026-11-06T07:22:04Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50389222",
+      "tags": []
+    },
+    {
+      "id": "50380810",
+      "title": "Motorola Signature 27 with GrapheneOS support",
+      "url": "https://motorolanews.com/motorola-signature-27-2/",
+      "source": "motorolanews.com",
+      "upvotes": 577,
+      "comments": 403,
+      "posted_utc": "2026-11-05T16:01:34Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50380810",
+      "tags": []
+    },
+    {
+      "id": "50397429",
+      "title": "A Jev that can ask Opus for help gives Opus accuracy at 4x lower cost",
+      "url": "https://hightouch.com/blog/llm-judges-identity-resolution",
+      "source": "hightouch.com",
+      "upvotes": 527,
+      "comments": 125,
+      "posted_utc": "2026-11-06T19:48:51Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50397429",
+      "tags": []
+    },
+    {
+      "id": "50385870",
+      "title": "Cuban: Facebook knowingly runs AI deepfake scam ads; docs say $16B fraud revenue",
+      "url": "https://finance.yahoo.com/technology/ai/articles/mark-cuban-says-facebook-knowingly-213000020.html",
+      "source": "finance.yahoo.com",
+      "upvotes": 509,
+      "comments": 224,
+      "posted_utc": "2026-11-05T23:09:57Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50385870",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50381383",
+      "title": "Window Sweaters",
+      "url": "https://github.com/saragordic/window-sweaters",
+      "source": "github.com",
+      "upvotes": 455,
+      "comments": 135,
+      "posted_utc": "2026-11-05T16:50:14Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50381383",
+      "tags": []
+    },
+    {
+      "id": "50383057",
+      "title": "The Hackintosh Reborn",
+      "url": "https://www.naut.ca/blog/2026/11/05/the-hackintosh-reborn-with-ai/",
+      "source": "naut.ca",
+      "upvotes": 407,
+      "comments": 245,
+      "posted_utc": "2026-11-05T19:08:22Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50383057",
+      "tags": []
+    },
+    {
+      "id": "50388001",
+      "title": "US FAA says it will phase out floppy disks from air traffic control by 2028",
+      "url": "https://www.reuters.com/world/us/us-faa-says-it-will-phase-out-floppy-disks-air-traffic-control-by-2028-2026-11-05/",
+      "source": "reuters.com",
+      "upvotes": 365,
+      "comments": 299,
+      "posted_utc": "2026-11-06T04:00:28Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50388001",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50393758",
+      "title": "Deus Ex",
+      "url": "https://www.filfre.net/2026/11/deus-ex/",
+      "source": "filfre.net",
+      "upvotes": 361,
+      "comments": 192,
+      "posted_utc": "2026-11-06T15:44:36Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50393758",
+      "tags": []
+    },
+    {
+      "id": "50392118",
+      "title": "Gemini Omni 1.2 Flash",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+      "source": "blog.google",
+      "upvotes": 350,
+      "comments": 240,
+      "posted_utc": "2026-11-06T13:35:27Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50392118",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50397994",
+      "title": "AI is dramatically accelerating AI research",
+      "url": "https://www.planned-obsolescence.org/p/ai-is-dramatically-accelerating-ai",
+      "source": "planned-obsolescence.org",
+      "upvotes": 338,
+      "comments": 313,
+      "posted_utc": "2026-11-06T20:27:23Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50397994",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50388122",
+      "title": "From Linux to Wikipedia: How Volunteers Build the Internet",
+      "url": "https://thereader.mitpress.mit.edu/from-linux-to-wikipedia-how-volunteers-build-the-internet/",
+      "source": "thereader.mitpress.mit.edu",
+      "upvotes": 334,
+      "comments": 128,
+      "posted_utc": "2026-11-06T04:17:49Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50388122",
+      "tags": [
+        "SWE"
+      ]
+    },
+    {
+      "id": "50387796",
+      "title": "Pwn.college",
+      "url": "https://pwn.college/",
+      "source": "pwn.college",
+      "upvotes": 320,
+      "comments": 54,
+      "posted_utc": "2026-11-06T03:27:14Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50387796",
+      "tags": []
+    },
+    {
+      "id": "50403052",
+      "title": "Need for Speed Underground 2 online in the browser",
+      "url": "https://nfsu2.xyz/",
+      "source": "nfsu2.xyz",
+      "upvotes": 312,
+      "comments": 91,
+      "posted_utc": "2026-11-07T09:36:36Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50403052",
+      "tags": []
+    },
+    {
+      "id": "50403097",
+      "title": "Every Mac comes with an (undocumented) family member classifier",
+      "url": "https://8rank.ai/game/apple-intelligence-personal-knowledge-graph",
+      "source": "8rank.ai",
+      "upvotes": 305,
+      "comments": 150,
+      "posted_utc": "2026-11-07T09:46:03Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50403097",
+      "tags": []
+    },
+    {
+      "id": "50393154",
+      "title": "RIP Cybertruck",
+      "url": "https://www.wired.com/story/rip-cybertruck-you-were-unloved-unwanted-and-utterly-absurd/",
+      "source": "wired.com",
+      "upvotes": 302,
+      "comments": 4,
+      "posted_utc": "2026-11-06T15:01:38Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50393154",
+      "tags": []
+    },
+    {
+      "id": "50394906",
+      "title": "Anthropic IPO buyers see valuation as low as $1.1T",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-06/anthropic-ipo-valuation-expectations-pressured-after-ai-rout",
+      "source": "bloomberg.com",
+      "upvotes": 292,
+      "comments": 586,
+      "posted_utc": "2026-11-06T16:54:36Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50394906",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50386338",
+      "title": "Inkling 2 Small",
+      "url": "https://thinkingmachines.ai/news/inkling-2-small/",
+      "source": "thinkingmachines.ai",
+      "upvotes": 287,
+      "comments": 92,
+      "posted_utc": "2026-11-06T00:00:24Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50386338",
+      "tags": []
+    },
+    {
+      "id": "50397219",
+      "title": "Firecracker VM Escape: PwnEscape Part 2",
+      "url": "https://pwn.ai/blog/firecracker-escape",
+      "source": "pwn.ai",
+      "upvotes": 260,
+      "comments": 110,
+      "posted_utc": "2026-11-06T19:33:38Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50397219",
+      "tags": []
+    },
+    {
+      "id": "50389370",
+      "title": "Kugelblitz – Mac-Native Google Earth Alternative",
+      "url": "https://apps.metaebene.me/en/kugelblitz",
+      "source": "apps.metaebene.me",
+      "upvotes": 255,
+      "comments": 65,
+      "posted_utc": "2026-11-06T07:47:38Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50389370",
+      "tags": []
+    },
+    {
+      "id": "50383163",
+      "title": "Hungary: Communist-era files released, up to 60k former agents revealed",
+      "url": "https://www.euronews.com/2026/11/04/hungary-communist-era-files-opened-up-to-60000-former-agents-revealed",
+      "source": "euronews.com",
+      "upvotes": 237,
+      "comments": 68,
+      "posted_utc": "2026-11-05T19:16:34Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50383163",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50394855",
+      "title": "First steps in bare-metal programming using UEFI",
+      "url": "https://kevinboone.me/efitest_index.html",
+      "source": "kevinboone.me",
+      "upvotes": 234,
+      "comments": 48,
+      "posted_utc": "2026-11-06T16:50:29Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50394855",
+      "tags": [
+        "SWE"
+      ]
+    },
+    {
+      "id": "50381623",
+      "title": "Nasdaq plummets 4% into correction territory",
+      "url": "https://www.cnbc.com/2026/11/04/stock-market-today-live-updates.html",
+      "source": "cnbc.com",
+      "upvotes": 226,
+      "comments": 183,
+      "posted_utc": "2026-11-05T17:11:15Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50381623",
+      "tags": []
+    },
+    {
+      "id": "50401867",
+      "title": "Asahi Linux Progress Linux 7.3",
+      "url": "https://asahilinux.org/2026/11/progress-report-7-3/",
+      "source": "asahilinux.org",
+      "upvotes": 221,
+      "comments": 187,
+      "posted_utc": "2026-11-07T05:20:18Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50401867",
+      "tags": [
+        "SWE"
+      ]
+    },
+    {
+      "id": "50393105",
+      "title": "Ask HN: What in the world is taking Ubuntu so long?",
+      "url": "https://news.ycombinator.com/item?id=50393105",
+      "source": "news.ycombinator.com",
+      "upvotes": 210,
+      "comments": 134,
+      "posted_utc": "2026-11-06T14:58:33Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50393105",
+      "tags": [
+        "SWE",
+        "DevTools"
+      ]
+    },
+    {
+      "id": "50403214",
+      "title": "Upload Your RAM",
+      "url": "https://uploadyourram.org",
+      "source": "uploadyourram.org",
+      "upvotes": 209,
+      "comments": 178,
+      "posted_utc": "2026-11-07T10:15:26Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50403214",
+      "tags": []
+    },
+    {
+      "id": "50388513",
+      "title": "I struggle to believe that AI R&D is ingenious",
+      "url": "https://www.lesswrong.com/posts/DALNiKBjMGMF8grme/arjun-panickssery-s-shortform?commentId=fJtaHHHfx45tD7BSL",
+      "source": "lesswrong.com",
+      "upvotes": 206,
+      "comments": 206,
+      "posted_utc": "2026-11-06T05:19:04Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50388513",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50399657",
+      "title": "Sodium-ion batteries approach cost parity with LFP",
+      "url": "https://www.pv-magazine.com/2026/11/06/sodium-ion-batteries-approach-cost-parity-with-lfp-with-70-gwh-covered-by-supply-agreements/",
+      "source": "pv-magazine.com",
+      "upvotes": 201,
+      "comments": 95,
+      "posted_utc": "2026-11-06T23:00:46Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50399657",
+      "tags": []
+    },
+    {
+      "id": "50381033",
+      "title": "My psychophysics as a bilateral cochlear implant user",
+      "url": "https://claude.ai/artifact/L8qsMc3SorytGW3LA81nYf",
+      "source": "claude.ai",
+      "upvotes": 187,
+      "comments": 95,
+      "posted_utc": "2026-11-05T16:21:12Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50381033",
+      "tags": []
+    },
+    {
+      "id": "50390525",
+      "title": "Living beyond the limits of survival: wood ants trapped in a gigantic pitfall (2016)",
+      "url": "https://jhr.pensoft.net/articles.php?id=9096",
+      "source": "jhr.pensoft.net",
+      "upvotes": 175,
+      "comments": 54,
+      "posted_utc": "2026-11-06T10:21:15Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50390525",
+      "tags": []
+    },
+    {
+      "id": "50397099",
+      "title": "GitHub's new Git storage architecture",
+      "url": "https://github.blog/engineering/architecture-optimization/inside-githubs-new-git-storage-architecture/",
+      "source": "github.blog",
+      "upvotes": 175,
+      "comments": 44,
+      "posted_utc": "2026-11-06T19:24:21Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50397099",
+      "tags": [
+        "AI/ML",
+        "SWE"
+      ]
+    },
+    {
+      "id": "50394569",
+      "title": "Rune: A native GPU-rendered Rust UI framework for macOS, Windows, Linux and web",
+      "url": "https://github.com/anomalyco/rune",
+      "source": "github.com",
+      "upvotes": 172,
+      "comments": 126,
+      "posted_utc": "2026-11-06T16:31:32Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50394569",
+      "tags": [
+        "AI/ML",
+        "SWE"
+      ]
+    },
+    {
+      "id": "50389420",
+      "title": "Multiplayer tanks that demolish real buildings from OpenStreetMap",
+      "url": "https://worldstrike.fun/",
+      "source": "worldstrike.fun",
+      "upvotes": 171,
+      "comments": 124,
+      "posted_utc": "2026-11-06T07:55:48Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50389420",
+      "tags": []
+    },
+    {
+      "id": "50395450",
+      "title": "Devvm.dev: One VM for every project",
+      "url": "https://devvm.dev/",
+      "source": "devvm.dev",
+      "upvotes": 170,
+      "comments": 68,
+      "posted_utc": "2026-11-06T17:30:22Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50395450",
+      "tags": []
+    },
+    {
+      "id": "50382179",
+      "title": "Nasdaq Sinks 5% as Investors Retreat from AI Trade After Election",
+      "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-11-05-2026",
+      "source": "wsj.com",
+      "upvotes": 163,
+      "comments": 191,
+      "posted_utc": "2026-11-05T18:00:01Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50382179",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50384822",
+      "title": "$2.5T has been wiped from US stocks",
+      "url": "https://finlaws.substack.com/p/25t-has-been-wiped-from-us-stocks",
+      "source": "finlaws.substack.com",
+      "upvotes": 163,
+      "comments": 157,
+      "posted_utc": "2026-11-05T21:39:26Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50384822",
+      "tags": []
+    },
+    {
+      "id": "50396064",
+      "title": "We know 15k websites are infected. how do we tell them?",
+      "url": "https://scotthelme.co.uk/we-know-15-579-websites-are-infected-how-do-we-tell-them/",
+      "source": "scotthelme.co.uk",
+      "upvotes": 161,
+      "comments": 137,
+      "posted_utc": "2026-11-06T18:13:35Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50396064",
+      "tags": []
+    },
+    {
+      "id": "50391145",
+      "title": "We've built an open-source feature flag server for 11 years",
+      "url": "https://github.com/Unleash/unleash",
+      "source": "github.com",
+      "upvotes": 159,
+      "comments": 107,
+      "posted_utc": "2026-11-06T11:40:06Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50391145",
+      "tags": []
+    },
+    {
+      "id": "50383294",
+      "title": "Pangram Image 1.0",
+      "url": "https://www.pangram.com/blog/introducing-pangram-image-1-0",
+      "source": "pangram.com",
+      "upvotes": 150,
+      "comments": 67,
+      "posted_utc": "2026-11-05T19:27:52Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50383294",
+      "tags": []
+    },
+    {
+      "id": "50399991",
+      "title": "RealPage rent-pricing case wraps with nearly $360M to renters",
+      "url": "https://www.multifamilydive.com/news/realpage-rent-pricing-case-360m-renters/873553/",
+      "source": "multifamilydive.com",
+      "upvotes": 146,
+      "comments": 101,
+      "posted_utc": "2026-11-06T23:37:19Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50399991",
+      "tags": []
+    },
+    {
+      "id": "50401740",
+      "title": "A barbarian tribe's mythic origin story is true, ancient DNA reveals",
+      "url": "https://www.science.org/content/article/barbarian-tribe-s-mythic-origin-story-true-ancient-dna-reveals",
+      "source": "science.org",
+      "upvotes": 145,
+      "comments": 119,
+      "posted_utc": "2026-11-07T04:54:36Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50401740",
+      "tags": []
+    },
+    {
+      "id": "50397017",
+      "title": "Restaurant Delivery Payment-Skimming Campaign",
+      "url": "https://www.infohawk.com/news/2026-11-05-scamwich-restaurant-skimming",
+      "source": "infohawk.com",
+      "upvotes": 145,
+      "comments": 75,
+      "posted_utc": "2026-11-06T19:19:27Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50397017",
+      "tags": []
+    },
+    {
+      "id": "50389570",
+      "title": "Chomsky and the two cultures of statistical learning (2011)",
+      "url": "https://www.norvig.com/chomsky.html",
+      "source": "norvig.com",
+      "upvotes": 137,
+      "comments": 105,
+      "posted_utc": "2026-11-06T08:18:36Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50389570",
+      "tags": []
+    },
+    {
+      "id": "50400597",
+      "title": "I toured Unitree's factory. I'm more bullish on the West",
+      "url": "https://josef.cn/blog/unitree",
+      "source": "josef.cn",
+      "upvotes": 136,
+      "comments": 98,
+      "posted_utc": "2026-11-07T01:05:16Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50400597",
+      "tags": []
+    },
+    {
+      "id": "50397102",
+      "title": "Democrats launching congressional investigations into SpaceXAI, META and Apple",
+      "url": "https://www.washingtonpost.com/technology/2026/11/06/after-courting-trump-corporate-america-faces-democratic-reckoning/",
+      "source": "washingtonpost.com",
+      "upvotes": 135,
+      "comments": 140,
+      "posted_utc": "2026-11-06T19:24:24Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50397102",
+      "tags": []
+    },
+    {
+      "id": "50392499",
+      "title": "University libraries are being swarmed by AI bots, putting public access at risk",
+      "url": "https://www.cbc.ca/news/world/university-libraries-ai-data-scraping-bots-9.7408287",
+      "source": "cbc.ca",
+      "upvotes": 131,
+      "comments": 60,
+      "posted_utc": "2026-11-06T14:13:09Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50392499",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50387738",
+      "title": "Nvidia Kubernetes Engine (NVKE)",
+      "url": "https://github.com/dsx-ai-factory/nvke",
+      "source": "github.com",
+      "upvotes": 123,
+      "comments": 27,
+      "posted_utc": "2026-11-06T03:16:26Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50387738",
+      "tags": [
+        "AI/ML",
+        "SWE"
+      ]
+    },
+    {
+      "id": "50381687",
+      "title": "Launch HN: Rivet (YC W23) – Scale and Orchestrate Agents on S3",
+      "url": "https://github.com/rivet-dev/rivet",
+      "source": "github.com",
+      "upvotes": 118,
+      "comments": 59,
+      "posted_utc": "2026-11-05T17:17:42Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50381687",
+      "tags": [
+        "AI/ML",
+        "SWE",
+        "DevTools"
+      ]
+    },
+    {
+      "id": "50395919",
+      "title": "Memorilla: Latent Semantic Memory for LLMs",
+      "url": "https://arxiv.org/abs/2610.21375",
+      "source": "arxiv.org",
+      "upvotes": 112,
+      "comments": 13,
+      "posted_utc": "2026-11-06T18:03:33Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50395919",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50380268",
+      "title": "We can do better than line-buffered output",
+      "url": "https://nullprogram.com/blog/2026/11/05/",
+      "source": "nullprogram.com",
+      "upvotes": 112,
+      "comments": 13,
+      "posted_utc": "2026-11-05T15:25:22Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50380268",
+      "tags": []
+    },
+    {
+      "id": "50395905",
+      "title": "Kalshi court losses pile up as judges refuse to block state gambling laws",
+      "url": "https://arstechnica.com/tech-policy/2026/11/kalshi-court-losses-pile-up-as-judges-refuse-to-block-state-gambling-laws/",
+      "source": "arstechnica.com",
+      "upvotes": 109,
+      "comments": 118,
+      "posted_utc": "2026-11-06T18:02:34Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50395905",
+      "tags": []
+    },
+    {
+      "id": "50395933",
+      "title": "Microsoft is winding down Oracle deal to rent AI cloud capacity",
+      "url": "https://www.reuters.com/business/microsoft-is-winding-down-oracle-deal-rent-ai-cloud-capacity-bloomberg-news-2026-11-06/",
+      "source": "reuters.com",
+      "upvotes": 104,
+      "comments": 18,
+      "posted_utc": "2026-11-06T18:04:06Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50395933",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50380658",
+      "title": "Building a Multi-Agent System from Scratch: Architecture Patterns",
+      "url": "https://kadhar.dev/blog/multi-agent-systems-from-scratch",
+      "source": "kadhar.dev",
+      "upvotes": 103,
+      "comments": 44,
+      "posted_utc": "2026-11-05T15:51:57Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50380658",
+      "tags": [
+        "AI/ML",
+        "SWE"
+      ]
+    },
+    {
+      "id": "50382958",
+      "title": "Zero Hour: Telling time was a matter of survival and strategy during WWI (2014)",
+      "url": "https://www.laphamsquarterly.org/roundtable/zero-hour",
+      "source": "laphamsquarterly.org",
+      "upvotes": 103,
+      "comments": 5,
+      "posted_utc": "2026-11-05T18:59:37Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50382958",
+      "tags": []
+    },
+    {
+      "id": "50395183",
+      "title": "Notes on San Marino",
+      "url": "https://mattlakeman.org/2026/11/05/notes-on-san-marino/",
+      "source": "mattlakeman.org",
+      "upvotes": 100,
+      "comments": 39,
+      "posted_utc": "2026-11-06T17:12:05Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50395183",
+      "tags": []
+    },
+    {
+      "id": "50381849",
+      "title": "My gym forced a social media down my throat. So I reverse-engineered its app",
+      "url": "https://shayon.work/blog/reverse-engineering-gym-pass",
+      "source": "shayon.work",
+      "upvotes": 99,
+      "comments": 94,
+      "posted_utc": "2026-11-05T17:30:17Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50381849",
+      "tags": []
+    },
+    {
+      "id": "50384133",
+      "title": "California Gov Newsom commutes death sentences for all 548 people on death row",
+      "url": "https://www.bbc.com/news/articles/cqrkyyd2j8mvo",
+      "source": "bbc.com",
+      "upvotes": 98,
+      "comments": 88,
+      "posted_utc": "2026-11-05T20:34:48Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50384133",
+      "tags": []
+    },
+    {
+      "id": "50380979",
+      "title": "The Stacks Project, Formalized in Lean",
+      "url": "https://axiommath.ai/research/the-stacks-project-formalized/",
+      "source": "axiommath.ai",
+      "upvotes": 97,
+      "comments": 26,
+      "posted_utc": "2026-11-05T16:16:59Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50380979",
+      "tags": []
+    },
+    {
+      "id": "50389990",
+      "title": "AI for scientific discovery: How researchers use Claude",
+      "url": "https://www.anthropic.com/research/how-researchers-use-claude",
+      "source": "anthropic.com",
+      "upvotes": 96,
+      "comments": 38,
+      "posted_utc": "2026-11-06T09:13:30Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50389990",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50397711",
+      "title": "Google has acquired Crusoe's data center site in southeast Wyoming",
+      "url": "https://www.crusoe.ai/resources/newsroom/crusoe-wyoming-data-center-campus-update",
+      "source": "crusoe.ai",
+      "upvotes": 95,
+      "comments": 52,
+      "posted_utc": "2026-11-06T20:09:14Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50397711",
+      "tags": []
+    },
+    {
+      "id": "50383963",
+      "title": "Tencent launches Hy4",
+      "url": "https://www.tencent.com/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/",
+      "source": "tencent.com",
+      "upvotes": 95,
+      "comments": 4,
+      "posted_utc": "2026-11-05T20:21:43Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50383963",
+      "tags": []
+    },
+    {
+      "id": "50396834",
+      "title": "Replit rebuilt its sandbox engine with microVMs",
+      "url": "https://frontier.replit.com/sandbox-engine-microvms-part-1/",
+      "source": "frontier.replit.com",
+      "upvotes": 93,
+      "comments": 32,
+      "posted_utc": "2026-11-06T19:06:10Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50396834",
+      "tags": []
+    },
+    {
+      "id": "50395318",
+      "title": "Anthropic IPO valuation talks drop to $1.3T",
+      "url": "https://epyhia.com/anthropic-ipo-valuation-talks-drop-to-1-3-trillion-as-major-investors",
+      "source": "epyhia.com",
+      "upvotes": 93,
+      "comments": 2,
+      "posted_utc": "2026-11-06T17:21:15Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50395318",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50381302",
+      "title": "Vibe Coding Keypad",
+      "url": "https://www.keychron.com/products/keychron-f4-he-8k-vibe-coding-keypad",
+      "source": "keychron.com",
+      "upvotes": 92,
+      "comments": 61,
+      "posted_utc": "2026-11-05T16:43:16Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50381302",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50380704",
+      "title": "Show HN: Stroq – a local audit of what your coding agent did and why",
+      "url": "https://github.com/AGGIB/Stroq",
+      "source": "github.com",
+      "upvotes": 92,
+      "comments": 34,
+      "posted_utc": "2026-11-05T15:54:41Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50380704",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50386597",
+      "title": "Major Investors Are Skeptical Anthropic IPO Can Achieve $1.5T Valuation",
+      "url": "https://www.wsj.com/finance/major-investors-are-skeptical-anthropic-ipo-can-achieve-1-5-trillion-valuation-ca965d8b’",
+      "source": "wsj.com",
+      "upvotes": 90,
+      "comments": 108,
+      "posted_utc": "2026-11-06T00:31:11Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50386597",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50393458",
+      "title": "Ozempic-style drugs now in trials for heart failure, addiction and even aging",
+      "url": "https://maccus.fr/en/ozempic-drugs-trials-beyond-diabetes/",
+      "source": "maccus.fr",
+      "upvotes": 90,
+      "comments": 69,
+      "posted_utc": "2026-11-06T15:24:34Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50393458",
+      "tags": []
+    },
+    {
+      "id": "50399569",
+      "title": "ChatGPT silently passes data between connectors and the bounty wants an ID card",
+      "url": "https://community.openai.com/t/security-follow-up-tool-call-silently-routed-to-a-different-connector/1413053",
+      "source": "community.openai.com",
+      "upvotes": 90,
+      "comments": 37,
+      "posted_utc": "2026-11-06T22:50:43Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50399569",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50393183",
+      "title": "FAA begins retiring decades old floppy disks from air traffic control",
+      "url": "https://www.faa.gov/newsroom/trumps-transportation-secretary-sean-p-duffy-begins-retiring-decades-old-floppy-disks-air",
+      "source": "faa.gov",
+      "upvotes": 89,
+      "comments": 2,
+      "posted_utc": "2026-11-06T15:03:24Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50393183",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50402212",
+      "title": "The Components of Agent Memory",
+      "url": "https://www.anthropic.com/research/components-of-agent-memory",
+      "source": "anthropic.com",
+      "upvotes": 86,
+      "comments": 49,
+      "posted_utc": "2026-11-07T06:39:04Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50402212",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50389260",
+      "title": "Hardcoded credentials and other issues in Tata Motors App",
+      "url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES01&VLCODE=CIVN-2026-0537",
+      "source": "cert-in.org.in",
+      "upvotes": 86,
+      "comments": 19,
+      "posted_utc": "2026-11-06T07:28:39Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50389260",
+      "tags": []
+    },
+    {
+      "id": "50387406",
+      "title": "Tesla and SpaceX lose over $420B in combined market cap in the two days",
+      "url": "https://techlaws.pages.dev/tesla-and-spacex-lose-over-420b-in-combined-market-cap-in-the-two-days/",
+      "source": "techlaws.pages.dev",
+      "upvotes": 84,
+      "comments": 62,
+      "posted_utc": "2026-11-06T02:30:25Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50387406",
+      "tags": []
+    },
+    {
+      "id": "50397264",
+      "title": "As the Japanese countryside empties out, wildlife is disappearing",
+      "url": "https://e360.yale.edu/digest/japan-depopulation-biodiversity",
+      "source": "e360.yale.edu",
+      "upvotes": 81,
+      "comments": 48,
+      "posted_utc": "2026-11-06T19:36:16Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50397264",
+      "tags": [
+        "DevTools"
+      ]
+    },
+    {
+      "id": "50395869",
+      "title": "Size-It-Up (Game)",
+      "url": "https://magnitudle.com/size-it-up",
+      "source": "magnitudle.com",
+      "upvotes": 80,
+      "comments": 27,
+      "posted_utc": "2026-11-06T17:59:59Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50395869",
+      "tags": []
+    },
+    {
+      "id": "50387546",
+      "title": "Closed AI models dominate the price-performance frontier",
+      "url": "https://village.dev/blog/closed-ai-models-now-dominate-the-price-performance-frontier/",
+      "source": "village.dev",
+      "upvotes": 77,
+      "comments": 73,
+      "posted_utc": "2026-11-06T02:49:56Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50387546",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50401029",
+      "title": "The AI sell-off compared to well-known stock market crashes",
+      "url": "https://www.kadoa.com/companies/insights/ai-selloff-perspective",
+      "source": "kadoa.com",
+      "upvotes": 76,
+      "comments": 66,
+      "posted_utc": "2026-11-07T02:20:06Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50401029",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50393089",
+      "title": "Lippitt-Knoster in Practice (Field Notes for Managing Complex Projects)",
+      "url": "https://sharedphysics.com/lippitt-knoster-in-practice-field-notes-for-managing-complex-projects/",
+      "source": "sharedphysics.com",
+      "upvotes": 74,
+      "comments": 2,
+      "posted_utc": "2026-11-06T14:57:16Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50393089",
+      "tags": []
+    },
+    {
+      "id": "50393165",
+      "title": "Where each U.S. state gets its tax revenue from",
+      "url": "https://www.visualcapitalist.com/where-each-states-tax-revenue-comes-from/",
+      "source": "visualcapitalist.com",
+      "upvotes": 72,
+      "comments": 86,
+      "posted_utc": "2026-11-06T15:02:07Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50393165",
+      "tags": []
+    },
+    {
+      "id": "50403507",
+      "title": "Every Windows 11 app should kill Electron, and Discord just showed why",
+      "url": "https://www.windowslatest.com/2026/11/06/every-windows-11-app-should-kill-electron-and-discord-just-showed-why-no-starting-screen-and-70-less-ram-even-with-two-accounts-signed-in/",
+      "source": "windowslatest.com",
+      "upvotes": 71,
+      "comments": 96,
+      "posted_utc": "2026-11-07T11:11:15Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50403507",
+      "tags": []
+    },
+    {
+      "id": "50398212",
+      "title": "The Valley Bubble Breaks",
+      "url": "https://quirksmode.org/quirksblog/2026/1106-valley-bubble.html",
+      "source": "quirksmode.org",
+      "upvotes": 70,
+      "comments": 79,
+      "posted_utc": "2026-11-06T20:42:08Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50398212",
+      "tags": []
+    },
+    {
+      "id": "50392348",
+      "title": "How octopuses squeeze through too small gaps",
+      "url": "https://journals.biologists.com/jeb/article/229/21/jeb253615/373332/How-octopuses-squeeze-through-too-small-gaps",
+      "source": "journals.biologists.com",
+      "upvotes": 70,
+      "comments": 18,
+      "posted_utc": "2026-11-06T13:57:20Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50392348",
+      "tags": [
+        "DevTools"
+      ]
+    },
+    {
+      "id": "50381178",
+      "title": "Paraguay bank collapses with half of population's savings",
+      "url": "https://www.aljazeera.com/video/newsfeed/2026/11/5/paraguay-bank-collapses-with-half-of-populations-savings",
+      "source": "aljazeera.com",
+      "upvotes": 68,
+      "comments": 9,
+      "posted_utc": "2026-11-05T16:32:46Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50381178",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50392787",
+      "title": "MTG-I2 First Images",
+      "url": "https://www.eumetsat.int/mtg-i2-first-images",
+      "source": "eumetsat.int",
+      "upvotes": 67,
+      "comments": 16,
+      "posted_utc": "2026-11-06T14:35:29Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50392787",
+      "tags": []
+    },
+    {
+      "id": "50382594",
+      "title": "How to Lie With Statistics (1954)",
+      "url": "https://archive.org/details/howtoliewithstat00huff",
+      "source": "archive.org",
+      "upvotes": 67,
+      "comments": 14,
+      "posted_utc": "2026-11-05T18:29:22Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50382594",
+      "tags": []
+    },
+    {
+      "id": "50384263",
+      "title": "What do the next 4000 emoji look like?",
+      "url": "https://jenniferdaniel.substack.com/p/what-do-the-next-4000-emoji-look",
+      "source": "jenniferdaniel.substack.com",
+      "upvotes": 66,
+      "comments": 67,
+      "posted_utc": "2026-11-05T20:46:26Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50384263",
+      "tags": []
+    },
+    {
+      "id": "50399695",
+      "title": "Outbound SIP calling is now available to all organizations",
+      "url": "https://developers.openai.com/api/docs/guides/voice-sip",
+      "source": "developers.openai.com",
+      "upvotes": 66,
+      "comments": 57,
+      "posted_utc": "2026-11-06T23:03:55Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50399695",
+      "tags": []
+    },
+    {
+      "id": "50386789",
+      "title": "MoofTCP – A modern replacement for MacTCP on 68k Macs",
+      "url": "https://github.com/matthewmrichter/mooftcp",
+      "source": "github.com",
+      "upvotes": 66,
+      "comments": 34,
+      "posted_utc": "2026-11-06T00:54:15Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50386789",
+      "tags": []
+    },
+    {
+      "id": "50403066",
+      "title": "Running a law firm on Free software",
+      "url": "https://decoded.legal/blog/2026/11/running-a-law-firm-on-free-software-2026-edition/",
+      "source": "decoded.legal",
+      "upvotes": 66,
+      "comments": 24,
+      "posted_utc": "2026-11-07T09:39:06Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50403066",
+      "tags": []
+    },
+    {
+      "id": "50394292",
+      "title": "Scriptable GeoDNS: Leaving AWS for Bunny",
+      "url": "https://vincent.bernat.ch/en/blog/2026-bunny-geodns",
+      "source": "vincent.bernat.ch",
+      "upvotes": 65,
+      "comments": 23,
+      "posted_utc": "2026-11-06T16:15:03Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50394292",
+      "tags": [
+        "DevTools"
+      ]
+    },
+    {
+      "id": "50395866",
+      "title": "Perplexity launches AI agents for work",
+      "url": "https://www.perplexity.ai/en-GB/hub/blog/teammates-are-agents-for-complex-ongoing-work",
+      "source": "perplexity.ai",
+      "upvotes": 61,
+      "comments": 54,
+      "posted_utc": "2026-11-06T17:59:41Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50395866",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50381590",
+      "title": "GPT‑6 Cyber: Advancing the frontier of aligned cybersecurity agents",
+      "url": "https://openai.com/index/introducing-gpt-6-cyber/",
+      "source": "openai.com",
+      "upvotes": 61,
+      "comments": 7,
+      "posted_utc": "2026-11-05T17:07:57Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50381590",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50389448",
+      "title": "App Store 2026 in numbers: AI, pricing, abandoned apps",
+      "url": "https://obelisk.club/research/app-store-2026",
+      "source": "obelisk.club",
+      "upvotes": 60,
+      "comments": 53,
+      "posted_utc": "2026-11-06T07:59:19Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50389448",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50380170",
+      "title": "Nordstjernen, Northstar, Southstar: minimalist webbrowsers in C and Rust",
+      "url": "https://nordstjernen.org/",
+      "source": "nordstjernen.org",
+      "upvotes": 59,
+      "comments": 36,
+      "posted_utc": "2026-11-05T15:17:31Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50380170",
+      "tags": [
+        "SWE"
+      ]
+    },
+    {
+      "id": "50383877",
+      "title": "The Cost of Blogging",
+      "url": "https://onlinegoddess.net/2026/11/the-cost-of-blogging/",
+      "source": "onlinegoddess.net",
+      "upvotes": 56,
+      "comments": 57,
+      "posted_utc": "2026-11-05T20:14:25Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50383877",
+      "tags": []
+    },
+    {
+      "id": "50394070",
+      "title": "Swipeblocked: The phrases your iPhone won't suggest",
+      "url": "https://swipeblocked.com/",
+      "source": "swipeblocked.com",
+      "upvotes": 53,
+      "comments": 20,
+      "posted_utc": "2026-11-06T16:01:54Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50394070",
+      "tags": []
+    },
+    {
+      "id": "50396108",
+      "title": "40C3 halfnarp – Submit talk preferences to aid scheduling",
+      "url": "https://halfnarp.events.ccc.de",
+      "source": "halfnarp.events.ccc.de",
+      "upvotes": 52,
+      "comments": 10,
+      "posted_utc": "2026-11-06T18:16:43Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50396108",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50394977",
+      "title": "PyLings: Solve Exercises and Learn Python",
+      "url": "https://github.com/thesayfulla/pylings",
+      "source": "github.com",
+      "upvotes": 52,
+      "comments": 4,
+      "posted_utc": "2026-11-06T16:59:40Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50394977",
+      "tags": [
+        "SWE"
+      ]
+    },
+    {
+      "id": "50383440",
+      "title": "Infant Bleeding Surged as Parents Rejected Vitamin K Shots, Studies Find",
+      "url": "https://www.nytimes.com/2026/11/05/well/live/vitamin-k-shot-newborn-bleeding.html",
+      "source": "nytimes.com",
+      "upvotes": 51,
+      "comments": 29,
+      "posted_utc": "2026-11-05T19:39:14Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50383440",
+      "tags": []
+    },
+    {
+      "id": "50398625",
+      "title": "88x31 GIF Stickers for 2026",
+      "url": "https://a90.com/experiments/88x31/",
+      "source": "a90.com",
+      "upvotes": 51,
+      "comments": 6,
+      "posted_utc": "2026-11-06T21:13:18Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50398625",
+      "tags": []
+    },
+    {
+      "id": "50387952",
+      "title": "Silicon Valley's Bad Night",
+      "url": "https://www.theatlantic.com/technology/2026/11/americans-really-dont-like-data-centers-elections/689284/",
+      "source": "theatlantic.com",
+      "upvotes": 50,
+      "comments": 89,
+      "posted_utc": "2026-11-06T03:54:28Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50387952",
+      "tags": []
+    },
+    {
+      "id": "50383902",
+      "title": "Independent Assessment of AI R&D Acceleration at Anthropic in October 2026",
+      "url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/",
+      "source": "metr.org",
+      "upvotes": 47,
+      "comments": 6,
+      "posted_utc": "2026-11-05T20:16:19Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50383902",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50386909",
+      "title": "Investors wipe $2.5T off Nasdaq as blue tsunami prompts AI fears",
+      "url": "https://www.reuters.com/legal/transactional/ai-data-center-stocks-slip-democratic-sweep-clouds-expansion-plans-2026-11-05/",
+      "source": "reuters.com",
+      "upvotes": 46,
+      "comments": 18,
+      "posted_utc": "2026-11-06T01:11:40Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50386909",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50392921",
+      "title": "\"People Don't Want to Work Anymore\" Duh?",
+      "url": "https://blog.absurdpirate.com/people-dont-want-to-work-anymore-duh/",
+      "source": "blog.absurdpirate.com",
+      "upvotes": 45,
+      "comments": 48,
+      "posted_utc": "2026-11-06T14:44:09Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50392921",
+      "tags": []
+    },
+    {
+      "id": "50398182",
+      "title": "Developer ends lucrative screensaver deal with Roku because Fox bought it",
+      "url": "https://arstechnica.com/gadgets/2026/11/artist-pulls-popular-screensaver-from-roku-os-because-of-fox-acquisition/",
+      "source": "arstechnica.com",
+      "upvotes": 45,
+      "comments": 5,
+      "posted_utc": "2026-11-06T20:40:17Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50398182",
+      "tags": [
+        "SWE"
+      ]
+    },
+    {
+      "id": "50386716",
+      "title": "No Intel, no Qualcomm: Huawei unveils its first '100% domestic' desktop",
+      "url": "https://www.scmp.com/tech/tech-trends/article/3373435/no-intel-no-qualcomm-huawei-unveils-desktop-built-entirely-china-made-components",
+      "source": "scmp.com",
+      "upvotes": 44,
+      "comments": 34,
+      "posted_utc": "2026-11-06T00:45:48Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50386716",
+      "tags": []
+    },
+    {
+      "id": "50387483",
+      "title": "Ask HN: What are forgotten topics in computing that deserve a new revisit?",
+      "url": "https://news.ycombinator.com/item?id=50387483",
+      "source": "news.ycombinator.com",
+      "upvotes": 42,
+      "comments": 39,
+      "posted_utc": "2026-11-06T02:40:42Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50387483",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50399400",
+      "title": "*sshole, or when are we going to get rid of C?",
+      "url": "https://sunshowers.io/posts/sshole/",
+      "source": "sunshowers.io",
+      "upvotes": 41,
+      "comments": 19,
+      "posted_utc": "2026-11-06T22:34:04Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50399400",
+      "tags": []
+    },
+    {
+      "id": "50388263",
+      "title": "How accurately did science fiction stories predict AI?",
+      "url": "https://jamesyu.org/science-fiction-predictions-of-ai/",
+      "source": "jamesyu.org",
+      "upvotes": 39,
+      "comments": 86,
+      "posted_utc": "2026-11-06T04:36:22Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50388263",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50392330",
+      "title": "Protesters break into Microsoft data center site in Amsterdam",
+      "url": "https://www.theverge.com/news/1028549/protesters-microsoft-data-center-site-amsterdam",
+      "source": "theverge.com",
+      "upvotes": 39,
+      "comments": 37,
+      "posted_utc": "2026-11-06T13:55:56Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50392330",
+      "tags": []
+    },
+    {
+      "id": "50389401",
+      "title": "Global stocks tumble as AI panic grips markets after Democrats' midterm success",
+      "url": "https://www.theguardian.com/business/live/2026/nov/06/global-stocks-tumble-ai-panic-markets-democrats-midterms-success-jobs-oil-dollar-latest-news-updates",
+      "source": "theguardian.com",
+      "upvotes": 36,
+      "comments": 17,
+      "posted_utc": "2026-11-06T07:52:53Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50389401",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50397176",
+      "title": "My first and last telegram was from Rebecca West",
+      "url": "https://thelampmagazine.com/blog/rebecca-wests-nightingale",
+      "source": "thelampmagazine.com",
+      "upvotes": 36,
+      "comments": 9,
+      "posted_utc": "2026-11-06T19:30:00Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50397176",
+      "tags": []
+    },
+    {
+      "id": "50381177",
+      "title": "Paraguay's president resigns amid banking crisis",
+      "url": "https://www.reuters.com/world/americas/paraguay-president-pea-resigns-under-mounting-pressure-bank-collapse-2026-11-05/",
+      "source": "reuters.com",
+      "upvotes": 36,
+      "comments": 3,
+      "posted_utc": "2026-11-05T16:32:36Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50381177",
+      "tags": [
+        "AI/ML",
+        "DevTools"
+      ]
+    },
+    {
+      "id": "50394116",
+      "title": "Reading the Anthropic S-1, with Zvi Mowshowitz",
+      "url": "https://www.complexsystemspodcast.com/episodes/reading-the-anthropic-s-1-with-zvi-mowshowitz/",
+      "source": "complexsystemspodcast.com",
+      "upvotes": 36,
+      "comments": 0,
+      "posted_utc": "2026-11-06T16:04:58Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50394116",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50388752",
+      "title": "Hugging Face's CEO Says His P(Doom) Is 'Close to Zero'",
+      "url": "https://www.wired.com/story/wired-world-fair-2026-clement-delangue-hugging-face/",
+      "source": "wired.com",
+      "upvotes": 34,
+      "comments": 19,
+      "posted_utc": "2026-11-06T06:06:33Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50388752",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50391486",
+      "title": "Apple's predictive text restrictions include 'Dictator Trump' and 'Sleepy Joe'",
+      "url": "https://www.reuters.com/business/retail-consumer/apples-predictive-text-restrictions-include-dictator-trump-sleepy-joe-researcher-2026-11-06/",
+      "source": "reuters.com",
+      "upvotes": 34,
+      "comments": 9,
+      "posted_utc": "2026-11-06T12:18:20Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50391486",
+      "tags": []
+    },
+    {
+      "id": "50386210",
+      "title": "One in eight cancers are likely caused by an infection worldwide",
+      "url": "https://theconversation.com/one-in-eight-cancers-are-likely-caused-by-an-infection-worldwide-new-study-292996",
+      "source": "theconversation.com",
+      "upvotes": 34,
+      "comments": 3,
+      "posted_utc": "2026-11-05T23:43:36Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50386210",
+      "tags": [
+        "DevTools"
+      ]
+    },
+    {
+      "id": "50391804",
+      "title": "OpenAI Finds 948 Local Privilege Escalation Bugs in the Linux Kernel",
+      "url": "https://www.phoronix.com/news/OpenAI-948-Linux-LPE-Bugs",
+      "source": "phoronix.com",
+      "upvotes": 33,
+      "comments": 19,
+      "posted_utc": "2026-11-06T12:59:43Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50391804",
+      "tags": [
+        "AI/ML",
+        "SWE"
+      ]
+    },
+    {
+      "id": "50401451",
+      "title": "Show HN: Did prediction markets do any predicting this midterms?",
+      "url": "https://app.artifactbin.dev/@vivek/AQTt2H-did-prediction-markets-predict-the-midterms",
+      "source": "app.artifactbin.dev",
+      "upvotes": 33,
+      "comments": 18,
+      "posted_utc": "2026-11-07T03:50:21Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50401451",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50403063",
+      "title": "Port 0: The Port That Does Not Exist",
+      "url": "https://acid.vegas/blog/the-port-that-does-not-exist/",
+      "source": "acid.vegas",
+      "upvotes": 32,
+      "comments": 7,
+      "posted_utc": "2026-11-07T09:38:26Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50403063",
+      "tags": []
+    },
+    {
+      "id": "50384382",
+      "title": "Chip stocks get slaughtered as Wall Street in worst post-midterm day since 1896",
+      "url": "https://finance.yahoo.com/markets/article/chip-stocks-get-slaughtered-as-wall-street-heads-for-its-worst-post-midterm-day-since-1896-163413900.html",
+      "source": "finance.yahoo.com",
+      "upvotes": 32,
+      "comments": 7,
+      "posted_utc": "2026-11-05T20:58:36Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50384382",
+      "tags": []
+    },
+    {
+      "id": "50381136",
+      "title": "Pull the Plug on Technofascism Before It Reboots",
+      "url": "https://www.techpolicy.press/pull-the-plug-on-technofascism-before-it-reboots/",
+      "source": "techpolicy.press",
+      "upvotes": 32,
+      "comments": 5,
+      "posted_utc": "2026-11-05T16:28:41Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50381136",
+      "tags": []
+    },
+    {
+      "id": "50398472",
+      "title": "Crunchy Moms became 'the most dangerous' group on Facebook",
+      "url": "https://www.theguardian.com/technology/2026/nov/06/crunchy-moms-facebook-vaccines",
+      "source": "theguardian.com",
+      "upvotes": 31,
+      "comments": 10,
+      "posted_utc": "2026-11-06T21:01:44Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50398472",
+      "tags": []
+    },
+    {
+      "id": "50397435",
+      "title": "Show HN: CloneGuard – Scan a repo for credential-stealing tricks before it runs",
+      "url": "https://github.com/tharun208/cloneguard",
+      "source": "github.com",
+      "upvotes": 31,
+      "comments": 7,
+      "posted_utc": "2026-11-06T19:49:27Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50397435",
+      "tags": []
+    },
+    {
+      "id": "50386104",
+      "title": "Brazilian Credit Guarantor Fund Data Breach Affecting PII and Payout Data",
+      "url": "https://www.fgc.org.br/comunicado",
+      "source": "fgc.org.br",
+      "upvotes": 31,
+      "comments": 7,
+      "posted_utc": "2026-11-05T23:32:36Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50386104",
+      "tags": []
+    },
+    {
+      "id": "50395747",
+      "title": "Flawless UI-UX Skill 1.0.0",
+      "url": "https://github.com/smokeeaasd/flawless-ui-ux/releases/tag/v1.0.0",
+      "source": "github.com",
+      "upvotes": 30,
+      "comments": 32,
+      "posted_utc": "2026-11-06T17:52:34Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50395747",
+      "tags": []
+    },
+    {
+      "id": "50396819",
+      "title": "AMD CEO saying it's a \"data center first\" company and PC sales will plummet",
+      "url": "https://www.techradar.com/computing/gpu/amd-ceo-enrages-gamers-by-saying-its-now-a-data-center-first-company-and-predicts-pc-sales-will-plummet-by-a-double-digit-percentage-in-2027",
+      "source": "techradar.com",
+      "upvotes": 30,
+      "comments": 26,
+      "posted_utc": "2026-11-06T19:05:15Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50396819",
+      "tags": []
+    },
+    {
+      "id": "50394771",
+      "title": "Only 16% of U.S. fast-charging stations meet federal NEVI standards (open data)",
+      "url": "https://chargingnear.me/data",
+      "source": "chargingnear.me",
+      "upvotes": 30,
+      "comments": 11,
+      "posted_utc": "2026-11-06T16:45:10Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50394771",
+      "tags": []
+    },
+    {
+      "id": "50381289",
+      "title": "Paraguay seizes major digital bank tied to president, leaving customers in limbo",
+      "url": "https://apnews.com/article/paraguay-ueno-digital-bank-seizure-santiago-pena-9d7521ddee45a185d2618c7e09a243a3",
+      "source": "apnews.com",
+      "upvotes": 30,
+      "comments": 6,
+      "posted_utc": "2026-11-05T16:42:01Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50381289",
+      "tags": [
+        "AI/ML",
+        "SWE",
+        "DevTools"
+      ]
+    },
+    {
+      "id": "50380808",
+      "title": "OCAP Bounded Authority: Edera's Managed Approach to Object Capabilities",
+      "url": "https://edera.dev/stories/ocap-bounded-authority",
+      "source": "edera.dev",
+      "upvotes": 30,
+      "comments": 2,
+      "posted_utc": "2026-11-05T16:01:26Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50380808",
+      "tags": []
+    },
+    {
+      "id": "50397325",
+      "title": "Show HN: Agents infer Lego mechanisms from sources, then animate them",
+      "url": "https://github.com/anteloc/ldraw-mecha/tree/v0.5.0",
+      "source": "github.com",
+      "upvotes": 30,
+      "comments": 1,
+      "posted_utc": "2026-11-06T19:41:20Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50397325",
+      "tags": [
+        "AI/ML",
+        "SWE"
+      ]
+    },
+    {
+      "id": "50380273",
+      "title": "Offline survival assistant – local LLM and Kiwix, runs from a USB stick",
+      "url": "https://github.com/sdalberto/ia-da-sobrevivencia/blob/main/README.en.md",
+      "source": "github.com",
+      "upvotes": 29,
+      "comments": 16,
+      "posted_utc": "2026-11-05T15:25:36Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50380273",
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "50399859",
+      "title": "No CVE Today, Please",
+      "url": "https://nocveday.com/",
+      "source": "nocveday.com",
+      "upvotes": 28,
+      "comments": 17,
+      "posted_utc": "2026-11-06T23:20:06Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50399859",
+      "tags": [
+        "SWE"
+      ]
+    },
+    {
+      "id": "50379943",
+      "title": "Private equity is buying up more methadone clinics",
+      "url": "https://theconversation.com/private-equity-is-buying-up-more-methadone-clinics-access-to-the-lifesaving-drug-isnt-getting-easier-286927",
+      "source": "theconversation.com",
+      "upvotes": 27,
+      "comments": 3,
+      "posted_utc": "2026-11-05T15:01:17Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50379943",
+      "tags": [
+        "DevTools"
+      ]
+    },
+    {
+      "id": "50385434",
+      "title": "Confessions from Slopaholics Anonymous",
+      "url": "https://thomasjiralerspong.substack.com/p/chasing-the-karpathy-peak",
+      "source": "thomasjiralerspong.substack.com",
+      "upvotes": 27,
+      "comments": 1,
+      "posted_utc": "2026-11-05T22:31:13Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50385434",
+      "tags": []
+    },
+    {
+      "id": "50380051",
+      "title": "Mizu – zero-copy parallel R and Python over shared memory",
+      "url": "https://github.com/shikokuchuo/pymizu",
+      "source": "github.com",
+      "upvotes": 27,
+      "comments": 1,
+      "posted_utc": "2026-11-05T15:09:04Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50380051",
+      "tags": [
+        "SWE"
+      ]
+    },
+    {
+      "id": "50389074",
+      "title": "Budget offers $50B jolt to help Canada double its electricity grid",
+      "url": "https://www.cbc.ca/news/politics/electricity-budget-new-money-9.7410949",
+      "source": "cbc.ca",
+      "upvotes": 26,
+      "comments": 8,
+      "posted_utc": "2026-11-06T07:00:18Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50389074",
+      "tags": []
+    },
+    {
+      "id": "50380410",
+      "title": "Exporting tables from a SQL Server backup (.bak) to Parquet without restoring it",
+      "url": "https://blog.arpe.io/fastbcp-1-6-export-sql-server-backup-to-parquet",
+      "source": "blog.arpe.io",
+      "upvotes": 26,
+      "comments": 5,
+      "posted_utc": "2026-11-05T15:33:49Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50380410",
+      "tags": [
+        "SWE"
+      ]
+    },
+    {
+      "id": "50380487",
+      "title": "Epileptic seizures nearly vanish after people receive experimental gene therapy",
+      "url": "https://www.nature.com/articles/d41586-026-03566-2",
+      "source": "nature.com",
+      "upvotes": 26,
+      "comments": 4,
+      "posted_utc": "2026-11-05T15:39:24Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50380487",
+      "tags": []
+    },
+    {
+      "id": "50394130",
+      "title": "Tesla Ends Cybertruck Production",
+      "url": "https://www.heise.de/en/news/Tesla-ends-Cybertruck-production-in-Texas-11515739.html",
+      "source": "heise.de",
+      "upvotes": 26,
+      "comments": 1,
+      "posted_utc": "2026-11-06T16:05:54Z",
+      "hn_discussion": "https://news.ycombinator.com/item?id=50394130",
+      "tags": []
+    }
+  ]
+}

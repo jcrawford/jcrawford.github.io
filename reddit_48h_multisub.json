@@ -1,0 +1,1074 @@
+{
+  "cutoff": 1793890868,
+  "now": 1794063668,
+  "subs": {
+    "LocalLLaMA": [
+      {
+        "subreddit": "LocalLLaMA",
+        "title": "kakaocorp/kanana-2-v-decide-3b-2611 \u00b7 Hugging Face",
+        "url": "https://huggingface.co/kakaocorp/kanana-2-v-decide-3b-2611",
+        "karma": 1,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xq6es4/kakaocorpkanana2vdecide3b2611_hugging_face/",
+        "created_utc": 1794058206
+      },
+      {
+        "subreddit": "LocalLLaMA",
+        "title": "UploadYourRam.org",
+        "url": "https://uploadyourram.org",
+        "karma": 0,
+        "comments": 4,
+        "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xq441o/uploadyourramorg/",
+        "created_utc": 1794050544
+      },
+      {
+        "subreddit": "LocalLLaMA",
+        "title": "Qwen 4 Preview",
+        "url": "https://youtu.be/LJa_k2JyFsk?si=X1M5VvLFwOrNc6ld",
+        "karma": 1,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xq1yji/qwen_4_preview/",
+        "created_utc": 1794042068
+      },
+      {
+        "subreddit": "LocalLLaMA",
+        "title": "LexiSuite AIO bootable all rust OS/Engine/Kernel/Tuning & training management suite. Runs kernel 7.4 rc1 by default as the kernel needs work. Engine runs Qwen3.8 27b faster with lossless 5-25% lead over llama.cpp. 100% solo authored. Built on for 7900xtx vulcan, should work on other AMD cards.",
+        "url": "https://github.com/W61k3r/LexiSuite-Releases/releases/tag/LexiSuitet6",
+        "karma": 4,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xpzdy6/lexisuite_aio_bootable_all_rust/",
+        "created_utc": 1794032352
+      },
+      {
+        "subreddit": "LocalLLaMA",
+        "title": "PLaMo 3 Translate - a pfnet Collection",
+        "url": "https://huggingface.co/collections/pfnet/plamo-3-translate",
+        "karma": 11,
+        "comments": 4,
+        "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xpysba/plamo_3_translate_a_pfnet_collection/",
+        "created_utc": 1794030221
+      },
+      {
+        "subreddit": "LocalLLaMA",
+        "title": "Qwen 4 is not over due",
+        "url": "https://daily.dev/posts/qwen-4-is-not-over-due-ubxxcblqc",
+        "karma": 0,
+        "comments": 18,
+        "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xpx832/qwen_4_is_not_over_due/",
+        "created_utc": 1794025008
+      },
+      {
+        "subreddit": "LocalLLaMA",
+        "title": "Good Luck Getting a Cheap GPU. AMD Is a 'Data Center First Company,' CEO Says",
+        "url": "https://www.pcmag.com/news/good-luck-getting-a-cheap-gpu-amd-is-a-data-center-first-company-ceo-says",
+        "karma": 278,
+        "comments": 94,
+        "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xpx0on/good_luck_getting_a_cheap_gpu_amd_is_a_data/",
+        "created_utc": 1794024332
+      },
+      {
+        "subreddit": "LocalLLaMA",
+        "title": "Harness Leaderboard - Kimi Code, Hermes, Pi, Claude Code, Codex, and Others Were Benchmarked Against Terminal Bench 2.1 & Deep SWE 1.1",
+        "url": "https://huggingface.co/spaces/joelniklaus/harness-leaderboard",
+        "karma": 91,
+        "comments": 43,
+        "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xpvfx8/harness_leaderboard_kimi_code_hermes_pi_claude/",
+        "created_utc": 1794019319
+      },
+      {
+        "subreddit": "LocalLLaMA",
+        "title": "Six Pallets of NVIDIA Hardware Worth $11.4 Million Stolen on the Way to Texas",
+        "url": "https://www.techpowerup.com/354551/six-pallets-of-nvidia-hardware-worth-usd-11-4-million-stolen-on-the-way-to-texas",
+        "karma": 349,
+        "comments": 84,
+        "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xpqx1p/six_pallets_of_nvidia_hardware_worth_114_million/",
+        "created_utc": 1794006201
+      },
+      {
+        "subreddit": "LocalLLaMA",
+        "title": "model: add Kimi-K3.1-Pro text model by usrlocalben \u00b7 Pull Request #31779 \u00b7 ggml-org/llama.cpp",
+        "url": "https://github.com/ggml-org/llama.cpp/pull/31779",
+        "karma": 20,
+        "comments": 2,
+        "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xpqm0b/model_add_kimik31pro_text_model_by_usrlocalben/",
+        "created_utc": 1794005385
+      },
+      {
+        "subreddit": "LocalLLaMA",
+        "title": "NousResearch/Arete-27B \u00b7 Hugging Face (Qwen finetune)",
+        "url": "https://huggingface.co/NousResearch/Arete-27B",
+        "karma": 226,
+        "comments": 240,
+        "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xpmj33/nousresearcharete27b_hugging_face_qwen_finetune/",
+        "created_utc": 1793995127
+      },
+      {
+        "subreddit": "LocalLLaMA",
+        "title": "bartowski/XingChen-AGI_Xing4.0-29B-A4B-GGUF \u00b7 Hugging Face",
+        "url": "https://huggingface.co/bartowski/XingChen-AGI_Xing4.0-29B-A4B-GGUF",
+        "karma": 71,
+        "comments": 15,
+        "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xplkdu/bartowskixingchenagi_xing4029ba4bgguf_hugging_face/",
+        "created_utc": 1793992764
+      },
+      {
+        "subreddit": "LocalLLaMA",
+        "title": "SoMarkAI/OXR-1.0 \u00b7 Hugging Face",
+        "url": "https://huggingface.co/SoMarkAI/OXR-1.0",
+        "karma": 11,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xplapb/somarkaioxr10_hugging_face/",
+        "created_utc": 1793992127
+      },
+      {
+        "subreddit": "LocalLLaMA",
+        "title": "maritaca-ai/S5-nano 4B \u00b7 the best open-weights model in Brazil",
+        "url": "https://huggingface.co/maritaca-ai/S5-nano",
+        "karma": 26,
+        "comments": 2,
+        "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xpibxn/maritacaais5nano_4b_the_best_openweights_model_in/",
+        "created_utc": 1793985274
+      },
+      {
+        "subreddit": "LocalLLaMA",
+        "title": "moe-cache : LRFU/MQ-like hybrid cache, ClassLRU by sanmai \u00b7 Pull Request #31233 \u00b7 ggml-org/llama.cpp",
+        "url": "https://github.com/ggml-org/llama.cpp/pull/31233",
+        "karma": 42,
+        "comments": 13,
+        "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xpfvfz/moecache_lrfumqlike_hybrid_cache_classlru_by/",
+        "created_utc": 1793979549
+      },
+      {
+        "subreddit": "LocalLLaMA",
+        "title": "Oc-e-Non-v1: A language model that gets to the f*cking point",
+        "url": "https://huggingface.co/p-e-w/Oc-e-Non-v1",
+        "karma": 194,
+        "comments": 29,
+        "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xpfhpm/ocenonv1_a_language_model_that_gets_to_the_fcking/",
+        "created_utc": 1793978617
+      },
+      {
+        "subreddit": "LocalLLaMA",
+        "title": "Qwen Developers on X: \"Qwhen? Qsoon! For our friends outside China, the Chinese text in the poster comes from",
+        "url": "https://x.com/QwenDevs/status/2118716745372532865",
+        "karma": 230,
+        "comments": 53,
+        "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xpf8qy/qwen_developers_on_x_qwhen_qsoon_for_our_friends/",
+        "created_utc": 1793978027
+      },
+      {
+        "subreddit": "LocalLLaMA",
+        "title": "lowvram: How I ran large AI models in low VRAM GPUs",
+        "url": "https://soarhen.com/how-run-ai-in-low-vram/",
+        "karma": 0,
+        "comments": 5,
+        "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xpense/lowvram_how_i_ran_large_ai_models_in_low_vram_gpus/",
+        "created_utc": 1793976602
+      },
+      {
+        "subreddit": "LocalLLaMA",
+        "title": "We built an open AI intelligence radar & side-by-side empirical LLM benchmark comparator",
+        "url": "https://app.neubench.workers.dev",
+        "karma": 1,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xpdmf8/we_built_an_open_ai_intelligence_radar_sidebyside/",
+        "created_utc": 1793973915
+      }
+    ],
+    "MachineLearning": [
+      {
+        "subreddit": "MachineLearning",
+        "title": "The most scathing reviewer 2 review I have ever read",
+        "url": "https://openreview.net/forum?id=Z7KsI5zMPz",
+        "karma": 17,
+        "comments": 3,
+        "permalink": "https://www.reddit.com/r/MachineLearning/comments/1xpu1eq/the_most_scathing_reviewer_2_review_i_have_ever/",
+        "created_utc": 1794015053
+      }
+    ],
+    "programming": [
+      {
+        "subreddit": "programming",
+        "title": "FPEval: A Holistic Evaluation Framework for Code Generation in Functional Programming",
+        "url": "https://github.com/thanhlecongg/FPEval",
+        "karma": 1,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xq80t9/fpeval_a_holistic_evaluation_framework_for_code/",
+        "created_utc": 1794062710
+      },
+      {
+        "subreddit": "programming",
+        "title": "Title: I've been building a portfolio of projects on GitHub and would love some constructive feedback on my code/structure!",
+        "url": "https://github.com/epicmajid",
+        "karma": 0,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xq6hz0/title_ive_been_building_a_portfolio_of_projects/",
+        "created_utc": 1794058462
+      },
+      {
+        "subreddit": "programming",
+        "title": "Blox7: running Roblox\u2019s Android client on Windows 7 via syscall translation",
+        "url": "https://github.com/Zephkek/Blox7",
+        "karma": 1,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xq44y4/blox7_running_robloxs_android_client_on_windows_7/",
+        "created_utc": 1794050639
+      },
+      {
+        "subreddit": "programming",
+        "title": "Internals of asyncio",
+        "url": "https://origintracer.app/excerpt/asyncio-internals/",
+        "karma": 15,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xq391t/internals_of_asyncio/",
+        "created_utc": 1794047199
+      },
+      {
+        "subreddit": "programming",
+        "title": "Are we heading towards universal programming languages designed for AI coding agents?",
+        "url": "https://github.com/micio86dev",
+        "karma": 1,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xq1u1b/are_we_heading_towards_universal_programming/",
+        "created_utc": 1794041577
+      },
+      {
+        "subreddit": "programming",
+        "title": "vt gemini,azure gpt US East 2",
+        "url": "https://token-spacex.com/",
+        "karma": 1,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xq1sfg/vt_geminiazure_gpt_us_east_2/",
+        "created_utc": 1794041396
+      },
+      {
+        "subreddit": "programming",
+        "title": "GitHub - ppmpreetham/BUI: Blender's GPU Accelerated UI, Decoupled from it's original codebase. Supports Rust, Python, JS, React, C & C++. Twice as good as GPUI",
+        "url": "https://github.com/ppmpreetham/BUI",
+        "karma": 1,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xpzw80/github_ppmpreethambui_blenders_gpu_accelerated_ui/",
+        "created_utc": 1794034188
+      },
+      {
+        "subreddit": "programming",
+        "title": "SRL: Tiny Unity-style variable editor for C programs with zero runtime cost",
+        "url": "https://github.com/amirave/srl",
+        "karma": 1,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xptvlc/srl_tiny_unitystyle_variable_editor_for_c/",
+        "created_utc": 1794014561
+      },
+      {
+        "subreddit": "programming",
+        "title": "Libghostty 1.0",
+        "url": "https://mitchellh.com/writing/libghostty-1-0",
+        "karma": 154,
+        "comments": 5,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xptemt/libghostty_10/",
+        "created_utc": 1794013230
+      },
+      {
+        "subreddit": "programming",
+        "title": "AI Broke Cybersecurity. Visual Programming Can Fix It.",
+        "url": "https://pipelang.com",
+        "karma": 1,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xprmcz/ai_broke_cybersecurity_visual_programming_can_fix/",
+        "created_utc": 1794008146
+      },
+      {
+        "subreddit": "programming",
+        "title": "Original Project I\u2019m currently working through clearing a permanent U3000:49 (Internal Electronic Control Unit Fault) on a power steering control module (PSCM) out of a 2016 Ford Explorer.",
+        "url": "http://www.forscan.com",
+        "karma": 1,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xpolw8/original_project_im_currently_working_through/",
+        "created_utc": 1794000246
+      },
+      {
+        "subreddit": "programming",
+        "title": "I have the big web idea in the world ,Is there any one caring?",
+        "url": "https://chatgpt.com/",
+        "karma": 1,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xpjyof/i_have_the_big_web_idea_in_the_world_is_there_any/",
+        "created_utc": 1793989037
+      },
+      {
+        "subreddit": "programming",
+        "title": "100% GPU Utilization, 39% of Rated FP16",
+        "url": "https://medium.com/@AhmadBabaei/100-gpu-utilization-39-of-rated-fp16-ce97ba1b88f0?source=friends_link&sk=9b6abeecdf5755c1fc742af4aab8fb9d",
+        "karma": 85,
+        "comments": 8,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xpc2ro/100_gpu_utilization_39_of_rated_fp16/",
+        "created_utc": 1793969627
+      },
+      {
+        "subreddit": "programming",
+        "title": "Unity3D for .NET Developers: How to get started",
+        "url": "https://pvs-studio.com/en/blog/posts/csharp/1424/?reddit_preview=2",
+        "karma": 0,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xpbd2s/unity3d_for_net_developers_how_to_get_started/",
+        "created_utc": 1793967406
+      },
+      {
+        "subreddit": "programming",
+        "title": "Unity3D for .NET Developers: How to get started",
+        "url": "https://pvs-studio.com/en/blog/posts/csharp/1424/",
+        "karma": 1,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xpb7mn/unity3d_for_net_developers_how_to_get_started/",
+        "created_utc": 1793966903
+      },
+      {
+        "subreddit": "programming",
+        "title": "Carquet \u00b7 Parquet at the speed of C",
+        "url": "https://vitruves.github.io/carquet/",
+        "karma": 28,
+        "comments": 5,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xpak4s/carquet_parquet_at_the_speed_of_c/",
+        "created_utc": 1793964664
+      },
+      {
+        "subreddit": "programming",
+        "title": "Carquet \u00b7 Parquet at the speed of C",
+        "url": "https://vitruves.github.io/carquet/",
+        "karma": 1,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xpahxj/carquet_parquet_at_the_speed_of_c/",
+        "created_utc": 1793964448
+      },
+      {
+        "subreddit": "programming",
+        "title": "Unity3D for .NET Developers: How to get started",
+        "url": "https://pvs-studio.com/en/blog/posts/csharp/1424/",
+        "karma": 1,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xp9ysa/unity3d_for_net_developers_how_to_get_started/",
+        "created_utc": 1793962497
+      },
+      {
+        "subreddit": "programming",
+        "title": "Unity3D for .NET Developers: How to get started",
+        "url": "https://pvs-studio.com/en/blog/posts/csharp/1424/",
+        "karma": 1,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xp9xdk/unity3d_for_net_developers_how_to_get_started/",
+        "created_utc": 1793962352
+      },
+      {
+        "subreddit": "programming",
+        "title": "Programming for Wizards",
+        "url": "https://programming-for-wizards.muze.nl/",
+        "karma": 25,
+        "comments": 2,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xp9ilr/programming_for_wizards/",
+        "created_utc": 1793960784
+      },
+      {
+        "subreddit": "programming",
+        "title": "Compiling 130k lines of .jai under 1 sec",
+        "url": "https://github.com/matteopolak/jacket/blob/main/docs/features.md",
+        "karma": 1,
+        "comments": 2,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xp900n/compiling_130k_lines_of_jai_under_1_sec/",
+        "created_utc": 1793958849
+      },
+      {
+        "subreddit": "programming",
+        "title": "Go 1.27: encoding/json/v2, Stricter Defaults, and Finally [] for Nil Slices \u00b7 cekrem.github.io",
+        "url": "https://cekrem.github.io/posts/go-json-v2-finally-says-no/",
+        "karma": 3,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xp8b96/go_127_encodingjsonv2_stricter_defaults_and/",
+        "created_utc": 1793956105
+      },
+      {
+        "subreddit": "programming",
+        "title": "How software got here: 60 milestones from 1945 to 2025, each with its original source (interactive timeline)",
+        "url": "https://software-atlas.haiduc0147.dev/history",
+        "karma": 6,
+        "comments": 6,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xp7rf0/how_software_got_here_60_milestones_from_1945_to/",
+        "created_utc": 1793953899
+      },
+      {
+        "subreddit": "programming",
+        "title": "Title: When your idempotency store is down, do you fail open or fail closed?",
+        "url": "https://get.moovn.com/moovnpay",
+        "karma": 1,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xp7l52/title_when_your_idempotency_store_is_down_do_you/",
+        "created_utc": 1793953181
+      },
+      {
+        "subreddit": "programming",
+        "title": "I built a sub-second authorization flaw (BOLA/IDOR) & secret scanner in pure JS with zero dependencies",
+        "url": "https://github.com/manhnv-vnext/authwarden",
+        "karma": 1,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xp6mfo/i_built_a_subsecond_authorization_flaw_bolaidor/",
+        "created_utc": 1793949361
+      },
+      {
+        "subreddit": "programming",
+        "title": "GitHub - tjcoder-labs/cli: Terminal-first research harness exploring generative UIs and model-directed presentation across multi-surface environments.",
+        "url": "https://github.com/tjcoder-labs/cli",
+        "karma": 0,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xp1vb5/github_tjcoderlabscli_terminalfirst_research/",
+        "created_utc": 1793933334
+      },
+      {
+        "subreddit": "programming",
+        "title": "more people should build browsers",
+        "url": "https://seg6.space/posts/electron-browser/",
+        "karma": 0,
+        "comments": 19,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xozu64/more_people_should_build_browsers/",
+        "created_utc": 1793927324
+      },
+      {
+        "subreddit": "programming",
+        "title": "Git at any scale",
+        "url": "https://cursor.com/blog/git-at-any-scale",
+        "karma": 12,
+        "comments": 9,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xozofg/git_at_any_scale/",
+        "created_utc": 1793926858
+      },
+      {
+        "subreddit": "programming",
+        "title": "A Boolean PII Flag Is Not Enough",
+        "url": "https://kore-nordmann.de/blog/a-boolean-pii-flag-is-not-enough.html",
+        "karma": 66,
+        "comments": 11,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xovn5d/a_boolean_pii_flag_is_not_enough/",
+        "created_utc": 1793916018
+      },
+      {
+        "subreddit": "programming",
+        "title": "Building iOS apps on Windows: running Apple\u2019s Mach-O macro plugins on an ARM64 CPU emulator",
+        "url": "https://ssilvestri15.github.io/openfruit-site/engineering.html",
+        "karma": 4,
+        "comments": 2,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xovbpf/building_ios_apps_on_windows_running_apples_macho/",
+        "created_utc": 1793915239
+      },
+      {
+        "subreddit": "programming",
+        "title": "Modern Java at Stripe: Language upgrades as a service",
+        "url": "https://stripe.dev/blog/modern-java-at-stripe-language-upgrades-as-a-service",
+        "karma": 61,
+        "comments": 5,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xov21m/modern_java_at_stripe_language_upgrades_as_a/",
+        "created_utc": 1793914589
+      },
+      {
+        "subreddit": "programming",
+        "title": "Checkstyle-compatible Java linter, 5x faster, 1/10th the memory",
+        "url": "https://github.com/rsmb7z/javaid",
+        "karma": 1,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xor0jk/checkstylecompatible_java_linter_5x_faster_110th/",
+        "created_utc": 1793905004
+      },
+      {
+        "subreddit": "programming",
+        "title": "javaid: a Checkstyle-compatible Java linter in Rust, zero diffs against Checkstyle on Guava and Spring",
+        "url": "https://github.com/rsmb7z/javaid",
+        "karma": 1,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xoqq6d/javaid_a_checkstylecompatible_java_linter_in_rust/",
+        "created_utc": 1793904348
+      },
+      {
+        "subreddit": "programming",
+        "title": "yr: DSL meant to reduce boilerplate",
+        "url": "https://yr-lang.org",
+        "karma": 0,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xoqbqc/yr_dsl_meant_to_reduce_boilerplate/",
+        "created_utc": 1793903429
+      },
+      {
+        "subreddit": "programming",
+        "title": "auricle: read AirPods' head-motion sensor over L2CAP on Linux",
+        "url": "https://github.com/freaktopus/auricle",
+        "karma": 1,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xoq2vo/auricle_read_airpods_headmotion_sensor_over_l2cap/",
+        "created_utc": 1793902877
+      },
+      {
+        "subreddit": "programming",
+        "title": "\"deslopifying\" - the (painful) process of making AI output your own",
+        "url": "https://martinsos.com/posts/deslopifying",
+        "karma": 1,
+        "comments": 2,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xop8yz/deslopifying_the_painful_process_of_making_ai/",
+        "created_utc": 1793901015
+      },
+      {
+        "subreddit": "programming",
+        "title": "How I built a \u201990s-style adventure game on top of my Hugo blog",
+        "url": "https://www.paolomainardi.com/posts/this-site-is-now-an-island/",
+        "karma": 0,
+        "comments": 5,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xomwik/how_i_built_a_90sstyle_adventure_game_on_top_of/",
+        "created_utc": 1793895700
+      },
+      {
+        "subreddit": "programming",
+        "title": "Let's Talk About Black October",
+        "url": "https://blog.gradle.org/lets-talk-about-black-october",
+        "karma": 1,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/programming/comments/1xomids/lets_talk_about_black_october/",
+        "created_utc": 1793894791
+      }
+    ],
+    "softwareengineering": [
+      {
+        "subreddit": "softwareengineering",
+        "title": "World of Duchame - Source Code Development License",
+        "url": "https://wickersonstudios.com/b/yhQ0g",
+        "karma": 1,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/SoftwareEngineering/comments/1xov7z6/world_of_duchame_source_code_development_license/",
+        "created_utc": 1793914987
+      }
+    ],
+    "ExperiencedDevs": [],
+    "webdev": [
+      {
+        "subreddit": "webdev",
+        "title": "Check out my project, built with Netlify",
+        "url": "https://zesty-pastelito-9676b2.netlify.app/?utm_source=swar&utm_content=reddit",
+        "karma": 1,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/webdev/comments/1xq7ath/check_out_my_project_built_with_netlify/",
+        "created_utc": 1794060737
+      },
+      {
+        "subreddit": "webdev",
+        "title": "ChuuMind.com",
+        "url": "https://chuumind.com",
+        "karma": 1,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/webdev/comments/1xq6bqu/chuumindcom/",
+        "created_utc": 1794057965
+      },
+      {
+        "subreddit": "webdev",
+        "title": "[Not my work] Finally, a way to help Sam Altman with the compute shortage: UploadYourRam.org",
+        "url": "https://uploadyourram.org/",
+        "karma": 3,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/webdev/comments/1xq4o7q/not_my_work_finally_a_way_to_help_sam_altman_with/",
+        "created_utc": 1794052648
+      },
+      {
+        "subreddit": "webdev",
+        "title": "Showoff Saturday: I built a simple severance pay & unemployment benefit calculator for Korean workers (Korean only)",
+        "url": "https://www.infogainnow.com",
+        "karma": 1,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/webdev/comments/1xq3yid/showoff_saturday_i_built_a_simple_severance_pay/",
+        "created_utc": 1794049958
+      },
+      {
+        "subreddit": "webdev",
+        "title": "[Showoff Saturday] Grailwind: a heraldry plugin for Tailwind CSS",
+        "url": "https://grailwind.dev/",
+        "karma": 1,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/webdev/comments/1xq3gws/showoff_saturday_grailwind_a_heraldry_plugin_for/",
+        "created_utc": 1794048078
+      },
+      {
+        "subreddit": "webdev",
+        "title": "Created a simple alternative to MemoryLeague",
+        "url": "https://free-memory-training.vercel.app/",
+        "karma": 1,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/webdev/comments/1xq2d1y/created_a_simple_alternative_to_memoryleague/",
+        "created_utc": 1794043660
+      },
+      {
+        "subreddit": "webdev",
+        "title": "[Showoff Saturday] pgquery: a Postgres GUI in the browser, No Sign In Required",
+        "url": "https://pgquery.dev/?utm_source=reddit&utm_campaign=webdev",
+        "karma": 0,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/webdev/comments/1xq1md4/showoff_saturday_pgquery_a_postgres_gui_in_the/",
+        "created_utc": 1794040737
+      },
+      {
+        "subreddit": "webdev",
+        "title": "[Showoff Saturday]: NSFW I am sick of these boring tube site so i built a better one",
+        "url": "https://www.geegchallange.com/",
+        "karma": 0,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/webdev/comments/1xq1g6j/showoff_saturday_nsfw_i_am_sick_of_these_boring/",
+        "created_utc": 1794040067
+      },
+      {
+        "subreddit": "webdev",
+        "title": "I switched to a digital visiting card maker \u2013 here's what I learned",
+        "url": "https://infocard.in/",
+        "karma": 1,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/webdev/comments/1xq0htd/i_switched_to_a_digital_visiting_card_maker_heres/",
+        "created_utc": 1794036427
+      },
+      {
+        "subreddit": "webdev",
+        "title": "Stochastic Traversal with Deterministic Results",
+        "url": "https://mamund.substack.com/p/stochastic-agents-and-deterministic",
+        "karma": 1,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/webdev/comments/1xq02fx/stochastic_traversal_with_deterministic_results/",
+        "created_utc": 1794034820
+      }
+    ],
+    "devops": [
+      {
+        "subreddit": "devops",
+        "title": "Grafana: Our latest adventure with canary tokens",
+        "url": "https://medium.com/grafana-labs/how-weve-evolved-our-use-of-canary-tokens-for-greater-coverage-and-less-overhead-b3b4f91edfae",
+        "karma": 0,
+        "comments": 3,
+        "permalink": "https://www.reddit.com/r/devops/comments/1xpdbnl/grafana_our_latest_adventure_with_canary_tokens/",
+        "created_utc": 1793973153
+      }
+    ],
+    "OpenAI": [
+      {
+        "subreddit": "OpenAI",
+        "title": "A video I made about the hugging face incident where I try to be as fair as possible",
+        "url": "https://youtu.be/LsL_AcMnVbU?is=4x3q1Q1Q3bJcx6bX",
+        "karma": 1,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/OpenAI/comments/1xq6nt1/a_video_i_made_about_the_hugging_face_incident/",
+        "created_utc": 1794058921
+      },
+      {
+        "subreddit": "OpenAI",
+        "title": "OpenAI Model Wrote Its Own Network Code to Get Around Sandbox Restrictions",
+        "url": "https://www.securityweek.com/openai-model-wrote-its-own-network-code-to-get-around-sandbox-restrictions",
+        "karma": 1,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/OpenAI/comments/1xq6mrk/openai_model_wrote_its_own_network_code_to_get/",
+        "created_utc": 1794058833
+      },
+      {
+        "subreddit": "OpenAI",
+        "title": "Claude Tag \u56fd\u5185\u7528\u4e0d\u4e86\uff1f\u6211\u505a\u4e86\u4e2a\u98de\u4e66\u7248",
+        "url": "https://youtube.com/watch?v=CJnztb0mpVw&si=KxY1xjDvhwzqx-Uc",
+        "karma": 1,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/OpenAI/comments/1xq24hc/claude_tag_\u56fd\u5185\u7528\u4e0d\u4e86\u6211\u505a\u4e86\u4e2a\u98de\u4e66\u7248/",
+        "created_utc": 1794042720
+      },
+      {
+        "subreddit": "OpenAI",
+        "title": "TikTok \u00b7 Z0ned",
+        "url": "https://www.tiktok.com/@zoned0ut4sure2.0/video/7705270159413447966",
+        "karma": 1,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/OpenAI/comments/1xpybka/tiktok_z0ned/",
+        "created_utc": 1794028623
+      },
+      {
+        "subreddit": "OpenAI",
+        "title": "Brighter AI \u2014 Ask Anything, Learn Everything",
+        "url": "https://ais-dev-twl23gre3te6redigabwql-706913236857.europe-west1.run.app",
+        "karma": 1,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/OpenAI/comments/1xpolpl/brighter_ai_ask_anything_learn_everything/",
+        "created_utc": 1794000232
+      },
+      {
+        "subreddit": "OpenAI",
+        "title": "MusicSkills: Pushing AI past the limits with music generation through code (Does not do vocals... yet)",
+        "url": "https://github.com/Aarav90-cpu/MusicSkills",
+        "karma": 0,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/OpenAI/comments/1xpec36/musicskills_pushing_ai_past_the_limits_with_music/",
+        "created_utc": 1793975760
+      },
+      {
+        "subreddit": "OpenAI",
+        "title": "OpenAI finds 948 local privilege escalation bugs in the Linux kernel",
+        "url": "https://www.phoronix.com/news/OpenAI-948-Linux-LPE-Bugs",
+        "karma": 65,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/OpenAI/comments/1xp9xau/openai_finds_948_local_privilege_escalation_bugs/",
+        "created_utc": 1793962344
+      },
+      {
+        "subreddit": "OpenAI",
+        "title": "Super Intelligence Kills the Streamers Income",
+        "url": "https://youtube.com/post/UgkxboXGR-XIwEJT4_2lRjg3lgF9IRBoLOo_?si=MH17srccEkZM0GrB",
+        "karma": 1,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/OpenAI/comments/1xp9wqz/super_intelligence_kills_the_streamers_income/",
+        "created_utc": 1793962290
+      }
+    ],
+    "ClaudeAI": [
+      {
+        "subreddit": "ClaudeAI",
+        "title": "A simple request for well-behaved agents",
+        "url": "https://mweberxyz.github.io/a-simple-request/",
+        "karma": 1,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1xq85po/a_simple_request_for_wellbehaved_agents/",
+        "created_utc": 1794063082
+      },
+      {
+        "subreddit": "ClaudeAI",
+        "title": "Has anyone used the untangle-codebase skill? Did you find it useful?",
+        "url": "https://github.com/caldoai/skills/blob/main/skills%2Funtangle-codebase%2FSKILL.md",
+        "karma": 1,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1xq6c3x/has_anyone_used_the_untanglecodebase_skill_did/",
+        "created_utc": 1794057994
+      },
+      {
+        "subreddit": "ClaudeAI",
+        "title": "The components of agent memory: how \u201cdreaming\u201d helps Claude organize what it\u2019s learned, correct its mistakes, and find what it needs more easily the next time",
+        "url": "https://www.anthropic.com/research/components-of-agent-memory",
+        "karma": 11,
+        "comments": 7,
+        "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1xq4fxp/the_components_of_agent_memory_how_dreaming_helps/",
+        "created_utc": 1794051807
+      },
+      {
+        "subreddit": "ClaudeAI",
+        "title": "Claude Code driving a robot arm I built over MCP",
+        "url": "https://youtu.be/kQVQd28h4DM?feature=shared",
+        "karma": 3,
+        "comments": 14,
+        "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1xq3fsf/claude_code_driving_a_robot_arm_i_built_over_mcp/",
+        "created_utc": 1794047951
+      },
+      {
+        "subreddit": "ClaudeAI",
+        "title": "A judge says Claude Max\u2019s \u201c20x more usage\u201d promise could mislead paying subscribers",
+        "url": "https://madrobot.blog/2026/11/07/claude-max-lawsuit-20x-usage-judge-ruling/",
+        "karma": 762,
+        "comments": 57,
+        "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1xq12am/a_judge_says_claude_maxs_20x_more_usage_promise/",
+        "created_utc": 1794038549
+      },
+      {
+        "subreddit": "ClaudeAI",
+        "title": "AI backlash could threaten Anthropic IPO timing, potential investors say",
+        "url": "https://www.reuters.com/world/ai-backlash-could-threaten-anthropic-ipo-timing-potential-investors-say-2026-11-05",
+        "karma": 9,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1xpzenl/ai_backlash_could_threaten_anthropic_ipo_timing/",
+        "created_utc": 1794032423
+      },
+      {
+        "subreddit": "ClaudeAI",
+        "title": "Claude just launched my agency",
+        "url": "https://www.instagram.com/smartz.co.in/",
+        "karma": 1,
+        "comments": 2,
+        "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1xpymnd/claude_just_launched_my_agency/",
+        "created_utc": 1794029663
+      },
+      {
+        "subreddit": "ClaudeAI",
+        "title": "God created/Divine power",
+        "url": "https://x.com/pipedrive/status/1930646610528141705?a=N8MYDNYlnTT-8cmI0x8&s=34",
+        "karma": 1,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1xpxufl/god_createddivine_power/",
+        "created_utc": 1794027062
+      }
+    ],
+    "singularity": [
+      {
+        "subreddit": "singularity",
+        "title": "AI time traveled back as my Ex to save the world \u2013 I turned my Ex into an AI. This AI manga talks about the existential risks posed by AI, very pioneering",
+        "url": "https://www.webtoons.com/en/canvas/ai-time-traveled-back-as-my-ex-to-save-the-world/i-turned-my-ex-into-an-ai/viewer?title_no=1184692&episode_no=1&readingLanguageCode=en",
+        "karma": 0,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/singularity/comments/1xpzkyo/ai_time_traveled_back_as_my_ex_to_save_the_world/",
+        "created_utc": 1794033045
+      },
+      {
+        "subreddit": "singularity",
+        "title": "Memorilla: Latent Semantic Memory for LLMs",
+        "url": "https://arxiv.org/abs/2610.21375",
+        "karma": 121,
+        "comments": 9,
+        "permalink": "https://www.reddit.com/r/singularity/comments/1xpt8zl/memorilla_latent_semantic_memory_for_llms/",
+        "created_utc": 1794012783
+      },
+      {
+        "subreddit": "singularity",
+        "title": "AI is dramatically accelerating AI research right now",
+        "url": "https://www.planned-obsolescence.org/p/ai-is-dramatically-accelerating-ai",
+        "karma": 144,
+        "comments": 13,
+        "permalink": "https://www.reddit.com/r/singularity/comments/1xppmik/ai_is_dramatically_accelerating_ai_research_right/",
+        "created_utc": 1794002811
+      },
+      {
+        "subreddit": "singularity",
+        "title": "100M context window coming?",
+        "url": "https://empero.org/manta",
+        "karma": 126,
+        "comments": 35,
+        "permalink": "https://www.reddit.com/r/singularity/comments/1xpp0fb/100m_context_window_coming/",
+        "created_utc": 1794001256
+      },
+      {
+        "subreddit": "singularity",
+        "title": "\"Bad news for tilers who laughed with AI and robots\"",
+        "url": "https://x.com/ironbohdan/status/2118644022092939657?a=pUWaI5ae4DcQQQseNXo&s=20",
+        "karma": 1,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/singularity/comments/1xpo30a/bad_news_for_tilers_who_laughed_with_ai_and_robots/",
+        "created_utc": 1793998933
+      },
+      {
+        "subreddit": "singularity",
+        "title": "Xinhua News Agency introduces two UBtech U1s as news anchors",
+        "url": "https://english.news.cn/20261105/5512de653656416f94cf201e908e689b/c.html",
+        "karma": 17,
+        "comments": 4,
+        "permalink": "https://www.reddit.com/r/singularity/comments/1xp6c13/xinhua_news_agency_introduces_two_ubtech_u1s_as/",
+        "created_utc": 1793948281
+      },
+      {
+        "subreddit": "singularity",
+        "title": "The Mythology of Unconscious AI",
+        "url": "https://nathanieljmiska.substack.com/p/the-mythology-of-unconscious-ai-eb7?utm_source=share&utm_medium=android&r=7i4b8y",
+        "karma": 1,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/singularity/comments/1xoy7y8/the_mythology_of_unconscious_ai/",
+        "created_utc": 1793922843
+      },
+      {
+        "subreddit": "singularity",
+        "title": "Which AI is the best liar? Benchmarking using a roleplaying game.",
+        "url": "https://youtu.be/1NQwfImTseU?is=GjGa3ZFbZr8_hm-a",
+        "karma": 6,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/singularity/comments/1xowfh5/which_ai_is_the_best_liar_benchmarking_using_a/",
+        "created_utc": 1793918007
+      },
+      {
+        "subreddit": "singularity",
+        "title": "Nasdaq 100 eyes $1.8 trillion loss as Democratic win sparks AI delay fears",
+        "url": "https://www.reuters.com/legal/transactional/ai-data-center-stocks-slip-democratic-sweep-clouds-expansion-plans-2026-11-05/",
+        "karma": 147,
+        "comments": 89,
+        "permalink": "https://www.reddit.com/r/singularity/comments/1xopc6c/nasdaq_100_eyes_18_trillion_loss_as_democratic/",
+        "created_utc": 1793901210
+      },
+      {
+        "subreddit": "singularity",
+        "title": "Visual Prosthesis Implantation: A 'Step Forward' for People With Vision Loss",
+        "url": "https://www.youtube.com/watch?v=SUNttPJ2U9c&utm_source=chatgpt.com",
+        "karma": 1,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/singularity/comments/1xoofxf/visual_prosthesis_implantation_a_step_forward_for/",
+        "created_utc": 1793899200
+      },
+      {
+        "subreddit": "singularity",
+        "title": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content=",
+        "karma": 42,
+        "comments": 4,
+        "permalink": "https://www.reddit.com/r/singularity/comments/1xoo9s0/gemini_omni_12_flash_fast_and_costeffective_with/",
+        "created_utc": 1793898816
+      },
+      {
+        "subreddit": "singularity",
+        "title": "OpenAI has just announced GPT\u20116 Cyber, a major step up from GPT\u20115.6 Cyber and outperforms GPT\u20116 Astra on most cyber tasks",
+        "url": "https://openai.com/index/introducing-gpt-6-cyber/",
+        "karma": 497,
+        "comments": 83,
+        "permalink": "https://www.reddit.com/r/singularity/comments/1xoo9ob/openai_has_just_announced_gpt6_cyber_a_major_step/",
+        "created_utc": 1793898810
+      }
+    ],
+    "rust": [
+      {
+        "subreddit": "rust",
+        "title": "tokio-tun goes multi-platform (FreeBSD, macOS, iOS, Android) + Linux GSO/GRO offload support on the road to v1.0",
+        "url": "https://github.com/yaa110/tokio-tun",
+        "karma": 0,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/rust/comments/1xpsycq/tokiotun_goes_multiplatform_freebsd_macos_ios/",
+        "created_utc": 1794011909
+      },
+      {
+        "subreddit": "rust",
+        "title": "tokio-tun goes multi-platform (FreeBSD, macOS, iOS, Android) + Linux GSO/GRO offload support on the road to v1.0",
+        "url": "https://github.com/yaa110/tokio-tun",
+        "karma": 1,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/rust/comments/1xpswry/tokiotun_goes_multiplatform_freebsd_macos_ios/",
+        "created_utc": 1794011775
+      },
+      {
+        "subreddit": "rust",
+        "title": "Blocks: a lightweight Markdown notes app for Windows, built with egui",
+        "url": "https://github.com/MooseDevPJS/blocks",
+        "karma": 0,
+        "comments": 2,
+        "permalink": "https://www.reddit.com/r/rust/comments/1xpe26i/blocks_a_lightweight_markdown_notes_app_for/",
+        "created_utc": 1793975050
+      },
+      {
+        "subreddit": "rust",
+        "title": "Blocks: a lightweight Markdown notes app for Windows, built with egui",
+        "url": "https://github.com/MooseDevPJS/blocks",
+        "karma": 0,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/rust/comments/1xpe19d/blocks_a_lightweight_markdown_notes_app_for/",
+        "created_utc": 1793974984
+      },
+      {
+        "subreddit": "rust",
+        "title": "Discord is rebuilding its desktop app in Rust to fix its memory problem",
+        "url": "https://www.techspot.com/news/114462-discord-rebuilding-desktop-app-rust-fix-memory-problem.html",
+        "karma": 1,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/rust/comments/1xpdjvh/discord_is_rebuilding_its_desktop_app_in_rust_to/",
+        "created_utc": 1793973746
+      },
+      {
+        "subreddit": "rust",
+        "title": "Servo Browser Engine Continues Broadening Web Compatibility, New Features",
+        "url": "https://www.phoronix.com/news/Servo-0.7-Changes",
+        "karma": 230,
+        "comments": 24,
+        "permalink": "https://www.reddit.com/r/rust/comments/1xpb71b/servo_browser_engine_continues_broadening_web/",
+        "created_utc": 1793966845
+      },
+      {
+        "subreddit": "rust",
+        "title": "Wallfinch: a Windows wallpaper finder in Rust + egui, with on-device AI upscaling through ort + DirectML",
+        "url": "https://www.wallfinch.com/",
+        "karma": 0,
+        "comments": 2,
+        "permalink": "https://www.reddit.com/r/rust/comments/1xp1oqr/wallfinch_a_windows_wallpaper_finder_in_rust_egui/",
+        "created_utc": 1793932793
+      },
+      {
+        "subreddit": "rust",
+        "title": "Meridian: Web-browser built on GPUI and Servo",
+        "url": "https://op.tngl.io/meridian/",
+        "karma": 126,
+        "comments": 17,
+        "permalink": "https://www.reddit.com/r/rust/comments/1xoviv5/meridian_webbrowser_built_on_gpui_and_servo/",
+        "created_utc": 1793915727
+      }
+    ],
+    "golang": [
+      {
+        "subreddit": "golang",
+        "title": "gobwas/ws v1.5.0: Go 1.27 flate fix, OOM vuln fix, 4x faster masking with asm",
+        "url": "https://github.com/gobwas/ws",
+        "karma": 1,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/golang/comments/1xq6zuj/gobwasws_v150_go_127_flate_fix_oom_vuln_fix_4x/",
+        "created_utc": 1794059911
+      },
+      {
+        "subreddit": "golang",
+        "title": "libtmux-go 0.1: tmux client library, mcp, workspace manager for golang",
+        "url": "https://github.com/libtmux/libtmux-go",
+        "karma": 4,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/golang/comments/1xpv4kk/libtmuxgo_01_tmux_client_library_mcp_workspace/",
+        "created_utc": 1794018356
+      },
+      {
+        "subreddit": "golang",
+        "title": "How hard could implementing DTLS 1.3 possibly be?",
+        "url": "https://joturk.net/posts/dtls",
+        "karma": 48,
+        "comments": 3,
+        "permalink": "https://www.reddit.com/r/golang/comments/1xpt8hm/how_hard_could_implementing_dtls_13_possibly_be/",
+        "created_utc": 1794012743
+      },
+      {
+        "subreddit": "golang",
+        "title": "OAuthRouter for worktrees",
+        "url": "https://github.com/drldavis/oauthrouter",
+        "karma": 1,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/golang/comments/1xpnvdj/oauthrouter_for_worktrees/",
+        "created_utc": 1793998424
+      },
+      {
+        "subreddit": "golang",
+        "title": "The MustCreate Pattern for Go Tests",
+        "url": "https://mtlynch.io/notes/go-must-create-pattern/",
+        "karma": 19,
+        "comments": 14,
+        "permalink": "https://www.reddit.com/r/golang/comments/1xpfsqm/the_mustcreate_pattern_for_go_tests/",
+        "created_utc": 1793979372
+      },
+      {
+        "subreddit": "golang",
+        "title": "Migrating 1.9 million lines of Go to encoding/json/v2: 762 benchmarks on three builds",
+        "url": "https://github.com/latere-ai/engineering-reports/tree/main/json-v2-migration",
+        "karma": 6,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/golang/comments/1xp9cgn/migrating_19_million_lines_of_go_to/",
+        "created_utc": 1793960141
+      },
+      {
+        "subreddit": "golang",
+        "title": "Go 1.27: encoding/json/v2, Stricter Defaults, and Finally [] for Nil Slices \u00b7 cekrem.github.io",
+        "url": "https://cekrem.github.io/posts/go-json-v2-finally-says-no/",
+        "karma": 59,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/golang/comments/1xp8buk/go_127_encodingjsonv2_stricter_defaults_and/",
+        "created_utc": 1793956170
+      },
+      {
+        "subreddit": "golang",
+        "title": "GitHub - tjcoder-labs/cli: Terminal-first research harness exploring generative UIs and model-directed presentation across multi-surface environments.",
+        "url": "https://github.com/tjcoder-labs/cli",
+        "karma": 2,
+        "comments": 3,
+        "permalink": "https://www.reddit.com/r/golang/comments/1xp26tj/github_tjcoderlabscli_terminalfirst_research/",
+        "created_utc": 1793934270
+      },
+      {
+        "subreddit": "golang",
+        "title": "Robotgo now supports pure go \"darwin, windows, wayland, libei and x11\" backend",
+        "url": "https://github.com/go-vgo/robotgo",
+        "karma": 2,
+        "comments": 0,
+        "permalink": "https://www.reddit.com/r/golang/comments/1xovlzt/robotgo_now_supports_pure_go_darwin_windows/",
+        "created_utc": 1793915941
+      },
+      {
+        "subreddit": "golang",
+        "title": "vis: a live dashboard, SLOs and runtime knobs inside your Go binary (looking for feedback / adoption)",
+        "url": "https://github.com/tfcace/vis",
+        "karma": 1,
+        "comments": 1,
+        "permalink": "https://www.reddit.com/r/golang/comments/1xoluja/vis_a_live_dashboard_slos_and_runtime_knobs/",
+        "created_utc": 1793893224
+      }
+    ],
+    "Python": []
+  }
+}
