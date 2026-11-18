@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, PageProps } from 'gatsby';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-import { trackBySlug, useMusicPlayer, type MusicTrack } from '../components/MusicPlayerProvider';
+import { canAutoplay, trackBySlug, useMusicPlayer, type MusicTrack } from '../components/MusicPlayerProvider';
 import '../styles/music.css';
 
 interface MusicTrackContext {
@@ -19,12 +19,27 @@ const formatDuration = (seconds: number): string => {
 const MusicTrackPage: React.FC<PageProps<Record<string, never>, MusicTrackContext>> = ({ pageContext }) => {
   const track: MusicTrack | undefined = trackBySlug(pageContext.slug);
   const { cue, play, currentTrack, isPlaying } = useMusicPlayer();
-
-  // Load the track into the player without starting it. Opening a song page —
-  // including via a direct URL — should cue it, never auto-play.
+  const [linkCopied, setLinkCopied] = useState(false);
+  // Deep links (typed URL, shared link, browser reload) try to autoplay since
+  // the visitor asked for this song specifically. If the browser blocks
+  // autonomous playback, fall back to cueing paused. In-site clicks only cue.
+  const startedRef = useRef(false);
   useEffect(() => {
-    if (track) cue(track.slug);
-  }, [track, cue]);
+    if (!track || startedRef.current) return;
+    startedRef.current = true;
+    const isDeepLink =
+      typeof window !== 'undefined' &&
+      !window.sessionStorage.getItem('hm-nav-internal') &&
+      !(document.referrer && document.referrer.startsWith(window.location.origin + '/'));
+    if (!isDeepLink) {
+      cue(track.slug);
+      return;
+    }
+    canAutoplay().then((allowed) => {
+      if (allowed) play(track.slug);
+      else cue(track.slug);
+    });
+  }, [track, cue, play]);
 
   if (!track) {
     return (
@@ -72,9 +87,25 @@ const MusicTrackPage: React.FC<PageProps<Record<string, never>, MusicTrackContex
               <button
                 type="button"
                 className="hm-cta-btn hm-music-single-play"
-                onClick={() => (isCurrent ? play(track.slug) : play(track.slug))}
+                onClick={() => play(track.slug)}
               >
                 {isCurrent && isPlaying ? '❚❚ Pause' : '▶ Play'}
+              </button>
+              <button
+                type="button"
+                className="hm-music-single-share"
+                onClick={() => {
+                  const url = `${window.location.origin}/music/${track.slug}/`;
+                  if (navigator.share) {
+                    navigator.share({ title: track.title, url }).catch(() => {});
+                  } else {
+                    navigator.clipboard.writeText(url);
+                  }
+                  setLinkCopied(true);
+                  window.setTimeout(() => setLinkCopied(false), 2000);
+                }}
+              >
+                {linkCopied ? 'Link copied ✓' : 'Copy link'}
               </button>
             </div>
             <p className="hm-music-single-hint">

@@ -73,3 +73,26 @@ export const onClientEntry: GatsbyBrowser['onClientEntry'] = () => {
  */
 export const wrapRootElement: GatsbyBrowser['wrapRootElement'] = ({ element }) =>
   React.createElement(MusicPlayerProvider, null, element);
+
+/**
+ * Route bookkeeping for music deep links.
+ *
+ * onRouteUpdate fires for Gatsby client-side navigations only — not for the
+ * initial page load. Track pages use sessionStorage['hm-nav-internal'] to tell
+ * apart "opened the song URL directly" (empty flag -> autoplay) from "clicked
+ * here inside the site" (flag set -> cue only). A same-site referrer on a full
+ * page load also counts as internal: the reader was already browsing.
+ */
+export const onRouteUpdate: GatsbyBrowser['onRouteUpdate'] = () => {
+  const referrerSameOrigin =
+    typeof document !== 'undefined' && document.referrer.startsWith(window.location.origin + '/');
+  if (referrerSameOrigin) {
+    window.sessionStorage.setItem('hm-nav-internal', '1');
+  }
+  // No else: on the first client-side navigation after a fresh load the flag
+  // is still empty — Gatsby only calls this hook after its own route change,
+  // and the track page reads the flag in its mount effect, which runs before
+  // this is ever reached for deep links. Setting '1' unconditionally here is
+  // correct for navigations (they are internal by definition).
+  return undefined;
+};

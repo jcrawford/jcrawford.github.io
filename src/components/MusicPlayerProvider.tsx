@@ -96,12 +96,53 @@ export const useMusicPlayer = (): MusicPlayerContextValue => {
 };
 
 /**
+ * True when this tab may start audible playback without a click: either the
+ * browser reports autonomous autoplay allowed, or the reader has already
+ * interacted with the page (click/keydown anywhere unlocks audio).
+ */
+export const canAutoplay = async (): Promise<boolean> => {
+  if (typeof navigator === 'undefined') return false;
+  const nav = navigator as Navigator & { userActivation?: { isActive: boolean } };
+  if (nav.userActivation?.isActive) return true;
+  const mediaNav = nav as Navigator & {
+    getAutoplayPolicy?: (policy: string) => boolean | Promise<boolean>;
+  };
+  if (typeof mediaNav.getAutoplayPolicy === 'function') {
+    try {
+      return Boolean(await mediaNav.getAutoplayPolicy('audiocontext'));
+    } catch {
+      // Fall through to the probe.
+    }
+  }
+  return new Promise((resolve) => {
+    const probe = document.createElement('audio');
+    probe.muted = false;
+    probe.volume = 0;
+    probe.preload = 'none';
+    const done = (allowed: boolean) => {
+      probe.removeAttribute('src');
+      resolve(allowed);
+    };
+    probe.addEventListener('playing', () => done(true), { once: true });
+    probe.addEventListener('error', () => done(false), { once: true });
+    // A data URI plays locally with zero network and (usually) zero policy cost.
+    probe.src =
+      'data:audio/mp3;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjU4Ljc2LjEwMAAAAAAAAAAAAAAA//tQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWGluZwAAAA8AAAACAAABIADATGF2ZjU4Ljc2LjEwMAAAAAAAAAAAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB';
+    const playPromise = probe.play();
+    if (playPromise) playPromise.catch(() => done(false));
+  });
+};
+
+/**
  * Single shared <audio> element that survives Gatsby client-side navigation,
  * because the provider is mounted through wrapRootElement in gatsby-browser and
  * gatsby-ssr.
  *
- * Playback never starts on its own: `cue()` and page loads stay paused, and only
- * an explicit user gesture calls `play()`.
+ * Playback never starts on its own by default: `cue()` and page loads stay
+ * paused. The exception is the music deep-link flow — track pages read
+ * `canAutoplay` and may call `play()` immediately, matching a direct visitor's
+ * intent; the browser may still hold the sound until the reader interacts with
+ * the tab, at which point audio resumes (see the audio unlock effect below).
  */
 export const MusicPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);

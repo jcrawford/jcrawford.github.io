@@ -162,6 +162,22 @@
   align-items: center;
 }
 
+.hm-music-single-share {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: inherit;
+  border-radius: 8px;
+  padding: 0.42rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.hm-music-single-share:hover {
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
 .hm-music-single-hint {
   font-size: 0.78rem;
   color: var(--hm-text-muted, #9aa0a6);
@@ -194,7 +210,7 @@
 
 .hm-music-hint {
   position: fixed;
-  top: 96px;
+  top: var(--hm-hint-top, 96px);
   bottom: 92px;
   left: 50%;
   transform: translateX(-50%);

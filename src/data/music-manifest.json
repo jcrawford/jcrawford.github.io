@@ -1,30 +1,30 @@
 {
-  "generatedAt": "2026-11-18T15:12:56.918Z",
+  "generatedAt": "2026-11-18T16:28:13.483Z",
   "baseUrl": "https://pub-8756a8dd5c654be6b426503a223749bc.r2.dev",
   "tracks": [
     {
-      "slug": "joseph-crawford-she-s-my-wife",
+      "slug": "bitingchart9669-she-s-my-wife",
       "title": "She's My Wife",
-      "artist": "Joseph Crawford",
+      "artist": "bitingchart9669",
       "album": "Singles",
       "albumSlug": "singles",
       "year": null,
       "trackNumber": null,
       "duration": 292,
-      "src": "https://pub-8756a8dd5c654be6b426503a223749bc.r2.dev/She's%20My%20Wife.m4a",
-      "file": "She's My Wife.m4a",
+      "src": "https://pub-8756a8dd5c654be6b426503a223749bc.r2.dev/She's%20My%20Wife.mp3",
+      "file": "She's My Wife.mp3",
       "covers": {
         "160": {
-          "jpg": "/images/music/joseph-crawford-she-s-my-wife/cover_160w.jpg",
-          "webp": "/images/music/joseph-crawford-she-s-my-wife/cover_160w.webp"
+          "jpg": "/images/music/bitingchart9669-she-s-my-wife/cover_160w.jpg",
+          "webp": "/images/music/bitingchart9669-she-s-my-wife/cover_160w.webp"
         },
         "400": {
-          "jpg": "/images/music/joseph-crawford-she-s-my-wife/cover_400w.jpg",
-          "webp": "/images/music/joseph-crawford-she-s-my-wife/cover_400w.webp"
+          "jpg": "/images/music/bitingchart9669-she-s-my-wife/cover_400w.jpg",
+          "webp": "/images/music/bitingchart9669-she-s-my-wife/cover_400w.webp"
         },
         "800": {
-          "jpg": "/images/music/joseph-crawford-she-s-my-wife/cover_800w.jpg",
-          "webp": "/images/music/joseph-crawford-she-s-my-wife/cover_800w.webp"
+          "jpg": "/images/music/bitingchart9669-she-s-my-wife/cover_800w.jpg",
+          "webp": "/images/music/bitingchart9669-she-s-my-wife/cover_800w.webp"
         }
       }
     }
@@ -33,24 +33,24 @@
     {
       "slug": "singles",
       "title": "Singles",
-      "artist": "Joseph Crawford",
+      "artist": "bitingchart9669",
       "year": null,
       "cover": {
         "160": {
-          "jpg": "/images/music/joseph-crawford-she-s-my-wife/cover_160w.jpg",
-          "webp": "/images/music/joseph-crawford-she-s-my-wife/cover_160w.webp"
+          "jpg": "/images/music/bitingchart9669-she-s-my-wife/cover_160w.jpg",
+          "webp": "/images/music/bitingchart9669-she-s-my-wife/cover_160w.webp"
         },
         "400": {
-          "jpg": "/images/music/joseph-crawford-she-s-my-wife/cover_400w.jpg",
-          "webp": "/images/music/joseph-crawford-she-s-my-wife/cover_400w.webp"
+          "jpg": "/images/music/bitingchart9669-she-s-my-wife/cover_400w.jpg",
+          "webp": "/images/music/bitingchart9669-she-s-my-wife/cover_400w.webp"
         },
         "800": {
-          "jpg": "/images/music/joseph-crawford-she-s-my-wife/cover_800w.jpg",
-          "webp": "/images/music/joseph-crawford-she-s-my-wife/cover_800w.webp"
+          "jpg": "/images/music/bitingchart9669-she-s-my-wife/cover_800w.jpg",
+          "webp": "/images/music/bitingchart9669-she-s-my-wife/cover_800w.webp"
         }
       },
       "trackSlugs": [
-        "joseph-crawford-she-s-my-wife"
+        "bitingchart9669-she-s-my-wife"
       ]
     }
   ]

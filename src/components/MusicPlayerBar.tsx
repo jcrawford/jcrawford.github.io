@@ -86,6 +86,7 @@ const MusicPlayerBar: React.FC = () => {
   const [panelOpen, setPanelOpen] = useState(false);
   const [showHint, setShowHint] = useState(false);
   const trailRef = useRef<HTMLDivElement | null>(null);
+  const hintRef = useRef<HTMLDivElement | null>(null);
   const [trailSize, setTrailSize] = useState({ w: 0, h: 0 });
 
   // Measure the trail so the coil spans exactly from the card edge to the dock.
@@ -114,6 +115,50 @@ const MusicPlayerBar: React.FC = () => {
     const timer = window.setTimeout(() => setShowHint(false), 12000);
     return () => window.clearTimeout(timer);
   }, []);
+
+  // The support banner and header scroll with the page, but this fixed callout
+  // does not — so on load, push the callout below whatever page chrome is
+  // currently pinned over it, then never move it again.
+  useEffect(() => {
+    if (!showHint) return;
+    const hint = hintRef.current;
+    if (!hint) return;
+    const clamp = () => {
+      // The sticky support banner rides on top of everything; the header only
+      // occupies the top while the page is unscrolled. Take whichever is lower.
+      const chrome = [document.getElementById('masthead'), document.querySelector('.support-bar')]
+        .filter((el): el is HTMLElement => Boolean(el));
+      let chromeBottom = 0;
+      for (const el of chrome) {
+        const rect = el.getBoundingClientRect();
+        if (rect.bottom > chromeBottom) chromeBottom = rect.bottom;
+      }
+      if (hint.getBoundingClientRect().top < chromeBottom) {
+        hint.style.setProperty('--hm-hint-top', `${Math.round(chromeBottom)}px`);
+      }
+    };
+    const raf = requestAnimationFrame(() => requestAnimationFrame(clamp));
+    const timer = window.setTimeout(clamp, 250); // after SupportBar's fade-in
+    return () => {
+      cancelAnimationFrame(raf);
+      window.clearTimeout(timer);
+    };
+  }, [showHint]);
+
+  // Chrome covers the callout only while the page is unscrolled. Once the
+  // reader scrolls, the banner scrolls away — relax to the base offset.
+  useEffect(() => {
+    if (!showHint) return;
+    const hint = hintRef.current;
+    if (!hint) return;
+    const onScroll = () => {
+      if (window.scrollY > 4) {
+        hint.style.setProperty('--hm-hint-top', '');
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true, once: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [showHint]);
 
   const dismissHint = () => setShowHint(false);
 
@@ -151,7 +196,7 @@ const MusicPlayerBar: React.FC = () => {
   return (
     <>
       {showHint && (
-        <div className="hm-music-hint" role="status">
+        <div className="hm-music-hint" role="status" ref={hintRef}>
           <div className="hm-music-hint-card">
             <p className="hm-music-hint-eyebrow">{currentTrack ? 'Now playing' : 'Music player'}</p>
             <p className="hm-music-hint-title">The player is here</p>
