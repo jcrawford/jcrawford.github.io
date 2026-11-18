@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'gatsby';
 import { trackBySlug, useMusicPlayer, type MusicTrack } from './MusicPlayerProvider';
+import { onCoverError } from '../utils/coverFallback';
 
 /** localStorage flag so the "player is here" callout appears on first visit only. */
 const HINT_SEEN_KEY = 'hm-music-hint-seen';
@@ -272,7 +273,15 @@ const MusicPlayerBar: React.FC = () => {
                 aria-expanded={panelOpen}
                 aria-label={panelOpen ? 'Hide queue' : 'Show queue'}
               >
-                <img className="hm-music-bar-cover" src={cover} alt="" width={48} height={48} loading="lazy" />
+                <img
+                  className="hm-music-bar-cover"
+                  src={cover}
+                  alt=""
+                  width={48}
+                  height={48}
+                  loading="lazy"
+                  onError={onCoverError}
+                />
                 <span className="hm-music-bar-expand-hint">{panelOpen ? '▾' : '▸'}</span>
               </button>
               <Link to={`/music/${currentTrack.slug}/`} className="hm-music-bar-meta">
@@ -411,6 +420,7 @@ const MusicPlayerBar: React.FC = () => {
                       width={32}
                       height={32}
                       loading="lazy"
+                      onError={onCoverError}
                     />
                     <Link
                       to={`/music/${track.slug}/`}

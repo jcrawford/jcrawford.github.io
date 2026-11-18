@@ -7,6 +7,7 @@ import SyncedLyrics from '../components/SyncedLyrics';
 import lyricsIndex from '../data/music-lyrics.json';
 import wordLyricsIndex from '../data/music-word-lyrics.json';
 import { activeLineIndex, parseLrc, type LyricLine } from '../utils/lrc';
+import { onCoverError } from '../utils/coverFallback';
 import '../styles/music.css';
 
 interface MusicTrackContext {
@@ -77,6 +78,7 @@ const MusicTrackPage: React.FC<PageProps<Record<string, never>, MusicTrackContex
             width={320}
             height={320}
             loading="lazy"
+            onError={onCoverError}
           />
           <div className="hm-music-single-meta">
             <p className="hm-music-eyebrow">Song</p>

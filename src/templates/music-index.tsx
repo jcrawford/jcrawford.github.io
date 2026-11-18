@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import { musicAlbums, musicTracks, useMusicPlayer, type MusicTrack } from '../components/MusicPlayerProvider';
+import { onCoverError } from '../utils/coverFallback';
 import '../styles/music.css';
 
 const formatDuration = (seconds: number): string => {
@@ -70,6 +71,7 @@ const MusicIndexPage: React.FC = () => {
                   width={160}
                   height={160}
                   loading="lazy"
+                  onError={onCoverError}
                 />
                 <div className="hm-music-album-meta">
                   <h2 className="hm-music-album-title">{album.title}</h2>
