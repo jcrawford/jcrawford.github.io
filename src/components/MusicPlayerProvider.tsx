@@ -279,6 +279,9 @@ export const MusicPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
       }
       audio.setAttribute('src', currentTrack.src);
       audio.load();
+      // Clear the ended coalescing guard from the previous track so the new
+      // track's 'ended' event is handled normally.
+      delete (audio as HTMLAudioElement & { dataset: { hmEndedHandled?: string } }).dataset.hmEndedHandled;
       setDuration(currentTrack.duration || 0);
       setCurrentTime(pendingSeekRef.current || 0);
       window.localStorage.setItem(LAST_TRACK_KEY, currentTrack.slug);
@@ -423,6 +426,13 @@ export const MusicPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
   const handleEnded = useCallback(() => {
     const audio = audioRef.current;
     if (!audio) return;
+    // Guard against double 'ended' dispatches (see onEnded handler): the
+    // browser can emit the event twice in quick succession when decoding the
+    // final MP3 frames — Xing/LAME gapless metadata, trailing ID3v1, or VBR
+    // tail padding can make the demuxer reach EOS more than once. Without
+    // this, each dispatch fires handleEnded and 'repeat one' restarts the
+    // track twice, producing overlapping audio.
+    audio.dataset.hmEndedHandled = '1';
     if (repeatRef.current === 'one') {
       audio.currentTime = 0;
       playSourceRef.current = 'auto';
@@ -620,8 +630,14 @@ export const MusicPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
         }}
         onPause={() => setIsPlaying(false)}
         onEnded={(event) => {
-          delete (event.currentTarget as HTMLAudioElement & { dataset: { hmPlayCounted?: string } }).dataset
-            .hmPlayCounted;
+          const audio = event.currentTarget as HTMLAudioElement & { dataset: { hmPlayCounted?: string; hmEndedHandled?: string } };
+          delete audio.dataset.hmPlayCounted;
+          // Browsers occasionally dispatch 'ended' twice per playback
+          // (double-EOS while draining the last MP3 frames). Coalesce them:
+          // the second dispatch is only allowed through once a new load has
+          // cleared the guard below.
+          if (audio.dataset.hmEndedHandled) return;
+          audio.dataset.hmEndedHandled = '1';
           handleEnded();
         }}
       />
