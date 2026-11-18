@@ -1,6 +1,49 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'gatsby';
 import { trackBySlug, useMusicPlayer, type MusicTrack } from './MusicPlayerProvider';
+
+/**
+ * Trochoid coil: x = r·sin(t), y = c·t − r·cos(t) + r. When the vertical pitch is
+ * shorter than the hoop circumference the curve genuinely loops back on itself,
+ * which is what makes the trail read as a swirl rather than a wavy line.
+ */
+const buildSwirl = (w: number, h: number): string => {
+  if (w < 20 || h < 80) return '';
+  const arrowSpace = 30;
+  const cx = w / 2;
+  const loops = Math.max(2, Math.min(4, Math.round((h - arrowSpace) / 165)));
+  const pitch = (h - arrowSpace) / loops;
+  const trend = pitch / (Math.PI * 2); // vertical advance per radian
+  const rx = Math.min(w * 0.4, 130);
+  // Hoop height must exceed the per-radian advance or the curve never crosses
+  // itself and stops reading as a loop.
+  let ry = Math.min(Math.max(trend * 1.75, 10), 46);
+  const step = 0.08;
+  const total = loops * Math.PI * 2;
+
+  const sample = (ryValue: number) => {
+    const points: Array<[number, number]> = [];
+    let peak = 0;
+    for (let t = 0; t <= total + 1e-6; t += step) {
+      const x = cx + rx * Math.sin(t);
+      const y = trend * t - ryValue * Math.cos(t) + ryValue;
+      points.push([x, y]);
+      if (y > peak) peak = y;
+    }
+    return { points, peak };
+  };
+
+  // Shrink the hoop if the last bulge would collide with the arrowhead.
+  let sampled = sample(ry);
+  while (sampled.peak > h - 8 && ry > 5) {
+    ry *= 0.85;
+    sampled = sample(ry);
+  }
+
+  return sampled.points
+    .map(([x, y], index) => `${index === 0 ? 'M' : 'L'}${x.toFixed(1)} ${y.toFixed(1)}`)
+    .join(' ');
+};
 
 const formatTime = (seconds: number): string => {
   if (!Number.isFinite(seconds) || seconds < 0) return '0:00';
@@ -42,6 +85,26 @@ const MusicPlayerBar: React.FC = () => {
   } = useMusicPlayer();
   const [panelOpen, setPanelOpen] = useState(false);
   const [showHint, setShowHint] = useState(false);
+  const trailRef = useRef<HTMLDivElement | null>(null);
+  const [trailSize, setTrailSize] = useState({ w: 0, h: 0 });
+
+  // Measure the trail so the coil spans exactly from the card edge to the dock.
+  useEffect(() => {
+    if (!showHint) return;
+    const el = trailRef.current;
+    if (!el) return;
+    const measure = () => {
+      const rect = el.getBoundingClientRect();
+      setTrailSize({ w: Math.round(rect.width), h: Math.round(rect.height) });
+    };
+    measure();
+    if (typeof ResizeObserver === 'undefined') return;
+    const observer = new ResizeObserver(measure);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [showHint]);
+
+  const swirlPath = useMemo(() => buildSwirl(trailSize.w, trailSize.h), [trailSize.w, trailSize.h]);
 
   // Callout on the music pages, every visit for now.
   useEffect(() => {
@@ -101,37 +164,33 @@ const MusicPlayerBar: React.FC = () => {
               Got it
             </button>
           </div>
-          <div className="hm-music-hint-trail" aria-hidden="true">
-            <svg
-              className="hm-music-hint-swirl"
-              viewBox="0 0 300 700"
-              preserveAspectRatio="xMidYMid meet"
-              focusable="false"
-            >
-              <path
-                className="hm-music-hint-swirl-path"
-                d="M 150 12
-                   C 150 62, 248 72, 248 124
-                   C 248 176, 52 170, 52 222
-                   C 52 274, 248 266, 248 318
-                   C 248 356, 172 350, 163 378
-                   C 154 406, 92 404, 92 448
-                   C 92 498, 208 494, 208 538
-                   C 208 578, 152 586, 150 648"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                vectorEffect="non-scaling-stroke"
-              />
-              <path
-                className="hm-music-hint-arrowhead"
-                d="M 150 692 L 127 645 L 173 645 Z"
-                fill="currentColor"
-                stroke="none"
-              />
-            </svg>
+          <div className="hm-music-hint-trail" aria-hidden="true" ref={trailRef}>
+            {trailSize.w > 0 && trailSize.h > 0 && (
+              <svg
+                className="hm-music-hint-swirl"
+                viewBox={`0 0 ${trailSize.w} ${trailSize.h}`}
+                preserveAspectRatio="none"
+                focusable="false"
+              >
+                <path
+                  className="hm-music-hint-swirl-path"
+                  d={swirlPath}
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  vectorEffect="non-scaling-stroke"
+                />
+                <path
+                  className="hm-music-hint-arrowhead"
+                  d={`M ${trailSize.w / 2} ${trailSize.h} L ${trailSize.w / 2 - 15} ${
+                    trailSize.h - 30
+                  } L ${trailSize.w / 2 + 15} ${trailSize.h - 30} Z`}
+                  fill="currentColor"
+                  stroke="none"
+                />
+              </svg>
+            )}
           </div>
         </div>
       )}
