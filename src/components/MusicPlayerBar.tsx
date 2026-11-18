@@ -2,6 +2,9 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'gatsby';
 import { trackBySlug, useMusicPlayer, type MusicTrack } from './MusicPlayerProvider';
 
+/** localStorage flag so the "player is here" callout appears on first visit only. */
+const HINT_SEEN_KEY = 'hm-music-hint-seen';
+
 /**
  * Trochoid coil: x = r·sin(t), y = c·t − r·cos(t) + r. When the vertical pitch is
  * shorter than the hoop circumference the curve genuinely loops back on itself,
@@ -107,11 +110,25 @@ const MusicPlayerBar: React.FC = () => {
 
   const swirlPath = useMemo(() => buildSwirl(trailSize.w, trailSize.h), [trailSize.w, trailSize.h]);
 
-  // Callout on the music pages, every visit for now.
+  // Callout on the music pages, once per browser. The seen flag is written the
+  // moment the callout is shown, so a reload never shoves it at the reader
+  // again — first visit only, as a cookie-equivalent in localStorage.
   useEffect(() => {
     if (typeof window === 'undefined') return;
     if (!window.location.pathname.startsWith('/music')) return;
+    let seen = false;
+    try {
+      seen = window.localStorage.getItem(HINT_SEEN_KEY) === '1';
+    } catch {
+      seen = false; // storage blocked: treat as first visit rather than hide forever
+    }
+    if (seen) return;
     setShowHint(true);
+    try {
+      window.localStorage.setItem(HINT_SEEN_KEY, '1');
+    } catch {
+      // Non-fatal: the callout just re-appears next visit.
+    }
     const timer = window.setTimeout(() => setShowHint(false), 12000);
     return () => window.clearTimeout(timer);
   }, []);
