@@ -86,7 +86,7 @@ const MusicPlayerBar: React.FC = () => {
   const activeIndex = currentTrack ? queueTracks.findIndex((t) => t.slug === currentTrack.slug) : -1;
 
   return (
-    <div className={`hm-music-bar${currentTrack ? ' is-active' : ''}`} role="region" aria-label="Music player">
+    <>
       {showHint && (
         <div className="hm-music-hint" role="status">
           <div className="hm-music-hint-card">
@@ -126,7 +126,8 @@ const MusicPlayerBar: React.FC = () => {
         </div>
       )}
 
-      {currentTrack && (
+      <div className={`hm-music-bar${currentTrack ? ' is-active' : ''}`} role="region" aria-label="Music player">
+        {currentTrack && (
         <>
           <div className="hm-music-bar-inner">
             <div className="hm-music-bar-track">
@@ -294,8 +295,9 @@ const MusicPlayerBar: React.FC = () => {
             </div>
           )}
         </>
-      )}
-    </div>
+        )}
+      </div>
+    </>
   );
 };
 
