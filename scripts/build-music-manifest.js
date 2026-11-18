@@ -31,6 +31,23 @@ const STATIC_MUSIC_DIR = path.join(REPO_ROOT, 'static', 'images', 'music');
 const MANIFEST_PATH = path.join(REPO_ROOT, 'src', 'data', 'music-manifest.json');
 const CONFIG_PATH = path.join(REPO_ROOT, 'src', 'data', 'music-config.json');
 
+/**
+ * Remove song-structure markers that lyric generators embed in the lyrics tag,
+ * e.g. "**[Chorus]**", "[Verse 2]", "(Bridge)", "**Outro**".
+ * Only whole-line markers are removed — a lyric that merely mentions a word is kept.
+ */
+const STRUCTURE_LABEL =
+  /^\s*[*([]*\s*(intro|verse|chorus|pre[- ]?chorus|post[- ]?chorus|bridge|hook|refrain|outro|instrumental|solo|breakdown|interlude)\b[^\n]*?[)\]]\s*[)*]*\s*$/i;
+
+function stripStructureLabels(text) {
+  return text
+    .split(/\r?\n/)
+    .filter((line) => !STRUCTURE_LABEL.test(line))
+    .join('\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
 const AUDIO_EXTENSIONS = new Set(['.mp3', '.m4a', '.aac', '.flac', '.ogg', '.oga', '.wav']);
 const COVER_WIDTHS = [160, 400, 800];
 
@@ -186,7 +203,10 @@ async function main() {
     const bitrate = metadata.format && metadata.format.bitrate ? Math.round(metadata.format.bitrate / 1000) : null;
     const sampleRate = metadata.format && metadata.format.sampleRate ? metadata.format.sampleRate : null;
     const lossless = metadata.format ? Boolean(metadata.format.lossless) : false;
-    const lyrics = Array.isArray(common.lyrics) && common.lyrics[0] ? String(common.lyrics[0].text || '') : null;
+    const rawLyrics = Array.isArray(common.lyrics) && common.lyrics[0] ? String(common.lyrics[0].text || '') : null;
+    // Suno (and other generators) embed structure markers like "**[Chorus]**"
+    // in the lyrics tag. Those are production notes, not lyrics — strip them.
+    const lyrics = rawLyrics ? stripStructureLabels(rawLyrics) : null;
 
     let slug = slugify(`${artist}-${title}`);
     if (!slug) slug = slugify(path.basename(file, path.extname(file)));
