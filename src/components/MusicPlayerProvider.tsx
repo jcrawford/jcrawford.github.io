@@ -14,7 +14,17 @@ export interface MusicTrack {
   albumSlug: string;
   year: number | null;
   trackNumber: number | null;
+  /** ISO timestamp from the file's creation comment (Suno), if present. */
+  createdAt?: string | null;
   duration: number;
+  /** Technical metadata for the track details section. */
+  format?: {
+    codec: string | null;
+    bitrateKbps: number | null;
+    sampleRate: number | null;
+    lossless: boolean;
+  };
+  lyrics?: string | null;
   src: string;
   file: string;
   covers: Record<string, MusicCoverVariant>;

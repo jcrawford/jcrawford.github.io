@@ -86,7 +86,20 @@ const SupportBar: React.FC = () => {
 
   const context = getContext();
   const config = supportConfigs[context];
-  const phrase = config.phrases[Math.floor(Math.random() * config.phrases.length)];
+  // Pick the phrase exactly once per mount. Picking during render would
+  // re-roll on every parent re-render (e.g. the music player's progress
+  // ticks), making the bar flicker through phrases.
+  const [phrase, setPhrase] = useState(() => {
+    const c = getContext();
+    return supportConfigs[c].phrases[Math.floor(Math.random() * supportConfigs[c].phrases.length)];
+  });
+
+  // Re-roll when the page context actually changes (brewing → tech etc.),
+  // not when a parent re-renders.
+  const contextKey = getContext();
+  useEffect(() => {
+    setPhrase(supportConfigs[contextKey].phrases[Math.floor(Math.random() * supportConfigs[contextKey].phrases.length)]);
+  }, [contextKey]);
 
   useEffect(() => {
     const dismissedUntil = localStorage.getItem('support-bar-dismissed');

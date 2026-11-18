@@ -115,9 +115,64 @@ const MusicTrackPage: React.FC<PageProps<Record<string, never>, MusicTrackContex
           </div>
         </header>
 
-        <p className="hm-music-single-note">
-          Streaming from <a href={track.src}>the music host</a>.
-        </p>
+        <section className="hm-music-single-details" aria-label="Track details">
+          <h2 className="hm-music-details-title">Track details</h2>
+          <dl className="hm-music-details-grid">
+            {track.createdAt && (
+              <>
+                <dt>Created</dt>
+                <dd>
+                  {new Date(track.createdAt).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    timeZone: 'UTC',
+                  })}
+                </dd>
+              </>
+            )}
+            <dt>Artist</dt>
+            <dd>{track.artist}</dd>
+            <dt>Album</dt>
+            <dd>{track.album}</dd>
+            {track.year && (
+              <>
+                <dt>Year</dt>
+                <dd>{track.year}</dd>
+              </>
+            )}
+            <dt>Length</dt>
+            <dd>{formatDuration(track.duration)}</dd>
+            {track.format?.codec && (
+              <>
+                <dt>Format</dt>
+                <dd>
+                  {track.format.codec}
+                  {track.format.sampleRate ? ` · ${track.format.sampleRate.toLocaleString('en-US')} Hz` : ''}
+                </dd>
+              </>
+            )}
+            {track.format?.bitrateKbps ? (
+              <>
+                <dt>Bitrate</dt>
+                <dd>{track.format.bitrateKbps.toLocaleString('en-US')} kbps</dd>
+              </>
+            ) : null}
+            {track.format?.lossless && (
+              <>
+                <dt>Quality</dt>
+                <dd>Lossless</dd>
+              </>
+            )}
+          </dl>
+        </section>
+
+        {track.lyrics && (
+          <section className="hm-music-single-lyrics" aria-label="Lyrics">
+            <h2 className="hm-music-details-title">Lyrics</h2>
+            <pre className="hm-music-lyrics-text">{track.lyrics}</pre>
+          </section>
+        )}
 
         <p className="hm-music-back">
           <Link to="/music/">← All music</Link>

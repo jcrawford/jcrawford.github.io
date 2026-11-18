@@ -162,6 +162,67 @@
   align-items: center;
 }
 
+/* Track details grid */
+
+.hm-music-single-details,
+.hm-music-single-lyrics {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  max-width: 720px;
+}
+
+.hm-music-details-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+}
+
+.hm-music-details-grid {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 1.5rem;
+  row-gap: 0.55rem;
+  margin: 0;
+}
+
+.hm-music-details-grid dt {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--hm-accent, #7cc4ff);
+  padding-top: 0.1rem;
+}
+
+.hm-music-details-grid dd {
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+/* Lyrics */
+
+.hm-music-lyrics-text {
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: inherit;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+@media (max-width: 640px) {
+  .hm-music-details-grid {
+    grid-template-columns: 1fr;
+    row-gap: 0.2rem;
+  }
+
+  .hm-music-details-grid dt {
+    margin-top: 0.6rem;
+  }
+}
+
 .hm-music-single-share {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.28);

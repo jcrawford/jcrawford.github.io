@@ -160,6 +160,30 @@ async function main() {
     const year = common.year || null;
     const trackNo = common.track && common.track.no ? common.track.no : null;
 
+    // Suno writes "created=<ISO timestamp>" inside the comment tag. Extract it
+    // as the song's creation date; everything else in the comment (the suno
+    // banner, the id) is internal noise and stays out of the manifest.
+    let createdAt = null;
+    let derivedYear = year;
+    const commentEntry = Array.isArray(common.comment) ? common.comment[0] : common.comment;
+    const commentText =
+      commentEntry && typeof commentEntry === 'object' ? commentEntry.text || '' : String(commentEntry || '');
+    const createdMatch = commentText.match(/created=([^\s;]+)/i);
+    if (createdMatch) {
+      const parsed = new Date(createdMatch[1]);
+      if (!Number.isNaN(parsed.getTime())) {
+        createdAt = parsed.toISOString();
+        if (!derivedYear) derivedYear = parsed.getUTCFullYear();
+      }
+    }
+
+    // Everything shown on the site, except the comment (internal).
+    const codec = metadata.format && metadata.format.codec ? String(metadata.format.codec) : null;
+    const bitrate = metadata.format && metadata.format.bitrate ? Math.round(metadata.format.bitrate / 1000) : null;
+    const sampleRate = metadata.format && metadata.format.sampleRate ? metadata.format.sampleRate : null;
+    const lossless = metadata.format ? Boolean(metadata.format.lossless) : false;
+    const lyrics = Array.isArray(common.lyrics) && common.lyrics[0] ? String(common.lyrics[0].text || '') : null;
+
     let slug = slugify(`${artist}-${title}`);
     if (!slug) slug = slugify(path.basename(file, path.extname(file)));
     let unique = slug;
@@ -176,9 +200,12 @@ async function main() {
       artist,
       album,
       albumSlug: slugify(album) || 'singles',
-      year,
+      year: derivedYear,
       trackNumber: trackNo,
+      createdAt,
       duration: Math.round(metadata.format && metadata.format.duration ? metadata.format.duration : 0),
+      format: { codec, bitrateKbps: bitrate, sampleRate, lossless },
+      lyrics,
       src: `${baseUrl}/${relKey.split('/').map(encodeURIComponent).join('/')}`,
       file: relKey,
       covers,
