@@ -160,15 +160,19 @@ async function main() {
     const year = common.year || null;
     const trackNo = common.track && common.track.no ? common.track.no : null;
 
-    // Suno writes "created=<ISO timestamp>" inside the comment tag. Extract it
-    // as the song's creation date; everything else in the comment (the suno
-    // banner, the id) is internal noise and stays out of the manifest.
+    // The creation date lives in the comment tag. Suno writes
+    // "created=<ISO timestamp>"; retagged files may use
+    // "created on <YYYY-MM-DD>" or a bare date. Comment content is internal
+    // and never surfaces on the site.
     let createdAt = null;
     let derivedYear = year;
     const commentEntry = Array.isArray(common.comment) ? common.comment[0] : common.comment;
     const commentText =
       commentEntry && typeof commentEntry === 'object' ? commentEntry.text || '' : String(commentEntry || '');
-    const createdMatch = commentText.match(/created=([^\s;]+)/i);
+    const createdMatch =
+      commentText.match(/created=([^\s;]+)/i) ||
+      commentText.match(/created on\s*:?\s*(\d{4}-\d{2}-\d{2})/i) ||
+      commentText.match(/\b(\d{4}-\d{2}-\d{2})\b/);
     if (createdMatch) {
       const parsed = new Date(createdMatch[1]);
       if (!Number.isNaN(parsed.getTime())) {

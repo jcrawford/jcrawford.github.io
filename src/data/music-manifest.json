@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T16:42:50.453Z",
+  "generatedAt": "2026-11-18T16:50:54.971Z",
   "baseUrl": "https://pub-8756a8dd5c654be6b426503a223749bc.r2.dev",
   "tracks": [
     {
@@ -37,14 +37,14 @@
       }
     },
     {
-      "slug": "bitingchart9669-she-s-my-wife",
+      "slug": "joseph-crawford-she-s-my-wife",
       "title": "She's My Wife",
-      "artist": "bitingchart9669",
+      "artist": "Joseph Crawford",
       "album": "Singles",
       "albumSlug": "singles",
       "year": 2026,
       "trackNumber": null,
-      "createdAt": "2026-11-16T16:25:55.794Z",
+      "createdAt": "2026-11-16T00:00:00.000Z",
       "duration": 292,
       "format": {
         "codec": "MPEG 1 Layer 3",
@@ -57,16 +57,16 @@
       "file": "She's My Wife.mp3",
       "covers": {
         "160": {
-          "jpg": "/images/music/bitingchart9669-she-s-my-wife/cover_160w.jpg",
-          "webp": "/images/music/bitingchart9669-she-s-my-wife/cover_160w.webp"
+          "jpg": "/images/music/joseph-crawford-she-s-my-wife/cover_160w.jpg",
+          "webp": "/images/music/joseph-crawford-she-s-my-wife/cover_160w.webp"
         },
         "400": {
-          "jpg": "/images/music/bitingchart9669-she-s-my-wife/cover_400w.jpg",
-          "webp": "/images/music/bitingchart9669-she-s-my-wife/cover_400w.webp"
+          "jpg": "/images/music/joseph-crawford-she-s-my-wife/cover_400w.jpg",
+          "webp": "/images/music/joseph-crawford-she-s-my-wife/cover_400w.webp"
         },
         "800": {
-          "jpg": "/images/music/bitingchart9669-she-s-my-wife/cover_800w.jpg",
-          "webp": "/images/music/bitingchart9669-she-s-my-wife/cover_800w.webp"
+          "jpg": "/images/music/joseph-crawford-she-s-my-wife/cover_800w.jpg",
+          "webp": "/images/music/joseph-crawford-she-s-my-wife/cover_800w.webp"
         }
       }
     }
@@ -93,7 +93,7 @@
       },
       "trackSlugs": [
         "bitingchart9669-don-t-let-the-green-fool-you",
-        "bitingchart9669-she-s-my-wife"
+        "joseph-crawford-she-s-my-wife"
       ]
     }
   ]
