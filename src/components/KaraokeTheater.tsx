@@ -55,6 +55,18 @@ const KaraokeTheater: React.FC<KaraokeTheaterProps> = ({ lines, coverUrl, title,
     return () => document.body.classList.remove('hm-theater-open');
   }, []);
 
+  // Esc closes the theater (desktop keyboards / phone keyboards with Esc).
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [onClose]);
+
   const progress = duration > 0 ? Math.min(100, (currentTime / duration) * 100) : 0;
 
   const renderLine = (line: LyricLine, isCurrent: boolean) => {
