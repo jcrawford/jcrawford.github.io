@@ -22,19 +22,12 @@ const formatDuration = (seconds: number): string => {
   return `${mins}:${secs.toString().padStart(2, '0')}`;
 };
 
-/** Coarse pointer + narrow viewport ≈ phone. Desktop gets a manual open button. */
-const isMobileLike = (): boolean =>
-  typeof window !== 'undefined' &&
-  window.matchMedia('(pointer: coarse)').matches &&
-  window.innerWidth <= 640;
-
 /**
  * /music-2/<slug>/ — karaoke-theater test bed.
  *
  * Same manifest data and same page chrome as /music/<slug>/; the difference is
- * behavior: on phones, tapping Play drops into the fullscreen karaoke theater
- * (black stage, huge lyrics, word fill). Desktop shows the same page plus an
- * "Open karaoke view" button so both form factors are testable.
+ * the extra "Open karaoke view" button on every form factor. Opening is always
+ * an explicit user action — playback never auto-opens the theater.
  */
 const MusicTrackTheaterPage: React.FC<PageProps<Record<string, never>, MusicTrackContext>> = ({ pageContext }) => {
   const track: MusicTrack | undefined = trackBySlug(pageContext.slug);
@@ -78,13 +71,6 @@ const MusicTrackTheaterPage: React.FC<PageProps<Record<string, never>, MusicTrac
   const activeIndex = isCurrent ? activeLineIndex(timedLines, currentTime) : -1;
   const theaterCover = track.covers?.['800']?.jpg || track.covers?.['400']?.jpg || '';
 
-  // Play tap on a phone: start playback AND open the theater in one gesture.
-  const handlePlay = () => {
-    if (isCurrent) toggle();
-    else play(track.slug, 'song-page');
-    if (isMobileLike()) setTheaterOpen(true);
-  };
-
   return (
     <Layout>
       <div className="hm-container hm-music hm-music-single">
@@ -117,7 +103,14 @@ const MusicTrackTheaterPage: React.FC<PageProps<Record<string, never>, MusicTrac
               {track.duration ? ` · ${formatDuration(track.duration)}` : ''}
             </p>
             <div className="hm-music-single-actions">
-              <button type="button" className="hm-cta-btn hm-music-single-play" onClick={handlePlay}>
+              <button
+                type="button"
+                className="hm-cta-btn hm-music-single-play"
+                onClick={() => {
+                  if (isCurrent) toggle();
+                  else play(track.slug, 'song-page');
+                }}
+              >
                 {isCurrent && isPlaying ? '❚❚ Pause' : '▶ Play'}
               </button>
               <button
@@ -136,15 +129,14 @@ const MusicTrackTheaterPage: React.FC<PageProps<Record<string, never>, MusicTrac
               >
                 {linkCopied ? 'Link copied ✓' : 'Copy link'}
               </button>
-              {!isMobileLike() && (
-                <button
-                  type="button"
-                  className="hm-music-single-share"
-                  onClick={() => setTheaterOpen(true)}
-                >
-                  Open karaoke view
-                </button>
-              )}
+              {/* Always available: explicit open (auto-open stays a mobile behavior) */}
+              <button
+                type="button"
+                className="hm-music-single-share"
+                onClick={() => setTheaterOpen(true)}
+              >
+                Open karaoke view
+              </button>
             </div>
           </div>
         </header>
