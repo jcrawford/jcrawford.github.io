@@ -57,7 +57,9 @@ const SyncedLyrics: React.FC<SyncedLyricsProps> = ({
             }}
             title="Jump to this line"
           >
-            {line.words && line.words.length > 0 ? (
+            {line.text.trim() === '' ? (
+              '♪'
+            ) : line.words && line.words.length > 0 ? (
               // Word-level timings: each word fills in as it is sung.
               line.words.map((word, wordIndex) => {
                 const isSung = isCurrent && currentTime >= word.start;
@@ -68,9 +70,8 @@ const SyncedLyrics: React.FC<SyncedLyricsProps> = ({
                   </React.Fragment>
                 );
               })
-            ) : line.text.trim() === '' ? (
-              '♪'
             ) : (
+              // Plain LRC line: the whole line highlights once its time passes.
               line.text
             )}
           </button>
