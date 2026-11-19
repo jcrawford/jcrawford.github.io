@@ -1,6 +1,4 @@
-// Verify the clip-path karaoke fill after the "word vanishes" fix:
-// - base word dims to its normal state (opacity stays 1, never black/transparent)
-// - lit overlay child exists, is white, and its clip inset shrinks over time
+// Verify green fill color + tightened row spacing after CSS changes.
 const WebSocket = require('ws');
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -34,45 +32,43 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   await send('Page.enable');
   await send('Page.navigate', { url: 'http://localhost:8100/music/joseph-crawford-she-s-my-wife/' });
   await sleep(6000);
+  const res1 = await evalJs(
+    `(() => {
+      const row = document.querySelector('.hm-lyric-line');
+      const rs = getComputedStyle(row);
+      return JSON.stringify({ rowPad: rs.padding, rowLH: rs.lineHeight, rowH: Math.round(row.getBoundingClientRect().height) });
+    })()`
+  );
+  console.log('spacing:', res1);
+
   await evalJs(
     "[...document.querySelectorAll('button')].find(b => b.className.includes('hm-music-single-play')).click()"
   );
   await sleep(800);
-
-  const probe = `(() => {
-    const w = [...document.querySelectorAll('.hm-lyric-line.is-current .hm-lyric-word')]
-      .find(x => x.className.includes('is-speaking'));
-    if (!w) return JSON.stringify({ none: true, line: document.querySelector('.hm-lyric-line.is-current')?.textContent.trim().slice(0,30) });
-    const fill = w.querySelector('.hm-lyric-word-fill');
-    const baseStyle = getComputedStyle(w);
-    return JSON.stringify({
-      word: w.textContent.slice(0, -fill?.textContent.length || 0) === w.textContent ? w.textContent : w.textContent,
-      baseColor: baseStyle.color,
-      baseOpacity: baseStyle.opacity,
-      fillPresent: !!fill,
-      fillColor: fill ? getComputedStyle(fill).color : null,
-      clip: fill ? (fill.style.clipPath || getComputedStyle(fill).clipPath) : null
-    });
-  })()`;
-
-  // t=18.75 -> "behind," (18.37-19.30): base dim, white fill clipped at ~41%.
   await evalJs("document.querySelector('audio').currentTime = 18.75");
   await sleep(900);
-  const a = JSON.parse(await evalJs(probe));
-  console.log('t=18.75:');
-  console.log('  base color:', a.baseColor, '| opacity:', a.baseOpacity, '(must NOT be transparent/black)');
-  console.log('  fill overlay:', a.fillPresent, '| fill color:', a.fillColor, '| clip:', a.clip);
+  const res2 = await evalJs(
+    `(() => {
+      const w = document.querySelector('.hm-lyric-line.is-current .hm-lyric-word.is-speaking .hm-lyric-word-fill');
+      if (!w) return 'no fill found';
+      const s = getComputedStyle(w);
+      return JSON.stringify({ fillColor: s.color, shadow: s.textShadow.slice(0, 44) });
+    })()`
+  );
+  console.log('fill:', res2);
 
-  await evalJs("document.querySelector('audio').currentTime = 19.05");
-  await sleep(800);
-  const b = JSON.parse(await evalJs(probe));
-  console.log('t=19.05 (deeper into same word):');
-  console.log('  clip:', b.clip, '— right inset must be SMALLER than 59%');
-
-  await evalJs("document.querySelector('audio').currentTime = 19.6");
-  await sleep(800);
-  const c = JSON.parse(await evalJs(probe));
-  console.log('t=19.6 next word "Just" 19.3-19.7 (~75%):', c.fillPresent ? c.clip : c.none ? 'none? ' + c.line : c.clip);
+  // Static song must inherit the same tightened rhythm.
+  await send('Page.navigate', { url: 'http://localhost:8100/music/bitingchart9669-don-t-let-the-green-fool-you/' });
+  await sleep(6000);
+  const res3 = await evalJs(
+    `(() => {
+      const row = document.querySelector('.hm-lyric-line');
+      if (!row) return 'no rows';
+      const rs = getComputedStyle(row);
+      return JSON.stringify({ rows: document.querySelectorAll('.hm-lyric-line').length, rowH: Math.round(row.getBoundingClientRect().height), rowPad: rs.padding });
+    })()`
+  );
+  console.log('static song spacing:', res3);
   ws.close();
 })().catch((e) => {
   console.error('FAIL:', e.message);

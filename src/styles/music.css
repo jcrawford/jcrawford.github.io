@@ -252,11 +252,11 @@ img.is-cover-missing {
   text-align: left;
   background: none;
   border: 0;
-  padding: 0.32rem 0.5rem;
+  padding: 0.18rem 0.5rem;
   margin: 0;
   font-family: inherit;
   font-size: 1.02rem;
-  line-height: 1.55;
+  line-height: 1.45;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.38);
   cursor: pointer;
@@ -303,7 +303,7 @@ img.is-cover-missing {
 
 .hm-lyric-line.is-current .hm-lyric-word.is-sung {
   color: #ffffff;
-  text-shadow: 0 0 16px rgba(130, 190, 255, 0.5);
+  text-shadow: 0 0 16px rgba(101, 188, 123, 0.45);
 }
 
 /* Word currently being sung: an absolutely-positioned lit copy paints over the
@@ -319,8 +319,8 @@ img.is-cover-missing {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  color: #ffffff;
-  text-shadow: 0 0 16px rgba(130, 190, 255, 0.5);
+  color: var(--hybridmag-color-primary, #65bc7b);
+  text-shadow: 0 0 16px rgba(101, 188, 123, 0.45);
 }
 
 .hm-lyrics-panel.is-live .hm-lyric-line.is-current .hm-lyric-word.is-sung {

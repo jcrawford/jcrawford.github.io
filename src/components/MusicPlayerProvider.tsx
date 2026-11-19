@@ -180,6 +180,25 @@ export const MusicPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
   // restore must never override a deep-linked song.
   const didCueRef = useRef(false);
 
+  // Lyric/karaoke smoothness: `timeupdate` fires only ~4x/second, which makes
+  // word-fill paint in 250ms jumps. While playing, a rAF loop samples the
+  // audio element's clock directly (60fps) and pushes it into state. The
+  // `timeupdate` handler below stays as the fallback that also persists
+  // listening position.
+  useEffect(() => {
+    if (!isPlaying) return;
+    let frame = 0;
+    const tick = () => {
+      const audio = audioRef.current;
+      if (audio && !audio.paused) {
+        setCurrentTime(audio.currentTime);
+        frame = requestAnimationFrame(tick);
+      }
+    };
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
+  }, [isPlaying]);
+
   const currentTrack = useMemo(
     () => (currentSlug ? musicTracks.find((track) => track.slug === currentSlug) || null : null),
     [currentSlug]
