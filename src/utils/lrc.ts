@@ -27,8 +27,15 @@ export interface LyricLine {
 }
 
 const TIMESTAMP = /\[(\d{1,3}):(\d{2})(?:[.:](\d{1,3}))?\]/g;
-/** A word-level timestamp inside the line text (enhanced LRC / A2 extension). */
+/** A word-level timestamp inside the line text (enhanced LRC / A2 extension): `<mm:ss.xx>word`. */
 const WORD_STAMP = /<(\d{1,3}):(\d{2})(?:[.:](\d{1,3}))?>/g;
+
+const stampToSeconds = (minutesRaw: string, secondsRaw: string, fractionRaw?: string): number => {
+  const minutes = Number(minutesRaw);
+  const seconds = Number(secondsRaw);
+  const fraction = fractionRaw ? Number(fractionRaw.padEnd(3, '0')) / 1000 : 0;
+  return minutes * 60 + seconds + fraction;
+};
 
 export const parseLrc = (raw: string | null | undefined): LyricLine[] => {
   if (!raw) return [];
@@ -42,19 +49,63 @@ export const parseLrc = (raw: string | null | undefined): LyricLine[] => {
     const stamps = Array.from(line.matchAll(TIMESTAMP));
     if (stamps.length === 0) return;
 
-    const text = line.replace(TIMESTAMP, '').replace(WORD_STAMP, '').trim();
+    const body = line.replace(TIMESTAMP, '').trim();
+    const wordStamps = Array.from(body.matchAll(WORD_STAMP));
+
+    let text = body.replace(WORD_STAMP, '').trim();
+    let words: LyricWord[] | undefined;
+
+    if (wordStamps.length > 0) {
+      // Enhanced LRC: every word is preceded by its start time. Each word runs
+      // until the next word's stamp; the final word's end is patched after the
+      // lines are sorted (next line's start).
+      words = [];
+      wordStamps.forEach((match, index) => {
+        const next = wordStamps[index + 1];
+        const wordText = body
+          .slice(match.index + match[0].length, next ? next.index : undefined)
+          .replace(WORD_STAMP, '')
+          .trim();
+        if (!wordText) return;
+        words!.push({
+          w: wordText,
+          start: stampToSeconds(match[1], match[2], match[3]) + offset,
+          end: next ? stampToSeconds(next[1], next[2], next[3]) + offset : Number.NaN,
+        });
+      });
+      if (words.length === 0) words = undefined;
+    }
+
     stamps.forEach((stamp) => {
-      const minutes = Number(stamp[1]);
-      const seconds = Number(stamp[2]);
-      const fraction = stamp[3] ? Number(stamp[3].padEnd(3, '0')) / 1000 : 0;
-      const time = minutes * 60 + seconds + fraction + offset;
+      const time = stampToSeconds(stamp[1], stamp[2], stamp[3]) + offset;
       if (Number.isFinite(time) && time >= 0) {
-        lines.push({ time, text });
+        lines.push({ time, text: text || '', words });
       }
     });
   });
 
-  return lines.sort((a, b) => a.time - b.time);
+  const sorted = lines.sort((a, b) => a.time - b.time);
+
+  // Patch each line's final word: it ends where the next line starts.
+  sorted.forEach((line, index) => {
+    if (!line.words || line.words.length === 0) return;
+    const nextLine = sorted[index + 1];
+    const last = line.words[line.words.length - 1];
+    if (!Number.isFinite(last.end)) last.end = nextLine ? nextLine.time : last.start + 1;
+    // Also correct any word whose end NaN slipped through empty inter-stamp gaps.
+    line.words.forEach((word, wordIndex) => {
+      if (!Number.isFinite(word.end)) {
+        word.end = line.words![wordIndex + 1]?.start ?? last.end;
+      }
+    });
+    // Words must never extend past the line's own window or before their start.
+    line.words.forEach((word) => {
+      if (word.end > line.time + 60) word.end = last.end;
+      if (word.end < word.start) word.end = word.start;
+    });
+  });
+
+  return sorted;
 };
 
 /**

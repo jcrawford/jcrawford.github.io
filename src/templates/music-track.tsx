@@ -3,7 +3,7 @@ import { Link, PageProps } from 'gatsby';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import { trackBySlug, useMusicPlayer, type MusicTrack } from '../components/MusicPlayerProvider';
-import SyncedLyrics from '../components/SyncedLyrics';
+import Lyrics from '../components/Lyrics';
 import lyricsIndex from '../data/music-lyrics.json';
 import wordLyricsIndex from '../data/music-word-lyrics.json';
 import { activeLineIndex, parseLrc, type LyricLine } from '../utils/lrc';
@@ -172,11 +172,12 @@ const MusicTrackPage: React.FC<PageProps<Record<string, never>, MusicTrackContex
           </dl>
         </section>
 
-        {timedLines.length > 0 ? (
+        {(timedLines.length > 0 || track.lyrics) && (
           <section className="hm-music-single-lyrics" aria-label="Lyrics">
             <h2 className="hm-music-details-title">Lyrics</h2>
-            <SyncedLyrics
+            <Lyrics
               lines={timedLines}
+              staticText={track.lyrics ?? ''}
               activeIndex={isCurrent ? activeIndex : -1}
               currentTime={isCurrent ? currentTime : -1}
               isActive={isCurrent}
@@ -187,13 +188,6 @@ const MusicTrackPage: React.FC<PageProps<Record<string, never>, MusicTrackContex
               }}
             />
           </section>
-        ) : (
-          track.lyrics && (
-            <section className="hm-music-single-lyrics" aria-label="Lyrics">
-              <h2 className="hm-music-details-title">Lyrics</h2>
-              <pre className="hm-music-lyrics-text">{track.lyrics}</pre>
-            </section>
-          )
         )}
 
         <p className="hm-music-back">

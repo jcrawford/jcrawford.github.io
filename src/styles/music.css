@@ -277,6 +277,16 @@ img.is-cover-missing {
   font-size: 0.9rem;
 }
 
+/* Static mode (untimed lyrics): same row rhythm, no interaction affordances */
+
+.hm-lyric-line.is-static {
+  cursor: default;
+}
+
+.hm-lyric-line.is-static:hover {
+  color: rgba(255, 255, 255, 0.38);
+}
+
 /* Active line: the karaoke highlight */
 
 .hm-lyric-line.is-current {
