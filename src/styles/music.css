@@ -462,20 +462,6 @@ body.hm-theater-open .hm-music-hint {
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
   touch-action: pan-y;
-  mask-image: linear-gradient(
-    to bottom,
-    transparent 0,
-    #000 14%,
-    #000 82%,
-    transparent 100%
-  );
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    transparent 0,
-    #000 14%,
-    #000 82%,
-    transparent 100%
-  );
 }
 
 .hm-theater-line {
