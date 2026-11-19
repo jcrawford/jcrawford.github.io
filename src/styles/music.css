@@ -337,6 +337,278 @@ img.is-cover-missing {
   }
 }
 
+/* ---------------------------------------------------------------------------
+   Karaoke theater (/music-2/): fullscreen overlay, huge karaoke lyrics
+   --------------------------------------------------------------------------- */
+
+/* KARAOKE BETA tag on theater test pages */
+.hm-music-beta-tag {
+  margin-left: 0.6rem;
+  padding: 0.1rem 0.5rem;
+  border: 1px solid var(--hybridmag-color-primary, #65bc7b);
+  border-radius: 999px;
+  color: var(--hybridmag-color-primary, #65bc7b);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+/* While the theater is open: freeze the page and hide every other fixed layer */
+body.hm-theater-open {
+  overflow: hidden;
+}
+
+body.hm-theater-open .hm-music-bar,
+body.hm-theater-open .support-bar,
+body.hm-theater-open .hm-music-hint {
+  display: none !important;
+}
+
+.hm-theater {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  /* Fake fullscreen: 100dvh follows mobile URL-bar collapse; a fixed inset:0
+     element already spans the visual viewport, dvh protects on resize. */
+  height: 100dvh;
+  color: #fff;
+  overscroll-behavior: none;
+}
+
+.hm-theater-backdrop {
+  position: absolute;
+  inset: -60px;
+  background-size: cover;
+  background-position: center;
+  filter: blur(48px) brightness(0.45) saturate(1.15);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.hm-theater-stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+/* Header: cover, title, close */
+
+.hm-theater-head {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: calc(env(safe-area-inset-top, 0px) + 0.7rem) 1rem 0.7rem;
+}
+
+.hm-theater-cover {
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  object-fit: cover;
+  flex: 0 0 auto;
+}
+
+.hm-theater-meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.hm-theater-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hm-theater-artist {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.55);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hm-theater-close {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+/* Lyric stage: the star of the show */
+
+.hm-theater-lyrics {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 1rem 1.2rem;
+  scroll-padding: 40vh;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    #000 14%,
+    #000 82%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    #000 14%,
+    #000 82%,
+    transparent 100%
+  );
+}
+
+.hm-theater-line {
+  font-size: clamp(2rem, 11vw, 3.2rem);
+  line-height: 1.22;
+  font-weight: 800;
+  text-align: center;
+  padding: 0.55rem 0.2rem;
+  color: rgba(255, 255, 255, 0.28);
+  transition: color 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
+  cursor: pointer;
+}
+
+.hm-theater-line.is-past {
+  color: rgba(255, 255, 255, 0.14);
+  transform: scale(0.86);
+  transform-origin: center;
+}
+
+.hm-theater-line.is-current {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.hm-theater-break {
+  display: block;
+  font-size: 1rem;
+  opacity: 0.35;
+}
+
+/* Words: dim base + green fill copy, same mechanics as the inline panel */
+
+.hm-theater-word {
+  position: relative;
+}
+
+.hm-theater-word.is-sung {
+  color: #eafff1;
+  text-shadow: 0 0 24px rgba(101, 188, 123, 0.55);
+}
+
+.hm-theater-word-fill {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  color: var(--hybridmag-color-primary, #65bc7b);
+  text-shadow: 0 0 24px rgba(101, 188, 123, 0.6);
+}
+
+/* Controls pill */
+
+.hm-theater-controls {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.7rem 1rem calc(env(safe-area-inset-bottom, 0px) + 0.9rem);
+}
+
+.hm-theater-ctl {
+  flex: 0 0 auto;
+  min-width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.hm-theater-play {
+  background: var(--hybridmag-color-primary, #65bc7b);
+  color: #06210f;
+  font-size: 1.15rem;
+}
+
+.hm-theater-seek {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.hm-theater-time {
+  font-size: 0.68rem;
+  font-variant-numeric: tabular-nums;
+  color: rgba(255, 255, 255, 0.6);
+  flex: 0 0 auto;
+}
+
+.hm-theater-seek input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(
+    to right,
+    var(--hybridmag-color-primary, #65bc7b) var(--hm-theater-progress, 0%),
+    rgba(255, 255, 255, 0.18) var(--hm-theater-progress, 0%)
+  );
+  outline: none;
+  touch-action: manipulation;
+}
+
+.hm-theater-seek input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  border: 0;
+}
+
+@media (min-width: 641px) {
+  /* Desktop preview of the theater: centered stage with side gutters */
+  .hm-theater .hm-theater-stage {
+    max-width: 720px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hm-theater-line {
+    transition: none;
+  }
+}
+
 @media (max-width: 640px) {
   .hm-music-details-grid {
     grid-template-columns: 1fr;

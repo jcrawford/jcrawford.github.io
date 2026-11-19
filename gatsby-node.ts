@@ -956,6 +956,23 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
         });
       }
       reporter.info(`Created ${musicManifest.tracks.length} music track page(s)`);
+
+      // Experimental karaoke-theater pages (/music-2/) — same manifest data,
+      // mobile play-tap opens the fullscreen karaoke overlay. Test bed before
+      // promoting the behavior to /music/.
+      createPage({
+        path: '/music-2',
+        component: path.resolve('./src/templates/music-index.tsx'),
+        context: {},
+      });
+      for (const track of musicManifest.tracks) {
+        createPage({
+          path: `/music-2/${track.slug}`,
+          component: path.resolve('./src/templates/music-track-theater.tsx'),
+          context: { slug: track.slug },
+        });
+      }
+      reporter.info(`Created ${musicManifest.tracks.length} karaoke-theater track page(s): /music-2/`);
     } else {
       reporter.info('Music manifest has no tracks, skipping music pages');
     }
