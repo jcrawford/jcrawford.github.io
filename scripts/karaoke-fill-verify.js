@@ -30,7 +30,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     return r.result.value;
   };
   await send('Page.enable');
-  await send('Page.navigate', { url: 'http://localhost:8100/music/joseph-crawford-she-s-my-wife/' });
+  await send('Page.navigate', { url: 'http://localhost:8100/music/she-s-my-wife/' });
   await sleep(6000);
   const res1 = await evalJs(
     `(() => {
@@ -58,7 +58,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   console.log('fill:', res2);
 
   // Static song must inherit the same tightened rhythm.
-  await send('Page.navigate', { url: 'http://localhost:8100/music/bitingchart9669-don-t-let-the-green-fool-you/' });
+  await send('Page.navigate', { url: 'http://localhost:8100/music/don-t-let-the-green-fool-you/' });
   await sleep(6000);
   const res3 = await evalJs(
     `(() => {

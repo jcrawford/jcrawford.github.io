@@ -21,7 +21,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   // Desktop viewport
   await send('Emulation.setDeviceMetricsOverride', { width: 1440, height: 900, deviceScaleFactor: 1, mobile: false });
   await send('Page.enable');
-  await send('Page.navigate', { url: 'http://localhost:8100/music/joseph-crawford-she-s-my-wife/' });
+  await send('Page.navigate', { url: 'http://localhost:8100/music/she-s-my-wife/' });
   await sleep(5000);
   const open = await evalJs(`(() => {
     const btns = [...document.querySelectorAll('button')].map(b => b.textContent.trim());
@@ -60,7 +60,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   await send('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 2, mobile: true });
   await send(' Emulation.setTouchEmulationEnabled', { enabled: true });
   await send('Emulation.setTouchEmulationEnabled', { enabled: true });
-  await send('Page.navigate', { url: 'http://localhost:8100/music/joseph-crawford-she-s-my-wife/' });
+  await send('Page.navigate', { url: 'http://localhost:8100/music/she-s-my-wife/' });
   await sleep(5000);
   const mobile = await evalJs(`(() => {
     const btn = [...document.querySelectorAll('button')].find(b => b.textContent.trim() === 'Open karaoke view');

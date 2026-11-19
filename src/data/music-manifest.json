@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-18T16:56:16.653Z",
+  "generatedAt": "2026-11-19T14:16:01.235Z",
   "baseUrl": "https://pub-8756a8dd5c654be6b426503a223749bc.r2.dev",
   "tracks": [
     {
-      "slug": "bitingchart9669-don-t-let-the-green-fool-you",
+      "slug": "don-t-let-the-green-fool-you",
       "title": "Don't Let the Green Fool You",
       "artist": "bitingchart9669",
       "album": "Singles",
@@ -23,21 +23,21 @@
       "file": "Don't Let the Green Fool You.mp3",
       "covers": {
         "160": {
-          "jpg": "/images/music/bitingchart9669-don-t-let-the-green-fool-you/cover_160w.jpg",
-          "webp": "/images/music/bitingchart9669-don-t-let-the-green-fool-you/cover_160w.webp"
+          "jpg": "/images/music/don-t-let-the-green-fool-you/cover_160w.jpg",
+          "webp": "/images/music/don-t-let-the-green-fool-you/cover_160w.webp"
         },
         "400": {
-          "jpg": "/images/music/bitingchart9669-don-t-let-the-green-fool-you/cover_400w.jpg",
-          "webp": "/images/music/bitingchart9669-don-t-let-the-green-fool-you/cover_400w.webp"
+          "jpg": "/images/music/don-t-let-the-green-fool-you/cover_400w.jpg",
+          "webp": "/images/music/don-t-let-the-green-fool-you/cover_400w.webp"
         },
         "800": {
-          "jpg": "/images/music/bitingchart9669-don-t-let-the-green-fool-you/cover_800w.jpg",
-          "webp": "/images/music/bitingchart9669-don-t-let-the-green-fool-you/cover_800w.webp"
+          "jpg": "/images/music/don-t-let-the-green-fool-you/cover_800w.jpg",
+          "webp": "/images/music/don-t-let-the-green-fool-you/cover_800w.webp"
         }
       }
     },
     {
-      "slug": "joseph-crawford-she-s-my-wife",
+      "slug": "she-s-my-wife",
       "title": "She's My Wife",
       "artist": "Joseph Crawford",
       "album": "Singles",
@@ -57,16 +57,16 @@
       "file": "She's My Wife.mp3",
       "covers": {
         "160": {
-          "jpg": "/images/music/joseph-crawford-she-s-my-wife/cover_160w.jpg",
-          "webp": "/images/music/joseph-crawford-she-s-my-wife/cover_160w.webp"
+          "jpg": "/images/music/she-s-my-wife/cover_160w.jpg",
+          "webp": "/images/music/she-s-my-wife/cover_160w.webp"
         },
         "400": {
-          "jpg": "/images/music/joseph-crawford-she-s-my-wife/cover_400w.jpg",
-          "webp": "/images/music/joseph-crawford-she-s-my-wife/cover_400w.webp"
+          "jpg": "/images/music/she-s-my-wife/cover_400w.jpg",
+          "webp": "/images/music/she-s-my-wife/cover_400w.webp"
         },
         "800": {
-          "jpg": "/images/music/joseph-crawford-she-s-my-wife/cover_800w.jpg",
-          "webp": "/images/music/joseph-crawford-she-s-my-wife/cover_800w.webp"
+          "jpg": "/images/music/she-s-my-wife/cover_800w.jpg",
+          "webp": "/images/music/she-s-my-wife/cover_800w.webp"
         }
       }
     }
@@ -79,21 +79,21 @@
       "year": 2026,
       "cover": {
         "160": {
-          "jpg": "/images/music/bitingchart9669-don-t-let-the-green-fool-you/cover_160w.jpg",
-          "webp": "/images/music/bitingchart9669-don-t-let-the-green-fool-you/cover_160w.webp"
+          "jpg": "/images/music/don-t-let-the-green-fool-you/cover_160w.jpg",
+          "webp": "/images/music/don-t-let-the-green-fool-you/cover_160w.webp"
         },
         "400": {
-          "jpg": "/images/music/bitingchart9669-don-t-let-the-green-fool-you/cover_400w.jpg",
-          "webp": "/images/music/bitingchart9669-don-t-let-the-green-fool-you/cover_400w.webp"
+          "jpg": "/images/music/don-t-let-the-green-fool-you/cover_400w.jpg",
+          "webp": "/images/music/don-t-let-the-green-fool-you/cover_400w.webp"
         },
         "800": {
-          "jpg": "/images/music/bitingchart9669-don-t-let-the-green-fool-you/cover_800w.jpg",
-          "webp": "/images/music/bitingchart9669-don-t-let-the-green-fool-you/cover_800w.webp"
+          "jpg": "/images/music/don-t-let-the-green-fool-you/cover_800w.jpg",
+          "webp": "/images/music/don-t-let-the-green-fool-you/cover_800w.webp"
         }
       },
       "trackSlugs": [
-        "bitingchart9669-don-t-let-the-green-fool-you",
-        "joseph-crawford-she-s-my-wife"
+        "don-t-let-the-green-fool-you",
+        "she-s-my-wife"
       ]
     }
   ]

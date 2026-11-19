@@ -33,7 +33,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     return r.result.value;
   };
   await send('Page.enable');
-  await send('Page.navigate', { url: 'http://localhost:8100/music/joseph-crawford-she-s-my-wife/' });
+  await send('Page.navigate', { url: 'http://localhost:8100/music/she-s-my-wife/' });
   await sleep(6000);
 
   // Take over the clock: pause audio, set an exact time, sample fill, repeat.

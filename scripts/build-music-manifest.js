@@ -208,8 +208,10 @@ async function main() {
     // in the lyrics tag. Those are production notes, not lyrics — strip them.
     const lyrics = rawLyrics ? stripStructureLabels(rawLyrics) : null;
 
-    let slug = slugify(`${artist}-${title}`);
+    // Slugs are title-only — the artist belongs in the artist field, not the URL.
+    let slug = slugify(title);
     if (!slug) slug = slugify(path.basename(file, path.extname(file)));
+    // Slug-collision safety net across artist names.
     let unique = slug;
     let n = 2;
     while (seenSlugs.has(unique)) unique = `${slug}-${n++}`;

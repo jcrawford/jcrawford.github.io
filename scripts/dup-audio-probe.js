@@ -2,7 +2,7 @@
 // live <audio> element + Media Session for 14s and report double-play signs.
 const WebSocket = require('ws');
 const PORT = 9222;
-const PAGE = process.argv[2] || 'http://localhost:8100/music/joseph-crawford-she-s-my-wife/';
+const PAGE = process.argv[2] || 'http://localhost:8100/music/she-s-my-wife/';
 const WATCH_SECONDS = Number(process.argv[3] || 14);
 
 (async () => {

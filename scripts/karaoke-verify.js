@@ -3,7 +3,7 @@
 // marked sung.
 const WebSocket = require('ws');
 
-const URL_TO_CHECK = process.argv[2] || 'http://localhost:8100/music/joseph-crawford-she-s-my-wife/';
+const URL_TO_CHECK = process.argv[2] || 'http://localhost:8100/music/she-s-my-wife/';
 const PORT = process.env.CDP_PORT || 9222;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 

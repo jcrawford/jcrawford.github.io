@@ -32,7 +32,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     return r.result.value;
   };
   await send('Page.enable');
-  await send('Page.navigate', { url: 'http://localhost:8100/music/joseph-crawford-she-s-my-wife/' });
+  await send('Page.navigate', { url: 'http://localhost:8100/music/she-s-my-wife/' });
   await sleep(6000);
   await evalJs(
     "[...document.querySelectorAll('button')].find(b => b.className.includes('hm-music-single-play')).click()"
