@@ -306,10 +306,21 @@ img.is-cover-missing {
   text-shadow: 0 0 16px rgba(130, 190, 255, 0.5);
 }
 
-/* Word currently being sung: partially visible through inline gradient fill */
+/* Word currently being sung: an absolutely-positioned lit copy paints over the
+   dim base via clip-path inset — the base text itself never changes, so no
+   vanishing word. Also: no inherited-transform rounding issues, exact metrics. */
 
-.hm-lyric-line.is-current .hm-lyric-word.is-speaking {
-  transition: none;
+.hm-lyric-word {
+  position: relative;
+  transition: color 0.12s ease, text-shadow 0.12s ease;
+}
+
+.hm-lyric-word-fill {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  color: #ffffff;
+  text-shadow: 0 0 16px rgba(130, 190, 255, 0.5);
 }
 
 .hm-lyrics-panel.is-live .hm-lyric-line.is-current .hm-lyric-word.is-sung {

@@ -71,9 +71,9 @@ const Lyrics: React.FC<LyricsProps> = ({
       // Plain timed line: the whole line highlights once its time passes.
       return line.text;
     }
-    // Karaoke-video fill: every word BEFORE the active word stays fully lit,
-    // the word currently being sung fills left→right via a clip gradient, and
-    // upcoming words remain dim.
+    // Karaoke-video fill: the word being sung paints left→right via a lit
+    // overlay clipped with clip-path. The base text never goes transparent, so
+    // the word can never "vanish".
     let activeWordIndex = -1;
     if (isCurrent) {
       for (let i = 0; i < line.words.length; i += 1) {
@@ -89,18 +89,6 @@ const Lyrics: React.FC<LyricsProps> = ({
         const span = Math.max(word.end - word.start, 0.001);
         progress = Math.min(1, Math.max(0, (currentTime - word.start) / span));
       }
-      const style =
-        isSpeaking && progress > 0
-          ? {
-              backgroundImage: 'linear-gradient(to right, var(--hm-word-fill, #d6ebff) 50%, transparent 50%)',
-              backgroundSize: `${(progress * 100).toFixed(1)}% 100%`,
-              backgroundRepeat: 'no-repeat',
-              WebkitBackgroundClip: 'text',
-              backgroundClip: 'text',
-              color: 'transparent',
-              WebkitTextFillColor: 'transparent',
-            }
-          : undefined;
       return (
         <React.Fragment key={`${word.start}-${wordIndex}`}>
           {wordIndex > 0 ? ' ' : null}
@@ -108,9 +96,17 @@ const Lyrics: React.FC<LyricsProps> = ({
             className={`hm-lyric-word${isSung || (isSpeaking && progress >= 1) ? ' is-sung' : ''}${
               isSpeaking ? ' is-speaking' : ''
             }`}
-            style={style}
           >
             {word.w}
+            {isSpeaking && progress > 0 && (
+              <span
+                aria-hidden="true"
+                className="hm-lyric-word-fill"
+                style={{ clipPath: `inset(0 ${(100 - progress * 100).toFixed(1)}% 0 0)` }}
+              >
+                {word.w}
+              </span>
+            )}
           </span>
         </React.Fragment>
       );
