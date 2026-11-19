@@ -338,21 +338,8 @@ img.is-cover-missing {
 }
 
 /* ---------------------------------------------------------------------------
-   Karaoke theater (/music-2/): fullscreen overlay, huge karaoke lyrics
+   Karaoke theater: fullscreen overlay, huge karaoke lyrics
    --------------------------------------------------------------------------- */
-
-/* KARAOKE BETA tag on theater test pages */
-.hm-music-beta-tag {
-  margin-left: 0.6rem;
-  padding: 0.1rem 0.5rem;
-  border: 1px solid var(--hybridmag-color-primary, #65bc7b);
-  border-radius: 999px;
-  color: var(--hybridmag-color-primary, #65bc7b);
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  white-space: nowrap;
-}
 
 /* While the theater is open: freeze the page and hide every other fixed layer */
 body.hm-theater-open {

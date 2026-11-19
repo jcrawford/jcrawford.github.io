@@ -4,6 +4,7 @@ import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import { trackBySlug, useMusicPlayer, type MusicTrack } from '../components/MusicPlayerProvider';
 import Lyrics from '../components/Lyrics';
+import KaraokeTheater from '../components/KaraokeTheater';
 import lyricsIndex from '../data/music-lyrics.json';
 import wordLyricsIndex from '../data/music-word-lyrics.json';
 import { activeLineIndex, parseLrc, type LyricLine } from '../utils/lrc';
@@ -21,10 +22,18 @@ const formatDuration = (seconds: number): string => {
   return `${mins}:${secs.toString().padStart(2, '0')}`;
 };
 
+/**
+ * /music/<slug>/ — song page with an optional fullscreen karaoke view.
+ *
+ * Play/Pause drives normal playback; the "Open karaoke view" button opens the
+ * fullscreen theater (huge synced lyrics with word-level fill, transport
+ * controls) as an explicit user action on any device.
+ */
 const MusicTrackPage: React.FC<PageProps<Record<string, never>, MusicTrackContext>> = ({ pageContext }) => {
   const track: MusicTrack | undefined = trackBySlug(pageContext.slug);
   const { cue, play, toggle, seek, currentTime, currentTrack, isPlaying } = useMusicPlayer();
   const [linkCopied, setLinkCopied] = useState(false);
+  const [theaterOpen, setTheaterOpen] = useState(false);
 
   const lrcTracks = (lyricsIndex as { tracks?: Record<string, string> }).tracks || {};
   const wordTracks = (wordLyricsIndex as { tracks?: Record<string, LyricLine[]> }).tracks || {};
@@ -60,6 +69,7 @@ const MusicTrackPage: React.FC<PageProps<Record<string, never>, MusicTrackContex
 
   const isCurrent = currentTrack?.slug === track.slug;
   const activeIndex = isCurrent ? activeLineIndex(timedLines, currentTime) : -1;
+  const theaterCover = track.covers?.['800']?.jpg || track.covers?.['400']?.jpg || '';
 
   return (
     <Layout>
@@ -116,6 +126,15 @@ const MusicTrackPage: React.FC<PageProps<Record<string, never>, MusicTrackContex
               >
                 {linkCopied ? 'Link copied ✓' : 'Copy link'}
               </button>
+              {timedLines.length > 0 && (
+                <button
+                  type="button"
+                  className="hm-music-single-share"
+                  onClick={() => setTheaterOpen(true)}
+                >
+                  Open karaoke view
+                </button>
+              )}
             </div>
           </div>
         </header>
@@ -194,6 +213,16 @@ const MusicTrackPage: React.FC<PageProps<Record<string, never>, MusicTrackContex
           <Link to="/music/">← All music</Link>
         </p>
       </div>
+
+      {theaterOpen && timedLines.length > 0 && (
+        <KaraokeTheater
+          lines={timedLines}
+          coverUrl={theaterCover}
+          title={track.title}
+          artist={track.artist}
+          onClose={() => setTheaterOpen(false)}
+        />
+      )}
     </Layout>
   );
 };
