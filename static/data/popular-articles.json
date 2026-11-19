@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T04:01:34.984Z",
+  "generatedAt": "2026-11-19T14:02:59.140Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -70,9 +70,9 @@
     },
     {
       "id": "/reviews/capital-one-360-checking",
-      "views": 51,
+      "views": 52,
       "comments": 0,
-      "score": 51,
+      "score": 52,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -157,23 +157,23 @@
       }
     },
     {
+      "id": "/posts/lebanon-valley-speedway-2026",
+      "views": 36,
+      "comments": 0,
+      "score": 36,
+      "shares": {
+        "facebook": 1,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/reviews/clickfunnels-review",
       "views": 36,
       "comments": 0,
       "score": 36,
       "shares": {
         "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/posts/lebanon-valley-speedway-2026",
-      "views": 35,
-      "comments": 0,
-      "score": 35,
-      "shares": {
-        "facebook": 1,
         "linkedin": 0,
         "copy": 0
       }
