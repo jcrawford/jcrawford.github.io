@@ -3,7 +3,7 @@ const WebSocket = require('ws');
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 (async () => {
-  const targets = await (await fetch('http://127.0.0.1:9224/json/list')).json();
+  const targets = await (await fetch('http://127.0.0.1:9225/json/list')).json();
   const page = targets.find((t) => t.type === 'page');
   const ws = new WebSocket(page.webSocketDebuggerUrl, { perMessageDeflate: false });
   let id = 0;
