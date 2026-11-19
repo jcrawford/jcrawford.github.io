@@ -3,7 +3,7 @@ const WebSocket = require('ws');
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 (async () => {
-  const targets = await (await fetch('http://127.0.0.1:9223/json/list')).json();
+  const targets = await (await fetch('http://127.0.0.1:9224/json/list')).json();
   const page = targets.find((t) => t.type === 'page');
   const ws = new WebSocket(page.webSocketDebuggerUrl, { perMessageDeflate: false });
   let id = 0;
@@ -23,32 +23,39 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   await send('Page.enable');
   await send('Page.navigate', { url: 'http://localhost:8100/music/joseph-crawford-she-s-my-wife/' });
   await sleep(5000);
-  const desktop = await evalJs(`(() => {
+  const open = await evalJs(`(() => {
     const btns = [...document.querySelectorAll('button')].map(b => b.textContent.trim());
-    const beta = document.querySelector('.hm-music-beta-tag');
     const openBtn = btns.find(t => t === 'Open karaoke view');
-    if (!openBtn) return { btn: false };
+    if (!openBtn) return JSON.stringify({ btn: false });
     [...document.querySelectorAll('button')].find(b => b.textContent.trim() === 'Open karaoke view').click();
-    return new Promise(res => setTimeout(() => {
-      const overlay = document.querySelector('.hm-theater');
-      const lines = document.querySelectorAll('.hm-theater-line').length;
-      const bodyLock = document.body.classList.contains('hm-theater-open');
-      const controls = !!document.querySelector('.hm-theater-controls, .hm-theater [class*="controls"]');
-      const closeBtn = [...document.querySelectorAll('button')].find(b => b.textContent.trim() === '✕');
-      if (closeBtn) closeBtn.click();
-      setTimeout(() => res({
-        btn: true,
-        overlay: !!overlay,
-        lines,
-        bodyLock,
-        controls,
-        closed: !document.querySelector('.hm-theater'),
-        bodyUnlocked: !document.body.classList.contains('hm-theater-open'),
-        betaTagGone: !beta,
-      }), 400);
-    }, 900));
+    return JSON.stringify({ btn: true, clicked: true });
   })()`);
+  console.log('DESKTOP /music/:', open);
 
+  await sleep(1000);
+  const theater = await evalJs(`(() => {
+    const overlay = document.querySelector('.hm-theater');
+    return JSON.stringify({
+      overlay: !!overlay,
+      lines: document.querySelectorAll('.hm-theater-line').length,
+      bodyLock: document.body.classList.contains('hm-theater-open'),
+      controls: !!document.querySelector('.hm-theater-controls, .hm-theater [class*="controls"]'),
+      greenFill: !!document.querySelector('.hm-theater-word-fill')
+    });
+  })()`);
+  console.log('DESKTOP theater:', theater);
+
+  const closed = await evalJs(`(() => {
+    [...document.querySelectorAll('button')].find(b => b.textContent.trim() === '✕')?.click();
+    return 'closing';
+  })()`);
+  await sleep(500);
+  const after = await evalJs(`JSON.stringify({
+    closed: !document.querySelector('.hm-theater'),
+    bodyUnlocked: !document.body.classList.contains('hm-theater-open'),
+    betaTagGone: !document.querySelector('.hm-music-beta-tag')
+  })`);
+  console.log('DESKTOP after close:', after);
   // Mobile viewport
   await send('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 2, mobile: true });
   await send(' Emulation.setTouchEmulationEnabled', { enabled: true });
@@ -57,10 +64,9 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   await sleep(5000);
   const mobile = await evalJs(`(() => {
     const btn = [...document.querySelectorAll('button')].find(b => b.textContent.trim() === 'Open karaoke view');
-    return { openBtn: !!btn, betaTag: !!document.querySelector('.hm-music-beta-tag') };
+    return JSON.stringify({ openBtn: !!btn, betaTag: !!document.querySelector('.hm-music-beta-tag') });
   })()`);
 
-  console.log('DESKTOP /music/:', JSON.stringify(desktop));
-  console.log('MOBILE /music/:', JSON.stringify(mobile));
+  console.log('MOBILE /music/:', mobile);
   ws.close();
 })().catch((e) => { console.error('FAIL:', e.message); process.exit(1); });
