@@ -1,4 +1,4 @@
-// Verify promotion: /music/<slug> now hosts the karaoke view; /music-2/ is gone.
+// Verify promotion: /music/<slug> now hosts the karaoke view; /music-2/ removed.
 const WebSocket = require('ws');
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
