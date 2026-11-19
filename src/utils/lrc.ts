@@ -27,6 +27,8 @@ export interface LyricLine {
 }
 
 const TIMESTAMP = /\[(\d{1,3}):(\d{2})(?:[.:](\d{1,3}))?\]/g;
+/** A word-level timestamp inside the line text (enhanced LRC / A2 extension). */
+const WORD_STAMP = /<(\d{1,3}):(\d{2})(?:[.:](\d{1,3}))?>/g;
 
 export const parseLrc = (raw: string | null | undefined): LyricLine[] => {
   if (!raw) return [];
@@ -40,7 +42,7 @@ export const parseLrc = (raw: string | null | undefined): LyricLine[] => {
     const stamps = Array.from(line.matchAll(TIMESTAMP));
     if (stamps.length === 0) return;
 
-    const text = line.replace(TIMESTAMP, '').trim();
+    const text = line.replace(TIMESTAMP, '').replace(WORD_STAMP, '').trim();
     stamps.forEach((stamp) => {
       const minutes = Number(stamp[1]);
       const seconds = Number(stamp[2]);
