@@ -295,7 +295,7 @@ img.is-cover-missing {
   transform: translateX(2px);
 }
 
-/* Words already sung within the active line */
+/* Words already sung within the active line — stay lit until the line ends */
 
 .hm-lyric-word {
   transition: color 0.12s ease, text-shadow 0.12s ease;
@@ -304,6 +304,12 @@ img.is-cover-missing {
 .hm-lyric-line.is-current .hm-lyric-word.is-sung {
   color: #ffffff;
   text-shadow: 0 0 16px rgba(130, 190, 255, 0.5);
+}
+
+/* Word currently being sung: partially visible through inline gradient fill */
+
+.hm-lyric-line.is-current .hm-lyric-word.is-speaking {
+  transition: none;
 }
 
 .hm-lyrics-panel.is-live .hm-lyric-line.is-current .hm-lyric-word.is-sung {

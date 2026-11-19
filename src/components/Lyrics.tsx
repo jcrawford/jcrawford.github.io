@@ -66,22 +66,56 @@ const Lyrics: React.FC<LyricsProps> = ({
     container.scrollTo({ top: Math.max(0, target), behavior: 'smooth' });
   }, [activeIndex, timed]);
 
-  const renderWords = (line: LyricLine, isCurrent: boolean) =>
-    line.words && line.words.length > 0 ? (
-      // Word-level timings: each word fills in as it is sung.
-      line.words.map((word, wordIndex) => {
-        const isSung = isCurrent && currentTime >= word.start;
-        return (
-          <React.Fragment key={`${word.start}-${wordIndex}`}>
-            {wordIndex > 0 ? ' ' : null}
-            <span className={`hm-lyric-word${isSung ? ' is-sung' : ''}`}>{word.w}</span>
-          </React.Fragment>
-        );
-      })
-    ) : (
+  const renderWords = (line: LyricLine, isCurrent: boolean) => {
+    if (!line.words || line.words.length === 0) {
       // Plain timed line: the whole line highlights once its time passes.
-      line.text
-    );
+      return line.text;
+    }
+    // Karaoke-video fill: every word BEFORE the active word stays fully lit,
+    // the word currently being sung fills left→right via a clip gradient, and
+    // upcoming words remain dim.
+    let activeWordIndex = -1;
+    if (isCurrent) {
+      for (let i = 0; i < line.words.length; i += 1) {
+        if (currentTime >= line.words[i].start) activeWordIndex = i;
+        else break;
+      }
+    }
+    return line.words.map((word, wordIndex) => {
+      const isSung = isCurrent && wordIndex < activeWordIndex;
+      const isSpeaking = isCurrent && wordIndex === activeWordIndex;
+      let progress = 0;
+      if (isSpeaking) {
+        const span = Math.max(word.end - word.start, 0.001);
+        progress = Math.min(1, Math.max(0, (currentTime - word.start) / span));
+      }
+      const style =
+        isSpeaking && progress > 0
+          ? {
+              backgroundImage: 'linear-gradient(to right, var(--hm-word-fill, #d6ebff) 50%, transparent 50%)',
+              backgroundSize: `${(progress * 100).toFixed(1)}% 100%`,
+              backgroundRepeat: 'no-repeat',
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
+              color: 'transparent',
+              WebkitTextFillColor: 'transparent',
+            }
+          : undefined;
+      return (
+        <React.Fragment key={`${word.start}-${wordIndex}`}>
+          {wordIndex > 0 ? ' ' : null}
+          <span
+            className={`hm-lyric-word${isSung || (isSpeaking && progress >= 1) ? ' is-sung' : ''}${
+              isSpeaking ? ' is-speaking' : ''
+            }`}
+            style={style}
+          >
+            {word.w}
+          </span>
+        </React.Fragment>
+      );
+    });
+  };
 
   return (
     <div className={`hm-lyrics-panel${isActive ? ' is-live' : ''}`} ref={containerRef}>
