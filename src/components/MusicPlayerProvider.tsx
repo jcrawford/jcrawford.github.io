@@ -1,7 +1,7 @@
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import manifest from '../data/music-manifest.json';
 
-/** True when a track's release time is still in the future. */
+/** True when a track's release time is still in the future (visual-lock marker). */
 export const isTrackLocked = (track: MusicTrack): boolean =>
   Boolean(track.releaseAt && new Date(track.releaseAt).getTime() > Date.now());
 
@@ -391,9 +391,10 @@ export const MusicPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
 
   const play = useCallback(
     (slug: string, source: PlaySource = 'bar') => {
+      // Scheduled releases play fine on dev previews; in production the gated
+      // slug is filtered out of musicTracks, so the lookup fails.
       const track = musicTracks.find((item) => item.slug === slug);
-      // Scheduled releases never start from the player, even on dev previews.
-      if (!track || isTrackLocked(track)) return;
+      if (!track) return;
       const audio = audioRef.current;
       if (!audio) return;
       playSourceRef.current = source;
@@ -422,9 +423,10 @@ export const MusicPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
 
   const cue = useCallback(
     (slug: string) => {
+      // Locked tracks cue normally on dev; in prod the slug is gone from the
+      // manifest view, so this is a no-op there anyway.
       const track = musicTracks.find((item) => item.slug === slug);
-      // Locked tracks cue nothing — the song page only shows its lock card.
-      if (!track || isTrackLocked(track)) return;
+      if (!track) return;
       const audio = audioRef.current;
       if (!audio) return;
       didCueRef.current = true;

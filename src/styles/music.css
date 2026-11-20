@@ -128,11 +128,12 @@
 }
 
 .hm-music-track-play.is-locked {
-  cursor: default;
+  cursor: pointer;
   border-style: dashed;
   border-color: rgba(255, 255, 255, 0.25);
   font-size: 0.8rem;
   filter: grayscale(0.4);
+  user-select: none;
 }
 
 .hm-music-track-lockdate {

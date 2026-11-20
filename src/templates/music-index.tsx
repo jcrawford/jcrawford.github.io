@@ -18,18 +18,36 @@ const TrackRow: React.FC<{ track: MusicTrack; index: number }> = ({ track, index
   const isCurrent = currentTrack?.slug === track.slug;
   const isLocked = Boolean(track.releaseAt && new Date(track.releaseAt).getTime() > Date.now());
 
-  if (isLocked) {
-    return (
-      <li className="hm-music-track is-locked" aria-label={`${track.title} — locked until release`}>
-        <span className="hm-music-track-play is-locked" aria-hidden="true">
-          🔒
-        </span>
-        <span className="hm-music-track-index">{String(index + 1).padStart(2, '0')}</span>
-        <Link to={`/music/${track.slug}/`} className="hm-music-track-title">
-          {track.title}
-        </Link>
+  const playCell = isLocked ? (
+    <span
+      className="hm-music-track-play is-locked"
+      title="Scheduled release — not on production yet"
+      aria-label={`${track.title} — scheduled release`}
+      onClick={() => track && play(track.slug, 'list')}
+    >
+      🔒
+    </span>
+  ) : (
+    <button
+      type="button"
+      className="hm-music-track-play"
+      onClick={() => play(track.slug, 'list')}
+      aria-label={`Play ${track.title}`}
+    >
+      {isCurrent && isPlaying ? '❚❚' : '▶'}
+    </button>
+  );
+
+  return (
+    <li className={`hm-music-track${isCurrent ? ' is-current' : ''}${isLocked ? ' is-locked' : ''}`}>
+      {playCell}
+      <span className="hm-music-track-index">{String(index + 1).padStart(2, '0')}</span>
+      <Link to={`/music/${track.slug}/`} className="hm-music-track-title">
+        {track.title}
+      </Link>
+      {isLocked && track.releaseAt ? (
         <span className="hm-music-track-lockdate">
-          {new Date(track.releaseAt as string).toLocaleString('en-US', {
+          {new Date(track.releaseAt).toLocaleString('en-US', {
             month: 'short',
             day: 'numeric',
             year: 'numeric',
@@ -37,25 +55,9 @@ const TrackRow: React.FC<{ track: MusicTrack; index: number }> = ({ track, index
             minute: '2-digit',
           })}
         </span>
-      </li>
-    );
-  }
-
-  return (
-    <li className={`hm-music-track${isCurrent ? ' is-current' : ''}`}>
-      <button
-        type="button"
-        className="hm-music-track-play"
-        onClick={() => play(track.slug, 'list')}
-        aria-label={`Play ${track.title}`}
-      >
-        {isCurrent && isPlaying ? '❚❚' : '▶'}
-      </button>
-      <span className="hm-music-track-index">{String(index + 1).padStart(2, '0')}</span>
-      <Link to={`/music/${track.slug}/`} className="hm-music-track-title">
-        {track.title}
-      </Link>
-      <span className="hm-music-track-duration">{formatDuration(track.duration)}</span>
+      ) : (
+        <span className="hm-music-track-duration">{formatDuration(track.duration)}</span>
+      )}
     </li>
   );
 };

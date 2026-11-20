@@ -69,7 +69,9 @@ const MusicTrackPage: React.FC<PageProps<Record<string, never>, MusicTrackContex
     );
   }
 
-  const isCurrent = currentTrack?.slug === track.slug && gateState !== 'preview';
+  // Locked previews play and highlight like any other song — the lock is only
+  // a badge. This guard exists because prod never builds this route.
+  const isCurrent = currentTrack?.slug === track.slug;
   const activeIndex = isCurrent ? activeLineIndex(timedLines, currentTime) : -1;
   const theaterCover = track.covers?.['800']?.jpg || track.covers?.['400']?.jpg || '';
   const releaseDate = track.releaseAt
@@ -84,8 +86,10 @@ const MusicTrackPage: React.FC<PageProps<Record<string, never>, MusicTrackContex
       })
     : null;
 
-  // Scheduled release, dev preview: the page renders a locked placeholder —
-  // no player, no lyrics, no share links. Production never builds this route.
+  // Scheduled release, dev preview: the page renders the full experience with a
+  // lock badge — play, lyrics, karaoke all work locally so the song can be
+  // checked before release. The badge is a visual marker only ("this is not on
+  // production yet"); production builds never create this route.
   if (gateState === 'preview') {
     return (
       <Layout>
@@ -98,7 +102,7 @@ const MusicTrackPage: React.FC<PageProps<Record<string, never>, MusicTrackContex
 
           <header className="hm-music-single-head">
             <img
-              className="hm-music-single-cover is-locked"
+              className="hm-music-single-cover"
               src={track.covers?.['800']?.jpg || track.covers?.['400']?.jpg || ''}
               alt={`${track.title} cover art`}
               width={320}
@@ -107,28 +111,125 @@ const MusicTrackPage: React.FC<PageProps<Record<string, never>, MusicTrackContex
               onError={onCoverError}
             />
             <div className="hm-music-single-meta">
-              <p className="hm-music-eyebrow">Song · Unreleased</p>
+              <p className="hm-music-eyebrow">Song · Not on production yet</p>
               <h1 className="hm-music-title">{track.title}</h1>
               <p className="hm-music-single-sub">
                 {track.artist}
                 {track.album ? ` · ${track.album}` : ''}
+                {track.year ? ` · ${track.year}` : ''}
+                {track.duration ? ` · ${formatDuration(track.duration)}` : ''}
               </p>
+              <div className="hm-music-single-actions">
+                <button
+                  type="button"
+                  className="hm-cta-btn hm-music-single-play"
+                  onClick={() => {
+                    if (isCurrent) toggle();
+                    else play(track.slug, 'song-page');
+                  }}
+                >
+                  {isCurrent && isPlaying ? '❚❚ Pause' : '▶ Play'}
+                </button>
+                {timedLines.length > 0 && (
+                  <button
+                    type="button"
+                    className="hm-music-single-share"
+                    onClick={() => setTheaterOpen(true)}
+                  >
+                    Open karaoke view
+                  </button>
+                )}
+              </div>
               <div className="hm-music-lock-card" role="status">
                 <span className="hm-music-lock-icon" aria-hidden="true">
                   🔒
                 </span>
                 <div>
-                  <p className="hm-music-lock-title">Locked until release</p>
+                  <p className="hm-music-lock-title">Scheduled release — not on production yet</p>
                   {releaseDate && <p className="hm-music-lock-date">{releaseDate}</p>}
                 </div>
               </div>
             </div>
           </header>
 
+          <section className="hm-music-single-details" aria-label="Track details">
+            <h2 className="hm-music-details-title">Track details</h2>
+            <dl className="hm-music-details-grid">
+              {track.createdAt && (
+                <>
+                  <dt>Created</dt>
+                  <dd>
+                    {new Date(track.createdAt).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                      timeZone: 'UTC',
+                    })}
+                  </dd>
+                </>
+              )}
+              <dt>Artist</dt>
+              <dd>{track.artist}</dd>
+              <dt>Album</dt>
+              <dd>{track.album}</dd>
+              {track.year && (
+                <>
+                  <dt>Year</dt>
+                  <dd>{track.year}</dd>
+                </>
+              )}
+              <dt>Length</dt>
+              <dd>{formatDuration(track.duration)}</dd>
+              {track.format?.codec && (
+                <>
+                  <dt>Format</dt>
+                  <dd>
+                    {track.format.codec}
+                    {track.format.sampleRate ? ` · ${track.format.sampleRate.toLocaleString('en-US')} Hz` : ''}
+                  </dd>
+                </>
+              )}
+              {track.format?.bitrateKbps ? (
+                <>
+                  <dt>Bitrate</dt>
+                  <dd>{track.format.bitrateKbps.toLocaleString('en-US')} kbps</dd>
+                </>
+              ) : null}
+            </dl>
+          </section>
+
+          {(timedLines.length > 0 || track.lyrics) && (
+            <section className="hm-music-single-lyrics" aria-label="Lyrics">
+              <h2 className="hm-music-details-title">Lyrics</h2>
+              <Lyrics
+                lines={timedLines}
+                staticText={track.lyrics ?? ''}
+                activeIndex={isCurrent ? activeIndex : -1}
+                currentTime={isCurrent ? currentTime : -1}
+                isActive={isCurrent}
+                onSeek={seek}
+                onPlay={() => {
+                  if (!isCurrent) play(track.slug, 'song-page');
+                  else if (!isPlaying) toggle();
+                }}
+              />
+            </section>
+          )}
+
           <p className="hm-music-back">
             <Link to="/music/">← All music</Link>
           </p>
         </div>
+
+        {theaterOpen && timedLines.length > 0 && (
+          <KaraokeTheater
+            lines={timedLines}
+            coverUrl={theaterCover}
+            title={track.title}
+            artist={track.artist}
+            onClose={() => setTheaterOpen(false)}
+          />
+        )}
       </Layout>
     );
   }
