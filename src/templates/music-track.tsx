@@ -9,6 +9,7 @@ import lyricsIndex from '../data/music-lyrics.json';
 import wordLyricsIndex from '../data/music-word-lyrics.json';
 import { activeLineIndex, parseLrc, type LyricLine } from '../utils/lrc';
 import { onCoverError } from '../utils/coverFallback';
+import { gateStateFor, type GateState } from '../utils/releaseGate';
 import '../styles/music.css';
 
 interface MusicTrackContext {
@@ -34,6 +35,7 @@ const MusicTrackPage: React.FC<PageProps<Record<string, never>, MusicTrackContex
   const { cue, play, toggle, seek, currentTime, currentTrack, isPlaying } = useMusicPlayer();
   const [linkCopied, setLinkCopied] = useState(false);
   const [theaterOpen, setTheaterOpen] = useState(false);
+  const gateState: GateState = gateStateFor(pageContext.slug);
 
   const lrcTracks = (lyricsIndex as { tracks?: Record<string, string> }).tracks || {};
   const wordTracks = (wordLyricsIndex as { tracks?: Record<string, LyricLine[]> }).tracks || {};
@@ -67,9 +69,69 @@ const MusicTrackPage: React.FC<PageProps<Record<string, never>, MusicTrackContex
     );
   }
 
-  const isCurrent = currentTrack?.slug === track.slug;
+  const isCurrent = currentTrack?.slug === track.slug && gateState !== 'preview';
   const activeIndex = isCurrent ? activeLineIndex(timedLines, currentTime) : -1;
   const theaterCover = track.covers?.['800']?.jpg || track.covers?.['400']?.jpg || '';
+  const releaseDate = track.releaseAt
+    ? new Date(track.releaseAt).toLocaleString('en-US', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: '2-digit',
+        timeZoneName: 'short',
+      })
+    : null;
+
+  // Scheduled release, dev preview: the page renders a locked placeholder —
+  // no player, no lyrics, no share links. Production never builds this route.
+  if (gateState === 'preview') {
+    return (
+      <Layout>
+        <div className="hm-container hm-music hm-music-single">
+          <nav className="hm-gallery-breadcrumb" aria-label="Breadcrumb">
+            <Link to="/music/">Music</Link>
+            <span className="hm-breadcrumb-separator">›</span>
+            <span>{track.title}</span>
+          </nav>
+
+          <header className="hm-music-single-head">
+            <img
+              className="hm-music-single-cover is-locked"
+              src={track.covers?.['800']?.jpg || track.covers?.['400']?.jpg || ''}
+              alt={`${track.title} cover art`}
+              width={320}
+              height={320}
+              loading="lazy"
+              onError={onCoverError}
+            />
+            <div className="hm-music-single-meta">
+              <p className="hm-music-eyebrow">Song · Unreleased</p>
+              <h1 className="hm-music-title">{track.title}</h1>
+              <p className="hm-music-single-sub">
+                {track.artist}
+                {track.album ? ` · ${track.album}` : ''}
+              </p>
+              <div className="hm-music-lock-card" role="status">
+                <span className="hm-music-lock-icon" aria-hidden="true">
+                  🔒
+                </span>
+                <div>
+                  <p className="hm-music-lock-title">Locked until release</p>
+                  {releaseDate && <p className="hm-music-lock-date">{releaseDate}</p>}
+                </div>
+              </div>
+            </div>
+          </header>
+
+          <p className="hm-music-back">
+            <Link to="/music/">← All music</Link>
+          </p>
+        </div>
+      </Layout>
+    );
+  }
 
   return (
     <Layout>

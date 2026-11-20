@@ -137,6 +137,19 @@ async function writeCovers(slug, picture) {
   return variants;
 }
 
+function resolveSchedule() {
+  const schedulePath = path.join(REPO_ROOT, 'src', 'data', 'music-release-schedule.json');
+  if (!fs.existsSync(schedulePath)) return {};
+  try {
+    const raw = JSON.parse(fs.readFileSync(schedulePath, 'utf8'));
+    delete raw._readme;
+    return raw;
+  } catch (err) {
+    console.warn(`[music] could not read release schedule: ${err.message}`);
+    return {};
+  }
+}
+
 async function main() {
   const mm = await import('music-metadata');
   const srcDir = resolveSourceDir();
@@ -157,6 +170,7 @@ async function main() {
   const files = walk(srcDir);
   console.log(`[music] ${files.length} audio file(s) in ${srcDir}`);
 
+  const schedule = resolveSchedule();
   const tracks = [];
   const seenSlugs = new Set();
 
@@ -220,6 +234,14 @@ async function main() {
     const picture = common.picture && common.picture[0] ? common.picture[0] : null;
     const covers = await writeCovers(unique, picture);
 
+    // Scheduled release: src/data/music-release-schedule.json may stamp a track
+    // with the ISO datetime it goes public. The timestamp rides along in the
+    // manifest so dev can show a lock preview; prod filtering happens at build
+    // time (src/utils/releaseGate.ts), NOT here, so the manifest stays the
+    // single source of truth.
+    const releaseAt = schedule[unique] || null;
+    if (releaseAt) console.log(`[music]   · scheduled release: ${unique} at ${releaseAt}`);
+
     tracks.push({
       slug: unique,
       title,
@@ -232,6 +254,7 @@ async function main() {
       duration: Math.round(metadata.format && metadata.format.duration ? metadata.format.duration : 0),
       format: { codec, bitrateKbps: bitrate, sampleRate, lossless },
       lyrics,
+      releaseAt: schedule[unique] || null,
       src: `${baseUrl}/${relKey.split('/').map(encodeURIComponent).join('/')}`,
       file: relKey,
       covers,

@@ -932,6 +932,11 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
   // scripts/build-music-manifest.js from the audio files themselves (tags plus
   // embedded cover art). Audio is streamed from R2, so the manifest holds
   // absolute URLs and nothing heavy lands in the repo.
+  //
+  // Scheduled releases (src/data/music-release-schedule.json): in production a
+  // track whose releaseAt is in the future gets NO page at all — as if it does
+  // not exist. Dev keeps the route unlocked-but-marked (lock icon + date) so the
+  // gate can be previewed before release day.
   // ---------------------------------------------------------------------------
   const musicManifestPath = path.resolve('./src/data/music-manifest.json');
   if (fs.existsSync(musicManifestPath)) {
@@ -940,22 +945,51 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
       albums: Array<{ slug: string }>;
     };
 
-    if (musicManifest.tracks && musicManifest.tracks.length > 0) {
+    const isProdBuild = process.env.NODE_ENV === 'production';
+    const nowMs = Date.now();
+    let schedule: Record<string, string> = {};
+    const schedulePath = path.resolve('./src/data/music-release-schedule.json');
+    if (fs.existsSync(schedulePath)) {
+      try {
+        schedule = JSON.parse(fs.readFileSync(schedulePath, 'utf8'));
+        delete schedule._readme;
+      } catch {
+        schedule = {};
+      }
+    }
+
+    const hiddenSlug = (slug: string): boolean => {
+      if (!isProdBuild) return false;
+      const releaseAt = schedule[slug];
+      if (!releaseAt) return false;
+      const t = new Date(releaseAt).getTime();
+      return Number.isFinite(t) && t > nowMs;
+    };
+
+    const publishable = (musicManifest.tracks || []).filter(
+      (track) => !hiddenSlug(track.slug),
+    );
+
+    if (publishable.length > 0) {
       createPage({
         path: '/music',
         component: path.resolve('./src/templates/music-index.tsx'),
         context: {},
       });
-      reporter.info(`Created music index page: /music (${musicManifest.tracks.length} track(s))`);
+      reporter.info(`Created music index page: /music (${publishable.length} track(s))`);
 
-      for (const track of musicManifest.tracks) {
+      for (const track of publishable) {
         createPage({
           path: `/music/${track.slug}`,
           component: path.resolve('./src/templates/music-track.tsx'),
           context: { slug: track.slug },
         });
       }
-      reporter.info(`Created ${musicManifest.tracks.length} music track page(s)`);
+      reporter.info(`Created ${publishable.length} music track page(s)`);
+      if (publishable.length !== musicManifest.tracks.length) {
+        const withheld = musicManifest.tracks.length - publishable.length;
+        reporter.info(`Withheld ${withheld} scheduled track(s) from production`);
+      }
     } else {
       reporter.info('Music manifest has no tracks, skipping music pages');
     }

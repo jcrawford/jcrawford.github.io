@@ -1,6 +1,10 @@
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import manifest from '../data/music-manifest.json';
 
+/** True when a track's release time is still in the future. */
+export const isTrackLocked = (track: MusicTrack): boolean =>
+  Boolean(track.releaseAt && new Date(track.releaseAt).getTime() > Date.now());
+
 export interface MusicCoverVariant {
   jpg: string;
   webp: string;
@@ -25,6 +29,8 @@ export interface MusicTrack {
     lossless: boolean;
   };
   lyrics?: string | null;
+  /** ISO datetime the track goes public, from music-release-schedule.json. */
+  releaseAt?: string | null;
   src: string;
   file: string;
   covers: Record<string, MusicCoverVariant>;
@@ -386,7 +392,8 @@ export const MusicPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
   const play = useCallback(
     (slug: string, source: PlaySource = 'bar') => {
       const track = musicTracks.find((item) => item.slug === slug);
-      if (!track) return;
+      // Scheduled releases never start from the player, even on dev previews.
+      if (!track || isTrackLocked(track)) return;
       const audio = audioRef.current;
       if (!audio) return;
       playSourceRef.current = source;
@@ -416,7 +423,8 @@ export const MusicPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
   const cue = useCallback(
     (slug: string) => {
       const track = musicTracks.find((item) => item.slug === slug);
-      if (!track) return;
+      // Locked tracks cue nothing — the song page only shows its lock card.
+      if (!track || isTrackLocked(track)) return;
       const audio = audioRef.current;
       if (!audio) return;
       didCueRef.current = true;

@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-import { musicAlbums, musicTracks, useMusicPlayer, type MusicTrack } from '../components/MusicPlayerProvider';
-import { onCoverError } from '../utils/coverFallback';
+import { useMusicPlayer, type MusicTrack } from '../components/MusicPlayerProvider';
+import { musicAlbums, musicTracks } from '../utils/releaseGate';
 import '../styles/music.css';
 
 const formatDuration = (seconds: number): string => {
@@ -16,6 +16,30 @@ const formatDuration = (seconds: number): string => {
 const TrackRow: React.FC<{ track: MusicTrack; index: number }> = ({ track, index }) => {
   const { play, currentTrack, isPlaying } = useMusicPlayer();
   const isCurrent = currentTrack?.slug === track.slug;
+  const isLocked = Boolean(track.releaseAt && new Date(track.releaseAt).getTime() > Date.now());
+
+  if (isLocked) {
+    return (
+      <li className="hm-music-track is-locked" aria-label={`${track.title} — locked until release`}>
+        <span className="hm-music-track-play is-locked" aria-hidden="true">
+          🔒
+        </span>
+        <span className="hm-music-track-index">{String(index + 1).padStart(2, '0')}</span>
+        <Link to={`/music/${track.slug}/`} className="hm-music-track-title">
+          {track.title}
+        </Link>
+        <span className="hm-music-track-lockdate">
+          {new Date(track.releaseAt as string).toLocaleString('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric',
+            hour: 'numeric',
+            minute: '2-digit',
+          })}
+        </span>
+      </li>
+    );
+  }
 
   return (
     <li className={`hm-music-track${isCurrent ? ' is-current' : ''}`}>
@@ -64,15 +88,6 @@ const MusicIndexPage: React.FC = () => {
           return (
             <section key={album.slug} className="hm-music-album">
               <div className="hm-music-album-head">
-                <img
-                  className="hm-music-album-cover"
-                  src={album.cover?.['400']?.jpg || albumTracks[0]?.covers?.['400']?.jpg || ''}
-                  alt={`${album.title} cover`}
-                  width={160}
-                  height={160}
-                  loading="lazy"
-                  onError={onCoverError}
-                />
                 <div className="hm-music-album-meta">
                   <h2 className="hm-music-album-title">{album.title}</h2>
                   <p className="hm-music-album-sub">
