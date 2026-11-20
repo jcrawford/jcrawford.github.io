@@ -1,4 +1,4 @@
 {
   "_readme": "Scheduled music releases. Key = track slug, value = ISO datetime when the song becomes public. In production builds (NODE_ENV=production) tracks with a future releaseAt are removed entirely from the manifest/player/pages. In dev (gatsby develop) the track stays visible with a lock icon showing the release date.",
-  "the-man-i-m-trying-to-be": "2026-12-25T07:00:00-05:00"
+  "the-man-i-m-trying-to-be": "2026-12-25T04:00:00-05:00"
 }
