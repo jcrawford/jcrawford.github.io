@@ -119,7 +119,7 @@ import { HeadFC } from 'gatsby';
 export const Head: HeadFC = () => (
   <SEO
     title="Music"
-    description="Songs written and recorded by Joseph Crawford. Stream them here — nothing autoplays."
+    description="Songs written by Joseph Crawford, created and produced with Suno AI. Stream them here — nothing autoplays."
     pathname="/music/"
     siteMetadata={{
       title: 'Joseph Crawford',
