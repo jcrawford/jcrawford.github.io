@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-20T19:01:55.913Z",
+  "generatedAt": "2026-11-21T03:51:33.107Z",
   "windowDays": "lifetime",
   "entries": [
     {
       "id": "/brewing/cherry-mead",
-      "views": 234,
+      "views": 238,
       "comments": 0,
-      "score": 234,
+      "score": 238,
       "shares": {
         "facebook": 5,
         "linkedin": 1,
@@ -212,6 +212,17 @@
       }
     },
     {
+      "id": "/brewing/dandelion-mead",
+      "views": 23,
+      "comments": 0,
+      "score": 23,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
       "id": "/reviews/voyager-keyboard",
       "views": 22,
       "comments": 0,
@@ -246,17 +257,6 @@
     },
     {
       "id": "/posts/home-brewing-journey",
-      "views": 19,
-      "comments": 0,
-      "score": 19,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/brewing/dandelion-mead",
       "views": 19,
       "comments": 0,
       "score": 19,
