@@ -85,18 +85,6 @@ const KaraokeTheater: React.FC<KaraokeTheaterProps> = ({ lines, coverUrl, title,
   }, [lines, currentTime, isPlaying]);
 
 
-  // Keep the active line pinned in the middle third of the stage. During an
-  // interlude countdown, pin the upcoming line instead so the singer can see
-  // what they are queuing into.
-  const pinnedIndex = interlude?.counting && interlude.nextIndex >= 0 ? interlude.nextIndex : activeIndex;
-  useEffect(() => {
-    const container = panelRef.current;
-    const active = pinnedIndex >= 0 ? rowRefs.current[pinnedIndex] : null;
-    if (!container || !active) return;
-    const target = active.offsetTop - container.clientHeight * 0.4;
-    container.scrollTo({ top: Math.max(0, target), behavior: 'smooth' });
-  }, [pinnedIndex]);
-
   // 3-2-1 number for the current countdown tick (each digit holds ~1 s).
   const countdown =
     interlude?.counting && interlude.nextIndex >= 0
@@ -114,7 +102,28 @@ const KaraokeTheater: React.FC<KaraokeTheaterProps> = ({ lines, coverUrl, title,
         : Math.max(0, nextStart - INTERLUDE_GAP_MIN);
     return currentTime >= gapStart && currentTime < nextStart - INTERLUDE_LEAD;
   })();
-  const showTimeout = inGap && countdown === null;
+
+  // Keep the active line pinned in the middle third of the stage. While an
+  // interlude marker row is live, pin that row instead — it carries the
+  // countdown and the upcoming lyric inside it.
+  const gapRowRef = useRef<HTMLDivElement | null>(null);
+  const gapActive = Boolean(
+    interlude && interlude.nextIndex > 0 && interlude.gapStart !== null && (inGap || countdown !== null)
+  );
+  useEffect(() => {
+    const container = panelRef.current;
+    if (!container) return;
+    const target = gapActive
+      ? gapRowRef.current && container.contains(gapRowRef.current)
+        ? gapRowRef.current
+        : null
+      : activeIndex >= 0
+        ? rowRefs.current[activeIndex]
+        : null;
+    if (!target) return;
+    const scrollTop = target.offsetTop - container.clientHeight * 0.4;
+    container.scrollTo({ top: Math.max(0, scrollTop), behavior: 'smooth' });
+  }, [activeIndex, gapActive]);
 
   // Lock page scroll + suppress site chrome while the theater is open.
   useEffect(() => {
@@ -200,43 +209,46 @@ const KaraokeTheater: React.FC<KaraokeTheaterProps> = ({ lines, coverUrl, title,
             const isCurrent = index === activeIndex;
             const isPast = activeIndex >= 0 && index < activeIndex;
             const isUpcoming = countdown !== null && index === interlude?.nextIndex;
+            const isFirstAfterGap =
+              interlude &&
+              interlude.nextIndex === index &&
+              interlude.gapStart !== null &&
+              index > 0 &&
+              (inGap || countdown !== null);
             return (
-              <div
-                key={`th-${line.time}-${index}`}
-                ref={(el) => {
-                  rowRefs.current[index] = el;
-                }}
-                className={`hm-theater-line${isCurrent ? ' is-current' : ''}${isPast ? ' is-past' : ''}${isUpcoming ? ' is-upcoming' : ''}`}
-                onClick={() => {
-                  seek(line.time);
-                }}
-              >
-                {renderLine(line, isCurrent)}
-              </div>
+              <React.Fragment key={`th-${line.time}-${index}`}>
+                {isFirstAfterGap && (
+                  <div
+                    ref={gapRowRef}
+                    className={`hm-theater-interlude${countdown !== null ? ' is-counting' : ''}`}
+                    aria-hidden="true"
+                  >
+                    <span className="hm-theater-interlude-title">musical interlude</span>
+                    {countdown !== null && (
+                      <>
+                        <span key={countdown} className="hm-theater-count-num">
+                          {countdown}
+                        </span>
+                        <span className="hm-theater-interlude-lyric">{line.text}</span>
+                      </>
+                    )}
+                  </div>
+                )}
+                <div
+                  ref={(el) => {
+                    rowRefs.current[index] = el;
+                  }}
+                  className={`hm-theater-line${isCurrent ? ' is-current' : ''}${isPast ? ' is-past' : ''}${isUpcoming ? ' is-upcoming' : ''}`}
+                  onClick={() => {
+                    seek(line.time);
+                  }}
+                >
+                  {renderLine(line, isCurrent)}
+                </div>
+              </React.Fragment>
             );
           })}
         </div>
-
-        {(showTimeout || countdown !== null) && (
-          <div
-            className={`hm-theater-interlude${countdown !== null ? ' is-counting' : ''}`}
-            aria-hidden="true"
-          >
-            <div className="hm-theater-interlude-card">
-              <span className="hm-theater-interlude-title">musical interlude</span>
-              {countdown !== null && (
-                <>
-                  <span key={countdown} className="hm-theater-count-num">
-                    {countdown}
-                  </span>
-                  {interlude && interlude.nextIndex >= 0 && lines[interlude.nextIndex].text.trim() !== '' && (
-                    <span className="hm-theater-interlude-lyric">{lines[interlude.nextIndex].text}</span>
-                  )}
-                </>
-              )}
-            </div>
-          </div>
-        )}
 
         <footer className="hm-theater-controls">
           <button type="button" className="hm-theater-ctl" onClick={() => seek(Math.max(0, currentTime - 10))} aria-label="Back 10 seconds">

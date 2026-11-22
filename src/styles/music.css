@@ -508,99 +508,62 @@ body.hm-theater-open .hm-music-hint {
   touch-action: pan-y;
 }
 
-/* Interlude overlay: a full-stage visual cue during instrumental gaps.
-   Covers the stage, centers its content, and dims the lyrics underneath so
-   the state change is unmistakable. Two phases: "MUSICAL INTERLUDE" across
-   the quiet stretch, swapped for the 3-2-1 count-in in the final seconds. */
+/* Interlude marker row: lives IN the lyric flow, between the last sung line
+   and the upcoming one — no overlay, nothing covered. Filled green for the
+   whole instrumental stretch; during the final 3 s the 3-2-1 digit and the
+   upcoming lyric appear inside the same row. */
 
 .hm-theater-interlude {
-  position: absolute;
-  inset: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  pointer-events: none;
-  z-index: 4;
-  background: rgba(0, 0, 0, 0.55);
-  animation: hm-theater-interlude-fade 0.6s ease-out;
+  gap: 0.3rem;
+  margin: 0.4rem 0;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  background: linear-gradient(90deg, rgba(101, 188, 123, 0.16), rgba(101, 188, 123, 0.3), rgba(101, 188, 123, 0.16));
+  border: 1px solid rgba(101, 188, 123, 0.55);
+  color: var(--hybridmag-color-primary, #65bc7b);
+  transition: background 0.4s ease, border-color 0.4s ease;
 }
 
-/* During the count the dim lightens so the stage wakes back up. */
+/* During the count the fill deepens so the row reads as "active". */
 .hm-theater-interlude.is-counting {
-  background: rgba(0, 0, 0, 0.3);
-}
-
-@keyframes hm-theater-interlude-fade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* The boxed content: a solid card lifted above the dimmed lyrics — hard
-   separation between "this is a status screen" and the song text. */
-
-.hm-theater-interlude-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.7rem;
-  padding: 1.4rem 2.2rem;
-  background: rgba(10, 14, 12, 0.92);
-  border: 1px solid var(--hybridmag-color-primary, #65bc7b);
-  border-radius: 14px;
-  box-shadow:
-    0 0 0 1px rgba(0, 0, 0, 0.6),
-    0 10px 40px rgba(0, 0, 0, 0.6);
-  animation: hm-theater-interlude-card-in 0.5s ease-out;
-}
-
-@keyframes hm-theater-interlude-card-in {
-  from {
-    opacity: 0;
-    transform: scale(0.94);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  background: linear-gradient(90deg, rgba(101, 188, 123, 0.34), rgba(101, 188, 123, 0.5), rgba(101, 188, 123, 0.34));
+  border-color: var(--hybridmag-color-primary, #65bc7b);
 }
 
 .hm-theater-interlude-title {
-  font-size: clamp(1.5rem, 6vw, 2.2rem);
+  font-size: clamp(0.95rem, 3.4vw, 1.25rem);
   font-weight: 700;
-  letter-spacing: 0.24em;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.92);
-  text-shadow: none;
+  color: var(--hybridmag-color-primary, #65bc7b);
   text-align: center;
-  padding: 0;
+  white-space: nowrap;
 }
 
-/* Single-card contract: the title slot swaps between the two phases and the
-   digit appears beneath it inside the SAME card — no second overlay stacks
-   on top of the interlude when the countdown starts. */
+/* Single-row contract: the digit and the upcoming lyric appear INSIDE the
+   interlude row beneath its title — no second overlay when counting starts. */
 
 .hm-theater-count-num {
-  font-size: clamp(4.2rem, 20vw, 6.5rem);
+  font-size: clamp(2.6rem, 9vw, 4rem);
   font-weight: 800;
   line-height: 1;
   color: var(--hybridmag-color-primary, #65bc7b);
-  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.75);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.65);
   animation: hm-theater-count-pop 0.9s ease-out;
 }
 
-/* The upcoming line, shown inside the card under the countdown digit so the
-   singer knows what to sing the moment the overlay clears. */
+/* The upcoming line, shown inside the row under the countdown digit so the
+   singer knows what to sing the moment the row ends. */
 
 .hm-theater-interlude-lyric {
-  font-size: clamp(1.05rem, 4.4vw, 1.5rem);
+  font-size: clamp(0.95rem, 3.6vw, 1.3rem);
   line-height: 1.35;
   font-weight: 500;
-  color: var(--hybridmag-color-primary, #65bc7b);
+  color: rgba(255, 255, 255, 0.92);
   text-align: center;
   max-width: min(560px, 80vw);
   overflow: hidden;

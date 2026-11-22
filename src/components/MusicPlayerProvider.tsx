@@ -383,8 +383,20 @@ export const MusicPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
       audio.setAttribute('src', track.src);
       audio.load();
       setDuration(track.duration || 0);
-      setCurrentTime(0);
-      pendingSeekRef.current = null;
+      // Re-cueing the persisted track (returning to its page after leaving —
+      // the child page effect fires before the provider's restore effect)
+      // must PRESERVE the saved listening position, not reset to 0. Only a
+      // track that is not the persisted one starts fresh.
+      const savedTrack = window.localStorage.getItem(LAST_TRACK_KEY);
+      if (savedTrack === track.slug) {
+        const savedPos = Number(window.localStorage.getItem(LAST_POS_KEY));
+        const resumePos = Number.isFinite(savedPos) && savedPos > 0 ? savedPos : 0;
+        pendingSeekRef.current = resumePos;
+        setCurrentTime(resumePos);
+      } else {
+        pendingSeekRef.current = null;
+        setCurrentTime(0);
+      }
       window.localStorage.setItem(LAST_TRACK_KEY, track.slug);
     }
   }, []);
@@ -462,6 +474,12 @@ export const MusicPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
     // this, each dispatch fires handleEnded and 'repeat one' restarts the
     // track twice, producing overlapping audio.
     audio.dataset.hmEndedHandled = '1';
+    // The track finished — its listening position is spent. Clear it so a
+    // later visit to this track's page starts fresh instead of resuming at
+    // the final seconds.
+    if (typeof window !== 'undefined') {
+      window.localStorage.removeItem(LAST_POS_KEY);
+    }
     if (repeatRef.current === 'one') {
       audio.currentTime = 0;
       playSourceRef.current = 'auto';

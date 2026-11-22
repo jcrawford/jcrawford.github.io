@@ -122,28 +122,21 @@ async function main() {
       const cd = document.querySelector('.hm-theater-interlude');
       const up = document.querySelector('.hm-theater-line.is-upcoming');
       const a = document.querySelector('audio');
+      const lyricsPanel = document.querySelector('.hm-theater-lyrics');
       return {
         t: a ? a.currentTime : null,
         paused: a ? a.paused : null,
         counting: cd ? cd.classList.contains('is-counting') : null,
         countdown: cd ? (cd.querySelector('.hm-theater-count-num')?.textContent ?? null) : null,
         gap: cd ? (cd.querySelector('.hm-theater-interlude-title')?.textContent ?? null) : null,
+        lyricInRow: cd ? (cd.querySelector('.hm-theater-interlude-lyric')?.textContent?.trim().slice(0, 40) ?? null) : null,
         upcoming: up ? up.textContent.trim().slice(0, 60) : null,
-        visible: cd ? (cd.offsetWidth > 0 && getComputedStyle(cd).background !== 'transparent') : null,
-        card: (() => {
-          const card = document.querySelector('.hm-theater-interlude-card');
-          if (!card) return null;
-          const cs = getComputedStyle(card);
-          const num = card.querySelector('.hm-theater-count-num');
-          const lyric = card.querySelector('.hm-theater-interlude-lyric');
-          return {
-            painted: cs.backgroundColor !== 'rgba(0, 0, 0, 0)' && parseFloat(cs.borderTopWidth) > 0,
-            borderColor: cs.borderTopColor,
-            digitInsideCard: num ? card.contains(num) : null,
-            lyricInsideCard: lyric ? lyric.textContent.trim().slice(0, 40) : null,
-            cardCount: document.querySelectorAll('.hm-theater-interlude-card').length,
-          };
+        visible: cd ? (cd.offsetWidth > 0 && cd.offsetParent !== null) : null,
+        inFlowRow: (() => {
+          if (!cd || !lyricsPanel) return null;
+          return lyricsPanel.contains(cd) && getComputedStyle(cd).position !== 'absolute' && getComputedStyle(cd).position !== 'fixed';
         })(),
+        singleRow: document.querySelectorAll('.hm-theater-interlude').length,
       };
     })()`);
 
@@ -199,14 +192,17 @@ async function main() {
     const okNum = (s.countdown ?? null) === exp.countdown;
     const okGap = (s.gap ?? null) === exp.gap;
     const okCounting = exp.counting === null || s.counting === exp.counting;
-    const ok = okNum && okGap && okCounting;
+    const okRow = exp.countdown !== null || exp.gap !== null ? s.inFlowRow === true && s.singleRow === 1 : true;
+    const okLyric = exp.countdown !== null ? Boolean(s.lyricInRow) : true;
+    const ok = okNum && okGap && okCounting && okRow && okLyric;
     console.log(
       `${ok ? 'PASS' : 'FAIL'} ${c.why} | seek ${c.seek} -> t=${s.t.toFixed(2)}` +
         ` | countdown=${s.countdown === null ? '—' : s.countdown}/${exp.countdown === null ? '—' : exp.countdown}` +
         ` gap=${s.gap === null ? '—' : s.gap}/${exp.gap === null ? '—' : exp.gap}` +
-        ` dim=${s.counting === null ? '—' : s.counting ? 'light' : 'dark'}` +
-        ` overlayVisible=${s.visible === null ? '—' : s.visible}` +
-        ` card=${s.card ? `painted=${s.card.painted} title="${s.gap ?? ''}" digits=1of${s.card.cardCount} inside=${s.card.digitInsideCard} nextLyric="${s.card.lyricInsideCard ?? '—'}"` : '—'}` +
+        ` dim=${s.counting === null ? '—' : s.counting ? 'deep' : 'base'}` +
+        ` inFlow=${s.inFlowRow === null ? '—' : s.inFlowRow}` +
+        ` rows=${s.singleRow ?? '—'}` +
+        ` lyric="${s.lyricInRow ?? '—'}"` +
         ` | upcoming=${s.upcoming ? '"' + s.upcoming + '"' : '—'}${!ok && exp.nextLineAt ? ' (expected next line @ ' + exp.nextLineAt + ')' : ''}`
     );
     ok ? (pass += 1) : (fail += 1);
