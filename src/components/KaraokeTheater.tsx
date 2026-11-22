@@ -33,6 +33,15 @@ const formatTime = (seconds: number): string => {
   return `${Math.floor(s / 60)}:${(s % 60).toString().padStart(2, '0')}`;
 };
 
+/**
+ * Interlude countdown: when a lyric line is followed by a long instrumental
+ * gap (dead air measured from where the vocal actually ends, via the A2ext
+ * hold stamps, to the next line's stamp), count the singer in 3-2-1 over the
+ * final seconds of the gap. Short gaps between lines stay silent.
+ */
+const INTERLUDE_GAP_MIN = 5; // seconds of dead air before a countdown is warranted
+const INTERLUDE_LEAD = 3; // seconds ahead of the next line the countdown covers
+
 const KaraokeTheater: React.FC<KaraokeTheaterProps> = ({ lines, coverUrl, title, artist, onClose }) => {
   const { currentTime, isPlaying, toggle, seek, duration } = useMusicPlayer();
 
@@ -40,14 +49,51 @@ const KaraokeTheater: React.FC<KaraokeTheaterProps> = ({ lines, coverUrl, title,
   const panelRef = useRef<HTMLDivElement | null>(null);
   const rowRefs = useRef<Array<HTMLDivElement | null>>([]);
 
-  // Keep the active line pinned in the middle third of the stage.
+  // Interlude countdown: find a long instrumental gap whose 3-2-1 window the
+  // playhead is currently inside. Dead air = next line's stamp minus where the
+  // previous line's vocal actually ends (its hold stamp), so a sung line that
+  // trails into the gap doesn't shorten the interlude.
+  const interlude = useMemo(() => {
+    if (lines.length === 0) return null;
+    let threshold: number | null = null;
+    let nextIndex = -1;
+    for (let i = 0; i < lines.length - 1; i += 1) {
+      const wordEnd = lines[i].words?.length
+        ? lines[i].words![lines[i].words!.length - 1].end
+        : lines[i].time;
+      const deadAir = lines[i + 1].time - wordEnd;
+      if (deadAir >= INTERLUDE_GAP_MIN) {
+        if (currentTime < lines[i].time) break; // gap is still ahead of the playhead
+        if (currentTime < lines[i + 1].time) {
+          const nextStart = lines[i + 1].time;
+          threshold = nextStart - INTERLUDE_LEAD;
+          nextIndex = i + 1;
+          break;
+        }
+      }
+    }
+    const counting = threshold !== null && currentTime >= threshold && isPlaying;
+    return { counting, threshold, nextIndex, startsAt: threshold !== null ? currentTime - threshold : 0 };
+  }, [lines, currentTime, isPlaying]);
+
+
+  // Keep the active line pinned in the middle third of the stage. During an
+  // interlude countdown, pin the upcoming line instead so the singer can see
+  // what they are queuing into.
+  const pinnedIndex = interlude?.counting && interlude.nextIndex >= 0 ? interlude.nextIndex : activeIndex;
   useEffect(() => {
     const container = panelRef.current;
-    const active = activeIndex >= 0 ? rowRefs.current[activeIndex] : null;
+    const active = pinnedIndex >= 0 ? rowRefs.current[pinnedIndex] : null;
     if (!container || !active) return;
     const target = active.offsetTop - container.clientHeight * 0.4;
     container.scrollTo({ top: Math.max(0, target), behavior: 'smooth' });
-  }, [activeIndex]);
+  }, [pinnedIndex]);
+
+  // 3-2-1 number for the current countdown tick (each digit holds ~1 s).
+  const countdown =
+    interlude?.counting && interlude.nextIndex >= 0
+      ? Math.min(3, Math.max(1, Math.ceil(lines[interlude.nextIndex].time - currentTime)))
+      : null;
 
   // Lock page scroll + suppress site chrome while the theater is open.
   useEffect(() => {
@@ -132,13 +178,14 @@ const KaraokeTheater: React.FC<KaraokeTheaterProps> = ({ lines, coverUrl, title,
           {lines.map((line, index) => {
             const isCurrent = index === activeIndex;
             const isPast = activeIndex >= 0 && index < activeIndex;
+            const isUpcoming = countdown !== null && index === interlude?.nextIndex;
             return (
               <div
                 key={`th-${line.time}-${index}`}
                 ref={(el) => {
                   rowRefs.current[index] = el;
                 }}
-                className={`hm-theater-line${isCurrent ? ' is-current' : ''}${isPast ? ' is-past' : ''}`}
+                className={`hm-theater-line${isCurrent ? ' is-current' : ''}${isPast ? ' is-past' : ''}${isUpcoming ? ' is-upcoming' : ''}`}
                 onClick={() => {
                   seek(line.time);
                 }}
@@ -148,6 +195,15 @@ const KaraokeTheater: React.FC<KaraokeTheaterProps> = ({ lines, coverUrl, title,
             );
           })}
         </div>
+
+        {countdown !== null && (
+          <div className="hm-theater-countdown" aria-hidden="true">
+            <span className="hm-theater-count-label">coming up</span>
+            <span key={countdown} className="hm-theater-count-num">
+              {countdown}
+            </span>
+          </div>
+        )}
 
         <footer className="hm-theater-controls">
           <button type="button" className="hm-theater-ctl" onClick={() => seek(Math.max(0, currentTime - 10))} aria-label="Back 10 seconds">
