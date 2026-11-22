@@ -135,10 +135,12 @@ async function main() {
           if (!card) return null;
           const cs = getComputedStyle(card);
           const num = card.querySelector('.hm-theater-count-num');
+          const lyric = card.querySelector('.hm-theater-interlude-lyric');
           return {
             painted: cs.backgroundColor !== 'rgba(0, 0, 0, 0)' && parseFloat(cs.borderTopWidth) > 0,
             borderColor: cs.borderTopColor,
             digitInsideCard: num ? card.contains(num) : null,
+            lyricInsideCard: lyric ? lyric.textContent.trim().slice(0, 40) : null,
             cardCount: document.querySelectorAll('.hm-theater-interlude-card').length,
           };
         })(),
@@ -204,7 +206,7 @@ async function main() {
         ` gap=${s.gap === null ? '—' : s.gap}/${exp.gap === null ? '—' : exp.gap}` +
         ` dim=${s.counting === null ? '—' : s.counting ? 'light' : 'dark'}` +
         ` overlayVisible=${s.visible === null ? '—' : s.visible}` +
-        ` card=${s.card ? `painted=${s.card.painted} title="${s.gap ?? ''}" digits=1of${s.card.cardCount} inside=${s.card.digitInsideCard}` : '—'}` +
+        ` card=${s.card ? `painted=${s.card.painted} title="${s.gap ?? ''}" digits=1of${s.card.cardCount} inside=${s.card.digitInsideCard} nextLyric="${s.card.lyricInsideCard ?? '—'}"` : '—'}` +
         ` | upcoming=${s.upcoming ? '"' + s.upcoming + '"' : '—'}${!ok && exp.nextLineAt ? ' (expected next line @ ' + exp.nextLineAt + ')' : ''}`
     );
     ok ? (pass += 1) : (fail += 1);

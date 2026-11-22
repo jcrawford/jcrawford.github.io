@@ -593,6 +593,22 @@ body.hm-theater-open .hm-music-hint {
   animation: hm-theater-count-pop 0.9s ease-out;
 }
 
+/* The upcoming line, shown inside the card under the countdown digit so the
+   singer knows what to sing the moment the overlay clears. */
+
+.hm-theater-interlude-lyric {
+  font-size: clamp(1.05rem, 4.4vw, 1.5rem);
+  line-height: 1.35;
+  font-weight: 500;
+  color: var(--hybridmag-color-primary, #65bc7b);
+  text-align: center;
+  max-width: min(560px, 80vw);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
 @keyframes hm-theater-count-pop {
   0% {
     opacity: 0;
