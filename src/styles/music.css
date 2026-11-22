@@ -508,39 +508,66 @@ body.hm-theater-open .hm-music-hint {
   touch-action: pan-y;
 }
 
-/* Interlude countdown: a 3-2-1 cue over the last seconds of an instrumental
-   gap between verses. Sits as a stage-wide overlay (sibling of the lyric
-   scroller), pinned just above the controls. */
+/* Interlude overlay: a full-stage visual cue during instrumental gaps.
+   Covers the stage, centers its content, and dims the lyrics underneath so
+   the state change is unmistakable. Two phases: "MUSICAL INTERLUDE" across
+   the quiet stretch, swapped for the 3-2-1 count-in in the final seconds. */
 
-.hm-theater-countdown {
+.hm-theater-interlude {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+  inset: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.15rem;
+  justify-content: center;
+  gap: 1rem;
   pointer-events: none;
-  z-index: 3;
+  z-index: 4;
+  background: rgba(0, 0, 0, 0.45);
+  animation: hm-theater-interlude-fade 0.6s ease-out;
 }
 
-.hm-theater-count-label {
-  font-size: 0.72rem;
+/* During the count the dim lightens so the stage wakes back up. */
+.hm-theater-interlude.is-counting {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+@keyframes hm-theater-interlude-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hm-theater-interlude-gap {
+  font-size: clamp(1.7rem, 7vw, 2.6rem);
   font-weight: 700;
-  letter-spacing: 0.32em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 2px 22px rgba(0, 0, 0, 0.8);
+  text-align: center;
+  padding: 0 1rem;
 }
 
 .hm-theater-count-num {
-  font-size: clamp(3.4rem, 16vw, 5.2rem);
+  font-size: clamp(4.2rem, 20vw, 6.5rem);
   font-weight: 800;
   line-height: 1;
   color: var(--hybridmag-color-primary, #65bc7b);
   text-shadow: 0 2px 18px rgba(0, 0, 0, 0.75);
   animation: hm-theater-count-pop 0.9s ease-out;
+}
+
+.hm-theater-count-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.85);
 }
 
 @keyframes hm-theater-count-pop {
@@ -570,30 +597,6 @@ body.hm-theater-open .hm-music-hint {
   outline-offset: 10px;
   border-radius: 6px;
   color: rgba(255, 255, 255, 0.92);
-}
-
-/* "Brief timeout" phase: shown across the whole instrumental stretch, swapped
-   for the 3-2-1 in its final seconds. */
-
-.hm-theater-count-timeout {
-  font-size: clamp(1.6rem, 6.5vw, 2.4rem);
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.85);
-  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.75);
-  animation: hm-theater-count-fade 0.9s ease-out;
-}
-
-@keyframes hm-theater-count-fade {
-  from {
-    opacity: 0;
-    transform: translateY(6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .hm-theater-line {

@@ -218,7 +218,10 @@ const KaraokeTheater: React.FC<KaraokeTheaterProps> = ({ lines, coverUrl, title,
         </div>
 
         {(showTimeout || countdown !== null) && (
-          <div className="hm-theater-countdown" aria-hidden="true">
+          <div
+            className={`hm-theater-interlude${countdown !== null ? ' is-counting' : ''}`}
+            aria-hidden="true"
+          >
             {countdown !== null ? (
               <>
                 <span className="hm-theater-count-label">coming up</span>
@@ -227,8 +230,8 @@ const KaraokeTheater: React.FC<KaraokeTheaterProps> = ({ lines, coverUrl, title,
                 </span>
               </>
             ) : (
-              <span key="timeout" className="hm-theater-count-timeout">
-                brief timeout
+              <span key="interlude" className="hm-theater-interlude-gap">
+                musical interlude
               </span>
             )}
           </div>

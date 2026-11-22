@@ -119,21 +119,22 @@ async function main() {
   const seek = (t) => evalJs(`(async () => { document.querySelector('audio').currentTime = ${t}; return 'ok'; })()`);
   const sample = () =>
     evalJs(`(() => {
-      const cd = document.querySelector('.hm-theater-countdown');
+      const cd = document.querySelector('.hm-theater-interlude');
       const up = document.querySelector('.hm-theater-line.is-upcoming');
       const a = document.querySelector('audio');
       return {
         t: a ? a.currentTime : null,
         paused: a ? a.paused : null,
+        counting: cd ? cd.classList.contains('is-counting') : null,
         countdown: cd ? (cd.querySelector('.hm-theater-count-num')?.textContent ?? null) : null,
-        timeout: cd ? (cd.querySelector('.hm-theater-count-timeout')?.textContent ?? null) : null,
-        label: cd ? (cd.querySelector('.hm-theater-count-label')?.textContent ?? null) : null,
+        gap: cd ? (cd.querySelector('.hm-theater-interlude-gap')?.textContent ?? null) : null,
         upcoming: up ? up.textContent.trim().slice(0, 60) : null,
+        visible: cd ? (cd.offsetWidth > 0 && getComputedStyle(cd).background !== 'transparent') : null,
       };
     })()`);
 
   // Expected phase from real time + gap math (mirrors component logic):
-  // full gap -> "brief timeout" banner; final 3s -> countdown digit.
+  // full gap -> centered "musical interlude" dim overlay; final 3s -> 3-2-1.
   const slugMatch = PAGE.match(/\/music\/([^/]+)\//);
   const slug = slugMatch ? decodeURIComponent(slugMatch[1]) : '';
   const GAPS = GAPS_BY_SLUG[slug] || [];
@@ -141,12 +142,12 @@ async function main() {
     for (const g of GAPS) {
       if (t >= g.vocalEnd && t < g.nextStart) {
         if (t >= g.nextStart - 3) {
-          return { countdown: String(Math.min(3, Math.max(1, Math.ceil(g.nextStart - t)))), timeout: null, nextLineAt: g.nextStart };
+          return { countdown: String(Math.min(3, Math.max(1, Math.ceil(g.nextStart - t)))), gap: null, counting: true, nextLineAt: g.nextStart };
         }
-        return { countdown: null, timeout: 'brief timeout', nextLineAt: g.nextStart };
+        return { countdown: null, gap: 'musical interlude', counting: false, nextLineAt: g.nextStart };
       }
     }
-    return { countdown: null, timeout: null, nextLineAt: null };
+    return { countdown: null, gap: null, counting: null, nextLineAt: null };
   };
 
   // Cases: generic from gap math + per-track negatives.
@@ -155,8 +156,8 @@ async function main() {
     for (const tick of [1, 2, 3]) {
       cases.push({ seek: g.nextStart - tick - 0.4, why: `gap @${g.nextStart} — tick ${tick}` });
     }
-    cases.push({ seek: g.vocalEnd + 1, why: `gap @${g.nextStart} — "brief timeout" during quiet stretch` });
-    cases.push({ seek: g.nextStart - 3.5, why: `gap @${g.nextStart} — timeout just before 3-2-1 boundary` });
+    cases.push({ seek: g.vocalEnd + 1, why: `gap @${g.nextStart} — centered "musical interlude" in quiet stretch` });
+    cases.push({ seek: g.nextStart - 3.5, why: `gap @${g.nextStart} — interlude just before 3-2-1 boundary` });
   }
   if (GAPS.length > 0) {
     cases.push({ seek: GAPS[0].vocalEnd - 12, why: 'outside any gap — no countdown' });
@@ -182,12 +183,15 @@ async function main() {
     }
     const exp = expectAt(s.t);
     const okNum = (s.countdown ?? null) === exp.countdown;
-    const okTimeout = (s.timeout ?? null) === exp.timeout;
-    const ok = okNum && okTimeout;
+    const okGap = (s.gap ?? null) === exp.gap;
+    const okCounting = exp.counting === null || s.counting === exp.counting;
+    const ok = okNum && okGap && okCounting;
     console.log(
       `${ok ? 'PASS' : 'FAIL'} ${c.why} | seek ${c.seek} -> t=${s.t.toFixed(2)}` +
         ` | countdown=${s.countdown === null ? '—' : s.countdown}/${exp.countdown === null ? '—' : exp.countdown}` +
-        ` timeout=${s.timeout === null ? '—' : s.timeout}/${exp.timeout === null ? '—' : exp.timeout}` +
+        ` gap=${s.gap === null ? '—' : s.gap}/${exp.gap === null ? '—' : exp.gap}` +
+        ` dim=${s.counting === null ? '—' : s.counting ? 'light' : 'dark'}` +
+        ` overlayVisible=${s.visible === null ? '—' : s.visible}` +
         ` | upcoming=${s.upcoming ? '"' + s.upcoming + '"' : '—'}${!ok && exp.nextLineAt ? ' (expected next line @ ' + exp.nextLineAt + ')' : ''}`
     );
     ok ? (pass += 1) : (fail += 1);
