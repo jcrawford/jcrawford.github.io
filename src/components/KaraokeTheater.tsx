@@ -222,18 +222,20 @@ const KaraokeTheater: React.FC<KaraokeTheaterProps> = ({ lines, coverUrl, title,
             className={`hm-theater-interlude${countdown !== null ? ' is-counting' : ''}`}
             aria-hidden="true"
           >
-            {countdown !== null ? (
-              <>
-                <span className="hm-theater-count-label">coming up</span>
-                <span key={countdown} className="hm-theater-count-num">
-                  {countdown}
+            <div className="hm-theater-interlude-card">
+              {countdown !== null ? (
+                <>
+                  <span className="hm-theater-count-label">coming up</span>
+                  <span key={countdown} className="hm-theater-count-num">
+                    {countdown}
+                  </span>
+                </>
+              ) : (
+                <span key="interlude" className="hm-theater-interlude-gap">
+                  musical interlude
                 </span>
-              </>
-            ) : (
-              <span key="interlude" className="hm-theater-interlude-gap">
-                musical interlude
-              </span>
-            )}
+              )}
+            </div>
           </div>
         )}
 

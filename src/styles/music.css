@@ -520,16 +520,15 @@ body.hm-theater-open .hm-music-hint {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
   pointer-events: none;
   z-index: 4;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.55);
   animation: hm-theater-interlude-fade 0.6s ease-out;
 }
 
 /* During the count the dim lightens so the stage wakes back up. */
 .hm-theater-interlude.is-counting {
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 @keyframes hm-theater-interlude-fade {
@@ -541,15 +540,44 @@ body.hm-theater-open .hm-music-hint {
   }
 }
 
+/* The boxed content: a solid card lifted above the dimmed lyrics — hard
+   separation between "this is a status screen" and the song text. */
+
+.hm-theater-interlude-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 1.4rem 2.2rem;
+  background: rgba(10, 14, 12, 0.92);
+  border: 1px solid var(--hybridmag-color-primary, #65bc7b);
+  border-radius: 14px;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.6),
+    0 10px 40px rgba(0, 0, 0, 0.6);
+  animation: hm-theater-interlude-card-in 0.5s ease-out;
+}
+
+@keyframes hm-theater-interlude-card-in {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .hm-theater-interlude-gap {
-  font-size: clamp(1.7rem, 7vw, 2.6rem);
+  font-size: clamp(1.5rem, 6vw, 2.2rem);
   font-weight: 700;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.9);
-  text-shadow: 0 2px 22px rgba(0, 0, 0, 0.8);
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: none;
   text-align: center;
-  padding: 0 1rem;
+  padding: 0;
 }
 
 .hm-theater-count-num {

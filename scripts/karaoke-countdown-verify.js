@@ -130,6 +130,15 @@ async function main() {
         gap: cd ? (cd.querySelector('.hm-theater-interlude-gap')?.textContent ?? null) : null,
         upcoming: up ? up.textContent.trim().slice(0, 60) : null,
         visible: cd ? (cd.offsetWidth > 0 && getComputedStyle(cd).background !== 'transparent') : null,
+        card: (() => {
+          const card = document.querySelector('.hm-theater-interlude-card');
+          if (!card) return null;
+          const cs = getComputedStyle(card);
+          return {
+            painted: cs.backgroundColor !== 'rgba(0, 0, 0, 0)' && parseFloat(cs.borderTopWidth) > 0,
+            borderColor: cs.borderTopColor,
+          };
+        })(),
       };
     })()`);
 
@@ -192,6 +201,7 @@ async function main() {
         ` gap=${s.gap === null ? '—' : s.gap}/${exp.gap === null ? '—' : exp.gap}` +
         ` dim=${s.counting === null ? '—' : s.counting ? 'light' : 'dark'}` +
         ` overlayVisible=${s.visible === null ? '—' : s.visible}` +
+        ` card=${s.card ? `painted=${s.card.painted} border=${s.card.borderColor}` : '—'}` +
         ` | upcoming=${s.upcoming ? '"' + s.upcoming + '"' : '—'}${!ok && exp.nextLineAt ? ' (expected next line @ ' + exp.nextLineAt + ')' : ''}`
     );
     ok ? (pass += 1) : (fail += 1);
