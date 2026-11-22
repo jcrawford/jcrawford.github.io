@@ -572,6 +572,30 @@ body.hm-theater-open .hm-music-hint {
   color: rgba(255, 255, 255, 0.92);
 }
 
+/* "Brief timeout" phase: shown across the whole instrumental stretch, swapped
+   for the 3-2-1 in its final seconds. */
+
+.hm-theater-count-timeout {
+  font-size: clamp(1.6rem, 6.5vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.75);
+  animation: hm-theater-count-fade 0.9s ease-out;
+}
+
+@keyframes hm-theater-count-fade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .hm-theater-line {
   font-size: clamp(2rem, 11vw, 3.2rem);
   line-height: 1.22;

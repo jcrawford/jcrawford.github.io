@@ -73,7 +73,15 @@ const KaraokeTheater: React.FC<KaraokeTheaterProps> = ({ lines, coverUrl, title,
       }
     }
     const counting = threshold !== null && currentTime >= threshold && isPlaying;
-    return { counting, threshold, nextIndex, startsAt: threshold !== null ? currentTime - threshold : 0 };
+    return {
+      counting,
+      threshold,
+      nextIndex,
+      // Where the quiet stretch begins: the previous line's true vocal end.
+      gapStart: nextIndex > 0 && lines[nextIndex - 1].words?.length
+        ? lines[nextIndex - 1].words![lines[nextIndex - 1].words!.length - 1].end
+        : null,
+    };
   }, [lines, currentTime, isPlaying]);
 
 
@@ -94,6 +102,19 @@ const KaraokeTheater: React.FC<KaraokeTheaterProps> = ({ lines, coverUrl, title,
     interlude?.counting && interlude.nextIndex >= 0
       ? Math.min(3, Math.max(1, Math.ceil(lines[interlude.nextIndex].time - currentTime)))
       : null;
+
+  // Phase banner: "brief timeout" over the whole quiet stretch, replaced by
+  // the 3-2-1 during the final seconds before the vocal returns.
+  const inGap = (() => {
+    if (!interlude || interlude.nextIndex < 0 || !isPlaying) return false;
+    const nextStart = lines[interlude.nextIndex].time;
+    const gapStart =
+      interlude.gapStart !== null
+        ? interlude.gapStart
+        : Math.max(0, nextStart - INTERLUDE_GAP_MIN);
+    return currentTime >= gapStart && currentTime < nextStart - INTERLUDE_LEAD;
+  })();
+  const showTimeout = inGap && countdown === null;
 
   // Lock page scroll + suppress site chrome while the theater is open.
   useEffect(() => {
@@ -196,12 +217,20 @@ const KaraokeTheater: React.FC<KaraokeTheaterProps> = ({ lines, coverUrl, title,
           })}
         </div>
 
-        {countdown !== null && (
+        {(showTimeout || countdown !== null) && (
           <div className="hm-theater-countdown" aria-hidden="true">
-            <span className="hm-theater-count-label">coming up</span>
-            <span key={countdown} className="hm-theater-count-num">
-              {countdown}
-            </span>
+            {countdown !== null ? (
+              <>
+                <span className="hm-theater-count-label">coming up</span>
+                <span key={countdown} className="hm-theater-count-num">
+                  {countdown}
+                </span>
+              </>
+            ) : (
+              <span key="timeout" className="hm-theater-count-timeout">
+                brief timeout
+              </span>
+            )}
           </div>
         )}
 
