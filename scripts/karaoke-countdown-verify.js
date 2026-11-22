@@ -127,16 +127,19 @@ async function main() {
         paused: a ? a.paused : null,
         counting: cd ? cd.classList.contains('is-counting') : null,
         countdown: cd ? (cd.querySelector('.hm-theater-count-num')?.textContent ?? null) : null,
-        gap: cd ? (cd.querySelector('.hm-theater-interlude-gap')?.textContent ?? null) : null,
+        gap: cd ? (cd.querySelector('.hm-theater-interlude-title')?.textContent ?? null) : null,
         upcoming: up ? up.textContent.trim().slice(0, 60) : null,
         visible: cd ? (cd.offsetWidth > 0 && getComputedStyle(cd).background !== 'transparent') : null,
         card: (() => {
           const card = document.querySelector('.hm-theater-interlude-card');
           if (!card) return null;
           const cs = getComputedStyle(card);
+          const num = card.querySelector('.hm-theater-count-num');
           return {
             painted: cs.backgroundColor !== 'rgba(0, 0, 0, 0)' && parseFloat(cs.borderTopWidth) > 0,
             borderColor: cs.borderTopColor,
+            digitInsideCard: num ? card.contains(num) : null,
+            cardCount: document.querySelectorAll('.hm-theater-interlude-card').length,
           };
         })(),
       };
@@ -151,7 +154,7 @@ async function main() {
     for (const g of GAPS) {
       if (t >= g.vocalEnd && t < g.nextStart) {
         if (t >= g.nextStart - 3) {
-          return { countdown: String(Math.min(3, Math.max(1, Math.ceil(g.nextStart - t)))), gap: null, counting: true, nextLineAt: g.nextStart };
+          return { countdown: String(Math.min(3, Math.max(1, Math.ceil(g.nextStart - t)))), gap: 'coming up', counting: true, nextLineAt: g.nextStart };
         }
         return { countdown: null, gap: 'musical interlude', counting: false, nextLineAt: g.nextStart };
       }
@@ -201,7 +204,7 @@ async function main() {
         ` gap=${s.gap === null ? '—' : s.gap}/${exp.gap === null ? '—' : exp.gap}` +
         ` dim=${s.counting === null ? '—' : s.counting ? 'light' : 'dark'}` +
         ` overlayVisible=${s.visible === null ? '—' : s.visible}` +
-        ` card=${s.card ? `painted=${s.card.painted} border=${s.card.borderColor}` : '—'}` +
+        ` card=${s.card ? `painted=${s.card.painted} title="${s.gap ?? ''}" digits=1of${s.card.cardCount} inside=${s.card.digitInsideCard}` : '—'}` +
         ` | upcoming=${s.upcoming ? '"' + s.upcoming + '"' : '—'}${!ok && exp.nextLineAt ? ' (expected next line @ ' + exp.nextLineAt + ')' : ''}`
     );
     ok ? (pass += 1) : (fail += 1);

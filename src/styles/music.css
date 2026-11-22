@@ -569,7 +569,7 @@ body.hm-theater-open .hm-music-hint {
   }
 }
 
-.hm-theater-interlude-gap {
+.hm-theater-interlude-title {
   font-size: clamp(1.5rem, 6vw, 2.2rem);
   font-weight: 700;
   letter-spacing: 0.24em;
@@ -580,6 +580,10 @@ body.hm-theater-open .hm-music-hint {
   padding: 0;
 }
 
+/* Single-card contract: the title slot swaps between the two phases and the
+   digit appears beneath it inside the SAME card — no second overlay stacks
+   on top of the interlude when the countdown starts. */
+
 .hm-theater-count-num {
   font-size: clamp(4.2rem, 20vw, 6.5rem);
   font-weight: 800;
@@ -587,15 +591,6 @@ body.hm-theater-open .hm-music-hint {
   color: var(--hybridmag-color-primary, #65bc7b);
   text-shadow: 0 2px 18px rgba(0, 0, 0, 0.75);
   animation: hm-theater-count-pop 0.9s ease-out;
-}
-
-.hm-theater-count-label {
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.85);
 }
 
 @keyframes hm-theater-count-pop {
