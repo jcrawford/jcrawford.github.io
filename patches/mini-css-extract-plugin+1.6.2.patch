@@ -1,0 +1,42 @@
+diff --git a/node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js b/node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js
+index 39ea891..143f908 100644
+--- a/node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js
++++ b/node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js
+@@ -106,7 +106,12 @@ function updateCss(el, url) {
+     }
+ 
+     newEl.isLoaded = true;
+-    el.parentNode.removeChild(el);
++    // Guard: the old <link> may already be detached (navigations, React
++    // unmounts, double-swaps) — el.parentNode is then null and Safari
++    // throws "null is not an object (evaluating 'el.parentNode.removeChild')".
++    if (el.parentNode) {
++      el.parentNode.removeChild(el);
++    }
+   });
+   newEl.addEventListener('error', function () {
+     if (newEl.isLoaded) {
+@@ -114,14 +119,18 @@ function updateCss(el, url) {
+     }
+ 
+     newEl.isLoaded = true;
+-    el.parentNode.removeChild(el);
++    if (el.parentNode) {
++      el.parentNode.removeChild(el);
++    }
+   });
+   newEl.href = "".concat(url, "?").concat(Date.now());
+ 
+-  if (el.nextSibling) {
+-    el.parentNode.insertBefore(newEl, el.nextSibling);
+-  } else {
+-    el.parentNode.appendChild(newEl);
++  if (el.parentNode) {
++    if (el.nextSibling) {
++      el.parentNode.insertBefore(newEl, el.nextSibling);
++    } else {
++      el.parentNode.appendChild(newEl);
++    }
+   }
+ }
+ 
