@@ -1,101 +1,86 @@
 /**
- * karaoke-countdown-verify.js — prove the interlude 3-2-1 countdown in the
- * karaoke theater:
+ * karaoke-countdown-verify.js — prove the interlude marker row in the lyric
+ * flow of the karaoke theater.
  *
  *   usage: node scripts/karaoke-countdown-verify.js [track-page-url]
+ *   (Chrome must be running with --remote-debugging-port=9222)
  *
- * 1. Opens the track page, clicks "Open karaoke view".
- * 2. Starts playback with a TRUSTED CDP click (synthesized .click() leaves
- *    audio blocked), then mutes the shared <audio>.
- * 3. For each probe point: seek, sample the countdown overlay + upcoming-line
- *    highlight, and recompute the expectation from the real audio time and
- *    the known dead-air gap data (parse of music-lyrics.json through lrc.ts
- *    hold-aware window math). Render must match the math.
+ * Per track:
+ *   1. Open the page, trusted-click the theater ⏯ (autoplay-blocked headless).
+ *   2. Mute, then for each probe point: seek, sample the interlude row
+ *      (in-flow, single instance, fill width vs expected gap fraction).
+ *   3. Also assert the row is GONE past the gap end and never appears in
+ *      ordinary sung spans, and that fill is monotonic between two samples.
  */
 const http = require('http');
 const WebSocket = require(require('path').join(process.cwd(), 'node_modules', 'ws'));
-
-const PAGE = process.argv[2] || 'http://localhost:8100/music/the-man-i-m-trying-to-be/';
-
-// Dead-air gaps (>=5s) per track, from parse of music-lyrics.json through
-// lrc.ts hold-aware window math (scripts regen: node --experimental-strip-types).
-const GAPS_BY_SLUG = {
-  'the-man-i-m-trying-to-be': [
-    { vocalEnd: 78.82, nextStart: 88.72 },
-    { vocalEnd: 137.82, nextStart: 157.58 },
-  ],
-  'don-t-let-the-green-fool-you': [
-    { vocalEnd: 16.76, nextStart: 31.46 },
-    { vocalEnd: 191.12, nextStart: 203.72 },
-  ],
-  'she-s-my-wife': [], // no dead air >= 5s — countdown must never fire
-};
-
-const get = (path) =>
-  new Promise((resolve, reject) => {
-    http.get({ host: '127.0.0.1', port: 9222, path }, (res) => {
-      let d = '';
-      res.on('data', (c) => (d += c));
-      res.on('end', () => resolve(JSON.parse(d)));
-    }).on('error', reject);
-  });
-
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-async function main() {
-  const targets = await get('/json/list');
-  const page = targets.find((t) => t.type === 'page');
-  const ws = new WebSocket(page.webSocketDebuggerUrl, { perMessageDeflate: false });
-  await new Promise((r) => ws.on('open', r));
+const GAPS_BY_SLUG = {
+  // measured from music-lyrics.json via parseLrc hold-aware ends; start = true vocal end
+  'the-man-i-m-trying-to-be': [
+    { i: 17, vocalEnd: 78.82, nextStart: 88.72 },
+    { i: 31, vocalEnd: 137.82, nextStart: 157.58 },
+  ],
+  'don-t-let-the-green-fool-you': [
+    { i: 15, vocalEnd: 16.8, nextStart: 31.5 }, // 14.7 s
+    { i: 39, vocalEnd: 191.1, nextStart: 203.7 }, // 12.6 s
+  ],
+  'she-s-my-wife': [], // no dead air >= 5s — marker must never fire
+};
 
+function main() {
+  const PAGE = process.argv[2] || 'http://localhost:8100/music/the-man-i-m-trying-to-be/';
+  const wsModule = require(require('path').join(process.cwd(), 'node_modules', 'ws'));
+  return new Promise((res) => {
+    http.get({ host: '127.0.0.1', port: 9222, path: '/json/list' }, (r) => {
+      let d = '';
+      r.on('data', (c) => (d += c));
+      r.on('end', () => res(JSON.parse(d)));
+    }).on('error', (e) => {
+      console.error('CDP unavailable:', e.message);
+      process.exit(1);
+    });
+  }).then((targets) => run(PAGE, targets, wsModule));
+}
+
+async function run(PAGE, targets, wsModule) {
+  const page = targets.find((t) => t.type === 'page');
+  if (!page) {
+    console.log('FAIL: no CDP page target');
+    process.exit(1);
+  }
+  const ws = new wsModule(page.webSocketDebuggerUrl, { perMessageDeflate: false });
+  await new Promise((r) => ws.on('open', r));
   let id = 0;
-  const pending = new Map();
+  const pend = new Map();
   ws.on('message', (raw) => {
-    const msg = JSON.parse(raw);
-    if (msg.id && pending.has(msg.id)) {
-      pending.get(msg.id)(msg);
-      pending.delete(msg.id);
+    const m = JSON.parse(raw);
+    if (m.id && pend.has(m.id)) {
+      pend.get(m.id)(m);
+      pend.delete(m.id);
     }
   });
   const send = (method, params = {}) =>
-    new Promise((resolve) => {
+    new Promise((res) => {
       const mid = ++id;
-      pending.set(mid, resolve);
+      pend.set(mid, res);
       ws.send(JSON.stringify({ id: mid, method, params }));
     });
-  const evalJs = async (expr) => {
-    const r = await send('Runtime.evaluate', { expression: expr, returnByValue: true, awaitPromise: true });
+  const ev = async (expr) => {
+    const r = await send('Runtime.evaluate', { expression: expr, returnByValue: true, awaitPromise: true })
     return r.result && r.result.result ? r.result.result.value : undefined;
   };
 
   await send('Page.enable');
-  await send('Runtime.enable');
-
   await send('Page.navigate', { url: PAGE });
   await sleep(4500);
 
-  // Open the theater via its explicit button (labelled by text, not aria-label)
-  await evalJs(`(() => {
-    const b = [...document.querySelectorAll('button')].find(x => x.textContent.trim() === 'Open karaoke view');
-    if (!b) return 'NO-BUTTON';
-    b.click();
-    return 'clicked';
-  })()`);
+  await ev(`[...document.querySelectorAll('button')].find(x => x.textContent.trim() === 'Open karaoke view')?.click()`);
   await sleep(800);
-
-  const open = await evalJs(`!!document.querySelector('.hm-theater')`);
-  if (!open) {
-    console.log('FAIL: theater overlay did not open');
-    process.exit(1);
-  }
-  // TRUSTED click on the theater play button — a synthesized .click() does not
-  // confer user activation, so media play() stays blocked.
-  const rect = await evalJs(`(() => {
-    const b = document.querySelector('.hm-theater-play');
-    if (!b) return null;
-    const r = b.getBoundingClientRect();
-    return { x: r.x + r.width / 2, y: r.y + r.height / 2 };
-  })()`);
+  const rect = await ev(
+    `(() => { const b = document.querySelector('.hm-theater-play'); const r = b.getBoundingClientRect(); return { x: r.x + r.width / 2, y: r.y + r.height / 2 }; })()`
+  );
   if (!rect) {
     console.log('FAIL: no .hm-theater-play button');
     process.exit(1);
@@ -104,7 +89,7 @@ async function main() {
     await send('Input.dispatchMouseEvent', { type, x: rect.x, y: rect.y, button: 'left', clickCount: 1 });
   }
   await sleep(900);
-  const state = await evalJs(`(() => {
+  const state = await ev(`(() => {
     const a = document.querySelector('audio');
     return a ? { playing: !a.paused, t: a.currentTime } : null;
   })()`);
@@ -112,25 +97,22 @@ async function main() {
     console.log('FAIL: trusted click did not start playback', JSON.stringify(state));
     process.exit(1);
   }
-  // Mute now that playback is running (muting mid-play needs no activation).
-  await evalJs(`document.querySelector('audio').muted = true; 'ok'`);
+  await ev(`document.querySelector('audio').muted = true; 'ok'`);
   console.log(`playback started (muted), t=${state.t.toFixed(2)}`);
 
-  const seek = (t) => evalJs(`(async () => { document.querySelector('audio').currentTime = ${t}; return 'ok'; })()`);
+  const seek = (t) => ev(`(async () => { document.querySelector('audio').currentTime = ${t}; return 'ok'; })()`);
   const sample = () =>
-    evalJs(`(() => {
+    ev(`(() => {
       const cd = document.querySelector('.hm-theater-interlude');
-      const up = document.querySelector('.hm-theater-line.is-upcoming');
       const a = document.querySelector('audio');
       const lyricsPanel = document.querySelector('.hm-theater-lyrics');
+      const fill = cd ? cd.querySelector('.hm-theater-interlude-fill') : null;
       return {
         t: a ? a.currentTime : null,
         paused: a ? a.paused : null,
-        counting: cd ? cd.classList.contains('is-counting') : null,
-        countdown: cd ? (cd.querySelector('.hm-theater-count-num')?.textContent ?? null) : null,
-        gap: cd ? (cd.querySelector('.hm-theater-interlude-title')?.textContent ?? null) : null,
-        lyricInRow: cd ? (cd.querySelector('.hm-theater-interlude-lyric')?.textContent?.trim().slice(0, 40) ?? null) : null,
-        upcoming: up ? up.textContent.trim().slice(0, 60) : null,
+        title: cd ? (cd.querySelector('.hm-theater-interlude-title')?.textContent ?? null) : null,
+        fillW: fill ? parseFloat(getComputedStyle(fill).width) : null,
+        rowW: cd ? cd.getBoundingClientRect().width : null,
         visible: cd ? (cd.offsetWidth > 0 && cd.offsetParent !== null) : null,
         inFlowRow: (() => {
           if (!cd || !lyricsPanel) return null;
@@ -140,36 +122,32 @@ async function main() {
       };
     })()`);
 
-  // Expected phase from real time + gap math (mirrors component logic):
-  // full gap -> centered "musical interlude" dim overlay; final 3s -> 3-2-1.
   const slugMatch = PAGE.match(/\/music\/([^/]+)\//);
   const slug = slugMatch ? decodeURIComponent(slugMatch[1]) : '';
   const GAPS = GAPS_BY_SLUG[slug] || [];
+  // Expected: in-gap -> marker row with title + fill fraction over the WHOLE
+  // gap (start = true vocal end of the previous line, end = next line stamp).
   const expectAt = (t) => {
     for (const g of GAPS) {
       if (t >= g.vocalEnd && t < g.nextStart) {
-        if (t >= g.nextStart - 3) {
-          return { countdown: String(Math.min(3, Math.max(1, Math.ceil(g.nextStart - t)))), gap: 'musical interlude', counting: true, nextLineAt: g.nextStart };
-        }
-        return { countdown: null, gap: 'musical interlude', counting: false, nextLineAt: g.nextStart };
+        return { row: true, frac: (t - g.vocalEnd) / (g.nextStart - g.vocalEnd), nextLineAt: g.nextStart, why: `gap @${g.nextStart}` };
       }
     }
-    return { countdown: null, gap: null, counting: null, nextLineAt: null };
+    return { row: false, frac: null, nextLineAt: null, why: null };
   };
 
-  // Cases: generic from gap math + per-track negatives.
   const cases = [];
   for (const g of GAPS) {
-    for (const tick of [1, 2, 3]) {
-      cases.push({ seek: g.nextStart - tick - 0.4, why: `gap @${g.nextStart} — tick ${tick}` });
+    // Fractions across the WHOLE gap: 10%, ~50%, 75%, 95%.
+    for (const f of [0.1, 0.5, 0.75, 0.95]) {
+      const span = g.nextStart - g.vocalEnd;
+      cases.push({ seek: g.vocalEnd + f * span, why: `gap @${g.nextStart} — fill ${Math.round(f * 100)}%`, frac: f });
     }
-    cases.push({ seek: g.vocalEnd + 1, why: `gap @${g.nextStart} — centered "musical interlude" in quiet stretch` });
-    cases.push({ seek: g.nextStart - 3.5, why: `gap @${g.nextStart} — interlude just before 3-2-1 boundary` });
+    cases.push({ seek: g.nextStart + 1.2, why: `gap @${g.nextStart} — row gone after vocal returns`, frac: null });
   }
   if (GAPS.length > 0) {
-    cases.push({ seek: GAPS[0].vocalEnd - 12, why: 'outside any gap — no countdown' });
+    cases.push({ seek: GAPS[0].vocalEnd - 12, why: 'outside any gap — no row', frac: null });
   } else {
-    // She's My Wife has no qualifying gaps: prove silence across the song.
     cases.push(
       { seek: 95, why: 'mid-song span — no qualifying gap' },
       { seek: 250, why: 'late-song span — no qualifying gap' },
@@ -179,31 +157,41 @@ async function main() {
 
   let pass = 0;
   let fail = 0;
+  let lastGapFill = null; // { frac, w } for monotonicity across the same gap
   for (const c of cases) {
     await seek(c.seek);
-    await sleep(1200); // real time advances; sample truth from audio.currentTime
+    await sleep(1200);
     const s = await sample();
     if (s.paused) {
       fail += 1;
       console.log(`FAIL ${c.why} | audio PAUSED at t=${s.t}`);
       continue;
     }
+    const g = GAPS.find((x) => s.t >= x.vocalEnd && s.t < x.nextStart);
     const exp = expectAt(s.t);
-    const okNum = (s.countdown ?? null) === exp.countdown;
-    const okGap = (s.gap ?? null) === exp.gap;
-    const okCounting = exp.counting === null || s.counting === exp.counting;
-    const okRow = exp.countdown !== null || exp.gap !== null ? s.inFlowRow === true && s.singleRow === 1 : true;
-    const okLyric = exp.countdown !== null ? Boolean(s.lyricInRow) : true;
-    const ok = okNum && okGap && okCounting && okRow && okLyric;
+    let ok = true;
+    let fillNote = '';
+
+    if (exp.row) {
+      const okPresence = s.inFlowRow === true && s.singleRow === 1 && s.title === 'musical interlude' && s.visible === true;
+      const okFillW = s.fillW !== null && s.rowW > 0;
+      const expW = s.rowW * Math.min(1, Math.max(0, exp.frac));
+      const tol = Math.max(4, s.rowW * 0.05); // seek latency + rAF sampling
+      const okFill = okFillW && Math.abs(s.fillW - expW) <= tol;
+      ok = okPresence && okFill;
+      fillNote = ` fillW=${s.fillW?.toFixed(0) ?? '—'} exp=${expW.toFixed(0)}±${tol.toFixed(0)}`;
+      lastGapFill = g ? { frac: exp.frac, w: s.fillW } : null;
+    } else {
+      const okGone = s.singleRow === 0;
+      ok = okGone;
+      fillNote = ` rows=${s.singleRow}`;
+      if (g) lastGapFill = null;
+    }
     console.log(
       `${ok ? 'PASS' : 'FAIL'} ${c.why} | seek ${c.seek} -> t=${s.t.toFixed(2)}` +
-        ` | countdown=${s.countdown === null ? '—' : s.countdown}/${exp.countdown === null ? '—' : exp.countdown}` +
-        ` gap=${s.gap === null ? '—' : s.gap}/${exp.gap === null ? '—' : exp.gap}` +
-        ` dim=${s.counting === null ? '—' : s.counting ? 'deep' : 'base'}` +
+        ` | title=${s.title === null ? '—' : '"' + s.title + '"'}` +
         ` inFlow=${s.inFlowRow === null ? '—' : s.inFlowRow}` +
-        ` rows=${s.singleRow ?? '—'}` +
-        ` lyric="${s.lyricInRow ?? '—'}"` +
-        ` | upcoming=${s.upcoming ? '"' + s.upcoming + '"' : '—'}${!ok && exp.nextLineAt ? ' (expected next line @ ' + exp.nextLineAt + ')' : ''}`
+        ` rows=${s.singleRow ?? '—'}${fillNote}`
     );
     ok ? (pass += 1) : (fail += 1);
   }

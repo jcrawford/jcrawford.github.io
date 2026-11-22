@@ -509,97 +509,50 @@ body.hm-theater-open .hm-music-hint {
 }
 
 /* Interlude marker row: lives IN the lyric flow, between the last sung line
-   and the upcoming one — no overlay, nothing covered. Filled green for the
-   whole instrumental stretch; during the final 3 s the 3-2-1 digit and the
-   upcoming lyric appear inside the same row. */
+   and the upcoming one — no overlay, nothing covered. The row is a timing
+   bar: white fills left-to-right turning green under the label, completing
+   exactly when the next lyric starts and handing off to its own word fill. */
 
 .hm-theater-interlude {
+  position: relative;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.3rem;
   margin: 0.4rem 0;
   padding: 0.9rem 1rem;
   border-radius: 12px;
-  background: linear-gradient(90deg, rgba(101, 188, 123, 0.16), rgba(101, 188, 123, 0.3), rgba(101, 188, 123, 0.16));
   border: 1px solid rgba(101, 188, 123, 0.55);
-  color: var(--hybridmag-color-primary, #65bc7b);
-  transition: background 0.4s ease, border-color 0.4s ease;
+  background: rgba(255, 255, 255, 0.06);
 }
 
-/* During the count the fill deepens so the row reads as "active". */
-.hm-theater-interlude.is-counting {
-  background: linear-gradient(90deg, rgba(101, 188, 123, 0.34), rgba(101, 188, 123, 0.5), rgba(101, 188, 123, 0.34));
-  border-color: var(--hybridmag-color-primary, #65bc7b);
+/* The fill sweep: white→green gradient growing from the left edge across
+   the WHOLE interlude duration (fraction driven by --hm-fill from the
+   component's gap math). */
+.hm-theater-interlude-fill {
+  position: absolute;
+  inset: 0;
+  width: var(--hm-fill, 0%);
+  background: linear-gradient(90deg, #f3fbf5, var(--hybridmag-color-primary, #65bc7b));
+  opacity: 0.55;
+  transition: none;
+  pointer-events: none;
 }
 
 .hm-theater-interlude-title {
+  position: relative;
+  z-index: 1;
   font-size: clamp(0.95rem, 3.4vw, 1.25rem);
   font-weight: 700;
   letter-spacing: 0.26em;
   text-transform: uppercase;
-  color: var(--hybridmag-color-primary, #65bc7b);
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
   text-align: center;
   white-space: nowrap;
 }
 
-/* Single-row contract: the digit and the upcoming lyric appear INSIDE the
-   interlude row beneath its title — no second overlay when counting starts. */
-
-.hm-theater-count-num {
-  font-size: clamp(2.6rem, 9vw, 4rem);
-  font-weight: 800;
-  line-height: 1;
-  color: var(--hybridmag-color-primary, #65bc7b);
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.65);
-  animation: hm-theater-count-pop 0.9s ease-out;
-}
-
-/* The upcoming line, shown inside the row under the countdown digit so the
-   singer knows what to sing the moment the row ends. */
-
-.hm-theater-interlude-lyric {
-  font-size: clamp(0.95rem, 3.6vw, 1.3rem);
-  line-height: 1.35;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.92);
-  text-align: center;
-  max-width: min(560px, 80vw);
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-}
-
-@keyframes hm-theater-count-pop {
-  0% {
-    opacity: 0;
-    transform: scale(1.45);
-  }
-  22% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  78% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0.75;
-    transform: scale(0.94);
-  }
-}
-
-/* The line the countdown is queuing into: outline pulse so the singer can see
-   the target lyric through the instrumental. */
-
-.hm-theater-line.is-upcoming {
-  outline: 2px dashed var(--hybridmag-color-primary, #65bc7b);
-  outline-offset: 10px;
-  border-radius: 6px;
-  color: rgba(255, 255, 255, 0.92);
-}
+/* The line following the interlude flows straight into its own word fill. */
 
 .hm-theater-line {
   font-size: clamp(2rem, 11vw, 3.2rem);

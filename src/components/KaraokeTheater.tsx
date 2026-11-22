@@ -34,13 +34,14 @@ const formatTime = (seconds: number): string => {
 };
 
 /**
- * Interlude countdown: when a lyric line is followed by a long instrumental
- * gap (dead air measured from where the vocal actually ends, via the A2ext
- * hold stamps, to the next line's stamp), count the singer in 3-2-1 over the
- * final seconds of the gap. Short gaps between lines stay silent.
+ * Interlude marker: when a lyric line is followed by a long instrumental gap
+ * (dead air measured from where the vocal actually ends, via the A2ext hold
+ * stamps, to the next line's stamp), a "musical interlude" row is injected
+ * into the lyric flow and white→green fills left-to-right across the ENTIRE
+ * gap — the same karaoke fill the words use, just slower. Short gaps between
+ * lines stay silent.
  */
-const INTERLUDE_GAP_MIN = 5; // seconds of dead air before a countdown is warranted
-const INTERLUDE_LEAD = 3; // seconds ahead of the next line the countdown covers
+const INTERLUDE_GAP_MIN = 5; // seconds of dead air before a marker row is warranted
 
 const KaraokeTheater: React.FC<KaraokeTheaterProps> = ({ lines, coverUrl, title, artist, onClose }) => {
   const { currentTime, isPlaying, toggle, seek, duration } = useMusicPlayer();
@@ -49,14 +50,14 @@ const KaraokeTheater: React.FC<KaraokeTheaterProps> = ({ lines, coverUrl, title,
   const panelRef = useRef<HTMLDivElement | null>(null);
   const rowRefs = useRef<Array<HTMLDivElement | null>>([]);
 
-  // Interlude countdown: find a long instrumental gap whose 3-2-1 window the
-  // playhead is currently inside. Dead air = next line's stamp minus where the
-  // previous line's vocal actually ends (its hold stamp), so a sung line that
-  // trails into the gap doesn't shorten the interlude.
+  // Interlude: find a long instrumental gap the playhead is currently inside.
+  // Dead air = next line's stamp minus where the previous line's vocal
+  // actually ends (its hold stamp), so a sung line that trails into the gap
+  // doesn't shorten the interlude.
   const interlude = useMemo(() => {
     if (lines.length === 0) return null;
-    let threshold: number | null = null;
     let nextIndex = -1;
+    let gapStart: number | null = null;
     for (let i = 0; i < lines.length - 1; i += 1) {
       const wordEnd = lines[i].words?.length
         ? lines[i].words![lines[i].words!.length - 1].end
@@ -65,50 +66,29 @@ const KaraokeTheater: React.FC<KaraokeTheaterProps> = ({ lines, coverUrl, title,
       if (deadAir >= INTERLUDE_GAP_MIN) {
         if (currentTime < lines[i].time) break; // gap is still ahead of the playhead
         if (currentTime < lines[i + 1].time) {
-          const nextStart = lines[i + 1].time;
-          threshold = nextStart - INTERLUDE_LEAD;
           nextIndex = i + 1;
+          gapStart = wordEnd;
           break;
         }
       }
     }
-    const counting = threshold !== null && currentTime >= threshold && isPlaying;
-    return {
-      counting,
-      threshold,
-      nextIndex,
-      // Where the quiet stretch begins: the previous line's true vocal end.
-      gapStart: nextIndex > 0 && lines[nextIndex - 1].words?.length
-        ? lines[nextIndex - 1].words![lines[nextIndex - 1].words!.length - 1].end
-        : null,
-    };
-  }, [lines, currentTime, isPlaying]);
+    return { nextIndex, gapStart };
+  }, [lines, currentTime]);
 
+  // Fill fraction for the live interlude row: 0 where the previous vocal
+  // ends, 1 exactly when the next lyric starts — so the row hands off to the
+  // next line's own word fill with no jump.
+  const interludeNextStart = interlude && interlude.nextIndex > 0 ? lines[interlude.nextIndex].time : null;
+  const interludeFill =
+    interlude && interlude.gapStart !== null && interludeNextStart !== null
+      ? Math.min(1, Math.max(0, (currentTime - interlude.gapStart) / (interludeNextStart - interlude.gapStart)))
+      : 0;
 
-  // 3-2-1 number for the current countdown tick (each digit holds ~1 s).
-  const countdown =
-    interlude?.counting && interlude.nextIndex >= 0
-      ? Math.min(3, Math.max(1, Math.ceil(lines[interlude.nextIndex].time - currentTime)))
-      : null;
-
-  // Phase banner: "brief timeout" over the whole quiet stretch, replaced by
-  // the 3-2-1 during the final seconds before the vocal returns.
-  const inGap = (() => {
-    if (!interlude || interlude.nextIndex < 0 || !isPlaying) return false;
-    const nextStart = lines[interlude.nextIndex].time;
-    const gapStart =
-      interlude.gapStart !== null
-        ? interlude.gapStart
-        : Math.max(0, nextStart - INTERLUDE_GAP_MIN);
-    return currentTime >= gapStart && currentTime < nextStart - INTERLUDE_LEAD;
-  })();
-
-  // Keep the active line pinned in the middle third of the stage. While an
-  // interlude marker row is live, pin that row instead — it carries the
-  // countdown and the upcoming lyric inside it.
+  // Keep the active line pinned in the middle third of the stage. While the
+  // interlude row is live, pin that row instead — it is the current state.
   const gapRowRef = useRef<HTMLDivElement | null>(null);
   const gapActive = Boolean(
-    interlude && interlude.nextIndex > 0 && interlude.gapStart !== null && (inGap || countdown !== null)
+    interlude && interlude.nextIndex > 0 && interlude.gapStart !== null && interludeNextStart !== null
   );
   useEffect(() => {
     const container = panelRef.current;
@@ -208,37 +188,31 @@ const KaraokeTheater: React.FC<KaraokeTheaterProps> = ({ lines, coverUrl, title,
           {lines.map((line, index) => {
             const isCurrent = index === activeIndex;
             const isPast = activeIndex >= 0 && index < activeIndex;
-            const isUpcoming = countdown !== null && index === interlude?.nextIndex;
             const isFirstAfterGap =
               interlude &&
               interlude.nextIndex === index &&
               interlude.gapStart !== null &&
-              index > 0 &&
-              (inGap || countdown !== null);
+              index > 0;
             return (
               <React.Fragment key={`th-${line.time}-${index}`}>
                 {isFirstAfterGap && (
                   <div
                     ref={gapRowRef}
-                    className={`hm-theater-interlude${countdown !== null ? ' is-counting' : ''}`}
+                    className="hm-theater-interlude"
                     aria-hidden="true"
                   >
                     <span className="hm-theater-interlude-title">musical interlude</span>
-                    {countdown !== null && (
-                      <>
-                        <span key={countdown} className="hm-theater-count-num">
-                          {countdown}
-                        </span>
-                        <span className="hm-theater-interlude-lyric">{line.text}</span>
-                      </>
-                    )}
+                    <span
+                      className="hm-theater-interlude-fill"
+                      style={{ '--hm-fill': `${(interludeFill * 100).toFixed(2)}%` } as React.CSSProperties}
+                    />
                   </div>
                 )}
                 <div
                   ref={(el) => {
                     rowRefs.current[index] = el;
                   }}
-                  className={`hm-theater-line${isCurrent ? ' is-current' : ''}${isPast ? ' is-past' : ''}${isUpcoming ? ' is-upcoming' : ''}`}
+                  className={`hm-theater-line${isCurrent ? ' is-current' : ''}${isPast ? ' is-past' : ''}`}
                   onClick={() => {
                     seek(line.time);
                   }}
