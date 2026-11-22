@@ -223,9 +223,7 @@ const KaraokeTheater: React.FC<KaraokeTheaterProps> = ({ lines, coverUrl, title,
             aria-hidden="true"
           >
             <div className="hm-theater-interlude-card">
-              <span key={countdown === null ? 'gap' : 'count'} className="hm-theater-interlude-title">
-                {countdown !== null ? 'coming up' : 'musical interlude'}
-              </span>
+              <span className="hm-theater-interlude-title">musical interlude</span>
               {countdown !== null && (
                 <span key={countdown} className="hm-theater-count-num">
                   {countdown}

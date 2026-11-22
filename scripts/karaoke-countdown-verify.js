@@ -154,7 +154,7 @@ async function main() {
     for (const g of GAPS) {
       if (t >= g.vocalEnd && t < g.nextStart) {
         if (t >= g.nextStart - 3) {
-          return { countdown: String(Math.min(3, Math.max(1, Math.ceil(g.nextStart - t)))), gap: 'coming up', counting: true, nextLineAt: g.nextStart };
+          return { countdown: String(Math.min(3, Math.max(1, Math.ceil(g.nextStart - t)))), gap: 'musical interlude', counting: true, nextLineAt: g.nextStart };
         }
         return { countdown: null, gap: 'musical interlude', counting: false, nextLineAt: g.nextStart };
       }
