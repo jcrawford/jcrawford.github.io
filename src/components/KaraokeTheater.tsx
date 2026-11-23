@@ -213,9 +213,6 @@ const KaraokeTheater: React.FC<KaraokeTheaterProps> = ({ lines, coverUrl, title,
                     rowRefs.current[index] = el;
                   }}
                   className={`hm-theater-line${isCurrent ? ' is-current' : ''}${isPast ? ' is-past' : ''}`}
-                  onClick={() => {
-                    seek(line.time);
-                  }}
                 >
                   {renderLine(line, isCurrent)}
                 </div>

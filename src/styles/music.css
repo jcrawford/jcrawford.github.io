@@ -562,7 +562,9 @@ body.hm-theater-open .hm-music-hint {
   padding: 0.55rem 0.2rem;
   color: rgba(255, 255, 255, 0.28);
   transition: color 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
-  cursor: pointer;
+  cursor: default;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }
 
 .hm-theater-line.is-past {
