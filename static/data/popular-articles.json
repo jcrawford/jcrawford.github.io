@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T18:21:23.232Z",
+  "generatedAt": "2026-11-23T03:36:52.842Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -124,10 +124,10 @@
       }
     },
     {
-      "id": "/reviews/huupe-mini-review",
-      "views": 37,
+      "id": "/series/intro-to-making-mead",
+      "views": 38,
       "comments": 0,
-      "score": 37,
+      "score": 38,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -135,7 +135,7 @@
       }
     },
     {
-      "id": "/series/intro-to-making-mead",
+      "id": "/reviews/huupe-mini-review",
       "views": 37,
       "comments": 0,
       "score": 37,
