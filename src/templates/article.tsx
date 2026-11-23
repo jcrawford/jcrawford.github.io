@@ -89,6 +89,7 @@ interface ArticleData {
   markdownRemark: {
     id: string;
     html: string;
+    fileAbsolutePath: string;
     frontmatter: {
       slug: string;
       title: string;
@@ -491,6 +492,7 @@ export const query = graphql`
     markdownRemark(frontmatter: { slug: { eq: $slug } }, fileAbsolutePath: { regex: "/content/(posts|reviews|brewing)/" }) {
       id
       html
+      fileAbsolutePath
       frontmatter {
         slug
         title
@@ -599,7 +601,8 @@ export const Head: HeadFC<ArticleData> = ({ data }) => {
   if (!frontmatter) return <></>;
   
   const isReview = hasTag(frontmatter.tags || [], 'reviews');
-  const isBrewing = frontmatter.type === 'brewing-recipe';
+  const isBrewingDir = (data.markdownRemark?.fileAbsolutePath || '').includes('/content/brewing/');
+  const isBrewing = isBrewingDir || frontmatter.type === 'brewing-recipe';
   const isSeries = !!frontmatter.series?.name;
   const articlePath = getArticlePath(frontmatter.slug, isSeries, isReview, isBrewing);
   const siteUrl = data.site.siteMetadata.siteUrl;
