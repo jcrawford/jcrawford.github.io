@@ -67,6 +67,20 @@ const REPEAT_LABEL: Record<string, string> = {
 };
 
 /**
+ * Hover/focus tooltip for a dock control. Native `title` tooltips are
+ * unreliable here (the bar uses backdrop-filter, which creates a stacking
+ * context and can clip/overlay), so this renders an absolutely-positioned
+ * span anchored above the button — inside the button, above everything, no
+ * JS measuring. Shows on hover and keyboard focus, hidden on touch (no
+ * hover state fires; the touch tap activates the control directly).
+ */
+const DockTip: React.FC<{ label: string }> = ({ label }) => (
+  <span className="hm-music-docktip" role="tooltip">
+    {label}
+  </span>
+);
+
+/**
  * Persistent playback dock. The callout renders on music pages as soon as the
  * page loads; the transport row appears once a track is cued or playing.
  */
@@ -291,6 +305,7 @@ const MusicPlayerBar: React.FC = () => {
                 aria-expanded={panelOpen}
                 aria-label={panelOpen ? 'Hide queue' : 'Show queue'}
               >
+                <DockTip label={panelOpen ? 'Hide queue' : 'Show queue'} />
                 <img
                   className="hm-music-bar-cover"
                   src={cover}
@@ -333,7 +348,9 @@ const MusicPlayerBar: React.FC = () => {
                   previous();
                 }}
                 aria-label="Previous track"
+                title="Previous (restart if more than 3s in)"
               >
+                <DockTip label="Previous" />
                 ⏮
               </button>
               <button
@@ -345,6 +362,7 @@ const MusicPlayerBar: React.FC = () => {
                 }}
                 aria-label={isPlaying ? 'Pause' : 'Play'}
               >
+                <DockTip label={isPlaying ? 'Pause' : 'Play'} />
                 {isPlaying ? '❚❚' : '▶'}
               </button>
               <button
@@ -356,6 +374,7 @@ const MusicPlayerBar: React.FC = () => {
                 }}
                 aria-label="Next track"
               >
+                <DockTip label="Next track" />
                 ⏭
               </button>
               <button
@@ -364,8 +383,8 @@ const MusicPlayerBar: React.FC = () => {
                 onClick={cycleRepeat}
                 aria-pressed={repeat !== 'off'}
                 aria-label={REPEAT_LABEL[repeat]}
-                title={REPEAT_LABEL[repeat]}
               >
+                <DockTip label={REPEAT_LABEL[repeat]} />
                 {repeat === 'one' ? '🔂' : '🔁'}
               </button>
             </div>
@@ -396,11 +415,27 @@ const MusicPlayerBar: React.FC = () => {
                   }}
                   aria-label="Open karaoke view for the current song"
                   aria-haspopup="dialog"
+                  title="Karaoke view"
                 >
-                  <span className="hm-music-btn-karaoke-icon" aria-hidden="true">
-                    🎤
-                  </span>
-                  <span className="hm-music-btn-karaoke-label">Karaoke</span>
+                  <svg
+                    className="hm-music-btn-karaoke-icon"
+                    viewBox="0 0 24 24"
+                    width="17"
+                    height="17"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <rect x="9" y="2" width="6" height="12" rx="3" />
+                    <path d="M5 10a7 7 0 0 0 14 0" />
+                    <line x1="12" y1="17" x2="12" y2="21" />
+                    <line x1="8" y1="21" x2="16" y2="21" />
+                  </svg>
+                  <DockTip label="Karaoke view" />
                 </button>
               )}
               <button
@@ -409,8 +444,8 @@ const MusicPlayerBar: React.FC = () => {
                 onClick={toggleMute}
                 aria-pressed={muted}
                 aria-label={muted ? 'Unmute' : 'Mute'}
-                title={muted ? 'Unmute (M)' : 'Mute (M)'}
               >
+                <DockTip label={muted ? 'Unmute (M)' : 'Mute (M)'} />
                 {muted || volume === 0 ? '🔇' : '🔊'}
               </button>
               <input
@@ -423,7 +458,8 @@ const MusicPlayerBar: React.FC = () => {
                 onChange={(event) => setVolume(Number(event.target.value))}
                 aria-label="Volume"
               />
-              <button type="button" className="hm-music-btn hm-music-btn-close" onClick={close} aria-label="Close player">
+              <button type="button" className="hm-music-btn hm-music-btn-close" onClick={close} aria-label="Close player" title="Close player">
+                <DockTip label="Close player" />
                 ✕
               </button>
             </div>
