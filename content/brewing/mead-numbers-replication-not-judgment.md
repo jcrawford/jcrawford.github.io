@@ -25,6 +25,10 @@ That was the trap. I kept treating good numbers as proof of a good brew, so ever
 
 It was never that I was unable to fix a batch. It was that I did not believe my palate had the authority to call a batch flawed when the numbers were telling me everything was fine.
 
+And when those batches did not come out good after fermentation, I did not go looking for a real fix — I leaned on the one thing I believed could never fail: time. I was convinced conditioning was what was going to make them good. Give it months in secondary, get it into bottles, let the bottles age, and everything would come together. I thought I was doing everything right, and that time would fix it all.
+
+That belief is being tested as I write this. I have several batches bottle conditioning right now, and I fear some of them may need to be fixed — because I have come to doubt that conditioning alone will make them better. Age can mellow harsh alcohol and let flavors marry; those are real changes. What age cannot do is put body into a thin mead, rebalance something too sweet or too dry, or erase an off flavor that was baked in during fermentation. If the foundation is wrong, patience just delivers the same flaw — softer, and a year later.
+
 ## The Video That Hit Home
 
 Brian and Derica of [City Steading Brews](https://www.youtube.com/@csfermenstation) recently put out a video that articulated exactly this, and it struck home with me. Their point, in one sentence: **the numbers are there for replication — they do not mean your brew is good.**
