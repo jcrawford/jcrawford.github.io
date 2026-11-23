@@ -115,53 +115,21 @@ export const useMusicPlayer = (): MusicPlayerContextValue => {
 };
 
 /**
- * True when this tab may start audible playback without a click: either the
- * browser reports autonomous autoplay allowed, or the reader has already
- * interacted with the page (click/keydown anywhere unlocks audio).
+ * Historical autoplay-policy probe — RETIRED (Nov 2026).
+ * Joseph's rule: nothing on the music section ever starts playing on its
+ * own, page loads and app-switch returns included. Nothing may call this.
  */
-export const canAutoplay = async (): Promise<boolean> => {
-  if (typeof navigator === 'undefined') return false;
-  const nav = navigator as Navigator & { userActivation?: { isActive: boolean } };
-  if (nav.userActivation?.isActive) return true;
-  const mediaNav = nav as Navigator & {
-    getAutoplayPolicy?: (policy: string) => boolean | Promise<boolean>;
-  };
-  if (typeof mediaNav.getAutoplayPolicy === 'function') {
-    try {
-      return Boolean(await mediaNav.getAutoplayPolicy('audiocontext'));
-    } catch {
-      // Fall through to the probe.
-    }
-  }
-  return new Promise((resolve) => {
-    const probe = document.createElement('audio');
-    probe.muted = false;
-    probe.volume = 0;
-    probe.preload = 'none';
-    const done = (allowed: boolean) => {
-      probe.removeAttribute('src');
-      resolve(allowed);
-    };
-    probe.addEventListener('playing', () => done(true), { once: true });
-    probe.addEventListener('error', () => done(false), { once: true });
-    // A data URI plays locally with zero network and (usually) zero policy cost.
-    probe.src =
-      'data:audio/mp3;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjU4Ljc2LjEwMAAAAAAAAAAAAAAA//tQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWGluZwAAAA8AAAACAAABIADATGF2ZjU4Ljc2LjEwMAAAAAAAAAAAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB8AAAAKgAAAAA//tQxAEB';
-    const playPromise = probe.play();
-    if (playPromise) playPromise.catch(() => done(false));
-  });
-};
+export const noopUnusedAutoplay = (): void => undefined;
 
 /**
  * Single shared <audio> element that survives Gatsby client-side navigation,
  * because the provider is mounted through wrapRootElement in gatsby-browser and
  * gatsby-ssr.
  *
- * Playback never starts on its own by default: `cue()` and page loads stay
- * paused. The exception is the music deep-link flow — track pages read
- * `canAutoplay` and may call `play()` immediately, matching a direct visitor's
- * intent; the browser may still hold the sound until the reader interacts with
- * the tab, at which point audio resumes (see the audio unlock effect below).
+ * Playback never starts on its own: `cue()` and page loads stay paused, and
+ * backgrounding the tab cannot resurrect playback either — a visibilitychange
+ * guard below pauses anything the browser/OS resumed while the page was
+ * hidden, keeping UI state and the audio element in lockstep.
  */
 export const MusicPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -233,6 +201,38 @@ export const MusicPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
   repeatRef.current = repeat;
 
   const naturalOrder = useMemo(() => musicTracks.map((track) => track.slug), []);
+
+  // App-switch / page-restore guard (Nov 23 2026). Browsers and mobile OSes can
+  // silently "thaw" a suspended media element when a backgrounded tab is
+  // foregrounded again — the audio starts producing sound while React still
+  // believes everything is paused, leaving the dock's play button out of sync
+  // (a tap then double-starts the song). Joseph's rule is absolute: nothing
+  // plays on its own, ever, and a song that was paused when the reader left
+  // must still be paused when they come back. On any restore transition, audio
+  // that is playing while React records "paused" is silenced immediately and
+  // the UI state re-synced; genuinely playing tracks (reader intentionally
+  // kept music running across the app switch) are left alone.
+  const isPlayingRef = useRef(false);
+  isPlayingRef.current = isPlaying;
+  useEffect(() => {
+    if (typeof document === 'undefined') return;
+    const enforce = () => {
+      const audio = audioRef.current;
+      if (!audio) return;
+      if (document.visibilityState === 'hidden') return;
+      if (audio.paused) return;
+      if (isPlayingRef.current) return; // legit playback kept across the switch
+      audio.pause();
+      setCurrentTime(audio.currentTime);
+      setIsPlaying(false);
+    };
+    document.addEventListener('visibilitychange', enforce);
+    window.addEventListener('pageshow', enforce);
+    return () => {
+      document.removeEventListener('visibilitychange', enforce);
+      window.removeEventListener('pageshow', enforce);
+    };
+  }, []);
 
   const buildQueue = useCallback((current: string | null, shuffleOn: boolean): string[] => {
     if (!shuffleOn || naturalOrder.length < 2) return naturalOrder;
@@ -665,6 +665,14 @@ export const MusicPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
           }
         }}
         onPlay={(event) => {
+          // A 'play' event while hidden is the OS resurrecting suspended media
+          // after an app switch — kill it instantly per the no-autoplay rule;
+          // the visibility-guard below backstops it on restore.
+          if (typeof document !== 'undefined' && document.visibilityState === 'hidden') {
+            event.currentTarget.pause();
+            setIsPlaying(false);
+            return;
+          }
           setIsPlaying(true);
           // Fires only when sound actually starts — autoplay-blocked cues stay
           // paused and never count. Debounced so pause→resume on the same track
