@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T03:36:52.842Z",
+  "generatedAt": "2026-11-23T13:17:18.486Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -70,9 +70,9 @@
     },
     {
       "id": "/reviews/capital-one-360-checking",
-      "views": 55,
+      "views": 56,
       "comments": 0,
-      "score": 55,
+      "score": 56,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -124,7 +124,7 @@
       }
     },
     {
-      "id": "/series/intro-to-making-mead",
+      "id": "/reviews/huupe-mini-review",
       "views": 38,
       "comments": 0,
       "score": 38,
@@ -135,10 +135,10 @@
       }
     },
     {
-      "id": "/reviews/huupe-mini-review",
-      "views": 37,
+      "id": "/series/intro-to-making-mead",
+      "views": 38,
       "comments": 0,
-      "score": 37,
+      "score": 38,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
