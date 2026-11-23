@@ -2,6 +2,10 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'gatsby';
 import { trackBySlug, useMusicPlayer, type MusicTrack } from './MusicPlayerProvider';
 import { onCoverError } from '../utils/coverFallback';
+import KaraokeTheater from './KaraokeTheater';
+import { parseLrc, type LyricLine } from '../utils/lrc';
+import lyricsIndex from '../data/music-lyrics.json';
+import wordLyricsIndex from '../data/music-word-lyrics.json';
 
 /** localStorage flag so the "player is here" callout appears on first visit only. */
 const HINT_SEEN_KEY = 'hm-music-hint-seen';
@@ -89,9 +93,23 @@ const MusicPlayerBar: React.FC = () => {
   } = useMusicPlayer();
   const [panelOpen, setPanelOpen] = useState(false);
   const [showHint, setShowHint] = useState(false);
+  const [theaterOpen, setTheaterOpen] = useState(false);
   const trailRef = useRef<HTMLDivElement | null>(null);
   const hintRef = useRef<HTMLDivElement | null>(null);
   const [trailSize, setTrailSize] = useState({ w: 0, h: 0 });
+
+  // Timed lyrics for the currently cued track — the footer karaoke button only
+  // renders when a karaoke view is actually available. Same precedence as the
+  // song page: word-JSON export beats enhanced LRC; no data → no button.
+  const lrcTracks = (lyricsIndex as { tracks?: Record<string, string> }).tracks || {};
+  const wordTracks = (wordLyricsIndex as { tracks?: Record<string, LyricLine[]> }).tracks || {};
+  const theaterLines = useMemo<LyricLine[]>(() => {
+    if (!currentTrack) return [];
+    const wordLines = wordTracks[currentTrack.slug];
+    if (wordLines && wordLines.length > 0) return wordLines;
+    return parseLrc(lrcTracks[currentTrack.slug]);
+  }, [currentTrack, lrcTracks, wordTracks]);
+  const hasTheater = theaterLines.length > 0;
 
   // Measure the trail so the coil spans exactly from the card edge to the dock.
   useEffect(() => {
@@ -368,6 +386,23 @@ const MusicPlayerBar: React.FC = () => {
             </div>
 
             <div className="hm-music-bar-side">
+              {hasTheater && (
+                <button
+                  type="button"
+                  className="hm-music-btn hm-music-btn-karaoke"
+                  onClick={() => {
+                    dismissHint();
+                    setTheaterOpen(true);
+                  }}
+                  aria-label="Open karaoke view for the current song"
+                  aria-haspopup="dialog"
+                >
+                  <span className="hm-music-btn-karaoke-icon" aria-hidden="true">
+                    🎤
+                  </span>
+                  <span className="hm-music-btn-karaoke-label">Karaoke</span>
+                </button>
+              )}
               <button
                 type="button"
                 className={`hm-music-btn hm-music-btn-toggle${muted ? ' is-active' : ''}`}
@@ -438,6 +473,17 @@ const MusicPlayerBar: React.FC = () => {
         </>
         )}
       </div>
+
+      {theaterOpen && currentTrack && hasTheater && (
+        <KaraokeTheater
+          key={currentTrack.slug}
+          lines={theaterLines}
+          coverUrl={currentTrack.covers?.['800']?.jpg || currentTrack.covers?.['400']?.jpg || ''}
+          title={currentTrack.title}
+          artist={currentTrack.artist}
+          onClose={() => setTheaterOpen(false)}
+        />
+      )}
     </>
   );
 };

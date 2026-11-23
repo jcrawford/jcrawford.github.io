@@ -1050,6 +1050,22 @@ body.hm-theater-open .hm-music-hint {
   flex: 0 0 auto;
 }
 
+/* Footer karaoke button: icon + word label so the purpose is unmistakable */
+.hm-music-btn-karaoke {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.32rem 0.6rem;
+  font-size: 0.78rem;
+  line-height: 1;
+  letter-spacing: 0.01em;
+}
+
+.hm-music-btn-karaoke-label {
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
 .hm-music-volume {
   width: 72px;
   accent-color: var(--hm-accent, #7cc4ff);
@@ -1152,6 +1168,17 @@ body.hm-theater-open .hm-music-hint {
 
   .hm-music-bar-side .hm-music-volume {
     width: 56px;
+  }
+
+  /* Karaoke stays a worded button on phones — tighten instead of icon-only. */
+  .hm-music-btn-karaoke {
+    padding: 0.28rem 0.45rem;
+    font-size: 0.72rem;
+    gap: 0.2rem;
+  }
+
+  .hm-music-btn-karaoke-label {
+    font-size: 0.72rem;
   }
 
   .hm-music-single-cover {
