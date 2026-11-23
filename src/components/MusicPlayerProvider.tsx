@@ -173,6 +173,55 @@ export const MusicPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
     return () => cancelAnimationFrame(frame);
   }, [isPlaying]);
 
+  // Screen Wake Lock (Nov 24 2026): keep the screen awake for the whole song.
+  // Joseph's phone was dimming mid-song because a webpage playing audio is
+  // still "idle" to the OS. The Screen Wake Lock API ('screen' lock) fixes
+  // this where supported: Chrome/Edge Android 84+, Safari iOS 16.4+. Request
+  // on actual playback, release on pause/ended/close, re-acquire when the tab
+  // becomes visible again (the browser auto-releases on hide) and on page
+  // load when playback is already running. Silent no-op where unsupported.
+  const wakeLockRef = useRef<WakeLockSentinel | null>(null);
+  useEffect(() => {
+    if (typeof navigator === 'undefined' || !('wakeLock' in navigator)) return;
+    let released = true;
+    const navWake = navigator as Navigator & {
+      wakeLock: { request: (type: 'screen') => Promise<WakeLockSentinel> };
+    };
+    const release = () => {
+      wakeLockRef.current?.release().catch(() => undefined);
+      wakeLockRef.current = null;
+    };
+    const acquire = async () => {
+      if (wakeLockRef.current || !isPlayingRef.current) return;
+      try {
+        const sentinel = await navWake.wakeLock.request('screen');
+        // Safari resolves after a user gesture; Chrome may resolve late or
+        // reject if the page is hidden — mirror the settled value into state.
+        wakeLockRef.current = sentinel;
+        sentinel.addEventListener('release', () => {
+          if (wakeLockRef.current === sentinel) wakeLockRef.current = null;
+        });
+      } catch {
+        // Denied (hidden tab, low-power mode, unsupported) — stay dark, retry
+        // happens on the next play/visible event.
+      }
+    };
+    if (isPlayingRef.current) {
+      released = false;
+      acquire();
+    } else {
+      release();
+    }
+    const onVisible = () => {
+      if (document.visibilityState === 'visible' && isPlayingRef.current) acquire();
+    };
+    document.addEventListener('visibilitychange', onVisible);
+    return () => {
+      document.removeEventListener('visibilitychange', onVisible);
+      if (!released) release();
+    };
+  }, [isPlaying]);
+
   const currentTrack = useMemo(
     () => (currentSlug ? musicTracks.find((track) => track.slug === currentSlug) || null : null),
     [currentSlug]
@@ -673,6 +722,7 @@ export const MusicPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
             setIsPlaying(false);
             return;
           }
+          isPlayingRef.current = true;
           setIsPlaying(true);
           // Fires only when sound actually starts — autoplay-blocked cues stay
           // paused and never count. Debounced so pause→resume on the same track
@@ -683,7 +733,10 @@ export const MusicPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
             firePlayEvent(playSourceRef.current);
           }
         }}
-        onPause={() => setIsPlaying(false)}
+        onPause={() => {
+          isPlayingRef.current = false;
+          setIsPlaying(false);
+        }}
         onEnded={(event) => {
           const audio = event.currentTarget as HTMLAudioElement & { dataset: { hmPlayCounted?: string; hmEndedHandled?: string } };
           delete audio.dataset.hmPlayCounted;
