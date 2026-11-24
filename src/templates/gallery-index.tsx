@@ -132,7 +132,7 @@ const GalleryIndex: React.FC<PageProps<GalleryIndexData, GalleryIndexContext>> =
   }
 
   // Sort each category's albums by date, newest first
-  for (const [slug, albums] of albumsByCategory) {
+  for (const [, albums] of albumsByCategory) {
     albums.sort((a, b) => b.date.localeCompare(a.date));
   }
 

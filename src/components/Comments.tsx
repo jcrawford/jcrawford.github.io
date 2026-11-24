@@ -12,11 +12,10 @@ interface CommentsProps {
  * delay injecting it until the comments section is near the viewport so it
  * doesn't compete with above-fold assets.
  */
-const Comments: React.FC<CommentsProps> = ({ slug }) => {
+const Comments: React.FC<CommentsProps> = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [theme, setTheme] = useState<'light' | 'dark' | null>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const iframeRef = useRef<HTMLIFrameElement | null>(null);
 
   useEffect(() => {
     const isDark = document.documentElement.classList.contains('hm-dark');
@@ -58,7 +57,7 @@ const Comments: React.FC<CommentsProps> = ({ slug }) => {
     const existingIframe = containerRef.current.querySelector('iframe.giscus-frame');
 
     if (existingIframe) {
-      existingIframe.contentWindow?.postMessage(
+      (existingIframe as HTMLIFrameElement).contentWindow?.postMessage(
         { giscus: { setConfig: { theme } } },
         'https://giscus.app'
       );

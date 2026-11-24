@@ -16,13 +16,20 @@ import 'yet-another-react-lightbox/plugins/thumbnails.css';
 import 'yet-another-react-lightbox/plugins/captions.css';
 import 'yet-another-react-lightbox/plugins/counter.css';
 import type { GalleryPhoto, GalleryVideo } from '../types/gallery';
-import { buildSrcSetVariants, buildWebpSrcSetVariants, GALLERY_SIZES } from '../utils/galleryImages';
+import {
+  buildSrcSetVariants,
+  GALLERY_SIZES,
+} from '../utils/galleryImages';
 import { EyeIcon } from '../utils/icons';
 import '../styles/gallery.css';
 
 declare global {
   interface Window {
-    gtag?: (...args: any[]) => void;
+    gtag?: (
+      command: 'event' | 'config' | 'set',
+      targetId: string | object,
+      config?: Record<string, unknown>
+    ) => void;
   }
 }
 

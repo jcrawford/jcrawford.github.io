@@ -86,9 +86,6 @@ const TagTabs: React.FC<TagTabsProps> = ({ tags, articles, excludeSlugs = [] }) 
   const mapArticleForDisplay = (article: Article) => {
     if (article.frontmatter.series?.name) {
       const seriesSlug = article.frontmatter.slug.split('/')[0];
-      const seriesCount = articles.filter(
-        (a) => a.frontmatter.series?.name === article.frontmatter.series?.name
-      ).length;
 
       return {
         slug: article.frontmatter.slug,

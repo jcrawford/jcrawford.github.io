@@ -125,7 +125,7 @@ const ResumeExperience: React.FC<ResumeExperienceProps> = ({ experiences }) => {
   };
 
   // Render a single role with fade-in animation
-  const SingleRole: React.FC<{ experience: WorkExperience; index: number; delay: number }> = ({ experience, index, delay }) => {
+  const SingleRole: React.FC<{ experience: WorkExperience; delay: number }> = ({ experience, delay }) => {
     const { ref, isVisible } = useIntersectionObserver();
     
     return (
@@ -211,7 +211,7 @@ const ResumeExperience: React.FC<ResumeExperienceProps> = ({ experiences }) => {
             return <GroupedRoles key={`group-${index}`} group={item} index={index} delay={delay} />;
           } else {
             // It's a single experience
-            return <SingleRole key={`single-${index}`} experience={item} index={index} delay={delay} />;
+            return <SingleRole key={`single-${index}`} experience={item} delay={delay} />;
           }
         })}
       </div>

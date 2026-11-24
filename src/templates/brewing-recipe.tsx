@@ -21,7 +21,11 @@ import '../styles/brewing-recipe.css';
 // Declare gtag for TypeScript
 declare global {
   interface Window {
-    gtag?: (...args: any[]) => void;
+  gtag?: (
+    command: 'event' | 'config' | 'set',
+    targetId: string | object,
+    config?: Record<string, unknown>
+  ) => void;
   }
 }
 
@@ -228,7 +232,7 @@ const BrewingRecipeTemplate: React.FC<PageProps<RecipeData, BrewingRecipePageCon
                   >
                     {tag}
                   </Link>
-                  {index < frontmatter.tags.length - 1 && <span className="tag-separator">,</span>}
+                  {index < (frontmatter.tags?.length ?? 0) - 1 && <span className="tag-separator">,</span>}
                 </span>
               ))}
             </div>

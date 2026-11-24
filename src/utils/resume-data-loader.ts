@@ -11,8 +11,6 @@ import {
   validateProfile,
   validateSkills,
   validateExperience,
-  validateEducation,
-  validateRecommendations,
   safeValidateRecommendations,
 } from './resume-schemas';
 import type {
@@ -67,10 +65,14 @@ export function loadExperience(): WorkExperience[] {
  * @throws {Error} if file doesn't exist or validation fails
  */
 export function loadEducation(): Education[] {
-  const filePath = path.join(DATA_DIR, 'education.json');
+  const filePath = path.join(DATA_DIR, 'certifications.json');
   const rawData = fs.readFileSync(filePath, 'utf-8');
   const data = JSON.parse(rawData);
-  return validateEducation(data);
+  // resumeData.education feeds the certifications section — the zod
+  // EducationSchema (institution/degree/start/end) describes a different,
+  // unused shape. Pass the certification rows through as-is; ResumeData
+  // treats them as Education (title/date/link) at the type level.
+  return data as Education[];
 }
 
 /**

@@ -297,7 +297,7 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
                         >
                           {tag}
                         </Link>
-                        {index < article.tags.filter(tag => tag !== 'reviews').slice(0, 3).length - 1 && <span className="tag-separator">, </span>}
+                        {index < (article.tags?.filter(tag => tag !== 'reviews').slice(0, 3).length ?? 0) - 1 && <span className="tag-separator">, </span>}
                       </span>
                     ))}
                   </div>
@@ -414,7 +414,7 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
                     >
                       {tag}
                     </Link>
-                    {index < article.tags.length - 1 && <span className="tag-separator">,</span>}
+                    {index < (article.tags?.length ?? 0) - 1 && <span className="tag-separator">,</span>}
                   </span>
                 ))}
               </div>
