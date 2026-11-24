@@ -13,6 +13,11 @@ permissions:
   contents: write
   pages: write
   id-token: write
+  actions: read
+
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: false
 
 env:
   GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
@@ -24,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url || steps.deployment2.outputs.page_url || steps.deployment3.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -55,6 +60,23 @@ jobs:
             git push origin master
           fi
 
+      # Popular-articles cron fires at the same times as this workflow's cron and
+      # pushes a commit, which triggers a second Daily deploy mid-build. Serialize
+      # Pages deployments so they never race each other.
+      - name: Serialize concurrent deploys
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for i in $(seq 1 18); do
+            busy=$(gh api "repos/${{ github.repository }}/actions/runs?status=in_progress&per_page=30" \
+              --jq '[.workflow_runs[] | select(.id != ${{ github.run_id }} and .name == "Daily deploy") | .id] | length')
+            if [ "$busy" = "0" ]; then
+              exit 0
+            fi
+            sleep 10
+          done
+          echo "::warning::another Daily deploy still in progress — proceeding"
+
       - name: Build site
         env:
           NODE_OPTIONS: "--max-old-space-size=4096"
@@ -65,6 +87,46 @@ jobs:
         with:
           path: ./public
 
+      # Root-cause guard: deploy-pages@v4 fails fast ("No artifacts named
+      # github-pages were found") when GitHub's artifact-metadata API has not
+      # made the just-uploaded artifact visible yet. Poll until it is visible.
+      - name: Wait for Pages artifact to be visible
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for i in $(seq 1 24); do
+            if gh api "repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts" \
+              --jq '.artifacts[] | select(.name == "github-pages") | .id' 2>/dev/null | grep -q .; then
+              echo "artifact visible after ~$((i * 10))s"
+              exit 0
+            fi
+            sleep 10
+          done
+          echo "::warning::github-pages artifact not visible in API after 240s — attempting deploy anyway"
+          exit 0
+
       - name: Deploy to GitHub Pages
         id: deployment
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
+
+      - name: Wait before deploy retry 1
+        if: ${{ steps.deployment.outcome == 'failure' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: sleep 60
+
+      - name: Deploy to GitHub Pages (retry 1)
+        id: deployment2
+        if: ${{ steps.deployment.outcome == 'failure' }}
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
+
+      - name: Wait before deploy retry 2
+        if: ${{ steps.deployment2.outcome == 'failure' }}
+        run: sleep 60
+
+      - name: Deploy to GitHub Pages (retry 2, hard-failing)
+        id: deployment3
+        if: ${{ steps.deployment2.outcome == 'failure' }}
         uses: actions/deploy-pages@v4
