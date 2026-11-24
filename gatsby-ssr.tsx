@@ -51,6 +51,12 @@ export const onRenderBody = ({ setHeadComponents, setPostBodyComponents, setHtml
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4309658652951015"
       crossOrigin="anonymous"
     />,
+    // AdSense site-ownership binding (crawler looks for this meta on custom sites)
+    <meta
+      key="adsense-account"
+      name="google-adsense-account"
+      content="ca-pub-4309658652951015"
+    />,
   ]);
 
   setPostBodyComponents([
