@@ -174,9 +174,8 @@ const MusicPlayerBar: React.FC = () => {
     const hint = hintRef.current;
     if (!hint) return;
     const clamp = () => {
-      // The sticky support banner rides on top of everything; the header only
-      // occupies the top while the page is unscrolled. Take whichever is lower.
-      const chrome = [document.getElementById('masthead'), document.querySelector('.support-bar')]
+      // The site header only occupies the top while the page is unscrolled.
+      const chrome = [document.getElementById('masthead')]
         .filter((el): el is HTMLElement => Boolean(el));
       let chromeBottom = 0;
       for (const el of chrome) {
@@ -188,7 +187,7 @@ const MusicPlayerBar: React.FC = () => {
       }
     };
     const raf = requestAnimationFrame(() => requestAnimationFrame(clamp));
-    const timer = window.setTimeout(clamp, 250); // after SupportBar's fade-in
+    const timer = window.setTimeout(clamp, 250); // after header settles
     return () => {
       cancelAnimationFrame(raf);
       window.clearTimeout(timer);

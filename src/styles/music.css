@@ -404,7 +404,6 @@ body.hm-theater-open {
 }
 
 body.hm-theater-open .hm-music-bar,
-body.hm-theater-open .support-bar,
 body.hm-theater-open .hm-music-hint {
   display: none !important;
 }

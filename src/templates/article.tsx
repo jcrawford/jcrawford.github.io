@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect } from 'react';
+import React, { Suspense } from 'react';
 import { graphql, Link, PageProps, HeadFC } from 'gatsby';
 import { useArticleMetrics } from '../hooks/useArticleMetrics';
 import Layout from '../components/Layout';
@@ -172,19 +172,6 @@ const ArticleTemplate: React.FC<PageProps<ArticleData, ArticlePageContext>> = ({
   const readingTime = pageContext.readingTime;
   const articlePath = getArticlePath(article.slug, !!article.series?.name, isReview, isBrewing);
   const { metrics, loading } = useArticleMetrics(articlePath);
-  
-  // Announce context to SupportBar component
-  useEffect(() => {
-    let context: 'brewing' | 'reviews' | 'tech' = 'tech';
-    if (isBrewing || (article.tags && article.tags.some(t => t.toLowerCase().includes('brewing')))) {
-      context = 'brewing';
-    } else if (isReview) {
-      context = 'reviews';
-    }
-    
-    const event = new CustomEvent('support-context', { detail: { context } });
-    window.dispatchEvent(event);
-  }, [isBrewing, isReview, article.tags]);
   
   const shareUrl = typeof window !== 'undefined' ? window.location.href : `https://josephcrawford.com${getArticlePath(article.slug, !!article.series?.name, isReview, isBrewing)}`;
   

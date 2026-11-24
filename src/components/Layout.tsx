@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import SupportBar from './SupportBar';
 import MusicPlayerBar from './MusicPlayerBar';
 import '../styles/variables.css';
 import '../styles/reset.css';
@@ -18,9 +17,7 @@ const Layout: React.FC<LayoutProps> = ({ children, className, hideFooter }) => {
   return (
     <div id="page" className="site hm-cl-sep">
       <Header />
-      
-      <SupportBar />
-      
+
       <div id="content" className="site-content">
         <main
           id="primary"

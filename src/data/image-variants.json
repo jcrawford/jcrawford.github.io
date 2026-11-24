@@ -832,16 +832,6 @@
     ]
   },
   {
-    "src": "/images/content/brewing/supporting-the-brew.jpg",
-    "widths": [
-      64,
-      160,
-      400,
-      600,
-      850
-    ]
-  },
-  {
     "src": "/images/content/brewing/caramel-apple-bochet/featured.jpg",
     "widths": [
       64,
@@ -1034,26 +1024,6 @@
       760,
       850,
       1200
-    ]
-  },
-  {
-    "src": "/images/content/brewing/supporting-the-brew.webp",
-    "widths": [
-      64,
-      160,
-      400,
-      600,
-      850
-    ]
-  },
-  {
-    "src": "/images/content/brewing/supporting-the-brew.png",
-    "widths": [
-      64,
-      160,
-      400,
-      600,
-      850
     ]
   },
   {

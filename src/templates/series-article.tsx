@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { graphql, Link, PageProps, HeadFC } from 'gatsby';
 import { useArticleMetrics } from '../hooks/useArticleMetrics';
 import Layout from '../components/Layout';
@@ -92,21 +92,7 @@ const SeriesArticleTemplate: React.FC<PageProps<SeriesArticleData, SeriesArticle
   const seriesSlug = slugifySeriesName(article.series.name);
   const metricsPath = `/series/${seriesSlug}/`;
   const { metrics, loading } = useArticleMetrics(metricsPath);
-  
-  // Announce context to SupportBar component
-  useEffect(() => {
-    let context: 'brewing' | 'reviews' | 'tech' = 'tech';
-    const isBrewing = pageContext.isBrewing ?? false;
-    if (isBrewing || (article.tags && article.tags.some(t => t.toLowerCase().includes('brewing')))) {
-      context = 'brewing';
-    } else if (pageContext.isReview) {
-      context = 'reviews';
-    }
-    
-    const event = new CustomEvent('support-context', { detail: { context } });
-    window.dispatchEvent(event);
-  }, [pageContext.isBrewing, pageContext.isReview, article.tags]);
-  
+
   // Get the first tag that's not "family" or "featured" for display
   const primaryTag = article.tags?.find(tag => !tagMatches(tag, 'family') && !tagMatches(tag, 'featured')) || article.tags?.[0];
 
