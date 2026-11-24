@@ -44,6 +44,13 @@ export const onRenderBody = ({ setHeadComponents, setPostBodyComponents, setHtml
         `,
       }}
     />,
+    // Google AdSense — Auto Ads (site-wide loader). ca-pub-4309658652951015
+    <script
+      key="adsense-loader"
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4309658652951015"
+      crossOrigin="anonymous"
+    />,
   ]);
 
   setPostBodyComponents([
