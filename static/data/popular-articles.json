@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T04:47:06.298Z",
+  "generatedAt": "2026-11-26T19:58:45.193Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -70,9 +70,20 @@
     },
     {
       "id": "/reviews/capital-one-360-checking",
-      "views": 58,
+      "views": 59,
       "comments": 0,
-      "score": 58,
+      "score": 59,
+      "shares": {
+        "facebook": 0,
+        "linkedin": 0,
+        "copy": 0
+      }
+    },
+    {
+      "id": "/reviews/total-typescript-pro-complete-review",
+      "views": 50,
+      "comments": 0,
+      "score": 50,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
@@ -84,17 +95,6 @@
       "views": 50,
       "comments": 0,
       "score": 50,
-      "shares": {
-        "facebook": 0,
-        "linkedin": 0,
-        "copy": 0
-      }
-    },
-    {
-      "id": "/reviews/total-typescript-pro-complete-review",
-      "views": 49,
-      "comments": 0,
-      "score": 49,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
