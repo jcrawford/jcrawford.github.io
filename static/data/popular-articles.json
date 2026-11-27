@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T20:03:21.425Z",
+  "generatedAt": "2026-11-27T04:53:17.978Z",
   "windowDays": "lifetime",
   "entries": [
     {
@@ -212,7 +212,7 @@
       }
     },
     {
-      "id": "/brewing/dandelion-mead",
+      "id": "/reviews/voyager-keyboard",
       "views": 23,
       "comments": 0,
       "score": 23,
@@ -223,10 +223,10 @@
       }
     },
     {
-      "id": "/reviews/voyager-keyboard",
-      "views": 22,
+      "id": "/brewing/dandelion-mead",
+      "views": 23,
       "comments": 0,
-      "score": 22,
+      "score": 23,
       "shares": {
         "facebook": 0,
         "linkedin": 0,
