@@ -59,9 +59,10 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   }
   await sleep(2500);
 
-  const state = await evalJs(
+  const stateRaw = await evalJs(
     `JSON.stringify({ playing: !document.querySelector('audio').paused, wl: !!navigator.wakeLock, sentinelHeld: !!(window.__hmWL || null) })`
   );
+  const state = stateRaw && typeof stateRaw === 'object' ? stateRaw : JSON.parse(stateRaw);
   console.log('AFTER_PLAY:', state);
 
   // Probe the sentinel through the audio element's play state + a fresh request
@@ -98,6 +99,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   const after = await evalJs(
     `JSON.stringify({ playing: !document.querySelector('audio').paused, label: (document.querySelector('.hm-music-single-play') || {}).textContent })`
   );
+  const afterState = after && typeof after === 'object' ? after : JSON.parse(after);
   console.log('AFTER_PAUSE:', after);
 
   // Headless Chrome cannot hold a real screen wake lock (no compositor), so
@@ -108,7 +110,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   const wlLive = state.wl && manual === 'api-works';
   console.log(
     'VERDICT:',
-    state.playing === true && wlLive && after.playing === false && after.label.includes('▶')
+    state.playing === true && wlLive && afterState.playing === false && afterState.label.includes('▶')
       ? 'PASS — wake lock API live while playing; play→pause round-trip in sync'
       : 'FAIL — see states above'
   );

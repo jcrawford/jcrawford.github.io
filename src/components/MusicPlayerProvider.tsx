@@ -275,11 +275,26 @@ export const MusicPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
       setCurrentTime(audio.currentTime);
       setIsPlaying(false);
     };
+    // Restore transitions +, since Nov 27 2026, the first interaction / refocus.
+    // Some mobile browsers resume a suspended media element with NO 'play'
+    // event at all — the audio just starts producing sound while React still
+    // records paused, so the restore-transition guard alone never re-syncs:
+    // the ▶ button stays dark, sound leaks through, and the reader's play tap
+    // calls play() again, layering a second playback from 0:00 (Joseph's
+    // report). The element is the source of truth: any visible moment where it
+    // sounds while React says paused is wrong, so it is silenced immediately
+    // and the UI resynced. pointerdown precedes every click, so the tap that
+    // finds a ghost first stops it — and toggle() (which reads audio.paused,
+    // not React state) then resumes from the element's own position.
     document.addEventListener('visibilitychange', enforce);
+    document.addEventListener('pointerdown', enforce);
     window.addEventListener('pageshow', enforce);
+    window.addEventListener('focus', enforce);
     return () => {
       document.removeEventListener('visibilitychange', enforce);
+      document.removeEventListener('pointerdown', enforce);
       window.removeEventListener('pageshow', enforce);
+      window.removeEventListener('focus', enforce);
     };
   }, []);
 
