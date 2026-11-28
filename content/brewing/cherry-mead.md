@@ -1,7 +1,7 @@
 ---
 slug: cherry-mead
 title: "Cherry Mead"
-excerpt: "A sweet cherry melomel recipe using wildflower honey, frozen cherries in a mesh bag, and Red Star Premier Blanc yeast with double fruit addition for flavor."
+excerpt: "A cherry melomel made with wildflower honey and three pounds of frozen cherries, fermented bone dry with Red Star Premier Blanc and back sweetened with black cherry juice before bottling."
 featuredImage: /images/content/brewing/cherry-mead/featured.jpg
 tags:
   - brewing
@@ -25,7 +25,9 @@ brewData:
   secondaryEndDate: '2026-08-23'
   secondaryTime: "10 days"
   bulkConditioningTime: "90 days"
-  bottleAgingTime: "6 months"
+  bottlingDate: '2026-11-28'
+  bottleAgingTime: "30 days"
+  drinkingReadyDate: '2026-12-28'
 
 ingredients:
   - "3 lbs Maker's Mark Premium Wildflower Honey"
@@ -34,6 +36,7 @@ ingredients:
   - "1 packet Red Star Premier Blanc yeast"
   - "3 g FermAid K (yeast nutrient) — added in 3 staggered additions of ~1 g each"
   - "Distilled water to volume (used straight tapwater for this batch)"
+  - "16 oz 100% black cherry juice (for back sweetening)"
 
 steps:
   - title: "Gather Equipment and Ingredients"
@@ -96,8 +99,23 @@ steps:
     description: "I pulled a sample for an initial taste test. The mead hits with an extremely heavy punch of cherry — bold and forward. You can definitely taste the youth of this mead in the alcohol heat, but it also gives off lovely floral notes from the Maker's Mark Premium Wildflower Honey. The clarity is still developing; it's not cloudy, but there's some haze that should drop out with more time. With some age and maybe a little back sweetening to balance the dryness, this is going to be really, really good. The foundation is solid — it just needs patience."
     image: /images/content/brewing/cherry-mead/midlife-taste-test.jpg
 
+  - title: "Back Sweeten with Black Cherry Juice"
+    description: "The mead finished bone dry at 1.000, and the cherry character in it was all flavor and no sweetness. That combination makes a mead read sharper and hotter than it actually is, which is exactly what I was tasting during conditioning. So I back sweetened with 16 ounces of 100% black cherry juice. The juice does two jobs at once: it rounds off the dry, tannic edges from three pounds of cherry skins and pits, and it pushes the cherry nose back up front after the long aging had muted it. Sixteen ounces landed where I wanted it — enough sweetness to tame the dryness without turning a 13.9% mead into cherry syrup. I did not stabilize the mead before adding the juice, which is the whole reason this is a batch I plan to drink quickly rather than cellar. There is live yeast in there and 16 ounces of fresh sugar for it to work on, so the sweetness I just added is on borrowed time."
+
+  - title: "Bottle the Mead"
+    description: "I bottled the finished mead on November 28, 2026, filling three 750 mL swing-top bottles and one 500 mL bottle. That works out to just under three quarters of a gallon from a batch that started at a gallon, which is about what I expected after three pounds of fruit and two rackings. The color in the bottle is close to black — deep garnet where the light hits the shoulder of the bottle, opaque everywhere else. Because I never used pectic enzyme on this batch, it still carried the fruit haze I expected all the way through conditioning, and it went into the bottles with that haze intact. There was no loose sediment to worry about, though; the mead had been racked twice and what's left is a permanent cherry haze, not something that will settle into the bottles. Swing-tops were the right call for this batch. Since I didn't stabilize before back-sweetening, if the fermentation kicks back up, the swing-top seals will just pop open and make a mess rather than building up dangerous pressure. It's a risk I'm willing to take for a batch I plan to drink quickly."
+    image: /images/content/brewing/cherry-mead/bottled.jpg
+
+  - title: "Bottle Conditioning"
+    description: "This batch is not getting the long bottle conditioning I originally planned. Since I didn't stabilize before back-sweetening, the plan is to drink it young rather than age it. I'll give the bottles a few weeks to settle and let the juice and the mead integrate, then start working through them. The 500 mL bottle is my early check — I can crack that one first without committing a full 750 mL to a glass. If the swing-tops start popping on their own, that tells me the yeast woke up and the clock is running out."
+
+  - title: "Ready to Drink"
+    description: "This one should be drinking well within a few weeks of bottling rather than months. When I open the first bottle I'm looking for the cherry to have folded back into the mead instead of sitting forward of it, the alcohol heat to have softened, and the finish to be sweeter than the bone-dry mead I tasted during conditioning, thanks to that black cherry juice. I'll update this post with real tasting notes once I get there, and I'll say plainly whether the sweetness held or the yeast ate it."
+
 ---
 
 ## Notes
 
-This is a live batch — started on July 22, 2026. **This post will be updated as the mead progresses through each stage.** Check back for updates on the cherry bag removal, secondary fermentation, bottling, final gravity, ABV, and tasting notes once it's drinking ready.
+This batch started on July 22, 2026 and was bottled on November 28, 2026. Sixteen ounces of 100% black cherry juice went in as back sweetening before bottling. Because I didn't stabilize the mead, this is a 'drink quickly' batch to avoid the risk of refermentation in the bottle. The finished mead comes in at 13.9% ABV.
+
+The full timeline: three weeks in primary with 1.5 lbs of frozen cherries in a mesh bag, ten days in secondary with a second 1.5 lbs of cherries, then a little over three months of bulk conditioning before bottling into three 750 mL swing-tops and one 500 mL bottle. I'll be sampling this one much sooner than planned to make sure the sweetness stays.
